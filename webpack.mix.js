@@ -12,4 +12,13 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css');
+    .extract(['jquery', 'bootstrap', 'popper.js']);
+
+mix
+    .sass('resources/sass/app.scss', 'public/css', [
+        require('autoprefixer')({
+            browsers: [
+                'last 2 versions',
+            ]
+        })
+    ]);
