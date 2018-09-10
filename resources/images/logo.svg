@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1.18055in" height="0.944441in" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 1181 944"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil0 {fill:#363435;fill-rule:nonzero}
+    .fil1 {fill:#3EC3D9;fill-rule:nonzero}
+    .fil4 {fill:#68B650;fill-rule:nonzero}
+    .fil5 {fill:#E92E91;fill-rule:nonzero}
+    .fil3 {fill:#F05937;fill-rule:nonzero}
+    .fil2 {fill:#FCD529;fill-rule:nonzero}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polygon class="fil0" points="1185,306 876,306 445,-5 444,-5 444,155 222,-5 222,-5 222,155 0,-5 0,-5 0,940 458,944 458,942 681,944 681,942 824,944 824,944 958,944 958,602 1060,602 1060,944 1185,944 "/>
+  <path class="fil1" d="M376 477c4,-16 -5,-32 -21,-36 -16,-4 -32,5 -36,21 -4,16 5,32 21,36 16,4 32,-5 36,-21z"/>
+  <path class="fil2" d="M101 616c-47,13 -76,62 -63,109 13,47 62,76 109,63 47,-13 76,-62 63,-109 -13,-47 -62,-76 -109,-63z"/>
+  <path class="fil3" d="M67 480c-8,31 10,64 42,73 32,8 64,-10 73,-42 8,-32 -10,-64 -42,-73 -32,-8 -64,10 -73,42z"/>
+  <path class="fil4" d="M103 310c12,12 30,12 42,0 12,-12 12,-30 0,-42 -12,-12 -30,-12 -42,0 -12,12 -12,30 0,42z"/>
+  <path class="fil2" d="M560 616c-47,13 -76,62 -63,109 13,47 62,76 109,63 47,-13 76,-62 63,-109 -13,-47 -62,-76 -109,-63z"/>
+  <path class="fil3" d="M525 480c-8,31 10,64 42,73 32,8 64,-10 73,-42 8,-32 -10,-64 -42,-73 -32,-8 -64,10 -73,42z"/>
+  <path class="fil4" d="M562 310c12,12 30,12 42,0 12,-12 12,-30 0,-42 -12,-12 -30,-12 -42,0 -12,12 -12,30 0,42z"/>
+  <path class="fil5" d="M390 243c-23,-23 -61,-23 -84,0 -23,23 -23,61 0,84 23,23 61,23 84,0 23,-23 23,-61 0,-84z"/>
+ </g>
+</svg>

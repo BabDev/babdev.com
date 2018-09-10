@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="{{ app()->getLocale() }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>@yield('title', config('app.name', 'Laravel'))</title>
+        <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-sm navbar-light bg-white sticky-top">
+            <div class="container">
+                <a class="navbar-brand pt-2" href="{{ route('homepage') }}">
+                    <img src="/images/logo.svg" class="d-inline-block" alt="">
+                    BabDev
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="main-nav">
+                    <ul class="navbar-nav ml-sm-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Open Source</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <main class="@yield('main-classes', '')">
+            @yield('content')
+        </main>
+        <footer class="site-footer">
+            <div class="site-footer__container container">
+                <div class="site-footer__navigation">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/BabDev">GitHub</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://packagist.org/packages/babdev">Packagist</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://twitter.com/Bab_Dev">Twitter</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="site-footer__copyright text-md-right">All rights reserved. © 2010 - {{ date('Y') }} <a href="{{ route('homepage') }}" title="BabDev">BabDev</a>.</div>
+            </div>
+        </footer>
+        <script src="{{ mix('js/manifest.js') }}"></script>
+        <script src="{{ mix('js/vendor.js') }}"></script>
+        <script src="{{ mix('js/app.js') }}"></script>
+        @yield('bodyScripts')
+    </body>
+</html>

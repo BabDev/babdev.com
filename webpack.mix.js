@@ -12,7 +12,7 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .extract(['jquery', 'bootstrap', 'popper.js']);
+    .extract(['jquery', 'bootstrap/js/dist/util', 'bootstrap/js/dist/collapse']);
 
 mix
     .sass('resources/sass/app.scss', 'public/css', [
@@ -22,3 +22,5 @@ mix
             ]
         })
     ]);
+
+mix.copy('resources/images', 'public/images', false);
