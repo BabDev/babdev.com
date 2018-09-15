@@ -29,6 +29,7 @@
             <ul>
                 <li>Google Fonts - To provide extended typography consistent with the BabDev branding</li>
             </ul>
+            {{ Breadcrumbs::render('privacy') }}
         </div>
     </section>
 @endsection
