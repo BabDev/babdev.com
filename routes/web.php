@@ -11,6 +11,4 @@
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-})->name('homepage');
+Route::view('/', 'homepage')->name('homepage');
