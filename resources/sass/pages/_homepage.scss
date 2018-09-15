@@ -1,0 +1,56 @@
+.hero--homepage {
+  &::before {
+    background: url(../../img/beach-576.jpg) center;
+
+    @include media-breakpoint-up(sm) {
+      background-image: url(../../img/beach-768.jpg);
+    }
+    @include media-breakpoint-up(md) {
+      background-image: url(../../img/beach-992.jpg);
+    }
+    @include media-breakpoint-up(lg) {
+      background-image: url(../../img/beach-1200.jpg);
+    }
+    @include media-breakpoint-up(xl) {
+      background-image: url(../../img/beach-1920.jpg);
+    }
+  }
+
+  .hero__text {
+    min-height: 12em;
+
+    &::before {
+      min-height: 12em;
+    }
+  }
+}
+
+@supports (display: grid) {
+  .homepage-callouts {
+    display: grid;
+    grid-template-areas: "a" "b" "c" "d";
+
+    @include media-breakpoint-up(md) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "b a" "c d";
+    }
+  }
+
+  .callout {
+    &--who-i-am {
+      grid-area: a;
+    }
+
+    &--who-i-am-info {
+      grid-area: b;
+    }
+
+    &--what-i-do {
+      grid-area: c;
+    }
+
+    &--what-i-do-info {
+      grid-area: d;
+    }
+  }
+}

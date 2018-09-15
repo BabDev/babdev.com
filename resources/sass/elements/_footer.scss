@@ -1,0 +1,43 @@
+.site-footer {
+  font-size: $small-font-size;
+  border-top: 3px solid $babdev-orange;
+
+  &__container {
+    @include media-breakpoint-down(sm) {
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  &__navigation {
+    @include media-breakpoint-down(sm) {
+      .nav-item {
+        flex: 1 1 auto;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@supports (display: grid) {
+  .site-footer {
+    &__container {
+      display: grid;
+      grid-template-areas: "a" "b";
+
+      @include media-breakpoint-up(md) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "a b";
+      }
+    }
+
+    &__navigation {
+      grid-area: a;
+    }
+
+    &__copyright {
+      grid-area: b;
+      padding: .5rem 1rem;
+    }
+  }
+}

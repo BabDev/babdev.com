@@ -12,3 +12,4 @@
 */
 
 Route::view('/', 'homepage')->name('homepage');
+Route::view('/privacy', 'privacy')->name('privacy');

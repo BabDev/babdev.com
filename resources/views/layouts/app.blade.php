@@ -39,13 +39,16 @@
                 <div class="site-footer__navigation">
                     <ul class="nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="https://github.com/BabDev">GitHub</a>
+                            <a class="nav-link" href="https://github.com/BabDev" rel="nofollow noopener">GitHub</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://packagist.org/packages/babdev">Packagist</a>
+                            <a class="nav-link" href="https://packagist.org/packages/babdev" rel="nofollow noopener">Packagist</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://twitter.com/Bab_Dev">Twitter</a>
+                            <a class="nav-link" href="https://twitter.com/Bab_Dev" rel="nofollow noopener">Twitter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('privacy') }}">Privacy</a>
                         </li>
                     </ul>
                 </div>

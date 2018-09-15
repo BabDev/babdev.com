@@ -1,0 +1,17 @@
+.navbar {
+  border-top: .25rem solid $babdev-orange;
+
+  .navbar-brand {
+    font-family: $font-family-brand;
+
+    img {
+      height: 50px;
+      width: 62px;
+      vertical-align: initial;
+    }
+  }
+
+  @supports ((position: -webkit-sticky) or (position: sticky)) {
+    box-shadow: 0 .125rem .5rem $gray-500;
+  }
+}
