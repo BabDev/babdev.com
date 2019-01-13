@@ -6,13 +6,9 @@
 
   &__title {
     background-color: $babdev-orange;
-
-    @include media-breakpoint-up(md) {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__text {
