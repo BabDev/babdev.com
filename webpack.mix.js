@@ -16,11 +16,7 @@ mix.js('resources/js/app.js', 'public/js')
 
 mix
     .sass('resources/sass/app.scss', 'public/css', [
-        require('autoprefixer')({
-            browsers: [
-                'last 2 versions',
-            ]
-        })
+        require('autoprefixer')()
     ]);
 
 mix.copy('resources/images', 'public/images', false);
