@@ -1,7 +1,6 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "babdev/babdev.com",
+    "description": "The babdev.com website",
     "license": "MIT",
     "type": "project",
     "require": {
