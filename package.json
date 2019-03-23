@@ -1,5 +1,9 @@
 {
     "private": true,
+    "engines": {
+        "node": ">=10.13.0",
+        "npm": ">=6.4.1"
+    },
     "browserslist": [
         "last 2 versions"
     ],
@@ -19,10 +23,10 @@
     },
     "devDependencies": {
         "cross-env": "^5.1",
-        "laravel-mix": "^4.0",
+        "laravel-mix": "^4.0.15",
         "resolve-url-loader": "^2.3.2",
-        "sass": "^1.17.0",
+        "sass": "^1.17.3",
         "sass-loader": "^7.1.0",
-        "vue-template-compiler": "^2.6.6"
+        "vue-template-compiler": "^2.6.10"
     }
 }
