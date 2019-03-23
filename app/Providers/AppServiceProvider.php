@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace BabDev\Providers;
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace BabDev\Providers;
 
 use Illuminate\Session\SessionServiceProvider;
 use Illuminate\Support\Facades\Gate;

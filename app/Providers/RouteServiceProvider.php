@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace BabDev\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
@@ -14,7 +14,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'App\Http\Controllers';
+    protected $namespace = 'BabDev\Http\Controllers';
 
     /**
      * Define the routes for the application.
