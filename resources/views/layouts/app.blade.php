@@ -11,7 +11,7 @@
         <nav class="navbar navbar-expand-sm navbar-light bg-white sticky-top">
             <div class="container">
                 <a class="navbar-brand pt-2" href="{{ route('homepage') }}">
-                    <img src="{{ asset('images/logo.svg') }}" class="d-inline-block" alt="">
+                    <img src="{{ asset('images/logos/babdev.svg') }}" class="d-inline-block" alt="">
                     BabDev
                 </a>
 
