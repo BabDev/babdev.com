@@ -54,6 +54,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('privacy') }}">Privacy</a>
                         </li>
+                        @if(class_exists(\Laravel\Telescope\Telescope::class) && config('telescope.enabled'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('telescope') }}" target="_blank">Telescope</a>
+                            </li>
+                        @endif
                     </ul>
                 </div>
                 <div class="site-footer__copyright text-md-right">All rights reserved. © 2010 - {{ date('Y') }} <a href="{{ route('homepage') }}" title="BabDev">BabDev</a>.</div>
