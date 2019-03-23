@@ -20,7 +20,7 @@
             <h3 class="callout__heading">What I Do</h3>
         </div>
         <div class="callout callout__text callout--what-i-do-info">
-            As an open source contributor and developer, I <a href="#">create solutions</a> to help others fulfill their own requirements, and am a former "core maintainer" and release lead for Joomla. As the Lead Developer of Happy Dog Web Productions, I work closely with clients to create solutions tailored to their business needs.
+            As an open source contributor and developer, I create solutions to help others fulfill their own requirements, and am a former "core maintainer" and release lead for Joomla. As the Lead Developer of Happy Dog Web Productions, I work closely with clients to create solutions tailored to their business needs.
         </div>
     </section>
 @endsection
