@@ -21,6 +21,9 @@
 
                 <div class="collapse navbar-collapse" id="main-nav">
                     <ul class="navbar-nav ml-sm-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Blog</a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Open Source</a>
                             <div class="dropdown-menu">
