@@ -139,6 +139,7 @@ return [
         Illuminate\Pagination\PaginationServiceProvider::class,
         Illuminate\Pipeline\PipelineServiceProvider::class,
         Illuminate\Queue\QueueServiceProvider::class,
+        Illuminate\Session\SessionServiceProvider::class,
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
@@ -151,6 +152,7 @@ return [
          * Application Service Providers...
          */
         BabDev\Providers\AppServiceProvider::class,
+        BabDev\Providers\NovaServiceProvider::class,
         BabDev\Providers\RouteServiceProvider::class,
 
     ],

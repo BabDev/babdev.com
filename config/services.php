@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => BabDev\User::class,
+        'model' => BabDev\Models\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],

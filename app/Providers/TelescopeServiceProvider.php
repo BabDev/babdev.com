@@ -2,7 +2,6 @@
 
 namespace BabDev\Providers;
 
-use Illuminate\Session\SessionServiceProvider;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Telescope\IncomingEntry;
 use Laravel\Telescope\Telescope;
@@ -18,9 +17,6 @@ class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
     public function register()
     {
         // Telescope::night();
-
-        // This app doesn't use sessions for the main app, but Telescope needs the session
-        $this->app->register(SessionServiceProvider::class);
 
         $this->hideSensitiveRequestDetails();
 

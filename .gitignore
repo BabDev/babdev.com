@@ -7,10 +7,12 @@
 /public/js/manifest.js
 /public/js/vendor.js
 /public/storage
+/public/vendor/nova
 /public/vendor/telescope
 /public/mix-manifest.json
 /storage/*.key
 /vendor
+/nova
 /.idea
 /.vscode
 /.vagrant

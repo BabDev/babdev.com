@@ -3,10 +3,17 @@
     "description": "The babdev.com website",
     "license": "MIT",
     "type": "project",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./nova"
+        }
+    ],
     "require": {
         "php": ">=7.2",
         "davejamesmiller/laravel-breadcrumbs": "^5.1",
-        "laravel/framework": "5.8.*"
+        "laravel/framework": "5.8.*",
+        "laravel/nova": "*"
     },
     "require-dev": {
         "filp/whoops": "^2.0",
