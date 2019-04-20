@@ -11,15 +11,16 @@
     ],
     "require": {
         "php": ">=7.2",
-        "davejamesmiller/laravel-breadcrumbs": "^5.1",
+        "davejamesmiller/laravel-breadcrumbs": "^5.2.1",
         "laravel/framework": "5.8.*",
-        "laravel/nova": "*"
+        "laravel/nova": "*",
+        "spatie/laravel-sluggable": "^2.1.7"
     },
     "require-dev": {
-        "filp/whoops": "^2.0",
-        "friendsofphp/php-cs-fixer": "^2.14",
-        "laravel/telescope": "^2.0",
-        "nunomaduro/collision": "^2.0"
+        "filp/whoops": "^2.3.1",
+        "friendsofphp/php-cs-fixer": "^2.14.2",
+        "laravel/telescope": "^2.0.4",
+        "nunomaduro/collision": "^2.1.1"
     },
     "autoload": {
         "classmap": [
