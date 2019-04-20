@@ -20,7 +20,7 @@
         "filp/whoops": "^2.3.1",
         "friendsofphp/php-cs-fixer": "^2.14.2",
         "laravel/telescope": "^2.0.4",
-        "nunomaduro/collision": "^2.1.1"
+        "nunomaduro/collision": "^3.0.1"
     },
     "autoload": {
         "classmap": [
