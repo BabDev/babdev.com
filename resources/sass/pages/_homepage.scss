@@ -28,29 +28,29 @@
 @supports (display: grid) {
   .homepage-callouts {
     display: grid;
-    grid-template-areas: "a" "b" "c" "d";
+    grid-template-areas: "who-i-am" "who-i-am-info" "what-i-do" "what-i-do-info";
 
     @include media-breakpoint-up(md) {
       grid-template-columns: 1fr 1fr;
-      grid-template-areas: "b a" "c d";
+      grid-template-areas: "who-i-am-info who-i-am" "what-i-do what-i-do-info";
     }
   }
 
   .callout {
     &--who-i-am {
-      grid-area: a;
+      grid-area: who-i-am;
     }
 
     &--who-i-am-info {
-      grid-area: b;
+      grid-area: who-i-am-info;
     }
 
     &--what-i-do {
-      grid-area: c;
+      grid-area: what-i-do;
     }
 
     &--what-i-do-info {
-      grid-area: d;
+      grid-area: what-i-do-info;
     }
   }
 }

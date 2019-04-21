@@ -23,20 +23,20 @@
   .site-footer {
     &__container {
       display: grid;
-      grid-template-areas: "a" "b";
+      grid-template-areas: "navigation" "copyright";
 
       @include media-breakpoint-up(md) {
         grid-template-columns: 1fr 1fr;
-        grid-template-areas: "a b";
+        grid-template-areas: "navigation copyright";
       }
     }
 
     &__navigation {
-      grid-area: a;
+      grid-area: navigation;
     }
 
     &__copyright {
-      grid-area: b;
+      grid-area: copyright;
       padding: .5rem 1rem;
     }
   }
