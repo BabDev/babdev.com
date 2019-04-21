@@ -2,21 +2,21 @@
 
 namespace BabDev\Nova;
 
-use BabDev\Models\User as UserModel;
+use BabDev\Models\JoomlaExtension as JoomlaExtensionModel;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Gravatar;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\Text;
+use Waynestate\Nova\CKEditor;
 
-class User extends Resource
+class JoomlaExtension extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = UserModel::class;
+    public static $model = JoomlaExtensionModel::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -33,7 +33,6 @@ class User extends Resource
     public static $search = [
         'id',
         'name',
-        'email',
     ];
 
     /**
@@ -48,22 +47,23 @@ class User extends Resource
         return [
             ID::make()->sortable(),
 
-            Gravatar::make(),
-
             Text::make('Name')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Text::make('Email')
-                ->sortable()
-                ->rules('required', 'email', 'max:254')
-                ->creationRules('unique:users,email')
-                ->updateRules('unique:users,email,{{resourceId}}'),
+            CKEditor::make('Description'),
 
-            Password::make('Password')
-                ->onlyOnForms()
-                ->creationRules('required', 'string', 'min:6')
-                ->updateRules('nullable', 'string', 'min:6'),
+            Boolean::make('Supported'),
         ];
+    }
+
+    /**
+     * Get the displayable label of the resource.
+     *
+     * @return string
+     */
+    public static function label()
+    {
+        return 'Joomla Extensions';
     }
 }

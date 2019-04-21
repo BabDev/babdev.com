@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "00dde7407463ec33fa8146c3242e3b91",
+    "content-hash": "210d537dd49139f5c53774a430fe9cfd",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -2598,6 +2598,54 @@
                 "environment"
             ],
             "time": "2019-03-06T09:39:45+00:00"
+        },
+        {
+            "name": "waynestate/nova-ckeditor4-field",
+            "version": "0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/waynestate/nova-ckeditor4-field.git",
+                "reference": "ba138ccc71931bdcf046356f45ad50a1e33581b2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/waynestate/nova-ckeditor4-field/zipball/ba138ccc71931bdcf046356f45ad50a1e33581b2",
+                "reference": "ba138ccc71931bdcf046356f45ad50a1e33581b2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Waynestate\\Nova\\CKEditorFieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Waynestate\\Nova\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Web Communications",
+                    "email": "web@wayne.edu"
+                }
+            ],
+            "description": "This nova package allows you to use CKEditor 4 for text areas.",
+            "keywords": [
+                "CKEditor",
+                "laravel",
+                "nova"
+            ],
+            "time": "2019-03-06T19:08:09+00:00"
         }
     ],
     "packages-dev": [
