@@ -1,5 +1,7 @@
 <?php
 
+/** @var \Illuminate\Routing\Router $router */
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,5 +13,7 @@
 |
 */
 
-Route::view('/', 'homepage')->name('homepage');
-Route::view('/privacy', 'privacy')->name('privacy');
+$router->view('/', 'homepage')->name('homepage');
+$router->view('/privacy', 'privacy')->name('privacy');
+
+$router->get('/joomla-extensions', 'JoomlaExtensionsController@index')->name('joomla-extensions.index');

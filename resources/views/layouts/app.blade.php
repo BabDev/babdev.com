@@ -19,7 +19,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="main-nav">
+                <nav class="collapse navbar-collapse" id="main-nav">
                     <ul class="navbar-nav ml-sm-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="#">Blog</a>
@@ -27,12 +27,12 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Open Source</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Joomla! Extensions</a>
+                                <a class="dropdown-item" href="{{ route('joomla-extensions.index') }}">Joomla! Extensions</a>
                                 <a class="dropdown-item" href="#">PHP Packages</a>
                             </div>
                         </li>
                     </ul>
-                </div>
+                </nav>
             </div>
         </nav>
         <main class="@yield('main-classes', '')">
@@ -40,7 +40,7 @@
         </main>
         <footer class="site-footer">
             <div class="site-footer__container container">
-                <div class="site-footer__navigation">
+                <nav class="site-footer__navigation">
                     <ul class="nav">
                         <li class="nav-item">
                             <a class="nav-link" href="https://github.com/BabDev" rel="nofollow noopener">GitHub</a>
@@ -60,7 +60,7 @@
                             </li>
                         @endif
                     </ul>
-                </div>
+                </nav>
                 <div class="site-footer__copyright text-md-right">All rights reserved. © 2010 - {{ date('Y') }} <a href="{{ route('homepage') }}" title="BabDev">BabDev</a>.</div>
             </div>
         </footer>

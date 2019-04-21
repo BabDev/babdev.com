@@ -13,6 +13,11 @@ $info: $babdev-blue;
 $warning: $babdev-yellow;
 $danger: $babdev-orange;
 
+// Extra colors for use in components with color variants
+$theme-colors: (
+    "brand": $babdev-orange,
+);
+
 $link-color: $babdev-orange;
 
 $font-family-brand: 'BPscriptRegular', sans-serif;
