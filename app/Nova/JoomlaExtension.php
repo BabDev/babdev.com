@@ -6,6 +6,7 @@ use BabDev\Models\JoomlaExtension as JoomlaExtensionModel;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 use Waynestate\Nova\CKEditor;
 
@@ -46,6 +47,10 @@ class JoomlaExtension extends Resource
     {
         return [
             ID::make()->sortable(),
+
+            Image::make('Logo')
+                ->rules('image')
+                ->disk('logos'),
 
             Text::make('Name')
                 ->sortable()

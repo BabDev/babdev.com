@@ -17,6 +17,7 @@ class JoomlaExtension extends Model
      */
     protected $fillable = [
         'name',
+        'logo',
         'description',
         'supported',
     ];
