@@ -1,4 +1,8 @@
 .extension {
+  &:last-of-type {
+    margin-bottom: .75rem;
+  }
+
   &__name {
     border-bottom: 1px dotted $gray-200;
     margin: .625rem 0 1rem;
