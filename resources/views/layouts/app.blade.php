@@ -1,3 +1,7 @@
+@php
+PushManager::dnsPrefetch('https://fonts.googleapis.com');
+PushManager::dnsPrefetch('https://fonts.gstatic.com');
+@endphp
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
@@ -5,13 +9,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield('title', config('app.name', 'Laravel'))</title>
-        <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+        <link href="{{ PushManager::preload(mix('css/app.css'), ['as' => 'stylesheet']) }}" rel="stylesheet">
     </head>
     <body>
         <nav class="navbar navbar-expand-sm navbar-light bg-white sticky-top">
             <div class="container">
                 <a class="navbar-brand pt-2" href="{{ route('homepage') }}">
-                    <img src="{{ asset('images/logos/babdev.svg') }}" class="d-inline-block" alt="">
+                    <img src="{{ PushManager::preload(asset('images/logos/babdev.svg'), ['as' => 'image']) }}" class="d-inline-block" alt="">
                     BabDev
                 </a>
 
@@ -64,9 +68,9 @@
                 <div class="site-footer__copyright text-md-right">All rights reserved. © 2010 - {{ date('Y') }} <a href="{{ route('homepage') }}" title="BabDev">BabDev</a>.</div>
             </div>
         </footer>
-        <script src="{{ mix('js/manifest.js') }}"></script>
-        <script src="{{ mix('js/vendor.js') }}"></script>
-        <script src="{{ mix('js/app.js') }}"></script>
+        <script src="{{ PushManager::preload(mix('js/manifest.js'), ['as' => 'script']) }}"></script>
+        <script src="{{ PushManager::preload(mix('js/vendor.js'), ['as' => 'script']) }}"></script>
+        <script src="{{ PushManager::preload(mix('js/app.js'), ['as' => 'script']) }}"></script>
         @yield('bodyScripts')
     </body>
 </html>
