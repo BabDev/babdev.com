@@ -17,6 +17,12 @@
     </section>
     <section class="extension-releases pt-2">
         <div class="container">
+            @unless($extension->supported)
+                <div class="alert alert-warning">
+                    <div class="alert-heading">Unsupported Extension</div>
+                    <div>The {{ $extension->name }} extension is no longer supported, the releases remain available for download for historical reference.</div>
+                </div>
+            @endunless
             @forelse($releases as $release)
                 <div class="release">
                     <div class="release__version">
