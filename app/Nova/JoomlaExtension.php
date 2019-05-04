@@ -36,7 +36,8 @@ class JoomlaExtension extends Resource
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            CKEditor::make('Description'),
+            CKEditor::make('Description')
+                ->hideFromIndex(),
 
             Boolean::make('Supported'),
 

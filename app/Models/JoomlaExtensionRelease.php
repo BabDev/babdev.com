@@ -2,15 +2,12 @@
 
 namespace BabDev\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Spatie\Sluggable\HasSlug;
-use Spatie\Sluggable\SlugOptions;
 
 class JoomlaExtensionRelease extends Model
 {
-    use HasSlug;
-
     public const STABILITY_ALPHA = 'alpha';
     public const STABILITY_BETA = 'beta';
     public const STABILITY_RC = 'rc';
@@ -37,11 +34,9 @@ class JoomlaExtensionRelease extends Model
         return 'slug';
     }
 
-    public function getSlugOptions(): SlugOptions
+    public function scopePublished(Builder $query): Builder
     {
-        return SlugOptions::create()
-            ->generateSlugsFrom('version')
-            ->saveSlugsTo('slug');
+        return $query->where('published', '=', true);
     }
 
     public function extension(): BelongsTo

@@ -24,7 +24,7 @@
                         {!! $extension->description !!}
                         <div class="extension__links">
                             <a class="btn btn-brand" href="#">View Documentation</a>
-                            <a class="btn btn-brand" href="#">View Downloads</a>
+                            <a class="btn btn-brand" href="{{ route('joomla-extensions.releases.index', ['joomla_extension' => $extension]) }}">View Releases</a>
                         </div>
                     </div>
                 </div>

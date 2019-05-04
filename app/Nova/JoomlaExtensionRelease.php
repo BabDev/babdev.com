@@ -35,6 +35,11 @@ class JoomlaExtensionRelease extends Resource
             Text::make('Version')
                 ->rules('required', 'max:255'),
 
+            Text::make('Slug')
+                ->rules('required')
+                ->hideFromIndex()
+                ->hideFromDetail(),
+
             Select::make('Maturity')
                 ->options(
                     [
@@ -45,7 +50,8 @@ class JoomlaExtensionRelease extends Resource
                     ]
                 )->displayUsingLabels(),
 
-            CKEditor::make('Changelog'),
+            CKEditor::make('Changelog')
+                ->hideFromIndex(),
 
             Boolean::make('Published'),
 
