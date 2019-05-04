@@ -12,39 +12,17 @@ use Laravel\Nova\Resource;
 
 class User extends Resource
 {
-    /**
-     * The model the resource corresponds to.
-     *
-     * @var string
-     */
     public static $model = UserModel::class;
 
-    /**
-     * The single value that should be used to represent the resource when being displayed.
-     *
-     * @var string
-     */
     public static $title = 'name';
 
-    /**
-     * The columns that should be searched.
-     *
-     * @var array
-     */
     public static $search = [
         'id',
         'name',
         'email',
     ];
 
-    /**
-     * Get the fields displayed by the resource.
-     *
-     * @param Request $request
-     *
-     * @return array
-     */
-    public function fields(Request $request)
+    public function fields(Request $request): array
     {
         return [
             ID::make()->sortable(),

@@ -36,11 +36,6 @@ class LinkAppStorage extends Command
         $this->filesystem = $filesystem;
     }
 
-    /**
-     * Execute the console command.
-     *
-     * @return void
-     */
     public function handle()
     {
         foreach ($this->getStoragePaths() as $diskName => $publicPath) {

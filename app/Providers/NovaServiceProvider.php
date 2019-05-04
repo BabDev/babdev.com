@@ -9,52 +9,36 @@ use Laravel\Nova\NovaApplicationServiceProvider;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
-    /**
-     * Register the Nova routes.
-     *
-     * @return void
-     */
-    protected function routes()
+    protected function routes(): void
     {
         Nova::routes()
             ->withAuthenticationRoutes()
             ->register();
     }
 
-    /**
-     * Register the Nova gate.
-     *
-     * This gate determines who can access Nova in non-local environments.
-     *
-     * @return void
-     */
-    protected function gate()
+    protected function gate(): void
     {
-        Gate::define('viewNova', function ($user) {
-            return \in_array($user->email, [
-                //
-            ]);
-        });
+        Gate::define(
+            'viewNova',
+            function ($user) {
+                return \in_array(
+                    $user->email,
+                    [
+                        //
+                    ]
+                );
+            }
+        );
     }
 
-    /**
-     * Get the cards that should be displayed on the Nova dashboard.
-     *
-     * @return array
-     */
-    protected function cards()
+    protected function cards(): array
     {
         return [
             new Help(),
         ];
     }
 
-    /**
-     * Get the tools that should be listed in the Nova sidebar.
-     *
-     * @return array
-     */
-    public function tools()
+    public function tools(): array
     {
         return [];
     }

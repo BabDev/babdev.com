@@ -8,11 +8,6 @@ use Illuminate\Http\Response;
 
 class JoomlaExtensionsController extends Controller
 {
-    /**
-     * Displays the Joomla! extensions list
-     *
-     * @return Response
-     */
     public function index(): Response
     {
         /** @var Collection|JoomlaExtension[] $extensions */

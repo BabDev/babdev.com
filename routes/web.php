@@ -1,19 +1,11 @@
 <?php
 
-/** @var \Illuminate\Routing\Router $router */
+use BabDev\Http\Controllers\JoomlaExtensionsController;
+use Illuminate\Routing\Router;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+/** @var Router $router */
 
 $router->view('/', 'homepage')->name('homepage');
 $router->view('/privacy', 'privacy')->name('privacy');
 
-$router->get('/joomla-extensions', 'JoomlaExtensionsController@index')->name('joomla-extensions.index');
+$router->get('/joomla-extensions', [JoomlaExtensionsController::class, 'index'])->name('joomla-extensions.index');
