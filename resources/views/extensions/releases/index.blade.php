@@ -22,6 +22,17 @@
                     <div class="release__version">
                         <h2>{{ $release->version }}</h2>
                     </div>
+                    <div class="release__info">
+                        <dl>
+                            <dt>Maturity</dt>
+                            <dd>{{ trans('stability.' . $release->maturity) }}</dd>
+                            <dt>Released On</dt>
+                            <dd>{{ $release->published_at->format('F j, Y') }}</dd>
+                        </dl>
+                    </div>
+                    <div class="release__summary">
+                        {!! $release->summary !!}
+                    </div>
                 </div>
             @empty
                 <div class="alert alert-info">

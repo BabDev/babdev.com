@@ -43,10 +43,10 @@ class JoomlaExtensionRelease extends Resource
             Select::make('Maturity')
                 ->options(
                     [
-                        JoomlaExtensionReleaseModel::STABILITY_ALPHA => 'Alpha',
-                        JoomlaExtensionReleaseModel::STABILITY_BETA => 'Beta',
-                        JoomlaExtensionReleaseModel::STABILITY_RC => 'Release Candidate',
-                        JoomlaExtensionReleaseModel::STABILITY_STABLE => 'Stable',
+                        JoomlaExtensionReleaseModel::STABILITY_ALPHA => trans('stability.alpha'),
+                        JoomlaExtensionReleaseModel::STABILITY_BETA => trans('stability.beta'),
+                        JoomlaExtensionReleaseModel::STABILITY_RC => trans('stability.rc'),
+                        JoomlaExtensionReleaseModel::STABILITY_STABLE => trans('stability.stable'),
                     ]
                 )->displayUsingLabels(),
 
