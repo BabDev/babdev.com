@@ -50,6 +50,9 @@ class JoomlaExtensionRelease extends Resource
                     ]
                 )->displayUsingLabels(),
 
+            CKEditor::make('Summary')
+                ->hideFromIndex(),
+
             CKEditor::make('Changelog')
                 ->hideFromIndex(),
 

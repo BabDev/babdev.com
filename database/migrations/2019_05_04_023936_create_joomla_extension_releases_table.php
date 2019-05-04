@@ -15,6 +15,7 @@ class CreateJoomlaExtensionReleasesTable extends Migration
                 $table->string('version');
                 $table->string('slug');
                 $table->string('maturity');
+                $table->text('summary');
                 $table->text('changelog');
                 $table->boolean('published')->default(true);
                 $table->dateTime('published_at');

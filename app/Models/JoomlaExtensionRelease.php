@@ -16,6 +16,7 @@ class JoomlaExtensionRelease extends Model
     protected $fillable = [
         'version',
         'maturity',
+        'summary',
         'changelog',
         'published',
         'published_at',
