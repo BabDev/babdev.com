@@ -19,6 +19,7 @@ class CreateJoomlaExtensionReleasesTable extends Migration
                 $table->text('changelog');
                 $table->boolean('published')->default(true);
                 $table->dateTime('published_at');
+                $table->integer('ordering');
                 $table->timestamps();
 
                 $table->bigInteger('extension_id')->nullable()->unsigned()->index();

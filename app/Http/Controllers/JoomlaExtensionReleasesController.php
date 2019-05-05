@@ -13,8 +13,8 @@ class JoomlaExtensionReleasesController extends Controller
     {
         /** @var Collection|JoomlaExtensionRelease[] $extensions */
         $releases = $joomlaExtension->releases()
+            ->ordered('desc')
             ->published()
-            ->orderByDesc('published_at')
             ->get();
 
         return response()->view(
