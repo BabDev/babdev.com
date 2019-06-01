@@ -22,7 +22,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            \BabDev\ServerPushManager\ServerPushMiddleware::class,
+            \BabDev\ServerPushManager\Http\Middleware\ServerPush::class,
         ],
     ];
 
