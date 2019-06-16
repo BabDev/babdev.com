@@ -6,7 +6,7 @@ use BabDev\Models\JoomlaExtension;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Response;
 
-class JoomlaExtensionsController extends Controller
+class JoomlaExtensionsController
 {
     public function index(): Response
     {
