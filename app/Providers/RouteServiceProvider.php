@@ -7,8 +7,6 @@ use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
-    protected $namespace = 'BabDev\Http\Controllers';
-
     public function map()
     {
         $this->mapWebRoutes();
