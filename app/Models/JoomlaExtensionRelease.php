@@ -38,12 +38,12 @@ class JoomlaExtensionRelease extends Model implements Sortable
         'published_at',
     ];
 
-    public function getRouteKeyName()
+    public function getRouteKeyName(): string
     {
         return 'slug';
     }
 
-    public function buildSortQuery()
+    public function buildSortQuery(): Builder
     {
         return static::query()->where('extension_id', '=', $this->extension_id);
     }

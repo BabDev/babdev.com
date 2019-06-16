@@ -22,7 +22,7 @@ class JoomlaExtension extends Model
         'supported' => 'boolean',
     ];
 
-    public function getRouteKeyName()
+    public function getRouteKeyName(): string
     {
         return 'slug';
     }
