@@ -20,9 +20,9 @@
         "waynestate/nova-ckeditor4-field": "^0.3.0"
     },
     "require-dev": {
-        "filp/whoops": "^2.3.1",
+        "filp/whoops": "^2.4.1",
         "friendsofphp/php-cs-fixer": "^2.15.1",
-        "laravel/telescope": "^2.0.5",
+        "laravel/telescope": "^2.0.6",
         "nunomaduro/collision": "^3.0.1"
     },
     "replace": {
