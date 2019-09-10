@@ -24,6 +24,11 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \BabDev\ServerPushManager\Http\Middleware\ServerPush::class,
         ],
+
+        'api' => [
+            'throttle:60,1',
+            'bindings',
+        ],
     ];
 
     protected $routeMiddleware = [
