@@ -11,15 +11,15 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Resource;
-use Naxon\NovaFieldSortable\Concerns\SortsIndexEntries;
-use Naxon\NovaFieldSortable\Sortable;
+use MichielKempen\NovaOrderField\Orderable;
+use MichielKempen\NovaOrderField\OrderField;
 use Waynestate\Nova\CKEditor;
 
 class JoomlaExtensionRelease extends Resource
 {
-    use SortsIndexEntries;
+    use Orderable;
 
-    public static $defaultSortField = 'ordering';
+    public static $defaultOrderField = 'ordering';
 
     public static $model = JoomlaExtensionReleaseModel::class;
 
@@ -66,7 +66,7 @@ class JoomlaExtensionRelease extends Resource
 
             DateTime::make('Published At'),
 
-            Sortable::make('Ordering', 'id'),
+            OrderField::make('Ordering', 'id'),
         ];
     }
 

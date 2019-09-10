@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bb72542044824fa9aae9723113810548",
+    "content-hash": "7b15ec83312502d8ed79412b526548cc",
     "packages": [
         {
             "name": "babdev/laravel-server-push-manager",
@@ -176,50 +176,6 @@
                 "laravel"
             ],
             "time": "2019-09-03T15:24:57+00:00"
-        },
-        {
-            "name": "dillingham/nova-field-sortable",
-            "version": "v1.0.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dillingham/nova-field-sortable.git",
-                "reference": "09cedbec24d08dc88d27382285488bdb45baa585"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dillingham/nova-field-sortable/zipball/09cedbec24d08dc88d27382285488bdb45baa585",
-                "reference": "09cedbec24d08dc88d27382285488bdb45baa585",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/nova": "*",
-                "php": ">=7.1.0",
-                "spatie/eloquent-sortable": "^3.4"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Naxon\\NovaFieldSortable\\FieldServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Naxon\\NovaFieldSortable\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "A Laravel Nova field.",
-            "keywords": [
-                "laravel",
-                "nova"
-            ],
-            "abandoned": true,
-            "time": "2019-01-04T23:33:12+00:00"
         },
         {
             "name": "doctrine/inflector",
@@ -900,6 +856,48 @@
                 "storage"
             ],
             "time": "2019-08-24T11:17:19+00:00"
+        },
+        {
+            "name": "michielkempen/nova-order-field",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/michielkempen/nova-order-field.git",
+                "reference": "7cc1f88ee007b095095267e905340ed3e78de685"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/michielkempen/nova-order-field/zipball/7cc1f88ee007b095095267e905340ed3e78de685",
+                "reference": "7cc1f88ee007b095095267e905340ed3e78de685",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0",
+                "spatie/eloquent-sortable": "^3.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "MichielKempen\\NovaOrderField\\OrderFieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MichielKempen\\NovaOrderField\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "time": "2019-04-22T21:17:16+00:00"
         },
         {
             "name": "monolog/monolog",

@@ -13,9 +13,9 @@
         "php": ">=7.2",
         "babdev/laravel-server-push-manager": "^1.1",
         "davejamesmiller/laravel-breadcrumbs": "^5.3",
-        "dillingham/nova-field-sortable": "^1.0.6",
         "laravel/framework": "5.8.*",
         "laravel/nova": "*",
+        "michielkempen/nova-order-field": "^2.0",
         "spatie/laravel-sluggable": "^2.2",
         "waynestate/nova-ckeditor4-field": "^0.4.0"
     },
