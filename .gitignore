@@ -13,7 +13,6 @@
 /public/mix-manifest.json
 /storage/*.key
 /vendor
-/nova
 /.idea
 /.vscode
 /.vagrant

@@ -5,8 +5,8 @@
     "type": "project",
     "repositories": [
         {
-            "type": "path",
-            "url": "./nova"
+            "type": "composer",
+            "url": "https://nova.laravel.com"
         }
     ],
     "require": {
@@ -14,7 +14,7 @@
         "babdev/laravel-server-push-manager": "^1.1",
         "davejamesmiller/laravel-breadcrumbs": "^5.3",
         "laravel/framework": "5.8.*",
-        "laravel/nova": "*",
+        "laravel/nova": "^2.3",
         "michielkempen/nova-order-field": "^2.0",
         "spatie/laravel-sluggable": "^2.2",
         "waynestate/nova-ckeditor4-field": "^0.4.0"
