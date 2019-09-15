@@ -13,14 +13,14 @@
         "php": ">=7.3",
         "babdev/laravel-server-push-manager": "^1.1",
         "davejamesmiller/laravel-breadcrumbs": "^5.3",
-        "laravel/framework": "5.8.*",
+        "laravel/framework": "^6.0.3",
         "laravel/nova": "^2.3",
         "michielkempen/nova-order-field": "^2.0",
         "spatie/laravel-sluggable": "^2.2",
         "waynestate/nova-ckeditor4-field": "^0.4.0"
     },
     "require-dev": {
-        "filp/whoops": "^2.5",
+        "facade/ignition": "^1.6.5",
         "friendsofphp/php-cs-fixer": "^2.15.3",
         "laravel/telescope": "^2.1",
         "nunomaduro/collision": "^3.0.1"
@@ -28,7 +28,8 @@
     "replace": {
         "paragonie/random_compat": "*",
         "symfony/polyfill-php70": "*",
-        "symfony/polyfill-php72": "*"
+        "symfony/polyfill-php72": "*",
+        "symfony/polyfill-php73": "*"
     },
     "autoload": {
         "classmap": [
