@@ -1,7 +1,7 @@
 <?php
 
-use BabDev\Http\Controllers\JoomlaExtensionsController;
 use BabDev\Http\Controllers\JoomlaExtensionReleasesController;
+use BabDev\Http\Controllers\JoomlaExtensionsController;
 use Illuminate\Routing\Router;
 
 /** @var Router $router */
