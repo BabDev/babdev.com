@@ -3,11 +3,22 @@
 namespace BabDev\Http\Controllers;
 
 use BabDev\Models\JoomlaExtension;
+use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Response;
 
 class JoomlaExtensionsController
 {
+    /**
+     * @var ResponseFactory
+     */
+    private $responseFactory;
+
+    public function __construct(ResponseFactory $responseFactory)
+    {
+        $this->responseFactory = $responseFactory;
+    }
+
     public function index(): Response
     {
         /** @var Collection|JoomlaExtension[] $extensions */
@@ -15,6 +26,11 @@ class JoomlaExtensionsController
             ->orderBy('name')
             ->get();
 
-        return response()->view('extensions.index', ['extensions' => $extensions]);
+        return $this->responseFactory->view(
+            'extensions.index',
+            [
+                'extensions' => $extensions,
+            ]
+        );
     }
 }

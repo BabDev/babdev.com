@@ -4,11 +4,22 @@ namespace BabDev\Http\Controllers;
 
 use BabDev\Models\JoomlaExtension;
 use BabDev\Models\JoomlaExtensionRelease;
+use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Response;
 
 class JoomlaExtensionReleasesController
 {
+    /**
+     * @var ResponseFactory
+     */
+    private $responseFactory;
+
+    public function __construct(ResponseFactory $responseFactory)
+    {
+        $this->responseFactory = $responseFactory;
+    }
+
     public function index(JoomlaExtension $joomlaExtension): Response
     {
         /** @var Collection|JoomlaExtensionRelease[] $extensions */
@@ -17,7 +28,7 @@ class JoomlaExtensionReleasesController
             ->published()
             ->get();
 
-        return response()->view(
+        return $this->responseFactory->view(
             'extensions.releases.index',
             [
                 'extension' => $joomlaExtension,
