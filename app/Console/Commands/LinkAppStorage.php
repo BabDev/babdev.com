@@ -3,6 +3,7 @@
 namespace BabDev\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Contracts\Config\Repository as ConfigRepository;
 use Illuminate\Filesystem\Filesystem;
 
 class LinkAppStorage extends Command
@@ -27,19 +28,22 @@ class LinkAppStorage extends Command
     private $filesystem;
 
     /**
-     * @param Filesystem $filesystem
+     * @var ConfigRepository
      */
-    public function __construct(Filesystem $filesystem)
+    private $config;
+
+    public function __construct(Filesystem $filesystem, ConfigRepository $config)
     {
         parent::__construct();
 
         $this->filesystem = $filesystem;
+        $this->config     = $config;
     }
 
     public function handle()
     {
         foreach ($this->getStoragePaths() as $diskName => $publicPath) {
-            $diskConfig = $this->laravel['config']["filesystems.disks.{$diskName}"];
+            $diskConfig = $this->config->get("filesystems.disks.{$diskName}");
 
             if (!isset($diskConfig['root'], $diskConfig['url'])) {
                 $this->error(\sprintf('The "%s" disk is not supported by this command.', $diskName));
