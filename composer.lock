@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bde0dfde547ff36fe3090a47225049dc",
+    "content-hash": "a378cd7f936cedaad94712bf7f6177bf",
     "packages": [
         {
             "name": "babdev/laravel-server-push-manager",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/BabDev/laravel-server-push-manager.git",
-                "reference": "bd7e24a62d6782b1aa714e024f6de356085c043a"
+                "reference": "16d0b850f7cb4a9c7eae0aae4ba097bce2ea7b92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BabDev/laravel-server-push-manager/zipball/bd7e24a62d6782b1aa714e024f6de356085c043a",
-                "reference": "bd7e24a62d6782b1aa714e024f6de356085c043a",
+                "url": "https://api.github.com/repos/BabDev/laravel-server-push-manager/zipball/16d0b850f7cb4a9c7eae0aae4ba097bce2ea7b92",
+                "reference": "16d0b850f7cb4a9c7eae0aae4ba097bce2ea7b92",
                 "shasum": ""
             },
             "require": {
@@ -59,7 +59,7 @@
                 "laravel",
                 "server-push"
             ],
-            "time": "2019-09-04T14:11:47+00:00"
+            "time": "2019-09-16T14:29:52+00:00"
         },
         {
             "name": "cakephp/chronos",
@@ -1769,25 +1769,25 @@
         },
         {
             "name": "spatie/laravel-sluggable",
-            "version": "2.2.0",
+            "version": "2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-sluggable.git",
-                "reference": "492a3b2a392f90a78725c3f07001f2074d704713"
+                "reference": "a51839b77a9f0fc8246b690b92b9339de464dc8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-sluggable/zipball/492a3b2a392f90a78725c3f07001f2074d704713",
-                "reference": "492a3b2a392f90a78725c3f07001f2074d704713",
+                "url": "https://api.github.com/repos/spatie/laravel-sluggable/zipball/a51839b77a9f0fc8246b690b92b9339de464dc8a",
+                "reference": "a51839b77a9f0fc8246b690b92b9339de464dc8a",
                 "shasum": ""
             },
             "require": {
-                "illuminate/database": "~5.6.0|~5.7.0|~5.8.0|~6.0.0",
-                "illuminate/support": "~5.6.0|~5.7.0|~5.8.0|~6.0.0",
+                "illuminate/database": "~5.6.0|~5.7.0|~5.8.0|^6.0",
+                "illuminate/support": "~5.6.0|~5.7.0|~5.8.0|^6.0",
                 "php": "^7.2"
             },
             "require-dev": {
-                "orchestra/testbench": "~3.6.0|~3.7.0|~3.8.0|~4.0.0"
+                "orchestra/testbench": "~3.6.0|~3.7.0|~3.8.0|^4.0"
             },
             "type": "library",
             "autoload": {
@@ -1813,7 +1813,7 @@
                 "laravel-sluggable",
                 "spatie"
             ],
-            "time": "2019-09-04T09:23:20+00:00"
+            "time": "2019-09-16T09:37:47+00:00"
         },
         {
             "name": "spatie/once",
@@ -3584,16 +3584,16 @@
         },
         {
             "name": "facade/ignition",
-            "version": "1.6.5",
+            "version": "1.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "97244f6d511332f3574acab8242c09ddcfda892b"
+                "reference": "8fe0ab9850e92aa5e4492c44145b28bc5b83051a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/97244f6d511332f3574acab8242c09ddcfda892b",
-                "reference": "97244f6d511332f3574acab8242c09ddcfda892b",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/8fe0ab9850e92aa5e4492c44145b28bc5b83051a",
+                "reference": "8fe0ab9850e92aa5e4492c44145b28bc5b83051a",
                 "shasum": ""
             },
             "require": {
@@ -3648,7 +3648,7 @@
                 "laravel",
                 "page"
             ],
-            "time": "2019-09-13T13:38:04+00:00"
+            "time": "2019-09-16T19:55:14+00:00"
         },
         {
             "name": "filp/whoops",
