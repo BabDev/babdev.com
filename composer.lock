@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a378cd7f936cedaad94712bf7f6177bf",
+    "content-hash": "95339dcbba1a083d5108b07e8c60fd7a",
     "packages": [
         {
             "name": "babdev/laravel-server-push-manager",
@@ -940,17 +940,17 @@
         },
         {
             "name": "laravel/nova",
-            "version": "v2.3.0",
+            "version": "v2.3.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "54ca98c880e740520bb66340d24f94dd5d64bb0d"
+                "reference": "5a52550f8062557f4cbdd1d5f16caf583af2a2c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-54ca98c880e740520bb66340d24f94dd5d64bb0d-zip-c89159.zip",
-                "reference": "54ca98c880e740520bb66340d24f94dd5d64bb0d",
-                "shasum": "b63fd7fb1e81c021417af0a9009bbbbbfc4b1663"
+                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-5a52550f8062557f4cbdd1d5f16caf583af2a2c8-zip-1b0bea.zip",
+                "reference": "5a52550f8062557f4cbdd1d5f16caf583af2a2c8",
+                "shasum": "967264b26ebd83dff90450fefc7b618ef33e6652"
             },
             "require": {
                 "cakephp/chronos": "^1.0",
@@ -1006,7 +1006,7 @@
                 "admin",
                 "laravel"
             ],
-            "time": "2019-09-10T16:40:45+00:00"
+            "time": "2019-09-17T16:03:48+00:00"
         },
         {
             "name": "league/flysystem",
@@ -3584,16 +3584,16 @@
         },
         {
             "name": "facade/ignition",
-            "version": "1.6.6",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "8fe0ab9850e92aa5e4492c44145b28bc5b83051a"
+                "reference": "c4aae328c58b5a6e6ff731050db56901c02451c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/8fe0ab9850e92aa5e4492c44145b28bc5b83051a",
-                "reference": "8fe0ab9850e92aa5e4492c44145b28bc5b83051a",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/c4aae328c58b5a6e6ff731050db56901c02451c0",
+                "reference": "c4aae328c58b5a6e6ff731050db56901c02451c0",
                 "shasum": ""
             },
             "require": {
@@ -3648,7 +3648,7 @@
                 "laravel",
                 "page"
             ],
-            "time": "2019-09-16T19:55:14+00:00"
+            "time": "2019-09-18T19:06:14+00:00"
         },
         {
             "name": "filp/whoops",
