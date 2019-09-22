@@ -39,6 +39,9 @@
                     <div class="release__summary">
                         {!! $release->summary !!}
                     </div>
+                    <div class="release__links">
+                        <a class="btn btn-brand" href="{{ route('joomla-extensions.releases.show', ['joomla_extension' => $extension, 'joomla_extension_release' => $release]) }}">Details</a>
+                    </div>
                 </div>
             @empty
                 <div class="alert alert-info">

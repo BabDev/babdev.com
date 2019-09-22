@@ -36,4 +36,15 @@ class JoomlaExtensionReleasesController
             ]
         );
     }
+
+    public function show(JoomlaExtension $joomlaExtension, JoomlaExtensionRelease $joomlaExtensionRelease): Response
+    {
+        return $this->responseFactory->view(
+            'extensions.releases.show',
+            [
+                'extension' => $joomlaExtension,
+                'release'   => $joomlaExtensionRelease,
+            ]
+        );
+    }
 }

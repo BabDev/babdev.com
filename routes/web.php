@@ -18,3 +18,8 @@ $router->get(
     '/joomla-extensions/{joomla_extension}/releases',
     [JoomlaExtensionReleasesController::class, 'index']
 )->name('joomla-extensions.releases.index');
+
+$router->get(
+    '/joomla-extensions/{joomla_extension}/release/{joomla_extension_release}',
+    [JoomlaExtensionReleasesController::class, 'show']
+)->name('joomla-extensions.releases.show');

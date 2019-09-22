@@ -1,6 +1,7 @@
 <?php
 
 use BabDev\Models\JoomlaExtension;
+use BabDev\Models\JoomlaExtensionRelease;
 use DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator;
 use DaveJamesMiller\Breadcrumbs\BreadcrumbsManager;
 
@@ -34,7 +35,15 @@ $breadcrumbs->for(
     'joomla-extensions.releases.index',
     function (BreadcrumbsGenerator $trail, JoomlaExtension $extension) {
         $trail->parent('joomla-extensions.index');
-        $trail->push('Releases');
-        $trail->push($extension->name, route('joomla-extensions.releases.index', ['joomla_extension' => $extension]));
+        $trail->push($extension->name);
+        $trail->push('Releases', route('joomla-extensions.releases.index', ['joomla_extension' => $extension]));
+    }
+);
+
+$breadcrumbs->for(
+    'joomla-extensions.releases.show',
+    function (BreadcrumbsGenerator $trail, JoomlaExtension $extension, JoomlaExtensionRelease $release) {
+        $trail->parent('joomla-extensions.releases.index', $extension);
+        $trail->push($release->version, route('joomla-extensions.releases.show', ['joomla_extension' => $extension, 'joomla_extension_release' => $release]));
     }
 );
