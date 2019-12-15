@@ -10,19 +10,19 @@
         }
     ],
     "require": {
-        "php": ">=7.3",
-        "babdev/laravel-server-push-manager": "^1.2",
-        "davejamesmiller/laravel-breadcrumbs": "^5.3",
-        "laravel/framework": "^6.0.3",
-        "laravel/nova": "^2.3.1",
-        "michielkempen/nova-order-field": "^2.0",
+        "php": "^7.3",
+        "babdev/laravel-server-push-manager": "^1.3",
+        "davejamesmiller/laravel-breadcrumbs": "^5.3.1",
+        "laravel/framework": "^6.7",
+        "laravel/nova": "^2.9.2",
+        "michielkempen/nova-order-field": "^2.0.4",
         "spatie/laravel-sluggable": "^2.2.1",
         "waynestate/nova-ckeditor4-field": "^0.4.0"
     },
     "require-dev": {
-        "facade/ignition": "^1.8",
-        "friendsofphp/php-cs-fixer": "^2.15.3",
-        "laravel/telescope": "^2.1",
+        "facade/ignition": "^1.13",
+        "friendsofphp/php-cs-fixer": "^2.16.1",
+        "laravel/telescope": "^2.1.2",
         "nunomaduro/collision": "^3.0.1"
     },
     "replace": {
