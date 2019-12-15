@@ -27,11 +27,15 @@ Mix.listen('configReady', (config) => {
 });
 
 mix.js('resources/js/app.js', 'public/js')
-    .extract(['jquery', 'bootstrap/js/dist/util', 'bootstrap/js/dist/collapse']);
+    .extract(['jquery', 'popper.js']);
 
 mix
-    .sass('resources/sass/app.scss', 'public/css', [
-        require('autoprefixer')()
-    ]);
+    .sass('resources/sass/app.scss', 'public/css')
+    .options({
+        postCss: [
+            require('autoprefixer')()
+        ]
+    })
+;
 
 mix.copy('resources/images', 'public/images', false);
