@@ -15,7 +15,6 @@ use Waynestate\Nova\CKEditor;
 class JoomlaExtension extends Resource
 {
     public static $model = JoomlaExtensionModel::class;
-
     public static $title = 'name';
 
     public static $search = [

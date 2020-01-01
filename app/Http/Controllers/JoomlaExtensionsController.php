@@ -9,10 +9,7 @@ use Illuminate\Http\Response;
 
 class JoomlaExtensionsController
 {
-    /**
-     * @var ResponseFactory
-     */
-    private $responseFactory;
+    private ResponseFactory $responseFactory;
 
     public function __construct(ResponseFactory $responseFactory)
     {

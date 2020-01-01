@@ -22,15 +22,8 @@ class LinkAppStorage extends Command
      */
     protected $description = 'Creates required symlinks for the "public" directory to "storage/app"';
 
-    /**
-     * @var Filesystem
-     */
-    private $filesystem;
-
-    /**
-     * @var ConfigRepository
-     */
-    private $config;
+    private Filesystem $filesystem;
+    private ConfigRepository $config;
 
     public function __construct(Filesystem $filesystem, ConfigRepository $config)
     {

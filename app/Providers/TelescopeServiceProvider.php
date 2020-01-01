@@ -9,7 +9,7 @@ use Laravel\Telescope\TelescopeApplicationServiceProvider;
 
 class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
 {
-    public function register()
+    public function register(): void
     {
         // Telescope::night();
 
@@ -29,7 +29,7 @@ class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
         );
     }
 
-    protected function hideSensitiveRequestDetails()
+    protected function hideSensitiveRequestDetails(): void
     {
         if ($this->app->isLocal()) {
             return;
@@ -46,7 +46,7 @@ class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
         );
     }
 
-    protected function gate()
+    protected function gate(): void
     {
         Gate::define(
             'viewTelescope',

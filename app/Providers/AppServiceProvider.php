@@ -7,13 +7,13 @@ use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
-    public function boot()
+    public function boot(): void
     {
         // Limit database key length
         Schema::defaultStringLength(191);
     }
 
-    public function register()
+    public function register(): void
     {
         if ($this->app->isLocal()) {
             $this->app->register(TelescopeServiceProvider::class);

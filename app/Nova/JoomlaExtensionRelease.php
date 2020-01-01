@@ -20,9 +20,7 @@ class JoomlaExtensionRelease extends Resource
     use Orderable;
 
     public static $defaultOrderField = 'ordering';
-
     public static $model = JoomlaExtensionReleaseModel::class;
-
     public static $title = 'version';
 
     public static $search = [
