@@ -14,11 +14,6 @@ class JoomlaExtensionRelease extends Model implements Sortable
 {
     use HasSlug, SortableTrait;
 
-    public const STABILITY_ALPHA = 'alpha';
-    public const STABILITY_BETA = 'beta';
-    public const STABILITY_RC = 'rc';
-    public const STABILITY_STABLE = 'stable';
-
     public $sortable = [
         'order_column_name' => 'ordering',
     ];

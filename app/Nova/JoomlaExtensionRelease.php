@@ -3,6 +3,7 @@
 namespace BabDev\Nova;
 
 use BabDev\Models\JoomlaExtensionRelease as JoomlaExtensionReleaseModel;
+use BabDev\ReleaseStability;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
@@ -47,10 +48,10 @@ class JoomlaExtensionRelease extends Resource
             Select::make('Maturity')
                 ->options(
                     [
-                        JoomlaExtensionReleaseModel::STABILITY_ALPHA => trans('stability.alpha'),
-                        JoomlaExtensionReleaseModel::STABILITY_BETA => trans('stability.beta'),
-                        JoomlaExtensionReleaseModel::STABILITY_RC => trans('stability.rc'),
-                        JoomlaExtensionReleaseModel::STABILITY_STABLE => trans('stability.stable'),
+                        ReleaseStability::ALPHA => trans('stability.alpha'),
+                        ReleaseStability::BETA => trans('stability.beta'),
+                        ReleaseStability::RC => trans('stability.rc'),
+                        ReleaseStability::STABLE => trans('stability.stable'),
                     ]
                 )->displayUsingLabels(),
 
