@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title')Privacy | {{ config('app.name', 'Laravel') }}@endsection
+@section('title', sprintf('Privacy | %s', config('app.name', 'Laravel')))
 
 @section('content')
     <section class="hero hero--privacy">

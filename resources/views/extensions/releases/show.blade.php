@@ -3,7 +3,7 @@
 
 @extends('layouts.app')
 
-@section('title'){{ $extension->name }} {{ $release->version }} Release | {{ config('app.name', 'Laravel') }}@endsection
+@section('title', sprintf('%s %s Release | %s', $extension->name, $extension->version, config('app.name', 'Laravel')))
 
 @section('content')
     <section class="extension-title pt-4">

@@ -2,7 +2,7 @@
 
 @extends('layouts.app')
 
-@section('title')Joomla! Extensions | {{ config('app.name', 'Laravel') }}@endsection
+@section('title', sprintf('Joomla! Extensions | %s', config('app.name', 'Laravel')))
 
 @section('content')
     <section class="hero hero--extensions">
