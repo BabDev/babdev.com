@@ -23,6 +23,7 @@ class Kernel extends HttpKernel
             \Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \BabDev\ServerPushManager\Http\Middleware\ServerPush::class,
+            \BabDev\Http\Middleware\PreloadAssets::class,
         ],
 
         'api' => [

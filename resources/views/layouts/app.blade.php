@@ -1,8 +1,3 @@
-@php
-PushManager::dnsPrefetch('https://fonts.googleapis.com');
-PushManager::dnsPrefetch('https://fonts.gstatic.com');
-PushManager::preload(asset('fonts/BPscript-webfont.woff'), ['as' => 'font', 'type' => 'font/woff']);
-@endphp
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
     <head>
