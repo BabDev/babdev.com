@@ -2,6 +2,7 @@
 
 namespace BabDev\Providers;
 
+use BabDev\GitHub\ApiConnector;
 use Github\Client;
 use Github\Exception\InvalidArgumentException;
 use Github\HttpClient\Builder;
@@ -14,6 +15,15 @@ class GitHubServiceProvider extends ServiceProvider
 {
     public function register()
     {
+        $this->app->singleton(
+            'github.api',
+            static function (Application $app): ApiConnector {
+                return new ApiConnector($app->make('github.client'));
+            }
+        );
+
+        $this->app->alias('github.api', ApiConnector::class);
+
         $this->app->singleton(
             'github.client',
             static function (Application $app): Client {
