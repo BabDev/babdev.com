@@ -19,7 +19,8 @@
         "laravel/nova": "^3.0.2",
         "michielkempen/nova-order-field": "^2.0.4",
         "php-http/guzzle6-adapter": "^2.0.1",
-        "spatie/laravel-sluggable": "^2.4"
+        "spatie/laravel-sluggable": "^2.4",
+        "spatie/packagist-api": "^1.2.1"
     },
     "require-dev": {
         "facade/ignition": "^2.0.1",

@@ -2,6 +2,8 @@
 
 namespace BabDev\Providers;
 
+use GuzzleHttp\Client as Guzzle;
+use GuzzleHttp\ClientInterface as GuzzleInterface;
 use Http\Adapter\Guzzle6\Client;
 use Http\Client\HttpAsyncClient;
 use Http\Client\HttpClient;
@@ -19,9 +21,19 @@ class HttpServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->app->singleton(
+        $this->app->bind(
+            'guzzle',
+            static function (Application $app): GuzzleInterface {
+                return new Guzzle();
+            }
+        );
+
+        $this->app->alias('guzzle', Guzzle::class);
+        $this->app->alias('guzzle', GuzzleInterface::class);
+
+        $this->app->bind(
             'httplug',
-            static function (Application $app): Client {
+            static function (Application $app): ClientInterface {
                 return new Client();
             }
         );
@@ -30,9 +42,9 @@ class HttpServiceProvider extends ServiceProvider
         $this->app->alias('httplug', HttpAsyncClient::class);
         $this->app->alias('httplug', ClientInterface::class);
 
-        $this->app->singleton(
+        $this->app->bind(
             'httplug.message_factory',
-            static function (Application $app): GuzzleMessageFactory {
+            static function (Application $app): MessageFactory {
                 return new GuzzleMessageFactory();
             }
         );
@@ -41,9 +53,9 @@ class HttpServiceProvider extends ServiceProvider
         $this->app->alias('httplug.message_factory', RequestFactory::class);
         $this->app->alias('httplug.message_factory', ResponseFactory::class);
 
-        $this->app->singleton(
+        $this->app->bind(
             'httplug.stream_factory',
-            static function (Application $app): GuzzleStreamFactory {
+            static function (Application $app): StreamFactory {
                 return new GuzzleStreamFactory();
             }
         );

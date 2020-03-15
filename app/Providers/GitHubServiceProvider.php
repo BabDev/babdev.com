@@ -15,7 +15,7 @@ class GitHubServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->app->singleton(
+        $this->app->bind(
             'github.api',
             static function (Application $app): ApiConnector {
                 return new ApiConnector($app->make('github.client'));
@@ -24,7 +24,7 @@ class GitHubServiceProvider extends ServiceProvider
 
         $this->app->alias('github.api', ApiConnector::class);
 
-        $this->app->singleton(
+        $this->app->bind(
             'github.client',
             static function (Application $app): Client {
                 try {
@@ -43,7 +43,7 @@ class GitHubServiceProvider extends ServiceProvider
 
         $this->app->alias('github.client', Client::class);
 
-        $this->app->singleton(
+        $this->app->bind(
             'github.http_client.builder',
             static function (Application $app): Builder {
                 return new Builder(
