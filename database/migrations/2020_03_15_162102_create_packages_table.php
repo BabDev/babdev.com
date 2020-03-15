@@ -32,6 +32,7 @@ class CreatePackagesTable extends Migration
                 $table->boolean('supported')->default(true);
                 $table->boolean('visible')->default(true);
                 $table->boolean('has_local_releases')->default(false);
+                $table->boolean('is_packagist')->default(true);
                 $table->timestamps();
             }
         );

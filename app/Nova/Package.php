@@ -71,6 +71,8 @@ class Package extends Resource
             Boolean::make('Visible'),
 
             Boolean::make('Has Local Releases'),
+
+            Boolean::make('Is Packagist'),
         ];
     }
 }

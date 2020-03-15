@@ -76,6 +76,7 @@ class PackageSeeder extends Seeder
                     'logo' => 'podcast-manager.svg',
                     'package_type' => PackageType::JOOMLA_EXTENSION,
                     'has_local_releases' => true,
+                    'is_packagist' => false,
                 ]
             );
     }
@@ -114,6 +115,7 @@ class PackageSeeder extends Seeder
                     'logo' => 'tweet-display-back.svg',
                     'package_type' => PackageType::JOOMLA_EXTENSION,
                     'has_local_releases' => true,
+                    'is_packagist' => false,
                 ]
             );
     }
@@ -128,6 +130,7 @@ class PackageSeeder extends Seeder
                     'logo' => 'yet-another-social-plugin.svg',
                     'package_type' => PackageType::JOOMLA_EXTENSION,
                     'has_local_releases' => true,
+                    'is_packagist' => false,
                 ]
             );
     }
