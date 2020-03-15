@@ -24,6 +24,7 @@ class CreatePackagesTable extends Migration
                 $table->text('description')->nullable();
                 $table->json('topics')->nullable();
                 $table->string('documentation_type')->default(DocumentationType::NONE);
+                $table->string('package_type')->nullable();
                 $table->integer('stars')->default(0);
                 $table->integer('downloads')->nullable();
                 $table->string('language')->nullable();

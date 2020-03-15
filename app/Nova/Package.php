@@ -4,6 +4,7 @@ namespace BabDev\Nova;
 
 use BabDev\DocumentationType;
 use BabDev\Models\Package as PackageModel;
+use BabDev\PackageType;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
@@ -44,9 +45,21 @@ class Package extends Resource
             Select::make('Documentation Type')
                 ->options(
                     [
-                        DocumentationType::GITHUB => trans('doc_type.github'),
-                        DocumentationType::LOCAL => trans('doc_type.local'),
-                        DocumentationType::NONE => trans('doc_type.none'),
+                        DocumentationType::GITHUB => trans('doc_type.'.DocumentationType::GITHUB),
+                        DocumentationType::LOCAL => trans('doc_type.'.DocumentationType::LOCAL),
+                        DocumentationType::NONE => trans('doc_type.'.DocumentationType::NONE),
+                    ]
+                )
+                ->displayUsingLabels(),
+
+            Select::make('Package Type')
+                ->options(
+                    [
+                        PackageType::JOOMLA_EXTENSION => trans('package_type.'.PackageType::JOOMLA_EXTENSION),
+                        PackageType::LARAVEL_PACKAGE => trans('package_type.'.PackageType::LARAVEL_PACKAGE),
+                        PackageType::PHP_PACKAGE => trans('package_type.'.PackageType::PHP_PACKAGE),
+                        PackageType::SYLIUS_PLUGIN => trans('package_type.'.PackageType::SYLIUS_PLUGIN),
+                        PackageType::SYMFONY_BUNDLE => trans('package_type.'.PackageType::SYMFONY_BUNDLE),
                     ]
                 )
                 ->displayUsingLabels(),

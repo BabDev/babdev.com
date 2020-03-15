@@ -16,6 +16,7 @@ class Package extends Model
         'description',
         'topics',
         'documentation_type',
+        'package_type',
         'stars',
         'downloads',
         'language',
