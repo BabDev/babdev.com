@@ -1,6 +1,17 @@
 .open-source-package {
   margin-bottom: 1.25rem;
 
+  &__link {
+    display: inline-block;
+    transform: translateY(-6px);
+
+    svg {
+      display: inline-block;
+      height: 1.5em;
+      width: auto;
+    }
+  }
+
   &__name {
     margin-bottom: 1rem;
 

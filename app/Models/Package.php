@@ -69,4 +69,9 @@ class Package extends Model
     {
         return $this->hasMany(PackageRelease::class);
     }
+
+    public function getGithubUrlAttribute(): string
+    {
+        return 'https://github.com/BabDev/'.$this->name;
+    }
 }

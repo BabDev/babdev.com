@@ -20,6 +20,9 @@
                         </div>
                     @endif
                     <div class="open-source-package__name">
+                        <a class="open-source-package__link" href="{{ $package->github_url }}" target="_blank" rel="nofollow noreferrer noopener">
+                            {{ svg('fab-github') }}
+                        </a>
                         <h2>{{ $package->display_name }}</h2>
                     </div>
                     <div class="open-source-package__description">
