@@ -67,6 +67,8 @@ class Package extends Resource
             Boolean::make('Supported'),
 
             Boolean::make('Visible'),
+
+            Boolean::make('Has Local Releases'),
         ];
     }
 }

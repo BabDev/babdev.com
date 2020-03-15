@@ -25,6 +25,11 @@ class ApiConnector
             );
     }
 
+    public function fetchRepositoryTags(string $username, string $repository): Collection
+    {
+        return new Collection($this->client->api('repository')->tags($username, $repository));
+    }
+
     public function fetchRepositoryTopics(string $username, string $repository): Collection
     {
         return new Collection($this->client->api('repository')->topics($username, $repository)['names'] ?? []);
