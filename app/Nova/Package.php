@@ -38,9 +38,11 @@ class Package extends Resource
                     return true;
                 }),
 
-            Text::make('Display Name'),
+            Text::make('Display Name')
+                ->hideFromIndex(),
 
-            Text::make('Packagist Name'),
+            Text::make('Packagist Name')
+                ->hideFromIndex(),
 
             Text::make('Slug')
                 ->hideFromIndex()
