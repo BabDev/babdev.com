@@ -32,6 +32,14 @@
     margin-top: .5rem;
   }
 
+  &__links {
+    margin-top: .5rem;
+
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+    }
+  }
+
   .package-statistics {
     .package-statistic {
       .package-statistic--icon {
@@ -142,6 +150,22 @@
           grid-row: 5;
         }
       }
+
+      &.open-source-package-has-links {
+        .open-source-package {
+          &__links {
+            grid-row: 6;
+          }
+        }
+      }
+    }
+
+    &.open-source-package-has-links {
+      .open-source-package {
+        &__links {
+          grid-row: 5;
+        }
+      }
     }
 
     @include media-breakpoint-up(md) {
@@ -163,6 +187,24 @@
       &.open-source-package--has-topics {
         .open-source-package {
           &__topics {
+            grid-column: 1;
+            grid-row: 4;
+          }
+        }
+
+        &.open-source-package--has-links {
+          .open-source-package {
+            &__links {
+              grid-column: 1;
+              grid-row: 5;
+            }
+          }
+        }
+      }
+
+      &.open-source-package--has-links {
+        .open-source-package {
+          &__links {
             grid-column: 1;
             grid-row: 4;
           }
@@ -190,6 +232,22 @@
             }
           }
         }
+
+        &.open-source-package--has-links {
+          .open-source-package {
+            &__logo {
+              grid-row: 2/5;
+            }
+          }
+
+          &.open-source-package--has-topics {
+            .open-source-package {
+              &__logo {
+                grid-row: 2/6;
+              }
+            }
+          }
+        }
       }
     }
 
@@ -213,6 +271,23 @@
         }
       }
 
+      &.open-source-package--has-links {
+        .open-source-package {
+          &__links {
+            grid-column: 1/3;
+          }
+        }
+
+        &.open-source-package--has-topics {
+          .open-source-package {
+            &__links {
+              grid-column: 1/3;
+              grid-row: 4;
+            }
+          }
+        }
+      }
+
       &.open-source-package--has-logo {
         &.open-source-package--has-topics {
           grid-template-columns: 4fr 3fr 1fr;
@@ -225,6 +300,22 @@
 
             &__name {
               grid-column: 1/4;
+            }
+          }
+        }
+
+        &.open-source-package--has-links {
+          .open-source-package {
+            &__logo {
+              grid-row: 2/4;
+            }
+          }
+
+          &.open-source-package--has-topics {
+            .open-source-package {
+              &__logo {
+                grid-row: 2/5;
+              }
             }
           }
         }

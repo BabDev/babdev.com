@@ -13,7 +13,7 @@
     <section class="open-source-packages pt-4">
         <div class="container">
             @forelse($packages as $package)
-                <div class="open-source-package{{ $package->logo ? ' open-source-package--has-logo' : '' }}{{ !empty($package->topics) ? ' open-source-package--has-topics' : '' }}{{ !$package->supported ? ' open-source-package--abandoned' : '' }}">
+                <div class="open-source-package{{ $package->logo ? ' open-source-package--has-logo' : '' }}{{ !empty($package->topics) ? ' open-source-package--has-topics' : '' }}{{ $package->has_local_releases ? ' open-source-package--has-links' : '' }}{{ !$package->supported ? ' open-source-package--abandoned' : '' }}">
                     @if($package->logo)
                         <div class="open-source-package__logo">
                             <img src="{{ Storage::disk('logos')->url($package->logo) }}" alt="{{ $package->name }} Logo">
@@ -53,6 +53,15 @@
                             @endforeach
                         </div>
                     @endunless
+                    @if($package->has_local_releases)
+                        <div class="open-source-package__links package-links">
+                            @if($package->has_local_releases)
+                                <span class="package-link">
+                                    <a class="btn btn-brand" href="#">View Releases</a>
+                                </span>
+                            @endif
+                        </div>
+                    @endif
                 </div>
             @empty
                 <div class="alert alert-info">
