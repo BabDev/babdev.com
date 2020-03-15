@@ -57,7 +57,7 @@ class PackageRelease extends Model implements Sortable
         return $query->where('visible', '=', true);
     }
 
-    public function extension(): BelongsTo
+    public function package(): BelongsTo
     {
         return $this->belongsTo(Package::class);
     }

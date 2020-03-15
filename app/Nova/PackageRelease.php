@@ -35,7 +35,7 @@ class PackageRelease extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('Package', 'package', Package::class),
+            BelongsTo::make('Package'),
 
             Text::make('Version')
                 ->rules('required', 'max:255'),
@@ -61,9 +61,9 @@ class PackageRelease extends Resource
             Trix::make('Changelog')
                 ->hideFromIndex(),
 
-            Boolean::make('Published'),
+            Boolean::make('Visible'),
 
-            DateTime::make('Published At'),
+            DateTime::make('Released At'),
 
             OrderField::make('Ordering', 'id'),
         ];
