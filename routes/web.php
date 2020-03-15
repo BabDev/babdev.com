@@ -16,6 +16,11 @@ $router->get(
 )->name('open-source.packages');
 
 $router->get(
+    '/open-source/packages/{package}/releases',
+    [OpenSourceController::class, 'packageReleases']
+)->name('open-source.package.releases');
+
+$router->get(
     '/joomla-extensions',
     [JoomlaExtensionsController::class, 'index']
 )->name('joomla-extensions.index');

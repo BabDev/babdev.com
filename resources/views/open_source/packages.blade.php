@@ -57,7 +57,7 @@
                         <div class="open-source-package__links package-links">
                             @if($package->has_local_releases)
                                 <span class="package-link">
-                                    <a class="btn btn-brand" href="#">View Releases</a>
+                                    <a class="btn btn-brand" href="{{ route('open-source.package.releases', ['package' => $package]) }}">View Releases</a>
                                 </span>
                             @endif
                         </div>

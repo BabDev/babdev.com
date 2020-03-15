@@ -2,6 +2,7 @@
 
 use BabDev\Models\JoomlaExtension;
 use BabDev\Models\JoomlaExtensionRelease;
+use BabDev\Models\Package;
 use DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator;
 use DaveJamesMiller\Breadcrumbs\BreadcrumbsManager;
 
@@ -54,5 +55,14 @@ $breadcrumbs->for(
         $trail->parent('homepage');
         $trail->push('Open Source');
         $trail->push('Packages', route('open-source.packages'));
+    }
+);
+
+$breadcrumbs->for(
+    'open-source.package.releases',
+    static function (BreadcrumbsGenerator $trail, Package $package) {
+        $trail->parent('open-source.packages');
+        $trail->push($package->name);
+        $trail->push('Releases', route('open-source.package.releases', ['package' => $package]));
     }
 );
