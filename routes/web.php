@@ -2,12 +2,18 @@
 
 use BabDev\Http\Controllers\JoomlaExtensionReleasesController;
 use BabDev\Http\Controllers\JoomlaExtensionsController;
+use BabDev\Http\Controllers\OpenSourceController;
 use Illuminate\Routing\Router;
 
 /** @var Router $router */
 
 $router->view('/', 'homepage')->name('homepage');
 $router->view('/privacy', 'privacy')->name('privacy');
+
+$router->get(
+    '/open-source/packages',
+    [OpenSourceController::class, 'packages']
+)->name('open-source.packages');
 
 $router->get(
     '/joomla-extensions',

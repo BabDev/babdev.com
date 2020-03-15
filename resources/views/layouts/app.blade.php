@@ -27,8 +27,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Open Source</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{ route('joomla-extensions.index') }}">Joomla! Extensions</a>
-                                <a class="dropdown-item" href="#">PHP Packages</a>
+                                <a class="dropdown-item" href="{{ route('open-source.packages') }}">Packages</a>
                             </div>
                         </li>
                     </ul>

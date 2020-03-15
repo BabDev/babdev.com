@@ -2,6 +2,7 @@
 
 namespace BabDev\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
@@ -42,5 +43,10 @@ class Package extends Model
         return SlugOptions::create()
             ->generateSlugsFrom('name')
             ->saveSlugsTo('slug');
+    }
+
+    public function scopeVisible(Builder $query): Builder
+    {
+        return $query->where('visible', '=', true);
     }
 }

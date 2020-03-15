@@ -1,0 +1,63 @@
+@php /** @var \Illuminate\Database\Eloquent\Collection|\BabDev\Models\Package[] $packages */ @endphp
+
+@extends('layouts.app')
+
+@section('title', sprintf('Open Source Packages | %s', config('app.name', 'Laravel')))
+
+@section('content')
+    <section class="hero hero--open-source-packages">
+        <div class="hero__text">
+            <h1 class="hero__title">Open Source Packages</h1>
+        </div>
+    </section>
+    <section class="open-source-packages pt-4">
+        <div class="container">
+            @forelse($packages as $package)
+                <div class="open-source-package{{ $package->logo ? ' open-source-package--has-logo' : '' }}{{ !empty($package->topics) ? ' open-source-package--has-topics' : '' }}{{ !$package->supported ? ' open-source-package--abandoned' : '' }}">
+                    @if($package->logo)
+                        <div class="open-source-package__logo">
+                            <img src="{{ Storage::disk('logos')->url($package->logo) }}" alt="{{ $package->name }} Logo">
+                        </div>
+                    @endif
+                    <div class="open-source-package__name">
+                        <h2>{{ $package->name }}</h2>
+                    </div>
+                    <div class="open-source-package__description">
+                        {{ $package->description }}
+                    </div>
+                    <div class="open-source-package__statistics package-statistics">
+                        @if(!$package->supported)
+                            <span class="package-statistic package-statistic--unsupported">Package Not Supported</span>
+                        @endif
+                        <span class="package-statistic package-statistic--language">{{ $package->language }}</span>
+                        @if($package->downloads)
+                            <span class="package-statistic package-statistic--downloads">
+                                <span class="package-statistic--value">{{ number_format($package->downloads) }}</span>
+                                <span class="package-statistic--icon">{{ svg('fas-download') }}</span>
+                            </span>
+                        @endif
+                        @if($package->stars)
+                            <span class="package-statistic package-statistic--stars">
+                                <span class="package-statistic--value">{{ $package->stars }}</span>
+                                <span class="package-statistic--icon">{{ svg('far-star') }}</span>
+                            </span>
+                        @endif
+                    </div>
+                    @unless(empty($package->topics))
+                        <div class="open-source-package__topics package-topics">
+                            @foreach($package->topics as $topic)
+                                <span class="package-topic">{{ $topic }}</span>
+                            @endforeach
+                        </div>
+                    @endunless
+                </div>
+            @empty
+                <div class="alert alert-info">
+                    <div class="alert-heading">No Packages</div>
+                    <div>Sorry, there are no packages available at this time.</div>
+                </div>
+            @endforelse
+            {{ Breadcrumbs::render('open-source.packages') }}
+        </div>
+    </section>
+@endsection
