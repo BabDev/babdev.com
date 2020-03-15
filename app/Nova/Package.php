@@ -38,6 +38,8 @@ class Package extends Resource
                     return true;
                 }),
 
+            Text::make('Display Name'),
+
             Text::make('Slug')
                 ->hideFromIndex()
                 ->hideFromDetail(),

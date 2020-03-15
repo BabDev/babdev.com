@@ -22,7 +22,7 @@ class OpenSourceController
         /** @var Collection|Package[] $packages */
         $packages = Package::query()
             ->visible()
-            ->orderBy('name')
+            ->orderBy('display_name')
             ->get();
 
         return $this->responseFactory->view(

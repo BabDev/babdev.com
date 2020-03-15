@@ -35,7 +35,7 @@ $breadcrumbs->for(
     'open-source.package.releases',
     static function (BreadcrumbsGenerator $trail, Package $package) {
         $trail->parent('open-source.packages');
-        $trail->push($package->name);
+        $trail->push($package->display_name);
         $trail->push('Releases', route('open-source.package.releases', ['package' => $package]));
     }
 );

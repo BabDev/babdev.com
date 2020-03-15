@@ -14,6 +14,7 @@ class Package extends Model
 
     protected $fillable = [
         'name',
+        'display_name',
         'logo',
         'description',
         'topics',

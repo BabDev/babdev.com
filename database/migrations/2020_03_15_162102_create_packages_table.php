@@ -19,6 +19,7 @@ class CreatePackagesTable extends Migration
             function (Blueprint $table) {
                 $table->bigIncrements('id');
                 $table->string('name');
+                $table->string('display_name');
                 $table->string('slug');
                 $table->string('logo')->nullable();
                 $table->text('description')->nullable();

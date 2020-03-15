@@ -3,17 +3,17 @@
 
 @extends('layouts.app')
 
-@section('title', sprintf('%s %s Release | %s', $package->name, $package->version, config('app.name', 'Laravel')))
+@section('title', sprintf('%s %s Release | %s', $package->display_name, $package->version, config('app.name', 'Laravel')))
 
 @section('content')
     <section class="package-title{{ $package->logo ? ' package-title--has-logo' : '' }} pt-4">
         @if($package->logo)
             <div class="package-title__logo">
-                <img src="{{ Storage::disk('logos')->url($package->logo) }}" alt="{{ $package->name }} Logo">
+                <img src="{{ Storage::disk('logos')->url($package->logo) }}" alt="{{ $package->display_name }} Logo">
             </div>
         @endif
         <div class="package-title__name">
-            <h1 class="package-title__primary">{{ $package->name }}</h1>
+            <h1 class="package-title__primary">{{ $package->display_name }}</h1>
             <h2 class="package-title__secondary">{{ $release->version }} Release</h2>
         </div>
     </section>
@@ -21,7 +21,7 @@
         @unless($package->supported)
             <div class="package-releases__unsupported-package alert alert-warning">
                 <div class="alert-heading">Unsupported Extension</div>
-                <div>The {{ $package->name }} extension is no longer supported, the releases remain available for download for historical reference.</div>
+                <div>The {{ $package->display_name }} extension is no longer supported, the releases remain available for download for historical reference.</div>
             </div>
         @endunless
         <div class="package-release">

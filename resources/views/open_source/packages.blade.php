@@ -16,11 +16,11 @@
                 <div class="open-source-package{{ $package->logo ? ' open-source-package--has-logo' : '' }}{{ !empty($package->topics) ? ' open-source-package--has-topics' : '' }}{{ $package->has_local_releases ? ' open-source-package--has-links' : '' }}{{ !$package->supported ? ' open-source-package--abandoned' : '' }}">
                     @if($package->logo)
                         <div class="open-source-package__logo">
-                            <img src="{{ Storage::disk('logos')->url($package->logo) }}" alt="{{ $package->name }} Logo">
+                            <img src="{{ Storage::disk('logos')->url($package->logo) }}" alt="{{ $package->display_name }} Logo">
                         </div>
                     @endif
                     <div class="open-source-package__name">
-                        <h2>{{ $package->name }}</h2>
+                        <h2>{{ $package->display_name }}</h2>
                     </div>
                     <div class="open-source-package__description">
                         {{ $package->description }}

@@ -3,17 +3,17 @@
 
 @extends('layouts.app')
 
-@section('title', sprintf('%s Releases | %s', $package->name, config('app.name', 'Laravel')))
+@section('title', sprintf('%s Releases | %s', $package->display_name, config('app.name', 'Laravel')))
 
 @section('content')
     <section class="package-title{{ $package->logo ? ' package-title--has-logo' : '' }} pt-4">
         @if($package->logo)
             <div class="package-title__logo">
-                <img src="{{ Storage::disk('logos')->url($package->logo) }}" alt="{{ $package->name }} Logo">
+                <img src="{{ Storage::disk('logos')->url($package->logo) }}" alt="{{ $package->display_name }} Logo">
             </div>
         @endif
         <div class="package-title__name">
-            <h1 class="package-title__primary">{{ $package->name }}</h1>
+            <h1 class="package-title__primary">{{ $package->display_name }}</h1>
             <h2 class="package-title__secondary">Releases</h2>
         </div>
     </section>
@@ -21,7 +21,7 @@
         @unless($package->supported)
             <div class="package-releases__unsupported-package alert alert-warning">
                 <div class="alert-heading">Unsupported Package</div>
-                <div>The {{ $package->name }} package is no longer supported, the releases remain available for download for historical reference.</div>
+                <div>The {{ $package->display_name }} package is no longer supported, the releases remain available for download for historical reference.</div>
             </div>
         @endunless
         @forelse($releases as $release)
@@ -47,7 +47,7 @@
         @empty
             <div class="package-releases__no-releases alert alert-info">
                 <div class="alert-heading">No Releases</div>
-                <div>Sorry, there are no releases of {{ $package->name }} available at this time.</div>
+                <div>Sorry, there are no releases of {{ $package->display_name }} available at this time.</div>
             </div>
         @endforelse
         {{ Breadcrumbs::render('open-source.package.releases', $package) }}
