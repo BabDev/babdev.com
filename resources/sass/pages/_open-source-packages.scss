@@ -51,7 +51,19 @@
       }
 
       &.package-statistic--language {
-        @extend .text-secondary;
+        color: $gray-600;
+        font-size: .85em;
+      }
+
+      &.package-statistic--package-type {
+        &::before {
+          content: '•';
+          color: $babdev-orange;
+          padding-left: .25em;
+          padding-right: .25em;
+        }
+
+        color: $gray-600;
         font-size: .85em;
       }
 
@@ -106,17 +118,40 @@
 
   @supports (display: grid) {
     display: grid;
+    grid-template-columns: 8fr;
+
+    &__logo {
+      grid-row: 1;
+    }
+
+    &__name {
+      grid-row: 2;
+    }
+
+    &__description {
+      grid-row: 3;
+    }
+
+    &__statistics {
+      grid-row: 4;
+    }
+
+    &.open-source-package--has-topics {
+      .open-source-package {
+        &__topics {
+          grid-row: 5;
+        }
+      }
+    }
 
     @include media-breakpoint-up(md) {
-      grid-template-columns: 7fr;
-
       &__name {
-        grid-column: 1/3;
+        grid-column: 1;
         grid-row: 1;
       }
 
       &__description {
-        grid-column: 1/3;
+        grid-column: 1;
         grid-row: 2;
       }
 
@@ -126,56 +161,72 @@
       }
 
       &.open-source-package--has-topics {
-        grid-template-columns: 3.5fr 3.5fr;
+        .open-source-package {
+          &__topics {
+            grid-column: 1;
+            grid-row: 4;
+          }
+        }
       }
 
       &.open-source-package--has-logo {
-        &.open-source-package--has-topics {
-          grid-template-columns: 3.5fr 2.5fr 1fr;
-        }
+        grid-template-columns: 7fr 1fr;
 
         .open-source-package {
           &__name {
-            grid-column: 1/4;
+            grid-column: 1/3;
           }
 
           &__logo {
-            grid-column: 3;
+            grid-column: 2;
             grid-row: 2/4;
           }
+        }
 
-          &__description {
-            grid-column: 1/3;
-            grid-row: 2;
+        &.open-source-package--has-topics {
+          .open-source-package {
+            &__logo {
+              grid-row: 2/5;
+            }
           }
         }
       }
     }
 
     @include media-breakpoint-up(lg) {
-      grid-template-columns: 9fr;
-
       &.open-source-package--has-topics {
-        grid-template-columns: 3fr 6fr;
-      }
+        grid-template-columns: 4fr 4fr;
 
-      &.open-source-package--has-logo {
-        &.open-source-package--has-topics {
-          grid-template-columns: 3fr 5fr 1fr;
+        .open-source-package {
+          &__name {
+            grid-column: 1/3;
+          }
+
+          &__description {
+            grid-column: 1/3;
+          }
+
+          &__topics {
+            grid-column: 2;
+            grid-row: 3;
+          }
         }
       }
-    }
-
-    @include media-breakpoint-up(xl) {
-      grid-template-columns: 8.5fr;
-
-      &.open-source-package--has-topics {
-        grid-template-columns: 2.5fr 6fr;
-      }
 
       &.open-source-package--has-logo {
         &.open-source-package--has-topics {
-          grid-template-columns: 2.5fr 5fr 1fr;
+          grid-template-columns: 4fr 3fr 1fr;
+
+          .open-source-package {
+            &__logo {
+              grid-column: 3;
+              grid-row: 2/4;
+            }
+
+            &__name {
+              grid-column: 1/4;
+            }
+          }
         }
       }
     }

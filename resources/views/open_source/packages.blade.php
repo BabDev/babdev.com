@@ -30,6 +30,9 @@
                             <span class="package-statistic package-statistic--unsupported">Package Not Supported</span>
                         @endif
                         <span class="package-statistic package-statistic--language">{{ $package->language }}</span>
+                        @if($package->package_type)
+                            <span class="package-statistic package-statistic--package-type package-statistic--package-type--{{ $package->package_type }}">{{ trans('package_type.'.$package->package_type) }}</span>
+                        @endif
                         @if($package->downloads)
                             <span class="package-statistic package-statistic--downloads">
                                 <span class="package-statistic--value">{{ number_format($package->downloads) }}</span>

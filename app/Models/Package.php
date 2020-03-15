@@ -31,6 +31,7 @@ class Package extends Model
         'downloads' => 'integer',
         'supported' => 'boolean',
         'visible' => 'boolean',
+        'has_local_releases' => 'boolean',
     ];
 
     public function getRouteKeyName(): string
