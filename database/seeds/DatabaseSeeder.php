@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Artisan;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,7 +12,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(JoomlaExtensionSeeder::class);
-        $this->call(JoomlaExtensionReleaseSeeder::class);
+        Artisan::call('import:github-repositories');
+
+        $this->call(PackageReleaseSeeder::class);
     }
 }
