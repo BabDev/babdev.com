@@ -1,10 +1,12 @@
 <?php
 
+use BabDev\ReleaseStability;
+
 return [
 
-    'alpha' => 'Alpha',
-    'beta' => 'Beta',
-    'rc' => 'Release Candidate',
-    'stable' => 'Stable',
+    ReleaseStability::ALPHA => 'Alpha',
+    ReleaseStability::BETA => 'Beta',
+    ReleaseStability::RC => 'Release Candidate',
+    ReleaseStability::STABLE => 'Stable',
 
 ];
