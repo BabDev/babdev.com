@@ -17,3 +17,8 @@ $router->get(
     '/open-source/packages/{package}/releases',
     [OpenSourceController::class, 'packageReleases']
 )->name('open-source.package.releases');
+
+$router->get(
+    '/open-source/packages/{package}/releases/{package_release}',
+    [OpenSourceController::class, 'packageRelease']
+)->name('open-source.package.release');
