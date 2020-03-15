@@ -23,6 +23,7 @@ class Package extends Model
         'language',
         'supported',
         'visible',
+        'has_local_releases',
     ];
 
     protected $casts = [

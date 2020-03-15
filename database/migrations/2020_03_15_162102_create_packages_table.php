@@ -30,6 +30,7 @@ class CreatePackagesTable extends Migration
                 $table->string('language')->nullable();
                 $table->boolean('supported')->default(true);
                 $table->boolean('visible')->default(true);
+                $table->boolean('has_local_releases')->default(false);
                 $table->timestamps();
             }
         );
