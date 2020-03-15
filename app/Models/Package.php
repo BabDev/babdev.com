@@ -15,6 +15,7 @@ class Package extends Model
     protected $fillable = [
         'name',
         'display_name',
+        'packagist_name',
         'logo',
         'description',
         'topics',
@@ -52,6 +53,11 @@ class Package extends Model
     public function scopeHasLocalReleases(Builder $query): Builder
     {
         return $query->where('has_local_releases', '=', true);
+    }
+
+    public function scopeIsPackagist(Builder $query): Builder
+    {
+        return $query->where('is_packagist', '=', true);
     }
 
     public function scopeVisible(Builder $query): Builder

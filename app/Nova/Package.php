@@ -40,6 +40,8 @@ class Package extends Resource
 
             Text::make('Display Name'),
 
+            Text::make('Packagist Name'),
+
             Text::make('Slug')
                 ->hideFromIndex()
                 ->hideFromDetail(),

@@ -20,6 +20,7 @@ class CreatePackagesTable extends Migration
                 $table->bigIncrements('id');
                 $table->string('name');
                 $table->string('display_name');
+                $table->string('packagist_name')->nullable();
                 $table->string('slug');
                 $table->string('logo')->nullable();
                 $table->text('description')->nullable();

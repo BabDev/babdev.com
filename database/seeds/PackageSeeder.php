@@ -37,6 +37,7 @@ class PackageSeeder extends Seeder
             ->firstOrFail()
             ->update(
                 [
+                    'packagist_name' => 'babdev/pagerfanta-bundle',
                     'package_type' => PackageType::SYMFONY_BUNDLE,
                 ]
             );
@@ -49,6 +50,7 @@ class PackageSeeder extends Seeder
             ->firstOrFail()
             ->update(
                 [
+                    'packagist_name' => 'babdev/laravel-server-push-manager',
                     'package_type' => PackageType::LARAVEL_PACKAGE,
                 ]
             );
@@ -61,6 +63,7 @@ class PackageSeeder extends Seeder
             ->firstOrFail()
             ->update(
                 [
+                    'packagist_name' => 'babdev/laravel-twilio',
                     'package_type' => PackageType::LARAVEL_PACKAGE,
                 ]
             );
@@ -88,6 +91,7 @@ class PackageSeeder extends Seeder
             ->firstOrFail()
             ->update(
                 [
+                    'packagist_name' => 'babdev/supplier-plugin',
                     'package_type' => PackageType::SYLIUS_PLUGIN,
                 ]
             );
@@ -100,6 +104,7 @@ class PackageSeeder extends Seeder
             ->firstOrFail()
             ->update(
                 [
+                    'packagist_name' => 'babdev/transifex',
                     'package_type' => PackageType::PHP_PACKAGE,
                 ]
             );
