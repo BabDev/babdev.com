@@ -36,7 +36,7 @@ class ImportGitHubRepositories extends Command
                     ['name' => $repositoryAttributes['name'] ?? null],
                     [
                         'name' => $repositoryAttributes['name'],
-                        'display_name' => ucwords(str_replace(['-', '_'], ' ', $repositoryAttributes['name'])),
+                        'display_name' => \ucwords(\str_replace(['-', '_'], ' ', $repositoryAttributes['name'])),
                         'description' => $repositoryAttributes['description'],
                         'topics' => $this->cache->remember(
                             "github-repository_topics-{$repositoryAttributes['name']}",

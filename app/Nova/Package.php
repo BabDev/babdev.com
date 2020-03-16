@@ -51,9 +51,9 @@ class Package extends Resource
             Select::make('Documentation Type')
                 ->options(
                     [
-                        DocumentationType::GITHUB => trans('doc_type.'.DocumentationType::GITHUB),
-                        DocumentationType::LOCAL => trans('doc_type.'.DocumentationType::LOCAL),
-                        DocumentationType::NONE => trans('doc_type.'.DocumentationType::NONE),
+                        DocumentationType::GITHUB => trans('doc_type.' . DocumentationType::GITHUB),
+                        DocumentationType::LOCAL => trans('doc_type.' . DocumentationType::LOCAL),
+                        DocumentationType::NONE => trans('doc_type.' . DocumentationType::NONE),
                     ]
                 )
                 ->displayUsingLabels(),
@@ -61,11 +61,11 @@ class Package extends Resource
             Select::make('Package Type')
                 ->options(
                     [
-                        PackageType::JOOMLA_EXTENSION => trans('package_type.'.PackageType::JOOMLA_EXTENSION),
-                        PackageType::LARAVEL_PACKAGE => trans('package_type.'.PackageType::LARAVEL_PACKAGE),
-                        PackageType::PHP_PACKAGE => trans('package_type.'.PackageType::PHP_PACKAGE),
-                        PackageType::SYLIUS_PLUGIN => trans('package_type.'.PackageType::SYLIUS_PLUGIN),
-                        PackageType::SYMFONY_BUNDLE => trans('package_type.'.PackageType::SYMFONY_BUNDLE),
+                        PackageType::JOOMLA_EXTENSION => trans('package_type.' . PackageType::JOOMLA_EXTENSION),
+                        PackageType::LARAVEL_PACKAGE => trans('package_type.' . PackageType::LARAVEL_PACKAGE),
+                        PackageType::PHP_PACKAGE => trans('package_type.' . PackageType::PHP_PACKAGE),
+                        PackageType::SYLIUS_PLUGIN => trans('package_type.' . PackageType::SYLIUS_PLUGIN),
+                        PackageType::SYMFONY_BUNDLE => trans('package_type.' . PackageType::SYMFONY_BUNDLE),
                     ]
                 )
                 ->displayUsingLabels(),

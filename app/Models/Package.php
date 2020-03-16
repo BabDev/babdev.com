@@ -72,6 +72,6 @@ class Package extends Model
 
     public function getGithubUrlAttribute(): string
     {
-        return 'https://github.com/BabDev/'.$this->name;
+        return 'https://github.com/BabDev/' . $this->name;
     }
 }

@@ -53,15 +53,15 @@ class ImportGitHubRepositoryReleases extends Command
 
     private function determineStability(string $version): string
     {
-        if (strpos($version, 'alpha') !== false) {
+        if (\strpos($version, 'alpha') !== false) {
             return ReleaseStability::ALPHA;
         }
 
-        if (strpos($version, 'beta') !== false) {
+        if (\strpos($version, 'beta') !== false) {
             return ReleaseStability::BETA;
         }
 
-        if (strpos($version, 'rc') !== false) {
+        if (\strpos($version, 'rc') !== false) {
             return ReleaseStability::RC;
         }
 
