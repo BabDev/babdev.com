@@ -44,6 +44,7 @@ class PackageRelease extends Model implements Sortable
     {
         return SlugOptions::create()
             ->generateSlugsFrom('version')
+            ->allowDuplicateSlugs()
             ->saveSlugsTo('slug');
     }
 
