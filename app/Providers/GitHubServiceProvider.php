@@ -9,10 +9,25 @@ use Github\HttpClient\Builder;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 
-class GitHubServiceProvider extends ServiceProvider
+class GitHubServiceProvider extends ServiceProvider implements DeferrableProvider
 {
+    public function provides()
+    {
+        return [
+            'github.api',
+            ApiConnector::class,
+
+            'github.client',
+            Client::class,
+
+            'github.http_client.builder',
+            Builder::class,
+        ];
+    }
+
     public function register()
     {
         $this->app->bind(

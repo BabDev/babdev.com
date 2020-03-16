@@ -14,11 +14,34 @@ use Http\Message\ResponseFactory;
 use Http\Message\StreamFactory;
 use Http\Message\StreamFactory\GuzzleStreamFactory;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 use Psr\Http\Client\ClientInterface;
 
-class HttpServiceProvider extends ServiceProvider
+class HttpServiceProvider extends ServiceProvider implements DeferrableProvider
 {
+    public function provides()
+    {
+        return [
+            'guzzle',
+            Guzzle::class,
+            GuzzleInterface::class,
+
+            'httplug',
+            HttpClient::class,
+            HttpAsyncClient::class,
+            ClientInterface::class,
+
+            'httplug.message_factory',
+            MessageFactory::class,
+            RequestFactory::class,
+            ResponseFactory::class,
+
+            'httplug.stream_factory',
+            StreamFactory::class,
+        ];
+    }
+
     public function register()
     {
         $this->app->bind(
