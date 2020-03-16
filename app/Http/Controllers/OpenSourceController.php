@@ -50,13 +50,13 @@ class OpenSourceController
         );
     }
 
-    public function packageRelease(Package $package, PackageRelease $packageRelease): Response
+    public function packageRelease(Package $package, string $packageRelease): Response
     {
         return $this->responseFactory->view(
             'open_source.package_release',
             [
                 'package' => $package,
-                'release' => $packageRelease,
+                'release' => $package->releases()->where('slug', '=', $packageRelease)->firstOrFail(),
             ]
         );
     }
