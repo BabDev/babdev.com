@@ -243,5 +243,71 @@ class PackageReleaseSeeder extends Seeder
     {
         /** @var Package $yetAnotherSocialPlugin */
         $yetAnotherSocialPlugin = Package::query()->where('name', '=', 'Yet-Another-Social-Plugin')->firstOrFail();
+
+        $releaseData = [
+            [
+                'version' => '1.0.0',
+                'slug' => '1-0-0',
+                'maturity' => ReleaseStability::STABLE,
+                'summary' => '<p>This is the initial release of this social plugin.</p>',
+                'changelog' => '',
+                'visible' => true,
+                'released_at' => Carbon::create(2011, 7, 28, 3, 0, 0, $this->utc),
+            ],
+            [
+                'version' => '1.0.1',
+                'slug' => '1-0-1',
+                'maturity' => ReleaseStability::STABLE,
+                'summary' => '<p>This release of Yet Another Social Plugin adds the ability to choose where the plugin is displayed in the article, adds three translations, and allows users to create a customized default.css.</p>',
+                'changelog' => '',
+                'visible' => true,
+                'released_at' => Carbon::create(2011, 8, 12, 17, 0, 0, $this->utc),
+            ],
+            [
+                'version' => '1.1.beta',
+                'slug' => '1-1-beta',
+                'maturity' => ReleaseStability::BETA,
+                'summary' => '<p>This release of Yet Another Social Plugin adds the Google Buzz and LinkedIn Share buttons as well as enhances international support.</p>',
+                'changelog' => '',
+                'visible' => true,
+                'released_at' => Carbon::create(2011, 9, 17, 13, 0, 0, $this->utc),
+            ],
+            [
+                'version' => '1.1.beta2',
+                'slug' => '1-1-beta2',
+                'maturity' => ReleaseStability::BETA,
+                'summary' => '<p>This release of Yet Another Social Plugin adds the LinkedIn Share button as well as enhances international support.</p>',
+                'changelog' => '',
+                'visible' => true,
+                'released_at' => Carbon::create(2012, 1, 16, 13, 30, 0, $this->utc),
+            ],
+            [
+                'version' => '1.1.0',
+                'slug' => '1-1-0',
+                'maturity' => ReleaseStability::STABLE,
+                'summary' => '<p>The 1.1 release series brings in three major new features. Visible to the user is the addition of the LinkedIn button. Invisible to the user is that the plugin now contains advanced processing logic to dynamically set each button\'s language based on first the article\'s settings, followed by the site\'s configuration, and falling back on English if your language is not available. Lastly, the ability to choose the views the buttons are displayed in has been added.</p>',
+                'changelog' => '',
+                'visible' => true,
+                'released_at' => Carbon::create(2012, 10, 23, 23, 0, 0, $this->utc),
+            ],
+            [
+                'version' => '2.0.0',
+                'slug' => '2-0-0',
+                'maturity' => ReleaseStability::STABLE,
+                'summary' => '<p>The 2.0 release is optimized for Joomla! 3.4 and adopts the core conventions for media and template paths within plugins. The plugin\'s code is restructured to enable proper HTTPS support on all sites and improves the supported languages with each API provider. Additionally the manner in which the Facebook Like button is built is updated for the current API support.</p>',
+                'changelog' => '',
+                'visible' => true,
+                'released_at' => Carbon::create(2015, 6, 22, 14, 0, 0, $this->utc),
+            ],
+        ];
+
+        foreach ($releaseData as $release) {
+            $yetAnotherSocialPlugin->releases()->firstOrCreate(
+                [
+                    'version' => $release['version'],
+                ],
+                $release
+            );
+        }
     }
 }
