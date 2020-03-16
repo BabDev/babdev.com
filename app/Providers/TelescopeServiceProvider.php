@@ -11,8 +11,6 @@ class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
 {
     public function register(): void
     {
-        // Telescope::night();
-
         $this->hideSensitiveRequestDetails();
 
         Telescope::filter(
@@ -43,21 +41,6 @@ class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
                 'x-csrf-token',
                 'x-xsrf-token',
             ]
-        );
-    }
-
-    protected function gate(): void
-    {
-        Gate::define(
-            'viewTelescope',
-            function ($user) {
-                return \in_array(
-                    $user->email,
-                    [
-                        //
-                    ]
-                );
-            }
         );
     }
 }
