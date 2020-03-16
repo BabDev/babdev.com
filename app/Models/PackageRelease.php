@@ -48,6 +48,29 @@ class PackageRelease extends Model implements Sortable
             ->saveSlugsTo('slug');
     }
 
+    protected function otherRecordExistsWithSlug(string $slug): bool
+    {
+        $key = $this->getKey();
+
+        if ($this->incrementing) {
+            $key ??= '0';
+        }
+
+        $query = static::query()->where($this->slugOptions->slugField, $slug)
+            ->where($this->getKeyName(), '!=', $key)
+            ->withoutGlobalScopes();
+
+        if ($this->package_id) {
+            $query->where('package_id', '!=', $this->package_id);
+        }
+
+        if ($this->usesSoftDeletes()) {
+            $query->withTrashed();
+        }
+
+        return $query->exists();
+    }
+
     public function buildSortQuery(): Builder
     {
         return static::query()->where('package_id', '=', $this->package_id);
