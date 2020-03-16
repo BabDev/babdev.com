@@ -41,7 +41,7 @@
                     {!! $release->summary !!}
                 </div>
                 <div class="package-release__links">
-                    <a class="btn btn-brand" href="#">Details</a>
+                    <a class="btn btn-brand" href="{{ route('open-source.package.release', ['package' => $package, 'package_release' => $release]) }}">Details</a>
                 </div>
             </div>
         @empty
