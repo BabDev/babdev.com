@@ -19,7 +19,7 @@ class PackagistServiceProvider extends ServiceProvider implements DeferrableProv
 
     public function register()
     {
-        $this->app->singleton(
+        $this->app->bind(
             'packagist.api',
             static function (Application $app): Packagist {
                 return new Packagist($app->make('guzzle'));
