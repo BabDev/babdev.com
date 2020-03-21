@@ -13,9 +13,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Artisan::call('import:github-repositories');
-        Artisan::call('import:packagist-downloads');
 
         $this->call(PackageSeeder::class);
         $this->call(PackageReleaseSeeder::class);
+
+        Artisan::call('import:packagist-downloads');
     }
 }
