@@ -17,6 +17,7 @@ class CreatePackageReleasesTable extends Migration
             'package_releases',
             function (Blueprint $table) {
                 $table->bigIncrements('id');
+                $table->foreignId('package_id')->constrained()->onDelete('cascade');
                 $table->string('version');
                 $table->string('slug');
                 $table->string('maturity');
@@ -26,9 +27,6 @@ class CreatePackageReleasesTable extends Migration
                 $table->dateTime('released_at')->nullable();
                 $table->integer('ordering');
                 $table->timestamps();
-
-                $table->bigInteger('package_id')->nullable()->unsigned()->index();
-                $table->foreign('package_id')->references('id')->on('packages')->onDelete('cascade');
             }
         );
     }
