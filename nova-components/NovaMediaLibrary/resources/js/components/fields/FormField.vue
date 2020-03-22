@@ -15,21 +15,6 @@
                     :first-error="firstError"
                     editable
                 />
-
-                <button
-                    type="button"
-                    class="form-file-btn btn btn-default btn-primary mt-2"
-                    @click="openMediaGallery"
-                >
-                    Add Existing File
-                </button>
-
-                <media-gallery
-                    :collection="field.attribute"
-                    :open="mediaGalleryOpen"
-                    @close="closeMediaGallery"
-                    @select="addItem"
-                />
             </div>
         </template>
     </default-field>
@@ -37,20 +22,18 @@
 
 <script>
     import { FormField, HandlesValidationErrors } from 'laravel-nova';
-    import MediaGallery from '../MediaGallery';
     import ResourceGallery from '../ResourceGallery';
 
     export default {
         mixins: [FormField, HandlesValidationErrors],
 
-        components: { MediaGallery, ResourceGallery },
+        components: { ResourceGallery },
 
         props: ['resourceName', 'resourceId', 'field'],
 
         data() {
             return {
                 hasSetInitialValue: false,
-                mediaGalleryOpen: false,
             };
         },
 
@@ -91,25 +74,6 @@
              */
             handleChange(value) {
                 this.value = value;
-            },
-
-            /**
-             * Add an item to the field's internal value
-             */
-            addItem(item) {
-                if (!this.field.multiple) {
-                    this.value.splice(0, 1);
-                }
-
-                this.value.push(item);
-            },
-
-            openMediaGallery() {
-                this.mediaGalleryOpen = true;
-            },
-
-            closeMediaGallery() {
-                this.mediaGalleryOpen = false;
             },
         },
     };
