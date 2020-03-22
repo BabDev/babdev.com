@@ -20,7 +20,7 @@ class FieldServiceProvider extends ServiceProvider
 
             Route::middleware(['nova', Authorize::class])
                 ->prefix('nova-vendor/babdev/nova-media-library')
-                ->group(__DIR__.'/../routes/api.php');
+                ->group(__DIR__ . '/../routes/api.php');
         });
 
         Nova::serving(static function (ServingNova $event) {

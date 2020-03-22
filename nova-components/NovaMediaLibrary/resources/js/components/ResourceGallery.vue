@@ -81,7 +81,7 @@
 
         data() {
             return {
-                files: [],
+                files: this.value,
             };
         },
 
@@ -96,6 +96,12 @@
                 }
 
                 return 'Upload New File';
+            },
+        },
+
+        watch: {
+            value(value) {
+                this.files = value;
             },
         },
 

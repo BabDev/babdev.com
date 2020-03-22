@@ -11,6 +11,6 @@ class MediaResource extends JsonResource
 
     public function toArray($request)
     {
-        return array_merge($this->resource->toArray(), ['__media_urls__' => $this->getConversionUrls($this->resource)]);
+        return \array_merge($this->resource->toArray(), ['__media_urls__' => $this->getConversionUrls($this->resource)]);
     }
 }

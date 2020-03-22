@@ -394,7 +394,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      files: []
+      files: this.value
     };
   },
   computed: {
@@ -407,6 +407,11 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       return 'Upload New File';
+    }
+  },
+  watch: {
+    value: function value(_value) {
+      this.files = _value;
     }
   },
   methods: {
