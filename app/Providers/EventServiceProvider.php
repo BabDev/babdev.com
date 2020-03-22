@@ -19,7 +19,7 @@ class EventServiceProvider extends ServiceProvider
          */
 
         MediaHasBeenAdded::class => [
-            AddDefaultMediaCustomProperties::class
+            AddDefaultMediaCustomProperties::class,
         ],
     ];
 }

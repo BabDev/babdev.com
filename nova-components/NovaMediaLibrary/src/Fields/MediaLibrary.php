@@ -144,7 +144,7 @@ abstract class MediaLibrary extends Field
         return (new Collection($data))
             ->filter(
                 static function ($value) use ($addedMediaIds) {
-                    return (!($value instanceof UploadedFile)) && !(in_array((int) $value, $addedMediaIds));
+                    return (!($value instanceof UploadedFile)) && !(\in_array((int) $value, $addedMediaIds));
                 }
             )->map(
                 static function ($mediaModelId, int $index) use ($request, $model, $collection) {
