@@ -170,6 +170,7 @@ return [
          * Application Service Providers...
          */
         BabDev\Providers\AppServiceProvider::class,
+        BabDev\Providers\EventServiceProvider::class,
         BabDev\Providers\GitHubServiceProvider::class,
         BabDev\Providers\HttpServiceProvider::class,
         BabDev\Providers\PackagistServiceProvider::class,
