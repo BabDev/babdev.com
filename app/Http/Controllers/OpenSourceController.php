@@ -52,11 +52,15 @@ class OpenSourceController
 
     public function packageRelease(Package $package, string $packageRelease): Response
     {
+        /** @var PackageRelease $release */
+        $release = $package->releases()->where('slug', '=', $packageRelease)->firstOrFail();
+
         return $this->responseFactory->view(
             'open_source.package_release',
             [
                 'package' => $package,
-                'release' => $package->releases()->where('slug', '=', $packageRelease)->firstOrFail(),
+                'release' => $release,
+                'media'   => $release->getMedia('downloads'),
             ]
         );
     }

@@ -1,5 +1,6 @@
 @php /** @var \BabDev\Models\Package $package */ @endphp
 @php /** @var \BabDev\Models\PackageRelease $release */ @endphp
+@php /** @var \Illuminate\Support\Collection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media */ @endphp
 
 @extends('layouts.app')
 
@@ -35,6 +36,51 @@
                     <dt>Released On</dt>
                     <dd>{{ $release->released_at->format('F j, Y') }}</dd>
                 </dl>
+            </div>
+            <div class="package-release__downloads release-downloads{{ $media->isEmpty() ? ' release-downloads--no-downloads' : '' }}">
+                @unless($media->isEmpty())
+                    <div class="release-downloads__header">
+                        <h3>Downloads</h3>
+                    </div>
+                    @foreach($media as $download)
+                        <div class="release-download">
+                            <div class="release-download__title">
+                                <h4>{{ $download->getCustomProperty('display_title', $download->file_name) }}</h4>
+                            </div>
+                            @if($download->hasCustomProperty('description'))
+                                <div class="release-download__description">
+                                    {!! $download->getCustomProperty('description') !!}
+                                </div>
+                            @endif
+                            <div class="release-download__info">
+                                <dl>
+                                    @if($download->hasCustomProperty('downloads'))
+                                        <dt>Downloads</dt>
+                                        <dd>{{ number_format((int) $download->getCustomProperty('downloads')) }}</dd>
+                                    @endif
+                                    <dt>File Size</dt>
+                                    <dd>{{ $download->getHumanReadableSizeAttribute() }}</dd>
+                                    @if($download->hasCustomProperty('md5_hash'))
+                                        <dt>MD5 Signature</dt>
+                                        <dd>{{ $download->getCustomProperty('md5_hash') }}</dd>
+                                    @endif
+                                    @if($download->hasCustomProperty('sha1_hash'))
+                                        <dt>SHA1 Signature</dt>
+                                        <dd>{{ $download->getCustomProperty('sha1_hash') }}</dd>
+                                    @endif
+                                </dl>
+                            </div>
+                            <div class="release-download__links">
+                                <a class="btn btn-brand" href="{{ route('open-source.download-release-file', ['media' => $download]) }}">Download</a>
+                            </div>
+                        </div>
+                    @endforeach
+                @else
+                    <div class="release-downloads__no-downloads alert alert-info">
+                        <div class="alert-heading">No Downloads</div>
+                        <div>Sorry, there are no downloads available for this release.</div>
+                    </div>
+                @endunless
             </div>
         </div>
         {{ Breadcrumbs::render('open-source.package.release', $package, $release) }}

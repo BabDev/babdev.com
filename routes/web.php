@@ -9,6 +9,11 @@ $router->view('/', 'homepage')->name('homepage');
 $router->view('/privacy', 'privacy')->name('privacy');
 
 $router->get(
+    '/open-source/download/{media}',
+    [OpenSourceController::class, 'downloadReleaseFile']
+)->name('open-source.download-release-file');
+
+$router->get(
     '/open-source/packages',
     [OpenSourceController::class, 'packages']
 )->name('open-source.packages');
