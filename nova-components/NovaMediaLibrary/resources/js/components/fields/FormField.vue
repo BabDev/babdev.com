@@ -5,9 +5,8 @@
     >
         <template slot="field">
             <div class="px-8 pt-6">
-                <!-- <gallery
+                <resource-gallery
                     v-if="hasSetInitialValue"
-                    slot="value"
                     ref="gallery"
                     v-model="value"
                     :field="field"
@@ -15,25 +14,22 @@
                     :has-error="hasError"
                     :first-error="firstError"
                     editable
-                    custom-properties
-                /> -->
+                />
 
-                <div>
-                    <button
-                        type="button"
-                        class="form-file-btn btn btn-default btn-primary mt-2"
-                        @click="openMediaGallery"
-                    >
-                        Add Media
-                    </button>
+                <button
+                    type="button"
+                    class="form-file-btn btn btn-default btn-primary mt-2"
+                    @click="openMediaGallery"
+                >
+                    Add Existing File
+                </button>
 
-                    <media-gallery
-                        :collection="field.attribute"
-                        :open="mediaGalleryOpen"
-                        @close="closeMediaGallery"
-                        @select="addItem"
-                    />
-                </div>
+                <media-gallery
+                    :collection="field.attribute"
+                    :open="mediaGalleryOpen"
+                    @close="closeMediaGallery"
+                    @select="addItem"
+                />
             </div>
         </template>
     </default-field>
@@ -42,11 +38,12 @@
 <script>
     import { FormField, HandlesValidationErrors } from 'laravel-nova';
     import MediaGallery from '../MediaGallery';
+    import ResourceGallery from '../ResourceGallery';
 
     export default {
         mixins: [FormField, HandlesValidationErrors],
 
-        components: { MediaGallery },
+        components: { MediaGallery, ResourceGallery },
 
         props: ['resourceName', 'resourceId', 'field'],
 
@@ -69,6 +66,7 @@
                 }
 
                 this.value = value;
+                this.hasSetInitialValue = true;
             },
 
             /**
