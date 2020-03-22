@@ -331,11 +331,23 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ResourceGallery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ResourceGallery */ "./resources/js/components/ResourceGallery.vue");
 //
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    ResourceGallery: _ResourceGallery__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
   props: ['resource', 'resourceName', 'resourceId', 'field']
 });
 
@@ -32386,7 +32398,22 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("panel-item", { attrs: { field: _vm.field } })
+  return _c(
+    "panel-item",
+    { attrs: { field: _vm.field } },
+    [
+      _c("resource-gallery", {
+        attrs: {
+          slot: "value",
+          value: _vm.field.value,
+          field: _vm.field,
+          multiple: _vm.field.multiple
+        },
+        slot: "value"
+      })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

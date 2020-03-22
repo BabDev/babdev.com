@@ -1,9 +1,20 @@
 <template>
-    <panel-item :field="field" />
+    <panel-item :field="field">
+        <resource-gallery
+            slot="value"
+            :value="field.value"
+            :field="field"
+            :multiple="field.multiple"
+        />
+    </panel-item>
 </template>
 
 <script>
-export default {
-    props: ['resource', 'resourceName', 'resourceId', 'field'],
-}
+    import ResourceGallery from '../ResourceGallery';
+
+    export default {
+        components: { ResourceGallery },
+
+        props: ['resource', 'resourceName', 'resourceId', 'field'],
+    }
 </script>
