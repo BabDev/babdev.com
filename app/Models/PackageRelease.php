@@ -46,6 +46,7 @@ class PackageRelease extends Model implements HasMedia, Sortable
     {
         return SlugOptions::create()
             ->generateSlugsFrom('version')
+            ->doNotGenerateSlugsOnUpdate()
             ->allowDuplicateSlugs()
             ->saveSlugsTo('slug');
     }
