@@ -48,6 +48,13 @@ return [
             'root' => storage_path('app'),
         ],
 
+        'downloads' => [
+            'driver' => 'local',
+            'root' => env('APP_DOWNLOADS_PATH', storage_path('app/downloads')),
+            'url' => env('APP_URL').'/downloads',
+            'visibility' => 'public',
+        ],
+
         'logos' => [
             'driver' => 'local',
             'root' => env('APP_LOGOS_PATH', storage_path('app/logos')),
@@ -85,8 +92,8 @@ return [
     */
 
     'links' => [
-        public_path('downloads') => storage_path('app/downloads'),
-        public_path('logos') => storage_path('app/logos'),
+        public_path('downloads') => env('APP_DOWNLOADS_PATH', storage_path('app/downloads')),
+        public_path('logos') => env('APP_LOGOS_PATH', storage_path('app/logos')),
     ],
 
 ];
