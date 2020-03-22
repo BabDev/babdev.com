@@ -1,5 +1,6 @@
 <?php
 
+use BabDev\NovaMediaLibrary\Http\Controllers\DownloadMediaController;
 use BabDev\NovaMediaLibrary\Http\Controllers\MediaController;
 use Illuminate\Support\Facades\Route;
 
@@ -13,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 | by your tool's "Authorize" middleware by default. Now, go build!
 |
 */
+
+Route::get('/download/{media}', DownloadMediaController::class);
 
 Route::get('/media', MediaController::class);
