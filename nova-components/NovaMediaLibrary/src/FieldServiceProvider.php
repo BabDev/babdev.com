@@ -2,11 +2,11 @@
 
 namespace BabDev\NovaMediaLibrary;
 
-use Illuminate\Auth\Middleware\Authorize;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Nova\Events\ServingNova;
+use Laravel\Nova\Http\Middleware\Authorize;
 use Laravel\Nova\Nova;
 
 class FieldServiceProvider extends ServiceProvider

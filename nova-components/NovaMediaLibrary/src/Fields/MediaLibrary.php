@@ -2,6 +2,7 @@
 
 namespace BabDev\NovaMediaLibrary\Fields;
 
+use BabDev\NovaMediaLibrary\Concerns\HandlesUrlConversions;
 use Illuminate\Support\Collection;
 use Laravel\Nova\Fields\Field;
 use Spatie\MediaLibrary\HasMedia;
@@ -9,6 +10,8 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 abstract class MediaLibrary extends Field
 {
+    use HandlesUrlConversions;
+
     public $component = 'media-library-field';
 
     public $showOnIndex = false;
@@ -37,12 +40,5 @@ abstract class MediaLibrary extends Field
                     );
                 }
             );
-    }
-
-    protected function getConversionUrls(Media $media): array
-    {
-        return [
-            '__original__' => $media->getFullUrl(),
-        ];
     }
 }

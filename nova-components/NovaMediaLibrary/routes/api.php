@@ -1,5 +1,8 @@
 <?php
 
+use BabDev\NovaMediaLibrary\Http\Controllers\MediaController;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Tool API Routes
@@ -10,3 +13,5 @@
 | by your tool's "Authorize" middleware by default. Now, go build!
 |
 */
+
+Route::get('/media', MediaController::class);

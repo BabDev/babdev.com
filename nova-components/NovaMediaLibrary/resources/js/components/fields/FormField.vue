@@ -22,19 +22,17 @@
                     <button
                         type="button"
                         class="form-file-btn btn btn-default btn-primary mt-2"
-                        @click="mediaGalleryOpen = true"
+                        @click="openMediaGallery"
                     >
                         Add Media
                     </button>
 
-                    <portal to="modals">
-                        <media-gallery
-                            v-if="mediaGalleryOpen"
-                            :open="mediaGalleryOpen"
-                            @close="mediaGalleryOpen = false"
-                            @select="addItem"
-                        />
-                    </portal>
+                    <media-gallery
+                        :collection="field.attribute"
+                        :open="mediaGalleryOpen"
+                        @close="closeMediaGallery"
+                        @select="addItem"
+                    />
                 </div>
             </div>
         </template>
@@ -106,6 +104,14 @@
                 }
 
                 this.value.push(item);
+            },
+
+            openMediaGallery() {
+                this.mediaGalleryOpen = true;
+            },
+
+            closeMediaGallery() {
+                this.mediaGalleryOpen = false;
             },
         },
     };
