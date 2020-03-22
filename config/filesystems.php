@@ -85,6 +85,7 @@ return [
     */
 
     'links' => [
+        public_path('downloads') => storage_path('app/downloads'),
         public_path('logos') => storage_path('app/logos'),
     ],
 

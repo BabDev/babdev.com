@@ -3,6 +3,7 @@
 namespace BabDev\Nova;
 
 use BabDev\Models\PackageRelease as PackageReleaseModel;
+use BabDev\NovaMediaLibrary\Fields\Files;
 use BabDev\ReleaseStability;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
@@ -66,6 +67,9 @@ class PackageRelease extends Resource
             DateTime::make('Released At'),
 
             OrderField::make('Ordering', 'id'),
+
+            Files::make('Downloads', 'downloads')
+                ->multiple(),
         ];
     }
 }

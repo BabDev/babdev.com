@@ -1,12 +1,5 @@
 {
     "private": true,
-    "engines": {
-        "node": ">=10.13.0",
-        "npm": ">=6.4.1"
-    },
-    "browserslist": [
-        "last 2 versions"
-    ],
     "scripts": {
         "dev": "npm run development",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -16,12 +9,12 @@
         "prod": "npm run production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
-    "dependencies": {
-        "vue": "^2.5.0"
-    },
     "devDependencies": {
         "cross-env": "^5.0.0",
-        "laravel-mix": "^5.0.1",
+        "laravel-mix": "^5.0",
         "laravel-nova": "^1.0"
+    },
+    "dependencies": {
+        "vue": "^2.5.0"
     }
 }

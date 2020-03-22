@@ -7,12 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
-class PackageRelease extends Model implements Sortable
+class PackageRelease extends Model implements HasMedia, Sortable
 {
-    use HasSlug, SortableTrait;
+    use HasSlug, InteractsWithMedia, SortableTrait;
 
     public $sortable = [
         'order_column_name' => 'ordering',
@@ -69,6 +71,11 @@ class PackageRelease extends Model implements Sortable
         }
 
         return $query->exists();
+    }
+
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('downloads')->useDisk('downloads');
     }
 
     public function buildSortQuery(): Builder

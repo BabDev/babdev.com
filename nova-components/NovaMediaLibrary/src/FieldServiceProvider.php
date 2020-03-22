@@ -19,13 +19,12 @@ class FieldServiceProvider extends ServiceProvider
             }
 
             Route::middleware(['nova', Authorize::class])
-                ->prefix('nova-vendor/babdev/-nova-media-library')
+                ->prefix('nova-vendor/babdev/nova-media-library')
                 ->group(__DIR__.'/../routes/api.php');
         });
 
         Nova::serving(static function (ServingNova $event) {
-            Nova::script('nova-media-library', __DIR__ . '/../dist/js/field.js');
-            Nova::style('nova-media-library', __DIR__ . '/../dist/css/field.css');
+            Nova::script('media-library-field', __DIR__ . '/../dist/js/field.js');
         });
     }
 }
