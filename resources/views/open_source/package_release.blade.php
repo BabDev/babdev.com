@@ -4,7 +4,7 @@
 
 @extends('layouts.app')
 
-@section('title', sprintf('%s %s Release | %s', $package->display_name, $package->version, config('app.name', 'Laravel')))
+@section('title', sprintf('%s %s Release | %s', $package->display_name, $release->version, config('app.name', 'Laravel')))
 
 @section('content')
     <section class="package-title{{ $package->logo ? ' package-title--has-logo' : '' }} pt-4">
