@@ -20,13 +20,13 @@
         "davejamesmiller/laravel-breadcrumbs": "^5.3.2",
         "guzzlehttp/guzzle": "^6.5.2",
         "knplabs/github-api": "^2.13",
-        "laravel/framework": "^7.2.2",
+        "laravel/framework": "^7.3",
         "laravel/nova": "^3.1",
         "michielkempen/nova-order-field": "^2.0.4",
         "php-http/guzzle6-adapter": "^2.0.1",
-        "spatie/laravel-medialibrary": "^8.0.3",
+        "spatie/laravel-medialibrary": "^8.0.6",
         "spatie/laravel-sluggable": "^2.4",
-        "spatie/packagist-api": "^1.2.1"
+        "spatie/packagist-api": "^1.3.1"
     },
     "require-dev": {
         "facade/ignition": "^2.0.2",
