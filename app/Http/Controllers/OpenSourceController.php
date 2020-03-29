@@ -38,6 +38,16 @@ class OpenSourceController
         $mediaModel->setCustomProperty('downloads', $downloads);
         $mediaModel->save();
 
+        // Traverse up to the package and increment its counter too
+        /** @var PackageRelease $release */
+        $release = $mediaModel->model;
+
+        /** @var Package $package */
+        $package = $release->package;
+        $package->downloads++;
+
+        $package->save();
+
         return $mediaModel->toResponse($request);
     }
 
