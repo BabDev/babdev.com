@@ -158,6 +158,13 @@ class PackageReleaseSeeder extends Seeder
                 'changelog' => '',
                 'visible' => true,
                 'released_at' => Carbon::create(2011, 10, 17, 13, 0, 0, $this->utc),
+                'files' => [
+                    [
+                        'filename' => 'pkg_podcastmanager_1.8.1.zip',
+                        'display_title' => 'Podcast Manager 1.8.1',
+                        'description' => 'This is the release package for Podcast Manager.',
+                    ],
+                ],
             ],
             [
                 'version' => '1.8.2',
@@ -167,6 +174,23 @@ class PackageReleaseSeeder extends Seeder
                 'changelog' => '',
                 'visible' => true,
                 'released_at' => Carbon::create(2011, 10, 17, 20, 30, 0, $this->utc),
+                'files' => [
+                    [
+                        'filename' => 'pkg_podcastmanager_1.8.2.zip',
+                        'display_title' => 'Podcast Manager 1.8.2',
+                        'description' => 'This is the release package for Podcast Manager.',
+                    ],
+                    [
+                        'filename' => 'files_podcastmanager_hathor_1.8.2.zip',
+                        'display_title' => 'Hathor HTML Overrides',
+                        'description' => 'This package contains HTML overrides for the Hathor administrator template for the Podcast Manager component.',
+                    ],
+                    [
+                        'filename' => 'files_podcastmanager_minima_1.8.2.zip',
+                        'display_title' => 'Minima HTML Overrides',
+                        'description' => 'This package contains HTML overrides for the Minima administrator template for the Podcast Manager component.',
+                    ],
+                ],
             ],
             [
                 'version' => '1.8.3',
@@ -176,6 +200,23 @@ class PackageReleaseSeeder extends Seeder
                 'changelog' => '',
                 'visible' => true,
                 'released_at' => Carbon::create(2012, 2, 10, 20, 30, 0, $this->utc),
+                'files' => [
+                    [
+                        'filename' => 'pkg_podcastmanager_1.8.3.zip',
+                        'display_title' => 'Podcast Manager 1.8.3',
+                        'description' => 'This is the release package for Podcast Manager.',
+                    ],
+                    [
+                        'filename' => 'files_podcastmanager_hathor_1.8.3.zip',
+                        'display_title' => 'Hathor HTML Overrides',
+                        'description' => 'This package contains HTML overrides for the Hathor administrator template for the Podcast Manager component.',
+                    ],
+                    [
+                        'filename' => 'files_podcastmanager_minima_1.8.3.zip',
+                        'display_title' => 'Minima HTML Overrides',
+                        'description' => 'This package contains HTML overrides for the Minima administrator template for the Podcast Manager component.',
+                    ],
+                ],
             ],
             [
                 'version' => '2.0.0',
@@ -185,6 +226,18 @@ class PackageReleaseSeeder extends Seeder
                 'changelog' => '',
                 'visible' => true,
                 'released_at' => Carbon::create(2012, 5, 23, 11, 0, 0, $this->utc),
+                'files' => [
+                    [
+                        'filename' => 'pkg_podcastmanager_2.0.0.zip',
+                        'display_title' => 'Podcast Manager 2.0.0',
+                        'description' => 'This is the release package for Podcast Manager.',
+                    ],
+                    [
+                        'filename' => 'files_podcastmanager_hathor_2.0.0.zip',
+                        'display_title' => 'Hathor HTML Overrides',
+                        'description' => 'This package contains HTML overrides for the Hathor administrator template for the Podcast Manager component.',
+                    ],
+                ],
             ],
             [
                 'version' => '2.0.1',
@@ -194,6 +247,18 @@ class PackageReleaseSeeder extends Seeder
                 'changelog' => '',
                 'visible' => true,
                 'released_at' => Carbon::create(2012, 5, 24, 17, 40, 0, $this->utc),
+                'files' => [
+                    [
+                        'filename' => 'pkg_podcastmanager_2.0.1.zip',
+                        'display_title' => 'Podcast Manager 2.0.1',
+                        'description' => 'This is the release package for Podcast Manager.',
+                    ],
+                    [
+                        'filename' => 'files_podcastmanager_hathor_2.0.1.zip',
+                        'display_title' => 'Hathor HTML Overrides',
+                        'description' => 'This package contains HTML overrides for the Hathor administrator template for the Podcast Manager component.',
+                    ],
+                ],
             ],
             [
                 'version' => '2.1.0.rc',
@@ -212,6 +277,18 @@ class PackageReleaseSeeder extends Seeder
                 'changelog' => '',
                 'visible' => true,
                 'released_at' => Carbon::create(2013, 8, 28, 17, 0, 0, $this->utc),
+                'files' => [
+                    [
+                        'filename' => 'pkg_podcastmanager_2.1.0.zip',
+                        'display_title' => 'Podcast Manager 2.1.0',
+                        'description' => 'This is the release package for Podcast Manager.',
+                    ],
+                    [
+                        'filename' => 'files_podcastmanager_hathor_2.1.0.zip',
+                        'display_title' => 'Hathor HTML Overrides',
+                        'description' => 'This package contains HTML overrides for the Hathor administrator template for the Podcast Manager component.',
+                    ],
+                ],
             ],
             [
                 'version' => '2.2.0',
@@ -221,6 +298,18 @@ class PackageReleaseSeeder extends Seeder
                 'changelog' => '',
                 'visible' => true,
                 'released_at' => Carbon::create(2015, 6, 22, 14, 0, 0, $this->utc),
+                'files' => [
+                    [
+                        'filename' => 'pkg_podcastmanager_2.2.0.zip',
+                        'display_title' => 'Podcast Manager 2.2.0',
+                        'description' => 'This is the release package for Podcast Manager.',
+                    ],
+                    [
+                        'filename' => 'files_podcastmanager_hathor_2.2.0.zip',
+                        'display_title' => 'Hathor HTML Overrides',
+                        'description' => 'This package contains HTML overrides for the Hathor administrator template for the Podcast Manager component.',
+                    ],
+                ],
             ],
         ];
 
