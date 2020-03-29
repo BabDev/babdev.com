@@ -1,6 +1,7 @@
 <?php
 
 use BabDev\Models\Package;
+use BabDev\Models\PackageRelease;
 use BabDev\ReleaseStability;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
@@ -224,12 +225,7 @@ class PackageReleaseSeeder extends Seeder
         ];
 
         foreach ($releaseData as $release) {
-            $podcastManager->releases()->firstOrCreate(
-                [
-                    'version' => $release['version'],
-                ],
-                $release
-            );
+            $this->createReleaseWithMedia($podcastManager, $release);
         }
     }
 
@@ -253,6 +249,13 @@ class PackageReleaseSeeder extends Seeder
                 'changelog' => '',
                 'visible' => true,
                 'released_at' => Carbon::create(2011, 7, 28, 3, 0, 0, $this->utc),
+                'files' => [
+                    [
+                        'filename' => 'plg_content_yetanothersocial_100.zip',
+                        'display_title' => 'Yet Another Social Plugin 1.0.0',
+                        'description' => 'This is the installation package for Yet Another Social Plugin.',
+                    ],
+                ],
             ],
             [
                 'version' => '1.0.1',
@@ -262,6 +265,13 @@ class PackageReleaseSeeder extends Seeder
                 'changelog' => '',
                 'visible' => true,
                 'released_at' => Carbon::create(2011, 8, 12, 17, 0, 0, $this->utc),
+                'files' => [
+                    [
+                        'filename' => 'plg_content_yetanothersocial_101.zip',
+                        'display_title' => 'Yet Another Social Plugin 1.0.1',
+                        'description' => 'This is the installation package for Yet Another Social Plugin.',
+                    ],
+                ],
             ],
             [
                 'version' => '1.1.beta',
@@ -271,6 +281,13 @@ class PackageReleaseSeeder extends Seeder
                 'changelog' => '',
                 'visible' => true,
                 'released_at' => Carbon::create(2011, 9, 17, 13, 0, 0, $this->utc),
+                'files' => [
+                    [
+                        'filename' => 'plg_content_yetanothersocial_11beta.zip',
+                        'display_title' => 'Yet Another Social Plugin 1.1 Beta',
+                        'description' => 'This is the installation package for Yet Another Social Plugin.',
+                    ],
+                ],
             ],
             [
                 'version' => '1.1.beta2',
@@ -280,6 +297,13 @@ class PackageReleaseSeeder extends Seeder
                 'changelog' => '',
                 'visible' => true,
                 'released_at' => Carbon::create(2012, 1, 16, 13, 30, 0, $this->utc),
+                'files' => [
+                    [
+                        'filename' => 'plg_content_yetanothersocial_1.1.beta2.zip',
+                        'display_title' => 'Yet Another Social Plugin 1.1 Beta 2',
+                        'description' => 'This is the installation package for Yet Another Social Plugin.',
+                    ],
+                ],
             ],
             [
                 'version' => '1.1.0',
@@ -289,6 +313,13 @@ class PackageReleaseSeeder extends Seeder
                 'changelog' => '',
                 'visible' => true,
                 'released_at' => Carbon::create(2012, 10, 23, 23, 0, 0, $this->utc),
+                'files' => [
+                    [
+                        'filename' => 'plg_content_yetanothersocial_1.1.0.zip',
+                        'display_title' => 'Yet Another Social Plugin 1.1.0',
+                        'description' => 'This is the installation package for Yet Another Social Plugin.',
+                    ],
+                ],
             ],
             [
                 'version' => '2.0.0',
@@ -298,16 +329,42 @@ class PackageReleaseSeeder extends Seeder
                 'changelog' => '',
                 'visible' => true,
                 'released_at' => Carbon::create(2015, 6, 22, 14, 0, 0, $this->utc),
+                'files' => [
+                    [
+                        'filename' => 'plg_content_yetanothersocial_2.0.0.zip',
+                        'display_title' => 'Yet Another Social Plugin 2.0.0',
+                        'description' => 'This is the installation package for Yet Another Social Plugin.',
+                    ],
+                ],
             ],
         ];
 
         foreach ($releaseData as $release) {
-            $yetAnotherSocialPlugin->releases()->firstOrCreate(
-                [
-                    'version' => $release['version'],
-                ],
-                $release
-            );
+            $this->createReleaseWithMedia($yetAnotherSocialPlugin, $release);
+        }
+    }
+
+    private function createReleaseWithMedia(Package $package, array $release): void
+    {
+        $files = $release['files'] ?? [];
+        unset($release['files']);
+
+        /** @var PackageRelease $packageRelease */
+        $packageRelease = $package->releases()->firstOrCreate(
+            [
+                'version' => $release['version'],
+            ],
+            $release
+        );
+
+        foreach ($files as $file) {
+            if (file_exists(storage_path("app/packages/{$file['filename']}"))) {
+                $packageRelease->copyMedia(storage_path("app/packages/{$file['filename']}"))
+                    ->toMediaCollection('downloads')
+                    ->setCustomProperty('display_title', $file['display_title'])
+                    ->setCustomProperty('description', $file['description'])
+                    ->save();
+            }
         }
     }
 }
