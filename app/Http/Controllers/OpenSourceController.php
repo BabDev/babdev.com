@@ -5,8 +5,12 @@ namespace BabDev\Http\Controllers;
 use BabDev\Models\Package;
 use BabDev\Models\PackageRelease;
 use Illuminate\Contracts\Routing\ResponseFactory;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class OpenSourceController
 {
@@ -15,6 +19,26 @@ class OpenSourceController
     public function __construct(ResponseFactory $responseFactory)
     {
         $this->responseFactory = $responseFactory;
+    }
+
+    public function downloadReleaseFile(Request $request, int $media): StreamedResponse
+    {
+        $mediaClass = config('media-library.media_model');
+
+        /** @var Builder $query */
+        $query = $mediaClass::query();
+
+        /** @var Media $mediaModel */
+        $mediaModel = $query->findOrFail($media);
+
+        // Increment the download counter
+        $downloads = $mediaModel->getCustomProperty('downloads', 0);
+        $downloads++;
+
+        $mediaModel->setCustomProperty('downloads', $downloads);
+        $mediaModel->save();
+
+        return $mediaModel->toResponse($request);
     }
 
     public function packages(): Response
