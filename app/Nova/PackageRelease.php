@@ -3,8 +3,8 @@
 namespace BabDev\Nova;
 
 use BabDev\Models\PackageRelease as PackageReleaseModel;
-use BabDev\NovaMediaLibrary\Fields\Files;
 use BabDev\ReleaseStability;
+use Ebess\AdvancedNovaMediaLibrary\Fields\Files;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
@@ -69,7 +69,12 @@ class PackageRelease extends Resource
             OrderField::make('Ordering', 'id'),
 
             Files::make('Downloads', 'downloads')
-                ->multiple(),
+                ->enableExistingMedia()
+                ->customPropertiesFields(
+                    [
+                        Text::make('Display Title', 'display_title'),
+                    ]
+                ),
         ];
     }
 }

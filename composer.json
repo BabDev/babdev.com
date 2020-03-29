@@ -9,15 +9,15 @@
             "url": "https://nova.laravel.com"
         },
         {
-            "type": "path",
-            "url": "./nova-components/NovaMediaLibrary"
+            "type": "vcs",
+            "url": "https://github.com/bkintanar/advanced-nova-media-library"
         }
     ],
     "require": {
         "php": "^7.4",
         "babdev/laravel-server-push-manager": "^1.4",
-        "babdev/nova-media-library": "*",
         "davejamesmiller/laravel-breadcrumbs": "^5.3.2",
+        "ebess/advanced-nova-media-library": "dev-master",
         "guzzlehttp/guzzle": "^6.5.2",
         "knplabs/github-api": "^2.13",
         "laravel/framework": "^7.3",
