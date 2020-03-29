@@ -73,6 +73,7 @@ class PackageRelease extends Resource
                 ->customPropertiesFields(
                     [
                         Text::make('Display Title', 'display_title'),
+                        Trix::make('Description', 'description'),
                     ]
                 ),
         ];
