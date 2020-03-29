@@ -51,7 +51,6 @@ return [
         'downloads' => [
             'driver' => 'local',
             'root' => env('APP_DOWNLOADS_PATH', storage_path('app/downloads')),
-            'url' => env('APP_URL').'/downloads',
             'visibility' => 'public',
         ],
 
@@ -59,13 +58,6 @@ return [
             'driver' => 'local',
             'root' => env('APP_LOGOS_PATH', storage_path('app/logos')),
             'url' => env('APP_URL').'/logos',
-            'visibility' => 'public',
-        ],
-
-        'public' => [
-            'driver' => 'local',
-            'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
 
@@ -92,7 +84,6 @@ return [
     */
 
     'links' => [
-        public_path('downloads') => env('APP_DOWNLOADS_PATH', storage_path('app/downloads')),
         public_path('logos') => env('APP_LOGOS_PATH', storage_path('app/logos')),
     ],
 
