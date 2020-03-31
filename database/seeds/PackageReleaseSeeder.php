@@ -677,7 +677,7 @@ class PackageReleaseSeeder extends Seeder
         );
 
         foreach ($files as $file) {
-            if (file_exists(storage_path("app/packages/{$file['filename']}"))) {
+            if (\file_exists(storage_path("app/packages/{$file['filename']}"))) {
                 $packageRelease->copyMedia(storage_path("app/packages/{$file['filename']}"))
                     ->toMediaCollection('downloads')
                     ->setCustomProperty('display_title', $file['display_title'])

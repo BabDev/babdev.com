@@ -6,8 +6,8 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
-use Laravel\Nova\Nova;
 use Laravel\Nova\Console\UserCommand;
+use Laravel\Nova\Nova;
 
 class DatabaseSeeder extends Seeder
 {
@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
             static function (UserCommand $command): array {
                 $password = Str::random(20);
 
-                $command->comment(sprintf('Creating account for "michael.babker@gmail.com" with password "%s"', $password));
+                $command->comment(\sprintf('Creating account for "michael.babker@gmail.com" with password "%s"', $password));
 
                 return [
                     'Michael Babker',
@@ -62,7 +62,7 @@ class DatabaseSeeder extends Seeder
         if (isset($this->command)) {
             $output = Artisan::output();
 
-            $this->command->info(sprintf('%s', substr($output, 0, strpos($output, PHP_EOL))));
+            $this->command->info(\sprintf('%s', \substr($output, 0, \strpos($output, \PHP_EOL))));
         }
     }
 }
