@@ -21,6 +21,7 @@ class PackageRelease extends Resource
 {
     use Orderable;
 
+    public static $group = 'Packages';
     public static $defaultOrderField = 'ordering';
     public static $model = PackageReleaseModel::class;
     public static $title = 'version';
@@ -77,5 +78,10 @@ class PackageRelease extends Resource
                     ]
                 ),
         ];
+    }
+
+    public static function label()
+    {
+        return 'Releases';
     }
 }

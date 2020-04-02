@@ -12,6 +12,7 @@ use Laravel\Nova\Resource;
 
 class User extends Resource
 {
+    public static $group = 'Accounts';
     public static $model = UserModel::class;
     public static $title = 'name';
 

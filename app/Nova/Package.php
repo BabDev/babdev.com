@@ -15,6 +15,7 @@ use Laravel\Nova\Resource;
 
 class Package extends Resource
 {
+    public static $group = 'Packages';
     public static $model = PackageModel::class;
     public static $title = 'name';
 
