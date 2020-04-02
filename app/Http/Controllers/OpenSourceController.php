@@ -4,6 +4,7 @@ namespace BabDev\Http\Controllers;
 
 use BabDev\Models\Package;
 use BabDev\Models\PackageRelease;
+use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
@@ -21,9 +22,9 @@ class OpenSourceController
         $this->responseFactory = $responseFactory;
     }
 
-    public function downloadReleaseFile(Request $request, int $media): StreamedResponse
+    public function downloadReleaseFile(Request $request, int $media, Repository $config): StreamedResponse
     {
-        $mediaClass = config('media-library.media_model');
+        $mediaClass = $config->get('media-library.media_model');
 
         /** @var Builder $query */
         $query = $mediaClass::query();
