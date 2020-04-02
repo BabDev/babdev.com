@@ -16,7 +16,7 @@ class CreateTrixAttachmentTables extends Migration
         Schema::create(
             'nova_pending_trix_attachments',
             function (Blueprint $table) {
-                $table->bigIncrements('id');
+                $table->id();
                 $table->string('draft_id')->index();
                 $table->string('attachment');
                 $table->string('disk');
@@ -27,7 +27,7 @@ class CreateTrixAttachmentTables extends Migration
         Schema::create(
             'nova_trix_attachments',
             function (Blueprint $table) {
-                $table->bigIncrements('id');
+                $table->id();
                 $table->morphs('attachable');
                 $table->string('attachment');
                 $table->string('disk');

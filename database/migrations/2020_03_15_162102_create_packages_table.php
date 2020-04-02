@@ -17,11 +17,11 @@ class CreatePackagesTable extends Migration
         Schema::create(
             'packages',
             function (Blueprint $table) {
-                $table->bigIncrements('id');
+                $table->id();
                 $table->string('name');
                 $table->string('display_name');
                 $table->string('packagist_name')->nullable();
-                $table->string('slug');
+                $table->string('slug')->unique();
                 $table->string('logo')->nullable();
                 $table->text('description')->nullable();
                 $table->json('topics')->nullable();

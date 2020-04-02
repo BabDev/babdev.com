@@ -16,7 +16,7 @@ class CreatePackageReleasesTable extends Migration
         Schema::create(
             'package_releases',
             function (Blueprint $table) {
-                $table->bigIncrements('id');
+                $table->id();
                 $table->foreignId('package_id')->constrained()->onDelete('cascade');
                 $table->string('version');
                 $table->string('slug');
