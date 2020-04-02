@@ -5,6 +5,7 @@ namespace BabDev\Http\Middleware;
 use BabDev\ServerPushManager\PushManager;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Laravel\Nova\Nova;
 
 class PreloadAssets
 {
@@ -27,7 +28,7 @@ class PreloadAssets
     {
         $response = $next($request);
 
-        if ($response->isRedirection() || !$response instanceof Response || $request->isJson()) {
+        if ($this->isNovaRequest($request) || $response->isRedirection() || !$response instanceof Response || $request->isJson()) {
             return $response;
         }
 
@@ -36,5 +37,15 @@ class PreloadAssets
         $this->pushManager->preload(asset('fonts/BPscript-webfont.woff'), ['as' => 'font', 'type' => 'font/woff']);
 
         return $response;
+    }
+
+    private function isNovaRequest(Request $request): bool
+    {
+        $path = trim(Nova::path(), '/') ?: '/';
+
+        return $request->is($path) ||
+            $request->is(trim($path . '/*', '/')) ||
+            $request->is('nova-api/*') ||
+            $request->is('nova-vendor/*');
     }
 }
