@@ -28,7 +28,7 @@ class PreloadAssets
     {
         $response = $next($request);
 
-        if ($this->isNovaRequest($request) || $response->isRedirection() || !$response instanceof Response || $request->isJson()) {
+        if ($this->isNovaRequest($request) || $this->isTelescopeRequest($request) || $response->isRedirection() || !$response instanceof Response || $request->isJson()) {
             return $response;
         }
 
@@ -41,11 +41,25 @@ class PreloadAssets
 
     private function isNovaRequest(Request $request): bool
     {
-        $path = trim(Nova::path(), '/') ?: '/';
+        $novaPath = trim(Nova::path(), '/') ?: '/';
 
-        return $request->is($path) ||
-            $request->is(trim($path . '/*', '/')) ||
-            $request->is('nova-api/*') ||
-            $request->is('nova-vendor/*');
+        foreach ([$novaPath . '*', 'nova-api*', 'nova-vendor*'] as $path) {
+            if ($request->is($path)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private function isTelescopeRequest(Request $request): bool
+    {
+        foreach ([config('telescope.path') . '*', 'telescope-api*', 'vendor/telescope*'] as $path) {
+            if ($request->is($path)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
