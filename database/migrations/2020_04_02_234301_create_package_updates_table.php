@@ -18,7 +18,7 @@ class CreatePackageUpdatesTable extends Migration
             'package_updates',
             function (Blueprint $table) {
                 $table->id();
-                $table->foreignId('package_id')->constrained()->onDelete('set null');
+                $table->foreignId('package_id')->constrained()->onDelete('cascade');
                 $table->string('title');
                 $table->string('slug')->unique();
                 $table->text('intro');

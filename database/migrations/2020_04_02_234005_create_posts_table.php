@@ -18,7 +18,7 @@ class CreatePostsTable extends Migration
             'posts',
             function (Blueprint $table) {
                 $table->id();
-                $table->foreignId('category_id')->constrained()->onDelete('set null');
+                $table->foreignId('category_id')->constrained();
                 $table->string('title');
                 $table->string('slug')->unique();
                 $table->text('intro');

@@ -4,6 +4,8 @@ namespace BabDev\Nova;
 
 use BabDev\Models\PackageRelease as PackageReleaseModel;
 use BabDev\ReleaseStability;
+use Drobee\NovaSluggable\SluggableText;
+use Drobee\NovaSluggable\Slug;
 use Ebess\AdvancedNovaMediaLibrary\Fields\Files;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
@@ -39,11 +41,12 @@ class PackageRelease extends Resource
 
             BelongsTo::make('Package'),
 
-            Text::make('Version')
+            SluggableText::make('Version')
                 ->rules('required', 'max:255'),
 
-            Text::make('Slug')
-                ->rules('required')
+            Slug::make('Slug')
+                ->slugUnique()
+                ->slugModel(static::$model)
                 ->hideFromIndex()
                 ->hideFromDetail(),
 

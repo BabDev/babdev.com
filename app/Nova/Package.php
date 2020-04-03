@@ -5,6 +5,8 @@ namespace BabDev\Nova;
 use BabDev\DocumentationType;
 use BabDev\Models\Package as PackageModel;
 use BabDev\PackageType;
+use Drobee\NovaSluggable\SluggableText;
+use Drobee\NovaSluggable\Slug;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
@@ -34,7 +36,7 @@ class Package extends Resource
                 ->rules('image')
                 ->disk('logos'),
 
-            Text::make('Name')
+            SluggableText::make('Name')
                 ->readonly(static function () {
                     return true;
                 }),
@@ -45,7 +47,9 @@ class Package extends Resource
             Text::make('Packagist Name')
                 ->hideFromIndex(),
 
-            Text::make('Slug')
+            Slug::make('Slug')
+                ->slugUnique()
+                ->slugModel(static::$model)
                 ->hideFromIndex()
                 ->hideFromDetail(),
 

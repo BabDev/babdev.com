@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4233cf2058f8f5e7c21862d94589fade",
+    "content-hash": "90e5c0f03ace2f1824f3bb67f531e048",
     "packages": [
         {
             "name": "babdev/laravel-server-push-manager",
@@ -795,6 +795,49 @@
                 "schedule"
             ],
             "time": "2019-03-31T00:38:28+00:00"
+        },
+        {
+            "name": "drobee/nova-sluggable",
+            "version": "1.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/drobee/nova-sluggable.git",
+                "reference": "87e34364b8dbf941c93dbb647916e20ee1b0202c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/drobee/nova-sluggable/zipball/87e34364b8dbf941c93dbb647916e20ee1b0202c",
+                "reference": "87e34364b8dbf941c93dbb647916e20ee1b0202c",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "5.6.*|5.7.*|5.8.*|6.*|7.*",
+                "illuminate/support": "5.6.*|5.7.*|5.8.*|6.*|7.*",
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Drobee\\NovaSluggable\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Drobee\\NovaSluggable\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Slug field for Laravel Nova",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "time": "2020-03-06T15:34:47+00:00"
         },
         {
             "name": "egulias/email-validator",
