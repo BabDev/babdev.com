@@ -1,4 +1,5 @@
 /node_modules
+/public/attachments
 /public/css/app.css
 /public/fonts
 /public/hot
@@ -8,7 +9,6 @@
 /public/js/vendor.js
 /public/logos
 /public/storage
-/public/uploads
 /public/vendor/nova
 /public/vendor/telescope
 /public/mix-manifest.json

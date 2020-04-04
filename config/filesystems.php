@@ -61,10 +61,10 @@ return [
             'visibility' => 'public',
         ],
 
-        'uploads' => [
+        'attachments' => [
             'driver' => 'local',
-            'root' => env('APP_UPLOADS_PATH', storage_path('app/uploads')),
-            'url' => '/uploads',
+            'root' => env('APP_ATTACHMENTS_PATH', storage_path('app/attachments')),
+            'url' => '/attachments',
             'visibility' => 'public',
         ],
 
@@ -91,8 +91,8 @@ return [
     */
 
     'links' => [
+        public_path('attachments') => env('APP_ATTACHMENTS_PATH', storage_path('app/attachments')),
         public_path('logos') => env('APP_LOGOS_PATH', storage_path('app/logos')),
-        public_path('uploads') => env('APP_UPLOADS_PATH', storage_path('app/uploads')),
     ],
 
 ];

@@ -45,11 +45,11 @@ class Post extends Resource
             DateTime::make('Published At'),
 
             Trix::make('Intro')
-                ->withFiles('uploads')
+                ->withFiles('attachments')
                 ->hideFromIndex(),
 
             Trix::make('Content')
-                ->withFiles('uploads')
+                ->withFiles('attachments')
                 ->hideFromIndex(),
         ];
     }
