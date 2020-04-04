@@ -57,14 +57,14 @@ return [
         'logos' => [
             'driver' => 'local',
             'root' => env('APP_LOGOS_PATH', storage_path('app/logos')),
-            'url' => env('APP_URL').'/logos',
+            'url' => '/logos',
             'visibility' => 'public',
         ],
 
         'uploads' => [
             'driver' => 'local',
             'root' => env('APP_UPLOADS_PATH', storage_path('app/uploads')),
-            'url' => env('APP_URL').'/uploads',
+            'url' => '/uploads',
             'visibility' => 'public',
         ],
 
