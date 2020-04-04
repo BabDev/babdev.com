@@ -21,10 +21,10 @@ class CreatePackageUpdatesTable extends Migration
                 $table->foreignId('package_id')->constrained()->onDelete('cascade');
                 $table->string('title');
                 $table->string('slug')->unique();
-                $table->text('intro');
-                $table->longText('content');
+                $table->text('intro')->nullable();
+                $table->longText('content')->nullable();
                 $table->timestamp('published_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-                $table->json('data');
+                $table->json('data')->nullable();
                 $table->timestamps();
             }
         );
