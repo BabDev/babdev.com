@@ -1,47 +1,56 @@
 <template>
-    <default-field :field="field" :errors="errors">
+    <default-field
+        :field="field"
+        :errors="errors"
+        full-width-content>
         <template slot="field">
-            <input
-                :id="field.name"
-                type="text"
-                class="w-full form-control form-input form-input-bordered"
-                :class="errorClasses"
-                :placeholder="field.name"
+            <vue-ckeditor
+                :id="field.attribute"
                 v-model="value"
+                :config="config"
             />
         </template>
     </default-field>
 </template>
 
 <script>
-import { FormField, HandlesValidationErrors } from 'laravel-nova'
+    import { FormField, HandlesValidationErrors } from 'laravel-nova'
+    import VueCkeditor from 'vue-ckeditor2';
 
-export default {
-    mixins: [FormField, HandlesValidationErrors],
+    export default {
+        components: { VueCkeditor },
 
-    props: ['resourceName', 'resourceId', 'field'],
+        mixins: [ FormField, HandlesValidationErrors ],
 
-    methods: {
-        /*
-         * Set the initial, internal value for the field.
-         */
-        setInitialValue() {
-            this.value = this.field.value || ''
+        props: ['resourceName', 'resourceId', 'field'],
+
+        data() {
+            return {
+                config: this.field.options,
+            };
         },
 
-        /**
-         * Fill the given FormData object with the field's internal value.
-         */
-        fill(formData) {
-            formData.append(this.field.attribute, this.value || '')
-        },
+        methods: {
+            /**
+             * Set the initial, internal value for the field.
+             */
+            setInitialValue() {
+                this.value = this.field.value || '';
+            },
 
-        /**
-         * Update the field's internal value.
-         */
-        handleChange(value) {
-            this.value = value
+            /**
+             * Fill the given FormData object with the field's internal value.
+             */
+            fill(formData) {
+                formData.append(this.field.attribute, this.value || '');
+            },
+
+            /**
+             * Update the field's internal value.
+             */
+            handleChange(value) {
+                this.value = value;
+            },
         },
-    },
-}
+    }
 </script>
