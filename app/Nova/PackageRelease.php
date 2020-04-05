@@ -3,6 +3,7 @@
 namespace BabDev\Nova;
 
 use BabDev\Models\PackageRelease as PackageReleaseModel;
+use BabDev\NovaCKEditor4Field\CKEditor4;
 use BabDev\ReleaseStability;
 use Drobee\NovaSluggable\Slug;
 use Drobee\NovaSluggable\SluggableText;
@@ -14,7 +15,6 @@ use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Resource;
 use MichielKempen\NovaOrderField\Orderable;
 use MichielKempen\NovaOrderField\OrderField;
@@ -60,10 +60,10 @@ class PackageRelease extends Resource
                     ]
                 )->displayUsingLabels(),
 
-            Trix::make('Summary')
+            CKEditor4::make('Summary')
                 ->hideFromIndex(),
 
-            Trix::make('Changelog')
+            CKEditor4::make('Changelog')
                 ->hideFromIndex(),
 
             Boolean::make('Visible'),
@@ -77,7 +77,7 @@ class PackageRelease extends Resource
                 ->customPropertiesFields(
                     [
                         Text::make('Display Title', 'display_title'),
-                        Trix::make('Description', 'description'),
+                        CKEditor4::make('Description', 'description'),
                     ]
                 ),
         ];
