@@ -12,7 +12,7 @@ return [
     | The dir where to store the images (relative from public)
     |
     */
-    'dir' => ['attachments'],
+    'dir' => [],
 
     /*
     |--------------------------------------------------------------------------
@@ -27,9 +27,7 @@ return [
     |        'alias' => 'Local storage',
     |    ]
     */
-    'disks' => [
-
-    ],
+    'disks' => [],
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +40,7 @@ return [
 
     'route' => [
         'prefix' => 'elfinder',
-        'middleware' => ['web', 'auth'], //Set to null to disable middleware filter
+        'middleware' => ['web', 'auth'],
     ],
 
     /*
@@ -66,7 +64,15 @@ return [
     |
     */
 
-    'roots' => null,
+    'roots' => [
+        [
+            'driver' => 'LocalFileSystem',
+            'path' => public_path('attachments'),
+            'URL' => '/attachments',
+            'accessControl' => config('elfinder.access'),
+            'alias' => 'Post Attachments',
+        ],
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -89,8 +95,6 @@ return [
     | See https://github.com/Studio-42/elFinder/wiki/Connector-configuration-options-2.1#root-options
     |
     */
-    'root_options' => [
-
-    ],
+    'root_options' => [],
 
 ];
