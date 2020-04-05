@@ -42,5 +42,7 @@ return [
     |
     */
 
-    'config' => [],
+    'config' => [
+        'filebrowserBrowseUrl' => '/elfinder/ckeditor',
+    ],
 ];
