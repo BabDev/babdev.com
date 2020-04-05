@@ -4,8 +4,7 @@
         :errors="errors"
         full-width-content>
         <template slot="field">
-            <vue-ckeditor
-                :id="field.attribute"
+            <ckeditor
                 v-model="value"
                 :config="config"
             />
@@ -14,12 +13,9 @@
 </template>
 
 <script>
-    import { FormField, HandlesValidationErrors } from 'laravel-nova'
-    import VueCkeditor from 'vue-ckeditor2';
+    import { FormField, HandlesValidationErrors } from 'laravel-nova';
 
     export default {
-        components: { VueCkeditor },
-
         mixins: [ FormField, HandlesValidationErrors ],
 
         props: ['resourceName', 'resourceId', 'field'],
