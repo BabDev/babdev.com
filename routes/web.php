@@ -1,7 +1,10 @@
 <?php
 
-use BabDev\Http\Controllers\CKEditorUploadController;
-use BabDev\Http\Controllers\OpenSourceController;
+use BabDev\Http\Controllers\DownloadReleaseFileController;
+use BabDev\Http\Controllers\UploadImageThruCKEditorController;
+use BabDev\Http\Controllers\ViewOpenSourcePackagesController;
+use BabDev\Http\Controllers\ViewOpenSourcePackageReleaseController;
+use BabDev\Http\Controllers\ViewOpenSourcePackageReleasesController;
 use Illuminate\Routing\Router;
 
 /** @var Router $router */
@@ -10,23 +13,23 @@ $router->view('/', 'homepage')->name('homepage');
 $router->view('/privacy', 'privacy')->name('privacy');
 
 $router->get(
-    '/open-source/download/{media}',
-    [OpenSourceController::class, 'downloadReleaseFile']
-)->name('open-source.download-release-file');
+    '/download/{media}',
+    DownloadReleaseFileController::class
+)->name('download-release-file');
 
 $router->get(
     '/open-source/packages',
-    [OpenSourceController::class, 'packages']
+    ViewOpenSourcePackagesController::class
 )->name('open-source.packages');
 
 $router->get(
     '/open-source/packages/{package}/releases',
-    [OpenSourceController::class, 'packageReleases']
+    ViewOpenSourcePackageReleasesController::class
 )->name('open-source.package.releases');
 
 $router->get(
     '/open-source/packages/{package}/releases/{package_release}',
-    [OpenSourceController::class, 'packageRelease']
+    ViewOpenSourcePackageReleaseController::class
 )->name('open-source.package.release');
 
 $router->group(
@@ -36,7 +39,7 @@ $router->group(
     static function (Router $router): void {
         $router->post(
             '/ckeditor/upload/image',
-            [CKEditorUploadController::class, 'uploadImage']
+            UploadImageThruCKEditorController::class
         )->name('ckeditor.upload.image');
     }
 );

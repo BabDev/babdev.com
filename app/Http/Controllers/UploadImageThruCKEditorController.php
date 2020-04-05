@@ -8,7 +8,7 @@ use Illuminate\Filesystem\FilesystemAdapter;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
-class CKEditorUploadController
+class UploadImageThruCKEditorController
 {
     private ResponseFactory $responseFactory;
     private Factory $filesystemFactory;
@@ -19,7 +19,7 @@ class CKEditorUploadController
         $this->filesystemFactory = $filesystemFactory;
     }
 
-    public function uploadImage(Request $request): JsonResponse
+    public function __invoke(Request $request): JsonResponse
     {
         if (!$request->hasFile('upload')) {
             return $this->responseFactory->json(

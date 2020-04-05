@@ -71,7 +71,7 @@
                                 </dl>
                             </div>
                             <div class="release-download__links">
-                                <a class="btn btn-brand" href="{{ route('open-source.download-release-file', ['media' => $download]) }}">Download</a>
+                                <a class="btn btn-brand" href="{{ route('download-release-file', ['media' => $download]) }}">Download</a>
                             </div>
                         </div>
                     @endforeach
