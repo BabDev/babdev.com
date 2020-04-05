@@ -9,7 +9,7 @@ use Spatie\Packagist\Packagist;
 
 class PackagistServiceProvider extends ServiceProvider implements DeferrableProvider
 {
-    public function provides()
+    public function provides(): array
     {
         return [
             'packagist.api',
@@ -17,7 +17,7 @@ class PackagistServiceProvider extends ServiceProvider implements DeferrableProv
         ];
     }
 
-    public function register()
+    public function register(): void
     {
         $this->app->bind(
             'packagist.api',

@@ -14,7 +14,7 @@ use Illuminate\Support\ServiceProvider;
 
 class GitHubServiceProvider extends ServiceProvider implements DeferrableProvider
 {
-    public function provides()
+    public function provides(): array
     {
         return [
             'github.api',
@@ -28,7 +28,7 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
         ];
     }
 
-    public function register()
+    public function register(): void
     {
         $this->app->bind(
             'github.api',

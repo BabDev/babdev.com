@@ -37,7 +37,7 @@ class Package extends Resource
                 ->disk('logos'),
 
             SluggableText::make('Name')
-                ->readonly(static function () {
+                ->readonly(static function (): bool {
                     return true;
                 }),
 

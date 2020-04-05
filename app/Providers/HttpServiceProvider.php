@@ -20,7 +20,7 @@ use Psr\Http\Client\ClientInterface;
 
 class HttpServiceProvider extends ServiceProvider implements DeferrableProvider
 {
-    public function provides()
+    public function provides(): array
     {
         return [
             'guzzle',
@@ -42,7 +42,7 @@ class HttpServiceProvider extends ServiceProvider implements DeferrableProvider
         ];
     }
 
-    public function register()
+    public function register(): void
     {
         $this->app->bind(
             'guzzle',

@@ -6,7 +6,7 @@ use Spatie\MediaLibrary\MediaCollections\Events\MediaHasBeenAdded;
 
 class AddDefaultMediaCustomProperties
 {
-    public function handle(MediaHasBeenAdded $event)
+    public function handle(MediaHasBeenAdded $event): void
     {
         if (!$event->media->hasCustomProperty('downloads')) {
             $event->media->setCustomProperty('downloads', 0);

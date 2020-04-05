@@ -12,7 +12,7 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapWebRoutes();
     }
 
-    protected function mapWebRoutes(): void
+    private function mapWebRoutes(): void
     {
         Route::middleware('web')
             ->group(base_path('routes/web.php'));
