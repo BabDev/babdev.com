@@ -1,0 +1,30 @@
+{
+    "name": "babdev/nova-ckeditor4-field",
+    "description": "Laravel Nova field integrating CKEditor 4.x.",
+    "keywords": [
+        "laravel",
+        "nova"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0",
+        "laravel/nova": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "BabDev\\NovaCKEditor4Field\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "BabDev\\NovaCKEditor4Field\\FieldServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
