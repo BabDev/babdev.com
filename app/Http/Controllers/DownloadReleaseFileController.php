@@ -22,26 +22,26 @@ class DownloadReleaseFileController
         $this->config = $config;
     }
 
-    public function __invoke(Request $request, int $media): StreamedResponse
+    public function __invoke(Request $request, string $fileName): StreamedResponse
     {
         $mediaClass = $this->config->get('media-library.media_model');
 
         /** @var Builder $query */
         $query = $mediaClass::query();
 
-        /** @var Media $mediaModel */
-        $mediaModel = $query->findOrFail($media);
+        /** @var Media $media */
+        $media = $query->where('file_name', '=', $fileName)->firstOrFail();
 
         // Increment the download counter
-        $downloads = $mediaModel->getCustomProperty('downloads', 0);
+        $downloads = $media->getCustomProperty('downloads', 0);
         $downloads++;
 
-        $mediaModel->setCustomProperty('downloads', $downloads);
-        $mediaModel->save();
+        $media->setCustomProperty('downloads', $downloads);
+        $media->save();
 
         // Traverse up to the package and increment its counter too
         /** @var PackageRelease $release */
-        $release = $mediaModel->model;
+        $release = $media->model;
 
         /** @var Package $package */
         $package = $release->package;
@@ -49,6 +49,6 @@ class DownloadReleaseFileController
 
         $package->save();
 
-        return $mediaModel->toResponse($request);
+        return $media->toResponse($request);
     }
 }

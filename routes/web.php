@@ -13,7 +13,7 @@ $router->view('/', 'homepage')->name('homepage');
 $router->view('/privacy', 'privacy')->name('privacy');
 
 $router->get(
-    '/download/{media}',
+    '/download/{media:file_name}',
     DownloadReleaseFileController::class
 )->name('download-release-file');
 
