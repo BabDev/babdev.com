@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updates>
+	<update>
+		<name>Yet Another Social Plugin</name>
+		<description>Yet Another Social Plugin is a plugin for Joomla! to display Twitter's Share, Google's +1, Facebook's Like, and the LinkedIn Share buttons</description>
+		<element>yetanothersocial</element>
+		<type>plugin</type>
+		<client>0</client>
+		<client_id>0</client_id>
+		<folder>content</folder>
+		<version>2.0.0</version>
+		<infourl title="Yet Another Social Plugin 2.0.0 Released">https://www.babdev.com/extensions/updates/168-yet-another-social-plugin-200-released</infourl>
+		<downloads>
+			<downloadurl type="full" format="zip">https://www.babdev.com/download/plg_content_yetanothersocial_2.0.0.zip</downloadurl>
+		</downloads>
+		<maintainer>Michael Babker</maintainer>
+		<maintainerurl>https://www.babdev.com</maintainerurl>
+		<targetplatform name="joomla" version="3.(4.[1-8]|[5-6])" />
+	</update>
+</updates>
