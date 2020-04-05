@@ -44,5 +44,6 @@ return [
 
     'config' => [
         'filebrowserBrowseUrl' => '/elfinder/ckeditor',
+        'filebrowserUploadUrl' => '/ckeditor/upload/image',
     ],
 ];

@@ -1,5 +1,6 @@
 <?php
 
+use BabDev\Http\Controllers\CKEditorUploadController;
 use BabDev\Http\Controllers\OpenSourceController;
 use Illuminate\Routing\Router;
 
@@ -27,3 +28,15 @@ $router->get(
     '/open-source/packages/{package}/releases/{package_release}',
     [OpenSourceController::class, 'packageRelease']
 )->name('open-source.package.release');
+
+$router->group(
+    [
+        'middleware' => ['auth'],
+    ],
+    static function (Router $router): void {
+        $router->post(
+            '/ckeditor/upload/image',
+            [CKEditorUploadController::class, 'uploadImage']
+        )->name('ckeditor.upload.image');
+    }
+);
