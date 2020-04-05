@@ -2,16 +2,39 @@
 
 namespace BabDev\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
+/**
+ * @property int                     $id
+ * @property int                     $package_id
+ * @property string                  $version
+ * @property string                  $slug
+ * @property string                  $maturity
+ * @property string|null             $summary
+ * @property string|null             $changelog
+ * @property bool                    $visible
+ * @property Carbon|null             $released_at
+ * @property int                     $ordering
+ * @property Carbon|null             $created_at
+ * @property Carbon|null             $updated_at
+ * @property-read Collection|Media[] $media
+ * @property-read int|null           $media_count
+ * @property-read Package            $package
+ *
+ * @method static Builder|PackageRelease query()
+ * @method static Builder|PackageRelease visible()
+ */
 class PackageRelease extends Model implements HasMedia, Sortable
 {
     use HasSlug, InteractsWithMedia, SortableTrait;

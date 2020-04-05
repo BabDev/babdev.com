@@ -2,12 +2,43 @@
 
 namespace BabDev\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
+/**
+ * @property int                              $id
+ * @property string                           $name
+ * @property string                           $display_name
+ * @property string|null                      $packagist_name
+ * @property string                           $slug
+ * @property string|null                      $logo
+ * @property string|null                      $description
+ * @property array|null                       $topics
+ * @property string                           $documentation_type
+ * @property string|null                      $package_type
+ * @property int                              $stars
+ * @property int|null                         $downloads
+ * @property string|null                      $language
+ * @property bool                             $supported
+ * @property bool                             $visible
+ * @property bool                             $has_local_releases
+ * @property bool                             $is_packagist
+ * @property Carbon|null                      $created_at
+ * @property Carbon|null                      $updated_at
+ * @property-read string                      $github_url
+ * @property-read Collection|PackageRelease[] $releases
+ * @property-read int|null                    $releases_count
+ *
+ * @method static Builder|Package hasLocalReleases()
+ * @method static Builder|Package isPackagist()
+ * @method static Builder|Package query()
+ * @method static Builder|Package visible()
+ */
 class Package extends Model
 {
     use HasSlug;
@@ -27,6 +58,7 @@ class Package extends Model
         'supported',
         'visible',
         'has_local_releases',
+        'is_packagist',
     ];
 
     protected $casts = [
@@ -36,6 +68,7 @@ class Package extends Model
         'supported' => 'boolean',
         'visible' => 'boolean',
         'has_local_releases' => 'boolean',
+        'is_packagist' => 'boolean',
     ];
 
     public function getRouteKeyName(): string
