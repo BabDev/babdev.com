@@ -3,8 +3,8 @@
 namespace BabDev\Nova;
 
 use BabDev\Models\Category as CategoryModel;
-use Drobee\NovaSluggable\SluggableText;
 use Drobee\NovaSluggable\Slug;
+use Drobee\NovaSluggable\SluggableText;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Resource;

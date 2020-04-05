@@ -3,8 +3,8 @@
 namespace BabDev\Nova;
 
 use BabDev\Models\Post as PostModel;
-use Drobee\NovaSluggable\SluggableText;
 use Drobee\NovaSluggable\Slug;
+use Drobee\NovaSluggable\SluggableText;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\DateTime;

@@ -41,7 +41,7 @@ class PreloadAssets
 
     private function isNovaRequest(Request $request): bool
     {
-        $novaPath = trim(Nova::path(), '/') ?: '/';
+        $novaPath = \trim(Nova::path(), '/') ?: '/';
 
         foreach ([$novaPath . '*', 'nova-api*', 'nova-vendor*'] as $path) {
             if ($request->is($path)) {
