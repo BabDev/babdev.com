@@ -4,7 +4,7 @@ namespace BabDev\Console\Commands;
 
 use BabDev\Models\Package;
 use Illuminate\Console\Command;
-use Spatie\Packagist\Packagist;
+use Spatie\Packagist\PackagistClient;
 
 class ImportPackagistDownloads extends Command
 {
@@ -12,9 +12,9 @@ class ImportPackagistDownloads extends Command
 
     protected $description = 'Import download counts from Packagist.';
 
-    private Packagist $packagist;
+    private PackagistClient $packagist;
 
-    public function __construct(Packagist $packagist)
+    public function __construct(PackagistClient $packagist)
     {
         $this->packagist = $packagist;
 
@@ -31,7 +31,7 @@ class ImportPackagistDownloads extends Command
 
                 $packagistParts = \explode('/', $package->packagist_name);
 
-                $packagistInfo = $this->packagist->findPackageByName($packagistParts[0], $packagistParts[1]);
+                $packagistInfo = $this->packagist->getPackage($packagistParts[0], $packagistParts[1]);
 
                 $package->update(
                     [

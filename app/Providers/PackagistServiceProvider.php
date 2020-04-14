@@ -5,7 +5,8 @@ namespace BabDev\Providers;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
-use Spatie\Packagist\Packagist;
+use Spatie\Packagist\PackagistClient;
+use Spatie\Packagist\PackagistUrlGenerator;
 
 class PackagistServiceProvider extends ServiceProvider implements DeferrableProvider
 {
@@ -13,7 +14,10 @@ class PackagistServiceProvider extends ServiceProvider implements DeferrableProv
     {
         return [
             'packagist.api',
-            Packagist::class,
+            PackagistClient::class,
+
+            'packagist.url_generator',
+            PackagistUrlGenerator::class,
         ];
     }
 
@@ -21,11 +25,23 @@ class PackagistServiceProvider extends ServiceProvider implements DeferrableProv
     {
         $this->app->bind(
             'packagist.api',
-            static function (Application $app): Packagist {
-                return new Packagist($app->make('guzzle'));
+            static function (Application $app): PackagistClient {
+                return new PackagistClient(
+                    $app->make('guzzle'),
+                    $app->make('packagist.url_generator')
+                );
             }
         );
 
-        $this->app->alias('packagist.api', Packagist::class);
+        $this->app->alias('packagist.api', PackagistClient::class);
+
+        $this->app->bind(
+            'packagist.url_generator',
+            static function (Application $app): PackagistUrlGenerator {
+                return new PackagistUrlGenerator();
+            }
+        );
+
+        $this->app->alias('packagist.url_generator', PackagistUrlGenerator::class);
     }
 }
