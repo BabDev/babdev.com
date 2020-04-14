@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0d40275acfe9986252fa089917145437",
+    "content-hash": "dfa16c9fb615435265a6ccfe56076c6a",
     "packages": [
         {
             "name": "babdev/laravel-server-push-manager",
@@ -207,50 +207,6 @@
                 "tinymce"
             ],
             "time": "2020-02-25T20:53:00+00:00"
-        },
-        {
-            "name": "bkintanar/advanced-nova-media-library",
-            "version": "3.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/bkintanar/advanced-nova-media-library.git",
-                "reference": "330eb048d2f0e1081c9b4cf2f4ce14bf210b8cee"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/bkintanar/advanced-nova-media-library/zipball/330eb048d2f0e1081c9b4cf2f4ce14bf210b8cee",
-                "reference": "330eb048d2f0e1081c9b4cf2f4ce14bf210b8cee",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/framework": "^5.6|^6.0|^7.0",
-                "laravel/nova": "^2.0|^3.0",
-                "php": ">=7.1.0",
-                "spatie/laravel-medialibrary": "^8.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Ebess\\AdvancedNovaMediaLibrary\\AdvancedNovaMediaLibraryServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Ebess\\AdvancedNovaMediaLibrary\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Laravel Nova tools for managing the Spatie media library.",
-            "keywords": [
-                "laravel",
-                "nova"
-            ],
-            "time": "2020-03-29T20:53:28+00:00"
         },
         {
             "name": "brick/math",
@@ -985,6 +941,50 @@
                 "nova"
             ],
             "time": "2020-03-06T15:34:47+00:00"
+        },
+        {
+            "name": "ebess/advanced-nova-media-library",
+            "version": "3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ebess/advanced-nova-media-library.git",
+                "reference": "f6e644f2c703b2df93858be293813dcf3ad05e94"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ebess/advanced-nova-media-library/zipball/f6e644f2c703b2df93858be293813dcf3ad05e94",
+                "reference": "f6e644f2c703b2df93858be293813dcf3ad05e94",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^5.6|^6.0|^7.0",
+                "laravel/nova": "^2.0|^3.0",
+                "php": ">=7.1.0",
+                "spatie/laravel-medialibrary": "^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Ebess\\AdvancedNovaMediaLibrary\\AdvancedNovaMediaLibraryServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ebess\\AdvancedNovaMediaLibrary\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Laravel Nova tools for managing the Spatie media library.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "time": "2020-04-05T16:56:27+00:00"
         },
         {
             "name": "egulias/email-validator",
