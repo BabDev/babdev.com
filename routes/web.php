@@ -5,6 +5,7 @@ use BabDev\Http\Controllers\UploadImageThruCKEditorController;
 use BabDev\Http\Controllers\ViewOpenSourcePackagesController;
 use BabDev\Http\Controllers\ViewOpenSourcePackageReleaseController;
 use BabDev\Http\Controllers\ViewOpenSourcePackageReleasesController;
+use BabDev\Http\Controllers\ViewOpenSourceUpdatesController;
 use Illuminate\Routing\Router;
 
 /** @var Router $router */
@@ -31,6 +32,11 @@ $router->get(
     '/open-source/packages/{package}/releases/{package_release}',
     ViewOpenSourcePackageReleaseController::class
 )->name('open-source.package.release');
+
+$router->get(
+    '/open-source/updates',
+    ViewOpenSourceUpdatesController::class
+)->name('open-source.updates');
 
 $router->group(
     [

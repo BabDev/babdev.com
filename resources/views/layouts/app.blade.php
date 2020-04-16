@@ -28,6 +28,7 @@
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Open Source</a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{ route('open-source.packages') }}">Packages</a>
+                                <a class="dropdown-item" href="{{ route('open-source.updates') }}">Updates</a>
                             </div>
                         </li>
                     </ul>
