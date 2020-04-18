@@ -3,8 +3,8 @@
 namespace BabDev\Http\Controllers;
 
 use BabDev\Models\PackageUpdate;
+use BabDev\Pagination\RoutableLengthAwarePaginator;
 use Illuminate\Contracts\Routing\ResponseFactory;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Response;
 
 class ViewOpenSourceUpdatesController
@@ -18,7 +18,7 @@ class ViewOpenSourceUpdatesController
 
     public function __invoke(): Response
     {
-        /** @var Collection|PackageUpdate[] $updates */
+        /** @var RoutableLengthAwarePaginator|PackageUpdate[] $updates */
         $updates = PackageUpdate::query()
             ->published()
             ->orderByDesc('published_at')

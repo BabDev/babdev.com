@@ -1,4 +1,4 @@
-@php /** @var \Illuminate\Contracts\Pagination\LengthAwarePaginator|\BabDev\Models\PackageUpdates[] $updates */ @endphp
+@php /** @var \BabDev\Pagination\RoutableLengthAwarePaginator|\BabDev\Models\PackageUpdates[] $updates */ @endphp
 
 @extends('layouts.app')
 
@@ -27,6 +27,7 @@
                     <div>Sorry, there are no updates available at this time.</div>
                 </div>
             @endforelse
+            {{ $updates->render() }}
             {{ Breadcrumbs::render('open-source.updates') }}
         </div>
     </section>

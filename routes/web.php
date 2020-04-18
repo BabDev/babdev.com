@@ -38,6 +38,11 @@ $router->get(
     ViewOpenSourceUpdatesController::class
 )->name('open-source.updates');
 
+$router->get(
+    '/open-source/updates/page/{page}',
+    ViewOpenSourceUpdatesController::class
+)->name('open-source.updates.paginated');
+
 $router->group(
     [
         'middleware' => ['auth'],
