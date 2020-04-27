@@ -1,9 +1,9 @@
 <?php
 
+use BabDev\Breadcrumbs\Contracts\BreadcrumbsGenerator;
+use BabDev\Breadcrumbs\Contracts\BreadcrumbsManager;
 use BabDev\Models\Package;
 use BabDev\Models\PackageRelease;
-use DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator;
-use DaveJamesMiller\Breadcrumbs\BreadcrumbsManager;
 
 /** @var BreadcrumbsManager $breadcrumbs */
 
