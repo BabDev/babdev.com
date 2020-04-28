@@ -7,20 +7,14 @@ use Illuminate\Database\Seeder;
 class PackageSeeder extends Seeder
 {
     /**
-     * @var \DateTimeZone
-     */
-    private $utc;
-
-    /**
      * Seed the application's database.
      *
      * @return void
      */
     public function run()
     {
-        $this->utc = new \DateTimeZone('UTC');
-
         $this->fixBabDevPagerfantaBundle();
+        $this->fixLaravelBreadcrumbs();
         $this->fixLaravelServerPushManager();
         $this->fixLaravelTwilio();
         $this->fixPodcastManager();
@@ -39,6 +33,19 @@ class PackageSeeder extends Seeder
                 [
                     'packagist_name' => 'babdev/pagerfanta-bundle',
                     'package_type' => PackageType::SYMFONY_BUNDLE,
+                ]
+            );
+    }
+
+    private function fixLaravelBreadcrumbs(): void
+    {
+        Package::query()
+            ->where('name', '=', 'laravel-breadcrumbs')
+            ->firstOrFail()
+            ->update(
+                [
+                    'packagist_name' => 'babdev/laravel-breadbrumbs',
+                    'package_type' => PackageType::LARAVEL_PACKAGE,
                 ]
             );
     }
