@@ -11,15 +11,11 @@
         {
             "type": "path",
             "url": "./nova-components/NovaCKEditor4Field"
-        },
-        {
-            "type": "path",
-            "url": "../laravel-breadcrumbs"
         }
     ],
     "require": {
         "php": "^7.4",
-        "babdev/laravel-breadcrumbs": "dev-master",
+        "babdev/laravel-breadcrumbs": "^1.0",
         "babdev/laravel-server-push-manager": "^1.4",
         "babdev/nova-ckeditor4-field": "*",
         "barryvdh/laravel-elfinder": "^0.4.5",

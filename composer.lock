@@ -4,34 +4,43 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "570723bc265674902f911a409254ca4e",
+    "content-hash": "789104953e84e197dfdd08c122d23254",
     "packages": [
         {
             "name": "babdev/laravel-breadcrumbs",
-            "version": "dev-master",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/BabDev/laravel-breadcrumbs.git",
+                "reference": "51493cb5b4f767412a30523115e4ad286382e090"
+            },
             "dist": {
-                "type": "path",
-                "url": "../laravel-breadcrumbs",
-                "reference": "702a54db480ba3263bfdd0e4a1b32bf1a23af479"
+                "type": "zip",
+                "url": "https://api.github.com/repos/BabDev/laravel-breadcrumbs/zipball/51493cb5b4f767412a30523115e4ad286382e090",
+                "reference": "51493cb5b4f767412a30523115e4ad286382e090",
+                "shasum": ""
             },
             "require": {
                 "facade/ignition-contracts": "^1.0",
-                "illuminate/events": "^6.0|^7.0",
-                "illuminate/filesystem": "^6.0|^7.0",
-                "illuminate/routing": "^6.0|^7.0",
-                "illuminate/support": "^6.0|^7.0",
-                "illuminate/view": "^6.0|^7.0",
+                "illuminate/events": "^6.18|^7.0",
+                "illuminate/filesystem": "^6.18|^7.0",
+                "illuminate/routing": "^6.18|^7.0",
+                "illuminate/support": "^6.18|^7.0",
+                "illuminate/view": "^6.18|^7.0",
                 "php": "^7.2"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^2.16.3",
-                "laravel/framework": "^6.0|^7.0",
+                "laravel/framework": "^6.18|^7.0",
                 "orchestra/testbench": "^4.0|^5.0",
                 "phpunit/phpunit": "^8.0|^9.0",
                 "spatie/phpunit-snapshot-assertions": "^3.0|^4.0"
             },
             "type": "library",
             "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                },
                 "laravel": {
                     "providers": [
                         "BabDev\\Breadcrumbs\\Providers\\BreadcrumbsServiceProvider"
@@ -46,11 +55,7 @@
                     "BabDev\\Breadcrumbs\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "BabDev\\Breadcrumbs\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -58,7 +63,14 @@
             "keywords": [
                 "breadcrumb",
                 "laravel"
-            ]
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/mbabker",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-04-28T02:24:25+00:00"
         },
         {
             "name": "babdev/laravel-server-push-manager",
@@ -7551,9 +7563,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "babdev/laravel-breadcrumbs": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
