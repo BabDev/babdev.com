@@ -20,7 +20,7 @@
                         </div>
                     @endif
                     <div class="open-source-package__name">
-                        <a class="open-source-package__link" href="{{ $package->github_url }}" target="_blank" rel="nofollow noreferrer noopener">
+                        <a class="open-source-package__link" href="{{ $package->github_url }}" target="_blank" rel="nofollow noreferrer noopener" aria-label="View {{ $package->display_name }} on GitHub">
                             {{ svg('fab-github') }}
                         </a>
                         <h2>{{ $package->display_name }}</h2>
