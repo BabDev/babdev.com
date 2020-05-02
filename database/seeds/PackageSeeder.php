@@ -44,7 +44,7 @@ class PackageSeeder extends Seeder
             ->firstOrFail()
             ->update(
                 [
-                    'packagist_name' => 'babdev/laravel-breadbrumbs',
+                    'packagist_name' => 'babdev/laravel-breadcrumbs',
                     'package_type' => PackageType::LARAVEL_PACKAGE,
                 ]
             );
