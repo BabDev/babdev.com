@@ -16,6 +16,12 @@ $danger: $babdev-orange;
 // Extra colors for use in components with color variants
 $theme-colors: (
     "brand": $babdev-orange,
+    "brand-black": $babdev-black,
+    "brand-green": $babdev-green,
+    "brand-orange": $babdev-orange,
+    "brand-yellow": $babdev-yellow,
+    "brand-pink": $babdev-pink,
+    "brand-blue": $babdev-blue,
 );
 
 $link-color: $babdev-orange;
