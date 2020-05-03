@@ -11,11 +11,6 @@ use Laravel\Nova\Nova;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     *
-     * @return void
-     */
     public function run()
     {
         Artisan::call('import:github-repositories');

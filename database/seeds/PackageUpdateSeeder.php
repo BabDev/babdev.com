@@ -9,11 +9,6 @@ class PackageUpdateSeeder extends Seeder
 {
     private ?\DateTimeZone $utc;
 
-    /**
-     * Seed the application's database.
-     *
-     * @return void
-     */
     public function run()
     {
         $this->utc = new \DateTimeZone('UTC');
