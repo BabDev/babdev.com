@@ -41,6 +41,7 @@ return [
     'route' => [
         'prefix' => 'elfinder',
         'middleware' => ['web', 'auth'],
+        'domain' => env('NOVA_DOMAIN_NAME', null),
     ],
 
     /*
