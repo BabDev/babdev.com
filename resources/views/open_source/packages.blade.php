@@ -56,15 +56,15 @@
                             @endforeach
                         </div>
                     @endunless
-                    @if($package->has_local_releases)
-                        <div class="open-source-package__links package-links">
-                            @if($package->has_local_releases)
-                                <span class="package-link">
-                                    <a class="btn btn-brand" href="{{ route('open-source.package.releases', ['package' => $package]) }}">View Releases</a>
-                                </span>
-                            @endif
-                        </div>
-                    @endif
+                    {{--
+                    <div class="open-source-package__links package-links">
+                        @if($package->has_local_releases)
+                            <span class="package-link">
+                                <a class="btn btn-brand" href="{{ route('open-source.package.releases', ['package' => $package]) }}">View Releases</a>
+                            </span>
+                        @endif
+                    </div>
+                    --}}
                 </div>
             @empty
                 <div class="alert alert-info">
