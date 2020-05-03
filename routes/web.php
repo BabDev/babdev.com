@@ -36,9 +36,10 @@ $router->group(
         'middleware' => ['auth'],
     ],
     static function (Router $router): void {
-        $router->post(
-            '/ckeditor/upload/image',
-            UploadImageThruCKEditorController::class
-        )->name('ckeditor.upload.image');
+        $router->domain(config('nova.domain', null))
+            ->post(
+                '/ckeditor/upload/image',
+                UploadImageThruCKEditorController::class
+            )->name('ckeditor.upload.image');
     }
 );
