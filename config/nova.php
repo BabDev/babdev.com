@@ -1,5 +1,8 @@
 <?php
 
+use BabDev\Http\Middleware\VerifyCsrfToken;
+use Illuminate\Session\Middleware\StartSession;
+use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Laravel\Nova\Actions\ActionResource;
 use Laravel\Nova\Http\Middleware\Authenticate;
 use Laravel\Nova\Http\Middleware\Authorize;
@@ -99,6 +102,9 @@ return [
 
     'middleware' => [
         'web',
+        StartSession::class,
+        ShareErrorsFromSession::class,
+        VerifyCsrfToken::class,
         Authenticate::class,
         DispatchServingNovaEvent::class,
         BootTools::class,
