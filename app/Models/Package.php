@@ -26,7 +26,6 @@ use Spatie\Sluggable\SlugOptions;
  * @property string|null                      $language
  * @property bool                             $supported
  * @property bool                             $visible
- * @property bool                             $has_local_releases
  * @property bool                             $is_packagist
  * @property Carbon|null                      $created_at
  * @property Carbon|null                      $updated_at
@@ -34,7 +33,6 @@ use Spatie\Sluggable\SlugOptions;
  * @property-read Collection|PackageRelease[] $releases
  * @property-read int|null                    $releases_count
  *
- * @method static Builder|Package hasLocalReleases()
  * @method static Builder|Package isPackagist()
  * @method static Builder|Package query()
  * @method static Builder|Package visible()
@@ -57,7 +55,6 @@ class Package extends Model
         'language',
         'supported',
         'visible',
-        'has_local_releases',
         'is_packagist',
     ];
 
@@ -67,7 +64,6 @@ class Package extends Model
         'downloads' => 'integer',
         'supported' => 'boolean',
         'visible' => 'boolean',
-        'has_local_releases' => 'boolean',
         'is_packagist' => 'boolean',
     ];
 
@@ -81,11 +77,6 @@ class Package extends Model
         return SlugOptions::create()
             ->generateSlugsFrom('name')
             ->saveSlugsTo('slug');
-    }
-
-    public function scopeHasLocalReleases(Builder $query): Builder
-    {
-        return $query->where('has_local_releases', '=', true);
     }
 
     public function scopeIsPackagist(Builder $query): Builder
