@@ -3,6 +3,8 @@
 namespace BabDev\Providers;
 
 use BabDev\Http\Middleware\VerifyCsrfToken;
+use BabDev\Models\User;
+use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Laravel\Nova\Cards\Help;
@@ -22,6 +24,24 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     VerifyCsrfToken::class,
                 ]
             );
+    }
+
+    protected function gate()
+    {
+        /** @var Gate $gate */
+        $gate = $this->app->make(Gate::class);
+
+        $gate->define(
+            'viewNova',
+            static function (User $user): bool {
+                return in_array(
+                    $user->email,
+                    [
+                        'michael.babker@gmail.com',
+                    ]
+                );
+            }
+        );
     }
 
     protected function cards(): array
