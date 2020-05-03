@@ -8,33 +8,35 @@
         <link href="{{ PushManager::preload(mix('css/app.css'), ['as' => 'stylesheet']) }}" rel="stylesheet">
     </head>
     <body>
-        <nav class="navbar navbar-expand-sm navbar-light bg-white sticky-top">
-            <div class="container">
-                <a class="navbar-brand pt-2" href="{{ route('homepage') }}">
-                    <img src="{{ PushManager::preload(asset('images/logos/babdev.svg'), ['as' => 'image']) }}" class="d-inline-block" alt="">
-                    BabDev
-                </a>
+        <header class="sticky-top">
+            <nav class="navbar navbar-expand-sm navbar-light bg-white">
+                <div class="container">
+                    <a class="navbar-brand pt-2" href="{{ route('homepage') }}">
+                        <img src="{{ PushManager::preload(asset('images/logos/babdev.svg'), ['as' => 'image']) }}" class="d-inline-block" alt="">
+                        BabDev
+                    </a>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-                <nav class="collapse navbar-collapse" id="main-nav">
-                    <ul class="navbar-nav ml-sm-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Blog</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Open Source</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{ route('open-source.packages') }}">Packages</a>
-                                <a class="dropdown-item" href="{{ route('open-source.updates') }}">Updates</a>
-                            </div>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </nav>
+                    <nav class="collapse navbar-collapse" id="main-nav">
+                        <ul class="navbar-nav ml-sm-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Blog</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Open Source</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{{ route('open-source.packages') }}">Packages</a>
+                                    <a class="dropdown-item" href="{{ route('open-source.updates') }}">Updates</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </nav>
+        </header>
         <main class="@yield('main-classes', '')">
             @yield('content')
         </main>

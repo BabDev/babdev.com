@@ -6,7 +6,7 @@
 @section('title', sprintf('%s Releases | %s', $package->display_name, config('app.name', 'Laravel')))
 
 @section('content')
-    <section class="package-title{{ $package->logo ? ' package-title--has-logo' : '' }} pt-4">
+    <header class="package-title{{ $package->logo ? ' package-title--has-logo' : '' }} pt-4">
         @if($package->logo)
             <div class="package-title__logo">
                 <img src="{{ Storage::disk('logos')->url($package->logo) }}" alt="{{ $package->display_name }} Logo">
@@ -16,7 +16,7 @@
             <h1 class="package-title__primary">{{ $package->display_name }}</h1>
             <h2 class="package-title__secondary">Releases</h2>
         </div>
-    </section>
+    </header>
     <section class="package-releases container pt-2">
         @unless($package->supported)
             <div class="package-releases__unsupported-package alert alert-warning">

@@ -3,12 +3,12 @@
 @section('title', sprintf('Privacy | %s', config('app.name', 'Laravel')))
 
 @section('content')
-    <section class="hero hero--privacy">
+    <header class="hero hero--privacy">
         <div class="hero__text">
             <h1 class="hero__title">Site Privacy</h1>
         </div>
-    </section>
-    <section class="privacy pt-4">
+    </header>
+    <article class="privacy pt-4">
         <div class="container">
             <div class="alert alert-info">
                 <div class="alert-heading">Work In Progress</div>
@@ -31,5 +31,5 @@
             </ul>
             {{ Breadcrumbs::render('privacy') }}
         </div>
-    </section>
+    </article>
 @endsection

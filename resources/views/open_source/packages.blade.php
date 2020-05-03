@@ -5,11 +5,11 @@
 @section('title', sprintf('Open Source Packages | %s', config('app.name', 'Laravel')))
 
 @section('content')
-    <section class="hero hero--open-source-packages">
+    <header class="hero hero--open-source-packages">
         <div class="hero__text">
             <h1 class="hero__title">Open Source Packages</h1>
         </div>
-    </section>
+    </header>
     <section class="open-source-packages pt-4">
         <div class="container">
             @forelse($packages as $package)
