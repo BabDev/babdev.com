@@ -28,14 +28,14 @@ class CKEditor4 extends Field
     {
         return $this->withMeta(
             [
-                'editorConfig' => array_merge($this->meta['editorConfig'] ?? [], $config),
+                'editorConfig' => \array_merge($this->meta['editorConfig'] ?? [], $config),
             ]
         );
     }
 
     public function jsonSerialize()
     {
-        return array_merge(
+        return \array_merge(
             parent::jsonSerialize(),
             [
                 'shouldShow' => $this->shouldBeExpanded(),

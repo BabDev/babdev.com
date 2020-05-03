@@ -40,7 +40,7 @@ class AppServiceProvider extends ServiceProvider
 
             $page = $this->app['request']->input($pageName);
 
-            if (filter_var($page, FILTER_VALIDATE_INT) !== false && (int) $page >= 1) {
+            if (\filter_var($page, \FILTER_VALIDATE_INT) !== false && (int) $page >= 1) {
                 return (int) $page;
             }
 

@@ -12,7 +12,7 @@ class AppendPageNumberToBreadcrumbs
 
     public function handle(AfterBreadcrumbGenerated $event): void
     {
-        if (!in_array($event->name, self::SUPPORTED_BREADCRUMBS, true)) {
+        if (!\in_array($event->name, self::SUPPORTED_BREADCRUMBS, true)) {
             return;
         }
 

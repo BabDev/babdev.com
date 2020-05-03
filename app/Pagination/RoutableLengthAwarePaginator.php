@@ -21,7 +21,7 @@ class RoutableLengthAwarePaginator extends LengthAwarePaginator
             return null;
         }
 
-        return call_user_func(static::$currentRouteResolver);
+        return \call_user_func(static::$currentRouteResolver);
     }
 
     /**
@@ -54,8 +54,8 @@ class RoutableLengthAwarePaginator extends LengthAwarePaginator
 
         $parameters = [];
 
-        if (count($this->query) > 0) {
-            $parameters = array_merge($this->query, $parameters);
+        if (\count($this->query) > 0) {
+            $parameters = \array_merge($this->query, $parameters);
         }
 
         if ($page === 1) {

@@ -29,7 +29,7 @@ class UploadImageThruCKEditorController
                 [
                     'uploaded' => 0,
                     'error' => [
-                        'message' => sprintf(
+                        'message' => \sprintf(
                             'An error occurred while uploading the file: %s',
                             $file->getErrorMessage()
                         ),
