@@ -26,7 +26,7 @@ class ViewOpenSourceUpdatesController
             ->paginate(10);
 
         return $this->responseFactory->view(
-            'open_source.updates',
+            'open_source.updates.index',
             [
                 'updates' => $updates,
             ]

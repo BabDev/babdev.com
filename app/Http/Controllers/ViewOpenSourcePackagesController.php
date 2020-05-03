@@ -25,7 +25,7 @@ class ViewOpenSourcePackagesController
             ->get();
 
         return $this->responseFactory->view(
-            'open_source.packages',
+            'open_source.packages.index',
             [
                 'packages' => $packages,
             ]
