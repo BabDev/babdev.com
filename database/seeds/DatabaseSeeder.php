@@ -21,7 +21,6 @@ class DatabaseSeeder extends Seeder
         Artisan::call('import:github-repositories');
 
         $this->call(PackageSeeder::class);
-        $this->call(PackageReleaseSeeder::class);
 
         Artisan::call('import:packagist-downloads');
 
