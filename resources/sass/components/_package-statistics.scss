@@ -1,0 +1,76 @@
+.package-statistics {
+  .package-statistic {
+    .package-statistic--icon {
+      display: inline-block;
+      transform: translateY(-2px);
+
+      svg {
+        display: inline-block;
+        height: .95em;
+        width: auto;
+      }
+    }
+
+    &.package-statistic--unsupported {
+      @extend .badge;
+      @extend .badge-brand-yellow;
+    }
+
+    &.package-statistic--language {
+      color: $gray-600;
+      font-size: .85em;
+    }
+
+    &.package-statistic--package-type {
+      &::before {
+        content: '•';
+        color: $babdev-orange;
+        padding-left: .25em;
+        padding-right: .25em;
+      }
+
+      color: $gray-600;
+      font-size: .85em;
+    }
+
+    &.package-statistic--downloads {
+      &::before {
+        content: '•';
+        color: $babdev-orange;
+        padding-left: .25em;
+        padding-right: .25em;
+      }
+
+      color: $gray-600;
+      font-size: .85em;
+
+      .package-statistic--icon {
+        fill: $gray-600;
+
+        svg {
+          fill: inherit;
+        }
+      }
+    }
+
+    &.package-statistic--stars {
+      &::before {
+        content: '•';
+        color: $babdev-orange;
+        padding-left: .25em;
+        padding-right: .25em;
+      }
+
+      color: $gray-600;
+      font-size: .85em;
+
+      .package-statistic--icon {
+        fill: $gray-600;
+
+        svg {
+          fill: inherit;
+        }
+      }
+    }
+  }
+}

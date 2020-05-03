@@ -3,12 +3,12 @@
 @section('title', sprintf('Privacy | %s', config('app.name', 'Laravel')))
 
 @section('content')
-    <header class="hero hero--privacy">
+    <header class="hero">
         <div class="hero__text">
             <h1 class="hero__title">Site Privacy</h1>
         </div>
     </header>
-    <article class="privacy pt-4">
+    <article class="pt-4">
         <div class="container">
             <div class="alert alert-info">
                 <div class="alert-heading">Work In Progress</div>

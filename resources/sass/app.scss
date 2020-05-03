@@ -55,33 +55,16 @@
 // Components
 @import "components/callout";
 @import "components/hero";
+@import "components/package-statistics";
 @import "components/package-title";
+@import "components/package-topics";
+@import "components/section-heading";
 
 // Elements
+@import "elements/alert";
 @import "elements/footer";
 @import "elements/navbar";
 
 // Pages
 @import "pages/homepage";
-@import "pages/open-source-package-updates";
 @import "pages/open-source-packages";
-
-.alert-heading {
-  font-size: 1.15rem;
-  font-weight: $font-weight-bold;
-}
-
-.section-heading {
-  margin: .625rem 0 1rem;
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    display: inline-block;
-    border-bottom: 2px solid $babdev-orange;
-    margin-bottom: -2px;
-  }
-}

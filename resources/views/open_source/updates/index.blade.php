@@ -1,4 +1,4 @@
-@php /** @var \BabDev\Pagination\RoutableLengthAwarePaginator|\BabDev\Models\PackageUpdates[] $updates */ @endphp
+@php /** @var \BabDev\Pagination\RoutableLengthAwarePaginator|\BabDev\Models\PackageUpdate[] $updates */ @endphp
 
 @extends('layouts.app')
 
@@ -10,15 +10,18 @@
             <h1 class="hero__title">Open Source Package Updates</h1>
         </div>
     </header>
-    <section class="open-source-package-updates pt-4">
+    <section class="pt-4">
         <div class="container">
             @forelse($updates as $update)
-                <article class="open-source-package-update">
-                    <header class="open-source-package-update__title">
+                <article class="mb-3">
+                    <header class="section-heading">
                         <h2>{{ $update->title }}</h2>
                     </header>
-                    <div class="open-source-package-update__teaser">
+                    <div>
                         {!! $update->intro !!}
+                    </div>
+                    <div>
+                        <a class="btn btn-brand" href="{{ route('open-source.update', ['update' => $update]) }}">Read Update</a>
                     </div>
                 </article>
             @empty

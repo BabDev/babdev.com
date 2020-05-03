@@ -10,16 +10,16 @@
             <h1 class="hero__title">Open Source Packages</h1>
         </div>
     </header>
-    <section class="open-source-packages pt-4">
+    <section class="pt-4">
         <div class="container">
             @forelse($packages as $package)
-                <div class="open-source-package{{ $package->logo ? ' open-source-package--has-logo' : '' }}{{ !empty($package->topics) ? ' open-source-package--has-topics' : '' }}{{ $package->has_local_releases ? ' open-source-package--has-links' : '' }}{{ !$package->supported ? ' open-source-package--abandoned' : '' }}">
+                <div class="open-source-package mb-3{{ $package->logo ? ' open-source-package--has-logo' : '' }}{{ !empty($package->topics) ? ' open-source-package--has-topics' : '' }}{{ $package->has_local_releases ? ' open-source-package--has-links' : '' }}{{ !$package->supported ? ' open-source-package--abandoned' : '' }}">
                     @if($package->logo)
-                        <div class="open-source-package__logo">
+                        <div class="open-source-package__logo text-center">
                             <img src="{{ Storage::disk('logos')->url($package->logo) }}" alt="{{ $package->display_name }} Logo" loading="lazy">
                         </div>
                     @endif
-                    <div class="open-source-package__name">
+                    <div class="open-source-package__name section-heading">
                         <a class="open-source-package__link" href="{{ $package->github_url }}" target="_blank" rel="nofollow noreferrer noopener" aria-label="View {{ $package->display_name }} on GitHub">
                             {{ svg('fab-github') }}
                         </a>
@@ -28,7 +28,7 @@
                     <div class="open-source-package__description">
                         {{ $package->description }}
                     </div>
-                    <div class="open-source-package__statistics package-statistics">
+                    <div class="open-source-package__statistics package-statistics mt-2">
                         @if(!$package->supported)
                             <span class="package-statistic package-statistic--unsupported">Package Not Supported</span>
                         @endif
@@ -50,21 +50,12 @@
                         @endif
                     </div>
                     @unless(empty($package->topics))
-                        <div class="open-source-package__topics package-topics">
+                        <div class="open-source-package__topics package-topics mt-2">
                             @foreach($package->topics as $topic)
                                 <span class="package-topic">{{ $topic }}</span>
                             @endforeach
                         </div>
                     @endunless
-                    {{--
-                    <div class="open-source-package__links package-links">
-                        @if($package->has_local_releases)
-                            <span class="package-link">
-                                <a class="btn btn-brand" href="{{ route('open-source.package.releases', ['package' => $package]) }}">View Releases</a>
-                            </span>
-                        @endif
-                    </div>
-                    --}}
                 </div>
             @empty
                 <div class="alert alert-info">
