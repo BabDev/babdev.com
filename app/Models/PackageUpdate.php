@@ -66,4 +66,13 @@ class PackageUpdate extends Model
     {
         return $this->belongsTo(Package::class);
     }
+
+    public function isPublished(): bool
+    {
+        if (!$this->published_at) {
+            return false;
+        }
+
+        return $this->published_at <= Carbon::now();
+    }
 }

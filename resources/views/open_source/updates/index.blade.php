@@ -2,7 +2,7 @@
 
 @extends('layouts.app')
 
-@section('title', sprintf('Open Source Package Updates | %s', config('app.name', 'Laravel')))
+@section('title', sprintf('Open Source Updates | %s', config('app.name', 'Laravel')))
 
 @section('content')
     <header class="hero hero--open-source-package-updates">
