@@ -15,6 +15,7 @@ class RouteServiceProvider extends ServiceProvider
     private function mapWebRoutes(): void
     {
         Route::middleware('web')
-            ->group(base_path('routes/web.php'));
+            ->domain($this->app['config']->get('app.domain', null))
+            ->group($this->app->basePath('routes/web.php'));
     }
 }
