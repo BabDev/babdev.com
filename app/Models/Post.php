@@ -59,7 +59,7 @@ class Post extends Model
 
     public function scopePublished(Builder $query): Builder
     {
-        return $query->where('publish_at', '<=', Carbon::now()->format('Y-m-d H:i:s'));
+        return $query->where('publish_at', '<=', now()->format('Y-m-d H:i:s'));
     }
 
     public function category(): BelongsTo

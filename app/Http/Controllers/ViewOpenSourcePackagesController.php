@@ -3,20 +3,12 @@
 namespace BabDev\Http\Controllers;
 
 use BabDev\Models\Package;
-use Illuminate\Contracts\Routing\ResponseFactory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Http\Response;
 
 class ViewOpenSourcePackagesController
 {
-    private ResponseFactory $responseFactory;
-
-    public function __construct(ResponseFactory $responseFactory)
-    {
-        $this->responseFactory = $responseFactory;
-    }
-
-    public function __invoke(): Response
+    public function __invoke(): View
     {
         /** @var Collection|Package[] $packages */
         $packages = Package::query()
@@ -24,7 +16,7 @@ class ViewOpenSourcePackagesController
             ->orderBy('display_name')
             ->get();
 
-        return $this->responseFactory->view(
+        return view(
             'open_source.packages.index',
             [
                 'packages' => $packages,

@@ -2,27 +2,17 @@
 
 namespace BabDev\Http\Controllers;
 
-use Illuminate\Contracts\Filesystem\Factory;
-use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Filesystem\FilesystemAdapter;
+use Illuminate\Filesystem\FilesystemManager;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class UploadImageThruCKEditorController
 {
-    private ResponseFactory $responseFactory;
-    private Factory $filesystemFactory;
-
-    public function __construct(ResponseFactory $responseFactory, Factory $filesystemFactory)
-    {
-        $this->responseFactory = $responseFactory;
-        $this->filesystemFactory = $filesystemFactory;
-    }
-
-    public function __invoke(Request $request): JsonResponse
+    public function __invoke(Request $request, FilesystemManager $filesystem): JsonResponse
     {
         if (!$request->hasFile('upload')) {
-            return $this->responseFactory->json(
+            return response()->json(
                 [
                     'uploaded' => 0,
                     'error' => [
@@ -35,7 +25,7 @@ class UploadImageThruCKEditorController
         $file = $request->file('upload');
 
         if (!$file->isValid()) {
-            return $this->responseFactory->json(
+            return response()->json(
                 [
                     'uploaded' => 0,
                     'error' => [
@@ -49,11 +39,11 @@ class UploadImageThruCKEditorController
         }
 
         /** @var FilesystemAdapter $disk */
-        $disk = $this->filesystemFactory->disk('attachments');
+        $disk = $filesystem->disk('attachments');
 
         $file->storePubliclyAs('', $file->getClientOriginalName(), 'attachments');
 
-        return $this->responseFactory->json(
+        return response()->json(
             [
                 'uploaded' => 1,
                 'fileName' => $file->getClientOriginalName(),

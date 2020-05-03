@@ -59,7 +59,7 @@ class PackageUpdate extends Model
 
     public function scopePublished(Builder $query): Builder
     {
-        return $query->where('published_at', '<=', Carbon::now()->format('Y-m-d H:i:s'));
+        return $query->where('published_at', '<=', now()->format('Y-m-d H:i:s'));
     }
 
     public function package(): BelongsTo
@@ -73,6 +73,6 @@ class PackageUpdate extends Model
             return false;
         }
 
-        return $this->published_at <= Carbon::now();
+        return $this->published_at <= now();
     }
 }
