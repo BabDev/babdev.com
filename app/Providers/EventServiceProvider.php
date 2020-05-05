@@ -3,10 +3,8 @@
 namespace BabDev\Providers;
 
 use BabDev\Breadcrumbs\Events\AfterBreadcrumbGenerated;
-use BabDev\Listeners\AddDefaultMediaCustomProperties;
 use BabDev\Listeners\AppendPageNumberToBreadcrumbs;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use Spatie\MediaLibrary\MediaCollections\Events\MediaHasBeenAdded;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -22,14 +20,6 @@ class EventServiceProvider extends ServiceProvider
 
         AfterBreadcrumbGenerated::class => [
             AppendPageNumberToBreadcrumbs::class,
-        ],
-
-        /*
-         * Spatie events - Media Library package
-         */
-
-        MediaHasBeenAdded::class => [
-            AddDefaultMediaCustomProperties::class,
         ],
     ];
 }
