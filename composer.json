@@ -20,13 +20,11 @@
         "babdev/nova-ckeditor4-field": "*",
         "barryvdh/laravel-elfinder": "^0.4.5",
         "drobee/nova-sluggable": "^1.2",
-        "ebess/advanced-nova-media-library": "^3.1",
         "guzzlehttp/guzzle": "^6.5.3",
         "knplabs/github-api": "^2.14",
         "laravel/framework": "^7.9.2",
         "laravel/nova": "^3.5",
         "php-http/guzzle6-adapter": "^2.0.1",
-        "spatie/laravel-medialibrary": "^8.2.4",
         "spatie/laravel-sluggable": "^2.4.2",
         "spatie/packagist-api": "^2.0"
     },
