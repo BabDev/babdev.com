@@ -29,9 +29,9 @@ class ImportPackagistDownloads extends Command
             function (Package $package): void {
                 $this->comment("Importing `{$package->name}` downloads... ");
 
-                $packagistParts = \explode('/', $package->packagist_name);
+                [$vendor, $packageName] = \explode('/', $package->packagist_name);
 
-                $packagistInfo = $this->packagist->getPackage($packagistParts[0], $packagistParts[1]);
+                $packagistInfo = $this->packagist->getPackage($vendor, $packageName);
 
                 $package->update(
                     [
