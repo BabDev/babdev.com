@@ -1,0 +1,18 @@
+{
+    "plugins": [
+        [
+            "prismjs",
+            {
+                "languages": [
+                    "markup",
+                    "css",
+                    "javascript",
+                    "bash",
+                    "php"
+                ],
+                "theme": "default",
+                "css": true
+            }
+        ]
+    ]
+}

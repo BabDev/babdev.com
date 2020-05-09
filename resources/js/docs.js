@@ -1,4 +1,7 @@
 import jQuery from 'jquery';
+import Prism from 'prismjs';
+
+Prism.highlightAll();
 
 const wrapWithHeadingContainer = function () {
     jQuery(this).wrap('<div class="section-heading"></div>');
