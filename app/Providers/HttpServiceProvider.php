@@ -44,6 +44,14 @@ class HttpServiceProvider extends ServiceProvider implements DeferrableProvider
 
     public function register(): void
     {
+        $this->registerGuzzle();
+        $this->registerHttplug();
+        $this->registerMessageFactory();
+        $this->registerStreamFactory();
+    }
+
+    private function registerGuzzle(): void
+    {
         $this->app->bind(
             'guzzle',
             static function (Application $app): GuzzleInterface {
@@ -53,7 +61,10 @@ class HttpServiceProvider extends ServiceProvider implements DeferrableProvider
 
         $this->app->alias('guzzle', Guzzle::class);
         $this->app->alias('guzzle', GuzzleInterface::class);
+    }
 
+    private function registerHttplug(): void
+    {
         $this->app->bind(
             'httplug',
             static function (Application $app): ClientInterface {
@@ -64,7 +75,10 @@ class HttpServiceProvider extends ServiceProvider implements DeferrableProvider
         $this->app->alias('httplug', HttpClient::class);
         $this->app->alias('httplug', HttpAsyncClient::class);
         $this->app->alias('httplug', ClientInterface::class);
+    }
 
+    private function registerMessageFactory(): void
+    {
         $this->app->bind(
             'httplug.message_factory',
             static function (Application $app): MessageFactory {
@@ -75,7 +89,10 @@ class HttpServiceProvider extends ServiceProvider implements DeferrableProvider
         $this->app->alias('httplug.message_factory', MessageFactory::class);
         $this->app->alias('httplug.message_factory', RequestFactory::class);
         $this->app->alias('httplug.message_factory', ResponseFactory::class);
+    }
 
+    private function registerStreamFactory(): void
+    {
         $this->app->bind(
             'httplug.stream_factory',
             static function (Application $app): StreamFactory {

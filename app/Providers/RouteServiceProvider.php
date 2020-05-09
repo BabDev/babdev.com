@@ -3,7 +3,7 @@
 namespace BabDev\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Route;
+use Illuminate\Routing\Router;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -14,7 +14,10 @@ class RouteServiceProvider extends ServiceProvider
 
     private function mapWebRoutes(): void
     {
-        Route::middleware('web')
+        /** @var Router $router */
+        $router = $this->app->make('router');
+
+        $router->middleware('web')
             ->domain($this->app['config']->get('app.domain', null))
             ->group($this->app->basePath('routes/web.php'));
     }

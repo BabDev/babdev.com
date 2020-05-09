@@ -30,6 +30,13 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
 
     public function register(): void
     {
+        $this->registerApiConnector();
+        $this->registerClient();
+        $this->registerHttpClientBuilder();
+    }
+
+    private function registerApiConnector(): void
+    {
         $this->app->bind(
             'github.api',
             static function (Application $app): ApiConnector {
@@ -38,7 +45,10 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
         );
 
         $this->app->alias('github.api', ApiConnector::class);
+    }
 
+    private function registerClient(): void
+    {
         $this->app->bind(
             'github.client',
             static function (Application $app): Client {
@@ -57,7 +67,10 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
         );
 
         $this->app->alias('github.client', Client::class);
+    }
 
+    private function registerHttpClientBuilder(): void
+    {
         $this->app->bind(
             'github.http_client.builder',
             static function (Application $app): Builder {

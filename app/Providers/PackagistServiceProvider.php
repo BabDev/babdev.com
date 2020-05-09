@@ -23,6 +23,12 @@ class PackagistServiceProvider extends ServiceProvider implements DeferrableProv
 
     public function register(): void
     {
+        $this->registerApiConnector();
+        $this->registerUrlGenerator();
+    }
+
+    private function registerApiConnector(): void
+    {
         $this->app->bind(
             'packagist.api',
             static function (Application $app): PackagistClient {
@@ -34,7 +40,10 @@ class PackagistServiceProvider extends ServiceProvider implements DeferrableProv
         );
 
         $this->app->alias('packagist.api', PackagistClient::class);
+    }
 
+    private function registerUrlGenerator(): void
+    {
         $this->app->bind(
             'packagist.url_generator',
             static function (Application $app): PackagistUrlGenerator {
