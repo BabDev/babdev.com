@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+require('laravel-mix-purgecss');
 
 /*
  |--------------------------------------------------------------------------
@@ -35,6 +36,14 @@ mix.sass('resources/sass/app.scss', 'public/css')
         postCss: [
             require('autoprefixer')()
         ]
+    })
+    .purgeCss({
+        extend: {
+            content: [path.join(__dirname, 'vendor/babdev/laravel-breadcrumbs/**/*.php')],
+            // Whitelist Prism styles
+            whitelistPatterns: [/^language-/],
+            whitelistPatternsChildren: [/^token/, /^pre/, /^code/],
+        },
     })
 ;
 

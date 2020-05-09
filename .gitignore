@@ -8,6 +8,7 @@
 /public/js/docs.js
 /public/js/manifest.js
 /public/js/vendor.js
+/public/js/*.LICENSE.txt
 /public/logos
 /public/packages
 /public/storage
