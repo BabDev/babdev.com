@@ -1,5 +1,6 @@
 <?php
 
+use BabDev\Http\Controllers\RedirectToPackageDocsController;
 use BabDev\Http\Controllers\UploadImageThruCKEditorController;
 use BabDev\Http\Controllers\ViewOpenSourcePackageDocsPageController;
 use BabDev\Http\Controllers\ViewOpenSourcePackagesController;
@@ -16,6 +17,16 @@ $router->get(
     '/open-source/packages',
     ViewOpenSourcePackagesController::class
 )->name('open-source.packages');
+
+$router->get(
+    '/open-source/packages/{package}/docs',
+    RedirectToPackageDocsController::class
+);
+
+$router->get(
+    '/open-source/packages/{package}/docs/{slug}',
+    RedirectToPackageDocsController::class
+);
 
 $router->get(
     '/open-source/packages/{package}/docs/{version}/{slug}',
