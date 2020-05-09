@@ -1,0 +1,41 @@
+.package-docs {
+  &__sidebar {
+    // The sidebar comes from Parsedown rendered content, map it to the vertical nav structure
+    > ul {
+      @extend .nav;
+      @extend .flex-column;
+
+      > li {
+        @extend .nav-item;
+
+        > a {
+          @extend .nav-link;
+        }
+      }
+    }
+  }
+
+  @supports (display: grid) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "content" "sidebar";
+
+    &__sidebar {
+      grid-area: sidebar;
+    }
+
+    &__content {
+      grid-area: content;
+    }
+
+    @include media-breakpoint-up(md) {
+      grid-template-columns: 25% 75%;
+      grid-template-areas: "sidebar content";
+    }
+
+    @include media-breakpoint-up(lg) {
+      grid-template-columns: 20% 80%;
+      grid-template-areas: "sidebar content";
+    }
+  }
+}

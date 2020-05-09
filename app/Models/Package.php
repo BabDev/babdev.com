@@ -89,4 +89,32 @@ class Package extends Model
     {
         return 'https://github.com/BabDev/' . $this->name;
     }
+
+    /**
+     * @todo Integrate into database
+     */
+    public function hasDocsVersion(string $version): bool
+    {
+        if ($this->name !== 'laravel-breadcrumbs') {
+            return false;
+        }
+
+        return $version === '1.x';
+    }
+
+    /**
+     * @todo Integrate into database
+     */
+    public function mapDocsVersionToGitBranch(string $version): string
+    {
+        if ($this->name !== 'laravel-breadcrumbs') {
+            throw new \InvalidArgumentException('Repository not supported');
+        }
+
+        if ($version !== '1.x') {
+            throw new \InvalidArgumentException('Version not supported');
+        }
+
+        return 'master';
+    }
 }

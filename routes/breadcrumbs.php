@@ -2,6 +2,7 @@
 
 use BabDev\Breadcrumbs\Contracts\BreadcrumbsGenerator;
 use BabDev\Breadcrumbs\Contracts\BreadcrumbsManager;
+use BabDev\Models\Package;
 use BabDev\Models\PackageUpdate;
 
 /** @var BreadcrumbsManager $breadcrumbs */
@@ -27,6 +28,19 @@ $breadcrumbs->for(
         $trail->parent('homepage');
         $trail->push('Open Source');
         $trail->push('Packages', route('open-source.packages'));
+    }
+);
+
+$breadcrumbs->for(
+    'open-source.packages.package-docs-page',
+    static function (BreadcrumbsGenerator $trail, Package $package, ?string $title): void {
+        $trail->parent('open-source.packages');
+        $trail->push($package->display_name);
+        $trail->push('Documentation');
+
+        if ($title !== null) {
+            $trail->push($title);
+        }
     }
 );
 

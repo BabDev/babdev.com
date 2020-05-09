@@ -2,7 +2,10 @@
 
 namespace BabDev\Providers;
 
+use BabDev\GitHub\ApiConnector;
 use BabDev\Pagination\RoutableLengthAwarePaginator;
+use BabDev\Services\DocumentationProcessor;
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Schema;
@@ -19,6 +22,17 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->registerPagination();
+
+        $this->app->bind(
+            DocumentationProcessor::class,
+            static function (Application $app): DocumentationProcessor {
+                return new DocumentationProcessor(
+                    $app->make('github.api'),
+                    $app->make('cache.store'),
+                    new \ParsedownExtra()
+                );
+            }
+        );
 
         if ($this->app->isLocal()) {
             $this->app->register(TelescopeServiceProvider::class);

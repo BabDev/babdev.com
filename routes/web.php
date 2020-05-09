@@ -1,6 +1,7 @@
 <?php
 
 use BabDev\Http\Controllers\UploadImageThruCKEditorController;
+use BabDev\Http\Controllers\ViewOpenSourcePackageDocsPageController;
 use BabDev\Http\Controllers\ViewOpenSourcePackagesController;
 use BabDev\Http\Controllers\ViewOpenSourceUpdateController;
 use BabDev\Http\Controllers\ViewOpenSourceUpdatesController;
@@ -15,6 +16,11 @@ $router->get(
     '/open-source/packages',
     ViewOpenSourcePackagesController::class
 )->name('open-source.packages');
+
+$router->get(
+    '/open-source/packages/{package}/docs/{version}/{slug}',
+    ViewOpenSourcePackageDocsPageController::class
+)->name('open-source.packages.package-docs-page');
 
 $router->get(
     '/open-source/updates/{update}',

@@ -15,6 +15,11 @@ class ApiConnector
         $this->client = $client;
     }
 
+    public function fetchFileContents(string $username, string $repository, string $path, string $reference): array
+    {
+        return $this->client->api('repositories')->contents()->show($username, $repository, $path, $reference);
+    }
+
     public function fetchPublicRepositories(string $username): Collection
     {
         return (new Collection((new ResultPager($this->client))->fetchAll($this->client->api('organization'), 'repositories', [$username])))
