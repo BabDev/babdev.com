@@ -16,6 +16,12 @@
     }
   }
 
+  &__links {
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+    }
+  }
+
   @supports (display: grid) {
     display: grid;
     grid-template-columns: 8fr;
@@ -43,7 +49,7 @@
         }
       }
 
-      &.open-source-package-has-links {
+      &.open-source-package--has-links {
         .open-source-package {
           &__links {
             grid-row: 6;
@@ -52,7 +58,7 @@
       }
     }
 
-    &.open-source-package-has-links {
+    &.open-source-package--has-links {
       .open-source-package {
         &__links {
           grid-row: 5;

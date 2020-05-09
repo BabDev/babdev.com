@@ -13,7 +13,7 @@
     <section class="pt-4">
         <div class="container">
             @forelse($packages as $package)
-                <div class="open-source-package mb-3{{ $package->logo ? ' open-source-package--has-logo' : '' }}{{ !empty($package->topics) ? ' open-source-package--has-topics' : '' }}{{ $package->has_local_releases ? ' open-source-package--has-links' : '' }}{{ !$package->supported ? ' open-source-package--abandoned' : '' }}">
+                <div class="open-source-package mb-3{{ $package->logo ? ' open-source-package--has-logo' : '' }}{{ !empty($package->topics) ? ' open-source-package--has-topics' : '' }}{{ $package->documentation_type === \BabDev\DocumentationType::GITHUB ? ' open-source-package--has-links' : '' }}{{ !$package->supported ? ' open-source-package--abandoned' : '' }}">
                     @if($package->logo)
                         <div class="open-source-package__logo text-center">
                             <img src="{{ Storage::disk('logos')->url($package->logo) }}" alt="{{ $package->display_name }} Logo" loading="lazy">
@@ -56,6 +56,15 @@
                             @endforeach
                         </div>
                     @endunless
+                    @if($package->documentation_type === \BabDev\DocumentationType::GITHUB)
+                        <div class="open-source-package__links package-links mt-2">
+                            @if($package->documentation_type === \BabDev\DocumentationType::GITHUB)
+                                <span class="package-link">
+                                    <a class="btn btn-brand" href="{{ route('open-source.packages.package-docs-page', ['package' => $package, 'version' => '1.x', 'slug' => 'intro']) }}">View Documentation</a>
+                                </span>
+                            @endif
+                        </div>
+                    @endif
                 </div>
             @empty
                 <div class="alert alert-info">
