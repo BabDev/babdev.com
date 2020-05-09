@@ -2,7 +2,6 @@
 
 namespace BabDev\Http\Controllers;
 
-use BabDev\DocumentationType;
 use BabDev\Models\Package;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -12,7 +11,7 @@ class RedirectToPackageDocsController
     public function __invoke(Request $request, Package $package): RedirectResponse
     {
         // Redirect if package does not have docs
-        if ($package->documentation_type !== DocumentationType::GITHUB) {
+        if (!$package->has_documentation) {
             return redirect()->route('open-source.packages');
         }
 

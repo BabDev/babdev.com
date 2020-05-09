@@ -2,7 +2,6 @@
 
 namespace BabDev\Http\Controllers;
 
-use BabDev\DocumentationType;
 use BabDev\Models\Package;
 use BabDev\Services\DocumentationProcessor;
 use BabDev\Services\Exceptions\PageNotFoundException;
@@ -19,7 +18,7 @@ class ViewOpenSourcePackageDocsPageController
     public function __invoke(Package $package, string $version, string $slug, DocumentationProcessor $documentationProcessor)
     {
         // Redirect if package does not have docs
-        if ($package->documentation_type !== DocumentationType::GITHUB) {
+        if (!$package->has_documentation) {
             return redirect()->route('open-source.packages');
         }
 

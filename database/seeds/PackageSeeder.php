@@ -40,6 +40,7 @@ class PackageSeeder extends Seeder
             ->update(
                 [
                     'packagist_name' => 'babdev/laravel-breadcrumbs',
+                    'has_documentation' => true,
                     'package_type' => PackageType::LARAVEL_PACKAGE,
                 ]
             );

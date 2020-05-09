@@ -17,7 +17,7 @@ use Spatie\Sluggable\SlugOptions;
  * @property string|null $logo
  * @property string|null $description
  * @property array|null  $topics
- * @property string      $documentation_type
+ * @property bool        $has_documentation
  * @property string|null $package_type
  * @property int         $stars
  * @property int|null    $downloads
@@ -44,7 +44,7 @@ class Package extends Model
         'logo',
         'description',
         'topics',
-        'documentation_type',
+        'has_documentation',
         'package_type',
         'stars',
         'downloads',
@@ -56,6 +56,7 @@ class Package extends Model
 
     protected $casts = [
         'topics' => 'array',
+        'has_documentation' => 'boolean',
         'stars' => 'integer',
         'downloads' => 'integer',
         'supported' => 'boolean',

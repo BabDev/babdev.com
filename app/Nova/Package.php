@@ -2,7 +2,6 @@
 
 namespace BabDev\Nova;
 
-use BabDev\DocumentationType;
 use BabDev\Models\Package as PackageModel;
 use BabDev\PackageType;
 use Drobee\NovaSluggable\Slug;
@@ -53,15 +52,7 @@ class Package extends Resource
                 ->hideFromIndex()
                 ->hideFromDetail(),
 
-            Select::make('Documentation Type')
-                ->options(
-                    [
-                        DocumentationType::GITHUB => trans('doc_type.' . DocumentationType::GITHUB),
-                        DocumentationType::LOCAL => trans('doc_type.' . DocumentationType::LOCAL),
-                        DocumentationType::NONE => trans('doc_type.' . DocumentationType::NONE),
-                    ]
-                )
-                ->displayUsingLabels(),
+            Boolean::make('Has Documentation'),
 
             Select::make('Package Type')
                 ->options(
