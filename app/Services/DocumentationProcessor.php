@@ -33,43 +33,39 @@ class DocumentationProcessor
      */
     public function renderPage(Package $package, string $version, string $pageSlug): string
     {
-        $cacheKey = $this->generateDocsFileCacheKey($package, $version, $pageSlug);
+        return $this->cache->remember(
+            $this->generateDocsFileCacheKey($package, $version, $pageSlug),
+            new \DateInterval('P1D'),
+            function () use ($package, $version, $pageSlug): string {
+                try {
+                    $file = $this->github->fetchFileContents(
+                        'BabDev',
+                        $package->name,
+                        'docs/' . $pageSlug . '.md',
+                        $version
+                    );
+                } catch (RuntimeException $exception) {
+                    throw new PageNotFoundException(
+                        sprintf('The "%s" page does not exist for the %s package', $pageSlug, $package->display_name),
+                        404,
+                        $exception
+                    );
+                }
 
-        if ($this->cache->has($cacheKey)) {
-            return $this->cache->get($cacheKey);
-        }
+                switch ($file['encoding']) {
+                    case 'base64':
+                        $fileContents = base64_decode($file['content']);
 
-        try {
-            $file = $this->github->fetchFileContents(
-                'BabDev',
-                $package->name,
-                'docs/' . $pageSlug . '.md',
-                $version
-            );
-        } catch (RuntimeException $exception) {
-            throw new PageNotFoundException(
-                sprintf('The "%s" page does not exist for the %s package', $pageSlug, $package->display_name),
-                404,
-                $exception
-            );
-        }
+                        break;
 
-        switch ($file['encoding']) {
-            case 'base64':
-                $fileContents = base64_decode($file['content']);
+                    default:
+                        throw new UnsupportedEncodingException(
+                            sprintf('The "%s" encoding is not supported.', $file['encoding'])
+                        );
+                }
 
-                break;
-
-            default:
-                throw new UnsupportedEncodingException(
-                    sprintf('The "%s" encoding is not supported.', $file['encoding'])
-                );
-        }
-
-        $rendered = $this->parsedown->text($fileContents);
-
-        $this->cache->put($cacheKey, $rendered, new \DateInterval('P1D'));
-
-        return $rendered;
+                return $this->parsedown->text($fileContents);
+            }
+        );
     }
 }
