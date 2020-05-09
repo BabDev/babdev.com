@@ -18,6 +18,7 @@ use Spatie\Sluggable\SlugOptions;
  * @property string|null $description
  * @property array|null  $topics
  * @property bool        $has_documentation
+ * @property array|null  $docs_branches
  * @property string|null $package_type
  * @property int         $stars
  * @property int|null    $downloads
@@ -45,6 +46,7 @@ class Package extends Model
         'description',
         'topics',
         'has_documentation',
+        'docs_branches',
         'package_type',
         'stars',
         'downloads',
@@ -57,6 +59,7 @@ class Package extends Model
     protected $casts = [
         'topics' => 'array',
         'has_documentation' => 'boolean',
+        'docs_branches' => 'array',
         'stars' => 'integer',
         'downloads' => 'integer',
         'supported' => 'boolean',
@@ -91,31 +94,25 @@ class Package extends Model
         return 'https://github.com/BabDev/' . $this->name;
     }
 
-    /**
-     * @todo Integrate into database
-     */
     public function hasDocsVersion(string $version): bool
     {
-        if ($this->name !== 'laravel-breadcrumbs') {
+        if ($this->docs_branches === null) {
             return false;
         }
 
-        return $version === '1.x';
+        return isset($this->docs_branches[$version]);
     }
 
-    /**
-     * @todo Integrate into database
-     */
     public function mapDocsVersionToGitBranch(string $version): string
     {
-        if ($this->name !== 'laravel-breadcrumbs') {
+        if ($this->docs_branches === null) {
             throw new \InvalidArgumentException('Repository not supported');
         }
 
-        if ($version !== '1.x') {
+        if (!isset($this->docs_branches[$version])) {
             throw new \InvalidArgumentException('Version not supported');
         }
 
-        return 'master';
+        return $this->docs_branches[$version];
     }
 }

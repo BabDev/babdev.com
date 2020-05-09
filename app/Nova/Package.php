@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
+use Laravel\Nova\Fields\KeyValue;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Resource;
@@ -53,6 +54,12 @@ class Package extends Resource
                 ->hideFromDetail(),
 
             Boolean::make('Has Documentation'),
+
+            KeyValue::make('Docs Branches')
+                ->keyLabel('Version')
+                ->valueLabel('Git Branch')
+                ->rules('json')
+                ->hideFromIndex(),
 
             Select::make('Package Type')
                 ->options(

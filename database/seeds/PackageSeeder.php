@@ -41,6 +41,9 @@ class PackageSeeder extends Seeder
                 [
                     'packagist_name' => 'babdev/laravel-breadcrumbs',
                     'has_documentation' => true,
+                    'docs_branches' => [
+                        '1.x' => 'master',
+                    ],
                     'package_type' => PackageType::LARAVEL_PACKAGE,
                 ]
             );
