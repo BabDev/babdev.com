@@ -19,6 +19,7 @@ use Spatie\Sluggable\SlugOptions;
  * @property array|null  $topics
  * @property bool        $has_documentation
  * @property array|null  $docs_branches
+ * @property string|null $default_docs_version
  * @property string|null $package_type
  * @property int         $stars
  * @property int|null    $downloads
@@ -47,6 +48,7 @@ class Package extends Model
         'topics',
         'has_documentation',
         'docs_branches',
+        'default_docs_version',
         'package_type',
         'stars',
         'downloads',
@@ -114,5 +116,18 @@ class Package extends Model
         }
 
         return $this->docs_branches[$version];
+    }
+
+    public function getDefaultDocsVersion(): string
+    {
+        if ($this->default_docs_version !== null) {
+            return $this->default_docs_version;
+        }
+
+        if ($this->docs_branches === null) {
+            throw new \InvalidArgumentException('No documentation mapping created');
+        }
+
+        return array_key_first($this->docs_branches);
     }
 }

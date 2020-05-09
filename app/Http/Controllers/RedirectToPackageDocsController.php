@@ -19,8 +19,7 @@ class RedirectToPackageDocsController
         $version = $request->get('version');
 
         if ($version === null) {
-            // TODO - Get from model
-            $version = '1.x';
+            $version = $package->getDefaultDocsVersion();
         }
 
         return redirect()->route(

@@ -59,7 +59,7 @@
                     @if($package->has_documentation)
                         <div class="open-source-package__links package-links mt-2">
                             <span class="package-link">
-                                <a class="btn btn-brand" href="{{ route('open-source.packages.package-docs-page', ['package' => $package, 'version' => '1.x', 'slug' => 'intro']) }}">View Documentation</a>
+                                <a class="btn btn-brand" href="{{ route('open-source.packages.package-docs-page', ['package' => $package, 'version' => $package->getDefaultDocsVersion(), 'slug' => 'intro']) }}">View Documentation</a>
                             </span>
                         </div>
                     @endif

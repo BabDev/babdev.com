@@ -61,6 +61,11 @@ class Package extends Resource
                 ->rules('json')
                 ->hideFromIndex(),
 
+            Text::make('Default Docs Version')
+                ->nullable(true)
+                ->required(false)
+                ->hideFromIndex(),
+
             Select::make('Package Type')
                 ->options(
                     [
