@@ -41,8 +41,8 @@ mix.sass('resources/sass/app.scss', 'public/css')
         extend: {
             content: [path.join(__dirname, 'vendor/babdev/laravel-breadcrumbs/**/*.php')],
             // Whitelist Prism styles
-            whitelistPatterns: [/^language-/],
-            whitelistPatternsChildren: [/^token/, /^pre/, /^code/],
+            whitelistPatterns: [/^language-/, /^table-/],
+            whitelistPatternsChildren: [/^token/, /^pre/, /^code/, /^table/],
         },
     })
 ;
