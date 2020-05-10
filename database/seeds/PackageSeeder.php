@@ -27,6 +27,10 @@ class PackageSeeder extends Seeder
             ->update(
                 [
                     'packagist_name' => 'babdev/pagerfanta-bundle',
+                    'has_documentation' => true,
+                    'docs_branches' => [
+                        '2.x' => '2.x',
+                    ],
                     'package_type' => PackageType::SYMFONY_BUNDLE,
                 ]
             );
@@ -70,6 +74,10 @@ class PackageSeeder extends Seeder
             ->update(
                 [
                     'packagist_name' => 'babdev/laravel-twilio',
+                    'has_documentation' => true,
+                    'docs_branches' => [
+                        '1.x' => 'master',
+                    ],
                     'package_type' => PackageType::LARAVEL_PACKAGE,
                 ]
             );
