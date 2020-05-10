@@ -17,7 +17,7 @@ This application is designed to run with two separate subdomains, one for the li
 
 ## Installation
 
-1. Clone this repository (`git clone git@github.com:babdev/babdev.com.git babdev.com`)
+1. Clone this repository (`git clone git@github.com:BabDev/babdev.com.git babdev.com`)
 2. Setup a new database on your MySQL server for the website
 3. Copy the `.env.example` file to `.env` and fill in the required configuration:
     - Set the database connection info to the `DB_*` env vars
