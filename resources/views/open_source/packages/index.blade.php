@@ -38,14 +38,14 @@
                         @endif
                         @if($package->downloads)
                             <span class="package-statistic package-statistic--downloads">
-                                <span class="package-statistic--value">{{ number_format($package->downloads) }}</span>
-                                <span class="package-statistic--icon">{{ svg('fas-download') }}</span>
+                                <span class="package-statistic__value">{{ number_format($package->downloads) }}</span>
+                                <span class="package-statistic__icon">{{ svg('fas-download') }}</span>
                             </span>
                         @endif
                         @if($package->stars)
                             <span class="package-statistic package-statistic--stars">
-                                <span class="package-statistic--value">{{ $package->stars }}</span>
-                                <span class="package-statistic--icon">{{ svg('far-star') }}</span>
+                                <span class="package-statistic__value">{{ $package->stars }}</span>
+                                <span class="package-statistic__icon">{{ svg('far-star') }}</span>
                             </span>
                         @endif
                     </div>

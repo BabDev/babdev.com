@@ -1,6 +1,6 @@
 .package-statistics {
   .package-statistic {
-    .package-statistic--icon {
+    .package-statistic__icon {
       display: inline-block;
       transform: translateY(-2px);
 
@@ -44,7 +44,7 @@
       color: $gray-600;
       font-size: .85em;
 
-      .package-statistic--icon {
+      .package-statistic__icon {
         fill: $gray-600;
 
         svg {
@@ -64,7 +64,7 @@
       color: $gray-600;
       font-size: .85em;
 
-      .package-statistic--icon {
+      .package-statistic__icon {
         fill: $gray-600;
 
         svg {

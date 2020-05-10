@@ -1,0 +1,18 @@
+.item-published {
+  margin-bottom: .5rem;
+  color: $gray-600;
+  font-size: .9rem;
+
+  &__icon {
+    display: inline-block;
+    transform: translateY(-2px);
+    fill: $gray-600;
+
+    svg {
+      display: inline-block;
+      height: .95em;
+      width: auto;
+      fill: inherit;
+    }
+  }
+}

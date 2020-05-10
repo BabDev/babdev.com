@@ -17,6 +17,10 @@
                     <header class="section-heading">
                         <h2>{{ $update->title }}</h2>
                     </header>
+                    <div class="item-published">
+                        <span class="item-published__icon">{{ svg('far-calendar') }}</span>
+                        <span class="item-published__date">{{ $update->published_at->format('F j, Y') }}</span>
+                    </div>
                     <div>
                         {!! $update->intro !!}
                     </div>
