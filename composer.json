@@ -46,8 +46,7 @@
     },
     "autoload": {
         "classmap": [
-            "database/seeds",
-            "database/factories"
+            "database/seeds"
         ],
         "files": [
             "app/helpers.php"
