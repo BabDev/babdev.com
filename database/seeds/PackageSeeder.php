@@ -61,6 +61,10 @@ class PackageSeeder extends Seeder
             ->update(
                 [
                     'packagist_name' => 'babdev/laravel-server-push-manager',
+                    'has_documentation' => true,
+                    'docs_branches' => [
+                        '1.x' => 'master',
+                    ],
                     'package_type' => PackageType::LARAVEL_PACKAGE,
                 ]
             );
