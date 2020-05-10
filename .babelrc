@@ -8,7 +8,9 @@
                     "css",
                     "javascript",
                     "bash",
-                    "php"
+                    "php",
+                    "twig",
+                    "yaml"
                 ],
                 "theme": "default",
                 "css": true
