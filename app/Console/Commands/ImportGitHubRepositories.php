@@ -27,6 +27,11 @@ class ImportGitHubRepositories extends Command
 
         $this->github->fetchPublicRepositories('BabDev')->each(
             function (array $repositoryAttributes): void {
+                // Ignore this website
+                if ($repositoryAttributes['name'] === 'babdev.com') {
+                    return;
+                }
+
                 $this->comment("Importing `{$repositoryAttributes['name']}`... ");
 
                 Package::query()->updateOrCreate(
