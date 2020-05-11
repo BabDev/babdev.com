@@ -37,6 +37,10 @@ class PreloadAssets
 
     private function isTelescopeRequest(Request $request): bool
     {
+        if (!config('telescope.enabled')) {
+            return false;
+        }
+
         foreach ([config('telescope.path') . '*', 'telescope-api*', 'vendor/telescope*'] as $path) {
             if ($request->is($path)) {
                 return true;
