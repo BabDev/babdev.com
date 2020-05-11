@@ -5,8 +5,7 @@
 @section('content')
     <section class="hero hero--homepage">
         <div class="hero__text">
-            <h1 class="hero__title">Expert Problem Solver</h1>
-            <h2 class="hero__subtitle">Creating Open Source Solutions Since 2010</h2>
+            <h1 class="hero__title">Creating Open Source Solutions Since 2010</h1>
         </div>
     </section>
     <section class="homepage-callouts">
