@@ -4,7 +4,18 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>@yield('title', config('app.name', 'Laravel'))</title>
+        <meta property="og:type" content="{{ $ogType ?? 'website' }}">
+        <meta property="og:title" content="{{ $ogTitle ?? $title ?? config('app.name', 'BabDev') }}">
+        <meta property="og:image" content="{{ asset('images/logos/babdev.svg') }}">
+        <meta property="og:url" content="{{ url()->current() }}">
+        <meta property="og:locale" content="en_US" />
+        <meta property="twitter:site" content="@mbabker">
+        <meta property="twitter:creator" content="@mbabker">
+        <meta property="twitter:url" content="{{ url()->current() }}">
+        <meta property="twitter:title" content="{{ $ogTitle ?? $title ?? config('app.name', 'BabDev') }}">
+        <meta property="twitter:image" content="{{ asset('images/logos/babdev.svg') }}">
+        @yield('meta')
+        <title>{{ $title ?? config('app.name', 'BabDev') }}</title>
         <link href="{{ PushManager::preload(mix('css/app.css'), ['as' => 'stylesheet']) }}" rel="stylesheet">
     </head>
     <body>

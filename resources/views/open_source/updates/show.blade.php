@@ -1,8 +1,15 @@
 @php /** @var \BabDev\Models\PackageUpdate $update */ @endphp
 
-@extends('layouts.app')
+@extends('layouts.app', [
+    'title' => sprintf('%s | Open Source Updates | %s', $update->title, config('app.name', 'BabDev')),
+    'ogTitle' => sprintf('%s | %s', $update->title, config('app.name', 'BabDev')),
+    'ogType' => 'article',
+])
 
-@section('title', sprintf('%s | Open Source Updates | %s', $update->title, config('app.name', 'Laravel')))
+@section('meta')
+    <meta property="article:published_time" content="{{ $update->published_at->format('c') }}" />
+    <meta property="article:modified_time" content="{{ $update->updated_at->format('c') }}" />
+@endsection
 
 @section('content')
     <header class="package-title{{ $update->package->logo ? ' package-title--has-logo' : '' }} pt-4">

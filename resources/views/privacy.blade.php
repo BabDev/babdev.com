@@ -1,6 +1,6 @@
-@extends('layouts.app')
-
-@section('title', sprintf('Privacy | %s', config('app.name', 'Laravel')))
+@extends('layouts.app', [
+    'title' => sprintf('Privacy | %s', config('app.name', 'BabDev')),
+])
 
 @section('content')
     <header class="hero">

@@ -16,5 +16,4 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('import:packagist-downloads')->hourly();
     }
-
 }

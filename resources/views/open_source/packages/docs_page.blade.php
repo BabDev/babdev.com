@@ -3,9 +3,9 @@
 @php /** @var string $sidebar */ @endphp
 @php /** @var string|null $title */ @endphp
 
-@extends('layouts.app')
-
-@section('title', sprintf('%s%s Documentation | %s', ($title !== null ? ($title . ' | ') : ''), $package->display_name, config('app.name', 'Laravel')))
+@extends('layouts.app', [
+    'title' => sprintf('%s%s Documentation | %s', ($title !== null ? ($title . ' | ') : ''), $package->display_name, config('app.name', 'BabDev')),
+])
 
 @section('content')
     <header class="package-title{{ $package->logo ? ' package-title--has-logo' : '' }} pt-4">
