@@ -5,7 +5,6 @@ namespace BabDev\Http\Middleware;
 use BabDev\ServerPushManager\PushManager;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Laravel\Nova\Nova;
 
 class PreloadAssets
 {
@@ -16,14 +15,6 @@ class PreloadAssets
         $this->pushManager = $pushManager;
     }
 
-    /**
-     * Handle an incoming request.
-     *
-     * @param Request  $request
-     * @param \Closure $next
-     *
-     * @return mixed
-     */
     public function handle(Request $request, \Closure $next)
     {
         $response = $next($request);
@@ -41,15 +32,7 @@ class PreloadAssets
 
     private function isNovaRequest(Request $request): bool
     {
-        $novaPath = \trim(Nova::path(), '/') ?: '/';
-
-        foreach ([$novaPath . '*', 'nova-api*', 'nova-vendor*'] as $path) {
-            if ($request->is($path)) {
-                return true;
-            }
-        }
-
-        return false;
+        return config('nova.domain') === $request->getHost();
     }
 
     private function isTelescopeRequest(Request $request): bool
