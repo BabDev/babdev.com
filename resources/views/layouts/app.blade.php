@@ -15,7 +15,7 @@
         <meta property="twitter:title" content="{{ $ogTitle ?? $title ?? config('app.name', 'BabDev') }}">
         <meta property="twitter:image" content="{{ asset('images/logos/babdev.svg') }}">
         @yield('meta')
-        <title>{{ $title ?? config('app.name', 'BabDev') }}</title>
+        <title>{{ $title ?? config('app.name', 'BabDev - Laravel & Symfony packages for your websites') }}</title>
         <link href="{{ PushManager::preload(mix('css/app.css'), ['as' => 'stylesheet']) }}" rel="stylesheet">
     </head>
     <body>
