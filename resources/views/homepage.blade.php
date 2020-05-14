@@ -1,4 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.app', [
+    'title' => 'BabDev - Open Source Solutions for PHP Applications',
+])
 
 @section('main-classes', 'pb-3')
 
