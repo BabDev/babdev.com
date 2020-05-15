@@ -16,5 +16,6 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('import:packagist-downloads')->hourly();
         $schedule->command('import:github-repositories')->daily();
+        $schedule->command('sitemap:generate')->daily();
     }
 }

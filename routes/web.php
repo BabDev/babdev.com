@@ -6,6 +6,7 @@ use BabDev\Http\Controllers\ViewOpenSourcePackageDocsPageController;
 use BabDev\Http\Controllers\ViewOpenSourcePackagesController;
 use BabDev\Http\Controllers\ViewOpenSourceUpdateController;
 use BabDev\Http\Controllers\ViewOpenSourceUpdatesController;
+use BabDev\Http\Controllers\ViewSitemapController;
 use Illuminate\Routing\Router;
 
 /** @var Router $router */
@@ -47,6 +48,11 @@ $router->get(
     '/open-source/updates/page/{page}',
     ViewOpenSourceUpdatesController::class
 )->name('open-source.updates.paginated');
+
+$router->get(
+    '/sitemap.xml',
+    ViewSitemapController::class
+);
 
 $router->group(
     [
