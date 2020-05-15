@@ -10,11 +10,11 @@
         <meta property="og:url" content="{{ url()->current() }}">
         <meta property="og:locale" content="en_US" />
         <meta name="twitter:card" content="summary_large_image">
-        <meta property="twitter:site" content="@mbabker">
-        <meta property="twitter:creator" content="@mbabker">
-        <meta property="twitter:url" content="{{ url()->current() }}">
-        <meta property="twitter:title" content="{{ $ogTitle ?? $title ?? config('app.name', 'BabDev') }}">
-        <meta property="twitter:image" content="{{ asset('images/logos/social-media.png') }}">
+        <meta name="twitter:site" content="@mbabker">
+        <meta name="twitter:creator" content="@mbabker">
+        <meta name="twitter:url" content="{{ url()->current() }}">
+        <meta name="twitter:title" content="{{ $ogTitle ?? $title ?? config('app.name', 'BabDev') }}">
+        <meta name="twitter:image" content="{{ asset('images/logos/social-media.png') }}">
         @yield('meta')
         <title>{{ $title ?? config('app.name', 'BabDev') }}</title>
         <link href="{{ PushManager::preload(mix('css/app.css'), ['as' => 'stylesheet']) }}" rel="stylesheet">
