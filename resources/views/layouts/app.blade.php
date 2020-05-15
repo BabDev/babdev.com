@@ -9,6 +9,7 @@
         <meta property="og:image" content="{{ asset('images/logos/social-media.png') }}">
         <meta property="og:url" content="{{ url()->current() }}">
         <meta property="og:locale" content="en_US" />
+        <meta name="twitter:card" content="summary_large_image">
         <meta property="twitter:site" content="@mbabker">
         <meta property="twitter:creator" content="@mbabker">
         <meta property="twitter:url" content="{{ url()->current() }}">
