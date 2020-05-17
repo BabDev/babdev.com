@@ -17,6 +17,7 @@ $router->view('/privacy', 'privacy')->name('privacy');
 $router->permanentRedirect('/extensions', '/open-source/packages');
 $router->permanentRedirect('/extensions/latest', '/open-source/packages');
 $router->permanentRedirect('/extensions/releases', '/open-source/packages');
+$router->permanentRedirect('/extensions/updates', '/open-source/updates');
 
 $router->get(
     '/open-source/packages',
