@@ -107,12 +107,8 @@ class Package extends Model
 
     public function mapDocsVersionToGitBranch(string $version): string
     {
-        if ($this->docs_branches === null) {
-            throw new \InvalidArgumentException('Repository not supported');
-        }
-
-        if (!isset($this->docs_branches[$version])) {
-            throw new \InvalidArgumentException('Version not supported');
+        if (!$this->hasDocsVersion($version)) {
+            throw new \InvalidArgumentException(sprintf('Cannot map version "%s" to git branch for documentation', $version));
         }
 
         return $this->docs_branches[$version];
