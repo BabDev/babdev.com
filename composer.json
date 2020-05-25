@@ -21,11 +21,11 @@
         "barryvdh/laravel-elfinder": "^0.4.5",
         "drobee/nova-sluggable": "^1.2",
         "erusev/parsedown-extra": "^0.8.1",
-        "guzzlehttp/guzzle": "^6.5.3",
+        "guzzlehttp/guzzle": "^6.5.4",
         "knplabs/github-api": "^2.14",
-        "laravel/framework": "^7.11",
+        "laravel/framework": "^7.12",
         "laravel/nova": "^3.6",
-        "llaski/nova-scheduled-jobs": "^3.0",
+        "llaski/nova-scheduled-jobs": "^3.1",
         "php-http/guzzle6-adapter": "^2.0.1",
         "spatie/laravel-sitemap": "^5.7",
         "spatie/laravel-sluggable": "^2.4.2",
@@ -34,7 +34,7 @@
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.7",
-        "facade/ignition": "^2.0.2",
+        "facade/ignition": "^2.0.4",
         "friendsofphp/php-cs-fixer": "^2.16.3",
         "laravel/telescope": "^3.5",
         "nunomaduro/collision": "^4.2"
