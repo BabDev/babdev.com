@@ -10,10 +10,6 @@
     </header>
     <article class="pt-4">
         <div class="container">
-            <div class="alert alert-info">
-                <div class="alert-heading">Work In Progress</div>
-                <div>This document is a work in progress, for now it is a very loose summary of pertinent bits.</div>
-            </div>
             <div class="section-heading">
                 <h2>Summary</h2>
             </div>
