@@ -14,5 +14,6 @@ const wrapWithHeadingContainer = function () {
 jQuery('.package-docs__content h1').each(wrapWithHeadingContainer);
 jQuery('.package-docs__content h2').each(wrapWithHeadingContainer);
 jQuery('.package-docs__content h3').each(wrapWithHeadingContainer);
+jQuery('.package-docs__content h4').each(wrapWithHeadingContainer);
 
 jQuery('.package-docs__content table').each(makeTableResponsive);
