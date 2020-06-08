@@ -41,6 +41,9 @@
                                     <a class="dropdown-item" href="{{ route('open-source.updates') }}">Updates</a>
                                 </div>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('sponsor') }}">Sponsor</a>
+                            </li>
                         </ul>
                     </nav>
                 </div>

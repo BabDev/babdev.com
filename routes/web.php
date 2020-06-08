@@ -13,6 +13,7 @@ use Illuminate\Routing\Router;
 
 $router->view('/', 'homepage')->name('homepage');
 $router->view('/privacy', 'privacy')->name('privacy');
+$router->view('/sponsor', 'sponsor')->name('sponsor');
 
 $router->permanentRedirect('/extensions', '/open-source/packages');
 $router->permanentRedirect('/extensions/latest', '/open-source/packages');

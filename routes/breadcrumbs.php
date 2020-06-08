@@ -23,6 +23,14 @@ $breadcrumbs->for(
 );
 
 $breadcrumbs->for(
+    'sponsor',
+    static function (BreadcrumbsGenerator $trail): void {
+        $trail->parent('homepage');
+        $trail->push('Sponsor', route('sponsor'));
+    }
+);
+
+$breadcrumbs->for(
     'open-source.packages',
     static function (BreadcrumbsGenerator $trail): void {
         $trail->parent('homepage');
