@@ -23,7 +23,7 @@
         "erusev/parsedown-extra": "^0.8.1",
         "guzzlehttp/guzzle": "^6.5.4",
         "knplabs/github-api": "^2.14",
-        "laravel/framework": "^7.14.1",
+        "laravel/framework": "^7.15",
         "laravel/nova": "^3.6",
         "llaski/nova-scheduled-jobs": "^3.1",
         "php-http/guzzle6-adapter": "^2.0.1",
@@ -34,7 +34,7 @@
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.7",
-        "facade/ignition": "^2.0.6",
+        "facade/ignition": "^2.0.7",
         "friendsofphp/php-cs-fixer": "^2.16.3",
         "laravel/telescope": "^3.5",
         "nunomaduro/collision": "^4.2"

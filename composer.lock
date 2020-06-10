@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "443abbf5358b6a681090cf2ff97a1ca2",
+    "content-hash": "47f5170ade2659774397b973eae0a021",
     "packages": [
         {
             "name": "babdev/laravel-breadcrumbs",
@@ -1595,16 +1595,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v7.14.1",
+            "version": "v7.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "469b7719a8dca40841a74f59f2e9f30f01d3a106"
+                "reference": "739c44a3f7041430a3fb357f2dcfdb78f55005d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/469b7719a8dca40841a74f59f2e9f30f01d3a106",
-                "reference": "469b7719a8dca40841a74f59f2e9f30f01d3a106",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/739c44a3f7041430a3fb357f2dcfdb78f55005d7",
+                "reference": "739c44a3f7041430a3fb357f2dcfdb78f55005d7",
                 "shasum": ""
             },
             "require": {
@@ -1747,7 +1747,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-06-02T22:34:18+00:00"
+            "time": "2020-06-09T14:00:25+00:00"
         },
         {
             "name": "laravel/nova",
@@ -4348,16 +4348,16 @@
         },
         {
             "name": "spatie/temporary-directory",
-            "version": "1.2.2",
+            "version": "1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/temporary-directory.git",
-                "reference": "fcb127e615700751dac2aefee0ea2808ff3f5bb1"
+                "reference": "eeb84a7a3543e90759cd852ccb468e3d3340d99d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/temporary-directory/zipball/fcb127e615700751dac2aefee0ea2808ff3f5bb1",
-                "reference": "fcb127e615700751dac2aefee0ea2808ff3f5bb1",
+                "url": "https://api.github.com/repos/spatie/temporary-directory/zipball/eeb84a7a3543e90759cd852ccb468e3d3340d99d",
+                "reference": "eeb84a7a3543e90759cd852ccb468e3d3340d99d",
                 "shasum": ""
             },
             "require": {
@@ -4390,7 +4390,7 @@
                 "spatie",
                 "temporary-directory"
             ],
-            "time": "2019-12-15T18:52:09+00:00"
+            "time": "2020-06-08T08:58:45+00:00"
         },
         {
             "name": "studio-42/elfinder",
@@ -7605,16 +7605,16 @@
         },
         {
             "name": "facade/ignition",
-            "version": "2.0.6",
+            "version": "2.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "5261c488a1e8a7c3ebdf6a4037c34f5ddeb33922"
+                "reference": "e6bedc1e74507d584fbcb041ebe0f7f215109cf2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/5261c488a1e8a7c3ebdf6a4037c34f5ddeb33922",
-                "reference": "5261c488a1e8a7c3ebdf6a4037c34f5ddeb33922",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/e6bedc1e74507d584fbcb041ebe0f7f215109cf2",
+                "reference": "e6bedc1e74507d584fbcb041ebe0f7f215109cf2",
                 "shasum": ""
             },
             "require": {
@@ -7672,7 +7672,7 @@
                 "laravel",
                 "page"
             ],
-            "time": "2020-06-01T09:04:48+00:00"
+            "time": "2020-06-08T09:14:08+00:00"
         },
         {
             "name": "filp/whoops",
