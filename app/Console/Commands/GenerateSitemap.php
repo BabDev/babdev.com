@@ -18,6 +18,11 @@ class GenerateSitemap extends Command
 
         SitemapGenerator::create(config('app.url'))
             ->hasCrawled(static function (Url $url): ?Url {
+                // Don't include the homepage without a trailing slash
+                if ($url->path() === '') {
+                    return null;
+                }
+
                 // Don't include docs shortcuts
                 if (substr($url->path(), -5) === '/docs') {
                     return null;
