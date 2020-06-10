@@ -12,6 +12,7 @@ class PackageSeeder extends Seeder
         $this->fixLaravelBreadcrumbs();
         $this->fixLaravelServerPushManager();
         $this->fixLaravelTwilio();
+        $this->fixPagerfanta();
         $this->fixPodcastManager();
         $this->fixSupplierPlugin();
         $this->fixTransifexApi();
@@ -30,6 +31,7 @@ class PackageSeeder extends Seeder
                     'has_documentation' => true,
                     'docs_branches' => [
                         '2.x' => '2.x',
+                        '3.x' => 'master',
                     ],
                     'package_type' => PackageType::SYMFONY_BUNDLE,
                 ]
@@ -83,6 +85,24 @@ class PackageSeeder extends Seeder
                         '1.x' => 'master',
                     ],
                     'package_type' => PackageType::LARAVEL_PACKAGE,
+                ]
+            );
+    }
+
+    private function fixPagerfanta(): void
+    {
+        Package::query()
+            ->where('name', '=', 'Pagerfanta')
+            ->firstOrFail()
+            ->update(
+                [
+                    'packagist_name' => 'pagerfanta/pagerfanta',
+                    'has_documentation' => true,
+                    'docs_branches' => [
+                        '2.x' => '2.x',
+                        '3.x' => 'master',
+                    ],
+                    'package_type' => PackageType::PHP_PACKAGE,
                 ]
             );
     }
