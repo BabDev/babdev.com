@@ -4,6 +4,7 @@ namespace BabDev\Console\Commands;
 
 use Illuminate\Console\Command;
 use Spatie\Sitemap\SitemapGenerator;
+use Spatie\Sitemap\Tags\Url;
 
 class GenerateSitemap extends Command
 {
@@ -16,6 +17,18 @@ class GenerateSitemap extends Command
         $this->info('Generating sitemap...');
 
         SitemapGenerator::create(config('app.url'))
+            ->hasCrawled(static function (Url $url): ?Url {
+                // Don't include docs shortcuts
+                if (substr($url->path(), -5) === '/docs') {
+                    return null;
+                }
+
+                if (substr($url->path(), -11) === '/docs/intro') {
+                    return null;
+                }
+
+                return $url;
+            })
             ->getSitemap()
             ->writeToDisk('local', 'sitemap.xml');
 
