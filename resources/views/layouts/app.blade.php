@@ -17,7 +17,7 @@
         <meta name="twitter:image" content="{{ asset('images/logos/social-media.png') }}">
         @yield('meta')
         <title>{{ $title ?? config('app.name', 'BabDev') }}</title>
-        <link href="{{ PushManager::preload(mix('css/app.css'), ['as' => 'stylesheet']) }}" rel="stylesheet">
+        <link href="{{ PushManager::preload(mix('css/app.css'), ['as' => 'style']) }}" rel="stylesheet">
     </head>
     <body>
         <header class="sticky-top">
