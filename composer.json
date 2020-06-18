@@ -79,7 +79,7 @@
         "sort-packages": true,
         "optimize-autoloader": true,
         "platform": {
-            "php": "7.4.5"
+            "php": "7.4.7"
         }
     },
     "minimum-stability": "dev",
