@@ -24,11 +24,11 @@ class DocumentationProcessor
 
     public function generateDocsFileCacheKey(Package $package, string $version, string $pageSlug): string
     {
-        return str_replace('/', '.', $package->name . '/' . $version . '/' . $pageSlug);
+        return \str_replace('/', '.', $package->name . '/' . $version . '/' . $pageSlug);
     }
 
     /**
-     * @throws PageNotFoundException if the requested page does not exist
+     * @throws PageNotFoundException        if the requested page does not exist
      * @throws UnsupportedEncodingException if the file encoding type is not supported
      */
     public function renderPage(Package $package, string $version, string $pageSlug): string
@@ -46,7 +46,7 @@ class DocumentationProcessor
                     );
                 } catch (RuntimeException $exception) {
                     throw new PageNotFoundException(
-                        sprintf('The "%s" page does not exist for the %s package', $pageSlug, $package->display_name),
+                        \sprintf('The "%s" page does not exist for the %s package', $pageSlug, $package->display_name),
                         404,
                         $exception
                     );
@@ -54,13 +54,13 @@ class DocumentationProcessor
 
                 switch ($file['encoding']) {
                     case 'base64':
-                        $fileContents = base64_decode($file['content']);
+                        $fileContents = \base64_decode($file['content']);
 
                         break;
 
                     default:
                         throw new UnsupportedEncodingException(
-                            sprintf('The "%s" encoding is not supported.', $file['encoding'])
+                            \sprintf('The "%s" encoding is not supported.', $file['encoding'])
                         );
                 }
 

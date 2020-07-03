@@ -43,7 +43,7 @@ class ViewOpenSourcePackageDocsPageController
                 'package' => $package,
                 'page' => $page,
                 'sidebar' => $sidebar,
-                'title' => count($title) ? $title->text() : null,
+                'title' => \count($title) ? $title->text() : null,
             ]
         );
     }
