@@ -57,7 +57,7 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
                     $config = $app->make('config');
 
                     $client = new Client($app->make('github.http_client.builder'));
-                    $client->authenticate($config->get('services.github.token'), null, Client::AUTH_HTTP_TOKEN);
+                    $client->authenticate($config->get('services.github.token'), null, Client::AUTH_ACCESS_TOKEN);
 
                     return $client;
                 } catch (InvalidArgumentException $exception) {
