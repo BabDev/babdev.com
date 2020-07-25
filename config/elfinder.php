@@ -1,6 +1,13 @@
 <?php
 
+use BabDev\Http\Middleware\VerifyCsrfToken;
 use Barryvdh\Elfinder\Elfinder;
+use Illuminate\Session\Middleware\StartSession;
+use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Laravel\Nova\Http\Middleware\Authenticate;
+use Laravel\Nova\Http\Middleware\Authorize;
+use Laravel\Nova\Http\Middleware\BootTools;
+use Laravel\Nova\Http\Middleware\DispatchServingNovaEvent;
 
 return [
 
@@ -40,7 +47,16 @@ return [
 
     'route' => [
         'prefix' => 'elfinder',
-        'middleware' => ['web', 'auth'],
+        'middleware' => [
+            'web',
+            StartSession::class,
+            ShareErrorsFromSession::class,
+            VerifyCsrfToken::class,
+            Authenticate::class,
+            DispatchServingNovaEvent::class,
+            BootTools::class,
+            Authorize::class,
+        ],
         'domain' => env('NOVA_DOMAIN_NAME', null),
     ],
 
