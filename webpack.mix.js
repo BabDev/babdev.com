@@ -29,6 +29,7 @@ Mix.listen('configReady', (config) => {
 
 mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/docs.js', 'public/js')
+    .js('resources/js/updates.js', 'public/js')
     .extract(['jquery', 'popper.js']);
 
 mix.sass('resources/sass/app.scss', 'public/css')

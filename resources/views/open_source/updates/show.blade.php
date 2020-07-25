@@ -24,7 +24,7 @@
         </div>
     </header>
     <article class="pt-4">
-        <div class="container">
+        <div class="container package-update">
             <header class="section-heading">
                 <h2>{{ $update->title }}</h2>
             </header>
@@ -32,10 +32,14 @@
                 <span class="item-published__icon">{{ svg('far-calendar') }}</span>
                 <span class="item-published__date">{{ $update->published_at->format('F j, Y') }}</span>
             </div>
-            <div>
+            <div class="package-update__content">
                 {!! $update->content !!}
             </div>
             {{ Breadcrumbs::render('open-source.update', $update) }}
         </div>
     </article>
+@endsection
+
+@section('bodyScripts')
+    <script src="{{ PushManager::preload(mix('js/updates.js'), ['as' => 'script']) }}"></script>
 @endsection

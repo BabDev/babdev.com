@@ -11,7 +11,7 @@
         </div>
     </header>
     <section class="pt-4">
-        <div class="container">
+        <div class="container package-update">
             @forelse($updates as $update)
                 <article class="mb-3">
                     <header class="section-heading">
@@ -21,7 +21,7 @@
                         <span class="item-published__icon">{{ svg('far-calendar') }}</span>
                         <span class="item-published__date">{{ $update->published_at->format('F j, Y') }}</span>
                     </div>
-                    <div>
+                    <div class="package-update__intro">
                         {!! $update->intro !!}
                     </div>
                     <div>
