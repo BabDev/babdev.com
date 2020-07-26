@@ -25,6 +25,11 @@ $router->get(
     ViewOpenSourcePackagesController::class
 )->name('open-source.packages');
 
+// Package name redirects
+$router->permanentRedirect('/open-source/packages/babdevpagerfantabundle/docs', '/open-source/packages/pagerfantabundle/docs');
+$router->permanentRedirect('/open-source/packages/babdevpagerfantabundle/docs/{slug}', '/open-source/packages/pagerfantabundle/docs/{slug}');
+$router->permanentRedirect('/open-source/packages/babdevpagerfantabundle/docs/{version}/{slug}', '/open-source/packages/pagerfantabundle/docs/{version}/{slug}');
+
 $router->get(
     '/open-source/packages/{package}/docs',
     RedirectToPackageDocsController::class
