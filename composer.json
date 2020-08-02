@@ -34,9 +34,9 @@
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.7",
-        "facade/ignition": "^2.3.4",
+        "facade/ignition": "^2.3.5",
         "friendsofphp/php-cs-fixer": "^2.16.4",
-        "laravel/telescope": "^3.5",
+        "laravel/telescope": "^3.5.1",
         "nunomaduro/collision": "^4.2"
     },
     "replace": {
