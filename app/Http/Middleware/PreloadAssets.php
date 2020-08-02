@@ -2,7 +2,7 @@
 
 namespace BabDev\Http\Middleware;
 
-use BabDev\ServerPushManager\PushManager;
+use BabDev\ServerPushManager\Contracts\PushManager;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
