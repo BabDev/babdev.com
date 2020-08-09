@@ -23,7 +23,7 @@
         "erusev/parsedown-extra": "^0.8.1",
         "guzzlehttp/guzzle": "^6.5.5",
         "knplabs/github-api": "^2.15",
-        "laravel/framework": "^7.22.4",
+        "laravel/framework": "^7.24",
         "laravel/nova": "^3.8.2",
         "llaski/nova-scheduled-jobs": "^3.1",
         "php-http/guzzle6-adapter": "^2.0.1",
