@@ -15,6 +15,7 @@
     ],
     "require": {
         "php": "^7.4",
+        "ext-hash": "*",
         "babdev/laravel-breadcrumbs": "^1.1",
         "babdev/laravel-server-push-manager": "^1.4",
         "babdev/nova-ckeditor4-field": "*",
@@ -25,6 +26,7 @@
         "knplabs/github-api": "^2.15",
         "laravel/framework": "^7.24",
         "laravel/nova": "^3.8.2",
+        "lcobucci/jwt": "^3.3.2",
         "llaski/nova-scheduled-jobs": "^3.1",
         "php-http/guzzle6-adapter": "^2.0.1",
         "spatie/laravel-sitemap": "^5.7",
