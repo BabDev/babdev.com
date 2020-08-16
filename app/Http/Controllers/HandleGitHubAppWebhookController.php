@@ -34,7 +34,7 @@ class HandleGitHubAppWebhookController
         return response()->json(['success' => true]);
     }
 
-    private function validSignature(string $hash, string $key, string $data)
+    private function validSignature(string $hash, string $key, string $data): bool
     {
         return \hash_equals($hash, 'sha1=' . \hash_hmac('sha1', $data, $key));
     }
