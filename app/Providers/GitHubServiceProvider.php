@@ -3,6 +3,7 @@
 namespace BabDev\Providers;
 
 use BabDev\GitHub\ApiConnector;
+use BabDev\GitHub\RequestHandler;
 use Github\Client;
 use Github\Exception\InvalidArgumentException;
 use Github\HttpClient\Builder;
@@ -25,6 +26,9 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
 
             'github.http_client.builder',
             Builder::class,
+
+            'github.webhook.request_handler',
+            RequestHandler::class,
         ];
     }
 
@@ -33,6 +37,7 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
         $this->registerApiConnector();
         $this->registerClient();
         $this->registerHttpClientBuilder();
+        $this->registerWebhookRequestHandler();
     }
 
     private function registerApiConnector(): void
@@ -83,5 +88,20 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
         );
 
         $this->app->alias('github.http_client.builder', Builder::class);
+    }
+
+    private function registerWebhookRequestHandler(): void
+    {
+        $this->app->bind(
+            'github.webhook.request_handler',
+            static function (Application $app): RequestHandler {
+                return new RequestHandler(
+                    $app->make('events'),
+                    $app->make('github.http_client.builder')
+                );
+            }
+        );
+
+        $this->app->alias('github.webhook.request_handler', RequestHandler::class);
     }
 }
