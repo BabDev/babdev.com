@@ -46,4 +46,10 @@ return [
         ],
     ],
 
+    'matomo' => [
+        'token' => env('MATOMO_TOKEN'),
+        'page_id' => env('MATOMO_PAGE_ID'),
+        'url' => env('MATOMO_URL'),
+    ],
+
 ];

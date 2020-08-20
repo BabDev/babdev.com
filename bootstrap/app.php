@@ -43,6 +43,20 @@ $app->singleton(
 
 /*
 |--------------------------------------------------------------------------
+| Autoloader Map
+|--------------------------------------------------------------------------
+|
+| In this section, we define class aliases for third party packages to
+| work correctly. Sorry, Taylor, I can't replicate your writing style.
+|
+*/
+class_alias(
+    Illuminate\Routing\Controller::class,
+    App\Http\Controllers\Controller::class
+);
+
+/*
+|--------------------------------------------------------------------------
 | Return The Application
 |--------------------------------------------------------------------------
 |

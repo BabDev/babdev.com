@@ -4,6 +4,7 @@ namespace BabDev\Providers;
 
 use BabDev\Http\Middleware\VerifyCsrfToken;
 use BabDev\Models\User;
+use BabDev\Nova\Dashboards\MatomoAnalytics;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
@@ -49,6 +50,13 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         return [
             new Help(),
+        ];
+    }
+
+    protected function dashboards(): array
+    {
+        return [
+            new MatomoAnalytics(),
         ];
     }
 
