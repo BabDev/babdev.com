@@ -25,7 +25,7 @@
         "guzzlehttp/guzzle": "^6.5.5",
         "knplabs/github-api": "^2.15",
         "laravel/framework": "^7.25",
-        "laravel/nova": "^3.8.2",
+        "laravel/nova": "^3.8.3",
         "lcobucci/jwt": "^3.3.2",
         "llaski/nova-scheduled-jobs": "^3.1",
         "php-http/guzzle6-adapter": "^2.0.1",
