@@ -32,6 +32,13 @@
             <ul>
                 <li>Google Fonts - To provide extended typography consistent with the BabDev branding</li>
             </ul>
+            <div class="section-heading">
+                <h3>InnoCraft</h3>
+            </div>
+            <p>This site uses the below services provided by InnoCraft Ltd:</p>
+            <ul>
+                <li>Matomo Cloud - To collect analytics regarding website traffic</li>
+            </ul>
             {{ Breadcrumbs::render('privacy') }}
         </div>
     </article>
