@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fe4aa547fd4612d85062d096eadaa87c",
+    "content-hash": "628af618b1764ab8ec5d1d1a0217ec08",
     "packages": [
         {
             "name": "babdev/laravel-breadcrumbs",
@@ -4053,55 +4053,6 @@
                 }
             ],
             "time": "2020-08-18T17:17:46+00:00"
-        },
-        {
-            "name": "rocramer/nova-matomo-analytics",
-            "version": "v0.2.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/rocramer/nova-matomo-analytics.git",
-                "reference": "cbe02b07cd45a982ffd2ea5a23e7bec3dd17c88c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/rocramer/nova-matomo-analytics/zipball/cbe02b07cd45a982ffd2ea5a23e7bec3dd17c88c",
-                "reference": "cbe02b07cd45a982ffd2ea5a23e7bec3dd17c88c",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Rocramer\\MatomoAnalytics\\ToolServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Rocramer\\MatomoAnalytics\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Robin Cramer",
-                    "email": "mail@robincramer.de",
-                    "homepage": "https://www.robincramer.de",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Matomo Analytics cards for Laravel Nova.",
-            "keywords": [
-                "laravel",
-                "nova"
-            ],
-            "time": "2020-04-10T06:56:49+00:00"
         },
         {
             "name": "spatie/browsershot",

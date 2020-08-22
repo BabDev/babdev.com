@@ -29,7 +29,6 @@
         "lcobucci/jwt": "^3.3.2",
         "llaski/nova-scheduled-jobs": "^3.1",
         "php-http/guzzle6-adapter": "^2.0.1",
-        "rocramer/nova-matomo-analytics": "^0.2.3",
         "spatie/laravel-sitemap": "^5.7",
         "spatie/laravel-sluggable": "^2.5",
         "spatie/packagist-api": "^2.0",
