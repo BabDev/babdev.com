@@ -50,7 +50,7 @@ $app->singleton(
 | work correctly. Sorry, Taylor, I can't replicate your writing style.
 |
 */
-class_alias(
+\class_alias(
     Illuminate\Routing\Controller::class,
     App\Http\Controllers\Controller::class
 );
