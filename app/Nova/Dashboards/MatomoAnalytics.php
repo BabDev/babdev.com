@@ -26,8 +26,6 @@ class MatomoAnalytics extends Dashboard
             (new VisitsPerDay(app(ApiConnector::class)))->width('1/2'),
             (new LengthOfVisit(app(ApiConnector::class)))->width('1/2'),
             (new BounceRate(app(ApiConnector::class)))->width('1/2'),
-            new EntryPages(),
-            new ExitPages(),
             new MostViewedPages(),
         ];
     }
