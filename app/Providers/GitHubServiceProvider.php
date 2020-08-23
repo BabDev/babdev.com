@@ -2,6 +2,8 @@
 
 namespace BabDev\Providers;
 
+use BabDev\Contracts\GitHub\Actions\Factory;
+use BabDev\GitHub\Actions\ContainerAwareFactory;
 use BabDev\GitHub\ApiConnector;
 use BabDev\GitHub\RequestHandler;
 use Github\Client;
@@ -18,6 +20,9 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
     public function provides(): array
     {
         return [
+            'github.action_factory',
+            Factory::class,
+
             'github.api',
             ApiConnector::class,
 
@@ -34,10 +39,23 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
 
     public function register(): void
     {
+        $this->registerActionFactory();
         $this->registerApiConnector();
         $this->registerClient();
         $this->registerHttpClientBuilder();
         $this->registerWebhookRequestHandler();
+    }
+
+    private function registerActionFactory(): void
+    {
+        $this->app->bind(
+            'github.api',
+            static function (Application $app): Factory {
+                return new ContainerAwareFactory($app);
+            }
+        );
+
+        $this->app->alias('github.action_factory', Factory::class);
     }
 
     private function registerApiConnector(): void

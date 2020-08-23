@@ -2,7 +2,7 @@
 
 namespace BabDev\GitHub;
 
-use BabDev\Contracts\GitHub\Actions\Action;
+use BabDev\Contracts\GitHub\Actions\Factory;
 use Github\Client;
 use Github\HttpClient\Builder as GithubHttpBuilder;
 use Illuminate\Contracts\Events\Dispatcher;
@@ -15,11 +15,13 @@ class RequestHandler
 {
     private Dispatcher $dispatcher;
     private GithubHttpBuilder $githubHttpBuilder;
+    private Factory $actionFactory;
 
-    public function __construct(Dispatcher $dispatcher, GithubHttpBuilder $githubHttpBuilder)
+    public function __construct(Dispatcher $dispatcher, GithubHttpBuilder $githubHttpBuilder, Factory $actionFactory)
     {
         $this->dispatcher = $dispatcher;
         $this->githubHttpBuilder = $githubHttpBuilder;
+        $this->actionFactory = $actionFactory;
     }
 
     public function handleRequest(array $repoConfig, Request $request): void
@@ -34,8 +36,7 @@ class RequestHandler
 
         /** @var class-string $actionClass */
         foreach ($repoConfig['events'][$event] as $actionClass) {
-            /** @var Action $action */
-            $action = app($actionClass);
+            $action = $this->actionFactory->make($actionClass);
             $action($repoConfig, $request, $github);
         }
     }
