@@ -50,11 +50,6 @@ mix.sass('resources/sass/app.scss', 'public/css')
 
 mix.copy('resources/images', 'public/images', false);
 
-mix.copy('node_modules/@fortawesome/fontawesome-free/svgs/brands/github.svg', 'resources/svg/fab-github.svg');
-mix.copy('node_modules/@fortawesome/fontawesome-free/svgs/regular/calendar.svg', 'resources/svg/far-calendar.svg');
-mix.copy('node_modules/@fortawesome/fontawesome-free/svgs/regular/star.svg', 'resources/svg/far-star.svg');
-mix.copy('node_modules/@fortawesome/fontawesome-free/svgs/solid/download.svg', 'resources/svg/fas-download.svg');
-
 if (Mix.inProduction()) {
     mix.version();
 }
