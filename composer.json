@@ -20,6 +20,7 @@
         "babdev/laravel-server-push-manager": "^1.4",
         "babdev/nova-ckeditor4-field": "*",
         "barryvdh/laravel-elfinder": "^0.4.5",
+        "blade-ui-kit/blade-ui-kit": "^0.1",
         "drobee/nova-sluggable": "^1.2",
         "erusev/parsedown-extra": "^0.8.1",
         "guzzlehttp/guzzle": "^6.5.5",
