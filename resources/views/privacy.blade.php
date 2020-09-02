@@ -3,11 +3,7 @@
 ])
 
 @section('content')
-    <header class="hero">
-        <div class="hero__text">
-            <h1 class="hero__title">Site Privacy</h1>
-        </div>
-    </header>
+    <x-hero title="Site Privacy" />
     <article class="pt-4">
         <div class="container">
             <div class="section-heading">

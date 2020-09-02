@@ -5,11 +5,7 @@
 @section('main-classes', 'pb-3')
 
 @section('content')
-    <section class="hero hero--homepage">
-        <div class="hero__text">
-            <h1 class="hero__title">Creating Open Source Solutions Since 2010</h1>
-        </div>
-    </section>
+    <x-hero title="Creating Open Source Solutions Since 2010" class="hero--homepage" />
     <section class="homepage-callouts">
         <div class="callout callout__title callout--who-i-am">
             <h2 class="callout__heading">Who I Am</h2>

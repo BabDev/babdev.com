@@ -5,11 +5,7 @@
 ])
 
 @section('content')
-    <header class="hero hero--open-source-packages">
-        <div class="hero__text">
-            <h1 class="hero__title">Open Source Packages</h1>
-        </div>
-    </header>
+    <x-hero title="Open Source Packages" />
     <section class="pt-4">
         <div class="container">
             @forelse($packages as $package)

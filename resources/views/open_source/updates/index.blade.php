@@ -5,11 +5,7 @@
 ])
 
 @section('content')
-    <header class="hero hero--open-source-package-updates">
-        <div class="hero__text">
-            <h1 class="hero__title">Open Source Package Updates</h1>
-        </div>
-    </header>
+    <x-hero title="Open Source Package Updates" />
     <section class="pt-4">
         <div class="container package-update">
             @forelse($updates as $update)

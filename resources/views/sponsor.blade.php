@@ -3,11 +3,7 @@
 ])
 
 @section('content')
-    <header class="hero">
-        <div class="hero__text">
-            <h1 class="hero__title">Sponsor Open Source Development</h1>
-        </div>
-    </header>
+    <x-hero title="Sponsor Open Source Development" />
     <article class="pt-4">
         <div class="container">
             <p>Development and maintenance of open source software requires a significant resource commitment from those who are doing so. My contributions to open source over the past 10 years averages at least 20 hours per week in issue triage, code review, maintaining code and documentation, preparing materials for presentations at a number of conferences, and maintaining support resources such as this website.</p>
