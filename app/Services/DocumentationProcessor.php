@@ -8,18 +8,17 @@ use BabDev\Services\Exceptions\PageNotFoundException;
 use BabDev\Services\Exceptions\UnsupportedEncodingException;
 use Github\Exception\RuntimeException;
 use Illuminate\Contracts\Cache\Repository;
+use Illuminate\Support\Str;
 
 class DocumentationProcessor
 {
     private ApiConnector $github;
     private Repository $cache;
-    private \ParsedownExtra $parsedown;
 
-    public function __construct(ApiConnector $github, Repository $cache, \ParsedownExtra $parsedown)
+    public function __construct(ApiConnector $github, Repository $cache)
     {
         $this->github = $github;
         $this->cache = $cache;
-        $this->parsedown = $parsedown;
     }
 
     public function generateDocsFileCacheKey(Package $package, string $version, string $pageSlug): string
@@ -27,11 +26,16 @@ class DocumentationProcessor
         return \str_replace('/', '.', $package->name . '/' . $version . '/' . $pageSlug);
     }
 
+    public function extractTitle(string $markdown): string
+    {
+        return Str::after(collect(explode(PHP_EOL, $markdown))->first(), '# ');
+    }
+
     /**
      * @throws PageNotFoundException        if the requested page does not exist
      * @throws UnsupportedEncodingException if the file encoding type is not supported
      */
-    public function renderPage(Package $package, string $version, string $pageSlug): string
+    public function fetchPageContents(Package $package, string $version, string $pageSlug): string
     {
         return $this->cache->remember(
             $this->generateDocsFileCacheKey($package, $version, $pageSlug),
@@ -41,7 +45,7 @@ class DocumentationProcessor
                     $file = $this->github->fetchFileContents(
                         'BabDev',
                         $package->name,
-                        'docs/' . $pageSlug . '.md',
+                        \sprintf('docs/%s.md', $pageSlug),
                         $version
                     );
                 } catch (RuntimeException $exception) {
@@ -64,7 +68,7 @@ class DocumentationProcessor
                         );
                 }
 
-                return $this->parsedown->text($fileContents);
+                return $fileContents;
             }
         );
     }

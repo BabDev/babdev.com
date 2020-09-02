@@ -24,8 +24,7 @@ class DocumentationServiceProvider extends ServiceProvider implements Deferrable
             static function (Application $app): DocumentationProcessor {
                 return new DocumentationProcessor(
                     $app->make('github.api'),
-                    $app->make('cache.store'),
-                    new \ParsedownExtra()
+                    $app->make('cache.store')
                 );
             }
         );

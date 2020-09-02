@@ -28,22 +28,20 @@ class ViewOpenSourcePackageDocsPageController
         abort_if($slug === 'index', 404);
 
         try {
-            $page = $documentationProcessor->renderPage($package, $package->mapDocsVersionToGitBranch($version), $slug);
+            $contents = $documentationProcessor->fetchPageContents($package, $package->mapDocsVersionToGitBranch($version), $slug);
         } catch (PageNotFoundException $exception) {
             throw new NotFoundHttpException($exception->getMessage(), $exception);
         }
 
-        $sidebar = $documentationProcessor->renderPage($package, $package->mapDocsVersionToGitBranch($version), 'index');
-
-        $title = (new Crawler($page))->filterXPath('//h1');
+        $sidebar = $documentationProcessor->fetchPageContents($package, $package->mapDocsVersionToGitBranch($version), 'index');
 
         return view(
             'open_source.packages.docs_page',
             [
                 'package' => $package,
-                'page' => $page,
+                'contents' => $contents,
                 'sidebar' => $sidebar,
-                'title' => \count($title) ? $title->text() : null,
+                'title' => $documentationProcessor->extractTitle($contents),
             ]
         );
     }

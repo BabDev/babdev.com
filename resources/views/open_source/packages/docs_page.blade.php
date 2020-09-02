@@ -1,5 +1,5 @@
 @php /** @var \BabDev\Models\Package $package */ @endphp
-@php /** @var string $page */ @endphp
+@php /** @var string $contents */ @endphp
 @php /** @var string $sidebar */ @endphp
 @php /** @var string|null $title */ @endphp
 
@@ -21,12 +21,8 @@
     </header>
     <article class="pt-4">
         <div class="container-fluid package-docs">
-            <aside class="package-docs__sidebar">
-                {!! $sidebar !!}
-            </aside>
-            <div class="package-docs__content">
-                {!! $page !!}
-            </div>
+            <x-markdown class="package-docs__sidebar">{!! $sidebar !!}</x-markdown>
+            <x-markdown class="package-docs__content">{!! $contents !!}</x-markdown>
         </div>
         <div class="container">
             {{ Breadcrumbs::render('open-source.packages.package-docs-page', $package, $title) }}
