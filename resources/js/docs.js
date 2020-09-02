@@ -1,7 +1,11 @@
 import jQuery from 'jquery';
-import Prism from 'prismjs';
+import hljs from 'highlight.js';
 
-Prism.highlightAll();
+document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+    });
+});
 
 const makeTableResponsive = function () {
     jQuery(this).addClass('table').wrap('<div class="table-responsive"></div>');

@@ -21,12 +21,11 @@
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.14.0",
         "bootstrap": "^4.5.2",
+        "highlight.js": "^10.1.2",
         "jquery": "^3.5.1",
-        "popper.js": "^1.16.1",
-        "prismjs": "^1.21.0"
+        "popper.js": "^1.16.1"
     },
     "devDependencies": {
-        "babel-plugin-prismjs": "^2.0.1",
         "cross-env": "^7.0.2",
         "laravel-mix": "^5.0.4",
         "laravel-mix-purgecss": "^5.0.0",

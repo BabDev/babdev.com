@@ -41,9 +41,9 @@ mix.sass('resources/sass/app.scss', 'public/css')
     .purgeCss({
         extend: {
             content: [path.join(__dirname, 'vendor/babdev/laravel-breadcrumbs/**/*.php')],
-            // Whitelist Prism styles and styles used only in docs
-            whitelistPatterns: [/^language-/, /^table-/, /^docs-note/],
-            whitelistPatternsChildren: [/^token/, /^pre/, /^code/, /^table/, /^docs-note/],
+            // Whitelist highlight styles and styles used only in docs
+            whitelistPatterns: [/^hljs/, /^hljs-/, /^table-/, /^docs-note/],
+            whitelistPatternsChildren: [/^hljs/, /^hljs-/, /^table/, /^docs-note/],
         },
     })
 ;

@@ -52,6 +52,9 @@
 @import "~bootstrap/scss/utilities";
 //@import "~bootstrap/scss/print";
 
+// highlight.js
+@import "~highlight.js/scss/atom-one-light";
+
 // Components
 @import "components/callout";
 @import "components/docs-note";
