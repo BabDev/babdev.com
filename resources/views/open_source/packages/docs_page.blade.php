@@ -8,17 +8,7 @@
 ])
 
 @section('content')
-    <header class="package-title{{ $package->logo ? ' package-title--has-logo' : '' }} pt-4">
-        @if($package->logo)
-            <div class="package-title__logo">
-                <img src="{{ Storage::disk('logos')->url($package->logo) }}" alt="{{ $package->display_name }} Logo">
-            </div>
-        @endif
-        <div class="package-title__name">
-            <h1 class="package-title__primary">{{ $package->display_name }}</h1>
-            <h2 class="package-title__secondary">Documentation</h2>
-        </div>
-    </header>
+    <x-package-title :package="$package" secondary-title="Documentation" class="pt-4" />
     <article class="pt-4">
         <div class="container-fluid package-docs">
             <x-markdown class="package-docs__sidebar">{!! $sidebar !!}</x-markdown>

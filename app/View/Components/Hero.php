@@ -10,9 +10,6 @@ class Hero extends Component
     public string $title;
     public ?string $subtitle;
 
-    /**
-     * @param string[] $modifiers
-     */
     public function __construct(string $title, ?string $subtitle = null)
     {
         $this->title = $title;
