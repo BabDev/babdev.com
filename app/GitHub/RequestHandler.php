@@ -5,7 +5,6 @@ namespace BabDev\GitHub;
 use BabDev\Contracts\GitHub\Actions\Factory;
 use Github\Client;
 use Github\HttpClient\Builder as GithubHttpBuilder;
-use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Http\Request;
 use Lcobucci\JWT\Builder as JWTBuilder;
 use Lcobucci\JWT\Signer\Key;
@@ -13,13 +12,11 @@ use Lcobucci\JWT\Signer\Rsa\Sha256;
 
 class RequestHandler
 {
-    private Dispatcher $dispatcher;
     private GithubHttpBuilder $githubHttpBuilder;
     private Factory $actionFactory;
 
-    public function __construct(Dispatcher $dispatcher, GithubHttpBuilder $githubHttpBuilder, Factory $actionFactory)
+    public function __construct(GithubHttpBuilder $githubHttpBuilder, Factory $actionFactory)
     {
-        $this->dispatcher = $dispatcher;
         $this->githubHttpBuilder = $githubHttpBuilder;
         $this->actionFactory = $actionFactory;
     }

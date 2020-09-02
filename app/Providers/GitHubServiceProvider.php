@@ -114,8 +114,8 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
             'github.webhook.request_handler',
             static function (Application $app): RequestHandler {
                 return new RequestHandler(
-                    $app->make('events'),
-                    $app->make('github.http_client.builder')
+                    $app->make('github.http_client.builder'),
+                    $app->make('github.action_factory')
                 );
             }
         );
