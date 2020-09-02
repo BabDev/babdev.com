@@ -7,7 +7,6 @@ use BabDev\Services\DocumentationProcessor;
 use BabDev\Services\Exceptions\PageNotFoundException;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class ViewOpenSourcePackageDocsPageController
