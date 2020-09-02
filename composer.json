@@ -24,7 +24,7 @@
         "erusev/parsedown-extra": "^0.8.1",
         "guzzlehttp/guzzle": "^6.5.5",
         "knplabs/github-api": "^2.15",
-        "laravel/framework": "^7.25",
+        "laravel/framework": "^7.27",
         "laravel/nova": "^3.8.4",
         "lcobucci/jwt": "^3.3.3",
         "llaski/nova-scheduled-jobs": "^3.1",
@@ -32,7 +32,7 @@
         "spatie/laravel-sitemap": "^5.7",
         "spatie/laravel-sluggable": "^2.5",
         "spatie/packagist-api": "^2.0",
-        "symfony/dom-crawler": "^5.1.3"
+        "symfony/dom-crawler": "^5.1.5"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.8",
