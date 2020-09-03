@@ -14,13 +14,13 @@ class PackageUpdateSeeder extends Seeder
         $this->utc = new \DateTimeZone('UTC');
 
         /** @var Package $pagerfantaBundle */
-        $pagerfantaBundle = Package::query()->where('name', '=', 'BabDevPagerfantaBundle')->firstOrFail();
+        $pagerfantaBundle = Package::query()->where('name', '=', 'PagerfantaBundle')->firstOrFail();
 
         $pagerfanta22Update = new PackageUpdate(
             [
                 'title' => 'Twig Support Added to Pagerfanta Bundle',
-                'intro' => '<p>The latest version of BabDevPagerfantaBundle is now available which includes support for Twig generated Pagerfanta views.</p>',
-                'content' => '<p>The latest version of BabDevPagerfantaBundle is now available which includes support for Twig generated Pagerfanta views.</p>
+                'intro' => '<p>The latest version of PagerfantaBundle is now available which includes support for Twig generated Pagerfanta views.</p>',
+                'content' => '<p>The latest version of PagerfantaBundle is now available which includes support for Twig generated Pagerfanta views.</p>
 <p>Starting with the 2.2 release, the bundle extends Pagerfanta to introduce a new <code>TwigView</code> which allows pagers to be rendered fully with the <a href="https://twig.symfony.com" rel="nofollow noopener">Twig</a> templating engine. This gives designers full control over the rendered markup for their pagers and allows the templating integration to be fully customized to a site\'s requirements without having to modify a number of PHP classes.</p>
 <p>With the creation of the <code>TwigView</code>, the translated Pagerfanta views have been deprecated and will be removed in 3.0. The Twig templates use the same translated strings that the translated view decorators use to allow the messages to be translated, and is a simpler integration in general compared to the translated view decorator classes which require special handling to make the translations work. Therefore, the new <code>TwigView</code> is the preferred way of customizing the output created by Pagerfanta.</p>
 <p>Other changes in the 2.2 release include:</p>
@@ -28,7 +28,7 @@ class PackageUpdateSeeder extends Seeder
     <li>Extracted Route Generators - The route generator logic was hardcoded into the Twig extension and if your application had router logic that did not follow the Twig extension\'s setup then you were left to implement your own Twig integration. The route generators have been extracted to a separate API that can be fully customized. This also makes it easier to use the bundle in API only contexts where a response may generate paginated URLs to include in a response.</li>
     <li>Configuration Deprecations - The <code>babdev_pagerfanta.exceptions_strategy.out_of_range_page</code> and <code>babdev_pagerfanta.exceptions_strategy.not_valid_current_page</code> configuration nodes have had the ability to set them to any value deprecated. These nodes only support two strategies, either the default 404 handling provided by the bundle or a custom strategy for your application, this deprecation updates the configuration to match this behavior.</li>
 </ul>
-<p>Plase see the <a href="https://github.com/BabDev/BabDevPagerfantaBundle/blob/v2.2.0/CHANGELOG.md" rel="nofollow noopener">CHANGELOG</a> for all changes in this bundle.</p>',
+<p>Please see the <a href="https://github.com/BabDev/PagerfantaBundle/blob/v2.2.0/CHANGELOG.md" rel="nofollow noopener">CHANGELOG</a> for all changes in this bundle.</p>',
                 'published_at' => Carbon::create(2020, 4, 18, 15, 0, 0, $this->utc),
             ]
         );

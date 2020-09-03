@@ -8,34 +8,16 @@ class PackageSeeder extends Seeder
 {
     public function run()
     {
-        $this->fixBabDevPagerfantaBundle();
         $this->fixLaravelBreadcrumbs();
         $this->fixLaravelServerPushManager();
         $this->fixLaravelTwilio();
         $this->fixPagerfanta();
+        $this->fixPagerfantaBundle();
         $this->fixPodcastManager();
         $this->fixSupplierPlugin();
         $this->fixTransifexApi();
         $this->fixTweetDisplayBack();
         $this->fixYetAnotherSocialPlugin();
-    }
-
-    private function fixBabDevPagerfantaBundle(): void
-    {
-        Package::query()
-            ->where('name', '=', 'BabDevPagerfantaBundle')
-            ->firstOrFail()
-            ->update(
-                [
-                    'packagist_name' => 'babdev/pagerfanta-bundle',
-                    'has_documentation' => true,
-                    'docs_branches' => [
-                        '2.x' => '2.x',
-                        '3.x' => 'master',
-                    ],
-                    'package_type' => PackageType::SYMFONY_BUNDLE,
-                ]
-            );
     }
 
     private function fixLaravelBreadcrumbs(): void
@@ -48,7 +30,7 @@ class PackageSeeder extends Seeder
                     'packagist_name' => 'babdev/laravel-breadcrumbs',
                     'has_documentation' => true,
                     'docs_branches' => [
-                        '1.x' => 'master',
+                        '1.x' => '1.x',
                     ],
                     'package_type' => PackageType::LARAVEL_PACKAGE,
                 ]
@@ -65,7 +47,7 @@ class PackageSeeder extends Seeder
                     'packagist_name' => 'babdev/laravel-server-push-manager',
                     'has_documentation' => true,
                     'docs_branches' => [
-                        '1.x' => 'master',
+                        '1.x' => '1.x',
                     ],
                     'package_type' => PackageType::LARAVEL_PACKAGE,
                 ]
@@ -82,7 +64,7 @@ class PackageSeeder extends Seeder
                     'packagist_name' => 'babdev/laravel-twilio',
                     'has_documentation' => true,
                     'docs_branches' => [
-                        '1.x' => 'master',
+                        '1.x' => '1.x',
                     ],
                     'package_type' => PackageType::LARAVEL_PACKAGE,
                 ]
@@ -100,9 +82,27 @@ class PackageSeeder extends Seeder
                     'has_documentation' => true,
                     'docs_branches' => [
                         '2.x' => '2.x',
-                        '3.x' => 'master',
+                        '3.x' => '3.x',
                     ],
                     'package_type' => PackageType::PHP_PACKAGE,
+                ]
+            );
+    }
+
+    private function fixPagerfantaBundle(): void
+    {
+        Package::query()
+            ->where('name', '=', 'PagerfantaBundle')
+            ->firstOrFail()
+            ->update(
+                [
+                    'packagist_name' => 'babdev/pagerfanta-bundle',
+                    'has_documentation' => true,
+                    'docs_branches' => [
+                        '2.x' => '2.x',
+                        '3.x' => '3.x',
+                    ],
+                    'package_type' => PackageType::SYMFONY_BUNDLE,
                 ]
             );
     }
