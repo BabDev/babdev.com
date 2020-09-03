@@ -30,6 +30,7 @@
         "league/commonmark": "^1.5.4",
         "llaski/nova-scheduled-jobs": "^3.1",
         "php-http/guzzle6-adapter": "^2.0.1",
+        "phpunit/phpunit": "^9.3.8",
         "spatie/laravel-sitemap": "^5.7",
         "spatie/laravel-sluggable": "^2.5",
         "spatie/packagist-api": "^2.0"
@@ -57,6 +58,11 @@
         ],
         "psr-4": {
             "BabDev\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
         }
     },
     "extra": {
