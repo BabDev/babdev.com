@@ -3,9 +3,13 @@
 namespace BabDev\Providers;
 
 use BabDev\Contracts\GitHub\Actions\Factory;
+use BabDev\Contracts\GitHub\ClientFactory;
+use BabDev\Contracts\GitHub\JWTTokenGenerator as JWTTokenGeneratorContract;
 use BabDev\GitHub\Actions\ContainerAwareFactory;
 use BabDev\GitHub\ApiConnector;
+use BabDev\GitHub\ContainerAwareClientFactory;
 use BabDev\GitHub\RequestHandler;
+use BabDev\GitHub\JWTTokenGenerator;
 use Github\Client;
 use Github\Exception\InvalidArgumentException;
 use Github\HttpClient\Builder;
@@ -29,8 +33,14 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
             'github.client',
             Client::class,
 
+            'github.client_factory',
+            ClientFactory::class,
+
             'github.http_client.builder',
             Builder::class,
+
+            'github.jwt.token_generator',
+            JWTTokenGeneratorContract::class,
 
             'github.webhook.request_handler',
             RequestHandler::class,
@@ -42,7 +52,9 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
         $this->registerActionFactory();
         $this->registerApiConnector();
         $this->registerClient();
+        $this->registerClientFactory();
         $this->registerHttpClientBuilder();
+        $this->registerJwtTokenGenerator();
         $this->registerWebhookRequestHandler();
     }
 
@@ -79,7 +91,10 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
                     /** @var Repository $config */
                     $config = $app->make('config');
 
-                    $client = new Client($app->make('github.http_client.builder'));
+                    /** @var ClientFactory $factory */
+                    $factory = $app->make('github.client_factory');
+
+                    $client = $factory->make($app->make('github.http_client.builder'));
                     $client->authenticate($config->get('services.github.token'), null, Client::AUTH_ACCESS_TOKEN);
 
                     return $client;
@@ -90,6 +105,18 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
         );
 
         $this->app->alias('github.client', Client::class);
+    }
+
+    private function registerClientFactory(): void
+    {
+        $this->app->bind(
+            'github.client_factory',
+            static function (Application $app): ClientFactory {
+                return new ContainerAwareClientFactory($app);
+            }
+        );
+
+        $this->app->alias('github.client_factory', ClientFactory::class);
     }
 
     private function registerHttpClientBuilder(): void
@@ -108,14 +135,27 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
         $this->app->alias('github.http_client.builder', Builder::class);
     }
 
+    private function registerJwtTokenGenerator(): void
+    {
+        $this->app->bind(
+            'github.jwt.token_generator',
+            static function (): JWTTokenGeneratorContract {
+                return new JWTTokenGenerator();
+            }
+        );
+
+        $this->app->alias('github.jwt.token_generator', JWTTokenGeneratorContract::class);
+    }
+
     private function registerWebhookRequestHandler(): void
     {
         $this->app->bind(
             'github.webhook.request_handler',
             static function (Application $app): RequestHandler {
                 return new RequestHandler(
-                    $app->make('github.http_client.builder'),
-                    $app->make('github.action_factory')
+                    $app->make('github.action_factory'),
+                    $app->make('github.client_factory'),
+                    $app->make('github.jwt.token_generator')
                 );
             }
         );

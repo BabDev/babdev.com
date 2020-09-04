@@ -8,6 +8,7 @@ use BabDev\Services\Exceptions\PageNotFoundException;
 use BabDev\Services\Exceptions\UnsupportedEncodingException;
 use Github\Exception\RuntimeException;
 use Illuminate\Contracts\Cache\Repository;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 
 class DocumentationProcessor
@@ -28,7 +29,7 @@ class DocumentationProcessor
 
     public function extractTitle(string $markdown): string
     {
-        return Str::after(collect(explode(PHP_EOL, $markdown))->first(), '# ');
+        return Str::after((new Collection(\explode(\PHP_EOL, $markdown)))->first(), '# ');
     }
 
     /**

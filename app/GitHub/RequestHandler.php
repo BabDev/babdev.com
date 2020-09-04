@@ -3,22 +3,22 @@
 namespace BabDev\GitHub;
 
 use BabDev\Contracts\GitHub\Actions\Factory;
+use BabDev\Contracts\GitHub\ClientFactory;
+use BabDev\Contracts\GitHub\JWTTokenGenerator as JWTTokenGeneratorContract;
 use Github\Client;
-use Github\HttpClient\Builder as GithubHttpBuilder;
 use Illuminate\Http\Request;
-use Lcobucci\JWT\Builder as JWTBuilder;
-use Lcobucci\JWT\Signer\Key;
-use Lcobucci\JWT\Signer\Rsa\Sha256;
 
 class RequestHandler
 {
-    private GithubHttpBuilder $githubHttpBuilder;
     private Factory $actionFactory;
+    private ClientFactory $clientFactory;
+    private JWTTokenGeneratorContract $tokenGenerator;
 
-    public function __construct(GithubHttpBuilder $githubHttpBuilder, Factory $actionFactory)
+    public function __construct(Factory $actionFactory, ClientFactory $clientFactory, JWTTokenGeneratorContract $tokenGenerator)
     {
-        $this->githubHttpBuilder = $githubHttpBuilder;
         $this->actionFactory = $actionFactory;
+        $this->clientFactory = $clientFactory;
+        $this->tokenGenerator = $tokenGenerator;
     }
 
     public function handleRequest(array $repoConfig, Request $request): void
@@ -40,15 +40,9 @@ class RequestHandler
 
     private function buildClient(array $repoConfig, Request $request): Client
     {
-        $github = new Client($this->githubHttpBuilder, 'machine-man-preview');
+        $github = $this->clientFactory->make(null, 'machine-man-preview');
 
-        $jwt = (new JWTBuilder())
-            ->issuedBy($repoConfig['app_id'])
-            ->issuedAt(\time())
-            ->expiresAt(\time() + 60)
-            ->getToken(new Sha256(), new Key(\sprintf('file://%s', $repoConfig['key'])));
-
-        $github->authenticate($jwt, null, Client::AUTH_JWT);
+        $github->authenticate((string) $this->tokenGenerator->generate($repoConfig), null, Client::AUTH_JWT);
 
         $token = $github->api('apps')->createInstallationToken($request->input('installation.id'));
 
