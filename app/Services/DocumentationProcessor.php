@@ -24,12 +24,15 @@ class DocumentationProcessor
 
     public function generateDocsFileCacheKey(Package $package, string $version, string $pageSlug): string
     {
-        return \str_replace('/', '.', $package->name . '/' . $version . '/' . $pageSlug);
+        return \str_replace('/', '.', \sprintf('%s/%s/%s', $package->name, $version, $pageSlug));
     }
 
     public function extractTitle(string $markdown): string
     {
-        return Str::after((new Collection(\explode(\PHP_EOL, $markdown)))->first(), '# ');
+        return Str::after(
+            (new Collection(\explode(\PHP_EOL, $markdown)))->first(),
+            '# '
+        );
     }
 
     /**
