@@ -2,9 +2,11 @@
 
 namespace BabDev\Models;
 
+use BabDev\Models\Exceptions\DocumentationUnsupportedException;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
@@ -93,7 +95,7 @@ class Package extends Model
 
     public function getGithubUrlAttribute(): string
     {
-        return 'https://github.com/BabDev/' . $this->name;
+        return \sprintf('https://github.com/BabDev/%s', $this->name);
     }
 
     public function hasDocsVersion(string $version): bool
@@ -105,25 +107,31 @@ class Package extends Model
         return isset($this->docs_branches[$version]);
     }
 
+    /**
+     * @throws DocumentationUnsupportedException if the package does not support the given version
+     */
     public function mapDocsVersionToGitBranch(string $version): string
     {
         if (!$this->hasDocsVersion($version)) {
-            throw new \InvalidArgumentException(\sprintf('Cannot map version "%s" to git branch for documentation', $version));
+            throw new DocumentationUnsupportedException(\sprintf('Cannot map version "%s" to git branch for documentation', $version));
         }
 
         return $this->docs_branches[$version];
     }
 
+    /**
+     * @throws DocumentationUnsupportedException if the documentation branch map has not been created and a default documentation version has not been set
+     */
     public function getDefaultDocsVersion(): string
     {
         if ($this->default_docs_version !== null) {
             return $this->default_docs_version;
         }
 
-        if ($this->docs_branches === null) {
-            throw new \InvalidArgumentException('No documentation mapping created');
+        if ($this->docs_branches !== null) {
+            return (new Collection($this->docs_branches))->first();
         }
 
-        return \array_key_first($this->docs_branches);
+        throw new DocumentationUnsupportedException('No documentation mapping created');
     }
 }
