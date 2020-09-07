@@ -20,11 +20,11 @@
     "require": {
         "php": "^7.4",
         "ext-hash": "*",
-        "babdev/laravel-breadcrumbs": "^1.1",
-        "babdev/laravel-server-push-manager": "^1.4",
+        "babdev/laravel-breadcrumbs": "^1.2",
+        "babdev/laravel-server-push-manager": "^1.5",
         "babdev/nova-ckeditor4-field": "*",
         "barryvdh/laravel-elfinder": "^0.4.5",
-        "blade-ui-kit/blade-ui-kit": "^0.1",
+        "blade-ui-kit/blade-ui-kit": "^0.1.1",
         "drobee/nova-sluggable": "^1.2",
         "guzzlehttp/guzzle": "^7.0.1",
         "knplabs/github-api": "^2.15",
@@ -40,7 +40,7 @@
         "spatie/packagist-api": "dev-master"
     },
     "require-dev": {
-        "barryvdh/laravel-ide-helper": "^2.8",
+        "barryvdh/laravel-ide-helper": "^2.8.1",
         "facade/ignition": "^2.3.6",
         "friendsofphp/php-cs-fixer": "^2.16.4",
         "laravel/telescope": "^3.5.1",
