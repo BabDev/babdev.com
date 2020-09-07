@@ -11,6 +11,10 @@
         {
             "type": "path",
             "url": "./nova-components/NovaCKEditor4Field"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/alexeyshockov/guzzle6-adapter"
         }
     ],
     "require": {
@@ -22,18 +26,18 @@
         "barryvdh/laravel-elfinder": "^0.4.5",
         "blade-ui-kit/blade-ui-kit": "^0.1",
         "drobee/nova-sluggable": "^1.2",
-        "guzzlehttp/guzzle": "^6.5.5",
+        "guzzlehttp/guzzle": "^7.0.1",
         "knplabs/github-api": "^2.15",
         "laravel/framework": "^7.27",
         "laravel/nova": "^3.8.4",
         "lcobucci/jwt": "^3.3.3",
         "league/commonmark": "^1.5.4",
         "llaski/nova-scheduled-jobs": "^3.1",
-        "php-http/guzzle6-adapter": "^2.0.1",
+        "php-http/guzzle6-adapter": "dev-patch-1",
         "phpunit/phpunit": "^9.3.8",
         "spatie/laravel-sitemap": "^5.7",
         "spatie/laravel-sluggable": "^2.5",
-        "spatie/packagist-api": "^2.0"
+        "spatie/packagist-api": "dev-master"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.8",
