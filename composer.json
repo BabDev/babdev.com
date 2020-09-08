@@ -20,6 +20,7 @@
     "require": {
         "php": "^7.4",
         "ext-hash": "*",
+        "composer-runtime-api": "^2.0",
         "babdev/laravel-breadcrumbs": "^1.2",
         "babdev/laravel-server-push-manager": "^1.5",
         "babdev/nova-ckeditor4-field": "*",
