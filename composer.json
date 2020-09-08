@@ -29,8 +29,8 @@
         "drobee/nova-sluggable": "^1.2",
         "guzzlehttp/guzzle": "^7.0.1",
         "knplabs/github-api": "^2.15",
-        "laravel/framework": "^7.27",
-        "laravel/nova": "^3.8.4",
+        "laravel/framework": "^7.28",
+        "laravel/nova": "^3.9.1",
         "lcobucci/jwt": "^3.3.3",
         "league/commonmark": "^1.5.4",
         "llaski/nova-scheduled-jobs": "^3.1",
@@ -42,7 +42,7 @@
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.8.1",
-        "facade/ignition": "^2.3.6",
+        "facade/ignition": "^2.3.7",
         "friendsofphp/php-cs-fixer": "^2.16.4",
         "laravel/telescope": "^3.5.1",
         "nunomaduro/collision": "^4.2"
