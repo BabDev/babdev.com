@@ -26,7 +26,6 @@
         "babdev/nova-ckeditor4-field": "*",
         "barryvdh/laravel-elfinder": "^0.4.5",
         "blade-ui-kit/blade-ui-kit": "^0.1.1",
-        "drobee/nova-sluggable": "^1.2",
         "guzzlehttp/guzzle": "^7.0.1",
         "knplabs/github-api": "^2.15",
         "laravel/framework": "^7.28",

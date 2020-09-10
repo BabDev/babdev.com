@@ -4,14 +4,13 @@ namespace BabDev\Nova;
 
 use BabDev\Models\Package as PackageModel;
 use BabDev\PackageType;
-use Drobee\NovaSluggable\Slug;
-use Drobee\NovaSluggable\SluggableText;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\KeyValue;
 use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Resource;
 
@@ -36,7 +35,7 @@ class Package extends Resource
                 ->rules('image')
                 ->disk('logos'),
 
-            SluggableText::make('Name')
+            Text::make('Name')
                 ->readonly(static function (): bool {
                     return true;
                 }),
@@ -48,8 +47,7 @@ class Package extends Resource
                 ->hideFromIndex(),
 
             Slug::make('Slug')
-                ->slugUnique()
-                ->slugModel(static::$model)
+                ->from('Name')
                 ->hideFromIndex()
                 ->hideFromDetail(),
 

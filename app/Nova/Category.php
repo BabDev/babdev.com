@@ -3,10 +3,10 @@
 namespace BabDev\Nova;
 
 use BabDev\Models\Category as CategoryModel;
-use Drobee\NovaSluggable\Slug;
-use Drobee\NovaSluggable\SluggableText;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Slug;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Resource;
 
 class Category extends Resource
@@ -25,13 +25,12 @@ class Category extends Resource
         return [
             ID::make()->sortable(),
 
-            SluggableText::make('Title')
+            Text::make('Title')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
             Slug::make('Slug')
-                ->slugUnique()
-                ->slugModel(static::$model)
+                ->from('Title')
                 ->hideFromIndex()
                 ->hideFromDetail(),
         ];
