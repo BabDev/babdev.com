@@ -35,7 +35,6 @@
         "league/commonmark": "^1.5.4",
         "llaski/nova-scheduled-jobs": "^3.1",
         "php-http/guzzle6-adapter": "dev-patch-1",
-        "phpunit/phpunit": "^9.3.8",
         "spatie/laravel-sitemap": "^5.7",
         "spatie/laravel-sluggable": "^2.5",
         "spatie/packagist-api": "dev-master"
@@ -45,7 +44,8 @@
         "facade/ignition": "^2.3.7",
         "friendsofphp/php-cs-fixer": "^2.16.4",
         "laravel/telescope": "^3.5.1",
-        "nunomaduro/collision": "^4.2"
+        "nunomaduro/collision": "^4.2",
+        "phpunit/phpunit": "^9.3"
     },
     "replace": {
         "paragonie/random_compat": "*",
