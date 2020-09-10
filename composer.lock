@@ -144,10 +144,10 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/NovaCKEditor4Field",
-                "reference": "18827383de93e2e1eab7125dee44f2145e559aa6"
+                "reference": "88169b87d414af3feb4b1f8a3573710a5f9b8fb6"
             },
             "require": {
-                "illuminate/support": "^7.0",
+                "illuminate/support": "^7.0|^8.0",
                 "laravel/nova": "^3.0",
                 "php": ">=7.1.0"
             },
