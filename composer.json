@@ -28,13 +28,13 @@
         "blade-ui-kit/blade-ui-kit": "^0.1.1",
         "guzzlehttp/guzzle": "^7.0.1",
         "knplabs/github-api": "^2.15",
-        "laravel/framework": "^7.28",
-        "laravel/nova": "^3.9.1",
+        "laravel/framework": "^7.28.1",
+        "laravel/nova": "^3.9.2",
         "lcobucci/jwt": "^3.3.3",
         "league/commonmark": "^1.5.4",
         "llaski/nova-scheduled-jobs": "^3.1",
         "php-http/guzzle6-adapter": "dev-patch-1",
-        "spatie/laravel-sitemap": "^5.7",
+        "spatie/laravel-sitemap": "^5.8",
         "spatie/laravel-sluggable": "^2.5",
         "spatie/packagist-api": "dev-master"
     },
@@ -44,7 +44,7 @@
         "friendsofphp/php-cs-fixer": "^2.16.4",
         "laravel/telescope": "^3.5.1",
         "nunomaduro/collision": "^4.2",
-        "phpunit/phpunit": "^9.3"
+        "phpunit/phpunit": "^9.3.8"
     },
     "replace": {
         "paragonie/random_compat": "*",
