@@ -6,7 +6,7 @@ use Illuminate\Filesystem\FilesystemAdapter;
 use Illuminate\Filesystem\FilesystemManager;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
-class ViewSitemapController
+final class ViewSitemapController
 {
     public function __invoke(FilesystemManager $filesystem): BinaryFileResponse
     {
