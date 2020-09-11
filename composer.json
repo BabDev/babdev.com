@@ -32,7 +32,6 @@
         "laravel/nova": "^3.9.2",
         "lcobucci/jwt": "^3.3.3",
         "league/commonmark": "^1.5.4",
-        "llaski/nova-scheduled-jobs": "^3.1",
         "php-http/guzzle6-adapter": "dev-patch-1",
         "spatie/laravel-sitemap": "^5.8",
         "spatie/laravel-sluggable": "^2.5",

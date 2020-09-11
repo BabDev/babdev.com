@@ -11,7 +11,6 @@ use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Laravel\Nova\Cards\Help;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
-use Llaski\NovaScheduledJobs\NovaScheduledJobsTool;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -57,13 +56,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         return [
             new MatomoAnalytics(),
-        ];
-    }
-
-    public function tools(): array
-    {
-        return [
-            new NovaScheduledJobsTool(),
         ];
     }
 }
