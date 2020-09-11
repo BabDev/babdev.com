@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'version' => env('NOVA_CKEDITOR4_EDITOR_VERSION', '4.14.0'),
+    'version' => env('NOVA_CKEDITOR4_EDITOR_VERSION', '4.15.0'),
 
     /*
     |--------------------------------------------------------------------------

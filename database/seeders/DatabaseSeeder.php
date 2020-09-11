@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use BabDev\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Seeder;

@@ -14,6 +14,8 @@ class AppServiceProvider extends ServiceProvider
     {
         // Limit database key length
         Schema::defaultStringLength(191);
+
+        Paginator::useBootstrap();
     }
 
     public function register(): void

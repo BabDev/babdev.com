@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use BabDev\Models\Package;
 use BabDev\Models\PackageUpdate;
 use Carbon\Carbon;

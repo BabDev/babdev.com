@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use BabDev\Models\Package;
 use BabDev\PackageType;
 use Illuminate\Database\Seeder;

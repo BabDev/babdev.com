@@ -19,7 +19,7 @@ class CKEditor4 extends Field
             [
                 'editorConfig' => config('nova-ckeditor4-field.config', []),
                 'editorDistribution' => config('nova-ckeditor4-field.distribution', 'standard-all'),
-                'editorVersion' => config('nova-ckeditor4-field.version', '4.14.0'),
+                'editorVersion' => config('nova-ckeditor4-field.version', '4.15.0'),
             ]
         );
     }
