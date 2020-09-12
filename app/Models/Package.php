@@ -5,6 +5,7 @@ namespace BabDev\Models;
 use BabDev\Models\Exceptions\DocumentationUnsupportedException;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Spatie\Sluggable\HasSlug;
@@ -39,7 +40,7 @@ use Spatie\Sluggable\SlugOptions;
  */
 class Package extends Model
 {
-    use HasSlug;
+    use HasFactory, HasSlug;
 
     protected $fillable = [
         'name',

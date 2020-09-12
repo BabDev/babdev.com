@@ -41,7 +41,9 @@
         "barryvdh/laravel-ide-helper": "^2.8.1",
         "facade/ignition": "^2.3.7",
         "friendsofphp/php-cs-fixer": "^2.16.4",
+        "fzaninotto/faker": "^1.9.1",
         "laravel/telescope": "^4.0",
+        "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0.2",
         "phpunit/phpunit": "^9.3.8"
     },
@@ -58,6 +60,7 @@
         ],
         "psr-4": {
             "BabDev\\": "app/",
+            "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         }
     },

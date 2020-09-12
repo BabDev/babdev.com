@@ -1,0 +1,75 @@
+<?php
+
+namespace Tests\Feature;
+
+use BabDev\Contracts\Services\DocumentationProcessor;
+use BabDev\Contracts\Services\Exceptions\PageNotFoundException;
+use BabDev\Models\Package;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
+
+class DocumentationTest extends TestCase
+{
+    use RefreshDatabase;
+
+    /** @test */
+    public function when_a_package_has_no_documentation_the_request_is_redirected_to_the_package_list()
+    {
+        /** @var Package $package */
+        $package = Package::factory()->create();
+
+        $this->get(\sprintf('/open-source/packages/%s/docs/1.x/intro', $package->slug))
+            ->assertRedirect('/open-source/packages');
+    }
+
+    /** @test */
+    public function when_a_package_has_no_documentation_for_the_requested_version_a_404_is_returned()
+    {
+        /** @var Package $package */
+        $package = Package::factory()->docs()->create();
+
+        $this->get(\sprintf('/open-source/packages/%s/docs/2.x/intro', $package->slug))
+            ->assertNotFound();
+    }
+
+    /** @test */
+    public function when_a_docs_request_is_for_the_sidebar_index_a_404_is_returned()
+    {
+        /** @var Package $package */
+        $package = Package::factory()->docs()->create();
+
+        $this->get(\sprintf('/open-source/packages/%s/docs/1.x/index', $package->slug))
+            ->assertNotFound();
+    }
+
+    /** @test */
+    public function when_a_docs_request_is_for_a_nonexisting_page_a_404_is_returned()
+    {
+        /** @var Package $package */
+        $package = Package::factory()->docs()->create();
+
+        $this->mock(DocumentationProcessor::class, function ($mock) use ($package) {
+            $mock->shouldReceive('fetchPageContents')
+                ->andThrow(new PageNotFoundException('Testing'));
+        });
+
+        $this->get(\sprintf('/open-source/packages/%s/docs/1.x/does-not-exist', $package->slug))
+            ->assertNotFound();
+    }
+
+    /** @test */
+    public function when_a_docs_request_is_for_an_existing_page_the_docs_can_be_viewed()
+    {
+        /** @var Package $package */
+        $package = Package::factory()->docs()->create();
+
+        $this->mock(DocumentationProcessor::class, function ($mock) use ($package) {
+            $mock->shouldReceive('fetchPageContents', 'fetchPageContents', 'extractTitle')
+                ->andReturn('contents', 'sidebar', 'title');
+        });
+
+        $this->get(\sprintf('/open-source/packages/%s/docs/1.x/intro', $package->slug))
+            ->assertOk()
+            ->assertViewIs('open_source.packages.docs_page');
+    }
+}
