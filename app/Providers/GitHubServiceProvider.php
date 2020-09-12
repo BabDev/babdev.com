@@ -61,7 +61,7 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
     private function registerActionFactory(): void
     {
         $this->app->bind(
-            'github.api',
+            'github.action_factory',
             static function (Application $app): Factory {
                 return new ContainerAwareFactory($app);
             }

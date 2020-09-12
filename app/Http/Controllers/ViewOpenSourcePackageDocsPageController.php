@@ -2,9 +2,9 @@
 
 namespace BabDev\Http\Controllers;
 
+use BabDev\Contracts\Services\DocumentationProcessor;
+use BabDev\Contracts\Services\Exceptions\PageNotFoundException;
 use BabDev\Models\Package;
-use BabDev\Services\DocumentationProcessor;
-use BabDev\Services\Exceptions\PageNotFoundException;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;

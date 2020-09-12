@@ -2,6 +2,7 @@
 
 namespace BabDev\Providers;
 
+use BabDev\Contracts\Services\DocumentationProcessor as DocumentationProcessorContract;
 use BabDev\Services\DocumentationProcessor;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Support\DeferrableProvider;
@@ -13,7 +14,7 @@ class DocumentationServiceProvider extends ServiceProvider implements Deferrable
     {
         return [
             'documentation',
-            DocumentationProcessor::class,
+            DocumentationProcessorContract::class,
         ];
     }
 
@@ -21,7 +22,7 @@ class DocumentationServiceProvider extends ServiceProvider implements Deferrable
     {
         $this->app->bind(
             'documentation',
-            static function (Application $app): DocumentationProcessor {
+            static function (Application $app): DocumentationProcessorContract {
                 return new DocumentationProcessor(
                     $app->make('github.api'),
                     $app->make('cache.store')
@@ -29,6 +30,6 @@ class DocumentationServiceProvider extends ServiceProvider implements Deferrable
             }
         );
 
-        $this->app->alias('documentation', DocumentationProcessor::class);
+        $this->app->alias('documentation', DocumentationProcessorContract::class);
     }
 }

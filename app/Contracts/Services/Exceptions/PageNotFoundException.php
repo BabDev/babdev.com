@@ -1,6 +1,6 @@
 <?php
 
-namespace BabDev\Services\Exceptions;
+namespace BabDev\Contracts\Services\Exceptions;
 
 class PageNotFoundException extends \InvalidArgumentException
 {

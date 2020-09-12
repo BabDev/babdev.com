@@ -2,16 +2,17 @@
 
 namespace BabDev\Services;
 
+use BabDev\Contracts\Services\DocumentationProcessor as DocumentationProcessorContract;
+use BabDev\Contracts\Services\Exceptions\PageNotFoundException;
+use BabDev\Contracts\Services\Exceptions\UnsupportedEncodingException;
 use BabDev\GitHub\ApiConnector;
 use BabDev\Models\Package;
-use BabDev\Services\Exceptions\PageNotFoundException;
-use BabDev\Services\Exceptions\UnsupportedEncodingException;
 use Github\Exception\RuntimeException;
 use Illuminate\Contracts\Cache\Repository;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 
-class DocumentationProcessor
+final class DocumentationProcessor implements DocumentationProcessorContract
 {
     private ApiConnector $github;
     private Repository $cache;
