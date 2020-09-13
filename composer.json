@@ -31,7 +31,7 @@
         "laravel/framework": "^8.0.4",
         "laravel/nova": "^3.9.2",
         "lcobucci/jwt": "^3.3.3",
-        "league/commonmark": "^1.5.4",
+        "league/commonmark": "^1.5.5",
         "php-http/guzzle6-adapter": "dev-patch-1",
         "spatie/laravel-sitemap": "^5.8",
         "spatie/laravel-sluggable": "^2.5.1",
@@ -45,7 +45,7 @@
         "laravel/telescope": "^4.0",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0.2",
-        "phpunit/phpunit": "^9.3.8"
+        "phpunit/phpunit": "^9.3.10"
     },
     "replace": {
         "paragonie/random_compat": "*",
