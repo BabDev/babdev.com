@@ -6,7 +6,7 @@ use BabDev\Models\Package;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Collection;
 
-class ViewOpenSourcePackagesController
+final class ViewOpenSourcePackagesController
 {
     public function __invoke(): View
     {

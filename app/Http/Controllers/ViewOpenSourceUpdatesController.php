@@ -6,7 +6,7 @@ use BabDev\Models\PackageUpdate;
 use BabDev\Pagination\RoutableLengthAwarePaginator;
 use Illuminate\Contracts\View\View;
 
-class ViewOpenSourceUpdatesController
+final class ViewOpenSourceUpdatesController
 {
     public function __invoke(): View
     {

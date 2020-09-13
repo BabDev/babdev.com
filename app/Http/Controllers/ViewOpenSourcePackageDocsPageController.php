@@ -9,7 +9,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-class ViewOpenSourcePackageDocsPageController
+final class ViewOpenSourcePackageDocsPageController
 {
     /**
      * @return RedirectResponse|View

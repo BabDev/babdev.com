@@ -7,7 +7,7 @@ use Illuminate\Filesystem\FilesystemManager;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
-class UploadImageThruCKEditorController
+final class UploadImageThruCKEditorController
 {
     public function __invoke(Request $request, FilesystemManager $filesystem): JsonResponse
     {

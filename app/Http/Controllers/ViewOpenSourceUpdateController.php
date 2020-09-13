@@ -5,7 +5,7 @@ namespace BabDev\Http\Controllers;
 use BabDev\Models\PackageUpdate;
 use Illuminate\Contracts\View\View;
 
-class ViewOpenSourceUpdateController
+final class ViewOpenSourceUpdateController
 {
     public function __invoke(PackageUpdate $update): View
     {

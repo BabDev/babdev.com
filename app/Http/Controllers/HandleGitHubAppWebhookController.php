@@ -7,7 +7,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class HandleGitHubAppWebhookController
+final class HandleGitHubAppWebhookController
 {
     public function __invoke(Request $request, RequestHandler $requestHandler): JsonResponse
     {

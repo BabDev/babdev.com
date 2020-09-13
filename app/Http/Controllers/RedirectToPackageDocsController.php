@@ -6,7 +6,7 @@ use BabDev\Models\Package;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
-class RedirectToPackageDocsController
+final class RedirectToPackageDocsController
 {
     public function __invoke(Request $request, Package $package): RedirectResponse
     {
