@@ -72,4 +72,24 @@ class DocumentationTest extends TestCase
             ->assertOk()
             ->assertViewIs('open_source.packages.docs_page');
     }
+
+    /** @test */
+    public function when_a_package_has_no_documentation_the_request_for_the_docs_shortcut_is_redirected_to_the_package_list()
+    {
+        /** @var Package $package */
+        $package = Package::factory()->create();
+
+        $this->get(\sprintf('/open-source/packages/%s/docs', $package->slug))
+            ->assertRedirect('/open-source/packages');
+    }
+
+    /** @test */
+    public function when_a_docs_request_is_for_a_page_without_a_version_the_user_is_redirected_to_the_default_version_page()
+    {
+        /** @var Package $package */
+        $package = Package::factory()->docs()->create();
+
+        $this->get(\sprintf('/open-source/packages/%s/docs/intro', $package->slug))
+            ->assertRedirect(\sprintf('/open-source/packages/%s/docs/%s/intro', $package->slug, $package->getDefaultDocsVersion()));
+    }
 }
