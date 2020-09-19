@@ -11,8 +11,8 @@
     <x-package-title :package="$package" secondary-title="Documentation" class="pt-4" />
     <article class="pt-4">
         <div class="container-fluid package-docs">
-            <x-markdown class="package-docs__sidebar">{!! $sidebar !!}</x-markdown>
-            <x-markdown class="package-docs__content">{!! $contents !!}</x-markdown>
+            <x-markdown class="package-docs__sidebar" flavor="github">{!! $sidebar !!}</x-markdown>
+            <x-markdown class="package-docs__content" flavor="github">{!! $contents !!}</x-markdown>
         </div>
         <div class="container">
             {{ Breadcrumbs::render('open-source.packages.package-docs-page', $package, $title) }}
