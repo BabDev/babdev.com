@@ -22,9 +22,9 @@
         "babdev/nova-ckeditor4-field": "*",
         "barryvdh/laravel-elfinder": "^0.4.6",
         "blade-ui-kit/blade-ui-kit": "^0.1.1",
-        "guzzlehttp/guzzle": "^7.0.1",
+        "guzzlehttp/guzzle": "^7.1",
         "knplabs/github-api": "^2.15",
-        "laravel/framework": "^8.5",
+        "laravel/framework": "^8.6",
         "laravel/nova": "^3.10",
         "lcobucci/jwt": "^3.3.3",
         "league/commonmark": "^1.5.5",
@@ -38,10 +38,10 @@
         "facade/ignition": "^2.3.7",
         "friendsofphp/php-cs-fixer": "^2.16.4",
         "fzaninotto/faker": "^1.9.1",
-        "laravel/telescope": "^4.0",
+        "laravel/telescope": "^4.0.1",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0.2",
-        "phpunit/phpunit": "^9.3.10"
+        "phpunit/phpunit": "^9.3.11"
     },
     "replace": {
         "paragonie/random_compat": "*",
