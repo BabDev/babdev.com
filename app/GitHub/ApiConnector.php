@@ -15,6 +15,18 @@ class ApiConnector
         $this->client = $client;
     }
 
+    public function addRepositoryLabel(string $username, string $repository, string $label, string $color): void
+    {
+        $this->client->api('repository')->labels()->create(
+            $username,
+            $repository,
+            [
+                'name' => $label,
+                'color' => $color,
+            ]
+        );
+    }
+
     public function fetchFileContents(string $username, string $repository, string $path, string $reference): array
     {
         return $this->client->api('repositories')->contents()->show($username, $repository, $path, $reference);
@@ -30,8 +42,18 @@ class ApiConnector
             );
     }
 
+    public function fetchRepositoryLabels(string $username, string $repository): Collection
+    {
+        return new Collection($this->client->api('repository')->labels()->all($username, $repository));
+    }
+
     public function fetchRepositoryTopics(string $username, string $repository): Collection
     {
         return new Collection($this->client->api('repository')->topics($username, $repository)['names'] ?? []);
+    }
+
+    public function replaceRepositoryTopics(string $username, string $repository, array $topics): void
+    {
+        $this->client->api('repository')->replaceTopics($username, $repository, $topics);
     }
 }
