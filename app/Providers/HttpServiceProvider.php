@@ -68,7 +68,7 @@ class HttpServiceProvider extends ServiceProvider implements DeferrableProvider
         $this->app->bind(
             'httplug',
             static function (Application $app): ClientInterface {
-                return new Client();
+                return new Client($app->make('guzzle'));
             }
         );
 
