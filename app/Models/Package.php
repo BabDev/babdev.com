@@ -4,6 +4,7 @@ namespace BabDev\Models;
 
 use BabDev\Models\Exceptions\DocumentationUnsupportedException;
 use Carbon\Carbon;
+use Database\Factories\PackageFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -71,6 +72,11 @@ class Package extends Model
         'visible' => 'boolean',
         'is_packagist' => 'boolean',
     ];
+
+    protected static function newFactory()
+    {
+        return PackageFactory::new();
+    }
 
     public function getRouteKeyName(): string
     {

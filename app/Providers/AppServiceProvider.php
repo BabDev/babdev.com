@@ -3,12 +3,10 @@
 namespace BabDev\Providers;
 
 use BabDev\Pagination\RoutableLengthAwarePaginator;
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Str;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -18,16 +16,6 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
 
         Paginator::useBootstrap();
-
-        if ($this->app->environment('testing')) {
-            Factory::guessFactoryNamesUsing(function (string $modelName) {
-                $modelName = Str::startsWith($modelName, 'BabDev\\Models\\')
-                    ? Str::after($modelName, 'BabDev\\Models\\')
-                    : Str::after($modelName, 'BabDev\\');
-
-                return 'Database\\Factories\\'.$modelName.'Factory';
-            });
-        }
     }
 
     public function register(): void
