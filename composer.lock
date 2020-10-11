@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0ddaba9bf7036335a3457b2d43d1c45e",
+    "content-hash": "58fd5b139d89984231d0e92aa8933601",
     "packages": [
         {
             "name": "babdev/laravel-breadcrumbs",
@@ -1398,23 +1398,23 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "7.1.1",
+            "version": "7.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "7427d6f99df41cc01f33cd59832f721c150ffdf3"
+                "reference": "0aa74dfb41ae110835923ef10a9d803a22d50e79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/7427d6f99df41cc01f33cd59832f721c150ffdf3",
-                "reference": "7427d6f99df41cc01f33cd59832f721c150ffdf3",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/0aa74dfb41ae110835923ef10a9d803a22d50e79",
+                "reference": "0aa74dfb41ae110835923ef10a9d803a22d50e79",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "guzzlehttp/promises": "^1.0",
-                "guzzlehttp/psr7": "^1.6.1",
-                "php": "^7.2.5",
+                "guzzlehttp/promises": "^1.4",
+                "guzzlehttp/psr7": "^1.7",
+                "php": "^7.2.5 || ^8.0",
                 "psr/http-client": "^1.0"
             },
             "provide": {
@@ -1422,8 +1422,8 @@
             },
             "require-dev": {
                 "ext-curl": "*",
-                "php-http/client-integration-tests": "dev-phpunit8",
-                "phpunit/phpunit": "^8.5.5",
+                "php-http/client-integration-tests": "^3.0",
+                "phpunit/phpunit": "^8.5.5 || ^9.3.5",
                 "psr/log": "^1.1"
             },
             "suggest": {
@@ -1476,7 +1476,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
-                "source": "https://github.com/guzzle/guzzle/tree/7.1.1"
+                "source": "https://github.com/guzzle/guzzle/tree/7.2.0"
             },
             "funding": [
                 {
@@ -1496,7 +1496,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-09-30T08:51:17+00:00"
+            "time": "2020-10-10T11:47:56+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -1783,16 +1783,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.8.0",
+            "version": "v8.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "0bdd5c6f12cb7cb6644e484169656245af417735"
+                "reference": "8a6bf870bcfa1597e514a9c7ee6df44db98abb54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/0bdd5c6f12cb7cb6644e484169656245af417735",
-                "reference": "0bdd5c6f12cb7cb6644e484169656245af417735",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/8a6bf870bcfa1597e514a9c7ee6df44db98abb54",
+                "reference": "8a6bf870bcfa1597e514a9c7ee6df44db98abb54",
                 "shasum": ""
             },
             "require": {
@@ -1946,21 +1946,21 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2020-10-02T14:33:08+00:00"
+            "time": "2020-10-06T14:22:36+00:00"
         },
         {
             "name": "laravel/nova",
-            "version": "v3.11.1",
+            "version": "v3.12.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "57c67c5da3bfc9e499a81b288ab47919bfb14b4c"
+                "reference": "f5f695960e6fd6219d7b9352dc2b77c63c48c70b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-57c67c5da3bfc9e499a81b288ab47919bfb14b4c-zip-a2ec0b.zip",
-                "reference": "57c67c5da3bfc9e499a81b288ab47919bfb14b4c",
-                "shasum": "105f97de110ea795d9ec643252cd27fbc893c93e"
+                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-f5f695960e6fd6219d7b9352dc2b77c63c48c70b-zip-efab90.zip",
+                "reference": "f5f695960e6fd6219d7b9352dc2b77c63c48c70b",
+                "shasum": "75d6230097f01143f24ed6a595906c371de9a9ca"
             },
             "require": {
                 "brick/money": "^0.5.0",
@@ -2021,7 +2021,7 @@
                 "admin",
                 "laravel"
             ],
-            "time": "2020-09-29T20:34:45+00:00"
+            "time": "2020-10-07T18:10:57+00:00"
         },
         {
             "name": "laravel/ui",
@@ -2669,16 +2669,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.41.0",
+            "version": "2.41.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "8690b13ad4da6d54d692afea15aab30b36fee52e"
+                "reference": "35959c93ada06469107a05df6b15b65074a960cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/8690b13ad4da6d54d692afea15aab30b36fee52e",
-                "reference": "8690b13ad4da6d54d692afea15aab30b36fee52e",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/35959c93ada06469107a05df6b15b65074a960cf",
+                "reference": "35959c93ada06469107a05df6b15b65074a960cf",
                 "shasum": ""
             },
             "require": {
@@ -2758,7 +2758,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-04T09:11:05+00:00"
+            "time": "2020-10-10T23:35:06+00:00"
         },
         {
             "name": "nicmart/tree",
@@ -4299,16 +4299,16 @@
         },
         {
             "name": "spatie/browsershot",
-            "version": "3.39.0",
+            "version": "3.40.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/browsershot.git",
-                "reference": "572968978e5e07513f44819b0e744403c13fa1a1"
+                "reference": "0aa3a683448efe9c7f2d34fee80dec62bafd6c90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/browsershot/zipball/572968978e5e07513f44819b0e744403c13fa1a1",
-                "reference": "572968978e5e07513f44819b0e744403c13fa1a1",
+                "url": "https://api.github.com/repos/spatie/browsershot/zipball/0aa3a683448efe9c7f2d34fee80dec62bafd6c90",
+                "reference": "0aa3a683448efe9c7f2d34fee80dec62bafd6c90",
                 "shasum": ""
             },
             "require": {
@@ -4353,7 +4353,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/browsershot/issues",
-                "source": "https://github.com/spatie/browsershot/tree/3.39.0"
+                "source": "https://github.com/spatie/browsershot/tree/3.40.0"
             },
             "funding": [
                 {
@@ -4361,7 +4361,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-09-24T08:59:01+00:00"
+            "time": "2020-10-07T20:56:21+00:00"
         },
         {
             "name": "spatie/crawler",
@@ -5032,12 +5032,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "04c3a31fe8ea94b42c9e2d1acc93d19782133b00"
+                "reference": "ae789a8a2ad189ce7e8216942cdb9b77319f5eb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/04c3a31fe8ea94b42c9e2d1acc93d19782133b00",
-                "reference": "04c3a31fe8ea94b42c9e2d1acc93d19782133b00",
+                "url": "https://api.github.com/repos/symfony/console/zipball/ae789a8a2ad189ce7e8216942cdb9b77319f5eb8",
+                "reference": "ae789a8a2ad189ce7e8216942cdb9b77319f5eb8",
                 "shasum": ""
             },
             "require": {
@@ -5120,7 +5120,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-09-18T14:27:32+00:00"
+            "time": "2020-10-07T15:23:00+00:00"
         },
         {
             "name": "symfony/css-selector",
@@ -8937,16 +8937,16 @@
         },
         {
             "name": "laravel/telescope",
-            "version": "v4.0.1",
+            "version": "v4.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/telescope.git",
-                "reference": "4bd0a8b01b889c7704cd0a1d04a849c8da993f43"
+                "reference": "84b28408d14df48bf41618c843ebf23bed3b940d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/telescope/zipball/4bd0a8b01b889c7704cd0a1d04a849c8da993f43",
-                "reference": "4bd0a8b01b889c7704cd0a1d04a849c8da993f43",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/84b28408d14df48bf41618c843ebf23bed3b940d",
+                "reference": "84b28408d14df48bf41618c843ebf23bed3b940d",
                 "shasum": ""
             },
             "require": {
@@ -8994,9 +8994,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/telescope/issues",
-                "source": "https://github.com/laravel/telescope/tree/v4.0.1"
+                "source": "https://github.com/laravel/telescope/tree/v4.1.0"
             },
-            "time": "2020-09-22T16:49:01+00:00"
+            "time": "2020-10-06T16:19:53+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -9983,16 +9983,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.4.0",
+            "version": "9.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "ef533467a7974c4b6c354f3eff42a115910bd4e5"
+                "reference": "1f09a12726593737e8a228ebb1c8647305d07c41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/ef533467a7974c4b6c354f3eff42a115910bd4e5",
-                "reference": "ef533467a7974c4b6c354f3eff42a115910bd4e5",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/1f09a12726593737e8a228ebb1c8647305d07c41",
+                "reference": "1f09a12726593737e8a228ebb1c8647305d07c41",
                 "shasum": ""
             },
             "require": {
@@ -10007,23 +10007,23 @@
                 "phar-io/manifest": "^2.0.1",
                 "phar-io/version": "^3.0.2",
                 "php": ">=7.3",
-                "phpspec/prophecy": "^1.11.1",
+                "phpspec/prophecy": "^1.12.1",
                 "phpunit/php-code-coverage": "^9.2",
-                "phpunit/php-file-iterator": "^3.0.4",
-                "phpunit/php-invoker": "^3.1",
-                "phpunit/php-text-template": "^2.0.2",
-                "phpunit/php-timer": "^5.0.1",
-                "sebastian/cli-parser": "^1.0",
-                "sebastian/code-unit": "^1.0.5",
-                "sebastian/comparator": "^4.0.3",
-                "sebastian/diff": "^4.0.2",
-                "sebastian/environment": "^5.1.2",
-                "sebastian/exporter": "^4.0.2",
-                "sebastian/global-state": "^5.0",
-                "sebastian/object-enumerator": "^4.0.2",
-                "sebastian/resource-operations": "^3.0.2",
-                "sebastian/type": "^2.2.1",
-                "sebastian/version": "^3.0.1"
+                "phpunit/php-file-iterator": "^3.0.5",
+                "phpunit/php-invoker": "^3.1.1",
+                "phpunit/php-text-template": "^2.0.3",
+                "phpunit/php-timer": "^5.0.2",
+                "sebastian/cli-parser": "^1.0.1",
+                "sebastian/code-unit": "^1.0.6",
+                "sebastian/comparator": "^4.0.5",
+                "sebastian/diff": "^4.0.3",
+                "sebastian/environment": "^5.1.3",
+                "sebastian/exporter": "^4.0.3",
+                "sebastian/global-state": "^5.0.1",
+                "sebastian/object-enumerator": "^4.0.3",
+                "sebastian/resource-operations": "^3.0.3",
+                "sebastian/type": "^2.3",
+                "sebastian/version": "^3.0.2"
             },
             "require-dev": {
                 "ext-pdo": "*",
@@ -10070,7 +10070,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.4.0"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.4.1"
             },
             "funding": [
                 {
@@ -10082,7 +10082,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-10-02T03:54:37+00:00"
+            "time": "2020-10-11T07:41:19+00:00"
         },
         {
             "name": "scrivo/highlight.php",
@@ -11020,16 +11020,16 @@
         },
         {
             "name": "sebastian/type",
-            "version": "2.2.2",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/type.git",
-                "reference": "e494dcaeb89d1458c9ccd8c819745245a1669aea"
+                "reference": "fa592377f3923946cb90bf1f6a71ba2e5f229909"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/type/zipball/e494dcaeb89d1458c9ccd8c819745245a1669aea",
-                "reference": "e494dcaeb89d1458c9ccd8c819745245a1669aea",
+                "url": "https://api.github.com/repos/sebastianbergmann/type/zipball/fa592377f3923946cb90bf1f6a71ba2e5f229909",
+                "reference": "fa592377f3923946cb90bf1f6a71ba2e5f229909",
                 "shasum": ""
             },
             "require": {
@@ -11041,7 +11041,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.2-dev"
+                    "dev-master": "2.3-dev"
                 }
             },
             "autoload": {
@@ -11064,7 +11064,7 @@
             "homepage": "https://github.com/sebastianbergmann/type",
             "support": {
                 "issues": "https://github.com/sebastianbergmann/type/issues",
-                "source": "https://github.com/sebastianbergmann/type/tree/2.2.2"
+                "source": "https://github.com/sebastianbergmann/type/tree/2.3.0"
             },
             "funding": [
                 {
@@ -11072,7 +11072,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-09-28T06:01:38+00:00"
+            "time": "2020-10-06T08:41:03+00:00"
         },
         {
             "name": "sebastian/version",
