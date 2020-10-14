@@ -24,7 +24,7 @@
         "blade-ui-kit/blade-ui-kit": "^0.1.1",
         "guzzlehttp/guzzle": "^7.2",
         "knplabs/github-api": "^2.15",
-        "laravel/framework": "^8.9",
+        "laravel/framework": "^8.10",
         "laravel/nova": "^3.12.1",
         "lcobucci/jwt": "^3.3.3",
         "league/commonmark": "^1.5.5",
