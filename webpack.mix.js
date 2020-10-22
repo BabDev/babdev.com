@@ -12,21 +12,6 @@ require('laravel-mix-purgecss');
  |
  */
 
-// Fix for resolve-url-loader error regarding paths
-Mix.listen('configReady', (config) => {
-    for (rule of config.module.rules) {
-        if (new RegExp("\.scss$").test(rule.test.toString())) {
-            let resolveUrlLoaderIndex = 0;
-            rule.use.forEach(function (element, index) {
-                if (element.loader === "resolve-url-loader") {
-                    resolveUrlLoaderIndex = index;
-                }
-            });
-            rule.use.splice(resolveUrlLoaderIndex - 1, 0, rule.use.splice(resolveUrlLoaderIndex, 1)[0]);
-        }
-    }
-});
-
 mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/docs.js', 'public/js')
     .js('resources/js/updates.js', 'public/js')
