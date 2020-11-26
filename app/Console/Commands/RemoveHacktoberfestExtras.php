@@ -3,7 +3,6 @@
 namespace BabDev\Console\Commands;
 
 use BabDev\GitHub\ApiConnector;
-use BabDev\Models\Package;
 use Illuminate\Console\Command;
 
 class RemoveHacktoberfestExtras extends Command
