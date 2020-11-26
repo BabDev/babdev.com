@@ -4,12 +4,14 @@ namespace BabDev\Providers;
 
 use BabDev\Contracts\GitHub\Actions\Factory;
 use BabDev\Contracts\GitHub\ClientFactory;
+use BabDev\Contracts\GitHub\JWTConfigurationBuilder as JWTConfigurationBuilderContract;
 use BabDev\Contracts\GitHub\JWTTokenGenerator as JWTTokenGeneratorContract;
 use BabDev\GitHub\Actions\ContainerAwareFactory;
 use BabDev\GitHub\ApiConnector;
 use BabDev\GitHub\ContainerAwareClientFactory;
-use BabDev\GitHub\RequestHandler;
+use BabDev\GitHub\JWTConfigurationBuilder;
 use BabDev\GitHub\JWTTokenGenerator;
+use BabDev\GitHub\RequestHandler;
 use Github\Client;
 use Github\Exception\InvalidArgumentException;
 use Github\HttpClient\Builder;
@@ -39,6 +41,9 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
             'github.http_client.builder',
             Builder::class,
 
+            'github.jwt.configuration_builder',
+            JWTConfigurationBuilderContract::class,
+
             'github.jwt.token_generator',
             JWTTokenGeneratorContract::class,
 
@@ -54,6 +59,7 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
         $this->registerClient();
         $this->registerClientFactory();
         $this->registerHttpClientBuilder();
+        $this->registerJwtConfigurationBuilder();
         $this->registerJwtTokenGenerator();
         $this->registerWebhookRequestHandler();
     }
@@ -135,12 +141,26 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
         $this->app->alias('github.http_client.builder', Builder::class);
     }
 
+    private function registerJwtConfigurationBuilder(): void
+    {
+        $this->app->bind(
+            'github.jwt.token_generator',
+            static function (): JWTConfigurationBuilderContract {
+                return new JWTConfigurationBuilder();
+            }
+        );
+
+        $this->app->alias('github.jwt.configuration_builder', JWTConfigurationBuilderContract::class);
+    }
+
     private function registerJwtTokenGenerator(): void
     {
         $this->app->bind(
             'github.jwt.token_generator',
-            static function (): JWTTokenGeneratorContract {
-                return new JWTTokenGenerator();
+            static function (Application $app): JWTTokenGeneratorContract {
+                return new JWTTokenGenerator(
+                    $app->make('github.jwt.configuration_builder')
+                );
             }
         );
 
