@@ -12,8 +12,9 @@ use Github\Client;
 use Illuminate\Http\Request;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
 
-class RequestHandlerTest extends TestCase
+final class RequestHandlerTest extends TestCase
 {
     /**
      * @var MockObject&Factory
@@ -47,12 +48,13 @@ class RequestHandlerTest extends TestCase
     /** @test */
     public function the_handler_only_acts_on_supported_events()
     {
-        /** @var MockObject&Request $request */
-        $request = $this->createMock(Request::class);
-        $request->expects($this->once())
-            ->method('header')
-            ->with('X-Github-Event')
-            ->willReturn('pull_request');
+        $request = Request::createFromBase(
+            SymfonyRequest::create(
+                '/webhooks/github/app',
+                'POST'
+            )
+        );
+        $request->headers->set('X-Github-Event', 'pull_request');
 
         $this->clientFactory->expects($this->never())
             ->method('make');
@@ -71,17 +73,18 @@ class RequestHandlerTest extends TestCase
             ],
         ];
 
-        /** @var MockObject&Request $request */
-        $request = $this->createMock(Request::class);
-        $request->expects($this->once())
-            ->method('header')
-            ->with('X-Github-Event')
-            ->willReturn('pull_request');
-
-        $request->expects($this->once())
-            ->method('input')
-            ->with('installation.id')
-            ->willReturn('123');
+        $request = Request::createFromBase(
+            SymfonyRequest::create(
+                '/webhooks/github/app',
+                'POST',
+                [
+                    'installation' => [
+                        'id' => '123',
+                    ],
+                ]
+            )
+        );
+        $request->headers->set('X-Github-Event', 'pull_request');
 
         /** @var MockObject&Apps $apps */
         $apps = $this->createMock(Apps::class);

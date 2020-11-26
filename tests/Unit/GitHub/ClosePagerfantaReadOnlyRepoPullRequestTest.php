@@ -10,21 +10,21 @@ use Github\Client;
 use Illuminate\Http\Request;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
 
-class ClosePagerfantaReadOnlyRepoPullRequestTest extends TestCase
+final class ClosePagerfantaReadOnlyRepoPullRequestTest extends TestCase
 {
     /** @test */
     public function the_action_only_processes_opened_pull_requests()
     {
-        /** @var MockObject&Request $request */
-        $request = $this->createMock(Request::class);
-        $request->expects($this->once())
-            ->method('input')
-            ->with('action')
-            ->willReturn('closed');
+        $request = Request::createFromBase(
+            SymfonyRequest::create('/webhooks/github/app', 'POST', ['action' => 'closed'])
+        );
 
         /** @var MockObject&Client $github */
         $github = $this->createMock(Client::class);
+        $github->expects($this->never())
+            ->method('api');
 
         $action = new ClosePagerfantaReadOnlyRepoPullRequest();
         $action([], $request, $github);
@@ -33,28 +33,22 @@ class ClosePagerfantaReadOnlyRepoPullRequestTest extends TestCase
     /** @test */
     public function the_action_comments_on_an_opened_pull_request_and_closes_it()
     {
-        /** @var MockObject&Request $request */
-        $request = $this->createMock(Request::class);
-        $request->expects($this->exactly(7))
-            ->method('input')
-            ->withConsecutive(
-                ['action'],
-                ['repository.owner.login'],
-                ['repository.name'],
-                ['number'],
-                ['repository.owner.login'],
-                ['repository.name'],
-                ['number']
+        $request = Request::createFromBase(
+            SymfonyRequest::create(
+                '/webhooks/github/app',
+                'POST',
+                [
+                    'action' => 'opened',
+                    'number' => '1',
+                    'repository' => [
+                        'owner' => [
+                            'login' => 'pagerfanta-packages',
+                        ],
+                        'name' => 'core',
+                    ],
+                ]
             )
-            ->willReturnOnConsecutiveCalls(
-                'opened',
-                'pagerfanta-packages',
-                'core',
-                '1',
-                'pagerfanta-packages',
-                'core',
-                '1'
-            );
+        );
 
         /** @var MockObject&Comments $comments */
         $comments = $this->createMock(Comments::class);
