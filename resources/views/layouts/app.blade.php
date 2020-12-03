@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta property="og:type" content="{{ $ogType ?? 'website' }}">
         <meta property="og:title" content="{{ $ogTitle ?? $title ?? config('app.name', 'BabDev') }}">
-        <meta property="og:image" content="{{ asset('images/logos/social-media.png') }}">
+        <meta property="og:image" content="{{ asset('images/social-media.png') }}">
         <meta property="og:url" content="{{ url()->current() }}">
         <meta property="og:locale" content="en_US" />
         <meta name="twitter:card" content="summary_large_image">
@@ -14,7 +14,7 @@
         <meta name="twitter:creator" content="@mbabker">
         <meta name="twitter:url" content="{{ url()->current() }}">
         <meta name="twitter:title" content="{{ $ogTitle ?? $title ?? config('app.name', 'BabDev') }}">
-        <meta name="twitter:image" content="{{ asset('images/logos/social-media.png') }}">
+        <meta name="twitter:image" content="{{ asset('images/social-media.png') }}">
         @yield('meta')
         <title>{{ $title ?? config('app.name', 'BabDev') }}</title>
         <link href="{{ PushManager::preload(mix('css/app.css'), ['as' => 'style']) }}" rel="stylesheet">
