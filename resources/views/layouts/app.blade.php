@@ -38,7 +38,7 @@
             <nav class="navbar navbar-expand-sm navbar-light bg-white">
                 <div class="container">
                     <a class="navbar-brand pt-2" href="{{ route('homepage') }}">
-                        <img src="{{ PushManager::preload(asset('images/logos/babdev.svg'), ['as' => 'image']) }}" class="d-inline-block" alt="">
+                        {{ svg('logo') }}
                         BabDev
                     </a>
 

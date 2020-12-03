@@ -4,10 +4,11 @@
   .navbar-brand {
     font-family: $font-family-brand;
 
-    img {
+    svg {
       height: 50px;
       width: 62px;
       vertical-align: initial;
+      display: inline-block;
     }
   }
 
