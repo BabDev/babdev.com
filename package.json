@@ -22,8 +22,7 @@
         "@fortawesome/fontawesome-free": "^5.15.1",
         "@popperjs/core": "^2.5.4",
         "bootstrap": "^5.0.0-beta1",
-        "highlight.js": "^10.4.1",
-        "jquery": "^3.5.1"
+        "highlight.js": "^10.4.1"
     },
     "devDependencies": {
         "cross-env": "^7.0.2",
