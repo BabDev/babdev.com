@@ -1,4 +1,3 @@
-import jQuery from 'jquery';
 import hljs from 'highlight.js';
 
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -7,17 +6,42 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
-const makeTableResponsive = function () {
-    jQuery(this).addClass('table').wrap('<div class="table-responsive"></div>');
+const makeTableResponsive = function (element) {
+    element.classList.add('table');
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'table-responsive';
+
+    element.parentNode.insertBefore(wrapper, element);
+
+    wrapper.appendChild(element);
 };
 
-const wrapWithHeadingContainer = function () {
-    jQuery(this).wrap('<div class="section-heading"></div>');
+const wrapWithHeadingContainer = function (element) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'section-heading';
+
+    element.parentNode.insertBefore(wrapper, element);
+
+    wrapper.appendChild(element);
 };
 
-jQuery('.package-docs__content h1').each(wrapWithHeadingContainer);
-jQuery('.package-docs__content h2').each(wrapWithHeadingContainer);
-jQuery('.package-docs__content h3').each(wrapWithHeadingContainer);
-jQuery('.package-docs__content h4').each(wrapWithHeadingContainer);
+document.querySelectorAll('.package-docs__content h1').forEach((element) => {
+    wrapWithHeadingContainer(element);
+});
 
-jQuery('.package-docs__content table').each(makeTableResponsive);
+document.querySelectorAll('.package-docs__content h2').forEach((element) => {
+    wrapWithHeadingContainer(element);
+});
+
+document.querySelectorAll('.package-docs__content h3').forEach((element) => {
+    wrapWithHeadingContainer(element);
+});
+
+document.querySelectorAll('.package-docs__content h4').forEach((element) => {
+    wrapWithHeadingContainer(element);
+});
+
+document.querySelectorAll('.package-docs__content table').forEach((element) => {
+    makeTableResponsive(element);
+});

@@ -13,7 +13,8 @@
 
     &.package-statistic--unsupported {
       @extend .badge;
-      @extend .badge-brand-yellow;
+      @extend .bg-brand-yellow;
+      @extend .text-brand-black;
     }
 
     &.package-statistic--language {
