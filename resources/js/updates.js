@@ -1,8 +1,16 @@
-import jQuery from 'jquery';
+const wrapWithHeadingContainer = function (element) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'section-heading';
 
-const wrapWithHeadingContainer = function () {
-    jQuery(this).wrap('<div class="section-heading"></div>');
+    element.parentNode.insertBefore(wrapper, element);
+
+    wrapper.appendChild(element);
 };
 
-jQuery('.package-update__content h3').each(wrapWithHeadingContainer);
-jQuery('.package-update__content h4').each(wrapWithHeadingContainer);
+document.querySelectorAll('.package-update__content h3').forEach((element) => {
+    wrapWithHeadingContainer(element);
+});
+
+document.querySelectorAll('.package-update__content h4').forEach((element) => {
+    wrapWithHeadingContainer(element);
+});
