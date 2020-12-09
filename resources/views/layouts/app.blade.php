@@ -89,8 +89,6 @@
                 <div class="site-footer__copyright text-md-right">All rights reserved. © 2010 - {{ date('Y') }} <a href="{{ route('homepage') }}" title="BabDev">BabDev</a>.</div>
             </div>
         </footer>
-        <script src="{{ PushManager::preload(mix('js/manifest.js'), ['as' => 'script']) }}"></script>
-        <script src="{{ PushManager::preload(mix('js/vendor.js'), ['as' => 'script']) }}"></script>
         <script src="{{ PushManager::preload(mix('js/app.js'), ['as' => 'script']) }}"></script>
         @yield('bodyScripts')
     </body>
