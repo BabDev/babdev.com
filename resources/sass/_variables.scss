@@ -25,6 +25,7 @@ $brand-colors: (
 );
 
 $link-color: $babdev-orange;
+$link-decoration: none;
 
 $font-family-brand: 'BPscriptRegular', sans-serif;
 $font-family-sans-serif: 'Droid Sans', sans-serif;
@@ -33,3 +34,8 @@ $headings-font-family: 'Bree Serif', sans-serif;
 $navbar-brand-font-size: 1.75rem;
 
 $dropdown-link-active-bg: $babdev-orange;
+
+$breadcrumb-padding-y: .75rem;
+$breadcrumb-padding-x: 1rem;
+$breadcrumb-bg: #e9ecef; // $gray-200
+$breadcrumb-border-radius: .25rem; // $border-radius

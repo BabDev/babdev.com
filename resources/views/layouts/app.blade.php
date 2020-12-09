@@ -42,15 +42,15 @@
                         BabDev
                     </a>
 
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
                     <nav class="collapse navbar-collapse" id="main-nav">
-                        <ul class="navbar-nav ml-sm-auto">
+                        <ul class="navbar-nav ms-sm-auto">
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Open Source</a>
-                                <div class="dropdown-menu">
+                                <a class="nav-link dropdown-toggle" id="open-source-menu-item" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Open Source</a>
+                                <div class="dropdown-menu" aria-labelledby="open-source-menu-item">
                                     <a class="dropdown-item" href="{{ route('open-source.packages') }}">Packages</a>
                                     <a class="dropdown-item" href="{{ route('open-source.updates') }}">Updates</a>
                                 </div>
@@ -86,7 +86,7 @@
                         @endif
                     </ul>
                 </nav>
-                <div class="site-footer__copyright text-md-right">All rights reserved. © 2010 - {{ date('Y') }} <a href="{{ route('homepage') }}" title="BabDev">BabDev</a>.</div>
+                <div class="site-footer__copyright text-md-end">All rights reserved. © 2010 - {{ date('Y') }} <a href="{{ route('homepage') }}" title="BabDev">BabDev</a>.</div>
             </div>
         </footer>
         <script src="{{ PushManager::preload(mix('js/app.js'), ['as' => 'script']) }}"></script>
