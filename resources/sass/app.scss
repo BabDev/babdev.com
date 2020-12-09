@@ -16,6 +16,10 @@
 // Bootstrap
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
+
+// Merge the maps now that the default map is configured
+$theme-colors: map-merge($theme-colors, $brand-colors);
+
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/utilities";
 @import "~bootstrap/scss/root";
