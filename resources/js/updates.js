@@ -7,10 +7,5 @@ const wrapWithHeadingContainer = function (element) {
     wrapper.appendChild(element);
 };
 
-document.querySelectorAll('.package-update__content h3').forEach((element) => {
-    wrapWithHeadingContainer(element);
-});
-
-document.querySelectorAll('.package-update__content h4').forEach((element) => {
-    wrapWithHeadingContainer(element);
-});
+document.querySelectorAll('.package-update__content h3').forEach(wrapWithHeadingContainer);
+document.querySelectorAll('.package-update__content h4').forEach(wrapWithHeadingContainer);

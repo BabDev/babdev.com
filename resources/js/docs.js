@@ -26,22 +26,9 @@ const wrapWithHeadingContainer = function (element) {
     wrapper.appendChild(element);
 };
 
-document.querySelectorAll('.package-docs__content h1').forEach((element) => {
-    wrapWithHeadingContainer(element);
-});
+document.querySelectorAll('.package-docs__content h1').forEach(wrapWithHeadingContainer);
+document.querySelectorAll('.package-docs__content h2').forEach(wrapWithHeadingContainer);
+document.querySelectorAll('.package-docs__content h3').forEach(wrapWithHeadingContainer);
+document.querySelectorAll('.package-docs__content h4').forEach(wrapWithHeadingContainer);
 
-document.querySelectorAll('.package-docs__content h2').forEach((element) => {
-    wrapWithHeadingContainer(element);
-});
-
-document.querySelectorAll('.package-docs__content h3').forEach((element) => {
-    wrapWithHeadingContainer(element);
-});
-
-document.querySelectorAll('.package-docs__content h4').forEach((element) => {
-    wrapWithHeadingContainer(element);
-});
-
-document.querySelectorAll('.package-docs__content table').forEach((element) => {
-    makeTableResponsive(element);
-});
+document.querySelectorAll('.package-docs__content table').forEach(makeTableResponsive);
