@@ -3,13 +3,23 @@
   border-top: 3px solid $babdev-orange;
 
   &__container {
+    display: grid;
+    grid-template-areas: "navigation" "copyright";
+
     @include media-breakpoint-down(sm) {
       justify-content: center;
       text-align: center;
     }
+
+    @include media-breakpoint-up(md) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "navigation copyright";
+    }
   }
 
   &__navigation {
+    grid-area: navigation;
+
     @include media-breakpoint-down(sm) {
       .nav-item {
         flex: 1 1 auto;
@@ -17,27 +27,9 @@
       }
     }
   }
-}
 
-@supports (display: grid) {
-  .site-footer {
-    &__container {
-      display: grid;
-      grid-template-areas: "navigation" "copyright";
-
-      @include media-breakpoint-up(md) {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "navigation copyright";
-      }
-    }
-
-    &__navigation {
-      grid-area: navigation;
-    }
-
-    &__copyright {
-      grid-area: copyright;
-      padding: .5rem 1rem;
-    }
+  &__copyright {
+    grid-area: copyright;
+    padding: .5rem 1rem;
   }
 }

@@ -1,5 +1,13 @@
 .package-title {
   text-align: center;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+
+  @include media-breakpoint-up(md) {
+    grid-auto-columns: max-content;
+    grid-column-gap: 1rem;
+  }
 
   &__primary {
     font-family: $font-family-brand;
@@ -21,54 +29,33 @@
     }
   }
 
+  &__name {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
   &.package-title--has-logo {
     .package-title {
       &__logo {
+        grid-column: 1;
+        grid-row: 1;
+
         @media (max-width: 446px) {
           padding-bottom: 1rem;
         }
-      }
-    }
-  }
 
-  @supports (display: grid) {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-
-    &__name {
-      grid-column: 1;
-      grid-row: 1;
-    }
-
-    &.package-title--has-logo {
-      .package-title {
-        &__logo {
+        @include media-breakpoint-up(md) {
           grid-column: 1;
           grid-row: 1;
         }
-
-        &__name {
-          grid-row: 2;
-        }
       }
-    }
 
-    @include media-breakpoint-up(md) {
-      grid-auto-columns: max-content;
-      grid-column-gap: 1rem;
+      &__name {
+        grid-row: 2;
 
-      &.package-title--has-logo {
-        .package-title {
-          &__logo {
-            grid-column: 1;
-            grid-row: 1;
-          }
-
-          &__name {
-            grid-column: 2;
-            grid-row: 1;
-          }
+        @include media-breakpoint-up(md) {
+          grid-column: 2;
+          grid-row: 1;
         }
       }
     }

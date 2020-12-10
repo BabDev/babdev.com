@@ -25,32 +25,30 @@
   }
 }
 
-@supports (display: grid) {
-  .homepage-callouts {
-    display: grid;
-    grid-template-areas: "who-i-am" "who-i-am-info" "what-i-do" "what-i-do-info";
+.homepage-callouts {
+  display: grid;
+  grid-template-areas: "who-i-am" "who-i-am-info" "what-i-do" "what-i-do-info";
 
-    @include media-breakpoint-up(md) {
-      grid-template-columns: 1fr 1fr;
-      grid-template-areas: "who-i-am-info who-i-am" "what-i-do what-i-do-info";
-    }
+  @include media-breakpoint-up(md) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "who-i-am-info who-i-am" "what-i-do what-i-do-info";
+  }
+}
+
+.callout {
+  &--who-i-am {
+    grid-area: who-i-am;
   }
 
-  .callout {
-    &--who-i-am {
-      grid-area: who-i-am;
-    }
+  &--who-i-am-info {
+    grid-area: who-i-am-info;
+  }
 
-    &--who-i-am-info {
-      grid-area: who-i-am-info;
-    }
+  &--what-i-do {
+    grid-area: what-i-do;
+  }
 
-    &--what-i-do {
-      grid-area: what-i-do;
-    }
-
-    &--what-i-do-info {
-      grid-area: what-i-do-info;
-    }
+  &--what-i-do-info {
+    grid-area: what-i-do-info;
   }
 }
