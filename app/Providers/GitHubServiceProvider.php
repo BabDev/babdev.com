@@ -131,9 +131,9 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
             'github.http_client.builder',
             static function (Application $app): Builder {
                 return new Builder(
-                    $app->make('httplug'),
-                    $app->make('httplug.message_factory'),
-                    $app->make('httplug.stream_factory')
+                    $app->make('guzzle'),
+                    $app->make('psr.request_factory'),
+                    $app->make('psr.stream_factory')
                 );
             }
         );

@@ -4,19 +4,16 @@ namespace BabDev\Providers;
 
 use GuzzleHttp\Client as Guzzle;
 use GuzzleHttp\ClientInterface as GuzzleInterface;
-use Http\Adapter\Guzzle7\Client;
-use Http\Client\HttpAsyncClient;
-use Http\Client\HttpClient;
-use Http\Message\MessageFactory;
-use Http\Message\MessageFactory\GuzzleMessageFactory;
-use Http\Message\RequestFactory;
-use Http\Message\ResponseFactory;
-use Http\Message\StreamFactory;
-use Http\Message\StreamFactory\GuzzleStreamFactory;
+use Http\Factory\Guzzle\RequestFactory;
+use Http\Factory\Guzzle\ResponseFactory;
+use Http\Factory\Guzzle\StreamFactory;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 use Psr\Http\Client\ClientInterface;
+use Psr\Http\Message\RequestFactoryInterface;
+use Psr\Http\Message\ResponseFactoryInterface;
+use Psr\Http\Message\StreamFactoryInterface;
 
 class HttpServiceProvider extends ServiceProvider implements DeferrableProvider
 {
@@ -26,27 +23,24 @@ class HttpServiceProvider extends ServiceProvider implements DeferrableProvider
             'guzzle',
             Guzzle::class,
             GuzzleInterface::class,
-
-            'httplug',
-            HttpClient::class,
-            HttpAsyncClient::class,
             ClientInterface::class,
 
-            'httplug.message_factory',
-            MessageFactory::class,
-            RequestFactory::class,
-            ResponseFactory::class,
+            'psr.request_factory',
+            RequestFactoryInterface::class,
 
-            'httplug.stream_factory',
-            StreamFactory::class,
+            'psr.response_factory',
+            ResponseFactoryInterface::class,
+
+            'psr.stream_factory',
+            StreamFactoryInterface::class,
         ];
     }
 
     public function register(): void
     {
         $this->registerGuzzle();
-        $this->registerHttplug();
-        $this->registerMessageFactory();
+        $this->registerRequestFactory();
+        $this->registerResponseFactory();
         $this->registerStreamFactory();
     }
 
@@ -63,43 +57,39 @@ class HttpServiceProvider extends ServiceProvider implements DeferrableProvider
         $this->app->alias('guzzle', GuzzleInterface::class);
     }
 
-    private function registerHttplug(): void
+    private function registerRequestFactory(): void
     {
         $this->app->bind(
-            'httplug',
-            static function (Application $app): ClientInterface {
-                return new Client($app->make('guzzle'));
+            'psr.request_factory',
+            static function (Application $app): RequestFactoryInterface {
+                return new RequestFactory();
             }
         );
 
-        $this->app->alias('httplug', HttpClient::class);
-        $this->app->alias('httplug', HttpAsyncClient::class);
-        $this->app->alias('httplug', ClientInterface::class);
+        $this->app->alias('psr.request_factory', RequestFactoryInterface::class);
     }
 
-    private function registerMessageFactory(): void
+    private function registerResponseFactory(): void
     {
         $this->app->bind(
-            'httplug.message_factory',
-            static function (Application $app): MessageFactory {
-                return new GuzzleMessageFactory();
+            'psr.response_factory',
+            static function (Application $app): ResponseFactoryInterface {
+                return new ResponseFactory();
             }
         );
 
-        $this->app->alias('httplug.message_factory', MessageFactory::class);
-        $this->app->alias('httplug.message_factory', RequestFactory::class);
-        $this->app->alias('httplug.message_factory', ResponseFactory::class);
+        $this->app->alias('psr.response_factory', ResponseFactoryInterface::class);
     }
 
     private function registerStreamFactory(): void
     {
         $this->app->bind(
-            'httplug.stream_factory',
-            static function (Application $app): StreamFactory {
-                return new GuzzleStreamFactory();
+            'psr.stream_factory',
+            static function (Application $app): StreamFactoryInterface {
+                return new StreamFactory();
             }
         );
 
-        $this->app->alias('httplug.stream_factory', StreamFactory::class);
+        $this->app->alias('psr.stream_factory', StreamFactoryInterface::class);
     }
 }
