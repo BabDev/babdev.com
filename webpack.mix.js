@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const path = require('path');
 require('laravel-mix-purgecss');
 
 /*
@@ -20,16 +21,19 @@ mix.sass('resources/sass/app.scss', 'public/css')
     .options({
         postCss: [
             require('autoprefixer')()
-        ]
+        ],
     })
     .purgeCss({
         extend: {
             content: [path.join(__dirname, 'vendor/babdev/laravel-breadcrumbs/**/*.php')],
-            // Whitelist highlight styles and styles used only in docs
-            whitelistPatterns: [/^hljs/, /^hljs-/, /^table-/, /^docs-note/],
-            whitelistPatternsChildren: [/^hljs/, /^hljs-/, /^table/, /^docs-note/],
+            // Allow highlight styles and styles used only in docs
+            safelist: {
+                standard: [/^hljs/, /^hljs-/, /^table-/, /^docs-note/],
+                deep: [/^hljs/, /^hljs-/, /^table/, /^docs-note/],
+            },
         },
     })
+    .sourceMaps() // Required due to https://github.com/JeffreyWay/laravel-mix/issues/2678
 ;
 
 mix.copy('resources/images', 'public/images', false);

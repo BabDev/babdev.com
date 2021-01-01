@@ -1,15 +1,10 @@
 /node_modules
 /public/attachments
-/public/css/app.css
+/public/css
 /public/fonts
 /public/hot
 /public/images
-/public/js/app.js
-/public/js/docs.js
-/public/js/manifest.js
-/public/js/updates.js
-/public/js/vendor.js
-/public/js/*.LICENSE.txt
+/public/js
 /public/logos
 /public/packages
 /public/storage
