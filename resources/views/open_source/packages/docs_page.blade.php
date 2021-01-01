@@ -2,9 +2,11 @@
 @php /** @var string $contents */ @endphp
 @php /** @var string $sidebar */ @endphp
 @php /** @var string|null $title */ @endphp
+@php /** @var string $version */ @endphp
+@php /** @var string $slug */ @endphp
 
 @extends('layouts.app', [
-    'title' => sprintf('%s%s Documentation | %s', ($title !== null ? ($title . ' | ') : ''), $package->display_name, config('app.name', 'BabDev')),
+    'title' => sprintf('%s%s %s Documentation | %s', ($title !== null ? ($title . ' | ') : ''), $package->display_name, $version, config('app.name', 'BabDev')),
 ])
 
 @section('content')

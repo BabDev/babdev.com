@@ -41,6 +41,8 @@ final class ViewOpenSourcePackageDocsPageController
                 'contents' => $contents,
                 'sidebar' => $sidebar,
                 'title' => $documentationProcessor->extractTitle($contents),
+                'version' => $version,
+                'slug' => $slug,
             ]
         );
     }
