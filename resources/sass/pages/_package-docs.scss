@@ -33,4 +33,8 @@
   &__content {
     grid-area: content;
   }
+
+  &__version-selector {
+    padding-bottom: .75rem;
+  }
 }
