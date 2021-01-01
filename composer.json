@@ -34,8 +34,8 @@
         "spatie/packagist-api": "^2.0.2"
     },
     "require-dev": {
-        "barryvdh/laravel-ide-helper": "^2.8.2",
-        "facade/ignition": "^2.5.3",
+        "barryvdh/laravel-ide-helper": "^2.9",
+        "facade/ignition": "^2.5.8",
         "fakerphp/faker": "^1.13",
         "laravel/telescope": "^4.4",
         "mockery/mockery": "^1.4.2",
