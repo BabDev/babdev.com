@@ -16,6 +16,8 @@ final class ViewOpenSourcePackageDocsPageController
      */
     public function __invoke(Package $package, string $version, string $slug, DocumentationProcessor $documentationProcessor)
     {
+        abort_if(!$package->visible, 404);
+
         // Redirect if package does not have docs
         if (!$package->has_documentation) {
             return redirect()->route('open-source.packages');

@@ -13,6 +13,16 @@ class DocumentationTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
+    public function when_a_package_is_not_visible_a_404_is_returned()
+    {
+        /** @var Package $package */
+        $package = Package::factory()->notVisible()->create();
+
+        $this->get(\sprintf('/open-source/packages/%s/docs/1.x/intro', $package->slug))
+            ->assertNotFound();
+    }
+
+    /** @test */
     public function when_a_package_has_no_documentation_the_request_is_redirected_to_the_package_list()
     {
         /** @var Package $package */

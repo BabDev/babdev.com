@@ -45,4 +45,13 @@ class PackageFactory extends Factory
             ]
         );
     }
+
+    public function notVisible()
+    {
+        return $this->state(
+            [
+                'visible' => false,
+            ]
+        );
+    }
 }
