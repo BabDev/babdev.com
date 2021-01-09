@@ -24,8 +24,8 @@ final class HandleGitHubAppWebhookController
         abort_if($repoConfig === false, 400, 'Unsupported repository.');
 
         if (isset($repoConfig['secret'])) {
-            abort_unless($request->hasHeader('X-Hub-Signature'), 403, 'The request is not secured.');
-            abort_unless($this->hasValidSignature($request->header('X-Hub-Signature'), $repoConfig['secret'], $request->getContent()), 403, 'Invalid signature.');
+            abort_unless($request->hasHeader('X-Hub-Signature-256'), 403, 'The request is not secured.');
+            abort_unless($this->hasValidSignature($request->header('X-Hub-Signature-256'), $repoConfig['secret'], $request->getContent()), 403, 'Invalid signature.');
         }
 
         $requestHandler->handleRequest($repoConfig, $request);
@@ -35,6 +35,6 @@ final class HandleGitHubAppWebhookController
 
     private function hasValidSignature(string $hash, string $key, string $data): bool
     {
-        return \hash_equals($hash, 'sha1=' . \hash_hmac('sha1', $data, $key));
+        return \hash_equals($hash, 'sha256=' . \hash_hmac('sha256', $data, $key));
     }
 }
