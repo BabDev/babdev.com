@@ -3,7 +3,9 @@
 namespace BabDev\Models;
 
 use Carbon\Carbon;
+use Database\Factories\PackageUpdateFactory;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Spatie\Sluggable\HasSlug;
@@ -27,6 +29,7 @@ use Spatie\Sluggable\SlugOptions;
  */
 class PackageUpdate extends Model
 {
+    use HasFactory;
     use HasSlug;
 
     protected $fillable = [
@@ -44,6 +47,11 @@ class PackageUpdate extends Model
     protected $dates = [
         'published_at',
     ];
+
+    protected static function newFactory()
+    {
+        return PackageUpdateFactory::new();
+    }
 
     public function getRouteKeyName(): string
     {
