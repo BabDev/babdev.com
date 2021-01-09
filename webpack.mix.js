@@ -33,7 +33,6 @@ mix.sass('resources/sass/app.scss', 'public/css')
             },
         },
     })
-    .sourceMaps() // Required due to https://github.com/JeffreyWay/laravel-mix/issues/2678
 ;
 
 mix.copy('resources/images', 'public/images', false);
