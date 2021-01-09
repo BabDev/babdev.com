@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "55f09b3789b32e12da939aeedfa74d0d",
+    "content-hash": "14fb237a4daefa4135ea7f9b3a8f90db",
     "packages": [
         {
             "name": "babdev/laravel-breadcrumbs",
@@ -137,44 +137,6 @@
                 }
             ],
             "time": "2020-11-10T01:07:25+00:00"
-        },
-        {
-            "name": "babdev/nova-ckeditor4-field",
-            "version": "dev-production",
-            "dist": {
-                "type": "path",
-                "url": "./nova-components/NovaCKEditor4Field",
-                "reference": "88169b87d414af3feb4b1f8a3573710a5f9b8fb6"
-            },
-            "require": {
-                "illuminate/support": "^7.0|^8.0",
-                "laravel/nova": "^3.0",
-                "php": ">=7.1.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "BabDev\\NovaCKEditor4Field\\FieldServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "BabDev\\NovaCKEditor4Field\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Laravel Nova field integrating CKEditor 4.x.",
-            "keywords": [
-                "laravel",
-                "nova"
-            ],
-            "transport-options": {
-                "relative": true
-            }
         },
         {
             "name": "barryvdh/elfinder-flysystem-driver",
@@ -1847,6 +1809,51 @@
                 }
             ],
             "time": "2020-12-21T18:38:02+00:00"
+        },
+        {
+            "name": "kraftbit/nova-tinymce5-editor",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Kraftbit/nova-tinymce5-editor.git",
+                "reference": "b00ff482dffcbdb425b775f17e69012edab8bf58"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Kraftbit/nova-tinymce5-editor/zipball/b00ff482dffcbdb425b775f17e69012edab8bf58",
+                "reference": "b00ff482dffcbdb425b775f17e69012edab8bf58",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Kraftbit\\NovaTinymce5Editor\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Kraftbit\\NovaTinymce5Editor\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/Kraftbit/nova-tinymce5-editor/issues",
+                "source": "https://github.com/Kraftbit/nova-tinymce5-editor/tree/v1.0.0"
+            },
+            "time": "2020-09-21T15:07:16+00:00"
         },
         {
             "name": "laravel/framework",

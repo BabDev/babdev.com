@@ -3,8 +3,8 @@
 namespace BabDev\Nova;
 
 use BabDev\Models\PackageUpdate as PackageUpdateModel;
-use BabDev\NovaCKEditor4Field\CKEditor4;
 use Illuminate\Http\Request;
+use Kraftbit\NovaTinymce5Editor\NovaTinymce5Editor;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
@@ -43,10 +43,10 @@ class PackageUpdate extends Resource
 
             DateTime::make('Published At'),
 
-            CKEditor4::make('Intro')
+            NovaTinymce5Editor::make('Intro')
                 ->hideFromIndex(),
 
-            CKEditor4::make('Content')
+            NovaTinymce5Editor::make('Content')
                 ->hideFromIndex(),
         ];
     }

@@ -14,9 +14,7 @@
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
         "prod": "npm run production",
-        "production": "mix --production",
-        "build-nova-ckeditor4-field": "cd nova-components/NovaCKEditor4Field && npm run dev",
-        "build-nova-ckeditor4-field-prod": "cd nova-components/NovaCKEditor4Field && npm run prod"
+        "production": "mix --production"
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.1",

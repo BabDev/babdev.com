@@ -9,6 +9,7 @@ This is the source code for the babdev.com website
 - [Composer](https://getcomposer.org/download/)
 - [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 - A valid [Laravel Nova](https://nova.laravel.com) license
+- A [Tiny API key](https://www.tiny.cloud) for the TinyMCE Nova integration
 - Optionally, a [GitHub personal access token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) to interact with the GitHub API
 
 ### Special Notes
@@ -24,6 +25,7 @@ This application is designed to run with two separate subdomains, one for the li
     - Set the `APP_DOMAIN_NAME` env var to the domain the main website exists at
     - Set the `NOVA_DOMAIN_NAME` and `SESSION_DOMAIN` env vars to the domain the Nova application exists at
     - If you have one, set the `GITHUB_TOKEN` env var to your GitHub personal access token you created for the application
+    - If you have one, set the `TINYMCE_API_KEY` env var to your Tiny Cloud API key
 4. Save your Nova credentials to your Composer configuration (`composer config http-basic.nova.laravel.com ${NOVA_USERNAME} ${NOVA_PASSWORD}`)
 5. Install the PHP dependencies with `composer install`
 6. Generate a new app key with `php artisan key:generate`
