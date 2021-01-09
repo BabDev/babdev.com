@@ -55,13 +55,6 @@ return [
             'visibility' => 'public',
         ],
 
-        'attachments' => [
-            'driver' => 'local',
-            'root' => env('APP_ATTACHMENTS_PATH', storage_path('app/attachments')),
-            'url' => '/attachments',
-            'visibility' => 'public',
-        ],
-
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
@@ -86,7 +79,6 @@ return [
     */
 
     'links' => [
-        public_path('attachments') => env('APP_ATTACHMENTS_PATH', storage_path('app/attachments')),
         public_path('logos') => env('APP_LOGOS_PATH', storage_path('app/logos')),
     ],
 

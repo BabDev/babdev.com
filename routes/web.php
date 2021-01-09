@@ -1,7 +1,6 @@
 <?php
 
 use BabDev\Http\Controllers\RedirectToPackageDocsController;
-use BabDev\Http\Controllers\UploadImageThruCKEditorController;
 use BabDev\Http\Controllers\ViewOpenSourcePackageDocsPageController;
 use BabDev\Http\Controllers\ViewOpenSourcePackagesController;
 use BabDev\Http\Controllers\ViewOpenSourceUpdateController;
@@ -63,17 +62,4 @@ $router->get(
 $router->get(
     '/sitemap.xml',
     ViewSitemapController::class
-);
-
-$router->group(
-    [
-        'middleware' => ['auth'],
-    ],
-    static function (Router $router): void {
-        $router->domain(config('nova.domain', null))
-            ->post(
-                '/ckeditor/upload/image',
-                UploadImageThruCKEditorController::class
-            )->name('ckeditor.upload.image');
-    }
 );
