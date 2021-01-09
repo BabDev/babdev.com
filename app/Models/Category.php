@@ -11,13 +11,13 @@ use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
 /**
- * @property int                    $id
- * @property string                 $title
- * @property string                 $slug
- * @property Carbon|null            $created_at
- * @property Carbon|null            $updated_at
- * @property-read Collection|Post[] $posts
- * @property-read int|null          $posts_count
+ * @property int                   $id
+ * @property string                $title
+ * @property string                $slug
+ * @property Carbon|null           $created_at
+ * @property Carbon|null           $updated_at
+ * @property-read Collection<Post> $posts
+ * @property-read int|null         $posts_count
  *
  * @method static Builder|Category query()
  */

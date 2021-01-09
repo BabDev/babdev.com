@@ -11,10 +11,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 final class ViewOpenSourcePackageDocsPageController
 {
-    /**
-     * @return RedirectResponse|View
-     */
-    public function __invoke(Package $package, string $version, string $slug, DocumentationProcessor $documentationProcessor)
+    public function __invoke(Package $package, string $version, string $slug, DocumentationProcessor $documentationProcessor): RedirectResponse|View
     {
         abort_if(!$package->visible, 404);
 

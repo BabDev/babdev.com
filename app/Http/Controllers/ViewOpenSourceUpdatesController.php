@@ -10,7 +10,7 @@ final class ViewOpenSourceUpdatesController
 {
     public function __invoke(): View
     {
-        /** @var RoutableLengthAwarePaginator|PackageUpdate[] $updates */
+        /** @var RoutableLengthAwarePaginator<PackageUpdate> $updates */
         $updates = PackageUpdate::query()
             ->published()
             ->orderByDesc('published_at')

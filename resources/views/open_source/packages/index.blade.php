@@ -1,4 +1,4 @@
-@php /** @var \Illuminate\Database\Eloquent\Collection|\BabDev\Models\Package[] $packages */ @endphp
+@php /** @var \Illuminate\Database\Eloquent\Collection<\BabDev\Models\Package> $packages */ @endphp
 
 @extends('layouts.app', [
     'title' => sprintf('Open Source Packages | %s', config('app.name', 'BabDev')),
