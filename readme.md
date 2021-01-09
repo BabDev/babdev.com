@@ -4,7 +4,7 @@ This is the source code for the babdev.com website
 
 ## Requirements
 
-- PHP 7.4 or newer
+- PHP 8.0 or newer
 - MySQL 5.7 or newer
 - [Composer](https://getcomposer.org/download/)
 - [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
