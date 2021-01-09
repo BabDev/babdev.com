@@ -3,11 +3,16 @@
 
 /* BPScript font (Brand type-face) */
 @font-face {
-  font-family: 'BPscriptRegular';
-  src: url(../fonts/BPscript-webfont.eot);
-  src: url(../fonts/BPscript-webfont.eot?#iefix) format('embedded-opentype'), url(../fonts/BPscript-webfont.woff) format('woff'), url(../fonts/BPscript-webfont.ttf) format('truetype'), url(../fonts/BPscript-webfont.svg#BPscriptRegular) format('svg');
+  font-family: 'BPscript';
+  src: url(../fonts/BPscript.eot);
+  src: url(../fonts/BPscript.eot?#iefix) format('embedded-opentype'),
+  url(../fonts/BPscript.woff2) format('woff2'),
+  url(../fonts/BPscript.woff) format('woff'),
+  url(../fonts/BPscript.ttf) format('truetype'),
+  url(../fonts/BPscript.svg#BPscript) format('svg');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 // Variable overrides
