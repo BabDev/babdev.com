@@ -144,7 +144,7 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
     private function registerJwtConfigurationBuilder(): void
     {
         $this->app->bind(
-            'github.jwt.token_generator',
+            'github.jwt.configuration_builder',
             static function (): JWTConfigurationBuilderContract {
                 return new JWTConfigurationBuilder();
             }
