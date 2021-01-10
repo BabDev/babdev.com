@@ -4,6 +4,7 @@ namespace BabDev\Console\Commands;
 
 use BabDev\Models\Package;
 use Illuminate\Console\Command;
+use Illuminate\Support\Arr;
 use Spatie\Packagist\PackagistClient;
 
 class ImportPackagistDownloads extends Command
@@ -35,7 +36,7 @@ class ImportPackagistDownloads extends Command
 
                 $package->update(
                     [
-                        'downloads' => $packagistInfo['package']['downloads']['total'],
+                        'downloads' => Arr::get($packagistInfo, 'package.downloads.total'),
                     ]
                 );
             }

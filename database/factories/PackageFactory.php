@@ -54,4 +54,14 @@ class PackageFactory extends Factory
             ]
         );
     }
+
+    public function packagist()
+    {
+        return $this->state(
+            [
+                'is_packagist' => true,
+                'packagist_name' => str_replace(' ', '/', $this->faker->words(2, true)),
+            ]
+        );
+    }
 }
