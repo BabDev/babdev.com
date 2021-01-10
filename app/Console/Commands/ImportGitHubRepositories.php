@@ -8,7 +8,7 @@ use Illuminate\Console\Command;
 
 class ImportGitHubRepositories extends Command
 {
-    protected $signature = 'import:github-repositories';
+    protected $name = 'import:github-repositories';
 
     protected $description = 'Import GitHub repositories to the application.';
 

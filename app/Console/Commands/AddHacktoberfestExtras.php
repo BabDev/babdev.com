@@ -7,7 +7,7 @@ use Illuminate\Console\Command;
 
 class AddHacktoberfestExtras extends Command
 {
-    protected $signature = 'hacktoberfest:add';
+    protected $name = 'hacktoberfest:add';
 
     protected $description = 'Adds extras for Hacktoberfest to active repositories.';
 

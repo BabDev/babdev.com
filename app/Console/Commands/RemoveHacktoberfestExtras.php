@@ -7,7 +7,7 @@ use Illuminate\Console\Command;
 
 class RemoveHacktoberfestExtras extends Command
 {
-    protected $signature = 'hacktoberfest:remove';
+    protected $name = 'hacktoberfest:remove';
 
     protected $description = 'Removes extras for Hacktoberfest from active repositories.';
 

@@ -8,7 +8,7 @@ use Spatie\Packagist\PackagistClient;
 
 class ImportPackagistDownloads extends Command
 {
-    protected $signature = 'import:packagist-downloads';
+    protected $name = 'import:packagist-downloads';
 
     protected $description = 'Import download counts from Packagist.';
 
