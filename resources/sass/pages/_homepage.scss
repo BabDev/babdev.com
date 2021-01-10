@@ -1,18 +1,18 @@
 .hero--homepage {
   &::before {
-    background: url(../../img/beach-576.jpg) center;
+    background: url(../../images/beach-576.jpg) center;
 
     @include media-breakpoint-up(sm) {
-      background-image: url(../../img/beach-768.jpg);
+      background-image: url(../../images/beach-768.jpg);
     }
     @include media-breakpoint-up(md) {
-      background-image: url(../../img/beach-992.jpg);
+      background-image: url(../../images/beach-992.jpg);
     }
     @include media-breakpoint-up(lg) {
-      background-image: url(../../img/beach-1200.jpg);
+      background-image: url(../../images/beach-1200.jpg);
     }
     @include media-breakpoint-up(xl) {
-      background-image: url(../../img/beach-1920.jpg);
+      background-image: url(../../images/beach-1920.jpg);
     }
   }
 
