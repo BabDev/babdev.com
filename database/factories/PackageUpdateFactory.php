@@ -19,17 +19,17 @@ class PackageUpdateFactory extends Factory
         return [
             'title' => $this->faker->sentence,
             'intro' => $this->faker->paragraph,
-            'content' => $this->faker->paragraphs,
+            'content' => $this->faker->paragraphs(3, true),
             'published_at' => Carbon::now(),
             'package_id' => Package::factory(),
         ];
     }
 
-    public function docs()
+    public function unpublished()
     {
         return $this->state(
             [
-                'unpublished' => Carbon::now()->addYear(),
+                'published_at' => Carbon::now()->addYear(),
             ]
         );
     }
