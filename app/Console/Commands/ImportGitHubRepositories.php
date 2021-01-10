@@ -5,6 +5,7 @@ namespace BabDev\Console\Commands;
 use BabDev\GitHub\ApiConnector;
 use BabDev\Models\Package;
 use Illuminate\Console\Command;
+use Illuminate\Support\Arr;
 
 class ImportGitHubRepositories extends Command
 {
@@ -27,23 +28,30 @@ class ImportGitHubRepositories extends Command
 
         $this->github->fetchPublicRepositories('BabDev')->each(
             function (array $repositoryAttributes): void {
-                // Ignore this website
-                if ($repositoryAttributes['name'] === 'babdev.com') {
+                $name = Arr::get($repositoryAttributes, 'name');
+
+                // Ignore if missing name
+                if ($name === null) {
                     return;
                 }
 
-                $this->comment("Importing `{$repositoryAttributes['name']}`... ");
+                // Ignore this website
+                if ($name === 'babdev.com') {
+                    return;
+                }
+
+                $this->comment("Importing `{$name}`... ");
 
                 Package::query()->updateOrCreate(
-                    ['name' => $repositoryAttributes['name'] ?? null],
+                    ['name' => $name],
                     [
-                        'name' => $repositoryAttributes['name'],
-                        'display_name' => \ucwords(\str_replace(['-', '_'], ' ', $repositoryAttributes['name'])),
-                        'description' => $repositoryAttributes['description'],
-                        'topics' => $this->github->fetchRepositoryTopics('BabDev', $repositoryAttributes['name']),
-                        'stars' => $repositoryAttributes['stargazers_count'],
-                        'language' => $repositoryAttributes['language'],
-                        'supported' => $repositoryAttributes['archived'] === false,
+                        'name' => $name,
+                        'display_name' => \ucwords(\str_replace(['-', '_'], ' ', $name)),
+                        'description' => Arr::get($repositoryAttributes, 'description'),
+                        'topics' => $this->github->fetchRepositoryTopics('BabDev', $name),
+                        'stars' => Arr::get($repositoryAttributes, 'stargazers_count'),
+                        'language' => Arr::get($repositoryAttributes, 'language'),
+                        'supported' => Arr::get($repositoryAttributes, 'archived') === false,
                     ]
                 );
             }
