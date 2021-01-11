@@ -30,7 +30,6 @@
         "postcss-import": "^14.0.0",
         "resolve-url-loader": "^3.1.2",
         "sass": "^1.32.2",
-        "sass-loader": "^10.1.0",
-        "vue-template-compiler": "^2.6.12"
+        "sass-loader": "^10.1.0"
     }
 }
