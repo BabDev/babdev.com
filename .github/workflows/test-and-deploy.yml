@@ -37,6 +37,9 @@ jobs:
       - name: Compile Assets
         run: npm run production
 
+      - name: Generate App Key
+        run: php artisan key:generate
+
       - name: Execute Tests
         run: vendor/bin/phpunit --verbose
 
