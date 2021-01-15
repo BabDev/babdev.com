@@ -1,0 +1,47 @@
+name: Test & Deploy
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    name: Test Application
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.0
+          tools: composer:v2
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite
+          coverage: none
+
+      - name: Setup NodeJS
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install Composer Dependencies
+        run: |
+          composer config "http-basic.nova.laravel.com" "${{ secrets.NOVA_USERNAME }}" "${{ secrets.NOVA_PASSWORD }}"
+          composer install --no-interaction
+
+      - name: Install NPM Dependencies
+        run: npm ci
+
+      - name: Compile Assets
+        run: npm run production
+
+      - name: Execute Tests
+        run: vendor/bin/phpunit --verbose
+
+  deploy:
+    needs: test
+    if: github.ref == 'refs/heads/production'
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Envoyer
+        run: curl ${{ secrets.ENVOYER_HOOK }}?sha=${{ github.sha }}
