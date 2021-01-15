@@ -23,6 +23,9 @@ jobs:
         with:
           node-version: '14'
 
+      - name: Setup .env
+        run: cp .env.example .env
+
       - name: Install Composer Dependencies
         run: |
           composer config "http-basic.nova.laravel.com" "${{ secrets.NOVA_USERNAME }}" "${{ secrets.NOVA_PASSWORD }}"
