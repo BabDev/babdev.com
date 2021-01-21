@@ -20,8 +20,8 @@
         "http-interop/http-factory-guzzle": "^1.0",
         "knplabs/github-api": "^3.0",
         "kraftbit/nova-tinymce5-editor": "^1.0",
-        "laravel/framework": "^8.22.1",
-        "laravel/nova": "^3.19.1",
+        "laravel/framework": "^8.23.1",
+        "laravel/nova": "^3.20",
         "lcobucci/jwt": "^4.0",
         "league/commonmark": "^1.5.6",
         "spatie/laravel-sitemap": "^5.9.1",
@@ -35,7 +35,7 @@
         "laravel/telescope": "^4.4",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.2",
-        "phpunit/phpunit": "^9.5"
+        "phpunit/phpunit": "^9.5.1"
     },
     "replace": {
         "paragonie/random_compat": "*",
