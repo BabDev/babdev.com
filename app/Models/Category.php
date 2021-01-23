@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Spatie\Sluggable\HasSlug;
-use Spatie\Sluggable\SlugOptions;
 
 /**
  * @property int                   $id
@@ -23,8 +21,6 @@ use Spatie\Sluggable\SlugOptions;
  */
 class Category extends Model
 {
-    use HasSlug;
-
     protected $fillable = [
         'title',
     ];
@@ -32,13 +28,6 @@ class Category extends Model
     public function getRouteKeyName(): string
     {
         return 'slug';
-    }
-
-    public function getSlugOptions(): SlugOptions
-    {
-        return SlugOptions::create()
-            ->generateSlugsFrom('title')
-            ->saveSlugsTo('slug');
     }
 
     public function posts(): HasMany

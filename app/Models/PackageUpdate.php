@@ -8,8 +8,6 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Spatie\Sluggable\HasSlug;
-use Spatie\Sluggable\SlugOptions;
 
 /**
  * @property int          $id
@@ -30,7 +28,6 @@ use Spatie\Sluggable\SlugOptions;
 class PackageUpdate extends Model
 {
     use HasFactory;
-    use HasSlug;
 
     protected $fillable = [
         'title',
@@ -56,13 +53,6 @@ class PackageUpdate extends Model
     public function getRouteKeyName(): string
     {
         return 'slug';
-    }
-
-    public function getSlugOptions(): SlugOptions
-    {
-        return SlugOptions::create()
-            ->generateSlugsFrom('title')
-            ->saveSlugsTo('slug');
     }
 
     public function scopePublished(Builder $query): Builder

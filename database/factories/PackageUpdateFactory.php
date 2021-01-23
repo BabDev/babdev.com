@@ -18,6 +18,7 @@ class PackageUpdateFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence,
+            'slug' => $this->faker->slug,
             'intro' => $this->faker->paragraph,
             'content' => $this->faker->paragraphs(3, true),
             'published_at' => Carbon::now(),
