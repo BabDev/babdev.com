@@ -17,7 +17,7 @@
         <meta name="twitter:image" content="{{ asset('images/social-media.png') }}">
         @yield('meta')
         <title>{{ $title ?? config('app.name', 'BabDev') }}</title>
-        <link href="{{ PushManager::preload(mix('css/app.css'), ['as' => 'style']) }}" rel="stylesheet">
+        <link href="{{ PushManager::preload(mix('css/app.css'), ['as' => 'style', 'integrity' => Sri::hash('css/app.css'), 'crossorigin' => 'anonymous']) }}" rel="stylesheet" integrity="{{ Sri::hash('css/app.css') }}" crossorigin="anonymous">
         @if(request()->getHost() === 'www.babdev.com')
             <script type="text/javascript">
                 var _paq = window._paq = window._paq || [];
@@ -89,7 +89,7 @@
                 <div class="site-footer__copyright text-md-end">All rights reserved. © 2010 - {{ date('Y') }} <a href="{{ route('homepage') }}" title="BabDev">BabDev</a>.</div>
             </div>
         </footer>
-        <script src="{{ PushManager::preload(mix('js/app.js'), ['as' => 'script']) }}"></script>
+        <script src="{{ PushManager::preload(mix('js/app.js'), ['as' => 'script', 'integrity' => Sri::hash('js/app.js'), 'crossorigin' => 'anonymous']) }}" integrity="{{ Sri::hash('js/app.js') }}" crossorigin="anonymous"></script>
         @yield('bodyScripts')
     </body>
 </html>

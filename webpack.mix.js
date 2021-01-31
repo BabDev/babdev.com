@@ -1,6 +1,7 @@
 const mix = require('laravel-mix');
 const path = require('path');
 require('laravel-mix-purgecss');
+require('laravel-mix-sri');
 
 /*
  |--------------------------------------------------------------------------
@@ -50,6 +51,11 @@ mix.sass('resources/sass/app.scss', 'public/css')
         },
     })
 ;
+
+mix.generateIntegrityHash({
+    algorithm: 'sha384',
+    enabled: true,
+});
 
 mix.copy('resources/images', 'public/images', false);
 

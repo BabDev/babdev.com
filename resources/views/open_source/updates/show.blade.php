@@ -31,5 +31,5 @@
 @endsection
 
 @section('bodyScripts')
-    <script src="{{ PushManager::preload(mix('js/updates.js'), ['as' => 'script']) }}"></script>
+    <script src="{{ PushManager::preload(mix('js/updates.js'), ['as' => 'script', 'integrity' => Sri::hash('js/updates.js'), 'crossorigin' => 'anonymous']) }}" integrity="{{ Sri::hash('js/updates.js') }}" crossorigin="anonymous"></script>
 @endsection
