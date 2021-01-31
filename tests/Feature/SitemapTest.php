@@ -10,9 +10,8 @@ final class SitemapTest extends TestCase
     /** @test */
     public function the_sitemap_can_be_returned()
     {
-        Storage::fake('local');
-
-        Storage::put('sitemap.xml', \file_get_contents(__DIR__ . '/../fixtures/sitemap.xml'));
+        Storage::fake('local')
+            ->put('sitemap.xml', \file_get_contents(__DIR__ . '/../fixtures/sitemap.xml'));
 
         $this->get('/sitemap.xml')
             ->assertOk();
