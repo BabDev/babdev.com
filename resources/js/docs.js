@@ -10,45 +10,51 @@ import twig from 'highlight.js/lib/languages/twig';
 import xml from 'highlight.js/lib/languages/xml';
 import yaml from 'highlight.js/lib/languages/yaml';
 
-hljs.registerLanguage('bash', bash);
-hljs.registerLanguage('css', css);
-hljs.registerLanguage('javascript', javascript);
-hljs.registerLanguage('json', json);
-hljs.registerLanguage('markdown', markdown);
-hljs.registerLanguage('php', php);
-hljs.registerLanguage('twig', twig);
-hljs.registerLanguage('xml', xml);
-hljs.registerLanguage('yaml', yaml);
+class BDDocs {
+    static init() {
+        hljs.registerLanguage('bash', bash);
+        hljs.registerLanguage('css', css);
+        hljs.registerLanguage('javascript', javascript);
+        hljs.registerLanguage('json', json);
+        hljs.registerLanguage('markdown', markdown);
+        hljs.registerLanguage('php', php);
+        hljs.registerLanguage('twig', twig);
+        hljs.registerLanguage('xml', xml);
+        hljs.registerLanguage('yaml', yaml);
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    document.querySelectorAll('pre code').forEach((block) => {
-        hljs.highlightBlock(block);
-    });
-});
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        });
 
-const makeTableResponsive = function (element) {
-    element.classList.add('table');
+        document.querySelectorAll('.package-docs__content h1').forEach(BDDocs.#wrapWithHeadingContainer);
+        document.querySelectorAll('.package-docs__content h2').forEach(BDDocs.#wrapWithHeadingContainer);
+        document.querySelectorAll('.package-docs__content h3').forEach(BDDocs.#wrapWithHeadingContainer);
+        document.querySelectorAll('.package-docs__content h4').forEach(BDDocs.#wrapWithHeadingContainer);
 
-    const wrapper = document.createElement('div');
-    wrapper.className = 'table-responsive';
+        document.querySelectorAll('.package-docs__content table').forEach(BDDocs.#makeTableResponsive);
+    }
 
-    element.parentNode.insertBefore(wrapper, element);
+    static #makeTableResponsive(element) {
+        element.classList.add('table');
 
-    wrapper.appendChild(element);
-};
+        const wrapper = document.createElement('div');
+        wrapper.className = 'table-responsive';
 
-const wrapWithHeadingContainer = function (element) {
-    const wrapper = document.createElement('div');
-    wrapper.className = 'section-heading';
+        element.parentNode.insertBefore(wrapper, element);
 
-    element.parentNode.insertBefore(wrapper, element);
+        wrapper.appendChild(element);
+    }
 
-    wrapper.appendChild(element);
-};
+    static #wrapWithHeadingContainer(element) {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'section-heading';
 
-document.querySelectorAll('.package-docs__content h1').forEach(wrapWithHeadingContainer);
-document.querySelectorAll('.package-docs__content h2').forEach(wrapWithHeadingContainer);
-document.querySelectorAll('.package-docs__content h3').forEach(wrapWithHeadingContainer);
-document.querySelectorAll('.package-docs__content h4').forEach(wrapWithHeadingContainer);
+        element.parentNode.insertBefore(wrapper, element);
 
-document.querySelectorAll('.package-docs__content table').forEach(makeTableResponsive);
+        wrapper.appendChild(element);
+    }
+}
+
+BDDocs.init();

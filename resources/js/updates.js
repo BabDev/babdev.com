@@ -1,11 +1,17 @@
-const wrapWithHeadingContainer = function (element) {
-    const wrapper = document.createElement('div');
-    wrapper.className = 'section-heading';
+class BDUpdates {
+    static init() {
+        document.querySelectorAll('.package-update__content h3').forEach(BDUpdates.#wrapWithHeadingContainer);
+        document.querySelectorAll('.package-update__content h4').forEach(BDUpdates.#wrapWithHeadingContainer);
+    }
 
-    element.parentNode.insertBefore(wrapper, element);
+    static #wrapWithHeadingContainer(element) {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'section-heading';
 
-    wrapper.appendChild(element);
-};
+        element.parentNode.insertBefore(wrapper, element);
 
-document.querySelectorAll('.package-update__content h3').forEach(wrapWithHeadingContainer);
-document.querySelectorAll('.package-update__content h4').forEach(wrapWithHeadingContainer);
+        wrapper.appendChild(element);
+    }
+}
+
+BDUpdates.init();

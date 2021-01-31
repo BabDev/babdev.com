@@ -15,7 +15,23 @@ require('laravel-mix-purgecss');
 
 mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/docs.js', 'public/js')
-    .js('resources/js/updates.js', 'public/js');
+    .js('resources/js/updates.js', 'public/js')
+    .babelConfig({
+        presets: [
+            [
+                '@babel/preset-env',
+                {
+                    modules: 'auto',
+                    forceAllTransforms: false,
+                    useBuiltIns: 'usage',
+                    corejs: '3.8',
+                }
+            ]
+        ],
+        plugins: [
+            '@babel/plugin-proposal-private-methods',
+        ],
+    });
 
 mix.sass('resources/sass/app.scss', 'public/css')
     .options({

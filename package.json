@@ -23,6 +23,8 @@
         "highlight.js": "^10.5.0"
     },
     "devDependencies": {
+        "@babel/plugin-proposal-private-methods": "^7.12.1",
+        "core-js": "^3.8.3",
         "laravel-mix": "^6.0.10",
         "laravel-mix-purgecss": "^6.0.0",
         "path": "^0.12.7",
