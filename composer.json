@@ -31,7 +31,7 @@
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.9",
-        "facade/ignition": "^2.5.10",
+        "facade/ignition": "^2.5.11",
         "fakerphp/faker": "^1.13",
         "laravel/telescope": "^4.4.1",
         "mockery/mockery": "^1.4.2",
