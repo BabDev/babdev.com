@@ -21,9 +21,9 @@
         "http-interop/http-factory-guzzle": "^1.0",
         "knplabs/github-api": "^3.0",
         "kraftbit/nova-tinymce5-editor": "^1.0",
-        "laravel/framework": "^8.27",
+        "laravel/framework": "^8.28.1",
         "laravel/nova": "^3.21",
-        "lcobucci/jwt": "^4.1",
+        "lcobucci/jwt": "^4.1.1",
         "league/commonmark": "^1.5.6",
         "spatie/laravel-sitemap": "^5.9.1",
         "spatie/laravel-sluggable": "^2.6.1",
@@ -31,9 +31,9 @@
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.9",
-        "facade/ignition": "^2.5.11",
+        "facade/ignition": "^2.5.13",
         "fakerphp/faker": "^1.13",
-        "laravel/telescope": "^4.4.2",
+        "laravel/telescope": "^4.4.3",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.3",
         "phpunit/phpunit": "^9.5.2"
