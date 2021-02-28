@@ -60,7 +60,7 @@ class PackageFactory extends Factory
         return $this->state(
             [
                 'is_packagist' => true,
-                'packagist_name' => str_replace(' ', '/', $this->faker->words(2, true)),
+                'packagist_name' => \str_replace(' ', '/', $this->faker->words(2, true)),
             ]
         );
     }
