@@ -68,9 +68,7 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
     {
         $this->app->bind(
             'github.action_factory',
-            static function (Application $app): Factory {
-                return new ContainerAwareFactory($app);
-            }
+            static fn (Application $app) => new ContainerAwareFactory($app),
         );
 
         $this->app->alias('github.action_factory', Factory::class);
@@ -80,9 +78,7 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
     {
         $this->app->bind(
             'github.api',
-            static function (Application $app): ApiConnector {
-                return new ApiConnector($app->make('github.client'));
-            }
+            static fn (Application $app) => new ApiConnector($app->make('github.client')),
         );
 
         $this->app->alias('github.api', ApiConnector::class);
@@ -107,7 +103,7 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
                 } catch (InvalidArgumentException $exception) {
                     throw new BindingResolutionException('Could not create the "github.client" service.', $exception->getCode(), $exception);
                 }
-            }
+            },
         );
 
         $this->app->alias('github.client', Client::class);
@@ -117,9 +113,7 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
     {
         $this->app->bind(
             'github.client_factory',
-            static function (Application $app): ClientFactory {
-                return new ContainerAwareClientFactory($app);
-            }
+            static fn (Application $app) => new ContainerAwareClientFactory($app),
         );
 
         $this->app->alias('github.client_factory', ClientFactory::class);
@@ -129,13 +123,11 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
     {
         $this->app->bind(
             'github.http_client.builder',
-            static function (Application $app): Builder {
-                return new Builder(
-                    $app->make('guzzle'),
-                    $app->make('psr.request_factory'),
-                    $app->make('psr.stream_factory')
-                );
-            }
+            static fn (Application $app) => new Builder(
+                $app->make('guzzle'),
+                $app->make('psr.request_factory'),
+                $app->make('psr.stream_factory'),
+            ),
         );
 
         $this->app->alias('github.http_client.builder', Builder::class);
@@ -145,9 +137,7 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
     {
         $this->app->bind(
             'github.jwt.configuration_builder',
-            static function (): JWTConfigurationBuilderContract {
-                return new JWTConfigurationBuilder();
-            }
+            static fn () => new JWTConfigurationBuilder(),
         );
 
         $this->app->alias('github.jwt.configuration_builder', JWTConfigurationBuilderContract::class);
@@ -157,11 +147,7 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
     {
         $this->app->bind(
             'github.jwt.token_generator',
-            static function (Application $app): JWTTokenGeneratorContract {
-                return new JWTTokenGenerator(
-                    $app->make('github.jwt.configuration_builder')
-                );
-            }
+            static fn (Application $app) => new JWTTokenGenerator($app->make('github.jwt.configuration_builder')),
         );
 
         $this->app->alias('github.jwt.token_generator', JWTTokenGeneratorContract::class);
@@ -171,13 +157,11 @@ class GitHubServiceProvider extends ServiceProvider implements DeferrableProvide
     {
         $this->app->bind(
             'github.webhook.request_handler',
-            static function (Application $app): RequestHandler {
-                return new RequestHandler(
-                    $app->make('github.action_factory'),
-                    $app->make('github.client_factory'),
-                    $app->make('github.jwt.token_generator')
-                );
-            }
+            static fn (Application $app) => new RequestHandler(
+                $app->make('github.action_factory'),
+                $app->make('github.client_factory'),
+                $app->make('github.jwt.token_generator'),
+            ),
         );
 
         $this->app->alias('github.webhook.request_handler', RequestHandler::class);

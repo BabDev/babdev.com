@@ -36,9 +36,7 @@ class Package extends Resource
                 ->disk('logos'),
 
             Text::make('Name')
-                ->readonly(static function (): bool {
-                    return true;
-                }),
+                ->readonly(),
 
             Text::make('Display Name')
                 ->hideFromIndex(),

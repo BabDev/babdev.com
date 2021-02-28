@@ -34,14 +34,12 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
         $gate->define(
             'viewNova',
-            static function (User $user): bool {
-                return \in_array(
-                    $user->email,
-                    [
-                        'michael.babker@gmail.com',
-                    ]
-                );
-            }
+            static fn (User $user) => \in_array(
+                $user->email,
+                [
+                    'michael.babker@gmail.com',
+                ],
+            ),
         );
     }
 

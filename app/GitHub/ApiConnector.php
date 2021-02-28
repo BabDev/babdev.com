@@ -35,11 +35,7 @@ class ApiConnector
     public function fetchPublicRepositories(string $username): Collection
     {
         return (new Collection((new ResultPager($this->client))->fetchAll($this->client->api('organization'), 'repositories', [$username])))
-            ->filter(
-                static function ($repo): bool {
-                    return $repo['private'] === false;
-                }
-            );
+            ->filter(static fn (array $repo) => !$repo['private']);
     }
 
     public function fetchRepositoryLabels(string $username, string $repository): Collection

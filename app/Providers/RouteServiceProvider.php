@@ -30,12 +30,14 @@ class RouteServiceProvider extends ServiceProvider
         /** @var RateLimiter $rateLimiter */
         $rateLimiter = $this->app->make(RateLimiter::class);
 
-        $rateLimiter->for('api', function (Request $request) {
-            return Limit::perMinute(60);
-        });
+        $rateLimiter->for(
+            'api',
+            fn (Request $request) => Limit::perMinute(60),
+        );
 
-        $rateLimiter->for('github.app', function (Request $request) {
-            return Limit::perMinute(60);
-        });
+        $rateLimiter->for(
+            'github.app',
+            fn (Request $request) => Limit::perMinute(60),
+        );
     }
 }

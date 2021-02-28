@@ -7,7 +7,6 @@ use GuzzleHttp\ClientInterface as GuzzleInterface;
 use Http\Factory\Guzzle\RequestFactory;
 use Http\Factory\Guzzle\ResponseFactory;
 use Http\Factory\Guzzle\StreamFactory;
-use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 use Psr\Http\Client\ClientInterface;
@@ -48,9 +47,7 @@ class HttpServiceProvider extends ServiceProvider implements DeferrableProvider
     {
         $this->app->bind(
             'guzzle',
-            static function (Application $app): GuzzleInterface {
-                return new Guzzle();
-            }
+            static fn () => new Guzzle(),
         );
 
         $this->app->alias('guzzle', Guzzle::class);
@@ -61,9 +58,7 @@ class HttpServiceProvider extends ServiceProvider implements DeferrableProvider
     {
         $this->app->bind(
             'psr.request_factory',
-            static function (Application $app): RequestFactoryInterface {
-                return new RequestFactory();
-            }
+            static fn () => new RequestFactory(),
         );
 
         $this->app->alias('psr.request_factory', RequestFactoryInterface::class);
@@ -73,9 +68,7 @@ class HttpServiceProvider extends ServiceProvider implements DeferrableProvider
     {
         $this->app->bind(
             'psr.response_factory',
-            static function (Application $app): ResponseFactoryInterface {
-                return new ResponseFactory();
-            }
+            static fn () => new ResponseFactory(),
         );
 
         $this->app->alias('psr.response_factory', ResponseFactoryInterface::class);
@@ -85,9 +78,7 @@ class HttpServiceProvider extends ServiceProvider implements DeferrableProvider
     {
         $this->app->bind(
             'psr.stream_factory',
-            static function (Application $app): StreamFactoryInterface {
-                return new StreamFactory();
-            }
+            static fn () => new StreamFactory(),
         );
 
         $this->app->alias('psr.stream_factory', StreamFactoryInterface::class);

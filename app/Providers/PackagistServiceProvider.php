@@ -31,12 +31,10 @@ class PackagistServiceProvider extends ServiceProvider implements DeferrableProv
     {
         $this->app->bind(
             'packagist.api',
-            static function (Application $app): PackagistClient {
-                return new PackagistClient(
-                    $app->make('guzzle'),
-                    $app->make('packagist.url_generator')
-                );
-            }
+            static fn (Application $app) => new PackagistClient(
+                $app->make('guzzle'),
+                $app->make('packagist.url_generator'),
+            ),
         );
 
         $this->app->alias('packagist.api', PackagistClient::class);
@@ -46,9 +44,7 @@ class PackagistServiceProvider extends ServiceProvider implements DeferrableProv
     {
         $this->app->bind(
             'packagist.url_generator',
-            static function (Application $app): PackagistUrlGenerator {
-                return new PackagistUrlGenerator();
-            }
+            static fn () => new PackagistUrlGenerator(),
         );
 
         $this->app->alias('packagist.url_generator', PackagistUrlGenerator::class);

@@ -36,14 +36,11 @@ class RemoveHacktoberfestExtras extends Command
                     return;
                 }
 
-                $labels = $this->github->fetchRepositoryLabels('BabDev', $repositoryAttributes['name']);
                 $topics = $this->github->fetchRepositoryTopics('BabDev', $repositoryAttributes['name']);
 
                 if ($topics->contains('hacktoberfest')) {
                     $this->comment("Removing 'hacktoberfest' topic from `{$repositoryAttributes['name']}`... ");
-                    $topics = $topics->filter(static function (string $label): bool {
-                        return $label !== 'hacktoberfest';
-                    });
+                    $topics = $topics->filter(static fn (string $label) => $label !== 'hacktoberfest');
 
                     $this->github->replaceRepositoryTopics('BabDev', $repositoryAttributes['name'], $topics->toArray());
                 } else {

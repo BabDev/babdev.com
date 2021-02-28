@@ -22,12 +22,10 @@ class DocumentationServiceProvider extends ServiceProvider implements Deferrable
     {
         $this->app->bind(
             'documentation',
-            static function (Application $app): DocumentationProcessorContract {
-                return new DocumentationProcessor(
-                    $app->make('github.api'),
-                    $app->make('cache.store')
-                );
-            }
+            static fn (Application $app) => new DocumentationProcessor(
+                $app->make('github.api'),
+                $app->make('cache.store'),
+            ),
         );
 
         $this->app->alias('documentation', DocumentationProcessorContract::class);
