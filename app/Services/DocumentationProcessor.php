@@ -61,19 +61,12 @@ final class DocumentationProcessor implements DocumentationProcessorContract
                     );
                 }
 
-                switch ($file['encoding']) {
-                    case 'base64':
-                        $fileContents = \base64_decode($file['content']);
-
-                        break;
-
-                    default:
-                        throw new UnsupportedEncodingException(
-                            \sprintf('The "%s" encoding is not supported.', $file['encoding'])
-                        );
-                }
-
-                return $fileContents;
+                return match ($file['encoding']) {
+                    'base64' => \base64_decode($file['content']),
+                    default => throw new UnsupportedEncodingException(
+                        \sprintf('The "%s" encoding is not supported.', $file['encoding'])
+                    ),
+                };
             }
         );
     }
