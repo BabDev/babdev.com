@@ -1,8 +1,22 @@
 @php /** @var \BabDev\Pagination\RoutableLengthAwarePaginator<\BabDev\Models\PackageUpdate> $updates */ @endphp
 
 @extends('layouts.app', [
-    'title' => sprintf('Open Source Updates | %s', config('app.name', 'BabDev')),
+    'title' => sprintf('%sOpen Source Updates | %s', (!$updates->onFirstPage() ? sprintf('Page %d | ', $updates->currentPage()) : ''), config('app.name', 'BabDev')),
 ])
+
+@section('meta')
+    @unless($updates->onFirstPage())
+        <link rel="canonical" href="{!! route('open-source.updates') !!}" />
+        <link rel="prev" href="{!! $updates->currentPage() - 1 === 1 ? route('open-source.updates') : $updates->previousPageUrl() !!}" />
+        @if($updates->hasMorePages())
+            <link rel="next" href="{!! $updates->nextPageUrl() !!}" />
+        @endif
+    @else
+        @if($updates->hasMorePages())
+            <link rel="next" href="{!! $updates->nextPageUrl() !!}" />
+        @endif
+    @endunless
+@endsection
 
 @section('content')
     <x-hero title="Open Source Package Updates" />

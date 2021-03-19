@@ -29,6 +29,10 @@ final class PackageTest extends TestCase
         $this->get('/open-source/updates')
             ->assertOk()
             ->assertViewIs('open_source.updates.index')
+            ->assertSee('<title>Open Source Updates | BabDev</title>', false)
+            ->assertDontSee('<link rel="canonical"', false)
+            ->assertDontSee('<link rel="prev"', false)
+            ->assertDontSee('<link rel="next"', false)
             ->assertDontSee('<ul class="pagination">', false)
             ->assertDontSee('<li class="breadcrumb-item active">Page 1</li>', false);
     }
@@ -41,6 +45,10 @@ final class PackageTest extends TestCase
         $this->get('/open-source/updates/page/2')
             ->assertOk()
             ->assertViewIs('open_source.updates.index')
+            ->assertSee('<title>Page 2 | Open Source Updates | BabDev</title>', false)
+            ->assertSee('<link rel="canonical"', false)
+            ->assertSee('<link rel="prev"', false)
+            ->assertSee('<link rel="next"', false)
             ->assertSee('<ul class="pagination">', false)
             ->assertSee('<li class="breadcrumb-item active">Page 2</li>', false);
     }
