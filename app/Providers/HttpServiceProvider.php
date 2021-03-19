@@ -47,7 +47,7 @@ class HttpServiceProvider extends ServiceProvider implements DeferrableProvider
     {
         $this->app->bind(
             'guzzle',
-            static fn () => new Guzzle(),
+            static fn () => new Guzzle(['headers' => ['User-Agent' => 'BabDev/1.0']]),
         );
 
         $this->app->alias('guzzle', Guzzle::class);
