@@ -57,7 +57,9 @@ $router->get(
 $router->get(
     '/open-source/updates/page/{page}',
     ViewOpenSourceUpdatesController::class
-)->name('open-source.updates.paginated');
+)
+    ->name('open-source.updates.paginated')
+    ->whereNumber('page');
 
 $router->get(
     '/sitemap.xml',

@@ -46,6 +46,24 @@ final class PackageTest extends TestCase
     }
 
     /** @test */
+    public function users_are_redirected_to_the_canonical_first_page_of_the_package_update_list()
+    {
+        PackageUpdate::factory()->count(5)->create();
+
+        $this->get('/open-source/updates/page/1')
+            ->assertRedirect('/open-source/updates');
+    }
+
+    /** @test */
+    public function the_package_update_list_returns_a_404_if_navigating_outside_the_pagination_range()
+    {
+        PackageUpdate::factory()->count(5)->create();
+
+        $this->get('/open-source/updates/page/2')
+            ->assertNotFound();
+    }
+
+    /** @test */
     public function users_can_view_a_published_package_update()
     {
         /** @var PackageUpdate $update */
