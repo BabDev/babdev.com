@@ -17,10 +17,10 @@
         "production": "mix --production"
     },
     "dependencies": {
-        "@fortawesome/fontawesome-free": "^5.15.2",
+        "@fortawesome/fontawesome-free": "^5.15.3",
         "@popperjs/core": "^2.9.1",
-        "bootstrap": "^5.0.0-beta2",
-        "highlight.js": "^10.6.0"
+        "bootstrap": "^5.0.0-beta3",
+        "highlight.js": "^10.7.1"
     },
     "devDependencies": {
         "@babel/plugin-proposal-private-methods": "^7.13.0",
