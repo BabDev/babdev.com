@@ -24,30 +24,40 @@ class RemoveHacktoberfestExtras extends Command
     {
         $this->info('Updating all repositories...');
 
-        $this->github->fetchPublicRepositories('BabDev')->each(
-            function (array $repositoryAttributes): void {
-                // Ignore this website
-                if ($repositoryAttributes['name'] === 'babdev.com') {
-                    return;
+        $this->github->fetchPublicRepositories('BabDev')
+            ->filter(
+                static function (array $repositoryAttributes): bool {
+                    // Ignore this website
+                    if ($repositoryAttributes['name'] === 'babdev.com') {
+                        return false;
+                    }
+
+                    // Ignore archived repositories
+                    if ($repositoryAttributes['archived']) {
+                        return false;
+                    }
+
+                    return true;
                 }
+            )
+            ->each(
+                function (array $repositoryAttributes): void {
+                    $topics = $this->github->fetchRepositoryTopics('BabDev', $repositoryAttributes['name']);
 
-                // Ignore archived repositories
-                if ($repositoryAttributes['archived']) {
-                    return;
+                    if ($topics->contains('hacktoberfest')) {
+                        $this->comment("Removing 'hacktoberfest' topic from `{$repositoryAttributes['name']}`... ");
+                        $topics = $topics->filter(static fn (string $label): bool => $label !== 'hacktoberfest');
+
+                        $this->github->replaceRepositoryTopics(
+                            'BabDev',
+                            $repositoryAttributes['name'],
+                            $topics->toArray()
+                        );
+                    } else {
+                        $this->comment("'hacktoberfest' topic does not exist on `{$repositoryAttributes['name']}`... ");
+                    }
                 }
-
-                $topics = $this->github->fetchRepositoryTopics('BabDev', $repositoryAttributes['name']);
-
-                if ($topics->contains('hacktoberfest')) {
-                    $this->comment("Removing 'hacktoberfest' topic from `{$repositoryAttributes['name']}`... ");
-                    $topics = $topics->filter(static fn (string $label) => $label !== 'hacktoberfest');
-
-                    $this->github->replaceRepositoryTopics('BabDev', $repositoryAttributes['name'], $topics->toArray());
-                } else {
-                    $this->comment("'hacktoberfest' topic does not exist on `{$repositoryAttributes['name']}`... ");
-                }
-            }
-        );
+            );
 
         $this->info('All done!');
     }
