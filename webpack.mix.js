@@ -25,7 +25,7 @@ mix.js('resources/js/app.js', 'public/js')
                     modules: 'auto',
                     forceAllTransforms: false,
                     useBuiltIns: 'usage',
-                    corejs: '3.9',
+                    corejs: '3.10',
                 }
             ]
         ],
