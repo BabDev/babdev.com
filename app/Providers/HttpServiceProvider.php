@@ -19,18 +19,11 @@ class HttpServiceProvider extends ServiceProvider implements DeferrableProvider
     public function provides(): array
     {
         return [
-            'guzzle',
             Guzzle::class,
             GuzzleInterface::class,
             ClientInterface::class,
-
-            'psr.request_factory',
             RequestFactoryInterface::class,
-
-            'psr.response_factory',
             ResponseFactoryInterface::class,
-
-            'psr.stream_factory',
             StreamFactoryInterface::class,
         ];
     }
@@ -46,41 +39,34 @@ class HttpServiceProvider extends ServiceProvider implements DeferrableProvider
     private function registerGuzzle(): void
     {
         $this->app->bind(
-            'guzzle',
+            GuzzleInterface::class,
             static fn () => new Guzzle(['headers' => ['User-Agent' => 'BabDev/1.0']]),
         );
 
-        $this->app->alias('guzzle', Guzzle::class);
-        $this->app->alias('guzzle', GuzzleInterface::class);
+        $this->app->alias(GuzzleInterface::class, Guzzle::class);
     }
 
     private function registerRequestFactory(): void
     {
         $this->app->bind(
-            'psr.request_factory',
+            RequestFactoryInterface::class,
             static fn () => new RequestFactory(),
         );
-
-        $this->app->alias('psr.request_factory', RequestFactoryInterface::class);
     }
 
     private function registerResponseFactory(): void
     {
         $this->app->bind(
-            'psr.response_factory',
+            ResponseFactoryInterface::class,
             static fn () => new ResponseFactory(),
         );
-
-        $this->app->alias('psr.response_factory', ResponseFactoryInterface::class);
     }
 
     private function registerStreamFactory(): void
     {
         $this->app->bind(
-            'psr.stream_factory',
+            StreamFactoryInterface::class,
             static fn () => new StreamFactory(),
         );
-
-        $this->app->alias('psr.stream_factory', StreamFactoryInterface::class);
     }
 }

@@ -14,7 +14,6 @@ class MatomoServiceProvider extends ServiceProvider implements DeferrableProvide
     public function provides(): array
     {
         return [
-            'matomo.api',
             ApiConnector::class,
         ];
     }
@@ -27,7 +26,7 @@ class MatomoServiceProvider extends ServiceProvider implements DeferrableProvide
     private function registerApiConnector(): void
     {
         $this->app->bind(
-            'matomo.api',
+            ApiConnector::class,
             static function (Application $app): ApiConnector {
                 /** @var Repository $config */
                 $config = $app->make('config');
@@ -40,7 +39,5 @@ class MatomoServiceProvider extends ServiceProvider implements DeferrableProvide
                 );
             }
         );
-
-        $this->app->alias('matomo.api', ApiConnector::class);
     }
 }

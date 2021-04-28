@@ -2,6 +2,7 @@
 
 namespace BabDev\Providers;
 
+use GuzzleHttp\ClientInterface as GuzzleInterface;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
@@ -13,10 +14,7 @@ class PackagistServiceProvider extends ServiceProvider implements DeferrableProv
     public function provides(): array
     {
         return [
-            'packagist.api',
             PackagistClient::class,
-
-            'packagist.url_generator',
             PackagistUrlGenerator::class,
         ];
     }
@@ -30,23 +28,19 @@ class PackagistServiceProvider extends ServiceProvider implements DeferrableProv
     private function registerApiConnector(): void
     {
         $this->app->bind(
-            'packagist.api',
+            PackagistClient::class,
             static fn (Application $app) => new PackagistClient(
-                $app->make('guzzle'),
-                $app->make('packagist.url_generator'),
+                $app->make(GuzzleInterface::class),
+                $app->make(PackagistUrlGenerator::class),
             ),
         );
-
-        $this->app->alias('packagist.api', PackagistClient::class);
     }
 
     private function registerUrlGenerator(): void
     {
         $this->app->bind(
-            'packagist.url_generator',
+            PackagistUrlGenerator::class,
             static fn () => new PackagistUrlGenerator(),
         );
-
-        $this->app->alias('packagist.url_generator', PackagistUrlGenerator::class);
     }
 }

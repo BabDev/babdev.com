@@ -18,7 +18,7 @@ final class ContainerAwareClientFactory implements ClientFactory
 
     public function make(?Builder $httpClientBuilder = null, ?string $apiVersion = null, ?string $enterpriseUrl = null): Client
     {
-        $builder = $httpClientBuilder ?: $this->container->make('github.http_client.builder');
+        $builder = $httpClientBuilder ?: $this->container->make(Builder::class);
 
         return new Client($builder, $apiVersion, $enterpriseUrl);
     }
