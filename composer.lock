@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b99217b3d08c916df885e1fc6af612e9",
+    "content-hash": "a8d7d3a6d05fa99fd51bed44338e221a",
     "packages": [
         {
             "name": "babdev/laravel-breadcrumbs",
@@ -1757,16 +1757,16 @@
         },
         {
             "name": "knplabs/github-api",
-            "version": "v3.1.0",
+            "version": "v3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/php-github-api.git",
-                "reference": "95a5ced277a62e9a1253b12b9435e637603a2cbf"
+                "reference": "1dce0d33292eb2c4d33e2f9354b4043caf14588e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/php-github-api/zipball/95a5ced277a62e9a1253b12b9435e637603a2cbf",
-                "reference": "95a5ced277a62e9a1253b12b9435e637603a2cbf",
+                "url": "https://api.github.com/repos/KnpLabs/php-github-api/zipball/1dce0d33292eb2c4d33e2f9354b4043caf14588e",
+                "reference": "1dce0d33292eb2c4d33e2f9354b4043caf14588e",
                 "shasum": ""
             },
             "require": {
@@ -1781,6 +1781,7 @@
                 "psr/http-client-implementation": "^1.0",
                 "psr/http-factory-implementation": "^1.0",
                 "psr/http-message": "^1.0",
+                "symfony/deprecation-contracts": "^2.2",
                 "symfony/polyfill-php80": "^1.17"
             },
             "require-dev": {
@@ -1792,13 +1793,14 @@
                 "phpstan/phpstan": "^0.12.57",
                 "phpstan/phpstan-deprecation-rules": "^0.12.5",
                 "phpunit/phpunit": "^8.5 || ^9.4",
-                "symfony/cache": "^5.1.8"
+                "symfony/cache": "^5.1.8",
+                "symfony/phpunit-bridge": "^5.2"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-2.x": "2.19.x-dev",
-                    "dev-master": "3.0.x-dev"
+                    "dev-2.x": "2.20.x-dev",
+                    "dev-master": "3.2.x-dev"
                 }
             },
             "autoload": {
@@ -1831,7 +1833,7 @@
             ],
             "support": {
                 "issues": "https://github.com/KnpLabs/php-github-api/issues",
-                "source": "https://github.com/KnpLabs/php-github-api/tree/v3.1.0"
+                "source": "https://github.com/KnpLabs/php-github-api/tree/v3.2.0"
             },
             "funding": [
                 {
@@ -1839,7 +1841,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-03-11T20:13:37+00:00"
+            "time": "2021-04-28T18:12:19+00:00"
         },
         {
             "name": "kraftbit/nova-tinymce5-editor",
@@ -1888,16 +1890,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.39.0",
+            "version": "v8.40.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "0c6f9acb55c8d1621b6f42e3dd5e242cf3b17680"
+                "reference": "a654897ad7f97aea9d7ef292803939798c4a02a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/0c6f9acb55c8d1621b6f42e3dd5e242cf3b17680",
-                "reference": "0c6f9acb55c8d1621b6f42e3dd5e242cf3b17680",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/a654897ad7f97aea9d7ef292803939798c4a02a4",
+                "reference": "a654897ad7f97aea9d7ef292803939798c4a02a4",
                 "shasum": ""
             },
             "require": {
@@ -2052,7 +2054,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-04-27T14:24:05+00:00"
+            "time": "2021-04-28T14:38:56+00:00"
         },
         {
             "name": "laravel/nova",
@@ -8622,16 +8624,16 @@
         },
         {
             "name": "facade/ignition",
-            "version": "2.8.3",
+            "version": "2.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "a8201d51aae83addceaef9344592a3b068b5d64d"
+                "reference": "87fb348dab0ae1a7c206c3e902a5a44ba541742f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/a8201d51aae83addceaef9344592a3b068b5d64d",
-                "reference": "a8201d51aae83addceaef9344592a3b068b5d64d",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/87fb348dab0ae1a7c206c3e902a5a44ba541742f",
+                "reference": "87fb348dab0ae1a7c206c3e902a5a44ba541742f",
                 "shasum": ""
             },
             "require": {
@@ -8695,7 +8697,7 @@
                 "issues": "https://github.com/facade/ignition/issues",
                 "source": "https://github.com/facade/ignition"
             },
-            "time": "2021-04-09T20:45:59+00:00"
+            "time": "2021-04-29T13:55:26+00:00"
         },
         {
             "name": "fakerphp/faker",
@@ -11176,7 +11178,7 @@
     },
     "platform-dev": [],
     "platform-overrides": {
-        "php": "8.0.3"
+        "php": "8.0.5"
     },
     "plugin-api-version": "2.0.0"
 }

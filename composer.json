@@ -19,9 +19,9 @@
         "elhebert/laravel-sri": "^3.0.1",
         "guzzlehttp/guzzle": "^7.3",
         "http-interop/http-factory-guzzle": "^1.0",
-        "knplabs/github-api": "^3.1",
+        "knplabs/github-api": "^3.2",
         "kraftbit/nova-tinymce5-editor": "^1.0",
-        "laravel/framework": "^8.39",
+        "laravel/framework": "^8.40",
         "laravel/nova": "^3.24",
         "lcobucci/jwt": "^4.1.4",
         "league/commonmark": "^1.5.8",
@@ -31,7 +31,7 @@
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.10",
-        "facade/ignition": "^2.8.3",
+        "facade/ignition": "^2.8.4",
         "fakerphp/faker": "^1.14.1",
         "laravel/telescope": "^4.4.9",
         "mockery/mockery": "^1.4.3",
@@ -83,7 +83,7 @@
         "sort-packages": true,
         "optimize-autoloader": true,
         "platform": {
-            "php": "8.0.3"
+            "php": "8.0.5"
         }
     },
     "minimum-stability": "dev",
