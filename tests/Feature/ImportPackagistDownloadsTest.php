@@ -24,7 +24,7 @@ class ImportPackagistDownloadsTest extends TestCase
                     [
                         'package' => [
                             'downloads' => [
-                                'total' => \random_int(0, 999999),
+                                'total' => random_int(0, 999999),
                             ],
                         ],
                     ]

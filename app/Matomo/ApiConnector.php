@@ -30,10 +30,10 @@ class ApiConnector
         return $this->request(
             [
                 'module' => 'API',
-                'method' => \sprintf('Actions.%s', $method),
+                'method' => sprintf('Actions.%s', $method),
                 'idSite' => $this->matomoPageId,
                 'period' => 'range',
-                'date' => \sprintf('%s,%s', Carbon::now()->subDays($range)->toDateString(), Carbon::now()->toDateString()),
+                'date' => sprintf('%s,%s', Carbon::now()->subDays($range)->toDateString(), Carbon::now()->toDateString()),
                 'filter_limit' => 10,
                 'format' => 'json',
             ]
@@ -47,10 +47,10 @@ class ApiConnector
     {
         $query = [
             'module' => 'API',
-            'method' => \sprintf('VisitsSummary.%s', $method),
+            'method' => sprintf('VisitsSummary.%s', $method),
             'idSite' => $this->matomoPageId,
             'period' => 'day',
-            'date' => \sprintf('last%d', $date),
+            'date' => sprintf('last%d', $date),
             'format' => 'json',
         ];
 
@@ -66,10 +66,9 @@ class ApiConnector
      */
     private function request(array $query): array
     {
-        /** @var $response Response */
         $response = $this->httpFactory->get(
             $this->matomoUrl,
-            \array_merge(
+            array_merge(
                 $query,
                 [
                     'token_auth' => $this->matomoToken,

@@ -65,7 +65,7 @@ class GitHubWebhookTest extends TestCase
 
         $requestData = ['repository' => ['full_name' => 'BabDev/test-repo']];
 
-        $signatureHeader = \hash_hmac('sha256', 'bad-data', $secret);
+        $signatureHeader = hash_hmac('sha256', 'bad-data', $secret);
 
         $this->json('POST', '/webhooks/github/app', $requestData, ['X-Hub-Signature-256' => 'sha256=' . $signatureHeader])
             ->assertStatus(403);
@@ -100,7 +100,7 @@ class GitHubWebhookTest extends TestCase
 
         $requestData = ['repository' => ['full_name' => 'BabDev/test-repo']];
 
-        $signatureHeader = \hash_hmac('sha256', \json_encode($requestData), $secret);
+        $signatureHeader = hash_hmac('sha256', json_encode($requestData), $secret);
 
         $this->json('POST', '/webhooks/github/app', $requestData, ['X-Hub-Signature-256' => 'sha256=' . $signatureHeader])
             ->assertSuccessful();

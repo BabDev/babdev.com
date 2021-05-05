@@ -26,9 +26,9 @@ class LengthOfVisit extends Trend
 
         $results = [];
 
-        foreach (\array_keys($visitsLength) as $key) {
+        foreach (array_keys($visitsLength) as $key) {
             if ($visits[$key]) {
-                $results[$key] = (int) \round($visitsLength[$key] / $visits[$key]);
+                $results[$key] = (int) round($visitsLength[$key] / $visits[$key]);
             } else {
                 $results[$key] = 0;
             }

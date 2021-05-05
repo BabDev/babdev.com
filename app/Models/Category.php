@@ -9,11 +9,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
- * @property int                   $id
- * @property string                $title
- * @property string                $slug
- * @property Carbon|null           $created_at
- * @property Carbon|null           $updated_at
+ * @property int         $id
+ * @property string      $title
+ * @property string      $slug
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ *
  * @property-read Collection<Post> $posts
  * @property-read int|null         $posts_count
  *

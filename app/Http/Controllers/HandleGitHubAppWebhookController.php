@@ -13,7 +13,7 @@ final class HandleGitHubAppWebhookController
     {
         $repoConfig = false;
 
-        foreach (\array_keys(config('services.github.apps')) as $repo) {
+        foreach (array_keys(config('services.github.apps')) as $repo) {
             if (Str::is($repo, $request->input('repository.full_name'))) {
                 $repoConfig = config("services.github.apps.$repo");
 
@@ -35,6 +35,6 @@ final class HandleGitHubAppWebhookController
 
     private function hasValidSignature(string $hash, string $key, string $data): bool
     {
-        return \hash_equals($hash, 'sha256=' . \hash_hmac('sha256', $data, $key));
+        return hash_equals($hash, 'sha256=' . hash_hmac('sha256', $data, $key));
     }
 }

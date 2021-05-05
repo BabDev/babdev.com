@@ -6,7 +6,6 @@ use BabDev\Models\Package;
 use BabDev\Models\PackageUpdate;
 
 /** @var BreadcrumbsManager $breadcrumbs */
-
 $breadcrumbs->for(
     'homepage',
     static function (BreadcrumbsGenerator $trail): void {

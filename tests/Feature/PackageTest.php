@@ -77,7 +77,7 @@ final class PackageTest extends TestCase
         /** @var PackageUpdate $update */
         $update = PackageUpdate::factory()->create();
 
-        $this->get(\sprintf('/open-source/updates/%s', $update->slug))
+        $this->get(sprintf('/open-source/updates/%s', $update->slug))
             ->assertOk()
             ->assertViewIs('open_source.updates.show');
     }
@@ -88,7 +88,7 @@ final class PackageTest extends TestCase
         /** @var PackageUpdate $update */
         $update = PackageUpdate::factory()->unpublished()->create();
 
-        $this->get(\sprintf('/open-source/updates/%s', $update->slug))
+        $this->get(sprintf('/open-source/updates/%s', $update->slug))
             ->assertNotFound();
     }
 }

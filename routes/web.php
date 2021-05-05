@@ -9,7 +9,6 @@ use BabDev\Http\Controllers\ViewSitemapController;
 use Illuminate\Routing\Router;
 
 /** @var Router $router */
-
 $router->view('/', 'homepage')->name('homepage');
 $router->view('/privacy', 'privacy')->name('privacy');
 $router->view('/sponsor', 'sponsor')->name('sponsor');

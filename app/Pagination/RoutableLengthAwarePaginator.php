@@ -55,7 +55,7 @@ class RoutableLengthAwarePaginator extends LengthAwarePaginator
         $parameters = [];
 
         if (\count($this->query) > 0) {
-            $parameters = \array_merge($this->query, $parameters);
+            $parameters = array_merge($this->query, $parameters);
         }
 
         if ($page === 1) {

@@ -10,16 +10,17 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
- * @property int          $id
- * @property int          $package_id
- * @property string       $title
- * @property string       $slug
- * @property string|null  $intro
- * @property string|null  $content
- * @property Carbon       $published_at
- * @property array|null   $data
- * @property Carbon|null  $created_at
- * @property Carbon|null  $updated_at
+ * @property int         $id
+ * @property int         $package_id
+ * @property string      $title
+ * @property string      $slug
+ * @property string|null $intro
+ * @property string|null $content
+ * @property Carbon      $published_at
+ * @property array|null  $data
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ *
  * @property-read Package $package
  *
  * @method static Builder|PackageUpdate published()

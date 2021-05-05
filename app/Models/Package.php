@@ -103,7 +103,7 @@ class Package extends Model
 
     public function getGithubUrlAttribute(): string
     {
-        return \sprintf('https://github.com/BabDev/%s', $this->name);
+        return sprintf('https://github.com/BabDev/%s', $this->name);
     }
 
     public function hasDocsVersion(string $version): bool
@@ -121,7 +121,7 @@ class Package extends Model
     public function mapDocsVersionToGitBranch(string $version): string
     {
         if (!$this->hasDocsVersion($version)) {
-            throw new DocumentationUnsupportedException(\sprintf('Cannot map version "%s" to git branch for documentation', $version));
+            throw new DocumentationUnsupportedException(sprintf('Cannot map version "%s" to git branch for documentation', $version));
         }
 
         return $this->docs_branches[$version];

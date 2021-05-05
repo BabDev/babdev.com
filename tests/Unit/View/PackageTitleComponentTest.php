@@ -25,7 +25,7 @@ final class PackageTitleComponentTest extends TestCase
     public function the_component_is_rendered_with_a_logo()
     {
         Storage::fake('logos')
-            ->put('logo.svg', \file_get_contents(__DIR__ . '/../../fixtures/logo.svg'));
+            ->put('logo.svg', file_get_contents(__DIR__ . '/../../fixtures/logo.svg'));
 
         /** @var Package $package */
         $package = Package::factory()->notVisible()->make();
@@ -41,7 +41,7 @@ final class PackageTitleComponentTest extends TestCase
     public function the_component_is_rendered_with_a_logo_and_secondary_title()
     {
         Storage::fake('logos')
-            ->put('logo.svg', \file_get_contents(__DIR__ . '/../../fixtures/logo.svg'));
+            ->put('logo.svg', file_get_contents(__DIR__ . '/../../fixtures/logo.svg'));
 
         /** @var Package $package */
         $package = Package::factory()->notVisible()->make();

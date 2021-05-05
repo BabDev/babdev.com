@@ -54,7 +54,7 @@ class ImportGitHubRepositories extends Command
                         ['name' => $name],
                         [
                             'name' => $name,
-                            'display_name' => \ucwords(\str_replace(['-', '_'], ' ', $name)),
+                            'display_name' => ucwords(str_replace(['-', '_'], ' ', $name)),
                             'description' => Arr::get($repositoryAttributes, 'description'),
                             'topics' => $this->github->fetchRepositoryTopics('BabDev', $name),
                             'stars' => Arr::get($repositoryAttributes, 'stargazers_count'),
