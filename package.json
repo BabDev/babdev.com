@@ -27,7 +27,7 @@
         "core-js": "^3.12.0",
         "laravel-mix": "^6.0.18",
         "laravel-mix-purgecss": "^6.0.0",
-        "laravel-mix-sri": "^1.0.1",
+        "laravel-mix-sri": "0.0.6",
         "path": "^0.12.7",
         "postcss": "^8.2.14",
         "postcss-import": "^14.0.1",
