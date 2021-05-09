@@ -5,6 +5,7 @@ namespace BabDev\GitHub;
 use BabDev\Contracts\GitHub\JWTConfigurationBuilder as JWTConfigurationBuilderContract;
 use BabDev\Contracts\GitHub\JWTTokenGenerator as JWTTokenGeneratorContract;
 use Carbon\Carbon;
+use Lcobucci\JWT\Encoding\ChainedFormatter;
 
 final class JWTTokenGenerator implements JWTTokenGeneratorContract
 {
@@ -19,7 +20,7 @@ final class JWTTokenGenerator implements JWTTokenGeneratorContract
     {
         $config = $this->configurationBuilder->build($repoConfig);
 
-        $token = $config->builder()
+        $token = $config->builder(ChainedFormatter::withUnixTimestampDates())
             ->issuedBy($repoConfig['app_id'])
             ->issuedAt(Carbon::now('UTC')->subMinute()->toDateTimeImmutable())
             ->expiresAt(Carbon::now('UTC')->addMinutes(5)->toDateTimeImmutable())
