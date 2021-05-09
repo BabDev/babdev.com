@@ -21,8 +21,8 @@ final class JWTTokenGenerator implements JWTTokenGeneratorContract
 
         $token = $config->builder()
             ->issuedBy($repoConfig['app_id'])
-            ->issuedAt(Carbon::now('UTC')->toDateTimeImmutable())
-            ->expiresAt(Carbon::now('UTC')->addMinute()->toDateTimeImmutable())
+            ->issuedAt(Carbon::now('UTC')->subMinute()->toDateTimeImmutable())
+            ->expiresAt(Carbon::now('UTC')->addMinutes(5)->toDateTimeImmutable())
             ->getToken($config->signer(), $config->signingKey());
 
         return $token->toString();
