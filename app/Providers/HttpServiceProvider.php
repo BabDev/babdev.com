@@ -14,7 +14,7 @@ use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 
-class HttpServiceProvider extends ServiceProvider implements DeferrableProvider
+final class HttpServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     public function provides(): array
     {

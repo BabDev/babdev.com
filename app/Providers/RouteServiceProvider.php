@@ -8,7 +8,7 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 use Illuminate\Http\Request;
 use Illuminate\Routing\Router;
 
-class RouteServiceProvider extends ServiceProvider
+final class RouteServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
@@ -32,12 +32,12 @@ class RouteServiceProvider extends ServiceProvider
 
         $rateLimiter->for(
             'api',
-            fn (Request $request) => Limit::perMinute(60),
+            static fn (Request $request) => Limit::perMinute(60),
         );
 
         $rateLimiter->for(
             'github.app',
-            fn (Request $request) => Limit::perMinute(60),
+            static fn (Request $request) => Limit::perMinute(60),
         );
     }
 }

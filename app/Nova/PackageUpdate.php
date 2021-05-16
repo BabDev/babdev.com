@@ -51,7 +51,7 @@ class PackageUpdate extends Resource
         ];
     }
 
-    public static function label()
+    public static function label(): string
     {
         return 'Updates';
     }

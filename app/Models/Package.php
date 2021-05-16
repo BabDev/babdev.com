@@ -6,6 +6,7 @@ use BabDev\Models\Exceptions\DocumentationUnsupportedException;
 use Carbon\Carbon;
 use Database\Factories\PackageFactory;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
@@ -74,7 +75,7 @@ class Package extends Model
         'is_packagist' => 'boolean',
     ];
 
-    protected static function newFactory()
+    protected static function newFactory(): Factory
     {
         return PackageFactory::new();
     }

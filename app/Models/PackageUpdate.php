@@ -5,6 +5,7 @@ namespace BabDev\Models;
 use Carbon\Carbon;
 use Database\Factories\PackageUpdateFactory;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -46,7 +47,7 @@ class PackageUpdate extends Model
         'published_at',
     ];
 
-    protected static function newFactory()
+    protected static function newFactory(): Factory
     {
         return PackageUpdateFactory::new();
     }

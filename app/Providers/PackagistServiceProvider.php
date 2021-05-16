@@ -9,7 +9,7 @@ use Illuminate\Support\ServiceProvider;
 use Spatie\Packagist\PackagistClient;
 use Spatie\Packagist\PackagistUrlGenerator;
 
-class PackagistServiceProvider extends ServiceProvider implements DeferrableProvider
+final class PackagistServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     public function provides(): array
     {

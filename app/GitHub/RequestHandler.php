@@ -42,7 +42,7 @@ class RequestHandler
     {
         $github = $this->clientFactory->make(null, 'machine-man-preview');
 
-        $github->authenticate((string) $this->tokenGenerator->generate($repoConfig), null, Client::AUTH_JWT);
+        $github->authenticate($this->tokenGenerator->generate($repoConfig), null, Client::AUTH_JWT);
 
         $token = $github->api('apps')->createInstallationToken($request->input('installation.id'));
 

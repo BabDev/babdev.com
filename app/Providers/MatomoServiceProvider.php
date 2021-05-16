@@ -9,7 +9,7 @@ use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Http\Client\Factory;
 use Illuminate\Support\ServiceProvider;
 
-class MatomoServiceProvider extends ServiceProvider implements DeferrableProvider
+final class MatomoServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     public function provides(): array
     {
@@ -35,7 +35,7 @@ class MatomoServiceProvider extends ServiceProvider implements DeferrableProvide
                     $app->make(Factory::class),
                     $config->get('services.matomo.page_id'),
                     $config->get('services.matomo.token'),
-                    $config->get('services.matomo.url')
+                    $config->get('services.matomo.url'),
                 );
             }
         );

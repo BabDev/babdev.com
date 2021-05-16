@@ -31,7 +31,7 @@ class RoutableLengthAwarePaginator extends LengthAwarePaginator
      *
      * @return string
      */
-    public function url($page)
+    public function url($page): string
     {
         $route = static::resolveCurrentRoute();
 

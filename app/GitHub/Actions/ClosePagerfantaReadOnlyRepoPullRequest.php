@@ -6,7 +6,7 @@ use BabDev\Contracts\GitHub\Actions\Action;
 use Github\Client;
 use Illuminate\Http\Request;
 
-class ClosePagerfantaReadOnlyRepoPullRequest implements Action
+final class ClosePagerfantaReadOnlyRepoPullRequest implements Action
 {
     public function __invoke(array $repoConfig, Request $request, Client $github): void
     {

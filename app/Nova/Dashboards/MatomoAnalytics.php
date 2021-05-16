@@ -7,16 +7,20 @@ use BabDev\Nova\Metrics\BounceRate;
 use BabDev\Nova\Metrics\LengthOfVisit;
 use BabDev\Nova\Metrics\UniqueVisitorsPerDay;
 use BabDev\Nova\Metrics\VisitsPerDay;
+use Laravel\Nova\Card;
 use Laravel\Nova\Dashboard;
 
 class MatomoAnalytics extends Dashboard
 {
-    public static function label()
+    public static function label(): string
     {
         return 'Matomo Analytics';
     }
 
-    public function cards()
+    /**
+     * @return Card[]
+     */
+    public function cards(): array
     {
         return [
             (new UniqueVisitorsPerDay(app(ApiConnector::class)))->width('1/2'),
@@ -26,7 +30,7 @@ class MatomoAnalytics extends Dashboard
         ];
     }
 
-    public static function uriKey()
+    public static function uriKey(): string
     {
         return 'matomo-analytics';
     }

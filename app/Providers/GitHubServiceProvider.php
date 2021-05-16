@@ -24,7 +24,7 @@ use Illuminate\Support\ServiceProvider;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 
-class GitHubServiceProvider extends ServiceProvider implements DeferrableProvider
+final class GitHubServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     public function provides(): array
     {

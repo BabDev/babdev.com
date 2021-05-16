@@ -13,7 +13,7 @@ final class JWTConfigurationBuilder implements JWTConfigurationBuilderContract
     {
         return Configuration::forSymmetricSigner(
             new Sha256(),
-            InMemory::file($repoConfig['key'])
+            InMemory::file($repoConfig['key']),
         );
     }
 }

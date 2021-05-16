@@ -9,7 +9,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 
-class DocumentationServiceProvider extends ServiceProvider implements DeferrableProvider
+final class DocumentationServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     public function provides(): array
     {

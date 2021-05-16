@@ -8,7 +8,7 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
+final class AppServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
@@ -33,11 +33,11 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(LengthAwarePaginator::class, RoutableLengthAwarePaginator::class);
 
         // Change the current page resolver to be aware of the route parameters
-        Paginator::currentPageResolver(function ($pageName = 'page') {
+        Paginator::currentPageResolver(function (string $pageName = 'page'): int {
             $route = $this->app['request']->route();
 
             if ($page = $route->parameter($pageName)) {
-                return $page;
+                return (int) $page;
             }
 
             $page = $this->app['request']->input($pageName);
