@@ -15,7 +15,8 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('import:packagist-downloads')->hourly();
-        $schedule->command('import:github-repositories')->daily();
-        $schedule->command('sitemap:generate')->daily();
+        $schedule->command('import:github-repositories')->dailyAt('12:00');
+        $schedule->command('import:github-sponsorship-tiers')->dailyAt('13:00');
+        $schedule->command('sitemap:generate')->dailyAt('00:00');
     }
 }
