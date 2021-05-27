@@ -27,6 +27,11 @@ class ApiConnector
         );
     }
 
+    public function executeGraphqlQuery(string $query, array $variables = []): array
+    {
+        return $this->client->api('graphql')->execute($query, $variables);
+    }
+
     public function fetchFileContents(string $username, string $repository, string $path, string $reference): array
     {
         return $this->client->api('repositories')->contents()->show($username, $repository, $path, $reference);
