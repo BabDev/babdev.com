@@ -3,7 +3,7 @@
 namespace BabDev\Console\Commands;
 
 use BabDev\GitHub\ApiConnector;
-use BabDev\Models\Package;
+use BabDev\Models\SponsorshipTier;
 use Illuminate\Console\Command;
 use Illuminate\Support\Arr;
 
@@ -53,6 +53,14 @@ GRAPHQL;
         $response = $this->github->executeGraphqlQuery($query);
 
         foreach (Arr::get($response, 'data.viewer.sponsorsListing.tiers.edges', []) as $tierEdge) {
+            SponsorshipTier::query()->updateOrCreate(
+                ['node_id' => Arr::get($tierEdge, 'node.id')],
+                [
+                    'node_id' => Arr::get($tierEdge, 'node.id'),
+                    'one_time' => Arr::get($tierEdge, 'node.isOneTime'),
+                    'price' => Arr::get($tierEdge, 'node.monthlyPriceInCents'),
+                ]
+            );
         }
 
         $this->info('All done!');
