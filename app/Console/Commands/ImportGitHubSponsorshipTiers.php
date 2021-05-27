@@ -36,6 +36,7 @@ class ImportGitHubSponsorshipTiers extends Command
           node {
             id
             name
+            isOneTime
             monthlyPriceInCents
           }
         }
