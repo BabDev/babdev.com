@@ -1,0 +1,11 @@
+.sponsor-list {
+  ul {
+    @include media-breakpoint-between(sm, md) {
+      column-count: 2;
+    }
+
+    @include media-breakpoint-up(md) {
+      column-count: 3;
+    }
+  }
+}
