@@ -6,12 +6,12 @@ use BabDev\Http\Controllers\ViewOpenSourcePackagesController;
 use BabDev\Http\Controllers\ViewOpenSourceUpdateController;
 use BabDev\Http\Controllers\ViewOpenSourceUpdatesController;
 use BabDev\Http\Controllers\ViewSitemapController;
+use BabDev\Http\Controllers\ViewSponsorPageController;
 use Illuminate\Routing\Router;
 
 /** @var Router $router */
 $router->view('/', 'homepage')->name('homepage');
 $router->view('/privacy', 'privacy')->name('privacy');
-$router->view('/sponsor', 'sponsor')->name('sponsor');
 
 $router->permanentRedirect('/extensions', '/open-source/packages');
 $router->permanentRedirect('/extensions/latest', '/open-source/packages');
@@ -52,6 +52,11 @@ $router->get(
     '/open-source/updates',
     ViewOpenSourceUpdatesController::class
 )->name('open-source.updates');
+
+$router->get(
+    '/sponsor',
+    ViewSponsorPageController::class
+)->name('sponsor');
 
 $router->get(
     '/open-source/updates/page/{page}',
