@@ -2,10 +2,13 @@
 
 namespace Tests\Feature;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class SponsorTest extends TestCase
 {
+    use RefreshDatabase;
+
     /** @test */
     public function users_can_view_the_sponsor_page()
     {
