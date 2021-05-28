@@ -17,6 +17,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('import:packagist-downloads')->hourly();
         $schedule->command('import:github-repositories')->dailyAt('12:00');
         $schedule->command('import:github-sponsorship-tiers')->dailyAt('13:00');
+        $schedule->command('import:github-sponsors')->dailyAt('13:30');
         $schedule->command('sitemap:generate')->dailyAt('00:00');
     }
 }
