@@ -59,6 +59,7 @@ $theme-colors: map-merge($theme-colors, $brand-colors);
 @import "~bootstrap/scss/utilities/api";
 
 // highlight.js
+@import "hljs-baseline";
 @import "~highlight.js/scss/atom-one-light";
 
 // Components
