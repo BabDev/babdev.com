@@ -21,22 +21,22 @@
         "http-interop/http-factory-guzzle": "^1.0",
         "knplabs/github-api": "^3.3",
         "kraftbit/nova-tinymce5-editor": "^1.0",
-        "laravel/framework": "^8.44",
-        "laravel/nova": "^3.25",
+        "laravel/framework": "^8.45.1",
+        "laravel/nova": "^3.26.1",
         "lcobucci/jwt": "^4.1.4",
         "league/commonmark": "^1.6.2",
         "spatie/laravel-sitemap": "^6.0.4",
-        "spatie/laravel-sluggable": "^3.0.2",
+        "spatie/laravel-sluggable": "^3.1",
         "spatie/packagist-api": "^2.0.2"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.10",
-        "facade/ignition": "^2.9",
+        "facade/ignition": "^2.10.1",
         "fakerphp/faker": "^1.14.1",
-        "laravel/telescope": "^4.4.9",
+        "laravel/telescope": "^4.4.10",
         "mockery/mockery": "^1.4.3",
         "nunomaduro/collision": "^5.4",
-        "phpunit/phpunit": "^9.5.4"
+        "phpunit/phpunit": "^9.5.5"
     },
     "replace": {
         "paragonie/random_compat": "*",
