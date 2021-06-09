@@ -46,7 +46,7 @@ final class RequestHandlerTest extends TestCase
     }
 
     /** @test */
-    public function the_handler_only_acts_on_supported_events()
+    public function the_handler_only_acts_on_supported_events(): void
     {
         $request = Request::createFromBase(
             SymfonyRequest::create(
@@ -63,7 +63,7 @@ final class RequestHandlerTest extends TestCase
     }
 
     /** @test */
-    public function the_handler_acts_on_a_supported_event()
+    public function the_handler_acts_on_a_supported_event(): void
     {
         $repoConfig = [
             'events' => [

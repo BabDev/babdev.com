@@ -13,7 +13,7 @@ class DocumentationTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function when_a_package_is_not_visible_a_404_is_returned()
+    public function when_a_package_is_not_visible_a_404_is_returned(): void
     {
         /** @var Package $package */
         $package = Package::factory()->notVisible()->create();
@@ -23,7 +23,7 @@ class DocumentationTest extends TestCase
     }
 
     /** @test */
-    public function when_a_package_has_no_documentation_the_request_is_redirected_to_the_package_list()
+    public function when_a_package_has_no_documentation_the_request_is_redirected_to_the_package_list(): void
     {
         /** @var Package $package */
         $package = Package::factory()->create();
@@ -33,7 +33,7 @@ class DocumentationTest extends TestCase
     }
 
     /** @test */
-    public function when_a_package_has_no_documentation_for_the_requested_version_a_404_is_returned()
+    public function when_a_package_has_no_documentation_for_the_requested_version_a_404_is_returned(): void
     {
         /** @var Package $package */
         $package = Package::factory()->docs()->create();
@@ -43,7 +43,7 @@ class DocumentationTest extends TestCase
     }
 
     /** @test */
-    public function when_a_docs_request_is_for_the_sidebar_index_a_404_is_returned()
+    public function when_a_docs_request_is_for_the_sidebar_index_a_404_is_returned(): void
     {
         /** @var Package $package */
         $package = Package::factory()->docs()->create();
@@ -53,12 +53,12 @@ class DocumentationTest extends TestCase
     }
 
     /** @test */
-    public function when_a_docs_request_is_for_a_nonexisting_page_a_404_is_returned()
+    public function when_a_docs_request_is_for_a_nonexisting_page_a_404_is_returned(): void
     {
         /** @var Package $package */
         $package = Package::factory()->docs()->create();
 
-        $this->mock(DocumentationProcessor::class, function ($mock) use ($package) {
+        $this->mock(DocumentationProcessor::class, function ($mock) use ($package): void {
             $mock->shouldReceive('fetchPageContents')
                 ->andThrow(new PageNotFoundException('Testing'));
         });
@@ -68,12 +68,12 @@ class DocumentationTest extends TestCase
     }
 
     /** @test */
-    public function when_a_docs_request_is_for_an_existing_page_the_docs_can_be_viewed()
+    public function when_a_docs_request_is_for_an_existing_page_the_docs_can_be_viewed(): void
     {
         /** @var Package $package */
         $package = Package::factory()->docs()->create();
 
-        $this->mock(DocumentationProcessor::class, function ($mock) use ($package) {
+        $this->mock(DocumentationProcessor::class, function ($mock) use ($package): void {
             $mock->shouldReceive('fetchPageContents', 'fetchPageContents', 'extractTitle')
                 ->andReturn('contents', 'sidebar', 'title');
         });
@@ -84,7 +84,7 @@ class DocumentationTest extends TestCase
     }
 
     /** @test */
-    public function when_a_package_has_no_documentation_the_request_for_the_docs_shortcut_is_redirected_to_the_package_list()
+    public function when_a_package_has_no_documentation_the_request_for_the_docs_shortcut_is_redirected_to_the_package_list(): void
     {
         /** @var Package $package */
         $package = Package::factory()->create();
@@ -94,7 +94,7 @@ class DocumentationTest extends TestCase
     }
 
     /** @test */
-    public function when_a_docs_request_is_for_a_page_without_a_version_the_user_is_redirected_to_the_default_version_page()
+    public function when_a_docs_request_is_for_a_page_without_a_version_the_user_is_redirected_to_the_default_version_page(): void
     {
         /** @var Package $package */
         $package = Package::factory()->docs()->create();

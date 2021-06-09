@@ -20,13 +20,12 @@ final class ClosePagerfantaReadOnlyRepoPullRequest implements Action
             $request->input('number'),
             [
                 'body' => <<<MD
-Thank you for your pull request to Pagerfanta, unfortunately your pull request cannot be accepted on this repository.
+                    Thank you for your pull request to Pagerfanta, unfortunately your pull request cannot be accepted on this repository.
 
-This repository is a read-only copy of a portion of the main Pagerfanta repository, which is the canonical repository for all Pagerfanta related code.
+                    This repository is a read-only copy of a portion of the main Pagerfanta repository, which is the canonical repository for all Pagerfanta related code.
 
-In order for your pull request to be accepted, you will need to submit it to https://github.com/BabDev/Pagerfanta for review.
-MD
-                ,
+                    In order for your pull request to be accepted, you will need to submit it to https://github.com/BabDev/Pagerfanta for review.
+                    MD,
             ]
         );
 

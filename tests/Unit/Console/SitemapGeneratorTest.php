@@ -11,13 +11,13 @@ use Tests\TestCase;
 class SitemapGeneratorTest extends TestCase
 {
     /** @test */
-    public function the_sitemap_is_generated()
+    public function the_sitemap_is_generated(): void
     {
         Storage::fake('local');
 
         $this->instance(
             SitemapGenerator::class,
-            \Mockery::mock(SitemapGenerator::class, function (MockInterface $mock) {
+            \Mockery::mock(SitemapGenerator::class, function (MockInterface $mock): void {
                 $mock->shouldReceive('setUrl')->once()->andReturnSelf();
                 $mock->shouldReceive('hasCrawled')->once()->andReturnSelf();
                 $mock->shouldReceive('getSitemap')->once()->andReturn(Sitemap::create());

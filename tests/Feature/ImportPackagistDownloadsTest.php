@@ -13,13 +13,13 @@ class ImportPackagistDownloadsTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function downloads_for_packagist_listings_are_imported()
+    public function downloads_for_packagist_listings_are_imported(): void
     {
         Package::factory()->packagist()->create();
 
         $this->instance(
             PackagistClient::class,
-            \Mockery::mock(PackagistClient::class, function (MockInterface $mock) {
+            \Mockery::mock(PackagistClient::class, function (MockInterface $mock): void {
                 $mock->shouldReceive('getPackage')->andReturn(
                     [
                         'package' => [

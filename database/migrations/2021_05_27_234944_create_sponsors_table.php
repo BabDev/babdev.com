@@ -11,11 +11,11 @@ class CreateSponsorsTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create(
             'sponsors',
-            function (Blueprint $table) {
+            function (Blueprint $table): void {
                 $table->id();
                 $table->foreignId('sponsorship_tier_id')->constrained()->onDelete('cascade');
                 $table->string('sponsorship_node_id')->unique();
@@ -33,7 +33,7 @@ class CreateSponsorsTable extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('sponsors');
     }

@@ -11,7 +11,7 @@ class PackageUpdateSeeder extends Seeder
 {
     private ?\DateTimeZone $utc;
 
-    public function run()
+    public function run(): void
     {
         $this->utc = new \DateTimeZone('UTC');
 

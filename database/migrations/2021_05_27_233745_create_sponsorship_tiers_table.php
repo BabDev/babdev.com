@@ -11,11 +11,11 @@ class CreateSponsorshipTiersTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create(
             'sponsorship_tiers',
-            function (Blueprint $table) {
+            function (Blueprint $table): void {
                 $table->id();
                 $table->string('node_id')->unique();
                 $table->boolean('one_time');
@@ -30,7 +30,7 @@ class CreateSponsorshipTiersTable extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('sponsorship_tiers');
     }

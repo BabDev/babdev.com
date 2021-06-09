@@ -10,7 +10,7 @@ use Tests\TestCase;
 final class PackageTitleComponentTest extends TestCase
 {
     /** @test */
-    public function the_component_is_rendered_with_no_logo()
+    public function the_component_is_rendered_with_no_logo(): void
     {
         /** @var Package $package */
         $package = Package::factory()->notVisible()->make();
@@ -22,7 +22,7 @@ final class PackageTitleComponentTest extends TestCase
     }
 
     /** @test */
-    public function the_component_is_rendered_with_a_logo()
+    public function the_component_is_rendered_with_a_logo(): void
     {
         Storage::fake('logos')
             ->put('logo.svg', file_get_contents(__DIR__ . '/../../fixtures/logo.svg'));
@@ -38,7 +38,7 @@ final class PackageTitleComponentTest extends TestCase
     }
 
     /** @test */
-    public function the_component_is_rendered_with_a_logo_and_secondary_title()
+    public function the_component_is_rendered_with_a_logo_and_secondary_title(): void
     {
         Storage::fake('logos')
             ->put('logo.svg', file_get_contents(__DIR__ . '/../../fixtures/logo.svg'));

@@ -13,7 +13,7 @@ class ImportGitHubSponsorsTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function the_sponsors_tiers_are_imported()
+    public function the_sponsors_tiers_are_imported(): void
     {
         /** @var SponsorshipTier $tier1 */
         $tier1 = SponsorshipTier::query()->create([
@@ -33,7 +33,7 @@ class ImportGitHubSponsorsTest extends TestCase
             ApiConnector::class,
             \Mockery::mock(
                 ApiConnector::class,
-                function (MockInterface $mock) {
+                function (MockInterface $mock): void {
                     $mock->shouldReceive('executeGraphqlQuery')->once()->andReturn(
                         [
                             'data' => [

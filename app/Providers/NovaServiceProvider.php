@@ -14,7 +14,7 @@ use Laravel\Nova\NovaApplicationServiceProvider;
 
 final class NovaServiceProvider extends NovaApplicationServiceProvider
 {
-    protected function routes()
+    protected function routes(): void
     {
         Nova::routes()
             ->withAuthenticationRoutes(
@@ -27,7 +27,7 @@ final class NovaServiceProvider extends NovaApplicationServiceProvider
             );
     }
 
-    protected function gate()
+    protected function gate(): void
     {
         /** @var Gate $gate */
         $gate = $this->app->make(Gate::class);

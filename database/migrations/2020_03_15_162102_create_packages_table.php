@@ -11,11 +11,11 @@ class CreatePackagesTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create(
             'packages',
-            function (Blueprint $table) {
+            function (Blueprint $table): void {
                 $table->id();
                 $table->string('name');
                 $table->string('display_name');
@@ -44,7 +44,7 @@ class CreatePackagesTable extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('packages');
     }

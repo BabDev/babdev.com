@@ -12,11 +12,11 @@ class ImportGitHubRepositoriesTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function the_public_repositories_are_imported()
+    public function the_public_repositories_are_imported(): void
     {
         $this->instance(
             ApiConnector::class,
-            \Mockery::mock(ApiConnector::class, function (MockInterface $mock) {
+            \Mockery::mock(ApiConnector::class, function (MockInterface $mock): void {
                 $mock->shouldReceive('fetchPublicRepositories')->once()->andReturn(
                     collect(
                         [

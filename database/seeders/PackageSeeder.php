@@ -8,7 +8,7 @@ use Illuminate\Database\Seeder;
 
 class PackageSeeder extends Seeder
 {
-    public function run()
+    public function run(): void
     {
         $this->fixLaravelBreadcrumbs();
         $this->fixLaravelServerPushManager();

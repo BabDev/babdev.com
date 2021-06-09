@@ -8,7 +8,7 @@ use Tests\TestCase;
 final class HeroComponentTest extends TestCase
 {
     /** @test */
-    public function the_component_is_rendered_with_only_a_title()
+    public function the_component_is_rendered_with_only_a_title(): void
     {
         $this->component(Hero::class, ['title' => 'Test'])
             ->assertSee('<h1 class="hero__title">Test</h1>', false)
@@ -16,7 +16,7 @@ final class HeroComponentTest extends TestCase
     }
 
     /** @test */
-    public function the_component_is_rendered_with_a_title_and_subtitle()
+    public function the_component_is_rendered_with_a_title_and_subtitle(): void
     {
         $this->component(Hero::class, ['title' => 'Test', 'subtitle' => 'Second Test'])
             ->assertSee('<h1 class="hero__title">Test</h1>', false)

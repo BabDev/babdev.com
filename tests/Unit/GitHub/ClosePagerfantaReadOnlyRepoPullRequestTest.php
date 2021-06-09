@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
 final class ClosePagerfantaReadOnlyRepoPullRequestTest extends TestCase
 {
     /** @test */
-    public function the_action_only_processes_opened_pull_requests()
+    public function the_action_only_processes_opened_pull_requests(): void
     {
         $request = Request::createFromBase(
             SymfonyRequest::create('/webhooks/github/app', 'POST', ['action' => 'closed'])
@@ -31,7 +31,7 @@ final class ClosePagerfantaReadOnlyRepoPullRequestTest extends TestCase
     }
 
     /** @test */
-    public function the_action_comments_on_an_opened_pull_request_and_closes_it()
+    public function the_action_comments_on_an_opened_pull_request_and_closes_it(): void
     {
         $request = Request::createFromBase(
             SymfonyRequest::create(

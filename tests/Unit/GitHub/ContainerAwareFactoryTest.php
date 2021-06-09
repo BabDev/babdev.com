@@ -9,7 +9,7 @@ use Tests\TestCase;
 class ContainerAwareFactoryTest extends TestCase
 {
     /** @test */
-    public function the_factory_resolves_an_action_class()
+    public function the_factory_resolves_an_action_class(): void
     {
         $factory = $this->app->make(ContainerAwareFactory::class);
 

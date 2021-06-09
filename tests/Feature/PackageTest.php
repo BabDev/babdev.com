@@ -12,7 +12,7 @@ final class PackageTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function users_can_view_the_package_listing()
+    public function users_can_view_the_package_listing(): void
     {
         Package::factory()->count(3)->create();
 
@@ -22,7 +22,7 @@ final class PackageTest extends TestCase
     }
 
     /** @test */
-    public function users_can_view_the_package_update_list()
+    public function users_can_view_the_package_update_list(): void
     {
         PackageUpdate::factory()->count(5)->create();
 
@@ -38,7 +38,7 @@ final class PackageTest extends TestCase
     }
 
     /** @test */
-    public function users_can_view_a_specific_page_from_the_package_update_list()
+    public function users_can_view_a_specific_page_from_the_package_update_list(): void
     {
         PackageUpdate::factory()->count(40)->create();
 
@@ -54,7 +54,7 @@ final class PackageTest extends TestCase
     }
 
     /** @test */
-    public function users_are_redirected_to_the_canonical_first_page_of_the_package_update_list()
+    public function users_are_redirected_to_the_canonical_first_page_of_the_package_update_list(): void
     {
         PackageUpdate::factory()->count(5)->create();
 
@@ -63,7 +63,7 @@ final class PackageTest extends TestCase
     }
 
     /** @test */
-    public function the_package_update_list_returns_a_404_if_navigating_outside_the_pagination_range()
+    public function the_package_update_list_returns_a_404_if_navigating_outside_the_pagination_range(): void
     {
         PackageUpdate::factory()->count(5)->create();
 
@@ -72,7 +72,7 @@ final class PackageTest extends TestCase
     }
 
     /** @test */
-    public function users_can_view_a_published_package_update()
+    public function users_can_view_a_published_package_update(): void
     {
         /** @var PackageUpdate $update */
         $update = PackageUpdate::factory()->create();
@@ -83,7 +83,7 @@ final class PackageTest extends TestCase
     }
 
     /** @test */
-    public function users_can_not_view_an_unpublished_package_update()
+    public function users_can_not_view_an_unpublished_package_update(): void
     {
         /** @var PackageUpdate $update */
         $update = PackageUpdate::factory()->unpublished()->create();

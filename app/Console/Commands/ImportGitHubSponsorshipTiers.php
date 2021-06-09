@@ -28,27 +28,27 @@ class ImportGitHubSponsorshipTiers extends Command
 
         // TODO - Pagination support
         $query = <<<GRAPHQL
-{
-  viewer {
-    sponsorsListing {
-      tiers(first: 10) {
-        edges {
-          node {
-            id
-            name
-            isOneTime
-            monthlyPriceInCents
-          }
-        }
-        pageInfo {
-          hasNextPage
-          endCursor
-        }
-      }
-    }
-  }
-}
-GRAPHQL;
+            {
+              viewer {
+                sponsorsListing {
+                  tiers(first: 10) {
+                    edges {
+                      node {
+                        id
+                        name
+                        isOneTime
+                        monthlyPriceInCents
+                      }
+                    }
+                    pageInfo {
+                      hasNextPage
+                      endCursor
+                    }
+                  }
+                }
+              }
+            }
+            GRAPHQL;
 
         $response = $this->github->executeGraphqlQuery($query);
 

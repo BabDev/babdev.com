@@ -7,7 +7,7 @@ use Tests\TestCase;
 class HomepageTest extends TestCase
 {
     /** @test */
-    public function users_can_visit_the_homepage()
+    public function users_can_visit_the_homepage(): void
     {
         $this->get('/')
             ->assertSee('<h1 class="hero__title">Creating Open Source Solutions Since 2010</h1>', false)

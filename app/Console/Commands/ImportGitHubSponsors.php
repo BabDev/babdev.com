@@ -29,33 +29,33 @@ class ImportGitHubSponsors extends Command
 
         // TODO - Pagination support
         $query = <<<GRAPHQL
-{
-  viewer {
-    sponsorshipsAsMaintainer(first: 10) {
-      edges {
-        node {
-          id
-          privacyLevel
-          sponsorEntity {
-            ... on User {
-              id
-              login
-              name
+            {
+              viewer {
+                sponsorshipsAsMaintainer(first: 10) {
+                  edges {
+                    node {
+                      id
+                      privacyLevel
+                      sponsorEntity {
+                        ... on User {
+                          id
+                          login
+                          name
+                        }
+                      }
+                      tier {
+                        id
+                      }
+                    }
+                  }
+                  pageInfo {
+                    hasNextPage
+                    endCursor
+                  }
+                }
+              }
             }
-          }
-          tier {
-            id
-          }
-        }
-      }
-      pageInfo {
-        hasNextPage
-        endCursor
-      }
-    }
-  }
-}
-GRAPHQL;
+            GRAPHQL;
 
         $response = $this->github->executeGraphqlQuery($query);
 

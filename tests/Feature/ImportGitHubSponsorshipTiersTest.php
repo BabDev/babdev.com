@@ -12,13 +12,13 @@ class ImportGitHubSponsorshipTiersTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function the_sponsorship_tiers_are_imported()
+    public function the_sponsorship_tiers_are_imported(): void
     {
         $this->instance(
             ApiConnector::class,
             \Mockery::mock(
                 ApiConnector::class,
-                function (MockInterface $mock) {
+                function (MockInterface $mock): void {
                     $mock->shouldReceive('executeGraphqlQuery')->once()->andReturn(
                         [
                             'data' => [

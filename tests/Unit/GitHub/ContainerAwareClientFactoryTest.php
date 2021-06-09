@@ -9,7 +9,7 @@ use Tests\TestCase;
 class ContainerAwareClientFactoryTest extends TestCase
 {
     /** @test */
-    public function the_factory_creates_an_api_client()
+    public function the_factory_creates_an_api_client(): void
     {
         $factory = $this->app->make(ContainerAwareClientFactory::class);
 

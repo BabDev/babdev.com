@@ -13,7 +13,7 @@ use Laravel\Nova\Nova;
 
 class DatabaseSeeder extends Seeder
 {
-    public function run()
+    public function run(): void
     {
         Artisan::call('import:github-repositories');
 

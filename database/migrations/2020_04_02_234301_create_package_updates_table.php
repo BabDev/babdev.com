@@ -12,11 +12,11 @@ class CreatePackageUpdatesTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create(
             'package_updates',
-            function (Blueprint $table) {
+            function (Blueprint $table): void {
                 $table->id();
                 $table->foreignId('package_id')->constrained()->onDelete('cascade');
                 $table->string('title');
@@ -35,7 +35,7 @@ class CreatePackageUpdatesTable extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('package_updates');
     }

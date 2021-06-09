@@ -5,7 +5,6 @@ namespace BabDev\Matomo;
 use Carbon\Carbon;
 use Illuminate\Http\Client\Factory;
 use Illuminate\Http\Client\RequestException;
-use Illuminate\Http\Client\Response;
 
 class ApiConnector
 {
