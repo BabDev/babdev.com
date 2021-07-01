@@ -21,10 +21,10 @@
         "http-interop/http-factory-guzzle": "^1.0",
         "knplabs/github-api": "^3.3",
         "kraftbit/nova-tinymce5-editor": "^1.0",
-        "laravel/framework": "^8.48.1",
-        "laravel/nova": "^3.26.1",
+        "laravel/framework": "^8.49",
+        "laravel/nova": "^3.27",
         "lcobucci/jwt": "^4.1.4",
-        "league/commonmark": "^1.6.4",
+        "league/commonmark": "^1.6.5",
         "spatie/laravel-sitemap": "^6.0.4",
         "spatie/laravel-sluggable": "^3.1",
         "spatie/packagist-api": "^2.0.2"
