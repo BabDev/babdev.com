@@ -22,6 +22,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14'
+          cache: npm
 
       - name: Get Composer Cache Directory
         id: composer-cache
@@ -35,14 +36,6 @@ jobs:
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-composer-
-
-      - name: Setup NPM Cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
 
       - name: Setup .env
         run: cp .env.example .env
