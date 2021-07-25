@@ -83,10 +83,10 @@ final class ClosePagerfantaReadOnlyRepoPullRequestTest extends TestCase
         /** @var MockObject&Client $github */
         $github = $this->createMock(Client::class);
         $github->expects($this->exactly(2))
-            ->method('api')
+            ->method('__call')
             ->withConsecutive(
                 ['issue'],
-                ['pull_request'],
+                ['pullRequest'],
             )
             ->willReturnOnConsecutiveCalls(
                 $issue,

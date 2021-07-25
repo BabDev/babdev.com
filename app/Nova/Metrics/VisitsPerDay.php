@@ -27,6 +27,9 @@ class VisitsPerDay extends Trend
             ->showLatestValue();
     }
 
+    /**
+     * @return array<int, string>
+     */
     public function ranges(): array
     {
         return [

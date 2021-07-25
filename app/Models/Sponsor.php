@@ -23,6 +23,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class Sponsor extends Model
 {
+    /**
+     * @var string[]
+     */
     protected $fillable = [
         'sponsorship_node_id',
         'is_public',
@@ -31,6 +34,9 @@ class Sponsor extends Model
         'sponsor_display_name',
     ];
 
+    /**
+     * @var array<string, string>
+     */
     protected $casts = [
         'is_public' => 'boolean',
     ];

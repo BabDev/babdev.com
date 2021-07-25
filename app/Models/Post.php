@@ -26,6 +26,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class Post extends Model
 {
+    /**
+     * @var string[]
+     */
     protected $fillable = [
         'title',
         'intro',
@@ -34,10 +37,16 @@ class Post extends Model
         'data',
     ];
 
+    /**
+     * @var array<string, string>
+     */
     protected $casts = [
         'data' => 'array',
     ];
 
+    /**
+     * @var string[]
+     */
     protected $dates = [
         'published_at',
     ];

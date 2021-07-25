@@ -1,0 +1,162 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Parameter \\#1 \\$string of function ucwords expects string, array\\|string given\\.$#"
+			count: 1
+			path: app/Console/Commands/ImportGitHubRepositories.php
+
+		-
+			message: "#^Parameter \\#1 \\$array of static method Illuminate\\\\Support\\\\Arr\\:\\:get\\(\\) expects array\\|ArrayAccess, array\\|null given\\.$#"
+			count: 1
+			path: app/Console/Commands/ImportPackagistDownloads.php
+
+		-
+			message: "#^Parameter \\#2 \\$string of function explode expects string, string\\|null given\\.$#"
+			count: 1
+			path: app/Console/Commands/ImportPackagistDownloads.php
+
+		-
+			message: "#^Method BabDev\\\\Contracts\\\\GitHub\\\\Actions\\\\Action\\:\\:__invoke\\(\\) has parameter \\$repoConfig with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/Contracts/GitHub/Actions/Action.php
+
+		-
+			message: "#^Method BabDev\\\\Contracts\\\\GitHub\\\\JWTConfigurationBuilder\\:\\:build\\(\\) has parameter \\$repoConfig with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/Contracts/GitHub/JWTConfigurationBuilder.php
+
+		-
+			message: "#^Method BabDev\\\\Contracts\\\\GitHub\\\\JWTTokenGenerator\\:\\:generate\\(\\) has parameter \\$repoConfig with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/Contracts/GitHub/JWTTokenGenerator.php
+
+		-
+			message: "#^Method BabDev\\\\GitHub\\\\Actions\\\\ClosePagerfantaReadOnlyRepoPullRequest\\:\\:__invoke\\(\\) has parameter \\$repoConfig with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/GitHub/Actions/ClosePagerfantaReadOnlyRepoPullRequest.php
+
+		-
+			message: "#^Method BabDev\\\\GitHub\\\\ApiConnector\\:\\:executeGraphqlQuery\\(\\) has parameter \\$variables with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/GitHub/ApiConnector.php
+
+		-
+			message: "#^Method BabDev\\\\GitHub\\\\ApiConnector\\:\\:executeGraphqlQuery\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/GitHub/ApiConnector.php
+
+		-
+			message: "#^Method BabDev\\\\GitHub\\\\ApiConnector\\:\\:fetchFileContents\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/GitHub/ApiConnector.php
+
+		-
+			message: "#^Method BabDev\\\\GitHub\\\\ApiConnector\\:\\:fetchFileContents\\(\\) should return array but returns array\\|string\\.$#"
+			count: 1
+			path: app/GitHub/ApiConnector.php
+
+		-
+			message: "#^Method BabDev\\\\GitHub\\\\JWTConfigurationBuilder\\:\\:build\\(\\) has parameter \\$repoConfig with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/GitHub/JWTConfigurationBuilder.php
+
+		-
+			message: "#^Method BabDev\\\\GitHub\\\\JWTTokenGenerator\\:\\:generate\\(\\) has parameter \\$repoConfig with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/GitHub/JWTTokenGenerator.php
+
+		-
+			message: "#^Method BabDev\\\\GitHub\\\\RequestHandler\\:\\:buildClient\\(\\) has parameter \\$repoConfig with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/GitHub/RequestHandler.php
+
+		-
+			message: "#^Method BabDev\\\\GitHub\\\\RequestHandler\\:\\:handleRequest\\(\\) has parameter \\$repoConfig with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/GitHub/RequestHandler.php
+
+		-
+			message: "#^Parameter \\#1 \\$hash of method BabDev\\\\Http\\\\Controllers\\\\HandleGitHubAppWebhookController\\:\\:hasValidSignature\\(\\) expects string, array\\|string\\|null given\\.$#"
+			count: 1
+			path: app/Http/Controllers/HandleGitHubAppWebhookController.php
+
+		-
+			message: "#^Parameter \\#3 \\$data of method BabDev\\\\Http\\\\Controllers\\\\HandleGitHubAppWebhookController\\:\\:hasValidSignature\\(\\) expects string, resource\\|string given\\.$#"
+			count: 1
+			path: app/Http/Controllers/HandleGitHubAppWebhookController.php
+
+		-
+			message: "#^Method BabDev\\\\Matomo\\\\ApiConnector\\:\\:actions\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/Matomo/ApiConnector.php
+
+		-
+			message: "#^Method BabDev\\\\Matomo\\\\ApiConnector\\:\\:request\\(\\) has parameter \\$query with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/Matomo/ApiConnector.php
+
+		-
+			message: "#^Method BabDev\\\\Matomo\\\\ApiConnector\\:\\:request\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/Matomo/ApiConnector.php
+
+		-
+			message: "#^Method BabDev\\\\Matomo\\\\ApiConnector\\:\\:visitsSummary\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/Matomo/ApiConnector.php
+
+		-
+			message: "#^Offset string does not exist on array\\<string, string\\>\\|null\\.$#"
+			count: 1
+			path: app/Models/Package.php
+
+		-
+			message: "#^Negated boolean expression is always false\\.$#"
+			count: 1
+			path: app/Models/PackageUpdate.php
+
+		-
+			message: "#^Cannot call method parameter\\(\\) on mixed\\.$#"
+			count: 1
+			path: app/Providers/AppServiceProvider.php
+
+		-
+			message: "#^Parameter \\#1 \\$html of class Illuminate\\\\Support\\\\HtmlString constructor expects string, string\\|false given\\.$#"
+			count: 1
+			path: app/helpers.php
+
+		-
+			message: "#^Cannot call method assertExitCode\\(\\) on Illuminate\\\\Testing\\\\PendingCommand\\|int\\.$#"
+			count: 1
+			path: tests/Feature/ImportGitHubRepositoriesTest.php
+
+		-
+			message: "#^Cannot call method assertExitCode\\(\\) on Illuminate\\\\Testing\\\\PendingCommand\\|int\\.$#"
+			count: 1
+			path: tests/Feature/ImportGitHubSponsorsTest.php
+
+		-
+			message: "#^Cannot call method assertExitCode\\(\\) on Illuminate\\\\Testing\\\\PendingCommand\\|int\\.$#"
+			count: 1
+			path: tests/Feature/ImportGitHubSponsorshipTiersTest.php
+
+		-
+			message: "#^Cannot call method assertExitCode\\(\\) on Illuminate\\\\Testing\\\\PendingCommand\\|int\\.$#"
+			count: 1
+			path: tests/Feature/ImportPackagistDownloadsTest.php
+
+		-
+			message: "#^Parameter \\#2 \\$contents of method Illuminate\\\\Contracts\\\\Filesystem\\\\Filesystem\\:\\:put\\(\\) expects resource\\|string, string\\|false given\\.$#"
+			count: 1
+			path: tests/Feature/SitemapTest.php
+
+		-
+			message: "#^Cannot call method assertExitCode\\(\\) on Illuminate\\\\Testing\\\\PendingCommand\\|int\\.$#"
+			count: 1
+			path: tests/Unit/Console/SitemapGeneratorTest.php
+
+		-
+			message: "#^Parameter \\#2 \\$contents of method Illuminate\\\\Contracts\\\\Filesystem\\\\Filesystem\\:\\:put\\(\\) expects resource\\|string, string\\|false given\\.$#"
+			count: 2
+			path: tests/Unit/View/PackageTitleComponentTest.php
+

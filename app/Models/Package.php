@@ -14,26 +14,26 @@ use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
 /**
- * @property int         $id
- * @property string      $name
- * @property string      $display_name
- * @property string|null $packagist_name
- * @property string      $slug
- * @property string|null $logo
- * @property string|null $description
- * @property array|null  $topics
- * @property bool        $has_documentation
- * @property array|null  $docs_branches
- * @property string|null $default_docs_version
- * @property string|null $package_type
- * @property int         $stars
- * @property int|null    $downloads
- * @property string|null $language
- * @property bool        $supported
- * @property bool        $visible
- * @property bool        $is_packagist
- * @property Carbon|null $created_at
- * @property Carbon|null $updated_at
+ * @property int                        $id
+ * @property string                     $name
+ * @property string                     $display_name
+ * @property string|null                $packagist_name
+ * @property string                     $slug
+ * @property string|null                $logo
+ * @property string|null                $description
+ * @property array|null                 $topics
+ * @property bool                       $has_documentation
+ * @property array<string, string>|null $docs_branches
+ * @property string|null                $default_docs_version
+ * @property string|null                $package_type
+ * @property int                        $stars
+ * @property int|null                   $downloads
+ * @property string|null                $language
+ * @property bool                       $supported
+ * @property bool                       $visible
+ * @property bool                       $is_packagist
+ * @property Carbon|null                $created_at
+ * @property Carbon|null                $updated_at
  * @property-read string $github_url
  *
  * @method static Builder|Package isPackagist()
@@ -45,6 +45,9 @@ class Package extends Model
     use HasFactory;
     use HasSlug;
 
+    /**
+     * @var string[]
+     */
     protected $fillable = [
         'name',
         'display_name',
@@ -64,6 +67,9 @@ class Package extends Model
         'is_packagist',
     ];
 
+    /**
+     * @var array<string, string>
+     */
     protected $casts = [
         'topics' => 'array',
         'has_documentation' => 'boolean',

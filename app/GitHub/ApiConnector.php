@@ -17,7 +17,7 @@ class ApiConnector
 
     public function addRepositoryLabel(string $username, string $repository, string $label, string $color): void
     {
-        $this->client->api('repository')->labels()->create(
+        $this->client->repository()->labels()->create(
             $username,
             $repository,
             [
@@ -29,12 +29,12 @@ class ApiConnector
 
     public function executeGraphqlQuery(string $query, array $variables = []): array
     {
-        return $this->client->api('graphql')->execute($query, $variables);
+        return $this->client->graphql()->execute($query, $variables);
     }
 
     public function fetchFileContents(string $username, string $repository, string $path, string $reference): array
     {
-        return $this->client->api('repositories')->contents()->show($username, $repository, $path, $reference);
+        return $this->client->repositories()->contents()->show($username, $repository, $path, $reference);
     }
 
     public function fetchPublicRepositories(string $username): Collection
@@ -45,16 +45,19 @@ class ApiConnector
 
     public function fetchRepositoryLabels(string $username, string $repository): Collection
     {
-        return new Collection($this->client->api('repository')->labels()->all($username, $repository));
+        return new Collection($this->client->repository()->labels()->all($username, $repository));
     }
 
     public function fetchRepositoryTopics(string $username, string $repository): Collection
     {
-        return new Collection($this->client->api('repository')->topics($username, $repository)['names'] ?? []);
+        return new Collection($this->client->repository()->topics($username, $repository)['names'] ?? []);
     }
 
+    /**
+     * @param string[] $topics
+     */
     public function replaceRepositoryTopics(string $username, string $repository, array $topics): void
     {
-        $this->client->api('repository')->replaceTopics($username, $repository, $topics);
+        $this->client->repository()->replaceTopics($username, $repository, $topics);
     }
 }

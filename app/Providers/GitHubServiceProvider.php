@@ -26,6 +26,9 @@ use Psr\Http\Message\StreamFactoryInterface;
 
 final class GitHubServiceProvider extends ServiceProvider implements DeferrableProvider
 {
+    /**
+     * @return string[]
+     */
     public function provides(): array
     {
         return [

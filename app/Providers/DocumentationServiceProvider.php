@@ -11,6 +11,9 @@ use Illuminate\Support\ServiceProvider;
 
 final class DocumentationServiceProvider extends ServiceProvider implements DeferrableProvider
 {
+    /**
+     * @return string[]
+     */
     public function provides(): array
     {
         return [

@@ -4,8 +4,10 @@ namespace BabDev\Nova;
 
 use BabDev\Models\Package as PackageModel;
 use BabDev\PackageType;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\Field;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\KeyValue;
@@ -17,14 +19,25 @@ use Laravel\Nova\Resource;
 class Package extends Resource
 {
     public static $group = 'Packages';
+
+    /**
+     * @var class-string<Model>
+     */
     public static $model = PackageModel::class;
+
     public static $title = 'name';
 
+    /**
+     * @var string[]
+     */
     public static $search = [
         'id',
         'name',
     ];
 
+    /**
+     * @return Field[]
+     */
     public function fields(Request $request): array
     {
         return [

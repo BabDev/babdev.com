@@ -3,7 +3,9 @@
 namespace BabDev\Nova;
 
 use BabDev\Models\User as UserModel;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Field;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
@@ -13,15 +15,26 @@ use Laravel\Nova\Resource;
 class User extends Resource
 {
     public static $group = 'Accounts';
+
+    /**
+     * @var class-string<Model>
+     */
     public static $model = UserModel::class;
+
     public static $title = 'name';
 
+    /**
+     * @var string[]
+     */
     public static $search = [
         'id',
         'name',
         'email',
     ];
 
+    /**
+     * @return Field[]
+     */
     public function fields(Request $request): array
     {
         return [

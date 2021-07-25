@@ -36,6 +36,11 @@
         "laravel/telescope": "^4.6",
         "mockery/mockery": "^1.4.3",
         "nunomaduro/collision": "^5.5",
+        "nunomaduro/larastan": "^0.7.11",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan": "^0.12.93",
+        "phpstan/phpstan-mockery": "^0.12.14",
+        "phpstan/phpstan-phpunit": "^0.12.21",
         "phpunit/phpunit": "^9.5.7"
     },
     "replace": {

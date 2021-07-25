@@ -2,13 +2,15 @@
 
 namespace BabDev\Providers;
 
-use BabDev\Http\Middleware\VerifyCsrfToken;
 use BabDev\Models\User;
 use BabDev\Nova\Dashboards\MatomoAnalytics;
 use Illuminate\Contracts\Auth\Access\Gate;
+use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Laravel\Nova\Card;
 use Laravel\Nova\Cards\Help;
+use Laravel\Nova\Dashboard;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
 
@@ -43,6 +45,9 @@ final class NovaServiceProvider extends NovaApplicationServiceProvider
         );
     }
 
+    /**
+     * @return Card[]
+     */
     protected function cards(): array
     {
         return [
@@ -50,6 +55,9 @@ final class NovaServiceProvider extends NovaApplicationServiceProvider
         ];
     }
 
+    /**
+     * @return Dashboard[]
+     */
     protected function dashboards(): array
     {
         return [

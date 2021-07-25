@@ -2,6 +2,7 @@
 
 namespace BabDev\GitHub;
 
+use BabDev\Contracts\GitHub\Actions\Action;
 use BabDev\Contracts\GitHub\Actions\Factory;
 use BabDev\Contracts\GitHub\ClientFactory;
 use BabDev\Contracts\GitHub\JWTTokenGenerator as JWTTokenGeneratorContract;
@@ -31,7 +32,7 @@ class RequestHandler
 
         $github = $this->buildClient($repoConfig, $request);
 
-        /** @var class-string $actionClass */
+        /** @var class-string<Action> $actionClass */
         foreach ($repoConfig['events'][$event] as $actionClass) {
             $action = $this->actionFactory->make($actionClass);
             $action($repoConfig, $request, $github);
@@ -44,7 +45,7 @@ class RequestHandler
 
         $github->authenticate($this->tokenGenerator->generate($repoConfig), null, Client::AUTH_JWT);
 
-        $token = $github->api('apps')->createInstallationToken($request->input('installation.id'));
+        $token = $github->apps()->createInstallationToken($request->input('installation.id'));
 
         $github->authenticate($token['token'], null, Client::AUTH_ACCESS_TOKEN);
 

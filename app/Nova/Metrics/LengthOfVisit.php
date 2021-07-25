@@ -40,6 +40,9 @@ class LengthOfVisit extends Trend
             ->withoutSuffixInflection();
     }
 
+    /**
+     * @return array<int, string>
+     */
     public function ranges(): array
     {
         return [

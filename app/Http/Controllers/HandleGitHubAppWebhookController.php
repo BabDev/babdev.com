@@ -13,6 +13,7 @@ final class HandleGitHubAppWebhookController
     {
         $repoConfig = false;
 
+        /** @var string $repo */
         foreach (array_keys(config('services.github.apps')) as $repo) {
             if (Str::is($repo, $request->input('repository.full_name'))) {
                 $repoConfig = config("services.github.apps.$repo");

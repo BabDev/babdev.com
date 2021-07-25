@@ -103,7 +103,7 @@ final class RequestHandlerTest extends TestCase
             );
 
         $github->expects($this->once())
-            ->method('api')
+            ->method('__call')
             ->with('apps')
             ->willReturn($apps);
 

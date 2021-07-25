@@ -3,10 +3,12 @@
 namespace BabDev\Nova;
 
 use BabDev\Models\Post as PostModel;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Kraftbit\NovaTinymce5Editor\NovaTinymce5Editor;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\Field;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
@@ -15,9 +17,17 @@ use Laravel\Nova\Resource;
 class Post extends Resource
 {
     public static $group = 'Blog';
+
+    /**
+     * @var class-string<Model>
+     */
     public static $model = PostModel::class;
+
     public static $title = 'title';
 
+    /**
+     * @var string[]
+     */
     public static $search = [
         'id',
         'title',
@@ -25,6 +35,9 @@ class Post extends Resource
         'content',
     ];
 
+    /**
+     * @return Field[]
+     */
     public function fields(Request $request): array
     {
         return [

@@ -18,12 +18,18 @@ use Illuminate\Database\Eloquent\Model;
  */
 class SponsorshipTier extends Model
 {
+    /**
+     * @var string[]
+     */
     protected $fillable = [
         'node_id',
         'one_time',
         'price',
     ];
 
+    /**
+     * @var array<string, string>
+     */
     protected $casts = [
         'one_time' => 'boolean',
         'price' => 'int',

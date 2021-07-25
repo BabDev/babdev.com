@@ -14,7 +14,7 @@ final class ClosePagerfantaReadOnlyRepoPullRequest implements Action
             return;
         }
 
-        $github->api('issue')->comments()->create(
+        $github->issue()->comments()->create(
             $request->input('repository.owner.login'),
             $request->input('repository.name'),
             $request->input('number'),
@@ -29,7 +29,7 @@ final class ClosePagerfantaReadOnlyRepoPullRequest implements Action
             ]
         );
 
-        $github->api('pull_request')->update(
+        $github->pullRequest()->update(
             $request->input('repository.owner.login'),
             $request->input('repository.name'),
             $request->input('number'),

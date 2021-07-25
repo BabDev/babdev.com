@@ -58,7 +58,7 @@ class DocumentationTest extends TestCase
         /** @var Package $package */
         $package = Package::factory()->docs()->create();
 
-        $this->mock(DocumentationProcessor::class, function ($mock) use ($package): void {
+        $this->mock(DocumentationProcessor::class, function ($mock): void {
             $mock->shouldReceive('fetchPageContents')
                 ->andThrow(new PageNotFoundException('Testing'));
         });
@@ -73,7 +73,7 @@ class DocumentationTest extends TestCase
         /** @var Package $package */
         $package = Package::factory()->docs()->create();
 
-        $this->mock(DocumentationProcessor::class, function ($mock) use ($package): void {
+        $this->mock(DocumentationProcessor::class, function ($mock): void {
             $mock->shouldReceive('fetchPageContents', 'fetchPageContents', 'extractTitle')
                 ->andReturn('contents', 'sidebar', 'title');
         });

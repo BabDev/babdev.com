@@ -16,6 +16,9 @@ use Psr\Http\Message\StreamFactoryInterface;
 
 final class HttpServiceProvider extends ServiceProvider implements DeferrableProvider
 {
+    /**
+     * @return string[]
+     */
     public function provides(): array
     {
         return [

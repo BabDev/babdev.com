@@ -6,6 +6,9 @@ use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
 {
+    /**
+     * @var class-string[]
+     */
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance::class,
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
@@ -13,6 +16,9 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
     ];
 
+    /**
+     * @var array<string, string[]>
+     */
     protected $middlewareGroups = [
         'web' => [
             \Illuminate\Cookie\Middleware\EncryptCookies::class,
@@ -33,6 +39,9 @@ class Kernel extends HttpKernel
         ],
     ];
 
+    /**
+     * @var array<string, class-string>
+     */
     protected $routeMiddleware = [
         'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,

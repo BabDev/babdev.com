@@ -31,6 +31,9 @@ class PackageUpdate extends Model
 {
     use HasFactory;
 
+    /**
+     * @var string[]
+     */
     protected $fillable = [
         'title',
         'intro',
@@ -39,10 +42,16 @@ class PackageUpdate extends Model
         'data',
     ];
 
+    /**
+     * @var array<string, string>
+     */
     protected $casts = [
         'data' => 'array',
     ];
 
+    /**
+     * @var string[]
+     */
     protected $dates = [
         'published_at',
     ];
