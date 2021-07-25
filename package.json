@@ -29,10 +29,10 @@
         "laravel-mix-purgecss": "^6.0.0",
         "laravel-mix-sri": "^1.0.3",
         "path": "^0.12.7",
-        "postcss": "^8.3.5",
+        "postcss": "^8.3.6",
         "postcss-import": "^14.0.2",
         "resolve-url-loader": "^4.0.0",
-        "sass": "^1.35.2",
+        "sass": "^1.36.0",
         "sass-loader": "^12.1.0"
     }
 }
