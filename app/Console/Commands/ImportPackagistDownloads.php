@@ -26,7 +26,7 @@ class ImportPackagistDownloads extends Command
     {
         $this->info('Fetching download counts...');
 
-        Package::query()->isPackagist()->get()->each(
+        Package::query()->isPackagist()->each(
             function (Package $package): void {
                 $this->comment("Importing `{$package->name}` downloads... ");
 

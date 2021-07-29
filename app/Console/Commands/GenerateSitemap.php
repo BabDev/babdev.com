@@ -24,11 +24,11 @@ class GenerateSitemap extends Command
                 }
 
                 // Don't include docs shortcuts
-                if (substr($url->path(), -5) === '/docs') {
+                if (str_ends_with($url->path(), '/docs')) {
                     return null;
                 }
 
-                if (substr($url->path(), -11) === '/docs/intro') {
+                if (str_ends_with($url->path(), '/docs/intro')) {
                     return null;
                 }
 

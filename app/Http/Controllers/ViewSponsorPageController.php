@@ -22,7 +22,7 @@ final class ViewSponsorPageController
             ->orderByRaw('CASE WHEN sponsor_display_name IS NULL THEN sponsor_username ELSE sponsor_display_name END ASC')
             ->get();
 
-        /** @var Collection<Sponsor> $featuredSponsors */
+        /** @var Collection<Sponsor> $regularSponsors */
         $regularSponsors = Sponsor::query()
             ->whereHas(
                 'sponsorship_tier',
