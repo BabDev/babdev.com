@@ -19,6 +19,7 @@ class SitemapGeneratorTest extends TestCase
             SitemapGenerator::class,
             \Mockery::mock(SitemapGenerator::class, function (MockInterface $mock): void {
                 $mock->shouldReceive('setUrl')->once()->andReturnSelf();
+                $mock->shouldReceive('shouldCrawl')->once()->andReturnSelf();
                 $mock->shouldReceive('hasCrawled')->once()->andReturnSelf();
                 $mock->shouldReceive('getSitemap')->once()->andReturn(Sitemap::create());
             })
