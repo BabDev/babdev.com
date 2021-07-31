@@ -47,13 +47,7 @@ class PackageUpdate extends Model
      */
     protected $casts = [
         'data' => 'array',
-    ];
-
-    /**
-     * @var string[]
-     */
-    protected $dates = [
-        'published_at',
+        'published_at' => 'datetime',
     ];
 
     protected static function newFactory(): Factory

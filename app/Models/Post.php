@@ -42,13 +42,7 @@ class Post extends Model
      */
     protected $casts = [
         'data' => 'array',
-    ];
-
-    /**
-     * @var string[]
-     */
-    protected $dates = [
-        'published_at',
+        'published_at' => 'datetime',
     ];
 
     public function getRouteKeyName(): string
