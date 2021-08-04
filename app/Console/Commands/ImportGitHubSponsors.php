@@ -59,7 +59,11 @@ class ImportGitHubSponsors extends Command
 
         $response = $this->github->executeGraphqlQuery($query);
 
+        $activeSponsorIds = [];
+
         foreach (Arr::get($response, 'data.viewer.sponsorshipsAsMaintainer.edges', []) as $sponsorEdge) {
+            $activeSponsorIds[] = Arr::get($sponsorEdge, 'node.id');
+
             /** @var Sponsor $sponsor */
             $sponsor = Sponsor::query()->firstOrNew(
                 ['sponsorship_node_id' => Arr::get($sponsorEdge, 'node.id')],
@@ -80,6 +84,10 @@ class ImportGitHubSponsors extends Command
             $sponsor->sponsorship_tier()->associate($sponsorshipTier);
             $sponsor->save();
         }
+
+        Sponsor::query()
+            ->whereNotIn('sponsorship_node_id', $activeSponsorIds)
+            ->delete();
 
         $this->info('All done!');
     }
