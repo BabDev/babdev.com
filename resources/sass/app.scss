@@ -25,6 +25,22 @@
 // Merge the maps now that the default map is configured
 $theme-colors: map-merge($theme-colors, $brand-colors);
 
+// Rebuild maps
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
+
+$utilities-colors: map-merge(
+    $theme-colors-rgb,
+    (
+      "black": to-rgb($black),
+      "white": to-rgb($white),
+      "body":  to-rgb($body-color)
+    )
+);
+
+$utilities-text-colors: map-loop($utilities-colors, rgba-css-var, "$key", "text");
+
+$utilities-bg-colors: map-loop($utilities-colors, rgba-css-var, "$key", "bg");
+
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/utilities";
 @import "~bootstrap/scss/root";
@@ -55,6 +71,8 @@ $theme-colors: map-merge($theme-colors, $brand-colors);
 //@import "~bootstrap/scss/popover";
 //@import "~bootstrap/scss/carousel";
 //@import "~bootstrap/scss/spinners";
+//@import "~bootstrap/scss/offcanvas";
+//@import "~bootstrap/scss/placeholders";
 @import "~bootstrap/scss/helpers";
 @import "~bootstrap/scss/utilities/api";
 
