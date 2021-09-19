@@ -42,7 +42,7 @@ final class ClosePagerfantaReadOnlyRepoPullRequestTest extends TestCase
                     'number' => '1',
                     'repository' => [
                         'owner' => [
-                            'login' => 'pagerfanta-packages',
+                            'login' => 'Pagerfanta',
                         ],
                         'name' => 'core',
                     ],
@@ -55,7 +55,7 @@ final class ClosePagerfantaReadOnlyRepoPullRequestTest extends TestCase
         $comments->expects($this->once())
             ->method('create')
             ->with(
-                'pagerfanta-packages',
+                'Pagerfanta',
                 'core',
                 '1',
                 $this->isType('array')
@@ -72,7 +72,7 @@ final class ClosePagerfantaReadOnlyRepoPullRequestTest extends TestCase
         $pullRequest->expects($this->once())
             ->method('update')
             ->with(
-                'pagerfanta-packages',
+                'Pagerfanta',
                 'core',
                 '1',
                 [
