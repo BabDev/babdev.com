@@ -49,9 +49,9 @@ class DatabaseSeeder extends Seeder
                         'name' => $name,
                         'email' => $email,
                         'password' => Hash::make($password),
-                    ]
+                    ],
                 );
-            }
+            },
         );
 
         Artisan::call('nova:user');

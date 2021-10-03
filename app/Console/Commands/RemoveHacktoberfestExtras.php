@@ -38,7 +38,7 @@ class RemoveHacktoberfestExtras extends Command
                     }
 
                     return true;
-                }
+                },
             )
             ->each(
                 function (array $repositoryAttributes): void {
@@ -51,12 +51,12 @@ class RemoveHacktoberfestExtras extends Command
                         $this->github->replaceRepositoryTopics(
                             'BabDev',
                             $repositoryAttributes['name'],
-                            $topics->toArray()
+                            $topics->toArray(),
                         );
                     } else {
                         $this->comment("'hacktoberfest' topic does not exist on `{$repositoryAttributes['name']}`... ");
                     }
-                }
+                },
             );
 
         $this->info('All done!');

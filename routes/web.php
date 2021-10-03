@@ -20,7 +20,7 @@ $router->permanentRedirect('/extensions/updates', '/open-source/updates');
 
 $router->get(
     '/open-source/packages',
-    ViewOpenSourcePackagesController::class
+    ViewOpenSourcePackagesController::class,
 )->name('open-source.packages');
 
 // Package name redirects
@@ -30,42 +30,42 @@ $router->permanentRedirect('/open-source/packages/babdevpagerfantabundle/docs/{v
 
 $router->get(
     '/open-source/packages/{package}/docs',
-    RedirectToPackageDocsController::class
+    RedirectToPackageDocsController::class,
 );
 
 $router->get(
     '/open-source/packages/{package}/docs/{slug}',
-    RedirectToPackageDocsController::class
+    RedirectToPackageDocsController::class,
 );
 
 $router->get(
     '/open-source/packages/{package}/docs/{version}/{slug}',
-    ViewOpenSourcePackageDocsPageController::class
+    ViewOpenSourcePackageDocsPageController::class,
 )->name('open-source.packages.package-docs-page');
 
 $router->get(
     '/open-source/updates/{update}',
-    ViewOpenSourceUpdateController::class
+    ViewOpenSourceUpdateController::class,
 )->name('open-source.update');
 
 $router->get(
     '/open-source/updates',
-    ViewOpenSourceUpdatesController::class
+    ViewOpenSourceUpdatesController::class,
 )->name('open-source.updates');
 
 $router->get(
     '/sponsor',
-    ViewSponsorPageController::class
+    ViewSponsorPageController::class,
 )->name('sponsor');
 
 $router->get(
     '/open-source/updates/page/{page}',
-    ViewOpenSourceUpdatesController::class
+    ViewOpenSourceUpdatesController::class,
 )
     ->name('open-source.updates.paginated')
     ->whereNumber('page');
 
 $router->get(
     '/sitemap.xml',
-    ViewSitemapController::class
+    ViewSitemapController::class,
 );

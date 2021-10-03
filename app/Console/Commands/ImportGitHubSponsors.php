@@ -73,7 +73,7 @@ class ImportGitHubSponsors extends Command
                     'sponsor_node_id' => Arr::get($sponsorEdge, 'node.sponsorEntity.id'),
                     'sponsor_username' => Arr::get($sponsorEdge, 'node.sponsorEntity.login'),
                     'sponsor_display_name' => Arr::get($sponsorEdge, 'node.sponsorEntity.name'),
-                ]
+                ],
             );
 
             /** @var SponsorshipTier $sponsorshipTier */

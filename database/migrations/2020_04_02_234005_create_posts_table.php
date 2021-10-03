@@ -26,7 +26,7 @@ class CreatePostsTable extends Migration
                 $table->timestamp('published_at')->default(DB::raw('CURRENT_TIMESTAMP'));
                 $table->json('data')->nullable();
                 $table->timestamps();
-            }
+            },
         );
     }
 

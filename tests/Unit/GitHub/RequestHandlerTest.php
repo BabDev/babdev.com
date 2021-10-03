@@ -51,8 +51,8 @@ final class RequestHandlerTest extends TestCase
         $request = Request::createFromBase(
             SymfonyRequest::create(
                 '/webhooks/github/app',
-                'POST'
-            )
+                'POST',
+            ),
         );
         $request->headers->set('X-Github-Event', 'pull_request');
 
@@ -81,8 +81,8 @@ final class RequestHandlerTest extends TestCase
                     'installation' => [
                         'id' => '123',
                     ],
-                ]
-            )
+                ],
+            ),
         );
         $request->headers->set('X-Github-Event', 'pull_request');
 

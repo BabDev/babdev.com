@@ -22,7 +22,7 @@ final class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
                     $entry->isFailedJob() ||
                     $entry->isScheduledTask() ||
                     $entry->hasMonitoredTag();
-            }
+            },
         );
     }
 
@@ -39,7 +39,7 @@ final class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
                 'cookie',
                 'x-csrf-token',
                 'x-xsrf-token',
-            ]
+            ],
         );
     }
 }

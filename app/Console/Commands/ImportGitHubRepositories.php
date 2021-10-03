@@ -42,7 +42,7 @@ class ImportGitHubRepositories extends Command
                     }
 
                     return true;
-                }
+                },
             )
             ->each(
                 function (array $repositoryAttributes): void {
@@ -60,9 +60,9 @@ class ImportGitHubRepositories extends Command
                             'stars' => Arr::get($repositoryAttributes, 'stargazers_count'),
                             'language' => Arr::get($repositoryAttributes, 'language'),
                             'supported' => Arr::get($repositoryAttributes, 'archived') === false,
-                        ]
+                        ],
                     );
-                }
+                },
             );
 
         $this->info('All done!');

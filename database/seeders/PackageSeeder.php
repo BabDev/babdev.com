@@ -35,7 +35,7 @@ class PackageSeeder extends Seeder
                         '1.x' => '1.x',
                     ],
                     'package_type' => PackageType::LARAVEL_PACKAGE,
-                ]
+                ],
             );
     }
 
@@ -52,7 +52,7 @@ class PackageSeeder extends Seeder
                         '1.x' => '1.x',
                     ],
                     'package_type' => PackageType::LARAVEL_PACKAGE,
-                ]
+                ],
             );
     }
 
@@ -69,7 +69,7 @@ class PackageSeeder extends Seeder
                         '1.x' => '1.x',
                     ],
                     'package_type' => PackageType::LARAVEL_PACKAGE,
-                ]
+                ],
             );
     }
 
@@ -87,7 +87,7 @@ class PackageSeeder extends Seeder
                         '3.x' => '3.x',
                     ],
                     'package_type' => PackageType::PHP_PACKAGE,
-                ]
+                ],
             );
     }
 
@@ -105,7 +105,7 @@ class PackageSeeder extends Seeder
                         '3.x' => '3.x',
                     ],
                     'package_type' => PackageType::SYMFONY_BUNDLE,
-                ]
+                ],
             );
     }
 
@@ -119,7 +119,7 @@ class PackageSeeder extends Seeder
                     'logo' => 'podcast-manager.svg',
                     'package_type' => PackageType::JOOMLA_EXTENSION,
                     'is_packagist' => false,
-                ]
+                ],
             );
     }
 
@@ -132,7 +132,7 @@ class PackageSeeder extends Seeder
                 [
                     'packagist_name' => 'babdev/supplier-plugin',
                     'package_type' => PackageType::SYLIUS_PLUGIN,
-                ]
+                ],
             );
     }
 
@@ -145,7 +145,7 @@ class PackageSeeder extends Seeder
                 [
                     'packagist_name' => 'babdev/transifex',
                     'package_type' => PackageType::PHP_PACKAGE,
-                ]
+                ],
             );
     }
 
@@ -159,7 +159,7 @@ class PackageSeeder extends Seeder
                     'logo' => 'tweet-display-back.svg',
                     'package_type' => PackageType::JOOMLA_EXTENSION,
                     'is_packagist' => false,
-                ]
+                ],
             );
     }
 
@@ -173,7 +173,7 @@ class PackageSeeder extends Seeder
                     'logo' => 'yet-another-social-plugin.svg',
                     'package_type' => PackageType::JOOMLA_EXTENSION,
                     'is_packagist' => false,
-                ]
+                ],
             );
     }
 }

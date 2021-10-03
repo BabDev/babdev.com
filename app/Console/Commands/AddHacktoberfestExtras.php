@@ -38,7 +38,7 @@ class AddHacktoberfestExtras extends Command
                     }
 
                     return true;
-                }
+                },
             )
             ->each(
                 function (array $repositoryAttributes): void {
@@ -52,7 +52,7 @@ class AddHacktoberfestExtras extends Command
                         $this->github->replaceRepositoryTopics(
                             'BabDev',
                             $repositoryAttributes['name'],
-                            $topics->toArray()
+                            $topics->toArray(),
                         );
                     } else {
                         $this->comment("'hacktoberfest' topic already exists on `{$repositoryAttributes['name']}`... ");
@@ -74,15 +74,15 @@ class AddHacktoberfestExtras extends Command
                                 'BabDev',
                                 $repositoryAttributes['name'],
                                 $labelName,
-                                $labelColor
+                                $labelColor,
                             );
                         } else {
                             $this->comment(
-                                "'$labelName' label already exists on `{$repositoryAttributes['name']}`... "
+                                "'$labelName' label already exists on `{$repositoryAttributes['name']}`... ",
                             );
                         }
                     }
-                }
+                },
             );
 
         $this->info('All done!');

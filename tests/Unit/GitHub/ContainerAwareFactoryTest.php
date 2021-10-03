@@ -15,7 +15,7 @@ class ContainerAwareFactoryTest extends TestCase
 
         $this->assertInstanceOf(
             ClosePagerfantaReadOnlyRepoPullRequest::class,
-            $factory->make(ClosePagerfantaReadOnlyRepoPullRequest::class)
+            $factory->make(ClosePagerfantaReadOnlyRepoPullRequest::class),
         );
     }
 }

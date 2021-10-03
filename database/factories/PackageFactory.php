@@ -26,7 +26,7 @@ class PackageFactory extends Factory
                     PackageType::PHP_PACKAGE,
                     PackageType::SYLIUS_PLUGIN,
                     PackageType::SYMFONY_BUNDLE,
-                ]
+                ],
             ),
             'supported' => true,
             'visible' => true,
@@ -42,7 +42,7 @@ class PackageFactory extends Factory
                 'docs_branches' => [
                     '1.x' => '1.x',
                 ],
-            ]
+            ],
         );
     }
 
@@ -51,7 +51,7 @@ class PackageFactory extends Factory
         return $this->state(
             [
                 'visible' => false,
-            ]
+            ],
         );
     }
 
@@ -61,7 +61,7 @@ class PackageFactory extends Factory
             [
                 'is_packagist' => true,
                 'packagist_name' => str_replace(' ', '/', $this->faker->words(2, true)),
-            ]
+            ],
         );
     }
 }

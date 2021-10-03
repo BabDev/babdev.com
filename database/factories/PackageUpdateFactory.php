@@ -31,7 +31,7 @@ class PackageUpdateFactory extends Factory
         return $this->state(
             [
                 'published_at' => Carbon::now()->addYear(),
-            ]
+            ],
         );
     }
 }

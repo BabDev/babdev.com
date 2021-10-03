@@ -40,7 +40,7 @@ final class MatomoServiceProvider extends ServiceProvider implements DeferrableP
                     $config->get('services.matomo.token'),
                     $config->get('services.matomo.url'),
                 );
-            }
+            },
         );
     }
 }

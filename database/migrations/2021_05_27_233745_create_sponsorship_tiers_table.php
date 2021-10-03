@@ -21,7 +21,7 @@ class CreateSponsorshipTiersTable extends Migration
                 $table->boolean('one_time');
                 $table->unsignedInteger('price');
                 $table->timestamps();
-            }
+            },
         );
     }
 

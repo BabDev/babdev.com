@@ -24,7 +24,7 @@ class CreateSponsorsTable extends Migration
                 $table->string('sponsor_username');
                 $table->string('sponsor_display_name')->nullable();
                 $table->timestamps();
-            }
+            },
         );
     }
 

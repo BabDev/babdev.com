@@ -41,11 +41,11 @@ class ImportGitHubRepositoriesTest extends TestCase
                                 'language' => 'PHP',
                                 'archived' => true,
                             ],
-                        ]
-                    )
+                        ],
+                    ),
                 );
                 $mock->shouldReceive('fetchRepositoryTopics')->twice()->andReturn(collect());
-            })
+            }),
         );
 
         $this->artisan('import:github-repositories')

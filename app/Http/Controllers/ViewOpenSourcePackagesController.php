@@ -20,7 +20,7 @@ final class ViewOpenSourcePackagesController
             'open_source.packages.index',
             [
                 'packages' => $packages,
-            ]
+            ],
         );
     }
 }

@@ -17,7 +17,7 @@ final class ViewSponsorPageController
                 'sponsorship_tier',
                 static function (Builder $query): void {
                     $query->where('price', '>', 2500);
-                }
+                },
             )
             ->orderByRaw('CASE WHEN sponsor_display_name IS NULL THEN sponsor_username ELSE sponsor_display_name END ASC')
             ->get();
@@ -28,7 +28,7 @@ final class ViewSponsorPageController
                 'sponsorship_tier',
                 static function (Builder $query): void {
                     $query->whereBetween('price', [1000, 2499]);
-                }
+                },
             )
             ->orderByRaw('CASE WHEN sponsor_display_name IS NULL THEN sponsor_username ELSE sponsor_display_name END ASC')
             ->get();
@@ -38,7 +38,7 @@ final class ViewSponsorPageController
             [
                 'featured_sponsors' => $featuredSponsors,
                 'regular_sponsors' => $regularSponsors,
-            ]
+            ],
         );
     }
 }

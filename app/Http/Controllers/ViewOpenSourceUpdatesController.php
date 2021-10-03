@@ -34,7 +34,7 @@ final class ViewOpenSourceUpdatesController
             'open_source.updates.index',
             [
                 'updates' => $updates,
-            ]
+            ],
         );
     }
 }

@@ -59,7 +59,7 @@ class ImportGitHubSponsorshipTiers extends Command
                     'node_id' => Arr::get($tierEdge, 'node.id'),
                     'one_time' => Arr::get($tierEdge, 'node.isOneTime'),
                     'price' => Arr::get($tierEdge, 'node.monthlyPriceInCents'),
-                ]
+                ],
             );
         }
 

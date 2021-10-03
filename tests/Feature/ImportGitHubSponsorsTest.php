@@ -76,10 +76,10 @@ class ImportGitHubSponsorsTest extends TestCase
                                     ],
                                 ],
                             ],
-                        ]
+                        ],
                     );
-                }
-            )
+                },
+            ),
         );
 
         $this->artisan('import:github-sponsors')

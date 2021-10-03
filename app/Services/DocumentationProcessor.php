@@ -32,7 +32,7 @@ final class DocumentationProcessor implements DocumentationProcessorContract
     {
         return Str::after(
             (new Collection(explode(\PHP_EOL, $markdown)))->first(),
-            '# '
+            '# ',
         );
     }
 
@@ -51,23 +51,23 @@ final class DocumentationProcessor implements DocumentationProcessorContract
                         'BabDev',
                         $package->name,
                         sprintf('docs/%s.md', $pageSlug),
-                        $version
+                        $version,
                     );
                 } catch (RuntimeException $exception) {
                     throw new PageNotFoundException(
                         sprintf('The "%s" page does not exist for the %s package', $pageSlug, $package->display_name),
                         404,
-                        $exception
+                        $exception,
                     );
                 }
 
                 return match ($file['encoding']) {
                     'base64' => base64_decode($file['content']),
                     default => throw new UnsupportedEncodingException(
-                        sprintf('The "%s" encoding is not supported.', $file['encoding'])
+                        sprintf('The "%s" encoding is not supported.', $file['encoding']),
                     ),
                 };
-            }
+            },
         );
     }
 }

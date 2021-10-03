@@ -12,7 +12,7 @@
 */
 
 $app = new Illuminate\Foundation\Application(
-    realpath(__DIR__ . '/../')
+    realpath(__DIR__ . '/../'),
 );
 
 /*
@@ -28,17 +28,17 @@ $app = new Illuminate\Foundation\Application(
 
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
-    BabDev\Http\Kernel::class
+    BabDev\Http\Kernel::class,
 );
 
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
-    BabDev\Console\Kernel::class
+    BabDev\Console\Kernel::class,
 );
 
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
-    BabDev\Exceptions\Handler::class
+    BabDev\Exceptions\Handler::class,
 );
 
 /*

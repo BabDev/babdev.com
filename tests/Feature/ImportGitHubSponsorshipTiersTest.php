@@ -59,10 +59,10 @@ class ImportGitHubSponsorshipTiersTest extends TestCase
                                     ],
                                 ],
                             ],
-                        ]
+                        ],
                     );
-                }
-            )
+                },
+            ),
         );
 
         $this->artisan('import:github-sponsorship-tiers')

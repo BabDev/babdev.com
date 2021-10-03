@@ -23,7 +23,7 @@ class ApiConnector
             [
                 'name' => $label,
                 'color' => $color,
-            ]
+            ],
         );
     }
 

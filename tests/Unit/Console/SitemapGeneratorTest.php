@@ -22,7 +22,7 @@ class SitemapGeneratorTest extends TestCase
                 $mock->shouldReceive('shouldCrawl')->once()->andReturnSelf();
                 $mock->shouldReceive('hasCrawled')->once()->andReturnSelf();
                 $mock->shouldReceive('getSitemap')->once()->andReturn(Sitemap::create());
-            })
+            }),
         );
 
         $this->artisan('sitemap:generate')

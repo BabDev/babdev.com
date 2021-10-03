@@ -35,7 +35,7 @@ class ApiConnector
                 'date' => sprintf('%s,%s', Carbon::now()->subDays($range)->toDateString(), Carbon::now()->toDateString()),
                 'filter_limit' => 10,
                 'format' => 'json',
-            ]
+            ],
         );
     }
 
@@ -71,8 +71,8 @@ class ApiConnector
                 $query,
                 [
                     'token_auth' => $this->matomoToken,
-                ]
-            )
+                ],
+            ),
         );
         $response->throw();
 

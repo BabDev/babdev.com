@@ -32,7 +32,7 @@ class PackageUpdateSeeder extends Seeder
 </ul>
 <p>Please see the <a href="https://github.com/BabDev/PagerfantaBundle/blob/v2.2.0/CHANGELOG.md" rel="nofollow noopener">CHANGELOG</a> for all changes in this bundle.</p>',
                 'published_at' => Carbon::create(2020, 4, 18, 15, 0, 0, $this->utc),
-            ]
+            ],
         );
         $pagerfanta22Update->package()->associate($pagerfantaBundle);
         $pagerfanta22Update->save();
@@ -48,7 +48,7 @@ class PackageUpdateSeeder extends Seeder
 <p>The Laravel Breadcrumbs package is a continuation of the <a href="https://github.com/davejamesmiller/laravel-breadcrumbs" rel="nofollow noopener"><code>davejamesmiller/laravel-breadcrumbs</code></a> package which is no longer being maintained by the package author, and is used on this site to render the breadcrumb bar on each page.</p>
 <p>Though this is a continuation, there are also a number of breaking changes required to migrate to the new package, these are covered in the <a href="https://github.com/BabDev/laravel-breadcrumbs/blob/1.0.0/UPGRADE.md" rel="nofollow noopener">upgrade guide</a> for the 1.0 release.</p>',
                 'published_at' => Carbon::create(2020, 4, 28, 15, 0, 0, $this->utc),
-            ]
+            ],
         );
         $breadcrumbsReleaseUpdate->package()->associate($breadcrumbsPackage);
         $breadcrumbsReleaseUpdate->save();

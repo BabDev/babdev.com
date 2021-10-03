@@ -14,14 +14,14 @@ final class ViewOpenSourceUpdateController
         $update->load(
             [
                 'package',
-            ]
+            ],
         );
 
         return view(
             'open_source.updates.show',
             [
                 'update' => $update,
-            ]
+            ],
         );
     }
 }

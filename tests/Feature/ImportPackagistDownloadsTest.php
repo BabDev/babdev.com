@@ -27,9 +27,9 @@ class ImportPackagistDownloadsTest extends TestCase
                                 'total' => random_int(0, 999999),
                             ],
                         ],
-                    ]
+                    ],
                 );
-            })
+            }),
         );
 
         $this->artisan('import:packagist-downloads')

@@ -42,7 +42,7 @@ final class ViewOpenSourcePackageDocsPageController
                 'title' => $documentationProcessor->extractTitle($contents),
                 'version' => $version,
                 'slug' => $slug,
-            ]
+            ],
         );
     }
 }

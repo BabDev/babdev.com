@@ -82,8 +82,16 @@ return (new PhpCsFixer\Config())
             'protected_to_private'                        => true,
             'set_type_to_cast'                            => true,
             'simplified_null_return'                      => true,
+            'trailing_comma_in_multiline'                 => [
+                'after_heredoc' => true,
+                'elements'      => [
+                    'arguments',
+                    'arrays',
+                    'parameters',
+                ],
+            ],
             'yoda_style'                                  => false,
-        ]
+        ],
     )
     ->setRiskyAllowed(true)
     ->setFinder($finder);

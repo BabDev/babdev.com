@@ -19,7 +19,7 @@ final class ViewSitemapController
             $disk->path('sitemap.xml'),
             [
                 'Content-Type' => 'text/xml',
-            ]
+            ],
         );
     }
 }

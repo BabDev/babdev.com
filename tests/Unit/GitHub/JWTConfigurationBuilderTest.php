@@ -18,7 +18,7 @@ final class JWTConfigurationBuilderTest extends TestCase
 
         $this->assertInstanceOf(
             Configuration::class,
-            (new JWTConfigurationBuilder())->build($repoConfig)
+            (new JWTConfigurationBuilder())->build($repoConfig),
         );
     }
 }

@@ -18,7 +18,7 @@ final class ClosePagerfantaReadOnlyRepoPullRequestTest extends TestCase
     public function the_action_only_processes_opened_pull_requests(): void
     {
         $request = Request::createFromBase(
-            SymfonyRequest::create('/webhooks/github/app', 'POST', ['action' => 'closed'])
+            SymfonyRequest::create('/webhooks/github/app', 'POST', ['action' => 'closed']),
         );
 
         /** @var MockObject&Client $github */
@@ -46,8 +46,8 @@ final class ClosePagerfantaReadOnlyRepoPullRequestTest extends TestCase
                         ],
                         'name' => 'core',
                     ],
-                ]
-            )
+                ],
+            ),
         );
 
         /** @var MockObject&Comments $comments */
@@ -58,7 +58,7 @@ final class ClosePagerfantaReadOnlyRepoPullRequestTest extends TestCase
                 'Pagerfanta',
                 'core',
                 '1',
-                $this->isType('array')
+                $this->isType('array'),
             );
 
         /** @var MockObject&Issue $issue */
@@ -77,7 +77,7 @@ final class ClosePagerfantaReadOnlyRepoPullRequestTest extends TestCase
                 '1',
                 [
                     'state' => 'closed',
-                ]
+                ],
             );
 
         /** @var MockObject&Client $github */
@@ -90,7 +90,7 @@ final class ClosePagerfantaReadOnlyRepoPullRequestTest extends TestCase
             )
             ->willReturnOnConsecutiveCalls(
                 $issue,
-                $pullRequest
+                $pullRequest,
             );
 
         $action = new ClosePagerfantaReadOnlyRepoPullRequest();

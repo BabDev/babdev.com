@@ -26,7 +26,7 @@ final class ClosePagerfantaReadOnlyRepoPullRequest implements Action
 
                     In order for your pull request to be accepted, you will need to submit it to https://github.com/BabDev/Pagerfanta for review.
                     MD,
-            ]
+            ],
         );
 
         $github->pullRequest()->update(
@@ -35,7 +35,7 @@ final class ClosePagerfantaReadOnlyRepoPullRequest implements Action
             $request->input('number'),
             [
                 'state' => 'closed',
-            ]
+            ],
         );
     }
 }

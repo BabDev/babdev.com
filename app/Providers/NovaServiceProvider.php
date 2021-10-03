@@ -25,7 +25,7 @@ final class NovaServiceProvider extends NovaApplicationServiceProvider
                     StartSession::class,
                     ShareErrorsFromSession::class,
                     VerifyCsrfToken::class,
-                ]
+                ],
             );
     }
 

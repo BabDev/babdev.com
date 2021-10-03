@@ -37,9 +37,9 @@ class ImportPackagistDownloads extends Command
                 $package->update(
                     [
                         'downloads' => Arr::get($packagistInfo, 'package.downloads.total'),
-                    ]
+                    ],
                 );
-            }
+            },
         );
 
         $this->info('All done!');

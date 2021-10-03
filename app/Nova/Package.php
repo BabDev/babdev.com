@@ -83,7 +83,7 @@ class Package extends Resource
                         PackageType::PHP_PACKAGE => trans('package_type.' . PackageType::PHP_PACKAGE),
                         PackageType::SYLIUS_PLUGIN => trans('package_type.' . PackageType::SYLIUS_PLUGIN),
                         PackageType::SYMFONY_BUNDLE => trans('package_type.' . PackageType::SYMFONY_BUNDLE),
-                    ]
+                    ],
                 )
                 ->displayUsingLabels(),
 

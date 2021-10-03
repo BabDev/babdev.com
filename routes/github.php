@@ -6,5 +6,5 @@ use Illuminate\Routing\Router;
 /** @var Router $router */
 $router->post(
     '/webhooks/github/app',
-    HandleGitHubAppWebhookController::class
+    HandleGitHubAppWebhookController::class,
 );

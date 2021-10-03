@@ -35,7 +35,7 @@ class CreatePackagesTable extends Migration
                 $table->boolean('visible')->default(true);
                 $table->boolean('is_packagist')->default(true);
                 $table->timestamps();
-            }
+            },
         );
     }
 

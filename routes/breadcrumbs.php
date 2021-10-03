@@ -10,7 +10,7 @@ $breadcrumbs->for(
     'homepage',
     static function (BreadcrumbsGenerator $trail): void {
         $trail->push('Home', route('homepage'));
-    }
+    },
 );
 
 $breadcrumbs->for(
@@ -18,7 +18,7 @@ $breadcrumbs->for(
     static function (BreadcrumbsGenerator $trail): void {
         $trail->parent('homepage');
         $trail->push('Privacy', route('privacy'));
-    }
+    },
 );
 
 $breadcrumbs->for(
@@ -26,7 +26,7 @@ $breadcrumbs->for(
     static function (BreadcrumbsGenerator $trail): void {
         $trail->parent('homepage');
         $trail->push('Sponsor', route('sponsor'));
-    }
+    },
 );
 
 $breadcrumbs->for(
@@ -35,7 +35,7 @@ $breadcrumbs->for(
         $trail->parent('homepage');
         $trail->push('Open Source');
         $trail->push('Packages', route('open-source.packages'));
-    }
+    },
 );
 
 $breadcrumbs->for(
@@ -48,7 +48,7 @@ $breadcrumbs->for(
         if ($title !== null) {
             $trail->push($title);
         }
-    }
+    },
 );
 
 $breadcrumbs->for(
@@ -56,7 +56,7 @@ $breadcrumbs->for(
     static function (BreadcrumbsGenerator $trail, PackageUpdate $packageUpdate): void {
         $trail->parent('open-source.updates');
         $trail->push($packageUpdate->title, route('open-source.update', ['update' => $packageUpdate]));
-    }
+    },
 );
 
 $breadcrumbs->for(
@@ -65,5 +65,5 @@ $breadcrumbs->for(
         $trail->parent('homepage');
         $trail->push('Open Source');
         $trail->push('Updates', route('open-source.updates'));
-    }
+    },
 );

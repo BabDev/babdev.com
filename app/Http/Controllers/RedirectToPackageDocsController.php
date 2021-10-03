@@ -28,7 +28,7 @@ final class RedirectToPackageDocsController
                 'package' => $package,
                 'version' => $version,
                 'slug' => $slug,
-            ]
+            ],
         );
     }
 }

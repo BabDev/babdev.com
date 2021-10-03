@@ -36,7 +36,7 @@ class GitHubWebhookTest extends TestCase
                     'secret' => 'my-secret-value',
                     'events' => [],
                 ],
-            ]
+            ],
         );
 
         $this->json('POST', '/webhooks/github/app', ['repository' => ['full_name' => 'BabDev/test-repo']])
@@ -60,7 +60,7 @@ class GitHubWebhookTest extends TestCase
                     'secret' => 'my-secret-value',
                     'events' => [],
                 ],
-            ]
+            ],
         );
 
         $requestData = ['repository' => ['full_name' => 'BabDev/test-repo']];
@@ -78,7 +78,7 @@ class GitHubWebhookTest extends TestCase
             RequestHandler::class,
             \Mockery::mock(RequestHandler::class, function (MockInterface $mock): void {
                 $mock->shouldReceive('handleRequest')->once();
-            })
+            }),
         );
 
         $secret = 'my-secret-value';
@@ -95,7 +95,7 @@ class GitHubWebhookTest extends TestCase
                     'secret' => 'my-secret-value',
                     'events' => [],
                 ],
-            ]
+            ],
         );
 
         $requestData = ['repository' => ['full_name' => 'BabDev/test-repo']];
