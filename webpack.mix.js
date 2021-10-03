@@ -25,7 +25,7 @@ mix.js('resources/js/app.js', 'public/js')
                     modules: 'auto',
                     forceAllTransforms: false,
                     useBuiltIns: 'usage',
-                    corejs: '3.17',
+                    corejs: '3.18',
                 }
             ]
         ],
@@ -59,6 +59,6 @@ mix.generateIntegrityHash({
 
 mix.copy('resources/images', 'public/images', false);
 
-if (Mix.inProduction()) {
+if (mix.inProduction()) {
     mix.version();
 }
