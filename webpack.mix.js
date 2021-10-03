@@ -45,8 +45,22 @@ mix.sass('resources/sass/app.scss', 'public/css')
             content: [path.join(__dirname, 'vendor/babdev/laravel-breadcrumbs/**/*.php')],
             // Allow highlight styles and styles used only in docs
             safelist: {
-                standard: [/^.hljs/, /^.hljs-/, /^hljs/, /^hljs-/, /^table-/, /^docs-note/],
-                deep: [/^.hljs/, /^.hljs-/, /^hljs/, /^hljs-/, /^table/, /^docs-note/],
+                standard: [
+                    // highlight.js
+                    /^.hljs/, /^.hljs-/, /^hljs/, /^hljs-/,
+                    // Bootstrap Tables
+                    /^.table/, /^.table-/, /^table/, /^tr/, /^td/, /^th/, /^thead/, /^tbody/, /^tfoot/,
+                    // App styles
+                    /^docs-note/,
+                ],
+                deep: [
+                    // highlight.js
+                    /^.hljs/, /^.hljs-/, /^hljs/, /^hljs-/,
+                    // Bootstrap Tables
+                    /^.table/, /^.table-/, /^table/, /^tr/, /^td/, /^th/, /^thead/, /^tbody/, /^tfoot/,
+                    // App styles
+                    /^docs-note/,
+                ],
             },
         },
     })
