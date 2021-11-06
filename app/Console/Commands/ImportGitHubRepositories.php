@@ -36,8 +36,8 @@ class ImportGitHubRepositories extends Command
                         return false;
                     }
 
-                    // Ignore this website
-                    if ($name === 'babdev.com') {
+                    // Ignore selected org repositories
+                    if (\in_array($name, ['babdev.com', 'PhpSpecSkipExampleExtension'], true)) {
                         return false;
                     }
 
