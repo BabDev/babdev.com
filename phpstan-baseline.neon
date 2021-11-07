@@ -1,9 +1,34 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Parameter \\#1 \\$string of function ucwords expects string, array\\|string given\\.$#"
+			message: "#^Parameter \\#3 \\$topics of method BabDev\\\\GitHub\\\\ApiConnector\\:\\:replaceRepositoryTopics\\(\\) expects array\\<string\\>, array given\\.$#"
 			count: 1
-			path: app/Console/Commands/ImportGitHubRepositories.php
+			path: app/Console/Commands/AddHacktoberfestExtras.php
+
+		-
+			message: "#^Parameter \\#1 \\$urlToBeCrawled of static method Spatie\\\\Sitemap\\\\SitemapGenerator\\:\\:create\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: app/Console/Commands/GenerateSitemap.php
+
+		-
+			message: "#^Argument of an invalid type mixed supplied for foreach, only iterables are supported\\.$#"
+			count: 1
+			path: app/Console/Commands/ImportGitHubSponsors.php
+
+		-
+			message: "#^PHPDoc tag @var for variable \\$sponsorEdge has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/Console/Commands/ImportGitHubSponsors.php
+
+		-
+			message: "#^Argument of an invalid type mixed supplied for foreach, only iterables are supported\\.$#"
+			count: 1
+			path: app/Console/Commands/ImportGitHubSponsorshipTiers.php
+
+		-
+			message: "#^PHPDoc tag @var for variable \\$tierEdge has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/Console/Commands/ImportGitHubSponsorshipTiers.php
 
 		-
 			message: "#^Parameter \\#1 \\$array of static method Illuminate\\\\Support\\\\Arr\\:\\:get\\(\\) expects array\\|ArrayAccess, array\\|null given\\.$#"
@@ -14,6 +39,11 @@ parameters:
 			message: "#^Parameter \\#2 \\$string of function explode expects string, string\\|null given\\.$#"
 			count: 1
 			path: app/Console/Commands/ImportPackagistDownloads.php
+
+		-
+			message: "#^Parameter \\#3 \\$topics of method BabDev\\\\GitHub\\\\ApiConnector\\:\\:replaceRepositoryTopics\\(\\) expects array\\<string\\>, array given\\.$#"
+			count: 1
+			path: app/Console/Commands/RemoveHacktoberfestExtras.php
 
 		-
 			message: "#^Method BabDev\\\\Contracts\\\\GitHub\\\\Actions\\\\Action\\:\\:__invoke\\(\\) has parameter \\$repoConfig with no value type specified in iterable type array\\.$#"
@@ -36,6 +66,26 @@ parameters:
 			path: app/GitHub/Actions/ClosePagerfantaReadOnlyRepoPullRequest.php
 
 		-
+			message: "#^Parameter \\#1 \\$username of method Github\\\\Api\\\\Issue\\\\Comments\\:\\:create\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: app/GitHub/Actions/ClosePagerfantaReadOnlyRepoPullRequest.php
+
+		-
+			message: "#^Parameter \\#2 \\$repository of method Github\\\\Api\\\\Issue\\\\Comments\\:\\:create\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: app/GitHub/Actions/ClosePagerfantaReadOnlyRepoPullRequest.php
+
+		-
+			message: "#^Parameter \\#3 \\$issue of method Github\\\\Api\\\\Issue\\\\Comments\\:\\:create\\(\\) expects int, mixed given\\.$#"
+			count: 1
+			path: app/GitHub/Actions/ClosePagerfantaReadOnlyRepoPullRequest.php
+
+		-
+			message: "#^Method BabDev\\\\GitHub\\\\Actions\\\\ContainerAwareFactory\\:\\:make\\(\\) should return BabDev\\\\Contracts\\\\GitHub\\\\Actions\\\\Action but returns mixed\\.$#"
+			count: 1
+			path: app/GitHub/Actions/ContainerAwareFactory.php
+
+		-
 			message: "#^Method BabDev\\\\GitHub\\\\ApiConnector\\:\\:executeGraphqlQuery\\(\\) has parameter \\$variables with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: app/GitHub/ApiConnector.php
@@ -54,6 +104,11 @@ parameters:
 			message: "#^Method BabDev\\\\GitHub\\\\ApiConnector\\:\\:fetchFileContents\\(\\) should return array but returns array\\|string\\.$#"
 			count: 1
 			path: app/GitHub/ApiConnector.php
+
+		-
+			message: "#^Parameter \\#1 \\$httpClientBuilder of class Github\\\\Client constructor expects Github\\\\HttpClient\\\\Builder\\|null, mixed given\\.$#"
+			count: 1
+			path: app/GitHub/ContainerAwareClientFactory.php
 
 		-
 			message: "#^Method BabDev\\\\GitHub\\\\JWTConfigurationBuilder\\:\\:build\\(\\) has parameter \\$repoConfig with no value type specified in iterable type array\\.$#"
@@ -76,7 +131,37 @@ parameters:
 			path: app/GitHub/RequestHandler.php
 
 		-
+			message: "#^Parameter \\#1 \\$installationId of method Github\\\\Api\\\\Apps\\:\\:createInstallationToken\\(\\) expects int, mixed given\\.$#"
+			count: 1
+			path: app/GitHub/RequestHandler.php
+
+		-
+			message: "#^Cannot access offset 'secret' on mixed\\.$#"
+			count: 2
+			path: app/Http/Controllers/HandleGitHubAppWebhookController.php
+
+		-
+			message: "#^Parameter \\#1 \\$array of function array_keys expects array, mixed given\\.$#"
+			count: 1
+			path: app/Http/Controllers/HandleGitHubAppWebhookController.php
+
+		-
 			message: "#^Parameter \\#1 \\$hash of method BabDev\\\\Http\\\\Controllers\\\\HandleGitHubAppWebhookController\\:\\:hasValidSignature\\(\\) expects string, array\\|string\\|null given\\.$#"
+			count: 1
+			path: app/Http/Controllers/HandleGitHubAppWebhookController.php
+
+		-
+			message: "#^Parameter \\#1 \\$repoConfig of method BabDev\\\\GitHub\\\\RequestHandler\\:\\:handleRequest\\(\\) expects array, mixed given\\.$#"
+			count: 1
+			path: app/Http/Controllers/HandleGitHubAppWebhookController.php
+
+		-
+			message: "#^Parameter \\#2 \\$key of method BabDev\\\\Http\\\\Controllers\\\\HandleGitHubAppWebhookController\\:\\:hasValidSignature\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: app/Http/Controllers/HandleGitHubAppWebhookController.php
+
+		-
+			message: "#^Parameter \\#2 \\$value of static method Illuminate\\\\Support\\\\Str\\:\\:is\\(\\) expects string, mixed given\\.$#"
 			count: 1
 			path: app/Http/Controllers/HandleGitHubAppWebhookController.php
 
@@ -101,6 +186,11 @@ parameters:
 			path: app/Matomo/ApiConnector.php
 
 		-
+			message: "#^Method BabDev\\\\Matomo\\\\ApiConnector\\:\\:request\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: app/Matomo/ApiConnector.php
+
+		-
 			message: "#^Method BabDev\\\\Matomo\\\\ApiConnector\\:\\:visitsSummary\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: app/Matomo/ApiConnector.php
@@ -116,9 +206,159 @@ parameters:
 			path: app/Models/PackageUpdate.php
 
 		-
-			message: "#^Cannot call method parameter\\(\\) on mixed\\.$#"
+			message: "#^Cannot cast mixed to int\\.$#"
+			count: 2
+			path: app/Nova/Metrics/BounceRate.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of method Carbon\\\\Carbon\\:\\:addMinutes\\(\\) expects int, mixed given\\.$#"
 			count: 1
+			path: app/Nova/Metrics/BounceRate.php
+
+		-
+			message: "#^Cannot cast mixed to int\\.$#"
+			count: 2
+			path: app/Nova/Metrics/LengthOfVisit.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of method Carbon\\\\Carbon\\:\\:addMinutes\\(\\) expects int, mixed given\\.$#"
+			count: 1
+			path: app/Nova/Metrics/LengthOfVisit.php
+
+		-
+			message: "#^Cannot cast mixed to int\\.$#"
+			count: 1
+			path: app/Nova/Metrics/UniqueVisitorsPerDay.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of method Carbon\\\\Carbon\\:\\:addMinutes\\(\\) expects int, mixed given\\.$#"
+			count: 1
+			path: app/Nova/Metrics/UniqueVisitorsPerDay.php
+
+		-
+			message: "#^Cannot cast mixed to int\\.$#"
+			count: 1
+			path: app/Nova/Metrics/VisitsPerDay.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of method Carbon\\\\Carbon\\:\\:addMinutes\\(\\) expects int, mixed given\\.$#"
+			count: 1
+			path: app/Nova/Metrics/VisitsPerDay.php
+
+		-
+			message: "#^Method BabDev\\\\Pagination\\\\RoutableLengthAwarePaginator\\:\\:resolveCurrentRoute\\(\\) should return Illuminate\\\\Routing\\\\Route\\|null but returns mixed\\.$#"
+			count: 1
+			path: app/Pagination/RoutableLengthAwarePaginator.php
+
+		-
+			message: "#^Cannot access offset 'request' on Illuminate\\\\Contracts\\\\Foundation\\\\Application\\.$#"
+			count: 3
 			path: app/Providers/AppServiceProvider.php
+
+		-
+			message: "#^Parameter \\#1 \\$github of class BabDev\\\\Services\\\\DocumentationProcessor constructor expects BabDev\\\\GitHub\\\\ApiConnector, mixed given\\.$#"
+			count: 1
+			path: app/Providers/DocumentationServiceProvider.php
+
+		-
+			message: "#^Parameter \\#2 \\$cache of class BabDev\\\\Services\\\\DocumentationProcessor constructor expects Illuminate\\\\Contracts\\\\Cache\\\\Repository, mixed given\\.$#"
+			count: 1
+			path: app/Providers/DocumentationServiceProvider.php
+
+		-
+			message: "#^Parameter \\#1 \\$actionFactory of class BabDev\\\\GitHub\\\\RequestHandler constructor expects BabDev\\\\Contracts\\\\GitHub\\\\Actions\\\\Factory, mixed given\\.$#"
+			count: 1
+			path: app/Providers/GitHubServiceProvider.php
+
+		-
+			message: "#^Parameter \\#1 \\$client of class BabDev\\\\GitHub\\\\ApiConnector constructor expects Github\\\\Client, mixed given\\.$#"
+			count: 1
+			path: app/Providers/GitHubServiceProvider.php
+
+		-
+			message: "#^Parameter \\#1 \\$configurationBuilder of class BabDev\\\\GitHub\\\\JWTTokenGenerator constructor expects BabDev\\\\Contracts\\\\GitHub\\\\JWTConfigurationBuilder, mixed given\\.$#"
+			count: 1
+			path: app/Providers/GitHubServiceProvider.php
+
+		-
+			message: "#^Parameter \\#1 \\$httpClient of class Github\\\\HttpClient\\\\Builder constructor expects Psr\\\\Http\\\\Client\\\\ClientInterface\\|null, mixed given\\.$#"
+			count: 1
+			path: app/Providers/GitHubServiceProvider.php
+
+		-
+			message: "#^Parameter \\#1 \\$httpClientBuilder of method BabDev\\\\Contracts\\\\GitHub\\\\ClientFactory\\:\\:make\\(\\) expects Github\\\\HttpClient\\\\Builder\\|null, mixed given\\.$#"
+			count: 1
+			path: app/Providers/GitHubServiceProvider.php
+
+		-
+			message: "#^Parameter \\#1 \\$tokenOrLogin of method Github\\\\Client\\:\\:authenticate\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: app/Providers/GitHubServiceProvider.php
+
+		-
+			message: "#^Parameter \\#2 \\$clientFactory of class BabDev\\\\GitHub\\\\RequestHandler constructor expects BabDev\\\\Contracts\\\\GitHub\\\\ClientFactory, mixed given\\.$#"
+			count: 1
+			path: app/Providers/GitHubServiceProvider.php
+
+		-
+			message: "#^Parameter \\#2 \\$code of class Illuminate\\\\Contracts\\\\Container\\\\BindingResolutionException constructor expects int, mixed given\\.$#"
+			count: 1
+			path: app/Providers/GitHubServiceProvider.php
+
+		-
+			message: "#^Parameter \\#2 \\$requestFactory of class Github\\\\HttpClient\\\\Builder constructor expects Psr\\\\Http\\\\Message\\\\RequestFactoryInterface\\|null, mixed given\\.$#"
+			count: 1
+			path: app/Providers/GitHubServiceProvider.php
+
+		-
+			message: "#^Parameter \\#3 \\$streamFactory of class Github\\\\HttpClient\\\\Builder constructor expects Psr\\\\Http\\\\Message\\\\StreamFactoryInterface\\|null, mixed given\\.$#"
+			count: 1
+			path: app/Providers/GitHubServiceProvider.php
+
+		-
+			message: "#^Parameter \\#3 \\$tokenGenerator of class BabDev\\\\GitHub\\\\RequestHandler constructor expects BabDev\\\\Contracts\\\\GitHub\\\\JWTTokenGenerator, mixed given\\.$#"
+			count: 1
+			path: app/Providers/GitHubServiceProvider.php
+
+		-
+			message: "#^Parameter \\#1 \\$httpFactory of class BabDev\\\\Matomo\\\\ApiConnector constructor expects Illuminate\\\\Http\\\\Client\\\\Factory, mixed given\\.$#"
+			count: 1
+			path: app/Providers/MatomoServiceProvider.php
+
+		-
+			message: "#^Parameter \\#2 \\$matomoPageId of class BabDev\\\\Matomo\\\\ApiConnector constructor expects string, mixed given\\.$#"
+			count: 1
+			path: app/Providers/MatomoServiceProvider.php
+
+		-
+			message: "#^Parameter \\#3 \\$matomoToken of class BabDev\\\\Matomo\\\\ApiConnector constructor expects string, mixed given\\.$#"
+			count: 1
+			path: app/Providers/MatomoServiceProvider.php
+
+		-
+			message: "#^Parameter \\#4 \\$matomoUrl of class BabDev\\\\Matomo\\\\ApiConnector constructor expects string, mixed given\\.$#"
+			count: 1
+			path: app/Providers/MatomoServiceProvider.php
+
+		-
+			message: "#^Parameter \\#1 \\$client of class Spatie\\\\Packagist\\\\PackagistClient constructor expects GuzzleHttp\\\\Client, mixed given\\.$#"
+			count: 1
+			path: app/Providers/PackagistServiceProvider.php
+
+		-
+			message: "#^Parameter \\#2 \\$url of class Spatie\\\\Packagist\\\\PackagistClient constructor expects Spatie\\\\Packagist\\\\PackagistUrlGenerator, mixed given\\.$#"
+			count: 1
+			path: app/Providers/PackagistServiceProvider.php
+
+		-
+			message: "#^Cannot access offset 'config' on Illuminate\\\\Contracts\\\\Foundation\\\\Application\\.$#"
+			count: 2
+			path: app/Providers/RouteServiceProvider.php
+
+		-
+			message: "#^Method BabDev\\\\Services\\\\DocumentationProcessor\\:\\:fetchPageContents\\(\\) should return string but returns mixed\\.$#"
+			count: 1
+			path: app/Services/DocumentationProcessor.php
 
 		-
 			message: "#^Parameter \\#1 \\$html of class Illuminate\\\\Support\\\\HtmlString constructor expects string, string\\|false given\\.$#"
@@ -154,6 +394,16 @@ parameters:
 			message: "#^Cannot call method assertExitCode\\(\\) on Illuminate\\\\Testing\\\\PendingCommand\\|int\\.$#"
 			count: 1
 			path: tests/Unit/Console/SitemapGeneratorTest.php
+
+		-
+			message: "#^Cannot call method make\\(\\) on mixed\\.$#"
+			count: 1
+			path: tests/Unit/GitHub/ContainerAwareClientFactoryTest.php
+
+		-
+			message: "#^Cannot call method make\\(\\) on mixed\\.$#"
+			count: 1
+			path: tests/Unit/GitHub/ContainerAwareFactoryTest.php
 
 		-
 			message: "#^Parameter \\#2 \\$contents of method Illuminate\\\\Contracts\\\\Filesystem\\\\Filesystem\\:\\:put\\(\\) expects resource\\|string, string\\|false given\\.$#"

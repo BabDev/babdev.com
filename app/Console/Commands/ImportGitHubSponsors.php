@@ -61,6 +61,7 @@ class ImportGitHubSponsors extends Command
 
         $activeSponsorIds = [];
 
+        /** @var array $sponsorEdge */
         foreach (Arr::get($response, 'data.viewer.sponsorshipsAsMaintainer.edges', []) as $sponsorEdge) {
             $activeSponsorIds[] = Arr::get($sponsorEdge, 'node.id');
 

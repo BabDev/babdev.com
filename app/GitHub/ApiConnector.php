@@ -37,17 +37,26 @@ class ApiConnector
         return $this->client->repositories()->contents()->show($username, $repository, $path, $reference);
     }
 
+    /**
+     * @return Collection<array>
+     */
     public function fetchPublicRepositories(string $username): Collection
     {
         return (new Collection((new ResultPager($this->client))->fetchAll($this->client->api('organization'), 'repositories', [$username])))
             ->filter(static fn (array $repo): bool => !$repo['private']);
     }
 
+    /**
+     * @return Collection<string>
+     */
     public function fetchRepositoryLabels(string $username, string $repository): Collection
     {
         return new Collection($this->client->repository()->labels()->all($username, $repository));
     }
 
+    /**
+     * @return Collection<string>
+     */
     public function fetchRepositoryTopics(string $username, string $repository): Collection
     {
         return new Collection($this->client->repository()->topics($username, $repository)['names'] ?? []);

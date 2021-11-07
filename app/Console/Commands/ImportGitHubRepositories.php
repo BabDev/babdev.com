@@ -46,6 +46,7 @@ class ImportGitHubRepositories extends Command
             )
             ->each(
                 function (array $repositoryAttributes): void {
+                    /** @phpstan-var string $name */
                     $name = Arr::get($repositoryAttributes, 'name');
 
                     $this->comment("Importing `{$name}`... ");

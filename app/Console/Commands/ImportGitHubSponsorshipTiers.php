@@ -52,6 +52,7 @@ class ImportGitHubSponsorshipTiers extends Command
 
         $response = $this->github->executeGraphqlQuery($query);
 
+        /** @var array $tierEdge */
         foreach (Arr::get($response, 'data.viewer.sponsorsListing.tiers.edges', []) as $tierEdge) {
             SponsorshipTier::query()->updateOrCreate(
                 ['node_id' => Arr::get($tierEdge, 'node.id')],
