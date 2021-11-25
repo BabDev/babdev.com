@@ -4,8 +4,19 @@ on: [push, pull_request]
 
 jobs:
   test:
-    name: Test Application
     runs-on: ubuntu-latest
+    continue-on-error: ${{ matrix.can-fail }}
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - php: 8.0
+            can-fail: false
+          - php: 8.1
+            can-fail: true
+
+    name: "Test Application - PHP ${{ matrix.php }}"
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
@@ -13,9 +24,9 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.0
+          php-version: ${{ matrix.php }}
           tools: composer:v2
-          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite
+          extensions: curl, dom, libxml, mbstring, pcntl, pdo, sqlite, pdo_sqlite, zip
           coverage: none
 
       - name: Setup NodeJS
@@ -33,9 +44,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          key: ${{ runner.os }}-php-${{ matrix.php }}-composer-${{ hashFiles('**/composer.lock') }}
           restore-keys: |
-            ${{ runner.os }}-composer-
+            ${{ runner.os }}-php-${{ matrix.php }}-composer-
 
       - name: Setup .env
         run: cp .env.example .env
