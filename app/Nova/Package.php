@@ -78,14 +78,14 @@ class Package extends Resource
             Select::make('Package Type')
                 ->options(
                     [
-                        PackageType::JOOMLA_EXTENSION => trans('package_type.' . PackageType::JOOMLA_EXTENSION),
-                        PackageType::LARAVEL_PACKAGE => trans('package_type.' . PackageType::LARAVEL_PACKAGE),
-                        PackageType::PHP_PACKAGE => trans('package_type.' . PackageType::PHP_PACKAGE),
-                        PackageType::SYLIUS_PLUGIN => trans('package_type.' . PackageType::SYLIUS_PLUGIN),
-                        PackageType::SYMFONY_BUNDLE => trans('package_type.' . PackageType::SYMFONY_BUNDLE),
+                        PackageType::JOOMLA_EXTENSION->value => trans('package_type.' . PackageType::JOOMLA_EXTENSION->value),
+                        PackageType::LARAVEL_PACKAGE->value => trans('package_type.' . PackageType::LARAVEL_PACKAGE->value),
+                        PackageType::PHP_PACKAGE->value => trans('package_type.' . PackageType::PHP_PACKAGE->value),
+                        PackageType::SYLIUS_PLUGIN->value => trans('package_type.' . PackageType::SYLIUS_PLUGIN->value),
+                        PackageType::SYMFONY_BUNDLE->value => trans('package_type.' . PackageType::SYMFONY_BUNDLE->value),
                     ],
                 )
-                ->displayUsingLabels(),
+                ->displayUsing(static fn (PackageType $packageType): string => trans('package_type.' . $packageType->value)),
 
             Boolean::make('Supported'),
 
