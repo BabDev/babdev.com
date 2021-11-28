@@ -246,9 +246,34 @@ parameters:
 			path: app/Nova/Metrics/VisitsPerDay.php
 
 		-
-			message: "#^Method BabDev\\\\Pagination\\\\RoutableLengthAwarePaginator\\:\\:resolveCurrentRoute\\(\\) should return Illuminate\\\\Routing\\\\Route\\|null but returns mixed\\.$#"
+			message: "#^Access to an undefined property BabDev\\\\PackageType\\:\\:\\$value\\.$#"
 			count: 1
-			path: app/Pagination/RoutableLengthAwarePaginator.php
+			path: app/Nova/Package.php
+
+		-
+			message: "#^Access to undefined constant BabDev\\\\PackageType\\:\\:JOOMLA_EXTENSION\\.$#"
+			count: 2
+			path: app/Nova/Package.php
+
+		-
+			message: "#^Access to undefined constant BabDev\\\\PackageType\\:\\:LARAVEL_PACKAGE\\.$#"
+			count: 2
+			path: app/Nova/Package.php
+
+		-
+			message: "#^Access to undefined constant BabDev\\\\PackageType\\:\\:PHP_PACKAGE\\.$#"
+			count: 2
+			path: app/Nova/Package.php
+
+		-
+			message: "#^Access to undefined constant BabDev\\\\PackageType\\:\\:SYLIUS_PLUGIN\\.$#"
+			count: 2
+			path: app/Nova/Package.php
+
+		-
+			message: "#^Access to undefined constant BabDev\\\\PackageType\\:\\:SYMFONY_BUNDLE\\.$#"
+			count: 2
+			path: app/Nova/Package.php
 
 		-
 			message: "#^Cannot access offset 'request' on Illuminate\\\\Contracts\\\\Foundation\\\\Application\\.$#"
