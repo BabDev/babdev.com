@@ -10,10 +10,8 @@ jobs:
       fail-fast: true
       matrix:
         include:
-          - php: 8.0
-            can-fail: false
           - php: 8.1
-            can-fail: true
+            can-fail: false
 
     name: "Test Application - PHP ${{ matrix.php }}"
 
