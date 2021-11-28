@@ -7,13 +7,10 @@ use Illuminate\View\Component;
 
 class Hero extends Component
 {
-    public string $title;
-    public ?string $subtitle;
-
-    public function __construct(string $title, ?string $subtitle = null)
-    {
-        $this->title = $title;
-        $this->subtitle = $subtitle;
+    public function __construct(
+        public readonly string $title,
+        public readonly ?string $subtitle = null,
+    ) {
     }
 
     public function render(): View

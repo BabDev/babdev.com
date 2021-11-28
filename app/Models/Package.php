@@ -3,6 +3,7 @@
 namespace BabDev\Models;
 
 use BabDev\Models\Exceptions\DocumentationUnsupportedException;
+use BabDev\PackageType;
 use Carbon\Carbon;
 use Database\Factories\PackageFactory;
 use Illuminate\Database\Eloquent\Builder;
@@ -25,7 +26,7 @@ use Spatie\Sluggable\SlugOptions;
  * @property bool                       $has_documentation
  * @property array<string, string>|null $docs_branches
  * @property string|null                $default_docs_version
- * @property string|null                $package_type
+ * @property PackageType|null           $package_type
  * @property int                        $stars
  * @property int|null                   $downloads
  * @property string|null                $language
@@ -74,6 +75,7 @@ class Package extends Model
         'topics' => 'array',
         'has_documentation' => 'boolean',
         'docs_branches' => 'array',
+        'package_type' => PackageType::class,
         'stars' => 'integer',
         'downloads' => 'integer',
         'supported' => 'boolean',

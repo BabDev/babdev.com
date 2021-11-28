@@ -11,15 +11,11 @@ use Illuminate\Http\Request;
 
 class RequestHandler
 {
-    private Factory $actionFactory;
-    private ClientFactory $clientFactory;
-    private JWTTokenGeneratorContract $tokenGenerator;
-
-    public function __construct(Factory $actionFactory, ClientFactory $clientFactory, JWTTokenGeneratorContract $tokenGenerator)
-    {
-        $this->actionFactory = $actionFactory;
-        $this->clientFactory = $clientFactory;
-        $this->tokenGenerator = $tokenGenerator;
+    public function __construct(
+        private Factory $actionFactory,
+        private ClientFactory $clientFactory,
+        private JWTTokenGeneratorContract $tokenGenerator,
+    ) {
     }
 
     public function handleRequest(array $repoConfig, Request $request): void

@@ -2,15 +2,11 @@
 
 namespace BabDev;
 
-final class PackageType
+enum PackageType: string
 {
-    public const JOOMLA_EXTENSION = 'joomla-extension';
-    public const LARAVEL_PACKAGE = 'laravel-package';
-    public const PHP_PACKAGE = 'php-package';
-    public const SYLIUS_PLUGIN = 'sylius-plugin';
-    public const SYMFONY_BUNDLE = 'symfony-bundle';
-
-    private function __construct()
-    {
-    }
+    case JOOMLA_EXTENSION = 'joomla-extension';
+    case LARAVEL_PACKAGE = 'laravel-package';
+    case PHP_PACKAGE = 'php-package';
+    case SYLIUS_PLUGIN = 'sylius-plugin';
+    case SYMFONY_BUNDLE = 'symfony-bundle';
 }

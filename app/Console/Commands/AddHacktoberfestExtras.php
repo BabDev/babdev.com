@@ -11,12 +11,8 @@ class AddHacktoberfestExtras extends Command
 
     protected $description = 'Adds extras for Hacktoberfest to active repositories.';
 
-    private ApiConnector $github;
-
-    public function __construct(ApiConnector $github)
+    public function __construct(private ApiConnector $github)
     {
-        $this->github = $github;
-
         parent::__construct();
     }
 

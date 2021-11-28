@@ -8,11 +8,8 @@ use Illuminate\Contracts\Container\Container;
 
 final class ContainerAwareFactory implements Factory
 {
-    private Container $container;
-
-    public function __construct(Container $container)
+    public function __construct(private Container $container)
     {
-        $this->container = $container;
     }
 
     /**

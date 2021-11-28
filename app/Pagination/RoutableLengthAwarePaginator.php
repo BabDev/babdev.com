@@ -8,8 +8,14 @@ use Illuminate\Support\Str;
 
 class RoutableLengthAwarePaginator extends LengthAwarePaginator
 {
+    /**
+     * @phpstan-var \Closure(): ?Route|null
+     */
     protected static ?\Closure $currentRouteResolver = null;
 
+    /**
+     * @phpstan-param \Closure(): ?Route $resolver
+     */
     public static function currentRouteResolver(\Closure $resolver): void
     {
         static::$currentRouteResolver = $resolver;
@@ -21,7 +27,7 @@ class RoutableLengthAwarePaginator extends LengthAwarePaginator
             return null;
         }
 
-        return \call_user_func(static::$currentRouteResolver);
+        return (static::$currentRouteResolver)();
     }
 
     /**

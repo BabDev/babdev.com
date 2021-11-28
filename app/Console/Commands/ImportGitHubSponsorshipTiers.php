@@ -13,12 +13,8 @@ class ImportGitHubSponsorshipTiers extends Command
 
     protected $description = 'Import GitHub sponsorship tiers to the application.';
 
-    private ApiConnector $github;
-
-    public function __construct(ApiConnector $github)
+    public function __construct(private ApiConnector $github)
     {
-        $this->github = $github;
-
         parent::__construct();
     }
 
