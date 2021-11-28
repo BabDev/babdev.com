@@ -41,6 +41,7 @@ final class NovaServiceProvider extends NovaApplicationServiceProvider
                 [
                     'michael.babker@gmail.com',
                 ],
+                true,
             ),
         );
     }

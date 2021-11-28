@@ -8,17 +8,12 @@ use Illuminate\Http\Client\RequestException;
 
 class ApiConnector
 {
-    private Factory $httpFactory;
-    private string $matomoPageId;
-    private string $matomoToken;
-    private string $matomoUrl;
-
-    public function __construct(Factory $httpFactory, string $matomoPageId, string $matomoToken, string $matomoUrl)
-    {
-        $this->httpFactory = $httpFactory;
-        $this->matomoPageId = $matomoPageId;
-        $this->matomoToken = $matomoToken;
-        $this->matomoUrl = $matomoUrl;
+    public function __construct(
+        private Factory $httpFactory,
+        private string $matomoPageId,
+        private string $matomoToken,
+        private string $matomoUrl,
+    ) {
     }
 
     /**

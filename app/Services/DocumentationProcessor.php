@@ -14,13 +14,8 @@ use Illuminate\Support\Str;
 
 final class DocumentationProcessor implements DocumentationProcessorContract
 {
-    private ApiConnector $github;
-    private Repository $cache;
-
-    public function __construct(ApiConnector $github, Repository $cache)
+    public function __construct(private ApiConnector $github, private Repository $cache)
     {
-        $this->github = $github;
-        $this->cache = $cache;
     }
 
     public function generateDocsFileCacheKey(Package $package, string $version, string $pageSlug): string

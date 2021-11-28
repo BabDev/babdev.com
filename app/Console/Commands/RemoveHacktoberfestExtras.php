@@ -11,12 +11,8 @@ class RemoveHacktoberfestExtras extends Command
 
     protected $description = 'Removes extras for Hacktoberfest from active repositories.';
 
-    private ApiConnector $github;
-
-    public function __construct(ApiConnector $github)
+    public function __construct(private ApiConnector $github)
     {
-        $this->github = $github;
-
         parent::__construct();
     }
 

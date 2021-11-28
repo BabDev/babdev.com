@@ -9,12 +9,8 @@ use Laravel\Nova\Metrics\TrendResult;
 
 class BounceRate extends Trend
 {
-    private ApiConnector $connector;
-
-    public function __construct(ApiConnector $connector)
+    public function __construct(private ApiConnector $connector)
     {
-        $this->connector = $connector;
-
         parent::__construct();
     }
 

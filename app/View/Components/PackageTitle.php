@@ -8,13 +8,10 @@ use Illuminate\View\Component;
 
 class PackageTitle extends Component
 {
-    public Package $package;
-    public ?string $secondaryTitle;
-
-    public function __construct(Package $package, ?string $secondaryTitle = null)
-    {
-        $this->package = $package;
-        $this->secondaryTitle = $secondaryTitle;
+    public function __construct(
+        public readonly Package $package,
+        public readonly ?string $secondaryTitle = null,
+    ) {
     }
 
     public function render(): View

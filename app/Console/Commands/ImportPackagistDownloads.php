@@ -13,12 +13,8 @@ class ImportPackagistDownloads extends Command
 
     protected $description = 'Import download counts from Packagist.';
 
-    private PackagistClient $packagist;
-
-    public function __construct(PackagistClient $packagist)
+    public function __construct(private PackagistClient $packagist)
     {
-        $this->packagist = $packagist;
-
         parent::__construct();
     }
 

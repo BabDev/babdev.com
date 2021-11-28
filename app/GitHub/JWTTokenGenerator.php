@@ -9,11 +9,8 @@ use Lcobucci\JWT\Encoding\ChainedFormatter;
 
 final class JWTTokenGenerator implements JWTTokenGeneratorContract
 {
-    private JWTConfigurationBuilderContract $configurationBuilder;
-
-    public function __construct(JWTConfigurationBuilderContract $configurationBuilder)
+    public function __construct(private JWTConfigurationBuilderContract $configurationBuilder)
     {
-        $this->configurationBuilder = $configurationBuilder;
     }
 
     public function generate(array $repoConfig): string

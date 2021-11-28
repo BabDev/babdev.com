@@ -8,11 +8,8 @@ use Illuminate\Support\Collection;
 
 class ApiConnector
 {
-    private Client $client;
-
-    public function __construct(Client $client)
+    public function __construct(private Client $client)
     {
-        $this->client = $client;
     }
 
     public function addRepositoryLabel(string $username, string $repository, string $label, string $color): void
