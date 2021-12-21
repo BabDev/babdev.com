@@ -4,10 +4,11 @@ This is the source code for the babdev.com website
 
 ## Requirements
 
-- PHP 8.0 or newer
+- PHP 8.1 or newer
 - MySQL 5.7 or newer
 - [Composer](https://getcomposer.org/download/)
-- [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+- [Node.js](https://nodejs.org/en/) 16 or newer
+- [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) 7.10 or newer
 - A valid [Laravel Nova](https://nova.laravel.com) license
 - A [Tiny API key](https://www.tiny.cloud) for the TinyMCE Nova integration
 - Optionally, a [GitHub personal access token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) to interact with the GitHub API
