@@ -23,8 +23,8 @@
         "highlight.js": "^11.3.1"
     },
     "devDependencies": {
-        "@babel/plugin-proposal-private-methods": "^7.16.5",
-        "core-js": "^3.20.0",
+        "@babel/plugin-proposal-private-methods": "^7.16.7",
+        "core-js": "^3.20.1",
         "laravel-mix": "^6.0.39",
         "laravel-mix-purgecss": "^6.0.0",
         "laravel-mix-sri": "^1.0.7",
@@ -32,7 +32,7 @@
         "postcss": "^8.4.5",
         "postcss-import": "^14.0.2",
         "resolve-url-loader": "^4.0.0",
-        "sass": "^1.45.1",
+        "sass": "^1.45.2",
         "sass-loader": "^12.4.0"
     }
 }
