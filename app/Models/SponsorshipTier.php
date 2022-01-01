@@ -19,7 +19,7 @@ use Illuminate\Database\Eloquent\Model;
 class SponsorshipTier extends Model
 {
     /**
-     * @var string[]
+     * @var array<int, string>
      */
     protected $fillable = [
         'node_id',
@@ -28,7 +28,7 @@ class SponsorshipTier extends Model
     ];
 
     /**
-     * @var array<string, string>
+     * @var array<string, class-string|string>
      */
     protected $casts = [
         'one_time' => 'boolean',

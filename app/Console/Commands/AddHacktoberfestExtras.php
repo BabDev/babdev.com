@@ -11,75 +11,66 @@ class AddHacktoberfestExtras extends Command
 
     protected $description = 'Adds extras for Hacktoberfest to active repositories.';
 
-    public function __construct(private ApiConnector $github)
-    {
-        parent::__construct();
-    }
-
-    public function handle(): void
+    public function handle(ApiConnector $github): void
     {
         $this->info('Updating all repositories...');
 
-        $this->github->fetchPublicRepositories('BabDev')
-            ->filter(
-                static function (array $repositoryAttributes): bool {
-                    // Ignore this website
-                    if ($repositoryAttributes['name'] === 'babdev.com') {
-                        return false;
-                    }
+        $github->fetchPublicRepositories('BabDev')
+            ->filter(static function (array $repositoryAttributes): bool {
+                // Ignore this website
+                if ($repositoryAttributes['name'] === 'babdev.com') {
+                    return false;
+                }
 
-                    // Ignore archived repositories
-                    if ($repositoryAttributes['archived']) {
-                        return false;
-                    }
+                // Ignore archived repositories
+                if ($repositoryAttributes['archived']) {
+                    return false;
+                }
 
-                    return true;
-                },
-            )
-            ->each(
-                function (array $repositoryAttributes): void {
-                    $labels = $this->github->fetchRepositoryLabels('BabDev', $repositoryAttributes['name']);
-                    $topics = $this->github->fetchRepositoryTopics('BabDev', $repositoryAttributes['name']);
+                return true;
+            })
+            ->each(function (array $repositoryAttributes) use ($github): void {
+                $labels = $github->fetchRepositoryLabels('BabDev', $repositoryAttributes['name']);
+                $topics = $github->fetchRepositoryTopics('BabDev', $repositoryAttributes['name']);
 
-                    if (!$topics->contains('hacktoberfest')) {
-                        $this->comment("Adding 'hacktoberfest' topic to `{$repositoryAttributes['name']}`... ");
-                        $topics->add('hacktoberfest');
+                if (!$topics->contains('hacktoberfest')) {
+                    $this->comment("Adding 'hacktoberfest' topic to `{$repositoryAttributes['name']}`... ");
+                    $topics->add('hacktoberfest');
 
-                        $this->github->replaceRepositoryTopics(
+                    $github->replaceRepositoryTopics(
+                        'BabDev',
+                        $repositoryAttributes['name'],
+                        $topics->toArray(),
+                    );
+                } else {
+                    $this->comment("'hacktoberfest' topic already exists on `{$repositoryAttributes['name']}`... ");
+                }
+
+                $hacktoberfestLabels = [
+                    'hacktoberfest-accepted' => '9c4668',
+                    'invalid' => 'ca0b00',
+                    'spam' => 'b33a3a',
+                ];
+
+                foreach ($hacktoberfestLabels as $labelName => $labelColor) {
+                    $matchingLabel = $labels->firstWhere('name', '=', $labelName);
+
+                    if ($matchingLabel === null) {
+                        $this->comment("Adding '$labelName' label to `{$repositoryAttributes['name']}`... ");
+
+                        $github->addRepositoryLabel(
                             'BabDev',
                             $repositoryAttributes['name'],
-                            $topics->toArray(),
+                            $labelName,
+                            $labelColor,
                         );
                     } else {
-                        $this->comment("'hacktoberfest' topic already exists on `{$repositoryAttributes['name']}`... ");
+                        $this->comment(
+                            "'$labelName' label already exists on `{$repositoryAttributes['name']}`... ",
+                        );
                     }
-
-                    $hacktoberfestLabels = [
-                        'hacktoberfest-accepted' => '9c4668',
-                        'invalid' => 'ca0b00',
-                        'spam' => 'b33a3a',
-                    ];
-
-                    foreach ($hacktoberfestLabels as $labelName => $labelColor) {
-                        $matchingLabel = $labels->firstWhere('name', '=', $labelName);
-
-                        if ($matchingLabel === null) {
-                            $this->comment("Adding '$labelName' label to `{$repositoryAttributes['name']}`... ");
-
-                            $this->github->addRepositoryLabel(
-                                'BabDev',
-                                $repositoryAttributes['name'],
-                                $labelName,
-                                $labelColor,
-                            );
-                        } else {
-                            $this->comment(
-                                "'$labelName' label already exists on `{$repositoryAttributes['name']}`... ",
-                            );
-                        }
-                    }
-                },
-            );
+                }
+            });
 
         $this->info('All done!');
     }

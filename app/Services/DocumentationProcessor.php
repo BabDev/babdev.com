@@ -14,7 +14,7 @@ use Illuminate\Support\Str;
 
 final class DocumentationProcessor implements DocumentationProcessorContract
 {
-    public function __construct(private ApiConnector $github, private Repository $cache)
+    public function __construct(private readonly ApiConnector $github, private readonly Repository $cache)
     {
     }
 

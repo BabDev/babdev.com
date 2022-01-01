@@ -14,12 +14,7 @@ class ImportGitHubSponsors extends Command
 
     protected $description = 'Import GitHub sponsors to the application.';
 
-    public function __construct(private ApiConnector $github)
-    {
-        parent::__construct();
-    }
-
-    public function handle(): void
+    public function handle(ApiConnector $github): void
     {
         $this->info('Syncing sponsors...');
 
@@ -53,7 +48,7 @@ class ImportGitHubSponsors extends Command
             }
             GRAPHQL;
 
-        $response = $this->github->executeGraphqlQuery($query);
+        $response = $github->executeGraphqlQuery($query);
 
         $activeSponsorIds = [];
 

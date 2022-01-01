@@ -14,8 +14,10 @@ final class JWTTokenGeneratorTest extends TestCase
     public function the_generator_generates_a_jwt_token_for_a_repository(): void
     {
         $repoConfig = [
-            'app_id' => 12345,
+            'app_id' => '12345',
             'key' => \dirname(__DIR__) . '/../fixtures/private-key.pem',
+            'secret' => 'secret',
+            'events' => [],
         ];
 
         $config = Configuration::forUnsecuredSigner();

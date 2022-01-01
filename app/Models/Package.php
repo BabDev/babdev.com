@@ -47,7 +47,7 @@ class Package extends Model
     use HasSlug;
 
     /**
-     * @var string[]
+     * @var array<int, string>
      */
     protected $fillable = [
         'name',
@@ -69,7 +69,7 @@ class Package extends Model
     ];
 
     /**
-     * @var array<string, string>
+     * @var array<string, class-string|string>
      */
     protected $casts = [
         'topics' => 'array',

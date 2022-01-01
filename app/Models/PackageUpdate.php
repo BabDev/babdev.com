@@ -32,7 +32,7 @@ class PackageUpdate extends Model
     use HasFactory;
 
     /**
-     * @var string[]
+     * @var array<int, string>
      */
     protected $fillable = [
         'title',
@@ -43,7 +43,7 @@ class PackageUpdate extends Model
     ];
 
     /**
-     * @var array<string, string>
+     * @var array<string, class-string|string>
      */
     protected $casts = [
         'data' => 'array',

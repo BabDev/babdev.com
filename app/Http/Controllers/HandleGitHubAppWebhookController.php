@@ -2,15 +2,19 @@
 
 namespace BabDev\Http\Controllers;
 
+use BabDev\Contracts\GitHub\Actions\Action;
+use BabDev\GitHub\Exceptions\BadRequestException;
 use BabDev\GitHub\RequestHandler;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 final class HandleGitHubAppWebhookController
 {
     public function __invoke(Request $request, RequestHandler $requestHandler): JsonResponse
     {
+        /** @phpstan-var array{app_id: string, key: string, secret: string, events: array<string, array<int, class-string<Action>>>}|false $repoConfig */
         $repoConfig = false;
 
         /** @var string $repo */
@@ -24,12 +28,14 @@ final class HandleGitHubAppWebhookController
 
         abort_if($repoConfig === false, 400, 'Unsupported repository.');
 
-        if (isset($repoConfig['secret'])) {
-            abort_unless($request->hasHeader('X-Hub-Signature-256'), 403, 'The request is not secured.');
-            abort_unless($this->hasValidSignature($request->header('X-Hub-Signature-256'), $repoConfig['secret'], $request->getContent()), 403, 'Invalid signature.');
-        }
+        abort_unless($request->hasHeader('X-Hub-Signature-256'), 403, 'The request is not secured.');
+        abort_unless($this->hasValidSignature($request->header('X-Hub-Signature-256'), $repoConfig['secret'], $request->getContent()), 403, 'Invalid signature.');
 
-        $requestHandler->handleRequest($repoConfig, $request);
+        try {
+            $requestHandler->handleRequest($repoConfig, $request);
+        } catch (BadRequestException $exception) {
+            throw new BadRequestHttpException('Invalid request.', $exception);
+        }
 
         return response()->json(['success' => true]);
     }

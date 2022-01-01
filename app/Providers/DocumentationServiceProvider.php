@@ -12,7 +12,7 @@ use Illuminate\Support\ServiceProvider;
 final class DocumentationServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     /**
-     * @return string[]
+     * @return array<int, class-string|string>
      */
     public function provides(): array
     {

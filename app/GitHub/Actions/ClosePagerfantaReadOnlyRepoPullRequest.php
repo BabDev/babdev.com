@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 
 final class ClosePagerfantaReadOnlyRepoPullRequest implements Action
 {
+    /**
+     * @phpstan-param array{app_id: string, key: string, secret: string, events: array<string, array<int, class-string<Action>>>} $repoConfig
+     */
     public function __invoke(array $repoConfig, Request $request, Client $github): void
     {
         if ($request->input('action') !== 'opened') {

@@ -8,7 +8,7 @@ use Illuminate\Http\Response;
 
 class PreloadAssets
 {
-    public function __construct(private PushManager $pushManager)
+    public function __construct(private readonly PushManager $pushManager)
     {
     }
 

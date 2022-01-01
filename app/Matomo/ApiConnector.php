@@ -2,17 +2,16 @@
 
 namespace BabDev\Matomo;
 
-use Carbon\Carbon;
 use Illuminate\Http\Client\Factory;
 use Illuminate\Http\Client\RequestException;
 
 class ApiConnector
 {
     public function __construct(
-        private Factory $httpFactory,
-        private string $matomoPageId,
-        private string $matomoToken,
-        private string $matomoUrl,
+        private readonly Factory $httpFactory,
+        private readonly string $matomoPageId,
+        private readonly string $matomoToken,
+        private readonly string $matomoUrl,
     ) {
     }
 
@@ -27,7 +26,7 @@ class ApiConnector
                 'method' => sprintf('Actions.%s', $method),
                 'idSite' => $this->matomoPageId,
                 'period' => 'range',
-                'date' => sprintf('%s,%s', Carbon::now()->subDays($range)->toDateString(), Carbon::now()->toDateString()),
+                'date' => sprintf('%s,%s', now()->subDays($range)->toDateString(), now()->toDateString()),
                 'filter_limit' => 10,
                 'format' => 'json',
             ],

@@ -8,7 +8,7 @@ use Illuminate\Contracts\Container\Container;
 
 final class ContainerAwareFactory implements Factory
 {
-    public function __construct(private Container $container)
+    public function __construct(private readonly Container $container)
     {
     }
 

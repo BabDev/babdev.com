@@ -13,30 +13,23 @@ class ImportPackagistDownloads extends Command
 
     protected $description = 'Import download counts from Packagist.';
 
-    public function __construct(private PackagistClient $packagist)
-    {
-        parent::__construct();
-    }
-
-    public function handle(): void
+    public function handle(PackagistClient $packagist): void
     {
         $this->info('Fetching download counts...');
 
-        Package::query()->isPackagist()->each(
-            function (Package $package): void {
-                $this->comment("Importing `{$package->name}` downloads... ");
+        Package::query()->isPackagist()->each(function (Package $package) use ($packagist): void {
+            $this->comment("Importing `{$package->name}` downloads... ");
 
-                [$vendor, $packageName] = explode('/', $package->packagist_name);
+            [$vendor, $packageName] = explode('/', $package->packagist_name);
 
-                $packagistInfo = $this->packagist->getPackage($vendor, $packageName);
+            $packagistInfo = $packagist->getPackage($vendor, $packageName);
 
-                $package->update(
-                    [
-                        'downloads' => Arr::get($packagistInfo, 'package.downloads.total'),
-                    ],
-                );
-            },
-        );
+            $package->update(
+                [
+                    'downloads' => Arr::get($packagistInfo, 'package.downloads.total'),
+                ],
+            );
+        });
 
         $this->info('All done!');
     }

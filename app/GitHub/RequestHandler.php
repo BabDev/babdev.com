@@ -6,6 +6,7 @@ use BabDev\Contracts\GitHub\Actions\Action;
 use BabDev\Contracts\GitHub\Actions\Factory;
 use BabDev\Contracts\GitHub\ClientFactory;
 use BabDev\Contracts\GitHub\JWTTokenGenerator as JWTTokenGeneratorContract;
+use BabDev\GitHub\Exceptions\BadRequestException;
 use Github\AuthMethod;
 use Github\Client;
 use Illuminate\Http\Request;
@@ -13,17 +14,30 @@ use Illuminate\Http\Request;
 class RequestHandler
 {
     public function __construct(
-        private Factory $actionFactory,
-        private ClientFactory $clientFactory,
-        private JWTTokenGeneratorContract $tokenGenerator,
+        private readonly Factory $actionFactory,
+        private readonly ClientFactory $clientFactory,
+        private readonly JWTTokenGeneratorContract $tokenGenerator,
     ) {
     }
 
+    /**
+     * @phpstan-param array{app_id: string, key: string, secret: string, events: array<string, array<int, class-string<Action>>>} $repoConfig
+     *
+     * @throws BadRequestException if the request data is invalid
+     */
     public function handleRequest(array $repoConfig, Request $request): void
     {
         $event = $request->header('X-Github-Event');
 
-        if (empty($repoConfig['events'][$event])) {
+        if (\is_array($event)) {
+            throw new BadRequestException('Invalid "X-Github-Event" header.');
+        }
+
+        if ($event === null) {
+            return;
+        }
+
+        if (!\array_key_exists($event, $repoConfig['events'])) {
             return;
         }
 
@@ -36,15 +50,24 @@ class RequestHandler
         }
     }
 
+    /**
+     * @phpstan-param array{app_id: string, key: string, secret: string, events: array<string, array<int, class-string<Action>>>} $repoConfig
+     *
+     * @throws BadRequestException if the request data is invalid
+     */
     private function buildClient(array $repoConfig, Request $request): Client
     {
-        $github = $this->clientFactory->make(null, 'machine-man-preview');
+        if ($request->missing('installation.id')) {
+            throw new BadRequestException('Missing required installation ID.');
+        }
 
-        $github->authenticate($this->tokenGenerator->generate($repoConfig), null, AuthMethod::JWT);
+        $github = $this->clientFactory->make(apiVersion: 'machine-man-preview');
+
+        $github->authenticate(tokenOrLogin: $this->tokenGenerator->generate($repoConfig), authMethod: AuthMethod::JWT);
 
         $token = $github->apps()->createInstallationToken($request->input('installation.id'));
 
-        $github->authenticate($token['token'], null, AuthMethod::ACCESS_TOKEN);
+        $github->authenticate(tokenOrLogin: $token['token'], authMethod: AuthMethod::ACCESS_TOKEN);
 
         return $github;
     }

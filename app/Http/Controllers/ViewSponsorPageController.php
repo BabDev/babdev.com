@@ -13,12 +13,7 @@ final class ViewSponsorPageController
     {
         /** @var Collection<Sponsor> $featuredSponsors */
         $featuredSponsors = Sponsor::query()
-            ->whereHas(
-                'sponsorship_tier',
-                static function (Builder $query): void {
-                    $query->where('price', '>', 2500);
-                },
-            )
+            ->whereRelation('sponsorship_tier', 'price', '>', 2500)
             ->orderByRaw('CASE WHEN sponsor_display_name IS NULL THEN sponsor_username ELSE sponsor_display_name END ASC')
             ->get();
 

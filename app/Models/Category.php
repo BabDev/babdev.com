@@ -23,7 +23,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Category extends Model
 {
     /**
-     * @var string[]
+     * @var array<int, string>
      */
     protected $fillable = [
         'title',

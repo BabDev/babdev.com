@@ -27,7 +27,7 @@ final class ClosePagerfantaReadOnlyRepoPullRequestTest extends TestCase
             ->method('api');
 
         $action = new ClosePagerfantaReadOnlyRepoPullRequest();
-        $action([], $request, $github);
+        $action(['app_id' => '123', 'key' => 'key', 'secret' => 'secret', 'events' => []], $request, $github);
     }
 
     /** @test */
@@ -94,6 +94,6 @@ final class ClosePagerfantaReadOnlyRepoPullRequestTest extends TestCase
             );
 
         $action = new ClosePagerfantaReadOnlyRepoPullRequest();
-        $action([], $request, $github);
+        $action(['app_id' => '123', 'key' => 'key', 'secret' => 'secret', 'events' => []], $request, $github);
     }
 }

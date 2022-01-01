@@ -12,7 +12,7 @@ use Spatie\Packagist\PackagistUrlGenerator;
 final class PackagistServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     /**
-     * @return string[]
+     * @return array<int, class-string|string>
      */
     public function provides(): array
     {

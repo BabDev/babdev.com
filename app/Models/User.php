@@ -24,7 +24,7 @@ class User extends Authenticatable
     use Notifiable;
 
     /**
-     * @var string[]
+     * @var array<int, string>
      */
     protected $fillable = [
         'name',
@@ -33,7 +33,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * @var string[]
+     * @var array<int, string>
      */
     protected $hidden = [
         'password',
@@ -41,7 +41,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * @var array<string, string>
+     * @var array<string, class-string|string>
      */
     protected $casts = [
         'email_verified_at' => 'datetime',

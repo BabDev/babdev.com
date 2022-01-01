@@ -6,6 +6,7 @@ use BabDev\Contracts\GitHub\Actions\Action;
 use BabDev\Contracts\GitHub\Actions\Factory;
 use BabDev\Contracts\GitHub\ClientFactory;
 use BabDev\Contracts\GitHub\JWTTokenGenerator;
+use BabDev\GitHub\Exceptions\BadRequestException;
 use BabDev\GitHub\RequestHandler;
 use Github\Api\Apps;
 use Github\AuthMethod;
@@ -49,6 +50,13 @@ final class RequestHandlerTest extends TestCase
     /** @test */
     public function the_handler_only_acts_on_supported_events(): void
     {
+        $repoConfig = [
+            'app_id' => '12345',
+            'key' => 'key',
+            'secret' => 'secret',
+            'events' => [],
+        ];
+
         $request = Request::createFromBase(
             SymfonyRequest::create(
                 '/webhooks/github/app',
@@ -60,13 +68,16 @@ final class RequestHandlerTest extends TestCase
         $this->clientFactory->expects($this->never())
             ->method('make');
 
-        $this->handler->handleRequest(['events' => []], $request);
+        $this->handler->handleRequest($repoConfig, $request);
     }
 
     /** @test */
     public function the_handler_acts_on_a_supported_event(): void
     {
         $repoConfig = [
+            'app_id' => '12345',
+            'key' => 'key',
+            'secret' => 'secret',
             'events' => [
                 'pull_request' => [
                     Action::class,
@@ -121,6 +132,36 @@ final class RequestHandlerTest extends TestCase
         $this->actionFactory->expects($this->once())
             ->method('make')
             ->willReturn($this->createMock(Action::class));
+
+        $this->handler->handleRequest($repoConfig, $request);
+    }
+
+    /** @test */
+    public function the_handler_rejects_a_request_with_a_missing_installation_id(): void
+    {
+        $this->expectException(BadRequestException::class);
+
+        $repoConfig = [
+            'app_id' => '12345',
+            'key' => 'key',
+            'secret' => 'secret',
+            'events' => [
+                'pull_request' => [
+                    Action::class,
+                ],
+            ],
+        ];
+
+        $request = Request::createFromBase(
+            SymfonyRequest::create(
+                '/webhooks/github/app',
+                'POST',
+            ),
+        );
+        $request->headers->set('X-Github-Event', 'pull_request');
+
+        $this->clientFactory->expects($this->never())
+            ->method('make');
 
         $this->handler->handleRequest($repoConfig, $request);
     }

@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use BabDev\GitHub\Exceptions\BadRequestException;
 use BabDev\GitHub\RequestHandler;
 use Illuminate\Contracts\Config\Repository;
 use Mockery\MockInterface;
@@ -104,5 +105,40 @@ class GitHubWebhookTest extends TestCase
 
         $this->json('POST', '/webhooks/github/app', $requestData, ['X-Hub-Signature-256' => 'sha256=' . $signatureHeader])
             ->assertSuccessful();
+    }
+
+    /** @test */
+    public function an_app_webhook_for_a_supported_repository_with_a_configured_secret_and_a_valid_signature_is_not_processed_if_an_invalid_request_is_given(): void
+    {
+        $this->instance(
+            RequestHandler::class,
+            \Mockery::mock(RequestHandler::class, function (MockInterface $mock): void {
+                $mock->shouldReceive('handleRequest')->andThrow(new BadRequestException('Invalid request'));
+            }),
+        );
+
+        $secret = 'my-secret-value';
+
+        /** @var Repository $config */
+        $config = $this->app->make('config');
+
+        $config->set(
+            'services.github.apps',
+            [
+                'BabDev/test-repo' => [
+                    'app_id' => 'a1b2c3',
+                    'key' => \dirname(__DIR__) . '/fixtures/private-key.pem',
+                    'secret' => 'my-secret-value',
+                    'events' => [],
+                ],
+            ],
+        );
+
+        $requestData = ['repository' => ['full_name' => 'BabDev/test-repo']];
+
+        $signatureHeader = hash_hmac('sha256', json_encode($requestData, \JSON_THROW_ON_ERROR), $secret);
+
+        $this->json('POST', '/webhooks/github/app', $requestData, ['X-Hub-Signature-256' => 'sha256=' . $signatureHeader])
+            ->assertStatus(400);
     }
 }

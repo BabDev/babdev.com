@@ -27,7 +27,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Post extends Model
 {
     /**
-     * @var string[]
+     * @var array<int, string>
      */
     protected $fillable = [
         'title',
@@ -38,7 +38,7 @@ class Post extends Model
     ];
 
     /**
-     * @var array<string, string>
+     * @var array<string, class-string|string>
      */
     protected $casts = [
         'data' => 'array',

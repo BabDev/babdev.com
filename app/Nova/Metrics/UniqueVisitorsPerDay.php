@@ -9,7 +9,7 @@ use Laravel\Nova\Metrics\TrendResult;
 
 class UniqueVisitorsPerDay extends Trend
 {
-    public function __construct(private ApiConnector $connector)
+    public function __construct(private readonly ApiConnector $connector)
     {
         parent::__construct();
     }

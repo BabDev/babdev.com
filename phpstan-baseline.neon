@@ -46,26 +46,6 @@ parameters:
 			path: app/Console/Commands/RemoveHacktoberfestExtras.php
 
 		-
-			message: "#^Method BabDev\\\\Contracts\\\\GitHub\\\\Actions\\\\Action\\:\\:__invoke\\(\\) has parameter \\$repoConfig with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: app/Contracts/GitHub/Actions/Action.php
-
-		-
-			message: "#^Method BabDev\\\\Contracts\\\\GitHub\\\\JWTConfigurationBuilder\\:\\:build\\(\\) has parameter \\$repoConfig with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: app/Contracts/GitHub/JWTConfigurationBuilder.php
-
-		-
-			message: "#^Method BabDev\\\\Contracts\\\\GitHub\\\\JWTTokenGenerator\\:\\:generate\\(\\) has parameter \\$repoConfig with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: app/Contracts/GitHub/JWTTokenGenerator.php
-
-		-
-			message: "#^Method BabDev\\\\GitHub\\\\Actions\\\\ClosePagerfantaReadOnlyRepoPullRequest\\:\\:__invoke\\(\\) has parameter \\$repoConfig with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: app/GitHub/Actions/ClosePagerfantaReadOnlyRepoPullRequest.php
-
-		-
 			message: "#^Parameter \\#1 \\$username of method Github\\\\Api\\\\Issue\\\\Comments\\:\\:create\\(\\) expects string, mixed given\\.$#"
 			count: 1
 			path: app/GitHub/Actions/ClosePagerfantaReadOnlyRepoPullRequest.php
@@ -111,33 +91,13 @@ parameters:
 			path: app/GitHub/ContainerAwareClientFactory.php
 
 		-
-			message: "#^Method BabDev\\\\GitHub\\\\JWTConfigurationBuilder\\:\\:build\\(\\) has parameter \\$repoConfig with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: app/GitHub/JWTConfigurationBuilder.php
-
-		-
-			message: "#^Method BabDev\\\\GitHub\\\\JWTTokenGenerator\\:\\:generate\\(\\) has parameter \\$repoConfig with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: app/GitHub/JWTTokenGenerator.php
-
-		-
-			message: "#^Method BabDev\\\\GitHub\\\\RequestHandler\\:\\:buildClient\\(\\) has parameter \\$repoConfig with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: app/GitHub/RequestHandler.php
-
-		-
-			message: "#^Method BabDev\\\\GitHub\\\\RequestHandler\\:\\:handleRequest\\(\\) has parameter \\$repoConfig with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: app/GitHub/RequestHandler.php
-
-		-
 			message: "#^Parameter \\#1 \\$installationId of method Github\\\\Api\\\\Apps\\:\\:createInstallationToken\\(\\) expects int, mixed given\\.$#"
 			count: 1
 			path: app/GitHub/RequestHandler.php
 
 		-
 			message: "#^Cannot access offset 'secret' on mixed\\.$#"
-			count: 2
+			count: 1
 			path: app/Http/Controllers/HandleGitHubAppWebhookController.php
 
 		-
@@ -151,7 +111,7 @@ parameters:
 			path: app/Http/Controllers/HandleGitHubAppWebhookController.php
 
 		-
-			message: "#^Parameter \\#1 \\$repoConfig of method BabDev\\\\GitHub\\\\RequestHandler\\:\\:handleRequest\\(\\) expects array, mixed given\\.$#"
+			message: "#^Parameter \\#1 \\$repoConfig of method BabDev\\\\GitHub\\\\RequestHandler\\:\\:handleRequest\\(\\) expects array\\{app_id\\: string, key\\: string, secret\\: string, events\\: array\\<string, array\\<int, class\\-string\\<BabDev\\\\Contracts\\\\GitHub\\\\Actions\\\\Action\\>\\>\\>\\}, mixed given\\.$#"
 			count: 1
 			path: app/Http/Controllers/HandleGitHubAppWebhookController.php
 
