@@ -12,6 +12,7 @@ use BabDev\GitHub\ContainerAwareClientFactory;
 use BabDev\GitHub\JWTConfigurationBuilder;
 use BabDev\GitHub\JWTTokenGenerator;
 use BabDev\GitHub\RequestHandler;
+use Github\AuthMethod;
 use Github\Client;
 use Github\Exception\InvalidArgumentException;
 use Github\HttpClient\Builder;
@@ -86,7 +87,7 @@ final class GitHubServiceProvider extends ServiceProvider implements DeferrableP
                     $factory = $app->make(ClientFactory::class);
 
                     $client = $factory->make($app->make(Builder::class));
-                    $client->authenticate($config->get('services.github.token'), null, Client::AUTH_ACCESS_TOKEN);
+                    $client->authenticate($config->get('services.github.token'), null, AuthMethod::ACCESS_TOKEN);
 
                     return $client;
                 } catch (InvalidArgumentException $exception) {

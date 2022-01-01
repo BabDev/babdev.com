@@ -8,6 +8,7 @@ use BabDev\Contracts\GitHub\ClientFactory;
 use BabDev\Contracts\GitHub\JWTTokenGenerator;
 use BabDev\GitHub\RequestHandler;
 use Github\Api\Apps;
+use Github\AuthMethod;
 use Github\Client;
 use Illuminate\Http\Request;
 use PHPUnit\Framework\MockObject\MockObject;
@@ -98,8 +99,8 @@ final class RequestHandlerTest extends TestCase
         $github->expects($this->exactly(2))
             ->method('authenticate')
             ->withConsecutive(
-                ['jwt-token', null, Client::AUTH_JWT],
-                ['access-token', null, Client::AUTH_ACCESS_TOKEN],
+                ['jwt-token', null, AuthMethod::JWT],
+                ['access-token', null, AuthMethod::ACCESS_TOKEN],
             );
 
         $github->expects($this->once())

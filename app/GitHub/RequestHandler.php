@@ -6,6 +6,7 @@ use BabDev\Contracts\GitHub\Actions\Action;
 use BabDev\Contracts\GitHub\Actions\Factory;
 use BabDev\Contracts\GitHub\ClientFactory;
 use BabDev\Contracts\GitHub\JWTTokenGenerator as JWTTokenGeneratorContract;
+use Github\AuthMethod;
 use Github\Client;
 use Illuminate\Http\Request;
 
@@ -39,11 +40,11 @@ class RequestHandler
     {
         $github = $this->clientFactory->make(null, 'machine-man-preview');
 
-        $github->authenticate($this->tokenGenerator->generate($repoConfig), null, Client::AUTH_JWT);
+        $github->authenticate($this->tokenGenerator->generate($repoConfig), null, AuthMethod::JWT);
 
         $token = $github->apps()->createInstallationToken($request->input('installation.id'));
 
-        $github->authenticate($token['token'], null, Client::AUTH_ACCESS_TOKEN);
+        $github->authenticate($token['token'], null, AuthMethod::ACCESS_TOKEN);
 
         return $github;
     }
