@@ -24,6 +24,7 @@ class PackageFactory extends Factory
                     PackageType::JOOMLA_EXTENSION,
                     PackageType::LARAVEL_PACKAGE,
                     PackageType::PHP_PACKAGE,
+                    PackageType::PHPSPEC_EXTENSION,
                     PackageType::SYLIUS_PLUGIN,
                     PackageType::SYMFONY_BUNDLE,
                 ],

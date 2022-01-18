@@ -10,6 +10,8 @@ enum PackageType: string
 
     case PHP_PACKAGE = 'php-package';
 
+    case PHPSPEC_EXTENSION = 'phpspec-extension';
+
     case SYLIUS_PLUGIN = 'sylius-plugin';
 
     case SYMFONY_BUNDLE = 'symfony-bundle';
