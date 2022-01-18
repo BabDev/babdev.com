@@ -10,6 +10,8 @@ final class RedirectToPackageDocsController
 {
     public function __invoke(Request $request, Package $package): RedirectResponse
     {
+        abort_if(!$package->visible, 404);
+
         // Redirect if package does not have docs
         if (!$package->has_documentation) {
             return redirect()->route('open-source.packages');
