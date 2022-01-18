@@ -83,6 +83,15 @@ class Package extends Model
         'is_packagist' => 'boolean',
     ];
 
+    protected static function boot(): void
+    {
+        parent::boot();
+
+        static::creating(function (self $package): void {
+            $package->package_type ??= PackageType::PHP_PACKAGE;
+        });
+    }
+
     protected static function newFactory(): Factory
     {
         return PackageFactory::new();
