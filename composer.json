@@ -31,7 +31,6 @@
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.12.1",
-        "facade/ignition": "^2.17.4",
         "fakerphp/faker": "^1.18",
         "laravel/telescope": "^4.7",
         "mockery/mockery": "^1.5",
@@ -41,7 +40,8 @@
         "phpstan/phpstan": "1.4.2",
         "phpstan/phpstan-mockery": "1.0.0",
         "phpstan/phpstan-phpunit": "1.0.0",
-        "phpunit/phpunit": "^9.5.13"
+        "phpunit/phpunit": "^9.5.13",
+        "spatie/laravel-ignition": "^1.0.2"
     },
     "replace": {
         "paragonie/random_compat": "*",
