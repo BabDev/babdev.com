@@ -7,6 +7,7 @@ use BabDev\PackageType;
 use Carbon\Carbon;
 use Database\Factories\PackageFactory;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -35,6 +36,7 @@ use Spatie\Sluggable\SlugOptions;
  * @property bool                       $is_packagist
  * @property Carbon|null                $created_at
  * @property Carbon|null                $updated_at
+ *
  * @property-read string $github_url
  *
  * @method static Builder|Package isPackagist()
@@ -119,9 +121,11 @@ class Package extends Model
         return $query->where('visible', '=', true);
     }
 
-    public function getGithubUrlAttribute(): string
+    protected function githubUrl(): Attribute
     {
-        return sprintf('https://github.com/BabDev/%s', $this->name);
+        return new Attribute(
+            get: fn () => sprintf('https://github.com/BabDev/%s', $this->name),
+        );
     }
 
     public function hasDocsVersion(string $version): bool
