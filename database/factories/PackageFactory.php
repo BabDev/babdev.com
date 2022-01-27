@@ -6,13 +6,19 @@ use BabDev\Models\Package;
 use BabDev\PackageType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+/**
+ * @extends Factory<Package>
+ */
 class PackageFactory extends Factory
 {
     /**
-     * @var string
+     * @var class-string<Package>
      */
     protected $model = Package::class;
 
+    /**
+     * @return array<string, mixed>
+     */
     public function definition(): array
     {
         return [
@@ -35,7 +41,7 @@ class PackageFactory extends Factory
         ];
     }
 
-    public function docs()
+    public function docs(): static
     {
         return $this->state(
             [
@@ -47,7 +53,7 @@ class PackageFactory extends Factory
         );
     }
 
-    public function notVisible()
+    public function notVisible(): static
     {
         return $this->state(
             [
@@ -56,7 +62,7 @@ class PackageFactory extends Factory
         );
     }
 
-    public function packagist()
+    public function packagist(): static
     {
         return $this->state(
             [

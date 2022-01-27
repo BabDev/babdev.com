@@ -7,13 +7,19 @@ use BabDev\Models\PackageUpdate;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+/**
+ * @extends Factory<PackageUpdate>
+ */
 class PackageUpdateFactory extends Factory
 {
     /**
-     * @var string
+     * @var class-string<PackageUpdate>
      */
     protected $model = PackageUpdate::class;
 
+    /**
+     * @return array<string, mixed>
+     */
     public function definition(): array
     {
         return [
@@ -26,7 +32,7 @@ class PackageUpdateFactory extends Factory
         ];
     }
 
-    public function unpublished()
+    public function unpublished(): static
     {
         return $this->state(
             [
