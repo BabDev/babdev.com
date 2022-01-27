@@ -19,7 +19,18 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  *
  * @property-read SponsorshipTier $sponsorship_tier
  *
+ * @method static Builder|Sponsor newModelQuery()
+ * @method static Builder|Sponsor newQuery()
  * @method static Builder|Sponsor query()
+ * @method static Builder|Sponsor whereCreatedAt($value)
+ * @method static Builder|Sponsor whereId($value)
+ * @method static Builder|Sponsor whereIsPublic($value)
+ * @method static Builder|Sponsor whereSponsorDisplayName($value)
+ * @method static Builder|Sponsor whereSponsorNodeId($value)
+ * @method static Builder|Sponsor whereSponsorUsername($value)
+ * @method static Builder|Sponsor whereSponsorshipNodeId($value)
+ * @method static Builder|Sponsor whereSponsorshipTierId($value)
+ * @method static Builder|Sponsor whereUpdatedAt($value)
  */
 class Sponsor extends Model
 {

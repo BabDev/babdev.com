@@ -14,7 +14,15 @@ use Illuminate\Database\Eloquent\Model;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  *
+ * @method static Builder|SponsorshipTier newModelQuery()
+ * @method static Builder|SponsorshipTier newQuery()
  * @method static Builder|SponsorshipTier query()
+ * @method static Builder|SponsorshipTier whereCreatedAt($value)
+ * @method static Builder|SponsorshipTier whereId($value)
+ * @method static Builder|SponsorshipTier whereNodeId($value)
+ * @method static Builder|SponsorshipTier whereOneTime($value)
+ * @method static Builder|SponsorshipTier wherePrice($value)
+ * @method static Builder|SponsorshipTier whereUpdatedAt($value)
  */
 class SponsorshipTier extends Model
 {

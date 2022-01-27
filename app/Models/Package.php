@@ -39,9 +39,32 @@ use Spatie\Sluggable\SlugOptions;
  *
  * @property-read string $github_url
  *
+ * @method static PackageFactory factory(...$parameters)
  * @method static Builder|Package isPackagist()
- * @method static Builder|Package query()
  * @method static Builder|Package visible()
+ * @method static Builder|Package newModelQuery()
+ * @method static Builder|Package newQuery()
+ * @method static Builder|Package query()
+ * @method static Builder|Package whereCreatedAt($value)
+ * @method static Builder|Package whereDefaultDocsVersion($value)
+ * @method static Builder|Package whereDescription($value)
+ * @method static Builder|Package whereDisplayName($value)
+ * @method static Builder|Package whereDocsBranches($value)
+ * @method static Builder|Package whereDownloads($value)
+ * @method static Builder|Package whereHasDocumentation($value)
+ * @method static Builder|Package whereId($value)
+ * @method static Builder|Package whereIsPackagist($value)
+ * @method static Builder|Package whereLanguage($value)
+ * @method static Builder|Package whereLogo($value)
+ * @method static Builder|Package whereName($value)
+ * @method static Builder|Package wherePackageType($value)
+ * @method static Builder|Package wherePackagistName($value)
+ * @method static Builder|Package whereSlug($value)
+ * @method static Builder|Package whereStars($value)
+ * @method static Builder|Package whereSupported($value)
+ * @method static Builder|Package whereTopics($value)
+ * @method static Builder|Package whereUpdatedAt($value)
+ * @method static Builder|Package whereVisible($value)
  */
 class Package extends Model
 {

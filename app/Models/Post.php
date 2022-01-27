@@ -22,7 +22,19 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property-read Category $category
  *
  * @method static Builder|Post published()
+ * @method static Builder|Post newModelQuery()
+ * @method static Builder|Post newQuery()
  * @method static Builder|Post query()
+ * @method static Builder|Post whereCategoryId($value)
+ * @method static Builder|Post whereContent($value)
+ * @method static Builder|Post whereCreatedAt($value)
+ * @method static Builder|Post whereData($value)
+ * @method static Builder|Post whereId($value)
+ * @method static Builder|Post whereIntro($value)
+ * @method static Builder|Post wherePublishedAt($value)
+ * @method static Builder|Post whereSlug($value)
+ * @method static Builder|Post whereTitle($value)
+ * @method static Builder|Post whereUpdatedAt($value)
  */
 class Post extends Model
 {

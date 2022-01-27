@@ -24,8 +24,21 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  *
  * @property-read Package $package
  *
+ * @method static PackageUpdateFactory factory(...$parameters)
  * @method static Builder|PackageUpdate published()
+ * @method static Builder|PackageUpdate newModelQuery()
+ * @method static Builder|PackageUpdate newQuery()
  * @method static Builder|PackageUpdate query()
+ * @method static Builder|PackageUpdate whereContent($value)
+ * @method static Builder|PackageUpdate whereCreatedAt($value)
+ * @method static Builder|PackageUpdate whereData($value)
+ * @method static Builder|PackageUpdate whereId($value)
+ * @method static Builder|PackageUpdate whereIntro($value)
+ * @method static Builder|PackageUpdate wherePackageId($value)
+ * @method static Builder|PackageUpdate wherePublishedAt($value)
+ * @method static Builder|PackageUpdate whereSlug($value)
+ * @method static Builder|PackageUpdate whereTitle($value)
+ * @method static Builder|PackageUpdate whereUpdatedAt($value)
  */
 class PackageUpdate extends Model
 {

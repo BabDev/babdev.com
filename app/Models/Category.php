@@ -18,7 +18,14 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property-read Collection<Post> $posts
  * @property-read int|null         $posts_count
  *
+ * @method static Builder|Category newModelQuery()
+ * @method static Builder|Category newQuery()
  * @method static Builder|Category query()
+ * @method static Builder|Category whereCreatedAt($value)
+ * @method static Builder|Category whereId($value)
+ * @method static Builder|Category whereSlug($value)
+ * @method static Builder|Category whereTitle($value)
+ * @method static Builder|Category whereUpdatedAt($value)
  */
 class Category extends Model
 {
