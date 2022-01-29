@@ -1,6 +1,7 @@
 import hljs from 'highlight.js/lib/core';
 
 import bash from 'highlight.js/lib/languages/bash';
+import blade from 'highlightjs-blade';
 import css from 'highlight.js/lib/languages/css';
 import javascript from 'highlight.js/lib/languages/javascript';
 import json from 'highlight.js/lib/languages/json';
@@ -13,6 +14,7 @@ import yaml from 'highlight.js/lib/languages/yaml';
 class BDDocs {
     static init() {
         hljs.registerLanguage('bash', bash);
+        hljs.registerLanguage('blade', blade);
         hljs.registerLanguage('css', css);
         hljs.registerLanguage('javascript', javascript);
         hljs.registerLanguage('json', json);
