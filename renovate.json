@@ -1,0 +1,17 @@
+{
+    "extends": [
+        ":dependencyDashboard",
+        ":automergeMinor",
+        ":rebaseStalePrs",
+        ":separateMajorReleases",
+        ":combinePatchMinorReleases",
+        ":enableVulnerabilityAlerts",
+        ":label(dependencies)",
+        "group:allNonMajor"
+    ],
+    "commitBodyTable": true,
+    "enabledManagers": ["composer", "github-actions", "npm"],
+    "lockFileMaintenance": {"enabled": true, "extends": ["schedule:daily"]},
+    "platformAutomerge": true,
+    "rollbackPrs": true
+}
