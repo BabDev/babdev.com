@@ -1,17 +1,15 @@
-name: Test & Deploy
+name: Test Application
 
 on: [push, pull_request]
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    continue-on-error: ${{ matrix.can-fail }}
     strategy:
       fail-fast: true
       matrix:
         include:
-          - php: 8.1
-            can-fail: false
+          - php: '8.1'
 
     name: "Test Application - PHP ${{ matrix.php }}"
 
@@ -30,7 +28,7 @@ jobs:
       - name: Setup NodeJS
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '16'
           cache: npm
 
       - name: Get Composer Cache Directory
@@ -65,12 +63,3 @@ jobs:
 
       - name: Execute Tests
         run: vendor/bin/phpunit --verbose
-
-  deploy:
-    needs: test
-    if: github.ref == 'refs/heads/production'
-    name: Deploy
-    runs-on: ubuntu-latest
-    steps:
-      - name: Trigger Envoyer
-        run: curl ${{ secrets.ENVOYER_HOOK }}?sha=${{ github.sha }}

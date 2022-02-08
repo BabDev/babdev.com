@@ -1,0 +1,17 @@
+name: Deploy Application
+
+on:
+  workflow_run:
+    branches: ['production']
+    workflows: ['Test Application']
+    types:
+      - completed
+
+jobs:
+  deploy:
+    name: Deploy Application
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Envoyer
+        run: curl ${{ secrets.ENVOYER_HOOK }}?sha=${{ github.sha }}
