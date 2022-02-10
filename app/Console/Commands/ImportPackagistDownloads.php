@@ -6,7 +6,9 @@ use BabDev\Models\Package;
 use Illuminate\Console\Command;
 use Illuminate\Support\Arr;
 use Spatie\Packagist\PackagistClient;
+use Symfony\Component\Console\Attribute\AsCommand;
 
+#[AsCommand(name: 'import:packagist-downloads', description: 'Import download counts from Packagist.')]
 class ImportPackagistDownloads extends Command
 {
     protected $name = 'import:packagist-downloads';

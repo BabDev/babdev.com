@@ -7,7 +7,9 @@ use BabDev\Models\Sponsor;
 use BabDev\Models\SponsorshipTier;
 use Illuminate\Console\Command;
 use Illuminate\Support\Arr;
+use Symfony\Component\Console\Attribute\AsCommand;
 
+#[AsCommand(name: 'import:github-sponsors', description: 'Import GitHub sponsors to the application.')]
 class ImportGitHubSponsors extends Command
 {
     protected $name = 'import:github-sponsors';

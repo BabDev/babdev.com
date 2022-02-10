@@ -6,7 +6,9 @@ use GuzzleHttp\Psr7\Uri;
 use Illuminate\Console\Command;
 use Spatie\Sitemap\SitemapGenerator;
 use Spatie\Sitemap\Tags\Url;
+use Symfony\Component\Console\Attribute\AsCommand;
 
+#[AsCommand(name: 'sitemap:generate', description: 'Generate the sitemap.')]
 class GenerateSitemap extends Command
 {
     protected $name = 'sitemap:generate';

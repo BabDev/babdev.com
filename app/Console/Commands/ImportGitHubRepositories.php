@@ -6,7 +6,9 @@ use BabDev\GitHub\ApiConnector;
 use BabDev\Models\Package;
 use Illuminate\Console\Command;
 use Illuminate\Support\Arr;
+use Symfony\Component\Console\Attribute\AsCommand;
 
+#[AsCommand(name: 'import:github-repositories', description: 'Import GitHub repositories to the application.')]
 class ImportGitHubRepositories extends Command
 {
     protected $name = 'import:github-repositories';

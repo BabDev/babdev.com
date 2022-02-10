@@ -4,7 +4,9 @@ namespace BabDev\Console\Commands;
 
 use BabDev\GitHub\ApiConnector;
 use Illuminate\Console\Command;
+use Symfony\Component\Console\Attribute\AsCommand;
 
+#[AsCommand(name: 'hacktoberfest:add', description: 'Adds extras for Hacktoberfest to active repositories.')]
 class AddHacktoberfestExtras extends Command
 {
     protected $name = 'hacktoberfest:add';
