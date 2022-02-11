@@ -35,10 +35,17 @@ return [
             'root' => storage_path('app'),
         ],
 
+        'public' => [
+            'driver' => 'local',
+            'root' => env('APP_PUBLIC_PATH', storage_path('app/public')),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+
         'logos' => [
             'driver' => 'local',
             'root' => env('APP_LOGOS_PATH', storage_path('app/logos')),
-            'url' => '/logos',
+            'url' => env('APP_URL').'/logos',
             'visibility' => 'public',
         ],
 
@@ -67,6 +74,7 @@ return [
     */
 
     'links' => [
+        public_path('storage') => env('APP_PUBLIC_PATH', storage_path('app/public')),
         public_path('logos') => env('APP_LOGOS_PATH', storage_path('app/logos')),
     ],
 

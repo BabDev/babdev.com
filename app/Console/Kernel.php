@@ -14,6 +14,7 @@ class Kernel extends ConsoleKernel
 
     protected function schedule(Schedule $schedule): void
     {
+        $schedule->command('google-fonts:fetch')->weekly();
         $schedule->command('import:packagist-downloads')->hourly();
         $schedule->command('import:github-repositories')->dailyAt('12:00');
         $schedule->command('import:github-sponsorship-tiers')->dailyAt('13:00');

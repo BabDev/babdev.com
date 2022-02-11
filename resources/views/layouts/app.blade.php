@@ -17,6 +17,7 @@
         <meta name="twitter:image" content="{{ asset('images/social-media.png') }}">
         @yield('meta')
         <title>{{ $title ?? config('app.name', 'BabDev') }}</title>
+        @googlefonts
         <link href="{{ PushManager::preload(mix('css/app.css'), ['as' => 'style', 'integrity' => Sri::hash('css/app.css'), 'crossorigin' => 'anonymous']) }}" rel="stylesheet" {{ Sri::html('css/app.css') }}>
         @if(request()->getHost() === 'www.babdev.com')
             <script type="text/javascript">
