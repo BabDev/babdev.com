@@ -21,7 +21,7 @@
         "http-interop/http-factory-guzzle": "^1.2",
         "knplabs/github-api": "^3.5",
         "kraftbit/nova-tinymce5-editor": "^1.0",
-        "laravel/framework": "^9.0.1",
+        "laravel/framework": "^9.0.2",
         "laravel/nova": "^3.31",
         "lcobucci/jwt": "^4.1.5",
         "league/commonmark": "^2.2.1",
@@ -42,7 +42,7 @@
         "phpstan/phpstan-mockery": "1.0.0",
         "phpstan/phpstan-phpunit": "1.0.0",
         "phpunit/phpunit": "^9.5.13",
-        "spatie/laravel-ignition": "^1.0.3"
+        "spatie/laravel-ignition": "^1.0.4"
     },
     "replace": {
         "paragonie/random_compat": "*",
