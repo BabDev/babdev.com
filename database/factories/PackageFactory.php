@@ -7,12 +7,13 @@ use BabDev\PackageType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends Factory<Package>
+ * @template TModel of Package
+ * @extends Factory<TModel>
  */
 class PackageFactory extends Factory
 {
     /**
-     * @var class-string<Package>
+     * @var class-string<TModel>
      */
     protected $model = Package::class;
 

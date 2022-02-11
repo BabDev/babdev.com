@@ -8,12 +8,13 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends Factory<PackageUpdate>
+ * @template TModel of PackageUpdate
+ * @extends Factory<TModel>
  */
 class PackageUpdateFactory extends Factory
 {
     /**
-     * @var class-string<PackageUpdate>
+     * @var class-string<TModel>
      */
     protected $model = PackageUpdate::class;
 

@@ -86,6 +86,11 @@ parameters:
 			path: app/GitHub/ApiConnector.php
 
 		-
+			message: "#^Method BabDev\\\\GitHub\\\\ApiConnector\\:\\:fetchPublicRepositories\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/GitHub/ApiConnector.php
+
+		-
 			message: "#^Parameter \\#1 \\$httpClientBuilder of class Github\\\\Client constructor expects Github\\\\HttpClient\\\\Builder\\|null, mixed given\\.$#"
 			count: 1
 			path: app/GitHub/ContainerAwareClientFactory.php
@@ -156,7 +161,17 @@ parameters:
 			path: app/Matomo/ApiConnector.php
 
 		-
+			message: "#^Method BabDev\\\\Models\\\\Package\\:\\:getDefaultDocsVersion\\(\\) should return string but returns string\\|null\\.$#"
+			count: 1
+			path: app/Models/Package.php
+
+		-
 			message: "#^Offset string does not exist on array\\<string, string\\>\\|null\\.$#"
+			count: 1
+			path: app/Models/Package.php
+
+		-
+			message: "#^PHPDoc tag @return contains generic type Database\\\\Factories\\\\PackageFactory\\<BabDev\\\\Models\\\\Package\\> but class Database\\\\Factories\\\\PackageFactory is not generic\\.$#"
 			count: 1
 			path: app/Models/Package.php
 
@@ -311,12 +326,27 @@ parameters:
 			path: app/Services/DocumentationProcessor.php
 
 		-
+			message: "#^Parameter \\#1 \\$subject of static method Illuminate\\\\Support\\\\Str\\:\\:after\\(\\) expects string, string\\|null given\\.$#"
+			count: 1
+			path: app/Services/DocumentationProcessor.php
+
+		-
 			message: "#^Parameter \\#1 \\$html of class Illuminate\\\\Support\\\\HtmlString constructor expects string, string\\|false given\\.$#"
 			count: 1
 			path: app/helpers.php
 
 		-
 			message: "#^Cannot call method assertExitCode\\(\\) on Illuminate\\\\Testing\\\\PendingCommand\\|int\\.$#"
+			count: 1
+			path: tests/Feature/ImportGitHubRepositoriesTest.php
+
+		-
+			message: "#^Unable to resolve the template type TKey in call to function collect$#"
+			count: 1
+			path: tests/Feature/ImportGitHubRepositoriesTest.php
+
+		-
+			message: "#^Unable to resolve the template type TValue in call to function collect$#"
 			count: 1
 			path: tests/Feature/ImportGitHubRepositoriesTest.php
 

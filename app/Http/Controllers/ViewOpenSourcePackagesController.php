@@ -10,7 +10,7 @@ final class ViewOpenSourcePackagesController
 {
     public function __invoke(): View
     {
-        /** @var Collection<Package> $packages */
+        /** @var Collection<array-key, Package> $packages */
         $packages = Package::query()
             ->visible()
             ->orderBy('display_name')

@@ -117,6 +117,9 @@ class Package extends Model
         });
     }
 
+    /**
+     * @return PackageFactory<self>
+     */
     protected static function newFactory(): Factory
     {
         return PackageFactory::new();
@@ -134,11 +137,21 @@ class Package extends Model
             ->saveSlugsTo('slug');
     }
 
+    /**
+     * @param Builder<self> $query
+     *
+     * @return Builder<self>
+     */
     public function scopeIsPackagist(Builder $query): Builder
     {
         return $query->where('is_packagist', '=', true);
     }
 
+    /**
+     * @param Builder<self> $query
+     *
+     * @return Builder<self>
+     */
     public function scopeVisible(Builder $query): Builder
     {
         return $query->where('visible', '=', true);

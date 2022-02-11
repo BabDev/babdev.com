@@ -52,6 +52,9 @@ class Sponsor extends Model
         'is_public' => 'boolean',
     ];
 
+    /**
+     * @return BelongsTo<SponsorshipTier, self>
+     */
     public function sponsorship_tier(): BelongsTo
     {
         return $this->belongsTo(SponsorshipTier::class);

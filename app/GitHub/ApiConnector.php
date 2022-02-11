@@ -35,7 +35,7 @@ class ApiConnector
     }
 
     /**
-     * @return Collection<array>
+     * @return Collection<array-key, array>
      */
     public function fetchPublicRepositories(string $username): Collection
     {
@@ -44,7 +44,7 @@ class ApiConnector
     }
 
     /**
-     * @return Collection<string>
+     * @return Collection<array-key, string>
      */
     public function fetchRepositoryLabels(string $username, string $repository): Collection
     {
@@ -52,7 +52,7 @@ class ApiConnector
     }
 
     /**
-     * @return Collection<string>
+     * @return Collection<array-key, string>
      */
     public function fetchRepositoryTopics(string $username, string $repository): Collection
     {

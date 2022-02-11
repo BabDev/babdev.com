@@ -63,6 +63,9 @@ class PackageUpdate extends Model
         'published_at' => 'datetime',
     ];
 
+    /**
+     * @return PackageUpdateFactory<self>
+     */
     protected static function newFactory(): Factory
     {
         return PackageUpdateFactory::new();
@@ -73,11 +76,19 @@ class PackageUpdate extends Model
         return 'slug';
     }
 
+    /**
+     * @param Builder<self> $query
+     *
+     * @return Builder<self>
+     */
     public function scopePublished(Builder $query): Builder
     {
         return $query->where('published_at', '<=', now()->format('Y-m-d H:i:s'));
     }
 
+    /**
+     * @return BelongsTo<Package, self>
+     */
     public function package(): BelongsTo
     {
         return $this->belongsTo(Package::class);
