@@ -19,9 +19,9 @@
         "elhebert/laravel-sri": "^3.1",
         "guzzlehttp/guzzle": "^7.4.1",
         "http-interop/http-factory-guzzle": "^1.2",
-        "knplabs/github-api": "^3.5",
+        "knplabs/github-api": "^3.5.1",
         "kraftbit/nova-tinymce5-editor": "^1.0",
-        "laravel/framework": "^9.0.2",
+        "laravel/framework": "^9.1",
         "laravel/nova": "^3.31",
         "lcobucci/jwt": "^4.1.5",
         "league/commonmark": "^2.2.2",
@@ -33,7 +33,7 @@
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.12.2",
         "fakerphp/faker": "^1.19",
-        "laravel/telescope": "^4.7.2",
+        "laravel/telescope": "^4.7.3",
         "mockery/mockery": "^1.5",
         "nunomaduro/collision": "^6.1",
         "nunomaduro/larastan": "2.0.1",
@@ -41,8 +41,8 @@
         "phpstan/phpstan": "1.4.6",
         "phpstan/phpstan-mockery": "1.0.0",
         "phpstan/phpstan-phpunit": "1.0.0",
-        "phpunit/phpunit": "^9.5.13",
-        "spatie/laravel-ignition": "^1.0.5"
+        "phpunit/phpunit": "^9.5.14",
+        "spatie/laravel-ignition": "^1.0.6"
     },
     "replace": {
         "paragonie/random_compat": "*",
