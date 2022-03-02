@@ -9,7 +9,7 @@
     <section class="pt-4">
         <div class="container">
             @forelse($packages as $package)
-                <div class="open-source-package mb-3{{ $package->logo ? ' open-source-package--has-logo' : '' }}{{ !empty($package->topics) ? ' open-source-package--has-topics' : '' }}{{ $package->has_documentation ? ' open-source-package--has-links' : '' }}{{ !$package->supported ? ' open-source-package--abandoned' : '' }}">
+                <div @class(['open-source-package', 'open-source-package--has-logo' => $package->logo, 'open-source-package--has-topics' => !empty($package->topics), 'open-source-package--has-links' => $package->has_documentation, 'open-source-package--abandoned' => !$package->supported, 'mb-3'])>
                     @if($package->logo)
                         <div class="open-source-package__logo text-center">
                             <img src="{{ Storage::disk('logos')->url($package->logo) }}" alt="{{ $package->display_name }} Logo" loading="lazy">

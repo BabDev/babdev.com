@@ -22,7 +22,7 @@
 
                         <ul class="dropdown-menu" aria-labelledby="docs-version-selector">
                             @foreach($package->docs_branches as $docsVersion => $docsBranch)
-                                <li><a class="dropdown-item{{ $docsVersion === $version ? ' active' : '' }}" href="{{ route('open-source.packages.package-docs-page', ['package' => $package, 'version' => $docsBranch, 'slug' => $slug]) }}">{{ $docsVersion }}</a></li>
+                                <li><a @class(['dropdown-item', 'active' => $docsVersion === $version]) href="{{ route('open-source.packages.package-docs-page', ['package' => $package, 'version' => $docsBranch, 'slug' => $slug]) }}">{{ $docsVersion }}</a></li>
                             @endforeach
                         </ul>
                     </div>

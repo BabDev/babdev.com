@@ -50,14 +50,14 @@
                     <nav class="collapse navbar-collapse" id="main-nav">
                         <ul class="navbar-nav ms-sm-auto">
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="open-source-menu-item" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Open Source</a>
+                                <a @class(['nav-link', 'dropdown-toggle', 'active' => request()->routeIs('open-source.*')]) id="open-source-menu-item" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Open Source</a>
                                 <div class="dropdown-menu" aria-labelledby="open-source-menu-item">
-                                    <a class="dropdown-item" href="{{ route('open-source.packages') }}">Packages</a>
-                                    <a class="dropdown-item" href="{{ route('open-source.updates') }}">Updates</a>
+                                    <a @class(['dropdown-item', 'active' => request()->routeIs('open-source.packages', 'open-source.packages.package-docs-page')]) href="{{ route('open-source.packages') }}">Packages</a>
+                                    <a @class(['dropdown-item', 'active' => request()->routeIs('open-source.updates', 'open-source.updates.paginated', 'open-source.update')]) href="{{ route('open-source.updates') }}">Updates</a>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('sponsor') }}">Sponsor</a>
+                                <a @class(['nav-link', 'active' => request()->routeIs('sponsor')]) href="{{ route('sponsor') }}">Sponsor</a>
                             </li>
                         </ul>
                     </nav>
