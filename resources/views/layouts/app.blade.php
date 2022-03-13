@@ -19,7 +19,7 @@
         <title>{{ $title ?? config('app.name', 'BabDev') }}</title>
         @googlefonts
         <link href="{{ PushManager::preload(mix('css/app.css'), ['as' => 'style', 'integrity' => Sri::hash('css/app.css'), 'crossorigin' => 'anonymous']) }}" rel="stylesheet" {{ Sri::html('css/app.css') }}>
-        @if(request()->getHost() === 'www.babdev.com')
+        @production
             <script type="text/javascript">
                 var _paq = window._paq = window._paq || [];
                 _paq.push(['trackPageView']);
@@ -32,7 +32,7 @@
                     g.type='text/javascript'; g.async=true; g.src='//cdn.matomo.cloud/babdev.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
                 })();
             </script>
-        @endif
+        @endproduction
     </head>
     <body>
         <header class="sticky-top">
