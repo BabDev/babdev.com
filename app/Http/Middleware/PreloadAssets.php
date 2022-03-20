@@ -20,8 +20,6 @@ class PreloadAssets
             return $response;
         }
 
-        $this->pushManager->dnsPrefetch('https://fonts.googleapis.com');
-        $this->pushManager->dnsPrefetch('https://fonts.gstatic.com');
         $this->pushManager->preload(asset('fonts/BPscript.woff2'), ['as' => 'font', 'type' => 'font/woff2']);
 
         return $response;
