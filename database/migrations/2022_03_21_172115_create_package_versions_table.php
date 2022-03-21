@@ -17,6 +17,11 @@ return new class () extends Migration {
             $table->timestamps();
             $table->unique(['package_id', 'version'], 'unique_package_version');
         });
+
+        Artisan::call('db:seed', [
+            '--class' => 'PackageVersionMigrationSeeder',
+            '--force' => true,
+        ]);
     }
 
     public function down(): void
