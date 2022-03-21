@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Field;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\KeyValue;
@@ -16,6 +17,9 @@ use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Resource;
 
+/**
+ * @mixin PackageModel
+ */
 class Package extends Resource
 {
     public static $group = 'Packages';
@@ -93,6 +97,8 @@ class Package extends Resource
             Boolean::make('Visible'),
 
             Boolean::make('Is Packagist'),
+
+            HasMany::make('Versions', null, PackageVersion::class),
         ];
     }
 }
