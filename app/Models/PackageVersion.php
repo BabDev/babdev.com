@@ -2,7 +2,10 @@
 
 namespace BabDev\Models;
 
+use Database\Factories\PackageVersionFactory;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
@@ -19,6 +22,7 @@ use Illuminate\Support\Carbon;
  *
  * @property-read Package $package
  *
+ * @method static PackageVersionFactory factory(...$parameters)
  * @method static Builder|PackageVersion newModelQuery()
  * @method static Builder|PackageVersion newQuery()
  * @method static Builder|PackageVersion query()
@@ -32,6 +36,8 @@ use Illuminate\Support\Carbon;
  */
 class PackageVersion extends Model
 {
+    use HasFactory;
+
     /**
      * @var array<int, string>
      */
@@ -49,6 +55,14 @@ class PackageVersion extends Model
         'released' => 'date',
         'end_of_support' => 'date',
     ];
+
+    /**
+     * @return PackageVersionFactory<self>
+     */
+    protected static function newFactory(): Factory
+    {
+        return PackageVersionFactory::new();
+    }
 
     public function getRouteKeyName(): string
     {
