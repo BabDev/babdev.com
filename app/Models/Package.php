@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
@@ -37,7 +38,11 @@ use Spatie\Sluggable\SlugOptions;
  * @property Carbon|null                $created_at
  * @property Carbon|null                $updated_at
  *
- * @property-read string $github_url
+ * @property-read string                     $github_url
+ * @property-read Collection<PackageUpdate>  $updates
+ * @property-read int|null                   $updates_count
+ * @property-read Collection<PackageVersion> $versions
+ * @property-read int|null                   $versions_count
  *
  * @method static PackageFactory factory(...$parameters)
  * @method static Builder|Package isPackagist()
@@ -157,6 +162,25 @@ class Package extends Model
         return $query->where('visible', '=', true);
     }
 
+    /**
+     * @return HasMany<PackageUpdate>
+     */
+    public function updates(): HasMany
+    {
+        return $this->hasMany(PackageUpdate::class);
+    }
+
+    /**
+     * @return HasMany<PackageVersion>
+     */
+    public function versions(): HasMany
+    {
+        return $this->hasMany(PackageVersion::class);
+    }
+
+    /**
+     * @return Attribute<string, null>
+     */
     protected function githubUrl(): Attribute
     {
         return new Attribute(
