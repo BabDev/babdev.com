@@ -11,6 +11,7 @@ use Illuminate\Support\Carbon;
  * @property int         $id
  * @property int         $package_id
  * @property string      $version
+ * @property string|null $docs_git_branch
  * @property Carbon|null $released
  * @property Carbon|null $end_of_support
  * @property Carbon|null $created_at
@@ -36,6 +37,7 @@ class PackageVersion extends Model
      */
     protected $fillable = [
         'version',
+        'docs_git_branch',
         'released',
         'end_of_support',
     ];

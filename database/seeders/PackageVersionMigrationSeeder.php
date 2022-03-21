@@ -217,6 +217,7 @@ class PackageVersionMigrationSeeder extends Seeder
 
         $package->versions()->create([
             'version' => '1.x',
+            'docs_git_branch' => '0.1',
         ]);
     }
 
@@ -227,6 +228,7 @@ class PackageVersionMigrationSeeder extends Seeder
 
         $package->versions()->create([
             'version' => '1.x',
+            'docs_git_branch' => '0.1',
         ]);
     }
 

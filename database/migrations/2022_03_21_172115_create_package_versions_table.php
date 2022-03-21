@@ -12,6 +12,7 @@ return new class () extends Migration {
             $table->id();
             $table->foreignIdFor(Package::class)->constrained();
             $table->string('version');
+            $table->string('docs_git_branch')->nullable();
             $table->date('released')->nullable();
             $table->date('end_of_support')->nullable();
             $table->timestamps();
