@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use BabDev\Contracts\Services\DocumentationProcessor;
 use BabDev\Contracts\Services\Exceptions\PageNotFoundException;
 use BabDev\Models\Package;
+use BabDev\Models\PackageVersion;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -39,7 +40,8 @@ class DocumentationTest extends TestCase
         $package = Package::factory()->docs()->create();
 
         $this->get(sprintf('/open-source/packages/%s/docs/2.x/intro', $package->slug))
-            ->assertNotFound();
+            ->assertNotFound()
+            ->assertViewIs('open_source.packages.docs_not_found_for_version');
     }
 
     /** @test */
@@ -71,7 +73,10 @@ class DocumentationTest extends TestCase
     public function when_a_docs_request_is_for_an_existing_page_the_docs_can_be_viewed(): void
     {
         /** @var Package $package */
-        $package = Package::factory()->docs()->create();
+        $package = Package::factory()
+            ->docs()
+            ->has(PackageVersion::factory()->count(1), 'versions')
+            ->create();
 
         $this->mock(DocumentationProcessor::class, function ($mock): void {
             $mock->shouldReceive('fetchPageContents', 'fetchPageContents', 'extractTitle')
@@ -97,9 +102,12 @@ class DocumentationTest extends TestCase
     public function when_a_docs_request_is_for_a_page_without_a_version_the_user_is_redirected_to_the_default_version_page(): void
     {
         /** @var Package $package */
-        $package = Package::factory()->docs()->create();
+        $package = Package::factory()
+            ->docs()
+            ->has(PackageVersion::factory()->count(1), 'versions')
+            ->create();
 
         $this->get(sprintf('/open-source/packages/%s/docs/intro', $package->slug))
-            ->assertRedirect(sprintf('/open-source/packages/%s/docs/%s/intro', $package->slug, $package->getDefaultDocsVersion()));
+            ->assertRedirect(sprintf('/open-source/packages/%s/docs/1.x/intro', $package->slug));
     }
 }

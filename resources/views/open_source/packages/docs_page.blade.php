@@ -1,4 +1,5 @@
 @php /** @var \BabDev\Models\Package $package */ @endphp
+@php /** @var \BabDev\Models\PackageVersion $package_version */ @endphp
 @php /** @var string $contents */ @endphp
 @php /** @var string $sidebar */ @endphp
 @php /** @var string|null $title */ @endphp
@@ -14,15 +15,15 @@
     <article class="pt-4">
         <div class="container-fluid package-docs">
             <div class="package-docs__sidebar">
-                @if(count($package->docs_branches) > 1)
+                @if($package->versions->count() > 1)
                     <div class="package-docs__version-selector dropdown">
                         <a class="btn btn-light dropdown-toggle" href="#" role="button" id="docs-version-selector" data-bs-toggle="dropdown" aria-expanded="false">
                             Select Version ({{ $version }})
                         </a>
 
                         <ul class="dropdown-menu" aria-labelledby="docs-version-selector">
-                            @foreach($package->docs_branches as $docsVersion => $docsBranch)
-                                <li><a @class(['dropdown-item', 'active' => $docsVersion === $version]) href="{{ route('open-source.packages.package-docs-page', ['package' => $package, 'version' => $docsBranch, 'slug' => $slug]) }}">{{ $docsVersion }}</a></li>
+                            @foreach($package->versions as $availablePackageVersion)
+                                <li><a @class(['dropdown-item', 'active' => $availablePackageVersion->version === $version]) href="{{ route('open-source.packages.package-docs-page', ['package' => $package, 'version' => $availablePackageVersion->version, 'slug' => $slug]) }}">{{ $availablePackageVersion->version }}</a></li>
                             @endforeach
                         </ul>
                     </div>

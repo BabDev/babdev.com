@@ -37,4 +37,9 @@
   &__version-selector {
     padding-bottom: .75rem;
   }
+
+  &.package-docs--version-not-found {
+    grid-template-columns: 100%;
+    grid-template-areas: "content";
+  }
 }

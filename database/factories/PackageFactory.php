@@ -47,9 +47,6 @@ class PackageFactory extends Factory
         return $this->state(
             [
                 'has_documentation' => true,
-                'docs_branches' => [
-                    '1.x' => '1.x',
-                ],
             ],
         );
     }

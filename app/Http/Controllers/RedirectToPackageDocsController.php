@@ -2,13 +2,14 @@
 
 namespace BabDev\Http\Controllers;
 
+use BabDev\Models\Exceptions\VersionsNotConfigured;
 use BabDev\Models\Package;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 final class RedirectToPackageDocsController
 {
-    public function __invoke(Request $request, Package $package): RedirectResponse
+    public function __invoke(Package $package, string $slug = 'intro'): RedirectResponse
     {
         abort_if(!$package->visible, 404);
 
@@ -17,18 +18,17 @@ final class RedirectToPackageDocsController
             return redirect()->route('open-source.packages');
         }
 
-        $slug = $request->get('slug', 'intro');
-        $version = $request->get('version');
-
-        if ($version === null) {
-            $version = $package->getDefaultDocsVersion();
+        try {
+            $packageVersion = $package->latestVersion();
+        } catch (VersionsNotConfigured $exception) {
+            throw new NotFoundHttpException($exception->getMessage(), $exception);
         }
 
         return redirect()->route(
             'open-source.packages.package-docs-page',
             [
                 'package' => $package,
-                'version' => $version,
+                'version' => $packageVersion->version,
                 'slug' => $slug,
             ],
         );

@@ -3,6 +3,7 @@
 namespace BabDev\Models;
 
 use BabDev\Models\Exceptions\DocumentationUnsupportedException;
+use BabDev\Models\Exceptions\VersionsNotConfigured;
 use BabDev\PackageType;
 use Carbon\Carbon;
 use Database\Factories\PackageFactory;
@@ -186,6 +187,28 @@ class Package extends Model
         return new Attribute(
             get: fn () => sprintf('https://github.com/BabDev/%s', $this->name),
         );
+    }
+
+    /**
+     * @throws VersionsNotConfigured if the package does not have versions
+     */
+    public function latestVersion(): PackageVersion
+    {
+        /** @var PackageVersion|null $packageVersion */
+        $packageVersion = $this->versions()->newestReleasedVersionForPackage()->first();
+
+        if ($packageVersion !== null) {
+            return $packageVersion;
+        }
+
+        /** @var PackageVersion|null $packageVersion */
+        $packageVersion = $this->versions()->first();
+
+        if ($packageVersion === null) {
+            throw new VersionsNotConfigured(sprintf('Versions are not configured for the "%s" package.', $this->display_name));
+        }
+
+        return $packageVersion;
     }
 
     public function hasDocsVersion(string $version): bool

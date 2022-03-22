@@ -4,6 +4,7 @@ namespace BabDev\Models;
 
 use Database\Factories\PackageVersionFactory;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -20,9 +21,11 @@ use Illuminate\Support\Carbon;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  *
+ * @property-read string  $git_branch
  * @property-read Package $package
  *
  * @method static PackageVersionFactory factory(...$parameters)
+ * @method static Builder|PackageVersion newestReleasedVersionForPackage()
  * @method static Builder|PackageVersion newModelQuery()
  * @method static Builder|PackageVersion newQuery()
  * @method static Builder|PackageVersion query()
@@ -70,10 +73,31 @@ class PackageVersion extends Model
     }
 
     /**
+     * @param Builder<self> $query
+     *
+     * @return Builder<self>
+     */
+    public function scopeNewestReleasedVersionForPackage(Builder $query): Builder
+    {
+        return $query->whereNotNull('released')
+            ->orderByDesc('released');
+    }
+
+    /**
      * @return BelongsTo<Package, self>
      */
     public function package(): BelongsTo
     {
         return $this->belongsTo(Package::class);
+    }
+
+    /**
+     * @return Attribute<string, null>
+     */
+    protected function gitBranch(): Attribute
+    {
+        return new Attribute(
+            get: fn () => $this->docs_git_branch ?? $this->version,
+        );
     }
 }
