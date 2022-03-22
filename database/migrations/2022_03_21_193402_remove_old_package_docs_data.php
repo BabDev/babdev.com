@@ -8,8 +8,8 @@ return new class () extends Migration {
     public function up(): void
     {
         Schema::table('packages', function (Blueprint $table): void {
-            $table->removeColumn('docs_branches');
-            $table->removeColumn('default_docs_version');
+            $table->dropColumn('docs_branches');
+            $table->dropColumn('default_docs_version');
         });
     }
 
