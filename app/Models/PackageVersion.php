@@ -23,6 +23,7 @@ use Illuminate\Support\Carbon;
  *
  * @property-read string  $git_branch
  * @property-read Package $package
+ * @property-read bool    $support_ended
  *
  * @method static PackageVersionFactory factory(...$parameters)
  * @method static Builder|PackageVersion newestReleasedVersionForPackage()
@@ -98,6 +99,16 @@ class PackageVersion extends Model
     {
         return new Attribute(
             get: fn () => $this->docs_git_branch ?? $this->version,
+        );
+    }
+
+    /**
+     * @return Attribute<bool, null>
+     */
+    protected function supportEnded(): Attribute
+    {
+        return new Attribute(
+            get: fn () => $this->end_of_support !== null && $this->end_of_support->isBefore(now()),
         );
     }
 }

@@ -5,6 +5,7 @@ namespace BabDev\Models;
 use Carbon\Carbon;
 use Database\Factories\PackageUpdateFactory;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -22,6 +23,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  *
+ * @property-read bool    $is_published
  * @property-read Package $package
  *
  * @method static PackageUpdateFactory factory(...$parameters)
@@ -94,12 +96,13 @@ class PackageUpdate extends Model
         return $this->belongsTo(Package::class);
     }
 
-    public function isPublished(): bool
+    /**
+     * @return Attribute<bool, null>
+     */
+    protected function isPublished(): Attribute
     {
-        if (!$this->published_at) {
-            return false;
-        }
-
-        return $this->published_at <= now();
+        return new Attribute(
+            get: fn () => $this->published_at->isBefore(now()),
+        );
     }
 }

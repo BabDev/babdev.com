@@ -10,7 +10,7 @@
     <article class="pt-4">
         <div class="container package-docs package-docs--version-not-found">
             <div class="package-docs__content">
-                <div class="alert alert-warning">
+                <div class="package-docs__version-not-found-alert alert alert-warning">
                     <div class="alert-heading">Version Documentation Not Found</div>
                     <p>Sorry, the documentation for version "{{ $version }}" was not found. Using the links below, you can navigate to the documentation for each supported version of this package.</p>
                 </div>

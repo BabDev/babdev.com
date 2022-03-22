@@ -9,7 +9,7 @@ final class ViewOpenSourceUpdateController
 {
     public function __invoke(PackageUpdate $update): View
     {
-        abort_unless($update->isPublished(), 404, 'Update Not Found');
+        abort_unless($update->is_published, 404, 'Update Not Found');
 
         $update->load(
             [
