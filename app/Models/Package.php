@@ -2,7 +2,6 @@
 
 namespace BabDev\Models;
 
-use BabDev\Models\Exceptions\DocumentationUnsupportedException;
 use BabDev\Models\Exceptions\VersionsNotConfigured;
 use BabDev\PackageType;
 use Carbon\Carbon;
@@ -18,26 +17,24 @@ use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
 /**
- * @property int                        $id
- * @property string                     $name
- * @property string                     $display_name
- * @property string|null                $packagist_name
- * @property string                     $slug
- * @property string|null                $logo
- * @property string|null                $description
- * @property array|null                 $topics
- * @property bool                       $has_documentation
- * @property array<string, string>|null $docs_branches
- * @property string|null                $default_docs_version
- * @property PackageType|null           $package_type
- * @property int                        $stars
- * @property int|null                   $downloads
- * @property string|null                $language
- * @property bool                       $supported
- * @property bool                       $visible
- * @property bool                       $is_packagist
- * @property Carbon|null                $created_at
- * @property Carbon|null                $updated_at
+ * @property int              $id
+ * @property string           $name
+ * @property string           $display_name
+ * @property string|null      $packagist_name
+ * @property string           $slug
+ * @property string|null      $logo
+ * @property string|null      $description
+ * @property array|null       $topics
+ * @property bool             $has_documentation
+ * @property PackageType|null $package_type
+ * @property int              $stars
+ * @property int|null         $downloads
+ * @property string|null      $language
+ * @property bool             $supported
+ * @property bool             $visible
+ * @property bool             $is_packagist
+ * @property Carbon|null      $created_at
+ * @property Carbon|null      $updated_at
  *
  * @property-read string                     $github_url
  * @property-read Collection<PackageUpdate>  $updates
@@ -88,8 +85,6 @@ class Package extends Model
         'description',
         'topics',
         'has_documentation',
-        'docs_branches',
-        'default_docs_version',
         'package_type',
         'stars',
         'downloads',
@@ -105,7 +100,6 @@ class Package extends Model
     protected $casts = [
         'topics' => 'array',
         'has_documentation' => 'boolean',
-        'docs_branches' => 'array',
         'package_type' => PackageType::class,
         'stars' => 'integer',
         'downloads' => 'integer',
@@ -209,42 +203,5 @@ class Package extends Model
         }
 
         return $packageVersion;
-    }
-
-    public function hasDocsVersion(string $version): bool
-    {
-        if ($this->docs_branches === null) {
-            return false;
-        }
-
-        return isset($this->docs_branches[$version]);
-    }
-
-    /**
-     * @throws DocumentationUnsupportedException if the package does not support the given version
-     */
-    public function mapDocsVersionToGitBranch(string $version): string
-    {
-        if (!$this->hasDocsVersion($version)) {
-            throw new DocumentationUnsupportedException(sprintf('Cannot map version "%s" to git branch for documentation', $version));
-        }
-
-        return $this->docs_branches[$version];
-    }
-
-    /**
-     * @throws DocumentationUnsupportedException if the documentation branch map has not been created and a default documentation version has not been set
-     */
-    public function getDefaultDocsVersion(): string
-    {
-        if ($this->default_docs_version !== null) {
-            return $this->default_docs_version;
-        }
-
-        if ($this->docs_branches !== null) {
-            return (new Collection($this->docs_branches))->first();
-        }
-
-        throw new DocumentationUnsupportedException('No documentation mapping created');
     }
 }

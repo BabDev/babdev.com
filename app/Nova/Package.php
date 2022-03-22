@@ -11,7 +11,6 @@ use Laravel\Nova\Fields\Field;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
-use Laravel\Nova\Fields\KeyValue;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
@@ -67,17 +66,6 @@ class Package extends Resource
                 ->hideFromDetail(),
 
             Boolean::make('Has Documentation'),
-
-            KeyValue::make('Docs Branches')
-                ->keyLabel('Version')
-                ->valueLabel('Git Branch')
-                ->rules('json')
-                ->hideFromIndex(),
-
-            Text::make('Default Docs Version')
-                ->nullable(true)
-                ->required(false)
-                ->hideFromIndex(),
 
             Select::make('Package Type')
                 ->options(
