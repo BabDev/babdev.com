@@ -5,6 +5,12 @@ on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
+
+    env:
+      DB_DATABASE: babdev_test
+      DB_USERNAME: root
+      DB_PASSWORD: password
+
     strategy:
       fail-fast: true
       matrix:
@@ -13,16 +19,30 @@ jobs:
 
     name: "Test Application - PHP ${{ matrix.php }}"
 
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: false
+          MYSQL_DATABASE: babdev_test
+          MYSQL_ROOT_PASSWORD: password
+        ports:
+          - 3306/tcp
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
+
+      - name: Start MySQL service
+        run: sudo systemctl start mysql
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
           tools: composer:v2
-          extensions: curl, dom, libxml, mbstring, pcntl, pdo, sqlite, pdo_sqlite, zip
+          extensions: curl, dom, libxml, mbstring, pcntl, pdo, pdo_mysql, zip
           coverage: none
 
       - name: Setup NodeJS
@@ -63,3 +83,5 @@ jobs:
 
       - name: Execute Tests
         run: vendor/bin/phpunit --verbose
+        env:
+          DB_PORT: ${{ job.services.mysql.ports['3306'] }}
