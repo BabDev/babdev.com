@@ -3,8 +3,8 @@
 namespace BabDev\Nova;
 
 use BabDev\Models\PackageUpdate as PackageUpdateModel;
+use BabDev\TinyMCEField\TinyMCE;
 use Illuminate\Database\Eloquent\Model;
-use Kraftbit\NovaTinymce5Editor\NovaTinymce5Editor;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Field;
@@ -56,10 +56,10 @@ class PackageUpdate extends Resource
 
             DateTime::make('Published At'),
 
-            NovaTinymce5Editor::make('Intro')
+            TinyMCE::make('Intro')
                 ->hideFromIndex(),
 
-            NovaTinymce5Editor::make('Content')
+            TinyMCE::make('Content')
                 ->hideFromIndex(),
         ];
     }
@@ -67,5 +67,10 @@ class PackageUpdate extends Resource
     public static function label(): string
     {
         return 'Updates';
+    }
+
+    public static function singularLabel(): string
+    {
+        return 'Package Update';
     }
 }
