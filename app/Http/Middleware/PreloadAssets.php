@@ -5,6 +5,7 @@ namespace BabDev\Http\Middleware;
 use BabDev\ServerPushManager\Contracts\PushManager;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Laravel\Nova\Util;
 
 class PreloadAssets
 {
@@ -16,18 +17,13 @@ class PreloadAssets
     {
         $response = $next($request);
 
-        if ($this->isNovaRequest($request) || $this->isTelescopeRequest($request) || $response->isRedirection() || !$response instanceof Response || $request->isJson()) {
+        if (Util::isNovaRequest($request) || $this->isTelescopeRequest($request) || $response->isRedirection() || !$response instanceof Response || $request->isJson()) {
             return $response;
         }
 
         $this->pushManager->preload(asset('fonts/BPscript.woff2'), ['as' => 'font', 'type' => 'font/woff2']);
 
         return $response;
-    }
-
-    private function isNovaRequest(Request $request): bool
-    {
-        return config('nova.domain') === $request->getHost();
     }
 
     private function isTelescopeRequest(Request $request): bool
