@@ -161,26 +161,6 @@ parameters:
 			path: app/Matomo/ApiConnector.php
 
 		-
-			message: "#^Method BabDev\\\\Models\\\\Package\\:\\:getDefaultDocsVersion\\(\\) should return string but returns string\\|null\\.$#"
-			count: 1
-			path: app/Models/Package.php
-
-		-
-			message: "#^Offset string does not exist on array\\<string, string\\>\\|null\\.$#"
-			count: 1
-			path: app/Models/Package.php
-
-		-
-			message: "#^PHPDoc tag @return contains generic type Database\\\\Factories\\\\PackageFactory\\<BabDev\\\\Models\\\\Package\\> but class Database\\\\Factories\\\\PackageFactory is not generic\\.$#"
-			count: 1
-			path: app/Models/Package.php
-
-		-
-			message: "#^Negated boolean expression is always false\\.$#"
-			count: 1
-			path: app/Models/PackageUpdate.php
-
-		-
 			message: "#^Cannot cast mixed to int\\.$#"
 			count: 2
 			path: app/Nova/Metrics/BounceRate.php
@@ -219,6 +199,16 @@ parameters:
 			message: "#^Parameter \\#1 \\$value of method Carbon\\\\Carbon\\:\\:addMinutes\\(\\) expects int, mixed given\\.$#"
 			count: 1
 			path: app/Nova/Metrics/VisitsPerDay.php
+
+		-
+			message: "#^Parameter \\#1 \\$displayCallback of method Laravel\\\\Nova\\\\Fields\\\\Field\\:\\:displayUsing\\(\\) expects callable\\(mixed, mixed, string\\)\\: mixed, Closure\\(BabDev\\\\PackageType, BabDev\\\\Models\\\\Package, string\\|null\\)\\: string given\\.$#"
+			count: 1
+			path: app/Nova/Package.php
+
+		-
+			message: "#^Parameter \\#1 \\$resolveCallback of method Laravel\\\\Nova\\\\Fields\\\\Field\\:\\:resolveUsing\\(\\) expects callable\\(mixed, mixed, string\\|null\\)\\: mixed, Closure\\(BabDev\\\\PackageType\\|null, BabDev\\\\Models\\\\Package, string\\|null\\)\\: 'joomla\\-extension'\\|'laravel\\-package'\\|'php\\-package'\\|'phpspec\\-extension'\\|'sylius\\-plugin'\\|'symfony\\-bundle'\\|null given\\.$#"
+			count: 1
+			path: app/Nova/Package.php
 
 		-
 			message: "#^Cannot access offset 'request' on Illuminate\\\\Contracts\\\\Foundation\\\\Application\\.$#"
