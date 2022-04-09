@@ -3,7 +3,6 @@
 namespace BabDev\Nova;
 
 use BabDev\Models\PackageVersion as PackageVersionModel;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Validation\Rule;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
@@ -14,12 +13,15 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Resource;
 
 /**
+ * @template TModel of PackageVersionModel
+ * @extends Resource<TModel>
+ *
  * @mixin PackageVersionModel
  */
 class PackageVersion extends Resource
 {
     /**
-     * @var class-string<Model>
+     * @var class-string<TModel>
      */
     public static $model = PackageVersionModel::class;
 

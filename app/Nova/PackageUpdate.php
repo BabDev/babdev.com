@@ -4,7 +4,6 @@ namespace BabDev\Nova;
 
 use BabDev\Models\PackageUpdate as PackageUpdateModel;
 use BabDev\TinyMCEField\TinyMCE;
-use Illuminate\Database\Eloquent\Model;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Field;
@@ -14,12 +13,18 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Resource;
 
+/**
+ * @template TModel of PackageUpdateModel
+ * @extends Resource<TModel>
+ *
+ * @mixin PackageUpdateModel
+ */
 class PackageUpdate extends Resource
 {
     public static $group = 'Packages';
 
     /**
-     * @var class-string<Model>
+     * @var class-string<TModel>
      */
     public static $model = PackageUpdateModel::class;
 

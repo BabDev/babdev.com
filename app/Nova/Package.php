@@ -4,7 +4,6 @@ namespace BabDev\Nova;
 
 use BabDev\Models\Package as PackageModel;
 use BabDev\PackageType;
-use Illuminate\Database\Eloquent\Model;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Field;
 use Laravel\Nova\Fields\HasMany;
@@ -17,6 +16,9 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Resource;
 
 /**
+ * @template TModel of PackageModel
+ * @extends Resource<TModel>
+ *
  * @mixin PackageModel
  */
 class Package extends Resource
@@ -24,7 +26,7 @@ class Package extends Resource
     public static $group = 'Packages';
 
     /**
-     * @var class-string<Model>
+     * @var class-string<TModel>
      */
     public static $model = PackageModel::class;
 

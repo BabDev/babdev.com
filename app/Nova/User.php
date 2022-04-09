@@ -3,7 +3,6 @@
 namespace BabDev\Nova;
 
 use BabDev\Models\User as UserModel;
-use Illuminate\Database\Eloquent\Model;
 use Laravel\Nova\Fields\Field;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\ID;
@@ -12,12 +11,18 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Resource;
 
+/**
+ * @template TModel of UserModel
+ * @extends Resource<TModel>
+ *
+ * @mixin UserModel
+ */
 class User extends Resource
 {
     public static $group = 'Accounts';
 
     /**
-     * @var class-string<Model>
+     * @var class-string<TModel>
      */
     public static $model = UserModel::class;
 
