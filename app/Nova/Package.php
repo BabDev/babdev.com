@@ -5,7 +5,6 @@ namespace BabDev\Nova;
 use BabDev\Models\Package as PackageModel;
 use BabDev\PackageType;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Field;
 use Laravel\Nova\Fields\HasMany;
@@ -14,6 +13,7 @@ use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Resource;
 
 /**
@@ -41,7 +41,7 @@ class Package extends Resource
     /**
      * @return Field[]
      */
-    public function fields(Request $request): array
+    public function fields(NovaRequest $request): array
     {
         return [
             ID::make()
@@ -78,7 +78,8 @@ class Package extends Resource
                         PackageType::SYMFONY_BUNDLE->value => trans('package_type.' . PackageType::SYMFONY_BUNDLE->value),
                     ],
                 )
-                ->displayUsing(static fn (PackageType $packageType): string => trans('package_type.' . $packageType->value)),
+                ->resolveUsing(static fn (?PackageType $packageType, PackageModel $model, ?string $attribute): ?string => $packageType?->value)
+                ->displayUsing(static fn (PackageType $packageType, PackageModel $model, ?string $attribute): string => trans('package_type.' . $packageType->value)),
 
             Boolean::make('Supported'),
 

@@ -4,7 +4,6 @@ namespace BabDev\Nova;
 
 use BabDev\Models\PackageUpdate as PackageUpdateModel;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\Request;
 use Kraftbit\NovaTinymce5Editor\NovaTinymce5Editor;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\DateTime;
@@ -12,6 +11,7 @@ use Laravel\Nova\Fields\Field;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Resource;
 
 class PackageUpdate extends Resource
@@ -38,7 +38,7 @@ class PackageUpdate extends Resource
     /**
      * @return Field[]
      */
-    public function fields(Request $request): array
+    public function fields(NovaRequest $request): array
     {
         return [
             ID::make()->sortable(),

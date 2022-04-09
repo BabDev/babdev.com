@@ -12,7 +12,7 @@ use Laravel\Nova\Dashboard;
 
 class MatomoAnalytics extends Dashboard
 {
-    public static function label(): string
+    public function label(): string
     {
         return 'Matomo Analytics';
     }
@@ -30,7 +30,7 @@ class MatomoAnalytics extends Dashboard
         ];
     }
 
-    public static function uriKey(): string
+    public function uriKey(): string
     {
         return 'matomo-analytics';
     }

@@ -4,13 +4,13 @@ namespace BabDev\Nova;
 
 use BabDev\Models\PackageVersion as PackageVersionModel;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\Field;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Resource;
 
 /**
@@ -43,7 +43,7 @@ class PackageVersion extends Resource
     /**
      * @return Field[]
      */
-    public function fields(Request $request): array
+    public function fields(NovaRequest $request): array
     {
         return [
             ID::make()->sortable(),

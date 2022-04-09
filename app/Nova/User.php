@@ -4,12 +4,12 @@ namespace BabDev\Nova;
 
 use BabDev\Models\User as UserModel;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Field;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Resource;
 
 class User extends Resource
@@ -35,7 +35,7 @@ class User extends Resource
     /**
      * @return Field[]
      */
-    public function fields(Request $request): array
+    public function fields(NovaRequest $request): array
     {
         return [
             ID::make()->sortable(),
