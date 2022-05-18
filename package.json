@@ -36,6 +36,6 @@
         "postcss-import": "^14.0.2",
         "resolve-url-loader": "^5.0.0",
         "sass": "^1.49.7",
-        "sass-loader": "^12.4.0"
+        "sass-loader": "^13.0.0"
     }
 }
