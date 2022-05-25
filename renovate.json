@@ -4,6 +4,7 @@
         ":dependencyDashboard",
         ":automergeMinor",
         ":automergeBranch",
+        ":prNotPending",
         ":rebaseStalePrs",
         ":separateMajorReleases",
         ":combinePatchMinorReleases",
