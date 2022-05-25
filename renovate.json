@@ -3,6 +3,7 @@
     "extends": [
         ":dependencyDashboard",
         ":automergeMinor",
+        ":automergeBranch",
         ":rebaseStalePrs",
         ":separateMajorReleases",
         ":combinePatchMinorReleases",
