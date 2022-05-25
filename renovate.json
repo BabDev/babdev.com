@@ -14,7 +14,7 @@
     ],
     "hostRules": [
         {
-            "matchHost": "nova.laravel.com",
+            "matchHost": "https://nova.laravel.com",
             "hostType": "packagist",
             "encrypted": {
                 "username": "wcFMA/xDdHCJBTolAQ/8CaKqoh7KjAeTdQRKJ8UNgeq90BYU5PpblVrknAsbKW7Fh5IkWrGDGYDbUjPTsG9d9rDZatAtdebYfg9RogByw+K2a3Fmhof26qy5sQTYYhhvID9uuJr4EiLor9BlUXeaxzKM4fyb2YRj9lQ13Eg5Kz5j1t42oqTzdl5Qv57IFmPHEZXFBu/aJi+kuBrAGCxVQAKktJwVqxBqL7q8BSeZZX0S8xM7QwaVoSiaKc/7iFMmZZ3T7a454gDzh3ROBDDA7cb1GAPfizHAgDKRgApCYXJ3pvvi0nsjPbopVcY3ikQFz6+niceROXSwmL8H4OuPUa8PUkaa7NpH66QIjxw1oj6Oyxn39r7+JNVyIZ3IOAC0B4p3d7lrbZwm601YkcSxnDMiBC4LqARs1L7bneq+zY8VsrP5t2s2fjzBklt8rquEkzHwEAurD+WlN79jUwDleC6jGltebTMAhYM/bc/p2ZT5lDeugaRkLtTbdS0ZKyMvyTCWOa75I1OEJ/JfO2fqrav4lffqLeIXp6HWRx1TOET5IVO3Q2xIQgOzKBxAyp4SCElhda4eMFSLc2pv6bt4fw9yGGw7XchuIrjIsgpzYIp5SiKfGIB6G5RvClc+OZGRH2SiUZHGr3foslpmen9yKetIn3valBayl2ZRfjPAn1vCRfMhdQw7Aidc6k1/SpfSbwEiIQQx6CGzf64LuA7YFFQhdZ4FfKsG5wgDF96SUel3yS0V/iqZU+/ivHC9dfdyMkhEEbvm2j1cMx7fFOukf6SSk1l74Fo1rJw6X1eJsfrG2aOOnzKFJL7k7KlrK0duGDz6+Rleeiuev20tqNQ/FQ",
