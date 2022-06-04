@@ -40,7 +40,7 @@
         "laravel/telescope": "^4.9",
         "mockery/mockery": "^1.5",
         "nunomaduro/collision": "^6.2",
-        "nunomaduro/larastan": "2.1.7",
+        "nunomaduro/larastan": "2.1.8",
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan": "1.7.10",
         "phpstan/phpstan-mockery": "1.1.0",
