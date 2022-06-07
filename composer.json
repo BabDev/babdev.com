@@ -42,7 +42,7 @@
         "nunomaduro/collision": "^6.2",
         "nunomaduro/larastan": "2.1.8",
         "phpstan/extension-installer": "^1.1",
-        "phpstan/phpstan": "1.7.10",
+        "phpstan/phpstan": "1.7.11",
         "phpstan/phpstan-mockery": "1.1.0",
         "phpstan/phpstan-phpunit": "1.1.1",
         "phpunit/phpunit": "^9.5.20",
