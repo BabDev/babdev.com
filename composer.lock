@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5537327b2c715d26fd6cf50d6b7e4738",
+    "content-hash": "091d0279c1cfcb7b79e73a846bb76eeb",
     "packages": [
         {
             "name": "babdev/laravel-breadcrumbs",
@@ -8886,16 +8886,16 @@
         },
         {
             "name": "nunomaduro/larastan",
-            "version": "v2.1.8",
+            "version": "v2.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/larastan.git",
-                "reference": "2a0b2dade387bc19bdf070650c1ba1e035c709da"
+                "reference": "d233e1c3efe5de35430f5b1b1ea3a5a545e4c966"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/larastan/zipball/2a0b2dade387bc19bdf070650c1ba1e035c709da",
-                "reference": "2a0b2dade387bc19bdf070650c1ba1e035c709da",
+                "url": "https://api.github.com/repos/nunomaduro/larastan/zipball/d233e1c3efe5de35430f5b1b1ea3a5a545e4c966",
+                "reference": "d233e1c3efe5de35430f5b1b1ea3a5a545e4c966",
                 "shasum": ""
             },
             "require": {
@@ -8960,7 +8960,7 @@
             ],
             "support": {
                 "issues": "https://github.com/nunomaduro/larastan/issues",
-                "source": "https://github.com/nunomaduro/larastan/tree/v2.1.8"
+                "source": "https://github.com/nunomaduro/larastan/tree/v2.1.9"
             },
             "funding": [
                 {
@@ -8980,7 +8980,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2022-06-04T14:21:33+00:00"
+            "time": "2022-06-09T15:02:03+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -9440,16 +9440,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.7.11",
+            "version": "1.7.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "62fcadcde81b4037e42ad2489119d31c46f00191"
+                "reference": "32f10779d9cd88a9cbd972ec611a4148a3cbbc7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/62fcadcde81b4037e42ad2489119d31c46f00191",
-                "reference": "62fcadcde81b4037e42ad2489119d31c46f00191",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/32f10779d9cd88a9cbd972ec611a4148a3cbbc7e",
+                "reference": "32f10779d9cd88a9cbd972ec611a4148a3cbbc7e",
                 "shasum": ""
             },
             "require": {
@@ -9475,7 +9475,7 @@
             "description": "PHPStan - PHP Static Analysis Tool",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/1.7.11"
+                "source": "https://github.com/phpstan/phpstan/tree/1.7.12"
             },
             "funding": [
                 {
@@ -9495,7 +9495,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-06-07T08:47:03+00:00"
+            "time": "2022-06-09T12:39:36+00:00"
         },
         {
             "name": "phpstan/phpstan-mockery",
