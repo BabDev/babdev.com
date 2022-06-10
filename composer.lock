@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e59ad22d474f7c88d502be6a12cff0aa",
+    "content-hash": "a163e4c98bbb3a7f6ac5eace21e9dd11",
     "packages": [
         {
             "name": "babdev/laravel-breadcrumbs",
@@ -11343,7 +11343,7 @@
     },
     "platform-dev": [],
     "platform-overrides": {
-        "php": "8.1.4"
+        "php": "8.1.7"
     },
     "plugin-api-version": "2.3.0"
 }
