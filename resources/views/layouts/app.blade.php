@@ -10,8 +10,6 @@
         <meta property="og:url" content="{{ url()->current() }}">
         <meta property="og:locale" content="en_US" />
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:site" content="@mbabker">
-        <meta name="twitter:creator" content="@mbabker">
         <meta name="twitter:url" content="{{ url()->current() }}">
         <meta name="twitter:title" content="{{ $ogTitle ?? $title ?? config('app.name', 'BabDev') }}">
         <meta name="twitter:image" content="{{ asset('images/social-media.png') }}">
