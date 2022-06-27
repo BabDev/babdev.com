@@ -39,7 +39,7 @@
         "fakerphp/faker": "1.19.0",
         "laravel/telescope": "4.9.0",
         "mockery/mockery": "1.5.0",
-        "nunomaduro/collision": "6.2.0",
+        "nunomaduro/collision": "6.2.1",
         "nunomaduro/larastan": "2.1.11",
         "phpstan/extension-installer": "1.1.0",
         "phpstan/phpstan": "1.7.15",
