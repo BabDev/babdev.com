@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8183a3c70a65ef854df0f85c024e7f7f",
+    "content-hash": "1554ba1382bb2c63e3ee6fca2917cf12",
     "packages": [
         {
             "name": "babdev/laravel-breadcrumbs",
@@ -2157,16 +2157,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v9.19.0",
+            "version": "v9.20.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "bbce25bd823133f6a5a724f2d62680b711f1d0df"
+                "reference": "c99868f1c9bf2f5d250993121838db905591864f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/bbce25bd823133f6a5a724f2d62680b711f1d0df",
-                "reference": "bbce25bd823133f6a5a724f2d62680b711f1d0df",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/c99868f1c9bf2f5d250993121838db905591864f",
+                "reference": "c99868f1c9bf2f5d250993121838db905591864f",
                 "shasum": ""
             },
             "require": {
@@ -2332,21 +2332,21 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-06-28T14:33:19+00:00"
+            "time": "2022-07-13T13:26:22+00:00"
         },
         {
             "name": "laravel/nova",
-            "version": "4.12.2",
+            "version": "4.12.6",
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "06f07e1a1f0659407e5b3ae7338ac5c3f978c012"
+                "reference": "65b9c6e4d8a3c5b4234a2005a42db9c8f83eb4f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-06f07e1a1f0659407e5b3ae7338ac5c3f978c012-zip-b048dc.zip",
-                "reference": "06f07e1a1f0659407e5b3ae7338ac5c3f978c012",
-                "shasum": "b40ff91a20c0486a9caf72f825ebdaa03089bc8a"
+                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-65b9c6e4d8a3c5b4234a2005a42db9c8f83eb4f3-zip-39bdd6.zip",
+                "reference": "65b9c6e4d8a3c5b4234a2005a42db9c8f83eb4f3",
+                "shasum": "62a4cc8266a63b3ea4dc5d6b6dc5120ba9548320"
             },
             "require": {
                 "brick/money": "^0.5.0",
@@ -2440,9 +2440,9 @@
                 "laravel"
             ],
             "support": {
-                "source": "https://github.com/laravel/nova/tree/v4.12.2"
+                "source": "https://github.com/laravel/nova/tree/v4.12.6"
             },
-            "time": "2022-07-12T21:04:02+00:00"
+            "time": "2022-07-13T15:31:53+00:00"
         },
         {
             "name": "laravel/serializable-closure",
