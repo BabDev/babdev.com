@@ -80,8 +80,6 @@ class Package extends Resource
                         PackageType::SYMFONY_BUNDLE->value => trans('package_type.' . PackageType::SYMFONY_BUNDLE->value),
                     ],
                 )
-                ->resolveUsing(static fn (?PackageType $packageType, PackageModel $model, ?string $attribute): ?string => $packageType?->value)
-                ->displayUsing(static fn (string $packageType, PackageModel $model, ?string $attribute): string => trans('package_type.' . PackageType::from($packageType)->value)),
 
             Boolean::make('Supported'),
 
