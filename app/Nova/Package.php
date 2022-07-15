@@ -81,7 +81,7 @@ class Package extends Resource
                     ],
                 )
                 ->resolveUsing(static fn (?PackageType $packageType, PackageModel $model, ?string $attribute): ?string => $packageType?->value)
-                ->displayUsing(static fn (PackageType $packageType, PackageModel $model, ?string $attribute): string => trans('package_type.' . $packageType->value)),
+                ->displayUsing(static fn (string $packageType, PackageModel $model, ?string $attribute): string => trans('package_type.' . PackageType::from($packageType)->value)),
 
             Boolean::make('Supported'),
 
