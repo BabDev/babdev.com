@@ -79,7 +79,7 @@ class Package extends Resource
                         PackageType::SYLIUS_PLUGIN->value => trans('package_type.' . PackageType::SYLIUS_PLUGIN->value),
                         PackageType::SYMFONY_BUNDLE->value => trans('package_type.' . PackageType::SYMFONY_BUNDLE->value),
                     ],
-                )
+                ),
 
             Boolean::make('Supported'),
 
