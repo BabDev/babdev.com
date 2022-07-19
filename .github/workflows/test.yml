@@ -82,6 +82,6 @@ jobs:
         run: php artisan key:generate
 
       - name: Execute Tests
-        run: vendor/bin/phpunit --verbose
+        run: php artisan test
         env:
           DB_PORT: ${{ job.services.mysql.ports['3306'] }}
