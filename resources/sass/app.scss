@@ -12,31 +12,18 @@
   font-display: swap;
 }
 
+// Bootstrap
+@import "~bootstrap/scss/functions";
+
 // Variable overrides
 @import '_variables';
 
-// Bootstrap
-@import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 
 // Merge the maps now that the default map is configured
 $theme-colors: map-merge($theme-colors, $brand-colors);
 
-// Rebuild maps
-$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
-
-$utilities-colors: map-merge(
-    $theme-colors-rgb,
-    (
-      "black": to-rgb($black),
-      "white": to-rgb($white),
-      "body":  to-rgb($body-color)
-    )
-);
-
-$utilities-text-colors: map-loop($utilities-colors, rgba-css-var, "$key", "text");
-
-$utilities-bg-colors: map-loop($utilities-colors, rgba-css-var, "$key", "bg");
+@import "~bootstrap/scss/maps";
 
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/utilities";
