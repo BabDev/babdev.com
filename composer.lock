@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "63d60467603f53704f79d4e063d66a10",
+    "content-hash": "f1f0b96dcf46ebd5c1eb12d27efb12f0",
     "packages": [
         {
             "name": "babdev/laravel-breadcrumbs",
@@ -2157,16 +2157,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v9.21.0",
+            "version": "v9.21.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "a8a529d371faaa38bde087aa6171a5b53a6a8760"
+                "reference": "66bfa61e61ffceddb6370b57306c76ead7667622"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/a8a529d371faaa38bde087aa6171a5b53a6a8760",
-                "reference": "a8a529d371faaa38bde087aa6171a5b53a6a8760",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/66bfa61e61ffceddb6370b57306c76ead7667622",
+                "reference": "66bfa61e61ffceddb6370b57306c76ead7667622",
                 "shasum": ""
             },
             "require": {
@@ -2333,21 +2333,21 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-07-19T14:12:19+00:00"
+            "time": "2022-07-20T18:00:32+00:00"
         },
         {
             "name": "laravel/nova",
-            "version": "4.12.7",
+            "version": "4.12.11",
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "52202ee78d00370e4b8dc54f48164506c4efb3af"
+                "reference": "11d83651e3006ded9a26af83861d67cf30b5ebbd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-52202ee78d00370e4b8dc54f48164506c4efb3af-zip-e38518.zip",
-                "reference": "52202ee78d00370e4b8dc54f48164506c4efb3af",
-                "shasum": "ad2f9286a802eaf4b94a70365b15700efffb3ddc"
+                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-11d83651e3006ded9a26af83861d67cf30b5ebbd-zip-dae373.zip",
+                "reference": "11d83651e3006ded9a26af83861d67cf30b5ebbd",
+                "shasum": "e05524e7089bdb8082b648607d9657b1b1d02023"
             },
             "require": {
                 "brick/money": "^0.5.0",
@@ -2441,9 +2441,9 @@
                 "laravel"
             ],
             "support": {
-                "source": "https://github.com/laravel/nova/tree/v4.12.7"
+                "source": "https://github.com/laravel/nova/tree/v4.12.11"
             },
-            "time": "2022-07-19T17:00:55+00:00"
+            "time": "2022-07-20T19:56:34+00:00"
         },
         {
             "name": "laravel/serializable-closure",
@@ -8530,16 +8530,16 @@
         },
         {
             "name": "fakerphp/faker",
-            "version": "v1.19.0",
+            "version": "v1.20.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FakerPHP/Faker.git",
-                "reference": "d7f08a622b3346766325488aa32ddc93ccdecc75"
+                "reference": "37f751c67a5372d4e26353bd9384bc03744ec77b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/d7f08a622b3346766325488aa32ddc93ccdecc75",
-                "reference": "d7f08a622b3346766325488aa32ddc93ccdecc75",
+                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/37f751c67a5372d4e26353bd9384bc03744ec77b",
+                "reference": "37f751c67a5372d4e26353bd9384bc03744ec77b",
                 "shasum": ""
             },
             "require": {
@@ -8566,7 +8566,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "v1.19-dev"
+                    "dev-main": "v1.20-dev"
                 }
             },
             "autoload": {
@@ -8591,9 +8591,9 @@
             ],
             "support": {
                 "issues": "https://github.com/FakerPHP/Faker/issues",
-                "source": "https://github.com/FakerPHP/Faker/tree/v1.19.0"
+                "source": "https://github.com/FakerPHP/Faker/tree/v1.20.0"
             },
-            "time": "2022-02-02T17:38:57+00:00"
+            "time": "2022-07-20T13:12:54+00:00"
         },
         {
             "name": "filp/whoops",
