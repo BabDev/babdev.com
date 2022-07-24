@@ -31,22 +31,32 @@ $router->permanentRedirect('/open-source/packages/babdevpagerfantabundle/docs/{v
 $router->get(
     '/open-source/packages/{package}/docs',
     RedirectToPackageDocsController::class,
-);
+)->where('package', '[a-zA-Z0-9-]+');
 
 $router->get(
     '/open-source/packages/{package}/docs/{slug}',
     RedirectToPackageDocsController::class,
-);
+)
+    ->where('package', '[a-zA-Z0-9-]+')
+    ->where('slug', '[a-zA-Z0-9-\/]+')
+;
 
 $router->get(
     '/open-source/packages/{package}/docs/{version}/{slug}',
     ViewOpenSourcePackageDocsPageController::class,
-)->name('open-source.packages.package-docs-page');
+)
+    ->name('open-source.packages.package-docs-page')
+    ->where('package', '[a-zA-Z0-9-]+')
+    ->where('slug', '[a-zA-Z0-9-\/]+')
+;
 
 $router->get(
     '/open-source/updates/{update}',
     ViewOpenSourceUpdateController::class,
-)->name('open-source.update');
+)
+    ->name('open-source.update')
+    ->where('update', '[a-zA-Z0-9-]+')
+;
 
 $router->get(
     '/open-source/updates',
