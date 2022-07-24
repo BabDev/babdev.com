@@ -4,6 +4,7 @@ use BabDev\Breadcrumbs\Contracts\BreadcrumbsGenerator;
 use BabDev\Breadcrumbs\Contracts\BreadcrumbsManager;
 use BabDev\Models\Package;
 use BabDev\Models\PackageUpdate;
+use BabDev\Models\PackageVersion;
 
 /** @var BreadcrumbsManager $breadcrumbs */
 $breadcrumbs->for(
@@ -40,10 +41,15 @@ $breadcrumbs->for(
 
 $breadcrumbs->for(
     'open-source.packages.package-docs-page',
-    static function (BreadcrumbsGenerator $trail, Package $package, ?string $title): void {
+    static function (BreadcrumbsGenerator $trail, Package $package, ?PackageVersion $packageVersion, ?string $title): void {
         $trail->parent('open-source.packages');
         $trail->push($package->display_name);
-        $trail->push('Documentation');
+
+        if ($packageVersion === null) {
+            $trail->push('Documentation');
+        } else {
+            $trail->push(sprintf('Documentation (%s)', $packageVersion->version));
+        }
 
         if ($title !== null) {
             $trail->push($title);

@@ -47,7 +47,7 @@
             </div>
         </div>
         <div class="container">
-            {{ Breadcrumbs::render('open-source.packages.package-docs-page', $package, $title) }}
+            {{ Breadcrumbs::render('open-source.packages.package-docs-page', $package, $package_version, $title) }}
         </div>
     </article>
 @endsection
