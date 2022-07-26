@@ -25,7 +25,7 @@
         "guzzlehttp/guzzle": "7.4.5",
         "http-interop/http-factory-guzzle": "1.2.0",
         "knplabs/github-api": "3.7.0",
-        "laravel/framework": "9.21.6",
+        "laravel/framework": "9.22.1",
         "laravel/nova": "4.12.12",
         "lcobucci/jwt": "4.1.5",
         "league/commonmark": "2.3.4",
