@@ -24,7 +24,7 @@
         "elhebert/laravel-sri": "3.1.0",
         "guzzlehttp/guzzle": "7.4.5",
         "http-interop/http-factory-guzzle": "1.2.0",
-        "knplabs/github-api": "3.7.0",
+        "knplabs/github-api": "3.8.0",
         "laravel/framework": "9.22.1",
         "laravel/nova": "4.12.13",
         "lcobucci/jwt": "4.1.5",
@@ -32,7 +32,7 @@
         "spatie/laravel-google-fonts": "1.2.0",
         "spatie/laravel-sitemap": "6.2.0",
         "spatie/laravel-sluggable": "3.4.0",
-        "spatie/packagist-api": "2.0.2"
+        "spatie/packagist-api": "2.1.0"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "2.12.3",
