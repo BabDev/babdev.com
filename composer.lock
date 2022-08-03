@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8cd904eb75792fd64afca1243a8109e8",
+    "content-hash": "0ae9fff6f81014369e2ae130e5719de1",
     "packages": [
         {
             "name": "babdev/laravel-breadcrumbs",
@@ -251,81 +251,6 @@
                 }
             ],
             "time": "2022-04-17T13:03:05+00:00"
-        },
-        {
-            "name": "box/spout",
-            "version": "v3.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/box/spout.git",
-                "reference": "9bdb027d312b732515b884a341c0ad70372c6295"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/box/spout/zipball/9bdb027d312b732515b884a341c0ad70372c6295",
-                "reference": "9bdb027d312b732515b884a341c0ad70372c6295",
-                "shasum": ""
-            },
-            "require": {
-                "ext-dom": "*",
-                "ext-xmlreader": "*",
-                "ext-zip": "*",
-                "php": ">=7.2.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2",
-                "phpunit/phpunit": "^8"
-            },
-            "suggest": {
-                "ext-iconv": "To handle non UTF-8 CSV files (if \"php-intl\" is not already installed or is too limited)",
-                "ext-intl": "To handle non UTF-8 CSV files (if \"iconv\" is not already installed)"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Box\\Spout\\": "src/Spout"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Adrien Loison",
-                    "email": "adrien@box.com"
-                }
-            ],
-            "description": "PHP Library to read and write spreadsheet files (CSV, XLSX and ODS), in a fast and scalable way",
-            "homepage": "https://www.github.com/box/spout",
-            "keywords": [
-                "OOXML",
-                "csv",
-                "excel",
-                "memory",
-                "odf",
-                "ods",
-                "office",
-                "open",
-                "php",
-                "read",
-                "scale",
-                "spreadsheet",
-                "stream",
-                "write",
-                "xlsx"
-            ],
-            "support": {
-                "issues": "https://github.com/box/spout/issues",
-                "source": "https://github.com/box/spout/tree/v3.3.0"
-            },
-            "abandoned": true,
-            "time": "2021-05-14T21:18:09+00:00"
         },
         {
             "name": "brick/math",
@@ -1551,24 +1476,24 @@
         },
         {
             "name": "graham-campbell/result-type",
-            "version": "v1.0.4",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Result-Type.git",
-                "reference": "0690bde05318336c7221785f2a932467f98b64ca"
+                "reference": "a878d45c1914464426dc94da61c9e1d36ae262a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Result-Type/zipball/0690bde05318336c7221785f2a932467f98b64ca",
-                "reference": "0690bde05318336c7221785f2a932467f98b64ca",
+                "url": "https://api.github.com/repos/GrahamCampbell/Result-Type/zipball/a878d45c1914464426dc94da61c9e1d36ae262a8",
+                "reference": "a878d45c1914464426dc94da61c9e1d36ae262a8",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.0 || ^8.0",
-                "phpoption/phpoption": "^1.8"
+                "php": "^7.2.5 || ^8.0",
+                "phpoption/phpoption": "^1.9"
             },
             "require-dev": {
-                "phpunit/phpunit": "^6.5.14 || ^7.5.20 || ^8.5.19 || ^9.5.8"
+                "phpunit/phpunit": "^8.5.28 || ^9.5.21"
             },
             "type": "library",
             "autoload": {
@@ -1597,7 +1522,7 @@
             ],
             "support": {
                 "issues": "https://github.com/GrahamCampbell/Result-Type/issues",
-                "source": "https://github.com/GrahamCampbell/Result-Type/tree/v1.0.4"
+                "source": "https://github.com/GrahamCampbell/Result-Type/tree/v1.1.0"
             },
             "funding": [
                 {
@@ -1609,7 +1534,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-11-21T21:41:47+00:00"
+            "time": "2022-07-30T15:56:11+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -2235,16 +2160,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v9.22.1",
+            "version": "v9.23.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "b3b3dd43b9899f23df6d1d3e5390bd4662947a46"
+                "reference": "c4eea9060d847b5c93957b203caa8f57544a76ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/b3b3dd43b9899f23df6d1d3e5390bd4662947a46",
-                "reference": "b3b3dd43b9899f23df6d1d3e5390bd4662947a46",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/c4eea9060d847b5c93957b203caa8f57544a76ab",
+                "reference": "c4eea9060d847b5c93957b203caa8f57544a76ab",
                 "shasum": ""
             },
             "require": {
@@ -2265,7 +2190,7 @@
                 "psr/log": "^1.0|^2.0|^3.0",
                 "psr/simple-cache": "^1.0|^2.0|^3.0",
                 "ramsey/uuid": "^4.2.2",
-                "symfony/console": "^6.0",
+                "symfony/console": "^6.0.3",
                 "symfony/error-handler": "^6.0",
                 "symfony/finder": "^6.0",
                 "symfony/http-foundation": "^6.0",
@@ -2411,31 +2336,31 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-07-26T16:16:33+00:00"
+            "time": "2022-08-02T14:24:44+00:00"
         },
         {
             "name": "laravel/nova",
-            "version": "4.12.13",
+            "version": "4.12.14",
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "b0466833b338006758e43caeb65566004e07abd4"
+                "reference": "dd6ca3f63ca7f436066b8993b418482e8d4b3c2f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-b0466833b338006758e43caeb65566004e07abd4-zip-7c5d14.zip",
-                "reference": "b0466833b338006758e43caeb65566004e07abd4",
-                "shasum": "b7d8e1de05bf4dcb3ee2311c6311bf0dd9070b38"
+                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-dd6ca3f63ca7f436066b8993b418482e8d4b3c2f-zip-8fc20d.zip",
+                "reference": "dd6ca3f63ca7f436066b8993b418482e8d4b3c2f",
+                "shasum": "fa837b2ac36669f0598ee3c0a328798af581750b"
             },
             "require": {
                 "brick/money": "^0.5.0",
                 "doctrine/dbal": "^2.13.3|^3.1.2",
                 "illuminate/support": "^8.83.4|^9.3.1",
                 "inertiajs/inertia-laravel": "^0.4.5|^0.5.2|^0.6.0",
-                "laravel/ui": "^3.3",
+                "laravel/ui": "^3.3|^4.0",
                 "nesbot/carbon": "^2.53.1",
                 "php": "^7.3|^8.0",
-                "rap2hpoutre/fast-excel": "^3.2",
+                "rap2hpoutre/fast-excel": "^3.2|^4.1",
                 "spatie/once": "^1.1|^2.0|^3.0",
                 "symfony/console": "^5.4|^6.0",
                 "symfony/finder": "^5.4|^6.0",
@@ -2519,9 +2444,9 @@
                 "laravel"
             ],
             "support": {
-                "source": "https://github.com/laravel/nova/tree/v4.12.13"
+                "source": "https://github.com/laravel/nova/tree/v4.12.14"
             },
-            "time": "2022-07-27T15:36:23+00:00"
+            "time": "2022-08-02T20:14:55+00:00"
         },
         {
             "name": "laravel/serializable-closure",
@@ -2584,32 +2509,32 @@
         },
         {
             "name": "laravel/ui",
-            "version": "v3.4.6",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/ui.git",
-                "reference": "65ec5c03f7fee2c8ecae785795b829a15be48c2c"
+                "reference": "e6291e8083cb5255511eacd6da0ec078210beabd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/ui/zipball/65ec5c03f7fee2c8ecae785795b829a15be48c2c",
-                "reference": "65ec5c03f7fee2c8ecae785795b829a15be48c2c",
+                "url": "https://api.github.com/repos/laravel/ui/zipball/e6291e8083cb5255511eacd6da0ec078210beabd",
+                "reference": "e6291e8083cb5255511eacd6da0ec078210beabd",
                 "shasum": ""
             },
             "require": {
-                "illuminate/console": "^8.42|^9.0",
-                "illuminate/filesystem": "^8.42|^9.0",
-                "illuminate/support": "^8.82|^9.0",
-                "illuminate/validation": "^8.42|^9.0",
-                "php": "^7.3|^8.0"
+                "illuminate/console": "^9.21",
+                "illuminate/filesystem": "^9.21",
+                "illuminate/support": "^9.21",
+                "illuminate/validation": "^9.21",
+                "php": "^8.0"
             },
             "require-dev": {
-                "orchestra/testbench": "^6.23|^7.0"
+                "orchestra/testbench": "^7.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.x-dev"
+                    "dev-master": "4.x-dev"
                 },
                 "laravel": {
                     "providers": [
@@ -2639,9 +2564,9 @@
                 "ui"
             ],
             "support": {
-                "source": "https://github.com/laravel/ui/tree/v3.4.6"
+                "source": "https://github.com/laravel/ui/tree/v4.0.0"
             },
-            "time": "2022-05-20T13:38:08+00:00"
+            "time": "2022-07-25T10:21:27+00:00"
         },
         {
             "name": "lcobucci/clock",
@@ -3645,16 +3570,16 @@
         },
         {
             "name": "nunomaduro/termwind",
-            "version": "v1.13.0",
+            "version": "v1.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/termwind.git",
-                "reference": "132a24bd3e8c559e7f14fa14ba1b83772a0f97f8"
+                "reference": "10065367baccf13b6e30f5e9246fa4f63a79eb1d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/termwind/zipball/132a24bd3e8c559e7f14fa14ba1b83772a0f97f8",
-                "reference": "132a24bd3e8c559e7f14fa14ba1b83772a0f97f8",
+                "url": "https://api.github.com/repos/nunomaduro/termwind/zipball/10065367baccf13b6e30f5e9246fa4f63a79eb1d",
+                "reference": "10065367baccf13b6e30f5e9246fa4f63a79eb1d",
                 "shasum": ""
             },
             "require": {
@@ -3666,7 +3591,7 @@
                 "ergebnis/phpstan-rules": "^1.0.",
                 "illuminate/console": "^8.0|^9.0",
                 "illuminate/support": "^8.0|^9.0",
-                "laravel/pint": "^0.2.0",
+                "laravel/pint": "^1.0.0",
                 "pestphp/pest": "^1.21.0",
                 "pestphp/pest-plugin-mock": "^1.0",
                 "phpstan/phpstan": "^1.4.6",
@@ -3711,7 +3636,7 @@
             ],
             "support": {
                 "issues": "https://github.com/nunomaduro/termwind/issues",
-                "source": "https://github.com/nunomaduro/termwind/tree/v1.13.0"
+                "source": "https://github.com/nunomaduro/termwind/tree/v1.14.0"
             },
             "funding": [
                 {
@@ -3727,7 +3652,96 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-07-01T15:06:55+00:00"
+            "time": "2022-08-01T11:03:24+00:00"
+        },
+        {
+            "name": "openspout/openspout",
+            "version": "v3.7.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/openspout/openspout.git",
+                "reference": "dfbbd53b5edcd486b45a37f6a04fac33073c70f3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/openspout/openspout/zipball/dfbbd53b5edcd486b45a37f6a04fac33073c70f3",
+                "reference": "dfbbd53b5edcd486b45a37f6a04fac33073c70f3",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-filter": "*",
+                "ext-libxml": "*",
+                "ext-xmlreader": "*",
+                "ext-zip": "*",
+                "php": "~7.3.0 || ~7.4.0 || ~8.0.0 || ~8.1.0"
+            },
+            "require-dev": {
+                "ext-zlib": "*",
+                "friendsofphp/php-cs-fixer": "^3.4",
+                "phpstan/phpstan": "^1.4",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpunit/phpunit": "^9.5"
+            },
+            "suggest": {
+                "ext-iconv": "To handle non UTF-8 CSV files (if \"php-intl\" is not already installed or is too limited)",
+                "ext-intl": "To handle non UTF-8 CSV files (if \"iconv\" is not already installed)"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "OpenSpout\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adrien Loison",
+                    "email": "adrien@box.com"
+                }
+            ],
+            "description": "PHP Library to read and write spreadsheet files (CSV, XLSX and ODS), in a fast and scalable way",
+            "homepage": "https://github.com/openspout/openspout",
+            "keywords": [
+                "OOXML",
+                "csv",
+                "excel",
+                "memory",
+                "odf",
+                "ods",
+                "office",
+                "open",
+                "php",
+                "read",
+                "scale",
+                "spreadsheet",
+                "stream",
+                "write",
+                "xlsx"
+            ],
+            "support": {
+                "issues": "https://github.com/openspout/openspout/issues",
+                "source": "https://github.com/openspout/openspout/tree/v3.7.4"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/filippotessarotto",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/Slamdunk",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-03-31T06:15:15+00:00"
         },
         {
             "name": "php-http/cache-plugin",
@@ -4241,29 +4255,33 @@
         },
         {
             "name": "phpoption/phpoption",
-            "version": "1.8.1",
+            "version": "1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/php-option.git",
-                "reference": "eab7a0df01fe2344d172bff4cd6dbd3f8b84ad15"
+                "reference": "dc5ff11e274a90cc1c743f66c9ad700ce50db9ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/eab7a0df01fe2344d172bff4cd6dbd3f8b84ad15",
-                "reference": "eab7a0df01fe2344d172bff4cd6dbd3f8b84ad15",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/dc5ff11e274a90cc1c743f66c9ad700ce50db9ab",
+                "reference": "dc5ff11e274a90cc1c743f66c9ad700ce50db9ab",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.0 || ^8.0"
+                "php": "^7.2.5 || ^8.0"
             },
             "require-dev": {
-                "bamarni/composer-bin-plugin": "^1.4.1",
-                "phpunit/phpunit": "^6.5.14 || ^7.5.20 || ^8.5.19 || ^9.5.8"
+                "bamarni/composer-bin-plugin": "^1.8",
+                "phpunit/phpunit": "^8.5.28 || ^9.5.21"
             },
             "type": "library",
             "extra": {
+                "bamarni-bin": {
+                    "bin-links": true,
+                    "forward-command": true
+                },
                 "branch-alias": {
-                    "dev-master": "1.8-dev"
+                    "dev-master": "1.9-dev"
                 }
             },
             "autoload": {
@@ -4296,7 +4314,7 @@
             ],
             "support": {
                 "issues": "https://github.com/schmittjoh/php-option/issues",
-                "source": "https://github.com/schmittjoh/php-option/tree/1.8.1"
+                "source": "https://github.com/schmittjoh/php-option/tree/1.9.0"
             },
             "funding": [
                 {
@@ -4308,7 +4326,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-12-04T23:24:31+00:00"
+            "time": "2022-07-30T15:51:26+00:00"
         },
         {
             "name": "psr/cache",
@@ -4998,26 +5016,27 @@
         },
         {
             "name": "rap2hpoutre/fast-excel",
-            "version": "v3.2.0",
+            "version": "v4.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rap2hpoutre/fast-excel.git",
-                "reference": "28183f3a90179386bfadcd0083129c247ce49fbe"
+                "reference": "724557e844170a231fd4515bbc3ea435ca622e7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rap2hpoutre/fast-excel/zipball/28183f3a90179386bfadcd0083129c247ce49fbe",
-                "reference": "28183f3a90179386bfadcd0083129c247ce49fbe",
+                "url": "https://api.github.com/repos/rap2hpoutre/fast-excel/zipball/724557e844170a231fd4515bbc3ea435ca622e7d",
+                "reference": "724557e844170a231fd4515bbc3ea435ca622e7d",
                 "shasum": ""
             },
             "require": {
-                "box/spout": "^3",
-                "illuminate/support": "5.3.* || 5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6.0 || ^7.0 || ^8.0|^9.0",
-                "php": "^7.1|^8.0"
+                "illuminate/support": "5.3.* || 5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6.0 || ^7.0 || ^8.0 || ^9.0",
+                "openspout/openspout": "^3",
+                "php": "^7.3 || ^8.0"
             },
             "require-dev": {
-                "illuminate/database": "^6.20.12 || ^7.30.4 || ^8.24.0|^9.0",
-                "phpunit/phpunit": "^9.5"
+                "illuminate/database": "^6.20.12 || ^7.30.4 || ^8.24.0 || ^9.0",
+                "phpunit/phpunit": "^9.5",
+                "squizlabs/php_codesniffer": "3.*"
             },
             "type": "library",
             "extra": {
@@ -5055,9 +5074,15 @@
             ],
             "support": {
                 "issues": "https://github.com/rap2hpoutre/fast-excel/issues",
-                "source": "https://github.com/rap2hpoutre/fast-excel/tree/v3.2.0"
+                "source": "https://github.com/rap2hpoutre/fast-excel/tree/v4.1.0"
             },
-            "time": "2022-02-09T16:04:44+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/rap2hpoutre",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-07-21T14:21:25+00:00"
         },
         {
             "name": "spatie/browsershot",
