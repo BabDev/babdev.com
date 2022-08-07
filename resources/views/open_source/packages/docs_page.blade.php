@@ -43,7 +43,7 @@
                         <p>You are viewing the documentation for the {{ $package_version->version }} branch of the {{ $package->display_name }} package which reached is no longer supported as of {{ $package_version->end_of_support->format('F j, Y') }}. You are advised to upgrade as soon as possible to a supported version.</p>
                     </div>
                 @endif
-                <x-markdown flavor="github">{!! $contents !!}</x-markdown>
+                <x-markdown flavor="github" anchors>{!! $contents !!}</x-markdown>
             </div>
         </div>
         <div class="container">
