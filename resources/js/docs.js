@@ -29,33 +29,6 @@ class BDDocs {
                 hljs.highlightElement(block);
             });
         });
-
-        document.querySelectorAll('.package-docs__content h1').forEach(BDDocs.#wrapWithHeadingContainer);
-        document.querySelectorAll('.package-docs__content h2').forEach(BDDocs.#wrapWithHeadingContainer);
-        document.querySelectorAll('.package-docs__content h3').forEach(BDDocs.#wrapWithHeadingContainer);
-        document.querySelectorAll('.package-docs__content h4').forEach(BDDocs.#wrapWithHeadingContainer);
-
-        document.querySelectorAll('.package-docs__content table').forEach(BDDocs.#makeTableResponsive);
-    }
-
-    static #makeTableResponsive(element) {
-        element.classList.add('table');
-
-        const wrapper = document.createElement('div');
-        wrapper.className = 'table-responsive';
-
-        element.parentNode.insertBefore(wrapper, element);
-
-        wrapper.appendChild(element);
-    }
-
-    static #wrapWithHeadingContainer(element) {
-        const wrapper = document.createElement('div');
-        wrapper.className = 'section-heading';
-
-        element.parentNode.insertBefore(wrapper, element);
-
-        wrapper.appendChild(element);
     }
 }
 
