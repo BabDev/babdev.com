@@ -7,7 +7,7 @@ return [
      * The google-fonts:fetch command will prefetch these fonts.
      */
     'fonts' => [
-        'default' => 'https://fonts.googleapis.com/css2?family=Bree+Serif&family=Droid+Sans',
+        'default' => 'https://fonts.googleapis.com/css2?family=Bree+Serif&family=Droid+Sans&display=swap',
     ],
 
     /*
