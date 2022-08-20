@@ -27,7 +27,7 @@
         "knplabs/github-api": "3.8.0",
         "laravel/framework": "9.25.1",
         "laravel/nova": "4.12.14",
-        "lcobucci/jwt": "4.1.5",
+        "lcobucci/jwt": "4.2.1",
         "league/commonmark": "2.3.5",
         "spatie/laravel-google-fonts": "1.2.0",
         "spatie/laravel-sitemap": "6.2.0",
