@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bca1b2d01398b188b91210b96e651ed1",
+    "content-hash": "46547adf370cd272e87adad3fc346e83",
     "packages": [
         {
             "name": "babdev/laravel-breadcrumbs",
@@ -682,16 +682,16 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "3.4.4",
+            "version": "3.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "4cbbe6e4b9ef6c69d5f4c968c637476f47bb54f5"
+                "reference": "a5a58773109c0abb13e658c8ccd92aeec8d07f9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/4cbbe6e4b9ef6c69d5f4c968c637476f47bb54f5",
-                "reference": "4cbbe6e4b9ef6c69d5f4c968c637476f47bb54f5",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/a5a58773109c0abb13e658c8ccd92aeec8d07f9e",
+                "reference": "a5a58773109c0abb13e658c8ccd92aeec8d07f9e",
                 "shasum": ""
             },
             "require": {
@@ -773,7 +773,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/dbal/issues",
-                "source": "https://github.com/doctrine/dbal/tree/3.4.4"
+                "source": "https://github.com/doctrine/dbal/tree/3.4.5"
             },
             "funding": [
                 {
@@ -789,7 +789,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-09-01T21:26:42+00:00"
+            "time": "2022-09-23T17:48:57+00:00"
         },
         {
             "name": "doctrine/deprecations",
@@ -2346,17 +2346,17 @@
         },
         {
             "name": "laravel/nova",
-            "version": "4.15.1",
+            "version": "4.15.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "2d5d95ee17334d33040ec75cc52bc54235e9875f"
+                "reference": "96d4481cfd5bd4406212487e17838fd6bc261f6e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-2d5d95ee17334d33040ec75cc52bc54235e9875f-zip-d0fc38.zip",
-                "reference": "2d5d95ee17334d33040ec75cc52bc54235e9875f",
-                "shasum": "d192a02cbdf2f3448b06cd8a2ae8468e1e49e2c3"
+                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-96d4481cfd5bd4406212487e17838fd6bc261f6e-zip-acd1ac.zip",
+                "reference": "96d4481cfd5bd4406212487e17838fd6bc261f6e",
+                "shasum": "85692034c3dc489eaa92d2fd2f3b3f2406aac0f2"
             },
             "require": {
                 "brick/money": "^0.5.0|^0.6.0",
@@ -2450,9 +2450,9 @@
                 "laravel"
             ],
             "support": {
-                "source": "https://github.com/laravel/nova/tree/v4.15.1"
+                "source": "https://github.com/laravel/nova/tree/v4.15.2"
             },
-            "time": "2022-09-21T16:08:58+00:00"
+            "time": "2022-09-27T19:52:24+00:00"
         },
         {
             "name": "laravel/serializable-closure",
