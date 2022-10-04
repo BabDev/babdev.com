@@ -25,7 +25,7 @@
         "guzzlehttp/guzzle": "7.5.0",
         "http-interop/http-factory-guzzle": "1.2.0",
         "knplabs/github-api": "3.8.0",
-        "laravel/framework": "9.33.0",
+        "laravel/framework": "9.34.0",
         "laravel/nova": "4.15.2",
         "lcobucci/jwt": "4.2.1",
         "league/commonmark": "2.3.5",
@@ -37,16 +37,16 @@
     "require-dev": {
         "barryvdh/laravel-ide-helper": "2.12.3",
         "fakerphp/faker": "1.20.0",
-        "laravel/telescope": "4.9.3",
+        "laravel/telescope": "4.9.4",
         "mockery/mockery": "1.5.1",
         "nunomaduro/collision": "6.3.1",
         "nunomaduro/larastan": "2.2.0",
         "phpstan/extension-installer": "1.1.0",
-        "phpstan/phpstan": "1.8.6",
+        "phpstan/phpstan": "1.8.7",
         "phpstan/phpstan-mockery": "1.1.0",
         "phpstan/phpstan-phpunit": "1.1.1",
         "phpunit/phpunit": "9.5.25",
-        "spatie/laravel-ignition": "1.5.0"
+        "spatie/laravel-ignition": "1.5.1"
     },
     "replace": {
         "paragonie/random_compat": "*",
