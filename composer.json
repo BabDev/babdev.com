@@ -40,13 +40,13 @@
         "laravel/telescope": "4.9.4",
         "mockery/mockery": "1.5.1",
         "nunomaduro/collision": "6.3.1",
-        "nunomaduro/larastan": "2.2.1",
+        "nunomaduro/larastan": "2.2.3",
         "phpstan/extension-installer": "1.1.0",
         "phpstan/phpstan": "1.8.9",
         "phpstan/phpstan-mockery": "1.1.0",
         "phpstan/phpstan-phpunit": "1.1.1",
         "phpunit/phpunit": "9.5.25",
-        "spatie/laravel-ignition": "1.5.1"
+        "spatie/laravel-ignition": "1.5.2"
     },
     "replace": {
         "paragonie/random_compat": "*",
