@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "15d303d905c8ff89f06796a2d7a5a8e7",
+    "content-hash": "f9b61f9f052654ab0d9fa5f2f254ad32",
     "packages": [
         {
             "name": "babdev/laravel-breadcrumbs",
@@ -2346,17 +2346,17 @@
         },
         {
             "name": "laravel/nova",
-            "version": "4.17.0",
+            "version": "4.17.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "1dc6e5a7228304be151520507a0269810cf7b014"
+                "reference": "9c5d946dc8fbc4b23f357b9b998e9c434b267a5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-1dc6e5a7228304be151520507a0269810cf7b014-zip-76955a.zip",
-                "reference": "1dc6e5a7228304be151520507a0269810cf7b014",
-                "shasum": "01e5bcf1dd9188914006fd647fa829a784ad999b"
+                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-9c5d946dc8fbc4b23f357b9b998e9c434b267a5c-zip-a6d619.zip",
+                "reference": "9c5d946dc8fbc4b23f357b9b998e9c434b267a5c",
+                "shasum": "ddd1ac0d284aa7b8843ea18831096240ae2e2f81"
             },
             "require": {
                 "brick/money": "^0.5.0|^0.6.0",
@@ -2451,9 +2451,9 @@
                 "laravel"
             ],
             "support": {
-                "source": "https://github.com/laravel/nova/tree/v4.17.0"
+                "source": "https://github.com/laravel/nova/tree/v4.17.1"
             },
-            "time": "2022-10-25T17:20:04+00:00"
+            "time": "2022-10-26T15:11:06+00:00"
         },
         {
             "name": "laravel/serializable-closure",
@@ -9807,21 +9807,21 @@
         },
         {
             "name": "phpstan/phpstan-phpunit",
-            "version": "1.1.3",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan-phpunit.git",
-                "reference": "6b93db7fae6d6f3e81a5b4297f93af6fe4146785"
+                "reference": "09b5c9ab38d4d601bcff04b4c9240832b86f5dda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan-phpunit/zipball/6b93db7fae6d6f3e81a5b4297f93af6fe4146785",
-                "reference": "6b93db7fae6d6f3e81a5b4297f93af6fe4146785",
+                "url": "https://api.github.com/repos/phpstan/phpstan-phpunit/zipball/09b5c9ab38d4d601bcff04b4c9240832b86f5dda",
+                "reference": "09b5c9ab38d4d601bcff04b4c9240832b86f5dda",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2 || ^8.0",
-                "phpstan/phpstan": "^1.8.0"
+                "phpstan/phpstan": "^1.8.11"
             },
             "conflict": {
                 "phpunit/phpunit": "<7.0"
@@ -9853,9 +9853,9 @@
             "description": "PHPUnit extensions and rules for PHPStan",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan-phpunit/issues",
-                "source": "https://github.com/phpstan/phpstan-phpunit/tree/1.1.3"
+                "source": "https://github.com/phpstan/phpstan-phpunit/tree/1.2.1"
             },
-            "time": "2022-10-24T11:38:17+00:00"
+            "time": "2022-10-26T19:38:49+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -11449,16 +11449,16 @@
         },
         {
             "name": "spatie/laravel-ignition",
-            "version": "1.6.0",
+            "version": "1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-ignition.git",
-                "reference": "c21309ebf6657e0c38083afac8af9baa12885676"
+                "reference": "2b79cf6ed40946b64ac6713d7d2da8a9d87f612b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/c21309ebf6657e0c38083afac8af9baa12885676",
-                "reference": "c21309ebf6657e0c38083afac8af9baa12885676",
+                "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/2b79cf6ed40946b64ac6713d7d2da8a9d87f612b",
+                "reference": "2b79cf6ed40946b64ac6713d7d2da8a9d87f612b",
                 "shasum": ""
             },
             "require": {
@@ -11535,7 +11535,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-10-25T08:38:04+00:00"
+            "time": "2022-10-26T17:39:54+00:00"
         },
         {
             "name": "theseer/tokenizer",
