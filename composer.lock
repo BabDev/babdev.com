@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "39050c3c18938610f7b02e92f937100a",
+    "content-hash": "552d1e7ced1198118057bf2baeade9c8",
     "packages": [
         {
             "name": "babdev/laravel-breadcrumbs",
@@ -2347,17 +2347,17 @@
         },
         {
             "name": "laravel/nova",
-            "version": "4.18.0",
+            "version": "4.18.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "709e2f02a0be0b3058918389365da8881535571e"
+                "reference": "918cb24f521454c35f2437414d2e4e9f9169a9cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-709e2f02a0be0b3058918389365da8881535571e-zip-134d51.zip",
-                "reference": "709e2f02a0be0b3058918389365da8881535571e",
-                "shasum": "ae8e738d05889be98c3c64fb41ee07c8b312708b"
+                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-918cb24f521454c35f2437414d2e4e9f9169a9cf-zip-cc836a.zip",
+                "reference": "918cb24f521454c35f2437414d2e4e9f9169a9cf",
+                "shasum": "7c7ef6ba39dd0651ec0754cdb264ea41c93cb523"
             },
             "require": {
                 "brick/money": "^0.5.0|^0.6.0|^0.7.0",
@@ -2376,7 +2376,7 @@
                 "symfony/process": "^5.4|^6.0"
             },
             "require-dev": {
-                "laravel/nova-dusk-suite": "dev-pr-2208",
+                "laravel/nova-dusk-suite": "8.4.x-dev|9.4.x-dev",
                 "laravel/pint": "^1.0",
                 "laravel/scout": "^9.4",
                 "mockery/mockery": "^1.4.4",
@@ -2452,9 +2452,9 @@
                 "laravel"
             ],
             "support": {
-                "source": "https://github.com/laravel/nova/tree/v4.18.0"
+                "source": "https://github.com/laravel/nova/tree/v4.18.1"
             },
-            "time": "2022-11-01T19:30:08+00:00"
+            "time": "2022-11-02T16:16:04+00:00"
         },
         {
             "name": "laravel/serializable-closure",
