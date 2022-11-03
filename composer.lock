@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "552d1e7ced1198118057bf2baeade9c8",
+    "content-hash": "7e80c8c0e8d678cb0c8476419e7f0711",
     "packages": [
         {
             "name": "babdev/laravel-breadcrumbs",
@@ -2347,17 +2347,17 @@
         },
         {
             "name": "laravel/nova",
-            "version": "4.18.1",
+            "version": "4.18.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "918cb24f521454c35f2437414d2e4e9f9169a9cf"
+                "reference": "420bccd59f3eeac969920d09a4e4cd961ad63325"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-918cb24f521454c35f2437414d2e4e9f9169a9cf-zip-cc836a.zip",
-                "reference": "918cb24f521454c35f2437414d2e4e9f9169a9cf",
-                "shasum": "7c7ef6ba39dd0651ec0754cdb264ea41c93cb523"
+                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-420bccd59f3eeac969920d09a4e4cd961ad63325-zip-d3f55b.zip",
+                "reference": "420bccd59f3eeac969920d09a4e4cd961ad63325",
+                "shasum": "be0ca636e0bcf8746247c3f93000925b434c0a1a"
             },
             "require": {
                 "brick/money": "^0.5.0|^0.6.0|^0.7.0",
@@ -2452,9 +2452,9 @@
                 "laravel"
             ],
             "support": {
-                "source": "https://github.com/laravel/nova/tree/v4.18.1"
+                "source": "https://github.com/laravel/nova/tree/v4.18.2"
             },
-            "time": "2022-11-02T16:16:04+00:00"
+            "time": "2022-11-03T01:55:32+00:00"
         },
         {
             "name": "laravel/serializable-closure",
