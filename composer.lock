@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c3a134f584a6ab5d4e791beba1d4b0a4",
+    "content-hash": "19d8bf13ff3d804e11baa48b13a6f9b5",
     "packages": [
         {
             "name": "babdev/laravel-breadcrumbs",
@@ -2347,17 +2347,17 @@
         },
         {
             "name": "laravel/nova",
-            "version": "4.19.0",
+            "version": "4.19.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "56de69c170f2f2497d8a51f19e84898663339e04"
+                "reference": "5cc034c9e4c2090b25a5bf2c39d83f9f5dc6306d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-56de69c170f2f2497d8a51f19e84898663339e04-zip-147264.zip",
-                "reference": "56de69c170f2f2497d8a51f19e84898663339e04",
-                "shasum": "155f94d95488b485bca748d96e02aa3a4a228864"
+                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-5cc034c9e4c2090b25a5bf2c39d83f9f5dc6306d-zip-7ed031.zip",
+                "reference": "5cc034c9e4c2090b25a5bf2c39d83f9f5dc6306d",
+                "shasum": "36fa0c3f73615bbaedc44357bb0d1d291d8e6f1d"
             },
             "require": {
                 "brick/money": "^0.5.0|^0.6.0|^0.7.0",
@@ -2452,9 +2452,9 @@
                 "laravel"
             ],
             "support": {
-                "source": "https://github.com/laravel/nova/tree/v4.19.0"
+                "source": "https://github.com/laravel/nova/tree/v4.19.2"
             },
-            "time": "2022-11-15T14:30:32+00:00"
+            "time": "2022-11-16T18:50:00+00:00"
         },
         {
             "name": "laravel/serializable-closure",
