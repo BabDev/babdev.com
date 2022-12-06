@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b6b5b2d64a57516a8d6da8aa884b0a0c",
+    "content-hash": "c489f10339d29c2da01897629af66007",
     "packages": [
         {
             "name": "babdev/laravel-breadcrumbs",
@@ -2161,16 +2161,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v9.42.2",
+            "version": "v9.43.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "607d7867c93706eae20e28e46679f8a66e2a23ec"
+                "reference": "011f2e1d49a11c22519a7899b46ddf3bc5b0f40b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/607d7867c93706eae20e28e46679f8a66e2a23ec",
-                "reference": "607d7867c93706eae20e28e46679f8a66e2a23ec",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/011f2e1d49a11c22519a7899b46ddf3bc5b0f40b",
+                "reference": "011f2e1d49a11c22519a7899b46ddf3bc5b0f40b",
                 "shasum": ""
             },
             "require": {
@@ -2343,7 +2343,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-11-30T16:23:52+00:00"
+            "time": "2022-12-06T14:26:07+00:00"
         },
         {
             "name": "laravel/nova",
@@ -8982,16 +8982,16 @@
         },
         {
             "name": "laravel/telescope",
-            "version": "v4.9.6",
+            "version": "v4.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/telescope.git",
-                "reference": "017eaf1b6d19392d196adcb4151bdf6d59612d66"
+                "reference": "e4b16dd22db3e8a8b52e3a03343b11ffcee2aaaa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/telescope/zipball/017eaf1b6d19392d196adcb4151bdf6d59612d66",
-                "reference": "017eaf1b6d19392d196adcb4151bdf6d59612d66",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/e4b16dd22db3e8a8b52e3a03343b11ffcee2aaaa",
+                "reference": "e4b16dd22db3e8a8b52e3a03343b11ffcee2aaaa",
                 "shasum": ""
             },
             "require": {
@@ -9044,9 +9044,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/telescope/issues",
-                "source": "https://github.com/laravel/telescope/tree/v4.9.6"
+                "source": "https://github.com/laravel/telescope/tree/v4.10.0"
             },
-            "time": "2022-11-08T07:00:35+00:00"
+            "time": "2022-12-05T15:34:49+00:00"
         },
         {
             "name": "mockery/mockery",
