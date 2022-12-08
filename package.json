@@ -33,7 +33,7 @@
         "laravel-mix-sri": "1.0.7",
         "path": "0.12.7",
         "postcss": "8.4.19",
-        "postcss-import": "15.0.1",
+        "postcss-import": "15.1.0",
         "resolve-url-loader": "5.0.0",
         "sass": "1.56.1",
         "sass-loader": "13.2.0"
