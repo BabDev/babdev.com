@@ -9,10 +9,6 @@
         <meta property="og:image" content="{{ asset('images/social-media.png') }}">
         <meta property="og:url" content="{{ url()->current() }}">
         <meta property="og:locale" content="en_US" />
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:url" content="{{ url()->current() }}">
-        <meta name="twitter:title" content="{{ $ogTitle ?? $title ?? config('app.name', 'BabDev') }}">
-        <meta name="twitter:image" content="{{ asset('images/social-media.png') }}">
         @yield('meta')
         <title>{{ $title ?? config('app.name', 'BabDev') }}</title>
         @googlefonts
