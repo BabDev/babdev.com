@@ -5,10 +5,13 @@ namespace BabDev\Contracts\GitHub;
 use BabDev\Contracts\GitHub\Actions\Action;
 use Lcobucci\JWT\Configuration;
 
+/**
+ * @phpstan-import-type GitHubRepoConfig from Action
+ */
 interface JWTConfigurationBuilder
 {
     /**
-     * @phpstan-param array{app_id: string, key: string, secret: string, events: array<string, array<int, class-string<Action>>>} $repoConfig
+     * @phpstan-param GitHubRepoConfig $repoConfig
      */
     public function build(array $repoConfig): Configuration;
 }

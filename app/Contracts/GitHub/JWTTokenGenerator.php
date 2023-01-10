@@ -4,10 +4,13 @@ namespace BabDev\Contracts\GitHub;
 
 use BabDev\Contracts\GitHub\Actions\Action;
 
+/**
+ * @phpstan-import-type GitHubRepoConfig from Action
+ */
 interface JWTTokenGenerator
 {
     /**
-     * @phpstan-param array{app_id: string, key: string, secret: string, events: array<string, array<int, class-string<Action>>>} $repoConfig
+     * @phpstan-param GitHubRepoConfig $repoConfig
      */
     public function generate(array $repoConfig): string;
 }

@@ -5,10 +5,13 @@ namespace BabDev\Contracts\GitHub\Actions;
 use Github\Client;
 use Illuminate\Http\Request;
 
+/**
+ * @phpstan-type GitHubRepoConfig array{app_id: string, key: string, secret: string, events: array<string, list<class-string<Action>>>}
+ */
 interface Action
 {
     /**
-     * @phpstan-param array{app_id: string, key: string, secret: string, events: array<string, array<int, class-string<Action>>>} $repoConfig
+     * @phpstan-param GitHubRepoConfig $repoConfig
      */
     public function __invoke(array $repoConfig, Request $request, Client $github): void;
 }

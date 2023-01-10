@@ -6,10 +6,13 @@ use BabDev\Contracts\GitHub\Actions\Action;
 use Github\Client;
 use Illuminate\Http\Request;
 
+/**
+ * @phpstan-import-type GitHubRepoConfig from Action
+ */
 final class ClosePagerfantaReadOnlyRepoPullRequest implements Action
 {
     /**
-     * @phpstan-param array{app_id: string, key: string, secret: string, events: array<string, array<int, class-string<Action>>>} $repoConfig
+     * @phpstan-param GitHubRepoConfig $repoConfig
      */
     public function __invoke(array $repoConfig, Request $request, Client $github): void
     {

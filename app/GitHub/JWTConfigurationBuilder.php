@@ -8,10 +8,13 @@ use Lcobucci\JWT\Configuration;
 use Lcobucci\JWT\Signer\Key\InMemory;
 use Lcobucci\JWT\Signer\Rsa\Sha256;
 
+/**
+ * @phpstan-import-type GitHubRepoConfig from Action
+ */
 final class JWTConfigurationBuilder implements JWTConfigurationBuilderContract
 {
     /**
-     * @phpstan-param array{app_id: string, key: string, secret: string, events: array<string, array<int, class-string<Action>>>} $repoConfig
+     * @phpstan-param GitHubRepoConfig $repoConfig
      */
     public function build(array $repoConfig): Configuration
     {

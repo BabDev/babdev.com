@@ -10,11 +10,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
+/**
+ * @phpstan-import-type GitHubRepoConfig from Action
+ */
 final class HandleGitHubAppWebhookController
 {
     public function __invoke(Request $request, RequestHandler $requestHandler): JsonResponse
     {
-        /** @phpstan-var array{app_id: string, key: string, secret: string, events: array<string, array<int, class-string<Action>>>}|false $repoConfig */
+        /** @phpstan-var GitHubRepoConfig|false $repoConfig */
         $repoConfig = false;
 
         /** @var string $repo */

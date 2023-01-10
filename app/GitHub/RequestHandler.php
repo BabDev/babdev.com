@@ -11,6 +11,9 @@ use Github\AuthMethod;
 use Github\Client;
 use Illuminate\Http\Request;
 
+/**
+ * @phpstan-import-type GitHubRepoConfig from Action
+ */
 class RequestHandler
 {
     public function __construct(
@@ -21,7 +24,7 @@ class RequestHandler
     }
 
     /**
-     * @phpstan-param array{app_id: string, key: string, secret: string, events: array<string, array<int, class-string<Action>>>} $repoConfig
+     * @phpstan-param GitHubRepoConfig $repoConfig
      *
      * @throws BadRequestException if the request data is invalid
      */
@@ -51,7 +54,7 @@ class RequestHandler
     }
 
     /**
-     * @phpstan-param array{app_id: string, key: string, secret: string, events: array<string, array<int, class-string<Action>>>} $repoConfig
+     * @phpstan-param GitHubRepoConfig $repoConfig
      *
      * @throws BadRequestException if the request data is invalid
      */
