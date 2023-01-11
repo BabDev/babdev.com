@@ -9,7 +9,7 @@ use Spatie\Sitemap\Tags\Url;
 use Symfony\Component\Console\Attribute\AsCommand;
 
 #[AsCommand(name: 'sitemap:generate', description: 'Generate the sitemap.')]
-class GenerateSitemap extends Command
+final class GenerateSitemap extends Command
 {
     protected $name = 'sitemap:generate';
 
@@ -31,11 +31,7 @@ class GenerateSitemap extends Command
                     return false;
                 }
 
-                if (str_ends_with($uri->getPath(), '/docs/intro')) {
-                    return false;
-                }
-
-                return true;
+                return !str_ends_with($uri->getPath(), '/docs/intro');
             })
             ->hasCrawled(static function (Url $url): Url {
                 if ($url->path() === '/') {

@@ -9,7 +9,7 @@ use Laravel\Nova\Dashboards\Main as Dashboard;
 class Main extends Dashboard
 {
     /**
-     * @return Card[]
+     * @return list<Card>
      */
     public function cards(): array
     {

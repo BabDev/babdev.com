@@ -47,6 +47,7 @@ final class HttpServiceProvider extends ServiceProvider implements DeferrablePro
         );
 
         $this->app->alias(GuzzleInterface::class, Guzzle::class);
+        $this->app->alias(GuzzleInterface::class, ClientInterface::class);
     }
 
     private function registerRequestFactory(): void

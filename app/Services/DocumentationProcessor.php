@@ -9,7 +9,6 @@ use BabDev\GitHub\ApiConnector;
 use BabDev\Models\Package;
 use Github\Exception\RuntimeException;
 use Illuminate\Contracts\Cache\Repository;
-use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 
 final class DocumentationProcessor implements DocumentationProcessorContract
@@ -26,7 +25,7 @@ final class DocumentationProcessor implements DocumentationProcessorContract
     public function extractTitle(string $markdown): string
     {
         return Str::after(
-            (new Collection(explode(\PHP_EOL, $markdown)))->first(),
+            collect(explode(\PHP_EOL, $markdown))->first(),
             '# ',
         );
     }
@@ -51,13 +50,12 @@ final class DocumentationProcessor implements DocumentationProcessorContract
                 } catch (RuntimeException $exception) {
                     throw new PageNotFoundException(
                         sprintf('The "%s" page does not exist for the %s package', $pageSlug, $package->display_name),
-                        404,
-                        $exception,
+                        previous: $exception,
                     );
                 }
 
                 return match ($file['encoding']) {
-                    'base64' => base64_decode($file['content']),
+                    'base64' => base64_decode((string) $file['content']),
                     default => throw new UnsupportedEncodingException(
                         sprintf('The "%s" encoding is not supported.', $file['encoding']),
                     ),

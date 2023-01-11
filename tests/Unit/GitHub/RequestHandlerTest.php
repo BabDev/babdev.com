@@ -18,25 +18,13 @@ use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
 
 final class RequestHandlerTest extends TestCase
 {
-    /**
-     * @var MockObject&Factory
-     */
-    private $actionFactory;
+    private MockObject&Factory $actionFactory;
 
-    /**
-     * @var MockObject&ClientFactory
-     */
-    private $clientFactory;
+    private MockObject&ClientFactory $clientFactory;
 
-    /**
-     * @var MockObject&JWTTokenGenerator
-     */
-    private $tokenGenerator;
+    private MockObject&JWTTokenGenerator $tokenGenerator;
 
-    /**
-     * @var RequestHandler
-     */
-    private $handler;
+    private RequestHandler $handler;
 
     protected function setUp(): void
     {

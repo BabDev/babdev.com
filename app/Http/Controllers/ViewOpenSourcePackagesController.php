@@ -11,16 +11,12 @@ final class ViewOpenSourcePackagesController
     public function __invoke(): View
     {
         /** @var Collection<array-key, Package> $packages */
-        $packages = Package::query()
-            ->visible()
+        $packages = Package::visible()
             ->orderBy('display_name')
             ->get();
 
-        return view(
-            'open_source.packages.index',
-            [
-                'packages' => $packages,
-            ],
-        );
+        return view('open_source.packages.index', [
+            'packages' => $packages,
+        ]);
     }
 }

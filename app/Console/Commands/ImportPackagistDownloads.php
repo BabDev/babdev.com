@@ -19,18 +19,16 @@ class ImportPackagistDownloads extends Command
     {
         $this->info('Fetching download counts...');
 
-        Package::query()->isPackagist()->each(function (Package $package) use ($packagist): void {
+        Package::isPackagist()->each(function (Package $package) use ($packagist): void {
             $this->comment("Importing `{$package->name}` downloads... ");
 
             [$vendor, $packageName] = explode('/', $package->packagist_name);
 
             $packagistInfo = $packagist->getPackage($vendor, $packageName);
 
-            $package->update(
-                [
-                    'downloads' => Arr::get($packagistInfo, 'package.downloads.total'),
-                ],
-            );
+            $package->update([
+                'downloads' => Arr::get($packagistInfo, 'package.downloads.total'),
+            ]);
         });
 
         $this->info('All done!');

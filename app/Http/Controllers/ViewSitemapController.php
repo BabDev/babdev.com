@@ -15,11 +15,8 @@ final class ViewSitemapController
 
         abort_unless($disk->has('sitemap.xml'), 404);
 
-        return response()->file(
-            $disk->path('sitemap.xml'),
-            [
-                'Content-Type' => 'text/xml',
-            ],
-        );
+        return response()->file($disk->path('sitemap.xml'), [
+            'Content-Type' => 'text/xml',
+        ]);
     }
 }

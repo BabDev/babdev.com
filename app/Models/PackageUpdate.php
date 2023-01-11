@@ -6,7 +6,6 @@ use Carbon\Carbon;
 use Database\Factories\PackageUpdateFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -26,7 +25,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property-read bool    $is_published
  * @property-read Package $package
  *
- * @method static PackageUpdateFactory factory(...$parameters)
+ * @method static PackageUpdateFactory  factory(...$parameters)
  * @method static Builder|PackageUpdate published()
  * @method static Builder|PackageUpdate newModelQuery()
  * @method static Builder|PackageUpdate newQuery()
@@ -64,14 +63,6 @@ class PackageUpdate extends Model
         'data' => 'array',
         'published_at' => 'datetime',
     ];
-
-    /**
-     * @return PackageUpdateFactory<self>
-     */
-    protected static function newFactory(): Factory
-    {
-        return PackageUpdateFactory::new();
-    }
 
     public function getRouteKeyName(): string
     {

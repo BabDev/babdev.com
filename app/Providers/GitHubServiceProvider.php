@@ -16,12 +16,12 @@ use Github\AuthMethod;
 use Github\Client;
 use Github\Exception\InvalidArgumentException;
 use Github\HttpClient\Builder;
-use GuzzleHttp\ClientInterface as GuzzleInterface;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
+use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 
@@ -110,7 +110,7 @@ final class GitHubServiceProvider extends ServiceProvider implements DeferrableP
         $this->app->bind(
             Builder::class,
             static fn (Application $app) => new Builder(
-                $app->make(GuzzleInterface::class),
+                $app->make(ClientInterface::class),
                 $app->make(RequestFactoryInterface::class),
                 $app->make(StreamFactoryInterface::class),
             ),

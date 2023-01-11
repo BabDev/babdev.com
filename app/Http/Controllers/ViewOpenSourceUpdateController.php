@@ -11,17 +11,10 @@ final class ViewOpenSourceUpdateController
     {
         abort_unless($update->is_published, 404, 'Update Not Found');
 
-        $update->load(
-            [
-                'package',
-            ],
-        );
+        $update->load('package');
 
-        return view(
-            'open_source.updates.show',
-            [
-                'update' => $update,
-            ],
-        );
+        return view('open_source.updates.show', [
+            'update' => $update,
+        ]);
     }
 }

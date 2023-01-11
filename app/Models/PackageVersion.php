@@ -25,7 +25,7 @@ use Illuminate\Support\Carbon;
  * @property-read Package $package
  * @property-read bool    $support_ended
  *
- * @method static PackageVersionFactory factory(...$parameters)
+ * @method static PackageVersionFactory  factory(...$parameters)
  * @method static Builder|PackageVersion newestReleasedVersionForPackage()
  * @method static Builder|PackageVersion newModelQuery()
  * @method static Builder|PackageVersion newQuery()
@@ -59,14 +59,6 @@ class PackageVersion extends Model
         'released' => 'date',
         'end_of_support' => 'date',
     ];
-
-    /**
-     * @return PackageVersionFactory<self>
-     */
-    protected static function newFactory(): Factory
-    {
-        return PackageVersionFactory::new();
-    }
 
     public function getRouteKeyName(): string
     {

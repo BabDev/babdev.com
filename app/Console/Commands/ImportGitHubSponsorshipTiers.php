@@ -9,7 +9,7 @@ use Illuminate\Support\Arr;
 use Symfony\Component\Console\Attribute\AsCommand;
 
 #[AsCommand(name: 'import:github-sponsorship-tiers', description: 'Import GitHub sponsorship tiers to the application.')]
-class ImportGitHubSponsorshipTiers extends Command
+final class ImportGitHubSponsorshipTiers extends Command
 {
     protected $name = 'import:github-sponsorship-tiers';
 
@@ -47,14 +47,11 @@ class ImportGitHubSponsorshipTiers extends Command
 
         /** @var array $tierEdge */
         foreach (Arr::get($response, 'data.viewer.sponsorsListing.tiers.edges', []) as $tierEdge) {
-            SponsorshipTier::query()->updateOrCreate(
-                ['node_id' => Arr::get($tierEdge, 'node.id')],
-                [
-                    'node_id' => Arr::get($tierEdge, 'node.id'),
-                    'one_time' => Arr::get($tierEdge, 'node.isOneTime'),
-                    'price' => Arr::get($tierEdge, 'node.monthlyPriceInCents'),
-                ],
-            );
+            SponsorshipTier::updateOrCreate(['node_id' => Arr::get($tierEdge, 'node.id')], [
+                'node_id' => Arr::get($tierEdge, 'node.id'),
+                'one_time' => Arr::get($tierEdge, 'node.isOneTime'),
+                'price' => Arr::get($tierEdge, 'node.monthlyPriceInCents'),
+            ]);
         }
 
         $this->info('All done!');

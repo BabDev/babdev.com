@@ -22,19 +22,15 @@ final class ViewOpenSourceUpdatesController
         }
 
         /** @var RoutableLengthAwarePaginator<PackageUpdate> $updates */
-        $updates = PackageUpdate::query()
-            ->published()
+        $updates = PackageUpdate::published()
             ->orderByDesc('published_at')
             ->orderBy('title')
             ->paginate(10);
 
         abort_if($updates->currentPage() > $updates->lastPage(), 404);
 
-        return view(
-            'open_source.updates.index',
-            [
-                'updates' => $updates,
-            ],
-        );
+        return view('open_source.updates.index', [
+            'updates' => $updates,
+        ]);
     }
 }

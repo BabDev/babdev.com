@@ -14,14 +14,10 @@ class ApiConnector
 
     public function addRepositoryLabel(string $username, string $repository, string $label, string $color): void
     {
-        $this->client->repository()->labels()->create(
-            $username,
-            $repository,
-            [
-                'name' => $label,
-                'color' => $color,
-            ],
-        );
+        $this->client->repository()->labels()->create($username, $repository, [
+            'name' => $label,
+            'color' => $color,
+        ]);
     }
 
     public function executeGraphqlQuery(string $query, array $variables = []): array
@@ -39,7 +35,7 @@ class ApiConnector
      */
     public function fetchPublicRepositories(string $username): Collection
     {
-        return (new Collection((new ResultPager($this->client))->fetchAll($this->client->api('organization'), 'repositories', [$username])))
+        return collect((new ResultPager($this->client))->fetchAll($this->client->api('organization'), 'repositories', [$username]))
             ->filter(static fn (array $repo): bool => !$repo['private']);
     }
 
@@ -48,7 +44,7 @@ class ApiConnector
      */
     public function fetchRepositoryLabels(string $username, string $repository): Collection
     {
-        return new Collection($this->client->repository()->labels()->all($username, $repository));
+        return collect($this->client->repository()->labels()->all($username, $repository));
     }
 
     /**
@@ -56,7 +52,7 @@ class ApiConnector
      */
     public function fetchRepositoryTopics(string $username, string $repository): Collection
     {
-        return new Collection($this->client->repository()->topics($username, $repository)['names'] ?? []);
+        return collect($this->client->repository()->topics($username, $repository)['names'] ?? []);
     }
 
     /**

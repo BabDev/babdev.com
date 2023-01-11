@@ -4,7 +4,7 @@ namespace BabDev\Listeners;
 
 use BabDev\Breadcrumbs\Events\AfterBreadcrumbGenerated;
 
-class AppendPageNumberToBreadcrumbs
+final class AppendPageNumberToBreadcrumbs
 {
     private const SUPPORTED_BREADCRUMBS = [
         'open-source.updates',

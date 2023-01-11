@@ -24,13 +24,10 @@ final class RedirectToPackageDocsController
             throw new NotFoundHttpException($exception->getMessage(), $exception);
         }
 
-        return redirect()->route(
-            'open-source.packages.package-docs-page',
-            [
-                'package' => $package,
-                'version' => $packageVersion->version,
-                'slug' => $slug,
-            ],
-        );
+        return redirect()->route('open-source.packages.package-docs-page', [
+            'package' => $package,
+            'version' => $packageVersion->version,
+            'slug' => $slug,
+        ]);
     }
 }

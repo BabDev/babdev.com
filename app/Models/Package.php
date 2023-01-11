@@ -8,7 +8,6 @@ use Carbon\Carbon;
 use Database\Factories\PackageFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -42,7 +41,7 @@ use Spatie\Sluggable\SlugOptions;
  * @property-read Collection<PackageVersion> $versions
  * @property-read int|null                   $versions_count
  *
- * @method static PackageFactory factory(...$parameters)
+ * @method static PackageFactory  factory(...$parameters)
  * @method static Builder|Package isPackagist()
  * @method static Builder|Package visible()
  * @method static Builder|Package newModelQuery()
@@ -117,14 +116,6 @@ class Package extends Model
         });
     }
 
-    /**
-     * @return PackageFactory<self>
-     */
-    protected static function newFactory(): Factory
-    {
-        return PackageFactory::new();
-    }
-
     public function getRouteKeyName(): string
     {
         return 'slug';
@@ -188,17 +179,15 @@ class Package extends Model
      */
     public function latestVersion(): PackageVersion
     {
-        /** @var PackageVersion|null $packageVersion */
         $packageVersion = $this->versions()->newestReleasedVersionForPackage()->first();
 
-        if ($packageVersion !== null) {
+        if ($packageVersion instanceof PackageVersion) {
             return $packageVersion;
         }
 
-        /** @var PackageVersion|null $packageVersion */
         $packageVersion = $this->versions()->first();
 
-        if ($packageVersion === null) {
+        if (!$packageVersion instanceof PackageVersion) {
             throw new VersionsNotConfigured(sprintf('Versions are not configured for the "%s" package.', $this->display_name));
         }
 

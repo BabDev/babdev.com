@@ -9,7 +9,7 @@ use Illuminate\Support\Arr;
 use Symfony\Component\Console\Attribute\AsCommand;
 
 #[AsCommand(name: 'import:github-repositories', description: 'Import GitHub repositories to the application.')]
-class ImportGitHubRepositories extends Command
+final class ImportGitHubRepositories extends Command
 {
     protected $name = 'import:github-repositories';
 
@@ -29,11 +29,7 @@ class ImportGitHubRepositories extends Command
                 }
 
                 // Ignore this website
-                if ($name === 'babdev.com') {
-                    return false;
-                }
-
-                return true;
+                return $name !== 'babdev.com';
             })
             ->each(function (array $repositoryAttributes) use ($github): void {
                 /** @phpstan-var string $name */
@@ -41,18 +37,15 @@ class ImportGitHubRepositories extends Command
 
                 $this->comment("Importing `{$name}`... ");
 
-                Package::query()->updateOrCreate(
-                    ['name' => $name],
-                    [
-                        'name' => $name,
-                        'display_name' => ucwords(str_replace(['-', '_'], ' ', $name)),
-                        'description' => Arr::get($repositoryAttributes, 'description'),
-                        'topics' => $github->fetchRepositoryTopics('BabDev', $name),
-                        'stars' => Arr::get($repositoryAttributes, 'stargazers_count'),
-                        'language' => Arr::get($repositoryAttributes, 'language'),
-                        'supported' => Arr::get($repositoryAttributes, 'archived') === false,
-                    ],
-                );
+                Package::updateOrCreate(['name' => $name], [
+                    'name' => $name,
+                    'display_name' => ucwords(str_replace(['-', '_'], ' ', $name)),
+                    'description' => Arr::get($repositoryAttributes, 'description'),
+                    'topics' => $github->fetchRepositoryTopics('BabDev', $name),
+                    'stars' => Arr::get($repositoryAttributes, 'stargazers_count'),
+                    'language' => Arr::get($repositoryAttributes, 'language'),
+                    'supported' => Arr::get($repositoryAttributes, 'archived') === false,
+                ]);
             });
 
         $this->info('All done!');

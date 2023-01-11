@@ -22,11 +22,7 @@ class BounceRate extends Trend
         $results = [];
 
         foreach (array_keys($bounceCount) as $key) {
-            if ($visits[$key]) {
-                $results[$key] = (int) round(($bounceCount[$key] / $visits[$key]) * 100);
-            } else {
-                $results[$key] = 0;
-            }
+            $results[$key] = $visits[$key] ? (int) round(($bounceCount[$key] / $visits[$key]) * 100) : 0;
         }
 
         return (new TrendResult())

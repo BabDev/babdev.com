@@ -18,7 +18,7 @@ class MatomoAnalytics extends Dashboard
     }
 
     /**
-     * @return Card[]
+     * @return list<Card>
      */
     public function cards(): array
     {

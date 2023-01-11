@@ -25,23 +25,18 @@ class RemoveHacktoberfestExtras extends Command
                 }
 
                 // Ignore archived repositories
-                if ($repositoryAttributes['archived']) {
-                    return false;
-                }
-
-                return true;
+                return !$repositoryAttributes['archived'];
             })
             ->each(function (array $repositoryAttributes) use ($github): void {
                 $topics = $github->fetchRepositoryTopics('BabDev', $repositoryAttributes['name']);
 
                 if ($topics->contains('hacktoberfest')) {
                     $this->comment("Removing 'hacktoberfest' topic from `{$repositoryAttributes['name']}`... ");
-                    $topics = $topics->filter(static fn (string $label): bool => $label !== 'hacktoberfest');
 
                     $github->replaceRepositoryTopics(
                         'BabDev',
                         $repositoryAttributes['name'],
-                        $topics->toArray(),
+                        $topics->filter(static fn (string $label): bool => $label !== 'hacktoberfest')->toArray(),
                     );
                 } else {
                     $this->comment("'hacktoberfest' topic does not exist on `{$repositoryAttributes['name']}`... ");

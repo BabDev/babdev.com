@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Laravel\Nova\Util;
 
-class PreloadAssets
+final class PreloadAssets
 {
     public function __construct(private readonly PushManager $pushManager)
     {

@@ -7,7 +7,7 @@ use Illuminate\Console\Command;
 use Symfony\Component\Console\Attribute\AsCommand;
 
 #[AsCommand(name: 'hacktoberfest:add', description: 'Adds extras for Hacktoberfest to active repositories.')]
-class AddHacktoberfestExtras extends Command
+final class AddHacktoberfestExtras extends Command
 {
     protected $name = 'hacktoberfest:add';
 
@@ -25,11 +25,7 @@ class AddHacktoberfestExtras extends Command
                 }
 
                 // Ignore archived repositories
-                if ($repositoryAttributes['archived']) {
-                    return false;
-                }
-
-                return true;
+                return !$repositoryAttributes['archived'];
             })
             ->each(function (array $repositoryAttributes) use ($github): void {
                 $labels = $github->fetchRepositoryLabels('BabDev', $repositoryAttributes['name']);
@@ -60,12 +56,7 @@ class AddHacktoberfestExtras extends Command
                     if ($matchingLabel === null) {
                         $this->comment("Adding '$labelName' label to `{$repositoryAttributes['name']}`... ");
 
-                        $github->addRepositoryLabel(
-                            'BabDev',
-                            $repositoryAttributes['name'],
-                            $labelName,
-                            $labelColor,
-                        );
+                        $github->addRepositoryLabel('BabDev', $repositoryAttributes['name'], $labelName, $labelColor);
                     } else {
                         $this->comment(
                             "'$labelName' label already exists on `{$repositoryAttributes['name']}`... ",

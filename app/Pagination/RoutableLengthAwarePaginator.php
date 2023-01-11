@@ -6,15 +6,21 @@ use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Routing\Route;
 use Illuminate\Support\Str;
 
+/**
+ * @phpstan-type RouteResolver \Closure(): ?Route
+ *
+ * @template TValue
+ * @extends LengthAwarePaginator<TValue>
+ */
 class RoutableLengthAwarePaginator extends LengthAwarePaginator
 {
     /**
-     * @phpstan-var \Closure(): ?Route|null
+     * @phpstan-var RouteResolver|null
      */
     protected static ?\Closure $currentRouteResolver = null;
 
     /**
-     * @phpstan-param \Closure(): ?Route $resolver
+     * @phpstan-param RouteResolver $resolver
      */
     public static function currentRouteResolver(\Closure $resolver): void
     {
@@ -34,14 +40,12 @@ class RoutableLengthAwarePaginator extends LengthAwarePaginator
      * Get the URL for a given page number.
      *
      * @param int $page
-     *
-     * @return string
      */
     public function url($page): string
     {
         $route = static::resolveCurrentRoute();
 
-        if ($route === null) {
+        if (!$route instanceof Route) {
             return parent::url($page);
         }
 
@@ -60,7 +64,7 @@ class RoutableLengthAwarePaginator extends LengthAwarePaginator
 
         $parameters = [];
 
-        if (\count($this->query) > 0) {
+        if ($this->query !== []) {
             $parameters = array_merge($this->query, $parameters);
         }
 

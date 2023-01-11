@@ -10,7 +10,7 @@ use Illuminate\Support\Arr;
 use Symfony\Component\Console\Attribute\AsCommand;
 
 #[AsCommand(name: 'import:github-sponsors', description: 'Import GitHub sponsors to the application.')]
-class ImportGitHubSponsors extends Command
+final class ImportGitHubSponsors extends Command
 {
     protected $name = 'import:github-sponsors';
 
@@ -59,28 +59,23 @@ class ImportGitHubSponsors extends Command
             $activeSponsorIds[] = Arr::get($sponsorEdge, 'node.id');
 
             /** @var Sponsor $sponsor */
-            $sponsor = Sponsor::query()->firstOrNew(
-                ['sponsorship_node_id' => Arr::get($sponsorEdge, 'node.id')],
-                [
-                    'sponsorship_node_id' => Arr::get($sponsorEdge, 'node.id'),
-                    'is_public' => Arr::get($sponsorEdge, 'node.privacyLevel') === 'PUBLIC',
-                    'sponsor_node_id' => Arr::get($sponsorEdge, 'node.sponsorEntity.id'),
-                    'sponsor_username' => Arr::get($sponsorEdge, 'node.sponsorEntity.login'),
-                    'sponsor_display_name' => Arr::get($sponsorEdge, 'node.sponsorEntity.name'),
-                ],
-            );
+            $sponsor = Sponsor::firstOrNew(['sponsorship_node_id' => Arr::get($sponsorEdge, 'node.id')], [
+                'sponsorship_node_id' => Arr::get($sponsorEdge, 'node.id'),
+                'is_public' => Arr::get($sponsorEdge, 'node.privacyLevel') === 'PUBLIC',
+                'sponsor_node_id' => Arr::get($sponsorEdge, 'node.sponsorEntity.id'),
+                'sponsor_username' => Arr::get($sponsorEdge, 'node.sponsorEntity.login'),
+                'sponsor_display_name' => Arr::get($sponsorEdge, 'node.sponsorEntity.name'),
+            ]);
 
             /** @var SponsorshipTier $sponsorshipTier */
-            $sponsorshipTier = SponsorshipTier::query()
-                ->where('node_id', '=', Arr::get($sponsorEdge, 'node.tier.id'))
+            $sponsorshipTier = SponsorshipTier::whereNodeId(Arr::get($sponsorEdge, 'node.tier.id'))
                 ->firstOrFail();
 
             $sponsor->sponsorship_tier()->associate($sponsorshipTier);
             $sponsor->save();
         }
 
-        Sponsor::query()
-            ->whereNotIn('sponsorship_node_id', $activeSponsorIds)
+        Sponsor::whereNotIn('sponsorship_node_id', $activeSponsorIds)
             ->delete();
 
         $this->info('All done!');

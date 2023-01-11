@@ -20,17 +20,15 @@ class ApiConnector
      */
     public function actions(string $method, int $range): array
     {
-        return $this->request(
-            [
-                'module' => 'API',
-                'method' => sprintf('Actions.%s', $method),
-                'idSite' => $this->matomoPageId,
-                'period' => 'range',
-                'date' => sprintf('%s,%s', now()->subDays($range)->toDateString(), now()->toDateString()),
-                'filter_limit' => 10,
-                'format' => 'json',
-            ],
-        );
+        return $this->request([
+            'module' => 'API',
+            'method' => sprintf('Actions.%s', $method),
+            'idSite' => $this->matomoPageId,
+            'period' => 'range',
+            'date' => sprintf('%s,%s', now()->subDays($range)->toDateString(), now()->toDateString()),
+            'filter_limit' => 10,
+            'format' => 'json',
+        ]);
     }
 
     /**
@@ -59,15 +57,12 @@ class ApiConnector
      */
     private function request(array $query): array
     {
-        $response = $this->httpFactory->get(
-            $this->matomoUrl,
-            array_merge(
-                $query,
-                [
-                    'token_auth' => $this->matomoToken,
-                ],
-            ),
-        );
+        $response = $this->httpFactory->get($this->matomoUrl, array_merge(
+            $query,
+            [
+                'token_auth' => $this->matomoToken,
+            ],
+        ));
         $response->throw();
 
         return $response->json();

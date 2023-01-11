@@ -13,7 +13,11 @@ final class ContainerAwareFactory implements Factory
     }
 
     /**
-     * @param class-string<Action> $class
+     * @param class-string<TAction> $class
+     *
+     * @return TAction
+     *
+     * @template TAction of Action
      */
     public function make(string $class): Action
     {

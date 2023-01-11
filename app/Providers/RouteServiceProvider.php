@@ -2,11 +2,11 @@
 
 namespace BabDev\Providers;
 
-use Illuminate\Cache\RateLimiter;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Router;
+use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Facades\Route;
 
 final class RouteServiceProvider extends ServiceProvider
 {
@@ -14,30 +14,21 @@ final class RouteServiceProvider extends ServiceProvider
     {
         $this->configureRateLimiting();
 
-        $this->routes(function (Router $router): void {
-            $router->middleware('web')
-                ->domain($this->app['config']->get('app.domain', null))
-                ->group($this->app->basePath('routes/web.php'));
+        $this->routes(static function (): void {
+            Route::middleware('web')
+                ->domain(config('app.domain'))
+                ->group(base_path('routes/web.php'));
 
-            $router->middleware('github.app')
-                ->domain($this->app['config']->get('app.domain', null))
-                ->group($this->app->basePath('routes/github.php'));
+            Route::middleware('github.app')
+                ->domain(config('app.domain'))
+                ->group(base_path('routes/github.php'));
         });
     }
 
     protected function configureRateLimiting(): void
     {
-        /** @var RateLimiter $rateLimiter */
-        $rateLimiter = $this->app->make(RateLimiter::class);
+        RateLimiter::for('api', static fn (Request $request) => Limit::perMinute(60));
 
-        $rateLimiter->for(
-            'api',
-            static fn (Request $request) => Limit::perMinute(60),
-        );
-
-        $rateLimiter->for(
-            'github.app',
-            static fn (Request $request) => Limit::perMinute(60),
-        );
+        RateLimiter::for('github.app', static fn (Request $request) => Limit::perMinute(60));
     }
 }
