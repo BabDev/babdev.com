@@ -1,8 +1,33 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Parameter \\#3 \\$topics of method BabDev\\\\GitHub\\\\ApiConnector\\:\\:replaceRepositoryTopics\\(\\) expects array\\<string\\>, array given\\.$#"
+			message: "#^Parameter \\#2 \\$repository of method BabDev\\\\GitHub\\\\ApiConnector\\:\\:addRepositoryLabel\\(\\) expects string, mixed given\\.$#"
 			count: 1
+			path: app/Console/Commands/AddHacktoberfestExtras.php
+
+		-
+			message: "#^Parameter \\#2 \\$repository of method BabDev\\\\GitHub\\\\ApiConnector\\:\\:fetchRepositoryLabels\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: app/Console/Commands/AddHacktoberfestExtras.php
+
+		-
+			message: "#^Parameter \\#2 \\$repository of method BabDev\\\\GitHub\\\\ApiConnector\\:\\:fetchRepositoryTopics\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: app/Console/Commands/AddHacktoberfestExtras.php
+
+		-
+			message: "#^Parameter \\#2 \\$repository of method BabDev\\\\GitHub\\\\ApiConnector\\:\\:replaceRepositoryTopics\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: app/Console/Commands/AddHacktoberfestExtras.php
+
+		-
+			message: "#^Parameter \\#3 \\$topics of method BabDev\\\\GitHub\\\\ApiConnector\\:\\:replaceRepositoryTopics\\(\\) expects array\\<int, string\\>, array given\\.$#"
+			count: 1
+			path: app/Console/Commands/AddHacktoberfestExtras.php
+
+		-
+			message: "#^Part \\$repositoryAttributes\\['name'\\] \\(mixed\\) of encapsed string cannot be cast to string\\.$#"
+			count: 4
 			path: app/Console/Commands/AddHacktoberfestExtras.php
 
 		-
@@ -41,8 +66,23 @@ parameters:
 			path: app/Console/Commands/ImportPackagistDownloads.php
 
 		-
-			message: "#^Parameter \\#3 \\$topics of method BabDev\\\\GitHub\\\\ApiConnector\\:\\:replaceRepositoryTopics\\(\\) expects array\\<string\\>, array given\\.$#"
+			message: "#^Parameter \\#2 \\$repository of method BabDev\\\\GitHub\\\\ApiConnector\\:\\:fetchRepositoryTopics\\(\\) expects string, mixed given\\.$#"
 			count: 1
+			path: app/Console/Commands/RemoveHacktoberfestExtras.php
+
+		-
+			message: "#^Parameter \\#2 \\$repository of method BabDev\\\\GitHub\\\\ApiConnector\\:\\:replaceRepositoryTopics\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: app/Console/Commands/RemoveHacktoberfestExtras.php
+
+		-
+			message: "#^Parameter \\#3 \\$topics of method BabDev\\\\GitHub\\\\ApiConnector\\:\\:replaceRepositoryTopics\\(\\) expects array\\<int, string\\>, array given\\.$#"
+			count: 1
+			path: app/Console/Commands/RemoveHacktoberfestExtras.php
+
+		-
+			message: "#^Part \\$repositoryAttributes\\['name'\\] \\(mixed\\) of encapsed string cannot be cast to string\\.$#"
+			count: 2
 			path: app/Console/Commands/RemoveHacktoberfestExtras.php
 
 		-
@@ -61,27 +101,7 @@ parameters:
 			path: app/GitHub/Actions/ClosePagerfantaReadOnlyRepoPullRequest.php
 
 		-
-			message: "#^Method BabDev\\\\GitHub\\\\ApiConnector\\:\\:executeGraphqlQuery\\(\\) has parameter \\$variables with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: app/GitHub/ApiConnector.php
-
-		-
-			message: "#^Method BabDev\\\\GitHub\\\\ApiConnector\\:\\:executeGraphqlQuery\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: app/GitHub/ApiConnector.php
-
-		-
-			message: "#^Method BabDev\\\\GitHub\\\\ApiConnector\\:\\:fetchFileContents\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: app/GitHub/ApiConnector.php
-
-		-
-			message: "#^Method BabDev\\\\GitHub\\\\ApiConnector\\:\\:fetchFileContents\\(\\) should return array but returns array\\|string\\.$#"
-			count: 1
-			path: app/GitHub/ApiConnector.php
-
-		-
-			message: "#^Method BabDev\\\\GitHub\\\\ApiConnector\\:\\:fetchPublicRepositories\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: "#^Method BabDev\\\\GitHub\\\\ApiConnector\\:\\:fetchFileContents\\(\\) should return array\\<string, mixed\\> but returns array\\|string\\.$#"
 			count: 1
 			path: app/GitHub/ApiConnector.php
 
@@ -256,17 +276,22 @@ parameters:
 			path: app/Providers/MatomoServiceProvider.php
 
 		-
-			message: "#^Parameter \\#1 \\$client of class Spatie\\\\Packagist\\\\PackagistClient constructor expects GuzzleHttp\\\\Client, GuzzleHttp\\\\ClientInterface given\\.$#"
-			count: 1
-			path: app/Providers/PackagistServiceProvider.php
-
-		-
 			message: "#^Parameter \\#1 \\$value of method Illuminate\\\\Routing\\\\RouteRegistrar\\:\\:domain\\(\\) expects string, mixed given\\.$#"
 			count: 2
 			path: app/Providers/RouteServiceProvider.php
 
 		-
+			message: "#^Cannot cast mixed to string\\.$#"
+			count: 1
+			path: app/Services/DocumentationProcessor.php
+
+		-
 			message: "#^Parameter \\#1 \\$subject of static method Illuminate\\\\Support\\\\Str\\:\\:after\\(\\) expects string, string\\|null given\\.$#"
+			count: 1
+			path: app/Services/DocumentationProcessor.php
+
+		-
+			message: "#^Parameter \\#2 \\.\\.\\.\\$values of function sprintf expects bool\\|float\\|int\\|string\\|null, mixed given\\.$#"
 			count: 1
 			path: app/Services/DocumentationProcessor.php
 

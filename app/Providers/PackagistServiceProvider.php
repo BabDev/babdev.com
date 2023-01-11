@@ -2,7 +2,7 @@
 
 namespace BabDev\Providers;
 
-use GuzzleHttp\ClientInterface as GuzzleInterface;
+use GuzzleHttp\Client as Guzzle;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
@@ -33,7 +33,7 @@ final class PackagistServiceProvider extends ServiceProvider implements Deferrab
         $this->app->bind(
             PackagistClient::class,
             static fn (Application $app) => new PackagistClient(
-                $app->make(GuzzleInterface::class),
+                $app->make(Guzzle::class),
                 $app->make(PackagistUrlGenerator::class),
             ),
         );
