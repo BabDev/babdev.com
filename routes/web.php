@@ -79,3 +79,5 @@ $router->get(
     '/sitemap.xml',
     ViewSitemapController::class,
 );
+
+$router->feeds('feeds');

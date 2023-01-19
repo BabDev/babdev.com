@@ -5,6 +5,7 @@
 ])
 
 @section('meta')
+    <link rel="alternate" type="application/atom+xml" title="BabDev Open Source Package Updates" href="{{ route('feeds.package-updates') }}">
     @unless($updates->onFirstPage())
         <link rel="canonical" href="{!! route('open-source.updates') !!}" />
         <link rel="prev" href="{!! $updates->currentPage() - 1 === 1 ? route('open-source.updates') : $updates->previousPageUrl() !!}" />

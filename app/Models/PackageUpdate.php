@@ -6,9 +6,12 @@ use Carbon\Carbon;
 use Database\Factories\PackageUpdateFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Spatie\Feed\Feedable;
+use Spatie\Feed\FeedItem;
 
 /**
  * @property int         $id
@@ -41,7 +44,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @method static Builder|PackageUpdate whereTitle($value)
  * @method static Builder|PackageUpdate whereUpdatedAt($value)
  */
-class PackageUpdate extends Model
+class PackageUpdate extends Model implements Feedable
 {
     use HasFactory;
 
@@ -64,9 +67,28 @@ class PackageUpdate extends Model
         'published_at' => 'datetime',
     ];
 
+    /**
+     * @return Collection<array-key, self>
+     */
+    public static function getFeedItems(): Collection
+    {
+        return self::all();
+    }
+
     public function getRouteKeyName(): string
     {
         return 'slug';
+    }
+
+    public function toFeedItem(): FeedItem
+    {
+        return FeedItem::create()
+            ->id($this->id)
+            ->title($this->title)
+            ->summary($this->intro)
+            ->updated($this->updated_at)
+            ->link(route('open-source.update', ['update' => $this]))
+            ->authorName('Michael Babker');
     }
 
     /**

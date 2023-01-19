@@ -186,6 +186,21 @@ parameters:
 			path: app/Matomo/ApiConnector.php
 
 		-
+			message: "#^Parameter \\#1 \\$id of method Spatie\\\\Feed\\\\FeedItem\\:\\:id\\(\\) expects string, int given\\.$#"
+			count: 1
+			path: app/Models/PackageUpdate.php
+
+		-
+			message: "#^Parameter \\#1 \\$summary of method Spatie\\\\Feed\\\\FeedItem\\:\\:summary\\(\\) expects string, string\\|null given\\.$#"
+			count: 1
+			path: app/Models/PackageUpdate.php
+
+		-
+			message: "#^Parameter \\#1 \\$updated of method Spatie\\\\Feed\\\\FeedItem\\:\\:updated\\(\\) expects Carbon\\\\CarbonInterface, Carbon\\\\Carbon\\|null given\\.$#"
+			count: 1
+			path: app/Models/PackageUpdate.php
+
+		-
 			message: "#^Cannot cast mixed to int\\.$#"
 			count: 2
 			path: app/Nova/Metrics/BounceRate.php
