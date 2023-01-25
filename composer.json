@@ -30,7 +30,7 @@
         "lcobucci/jwt": "4.3.0",
         "league/commonmark": "2.3.8",
         "spatie/laravel-feed": "4.2.0",
-        "spatie/laravel-google-fonts": "1.2.2",
+        "spatie/laravel-google-fonts": "1.2.3",
         "spatie/laravel-sitemap": "6.2.4",
         "spatie/laravel-sluggable": "3.4.2",
         "spatie/packagist-api": "2.1.0"

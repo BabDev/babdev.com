@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "44619994a421ba1f19a0044b3709feee",
+    "content-hash": "5a99e194e030d8d54b94f7c1dc7a39eb",
     "packages": [
         {
             "name": "babdev/laravel-breadcrumbs",
@@ -5516,28 +5516,28 @@
         },
         {
             "name": "spatie/laravel-google-fonts",
-            "version": "1.2.2",
+            "version": "1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-google-fonts.git",
-                "reference": "593a74df4b1131addea737fd501a9d00eb739d9e"
+                "reference": "8cc6efb698b7a1324229bc55d5ece8944835d43b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-google-fonts/zipball/593a74df4b1131addea737fd501a9d00eb739d9e",
-                "reference": "593a74df4b1131addea737fd501a9d00eb739d9e",
+                "url": "https://api.github.com/repos/spatie/laravel-google-fonts/zipball/8cc6efb698b7a1324229bc55d5ece8944835d43b",
+                "reference": "8cc6efb698b7a1324229bc55d5ece8944835d43b",
                 "shasum": ""
             },
             "require": {
-                "guzzlehttp/guzzle": "^7.3",
-                "illuminate/contracts": "^8.37|^9.0",
+                "guzzlehttp/guzzle": "^7.3|^7.2",
+                "illuminate/contracts": "^8.37|^9.0|^10.0",
                 "php": "^8.0",
                 "spatie/laravel-package-tools": "^1.7.0"
             },
             "require-dev": {
                 "brianium/paratest": "^6.3",
                 "nunomaduro/collision": "^5.4|^6.0",
-                "orchestra/testbench": "^6.17|^7.0",
+                "orchestra/testbench": "^6.17|^7.0|^8.0",
                 "pestphp/pest": "^1.22",
                 "spatie/laravel-ray": "^1.17",
                 "spatie/pest-plugin-snapshots": "^1.1",
@@ -5585,7 +5585,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-google-fonts/tree/1.2.2"
+                "source": "https://github.com/spatie/laravel-google-fonts/tree/1.2.3"
             },
             "funding": [
                 {
@@ -5593,7 +5593,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-01-17T17:03:29+00:00"
+            "time": "2023-01-24T23:50:49+00:00"
         },
         {
             "name": "spatie/laravel-package-tools",
