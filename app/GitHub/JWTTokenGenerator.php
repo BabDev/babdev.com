@@ -10,16 +10,16 @@ use Lcobucci\JWT\Encoding\ChainedFormatter;
 /**
  * @phpstan-import-type GitHubRepoConfig from Action
  */
-final class JWTTokenGenerator implements JWTTokenGeneratorContract
+final readonly class JWTTokenGenerator implements JWTTokenGeneratorContract
 {
-    public function __construct(private readonly JWTConfigurationBuilderContract $configurationBuilder)
+    public function __construct(private JWTConfigurationBuilderContract $configurationBuilder)
     {
     }
 
     /**
      * @phpstan-param GitHubRepoConfig $repoConfig
      */
-    public function generate(array $repoConfig): string
+    public function generate(#[\SensitiveParameter] array $repoConfig): string
     {
         $config = $this->configurationBuilder->build($repoConfig);
 

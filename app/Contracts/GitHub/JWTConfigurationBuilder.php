@@ -13,5 +13,5 @@ interface JWTConfigurationBuilder
     /**
      * @phpstan-param GitHubRepoConfig $repoConfig
      */
-    public function build(array $repoConfig): Configuration;
+    public function build(#[\SensitiveParameter] array $repoConfig): Configuration;
 }

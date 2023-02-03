@@ -16,7 +16,7 @@ final class JWTConfigurationBuilder implements JWTConfigurationBuilderContract
     /**
      * @phpstan-param GitHubRepoConfig $repoConfig
      */
-    public function build(array $repoConfig): Configuration
+    public function build(#[\SensitiveParameter] array $repoConfig): Configuration
     {
         return Configuration::forSymmetricSigner(
             new Sha256(),

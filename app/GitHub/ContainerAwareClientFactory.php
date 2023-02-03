@@ -7,9 +7,9 @@ use Github\Client;
 use Github\HttpClient\Builder;
 use Illuminate\Contracts\Container\Container;
 
-final class ContainerAwareClientFactory implements ClientFactory
+final readonly class ContainerAwareClientFactory implements ClientFactory
 {
-    public function __construct(private readonly Container $container)
+    public function __construct(private Container $container)
     {
     }
 

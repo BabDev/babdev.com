@@ -28,7 +28,7 @@ class RequestHandler
      *
      * @throws BadRequestException if the request data is invalid
      */
-    public function handleRequest(array $repoConfig, Request $request): void
+    public function handleRequest(#[\SensitiveParameter] array $repoConfig, Request $request): void
     {
         $event = $request->header('X-Github-Event');
 
@@ -58,7 +58,7 @@ class RequestHandler
      *
      * @throws BadRequestException if the request data is invalid
      */
-    private function buildClient(array $repoConfig, Request $request): Client
+    private function buildClient(#[\SensitiveParameter] array $repoConfig, Request $request): Client
     {
         if ($request->missing('installation.id')) {
             throw new BadRequestException('Missing required installation ID.');

@@ -12,5 +12,5 @@ interface JWTTokenGenerator
     /**
      * @phpstan-param GitHubRepoConfig $repoConfig
      */
-    public function generate(array $repoConfig): string;
+    public function generate(#[\SensitiveParameter] array $repoConfig): string;
 }

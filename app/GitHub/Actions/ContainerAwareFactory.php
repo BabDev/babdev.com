@@ -6,9 +6,9 @@ use BabDev\Contracts\GitHub\Actions\Action;
 use BabDev\Contracts\GitHub\Actions\Factory;
 use Illuminate\Contracts\Container\Container;
 
-final class ContainerAwareFactory implements Factory
+final readonly class ContainerAwareFactory implements Factory
 {
-    public function __construct(private readonly Container $container)
+    public function __construct(private Container $container)
     {
     }
 

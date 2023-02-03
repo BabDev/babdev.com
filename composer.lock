@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ff8b21a02d1e6fced14d907827867a06",
+    "content-hash": "56f1f9c2f6c09c4db9b55af2975fb65d",
     "packages": [
         {
             "name": "babdev/laravel-breadcrumbs",
@@ -137,15 +137,15 @@
         },
         {
             "name": "babdev/tinymce-field",
-            "version": "dev-main",
+            "version": "dev-production",
             "dist": {
                 "type": "path",
                 "url": "nova-components/TinyMCEField",
-                "reference": "16e8a5fc31634afa0b80f75613cf2874402ed90d"
+                "reference": "13c6b9d13f528968e700dd8f8a263fe2a8836f37"
             },
             "require": {
                 "laravel/nova": "^4.0",
-                "php": "^8.1"
+                "php": "^8.2"
             },
             "type": "library",
             "extra": {
@@ -2163,16 +2163,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v9.49.0",
+            "version": "v9.50.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "e02d9453442ad0a6a2f5dc9df96ea0319d218026"
+                "reference": "39932773c09658ddea9045958f305e67f9304995"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/e02d9453442ad0a6a2f5dc9df96ea0319d218026",
-                "reference": "e02d9453442ad0a6a2f5dc9df96ea0319d218026",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/39932773c09658ddea9045958f305e67f9304995",
+                "reference": "39932773c09658ddea9045958f305e67f9304995",
                 "shasum": ""
             },
             "require": {
@@ -2347,7 +2347,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2023-01-31T14:36:47+00:00"
+            "time": "2023-02-02T20:52:46+00:00"
         },
         {
             "name": "laravel/nova",
@@ -3456,29 +3456,30 @@
         },
         {
             "name": "nette/utils",
-            "version": "v3.2.9",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "c91bac3470c34b2ecd5400f6e6fdf0b64a836a5c"
+                "reference": "cacdbf5a91a657ede665c541eda28941d4b09c1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/c91bac3470c34b2ecd5400f6e6fdf0b64a836a5c",
-                "reference": "c91bac3470c34b2ecd5400f6e6fdf0b64a836a5c",
+                "url": "https://api.github.com/repos/nette/utils/zipball/cacdbf5a91a657ede665c541eda28941d4b09c1e",
+                "reference": "cacdbf5a91a657ede665c541eda28941d4b09c1e",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2 <8.3"
+                "php": ">=8.0 <8.3"
             },
             "conflict": {
-                "nette/di": "<3.0.6"
+                "nette/finder": "<3",
+                "nette/schema": "<1.2.2"
             },
             "require-dev": {
                 "jetbrains/phpstorm-attributes": "dev-master",
-                "nette/tester": "~2.0",
+                "nette/tester": "^2.4",
                 "phpstan/phpstan": "^1.0",
-                "tracy/tracy": "^2.3"
+                "tracy/tracy": "^2.9"
             },
             "suggest": {
                 "ext-gd": "to use Image",
@@ -3492,7 +3493,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.2-dev"
+                    "dev-master": "4.0-dev"
                 }
             },
             "autoload": {
@@ -3536,9 +3537,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/utils/issues",
-                "source": "https://github.com/nette/utils/tree/v3.2.9"
+                "source": "https://github.com/nette/utils/tree/v4.0.0"
             },
-            "time": "2023-01-18T03:26:20+00:00"
+            "time": "2023-02-02T10:41:53+00:00"
         },
         {
             "name": "nicmart/tree",
@@ -5095,25 +5096,25 @@
         },
         {
             "name": "rap2hpoutre/fast-excel",
-            "version": "v5.0.0",
+            "version": "v5.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rap2hpoutre/fast-excel.git",
-                "reference": "ae87162555c6c359964d671af6b7ad6c73f5f013"
+                "reference": "e0a499c4b7942a54fd91d0e1576693b412bd48e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rap2hpoutre/fast-excel/zipball/ae87162555c6c359964d671af6b7ad6c73f5f013",
-                "reference": "ae87162555c6c359964d671af6b7ad6c73f5f013",
+                "url": "https://api.github.com/repos/rap2hpoutre/fast-excel/zipball/e0a499c4b7942a54fd91d0e1576693b412bd48e0",
+                "reference": "e0a499c4b7942a54fd91d0e1576693b412bd48e0",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "^6.0 || ^7.0 || ^8.0 || ^9.0",
+                "illuminate/support": "^6.0 || ^7.0 || ^8.0 || ^9.0|^10.0",
                 "openspout/openspout": "^4.1.1",
                 "php": "^8.0"
             },
             "require-dev": {
-                "illuminate/database": "^6.20.12 || ^7.30.4 || ^8.24.0 || ^9.0",
+                "illuminate/database": "^6.20.12 || ^7.30.4 || ^8.24.0 || ^9.0|^10.0",
                 "phpunit/phpunit": "^9.5",
                 "squizlabs/php_codesniffer": "3.*"
             },
@@ -5153,7 +5154,7 @@
             ],
             "support": {
                 "issues": "https://github.com/rap2hpoutre/fast-excel/issues",
-                "source": "https://github.com/rap2hpoutre/fast-excel/tree/v5.0.0"
+                "source": "https://github.com/rap2hpoutre/fast-excel/tree/v5.1.0"
             },
             "funding": [
                 {
@@ -5161,7 +5162,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-12-09T15:18:32+00:00"
+            "time": "2023-02-02T19:26:50+00:00"
         },
         {
             "name": "spatie/browsershot",
@@ -10475,21 +10476,21 @@
         },
         {
             "name": "rector/rector",
-            "version": "0.15.10",
+            "version": "0.15.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectorphp/rector.git",
-                "reference": "000bfb6f7974449399f39e1a210458395b75c887"
+                "reference": "0034e743daf120f70359b9600a0946a17e3a6364"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectorphp/rector/zipball/000bfb6f7974449399f39e1a210458395b75c887",
-                "reference": "000bfb6f7974449399f39e1a210458395b75c887",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/0034e743daf120f70359b9600a0946a17e3a6364",
+                "reference": "0034e743daf120f70359b9600a0946a17e3a6364",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2|^8.0",
-                "phpstan/phpstan": "^1.9.7"
+                "phpstan/phpstan": "^1.9.14"
             },
             "conflict": {
                 "rector/rector-doctrine": "*",
@@ -10504,7 +10505,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "0.14-dev"
+                    "dev-main": "0.15-dev"
                 }
             },
             "autoload": {
@@ -10519,7 +10520,7 @@
             "description": "Instant Upgrade and Automated Refactoring of any PHP code",
             "support": {
                 "issues": "https://github.com/rectorphp/rector/issues",
-                "source": "https://github.com/rectorphp/rector/tree/0.15.10"
+                "source": "https://github.com/rectorphp/rector/tree/0.15.11"
             },
             "funding": [
                 {
@@ -10527,7 +10528,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-01-21T14:30:16+00:00"
+            "time": "2023-02-02T16:53:15+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -11845,13 +11846,13 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.1",
+        "php": "^8.2",
         "ext-hash": "*",
         "composer-runtime-api": "^2.0"
     },
     "platform-dev": [],
     "platform-overrides": {
-        "php": "8.1.7"
+        "php": "8.2.2"
     },
     "plugin-api-version": "2.3.0"
 }

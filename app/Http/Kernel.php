@@ -7,7 +7,7 @@ use Illuminate\Foundation\Http\Kernel as HttpKernel;
 class Kernel extends HttpKernel
 {
     /**
-     * @var array<int, class-string|string>
+     * @var list<class-string|string>
      */
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance::class,
@@ -17,7 +17,7 @@ class Kernel extends HttpKernel
     ];
 
     /**
-     * @var array<string, array<int, class-string|string>>
+     * @var array<string, list<class-string|string>>
      */
     protected $middlewareGroups = [
         'nova.web' => [

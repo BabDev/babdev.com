@@ -11,9 +11,9 @@ use Github\Exception\RuntimeException;
 use Illuminate\Contracts\Cache\Repository;
 use Illuminate\Support\Str;
 
-final class DocumentationProcessor implements DocumentationProcessorContract
+final readonly class DocumentationProcessor implements DocumentationProcessorContract
 {
-    public function __construct(private readonly ApiConnector $github, private readonly Repository $cache)
+    public function __construct(private ApiConnector $github, private Repository $cache)
     {
     }
 

@@ -10,7 +10,7 @@ class ApiConnector
     public function __construct(
         private readonly Factory $httpFactory,
         private readonly string $matomoPageId,
-        private readonly string $matomoToken,
+        #[\SensitiveParameter] private readonly string $matomoToken,
         private readonly string $matomoUrl,
     ) {
     }

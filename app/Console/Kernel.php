@@ -6,7 +6,7 @@ use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use Spatie\GoogleFonts\Commands\FetchGoogleFontsCommand;
 
-class Kernel extends ConsoleKernel
+final class Kernel extends ConsoleKernel
 {
     protected function commands(): void
     {

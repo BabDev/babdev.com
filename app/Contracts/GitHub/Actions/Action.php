@@ -13,5 +13,5 @@ interface Action
     /**
      * @phpstan-param GitHubRepoConfig $repoConfig
      */
-    public function __invoke(array $repoConfig, Request $request, Client $github): void;
+    public function __invoke(#[\SensitiveParameter] array $repoConfig, Request $request, Client $github): void;
 }
