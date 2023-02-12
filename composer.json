@@ -17,7 +17,7 @@
         "php": "^8.2",
         "ext-hash": "*",
         "composer-runtime-api": "^2.0",
-        "babdev/laravel-breadcrumbs": "1.4.0",
+        "babdev/laravel-breadcrumbs": "1.5.0",
         "babdev/laravel-server-push-manager": "2.1.0",
         "babdev/tinymce-field": "*",
         "blade-ui-kit/blade-ui-kit": "0.3.4",
