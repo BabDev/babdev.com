@@ -6,9 +6,9 @@ use Rector\Config\RectorConfig;
 use Rector\Php55\Rector\String_\StringClassNameToClassConstantRector;
 use Rector\Php74\Rector\LNumber\AddLiteralSeparatorToNumberRector;
 use Rector\Php80\Rector\Switch_\ChangeSwitchToMatchRector;
-use Rector\PostRector\Rector\NameImportingPostRector;
 use Rector\PHPUnit\Set\PHPUnitLevelSetList;
 use Rector\PHPUnit\Set\PHPUnitSetList;
+use Rector\PostRector\Rector\NameImportingPostRector;
 use Rector\Set\ValueObject\LevelSetList;
 use Rector\Set\ValueObject\SetList;
 use RectorLaravel\Set\LaravelSetList;
@@ -52,8 +52,7 @@ return static function (RectorConfig $rectorConfig): void {
         LevelSetList::UP_TO_PHP_82,
         SetList::CODE_QUALITY,
         LaravelSetList::LARAVEL_90,
-        PHPUnitLevelSetList::UP_TO_PHPUNIT_90,
-        PHPUnitSetList::PHPUNIT_91,
+        PHPUnitLevelSetList::UP_TO_PHPUNIT_100,
         PHPUnitSetList::PHPUNIT_CODE_QUALITY,
         PHPUnitSetList::PHPUNIT_EXCEPTION,
         PHPUnitSetList::PHPUNIT_YIELD_DATA_PROVIDER,

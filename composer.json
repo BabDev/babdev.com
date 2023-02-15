@@ -17,15 +17,15 @@
         "php": "^8.2",
         "ext-hash": "*",
         "composer-runtime-api": "^2.0",
-        "babdev/laravel-breadcrumbs": "1.5.0",
-        "babdev/laravel-server-push-manager": "2.1.0",
+        "babdev/laravel-breadcrumbs": "2.0.0",
+        "babdev/laravel-server-push-manager": "2.2.0",
         "babdev/tinymce-field": "*",
         "blade-ui-kit/blade-ui-kit": "0.4.0",
-        "elhebert/laravel-sri": "3.1.0",
+        "elhebert/laravel-sri": "dev-master",
         "guzzlehttp/guzzle": "7.5.0",
         "http-interop/http-factory-guzzle": "1.2.0",
         "knplabs/github-api": "3.9.0",
-        "laravel/framework": "9.52.0",
+        "laravel/framework": "10.0.0",
         "laravel/nova": "4.22.0",
         "lcobucci/jwt": "4.3.0",
         "league/commonmark": "2.3.8",
@@ -40,15 +40,15 @@
         "fakerphp/faker": "1.21.0",
         "laravel/telescope": "4.13.1",
         "mockery/mockery": "1.5.1",
-        "nunomaduro/collision": "6.4.0",
+        "nunomaduro/collision": "7.0.2",
         "nunomaduro/larastan": "2.4.0",
         "phpstan/extension-installer": "1.2.0",
         "phpstan/phpstan": "1.9.17",
         "phpstan/phpstan-mockery": "1.1.0",
         "phpstan/phpstan-phpunit": "1.3.4",
-        "phpunit/phpunit": "9.6.3",
-        "rector/rector": "0.15.13",
-        "spatie/laravel-ignition": "1.6.4"
+        "phpunit/phpunit": "10.0.7",
+        "rector/rector": "0.15.16",
+        "spatie/laravel-ignition": "2.0.0"
     },
     "replace": {
         "paragonie/random_compat": "*",
@@ -102,7 +102,7 @@
         },
         "optimize-autoloader": true,
         "platform": {
-            "php": "8.2.2"
+            "php": "8.2.3"
         },
         "preferred-install": "dist",
         "sort-packages": true

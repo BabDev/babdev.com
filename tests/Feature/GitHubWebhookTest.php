@@ -6,11 +6,12 @@ use BabDev\GitHub\Exceptions\BadRequestException;
 use BabDev\GitHub\RequestHandler;
 use Illuminate\Contracts\Config\Repository;
 use Mockery\MockInterface;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
 class GitHubWebhookTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function an_app_webhook_for_an_unsupported_repository_results_in_a_400_response(): void
     {
         /** @var Repository $config */
@@ -22,7 +23,7 @@ class GitHubWebhookTest extends TestCase
             ->assertStatus(400);
     }
 
-    /** @test */
+    #[Test]
     public function an_app_webhook_for_a_supported_repository_with_a_configured_secret_and_no_signature_header_results_in_a_403_response(): void
     {
         /** @var Repository $config */
@@ -44,7 +45,7 @@ class GitHubWebhookTest extends TestCase
             ->assertStatus(403);
     }
 
-    /** @test */
+    #[Test]
     public function an_app_webhook_for_a_supported_repository_with_a_configured_secret_and_an_invalid_signature_results_in_a_403_response(): void
     {
         $secret = 'my-secret-value';
@@ -72,7 +73,7 @@ class GitHubWebhookTest extends TestCase
             ->assertStatus(403);
     }
 
-    /** @test */
+    #[Test]
     public function an_app_webhook_for_a_supported_repository_with_a_configured_secret_and_a_valid_signature_is_processed(): void
     {
         $this->instance(
@@ -107,7 +108,7 @@ class GitHubWebhookTest extends TestCase
             ->assertSuccessful();
     }
 
-    /** @test */
+    #[Test]
     public function an_app_webhook_for_a_supported_repository_with_a_configured_secret_and_a_valid_signature_is_not_processed_if_an_invalid_request_is_given(): void
     {
         $this->instance(

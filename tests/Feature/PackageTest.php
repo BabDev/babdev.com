@@ -5,13 +5,14 @@ namespace Tests\Feature;
 use BabDev\Models\Package;
 use BabDev\Models\PackageUpdate;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
 final class PackageTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** @test */
+    #[Test]
     public function users_can_view_the_package_listing(): void
     {
         Package::factory()->count(3)->create();
@@ -21,7 +22,7 @@ final class PackageTest extends TestCase
             ->assertViewIs('open_source.packages.index');
     }
 
-    /** @test */
+    #[Test]
     public function users_can_view_the_package_update_list(): void
     {
         PackageUpdate::factory()->count(5)->create();
@@ -37,7 +38,7 @@ final class PackageTest extends TestCase
             ->assertDontSee('<li class="breadcrumb-item active">Page 1</li>', false);
     }
 
-    /** @test */
+    #[Test]
     public function users_can_view_a_specific_page_from_the_package_update_list(): void
     {
         PackageUpdate::factory()->count(40)->create();
@@ -53,7 +54,7 @@ final class PackageTest extends TestCase
             ->assertSee('<li class="breadcrumb-item active">Page 2</li>', false);
     }
 
-    /** @test */
+    #[Test]
     public function users_are_redirected_to_the_canonical_first_page_of_the_package_update_list(): void
     {
         PackageUpdate::factory()->count(5)->create();
@@ -62,7 +63,7 @@ final class PackageTest extends TestCase
             ->assertRedirect('/open-source/updates');
     }
 
-    /** @test */
+    #[Test]
     public function the_package_update_list_returns_a_404_if_navigating_outside_the_pagination_range(): void
     {
         PackageUpdate::factory()->count(5)->create();
@@ -71,7 +72,7 @@ final class PackageTest extends TestCase
             ->assertNotFound();
     }
 
-    /** @test */
+    #[Test]
     public function users_can_view_a_published_package_update(): void
     {
         /** @var PackageUpdate $update */
@@ -82,7 +83,7 @@ final class PackageTest extends TestCase
             ->assertViewIs('open_source.updates.show');
     }
 
-    /** @test */
+    #[Test]
     public function users_can_not_view_an_unpublished_package_update(): void
     {
         /** @var PackageUpdate $update */

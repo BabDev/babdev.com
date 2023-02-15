@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use BabDev\Models\Package;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Mockery\MockInterface;
+use PHPUnit\Framework\Attributes\Test;
 use Spatie\Packagist\PackagistClient;
 use Tests\TestCase;
 
@@ -12,7 +13,7 @@ class ImportPackagistDownloadsTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** @test */
+    #[Test]
     public function downloads_for_packagist_listings_are_imported(): void
     {
         Package::factory()->packagist()->create();

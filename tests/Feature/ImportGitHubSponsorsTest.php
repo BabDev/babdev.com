@@ -6,13 +6,14 @@ use BabDev\GitHub\ApiConnector;
 use BabDev\Models\SponsorshipTier;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Mockery\MockInterface;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
 class ImportGitHubSponsorsTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** @test */
+    #[Test]
     public function the_sponsors_tiers_are_imported(): void
     {
         /** @var SponsorshipTier $tier1 */

@@ -7,13 +7,14 @@ use BabDev\Contracts\Services\Exceptions\PageNotFoundException;
 use BabDev\Models\Package;
 use BabDev\Models\PackageVersion;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
 class DocumentationTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** @test */
+    #[Test]
     public function when_a_package_is_not_visible_a_404_is_returned(): void
     {
         /** @var Package $package */
@@ -23,7 +24,7 @@ class DocumentationTest extends TestCase
             ->assertNotFound();
     }
 
-    /** @test */
+    #[Test]
     public function when_a_package_has_no_documentation_the_request_is_redirected_to_the_package_list(): void
     {
         /** @var Package $package */
@@ -33,7 +34,7 @@ class DocumentationTest extends TestCase
             ->assertRedirect('/open-source/packages');
     }
 
-    /** @test */
+    #[Test]
     public function when_a_package_has_no_documentation_for_the_requested_version_a_404_is_returned(): void
     {
         /** @var Package $package */
@@ -44,7 +45,7 @@ class DocumentationTest extends TestCase
             ->assertViewIs('open_source.packages.docs_not_found_for_version');
     }
 
-    /** @test */
+    #[Test]
     public function when_a_docs_request_is_for_the_sidebar_index_a_404_is_returned(): void
     {
         /** @var Package $package */
@@ -54,7 +55,7 @@ class DocumentationTest extends TestCase
             ->assertNotFound();
     }
 
-    /** @test */
+    #[Test]
     public function when_a_docs_request_is_for_a_nonexisting_page_a_404_is_returned(): void
     {
         /** @var Package $package */
@@ -69,7 +70,7 @@ class DocumentationTest extends TestCase
             ->assertNotFound();
     }
 
-    /** @test */
+    #[Test]
     public function when_a_docs_request_is_for_an_existing_page_the_docs_can_be_viewed(): void
     {
         /** @var Package $package */
@@ -88,7 +89,7 @@ class DocumentationTest extends TestCase
             ->assertViewIs('open_source.packages.docs_page');
     }
 
-    /** @test */
+    #[Test]
     public function when_a_package_has_no_documentation_the_request_for_the_docs_shortcut_is_redirected_to_the_package_list(): void
     {
         /** @var Package $package */
@@ -98,7 +99,7 @@ class DocumentationTest extends TestCase
             ->assertRedirect('/open-source/packages');
     }
 
-    /** @test */
+    #[Test]
     public function when_a_docs_request_is_for_a_page_without_a_version_the_user_is_redirected_to_the_default_version_page(): void
     {
         /** @var Package $package */

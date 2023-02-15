@@ -38,12 +38,12 @@ class Kernel extends HttpKernel
         ],
 
         'api' => [
-            'throttle:api',
+            \Illuminate\Routing\Middleware\ThrottleRequests::class . ':api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
         'github.app' => [
-            'throttle:github.app',
+            \Illuminate\Routing\Middleware\ThrottleRequests::class . ':github.app',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
     ];
@@ -51,7 +51,7 @@ class Kernel extends HttpKernel
     /**
      * @var array<string, class-string|string>
      */
-    protected $routeMiddleware = [
+    protected $middlewareAliases = [
         'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,

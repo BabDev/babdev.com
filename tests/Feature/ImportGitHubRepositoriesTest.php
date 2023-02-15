@@ -5,13 +5,14 @@ namespace Tests\Feature;
 use BabDev\GitHub\ApiConnector;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Mockery\MockInterface;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
 class ImportGitHubRepositoriesTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** @test */
+    #[Test]
     public function the_public_repositories_are_imported(): void
     {
         $this->instance(

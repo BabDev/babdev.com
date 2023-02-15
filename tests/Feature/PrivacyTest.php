@@ -2,11 +2,12 @@
 
 namespace Tests\Feature;
 
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
 class PrivacyTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function users_can_view_the_privacy_policy(): void
     {
         $this->get('/privacy')

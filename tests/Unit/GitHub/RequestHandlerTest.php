@@ -12,6 +12,7 @@ use Github\Api\Apps;
 use Github\AuthMethod;
 use Github\Client;
 use Illuminate\Http\Request;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
@@ -35,7 +36,7 @@ final class RequestHandlerTest extends TestCase
         $this->handler = new RequestHandler($this->actionFactory, $this->clientFactory, $this->tokenGenerator);
     }
 
-    /** @test */
+    #[Test]
     public function the_handler_only_acts_on_supported_events(): void
     {
         $repoConfig = [
@@ -59,7 +60,7 @@ final class RequestHandlerTest extends TestCase
         $this->handler->handleRequest($repoConfig, $request);
     }
 
-    /** @test */
+    #[Test]
     public function the_handler_acts_on_a_supported_event(): void
     {
         $repoConfig = [
@@ -97,10 +98,10 @@ final class RequestHandlerTest extends TestCase
         $github = $this->createMock(Client::class);
         $github->expects($this->exactly(2))
             ->method('authenticate')
-            ->withConsecutive(
-                ['jwt-token', null, AuthMethod::JWT],
-                ['access-token', null, AuthMethod::ACCESS_TOKEN],
-            );
+            ->willReturnMap([
+                ['jwt-token', null, AuthMethod::JWT, null],
+                ['access-token', null, AuthMethod::ACCESS_TOKEN, null],
+            ]);
 
         $github->expects($this->once())
             ->method('__call')
@@ -124,7 +125,7 @@ final class RequestHandlerTest extends TestCase
         $this->handler->handleRequest($repoConfig, $request);
     }
 
-    /** @test */
+    #[Test]
     public function the_handler_rejects_a_request_with_a_missing_installation_id(): void
     {
         $this->expectException(BadRequestException::class);

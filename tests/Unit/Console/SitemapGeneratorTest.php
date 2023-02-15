@@ -4,13 +4,14 @@ namespace Tests\Unit\Console;
 
 use Illuminate\Support\Facades\Storage;
 use Mockery\MockInterface;
+use PHPUnit\Framework\Attributes\Test;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\SitemapGenerator;
 use Tests\TestCase;
 
 class SitemapGeneratorTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function the_sitemap_is_generated(): void
     {
         Storage::fake('local');

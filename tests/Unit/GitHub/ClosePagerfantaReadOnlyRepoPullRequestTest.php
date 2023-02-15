@@ -8,13 +8,14 @@ use Github\Api\Issue\Comments;
 use Github\Api\PullRequest;
 use Github\Client;
 use Illuminate\Http\Request;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
 
 final class ClosePagerfantaReadOnlyRepoPullRequestTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function the_action_only_processes_opened_pull_requests(): void
     {
         $request = Request::createFromBase(
@@ -30,7 +31,7 @@ final class ClosePagerfantaReadOnlyRepoPullRequestTest extends TestCase
         $action(['app_id' => '123', 'key' => 'key', 'secret' => 'secret', 'events' => []], $request, $github);
     }
 
-    /** @test */
+    #[Test]
     public function the_action_comments_on_an_opened_pull_request_and_closes_it(): void
     {
         $request = Request::createFromBase(
@@ -84,14 +85,10 @@ final class ClosePagerfantaReadOnlyRepoPullRequestTest extends TestCase
         $github = $this->createMock(Client::class);
         $github->expects($this->exactly(2))
             ->method('__call')
-            ->withConsecutive(
-                ['issue'],
-                ['pullRequest'],
-            )
-            ->willReturnOnConsecutiveCalls(
-                $issue,
-                $pullRequest,
-            );
+            ->willReturnMap([
+                ['issue', [], $issue],
+                ['pullRequest', [], $pullRequest],
+            ]);
 
         $action = new ClosePagerfantaReadOnlyRepoPullRequest();
         $action(['app_id' => '123', 'key' => 'key', 'secret' => 'secret', 'events' => []], $request, $github);

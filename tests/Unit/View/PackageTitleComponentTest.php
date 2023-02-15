@@ -5,11 +5,12 @@ namespace Tests\Unit\View;
 use BabDev\Models\Package;
 use BabDev\View\Components\PackageTitle;
 use Illuminate\Support\Facades\Storage;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
 final class PackageTitleComponentTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function the_component_is_rendered_with_no_logo(): void
     {
         /** @var Package $package */
@@ -21,7 +22,7 @@ final class PackageTitleComponentTest extends TestCase
             ->assertDontSee('<h2 class="package-title__secondary">', false);
     }
 
-    /** @test */
+    #[Test]
     public function the_component_is_rendered_with_a_logo(): void
     {
         Storage::fake('logos')
@@ -37,7 +38,7 @@ final class PackageTitleComponentTest extends TestCase
             ->assertDontSee('<h2 class="package-title__secondary">', false);
     }
 
-    /** @test */
+    #[Test]
     public function the_component_is_rendered_with_a_logo_and_secondary_title(): void
     {
         Storage::fake('logos')

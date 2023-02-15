@@ -5,12 +5,13 @@ namespace Tests\Unit\GitHub;
 use BabDev\Contracts\GitHub\JWTConfigurationBuilder;
 use BabDev\GitHub\JWTTokenGenerator;
 use Lcobucci\JWT\Configuration;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 final class JWTTokenGeneratorTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function the_generator_generates_a_jwt_token_for_a_repository(): void
     {
         $repoConfig = [

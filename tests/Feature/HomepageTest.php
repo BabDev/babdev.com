@@ -2,11 +2,12 @@
 
 namespace Tests\Feature;
 
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
 class HomepageTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function users_can_visit_the_homepage(): void
     {
         $this->get('/')
