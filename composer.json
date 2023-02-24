@@ -26,7 +26,7 @@
         "http-interop/http-factory-guzzle": "1.2.0",
         "knplabs/github-api": "3.9.0",
         "laravel/framework": "10.1.4",
-        "laravel/nova": "4.22.0",
+        "laravel/nova": "4.22.1",
         "lcobucci/jwt": "4.3.0",
         "league/commonmark": "2.3.9",
         "spatie/laravel-feed": "4.2.1",
