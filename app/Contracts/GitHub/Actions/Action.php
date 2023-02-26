@@ -6,7 +6,7 @@ use Github\Client;
 use Illuminate\Http\Request;
 
 /**
- * @phpstan-type GitHubRepoConfig array{app_id: string, key: string, secret: string, events: array<string, list<class-string<Action>>>}
+ * @phpstan-type GitHubRepoConfig array{app_id: non-empty-string, key: non-empty-string, secret: non-empty-string, events: array<string, list<class-string<Action>>>}
  */
 interface Action
 {

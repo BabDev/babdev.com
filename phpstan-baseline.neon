@@ -116,6 +116,11 @@ parameters:
 			path: app/GitHub/ApiConnector.php
 
 		-
+			message: "#^Parameter \\#1 \\$path of static method Lcobucci\\\\JWT\\\\Signer\\\\Key\\\\InMemory\\:\\:file\\(\\) expects non\\-empty\\-string, string given\\.$#"
+			count: 1
+			path: app/GitHub/JWTConfigurationBuilder.php
+
+		-
 			message: "#^Call to function is_array\\(\\) with string\\|null will always evaluate to false\\.$#"
 			count: 1
 			path: app/GitHub/RequestHandler.php
