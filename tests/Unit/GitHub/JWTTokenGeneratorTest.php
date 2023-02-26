@@ -5,6 +5,8 @@ namespace Tests\Unit\GitHub;
 use BabDev\Contracts\GitHub\JWTConfigurationBuilder;
 use BabDev\GitHub\JWTTokenGenerator;
 use Lcobucci\JWT\Configuration;
+use Lcobucci\JWT\Signer\Blake2b;
+use Lcobucci\JWT\Signer\Key\InMemory;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
@@ -21,7 +23,10 @@ final class JWTTokenGeneratorTest extends TestCase
             'events' => [],
         ];
 
-        $config = Configuration::forUnsecuredSigner();
+        $config = Configuration::forSymmetricSigner(
+            new Blake2b(),
+            InMemory::base64Encoded('MpQd6dDPiqnzFSWmpUfLy4+Rdls90Ca4C8e0QD0IxqY='),
+        );
 
         /** @var MockObject&JWTConfigurationBuilder $builder */
         $builder = $this->createMock(JWTConfigurationBuilder::class);
