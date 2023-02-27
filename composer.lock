@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dd354bd7f48017354195d070b14ac4c7",
+    "content-hash": "630ee87bfae1d9ba22035ffd470df1f5",
     "packages": [
         {
             "name": "babdev/laravel-breadcrumbs",
@@ -8621,35 +8621,20 @@
     "packages-dev": [
         {
             "name": "driftingly/rector-laravel",
-            "version": "0.15.0",
+            "version": "0.16.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/driftingly/rector-laravel.git",
-                "reference": "280fb5f13645ffc291f571b0144bcc0769d5e31e"
+                "reference": "5a87d4e8180b2d295aa6077580adf6ff4517e84e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/driftingly/rector-laravel/zipball/280fb5f13645ffc291f571b0144bcc0769d5e31e",
-                "reference": "280fb5f13645ffc291f571b0144bcc0769d5e31e",
+                "url": "https://api.github.com/repos/driftingly/rector-laravel/zipball/5a87d4e8180b2d295aa6077580adf6ff4517e84e",
+                "reference": "5a87d4e8180b2d295aa6077580adf6ff4517e84e",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.1"
-            },
-            "require-dev": {
-                "phpstan/extension-installer": "^1.1",
-                "phpstan/phpstan": "^1.8.2",
-                "phpstan/phpstan-strict-rules": "^1.2",
-                "phpstan/phpstan-webmozart-assert": "^1.1",
-                "phpunit/phpunit": "^9.5",
-                "rector/phpstan-rules": "^0.6",
-                "rector/rector": "^0.14.7",
-                "rector/rector-debugging": "dev-main",
-                "symplify/easy-coding-standard": "^11.0",
-                "symplify/phpstan-extensions": "^11.0",
-                "symplify/phpstan-rules": "^11.0",
-                "symplify/rule-doc-generator": "^11.0",
-                "symplify/vendor-patches": "^11.0"
+                "php": "^7.2 || ^8.0"
             },
             "type": "rector-extension",
             "autoload": {
@@ -8664,9 +8649,9 @@
             "description": "Rector upgrades rules for Laravel Framework",
             "support": {
                 "issues": "https://github.com/driftingly/rector-laravel/issues",
-                "source": "https://github.com/driftingly/rector-laravel/tree/0.15.0"
+                "source": "https://github.com/driftingly/rector-laravel/tree/0.16.1"
             },
-            "time": "2023-02-07T18:23:27+00:00"
+            "time": "2023-02-27T17:47:42+00:00"
         },
         {
             "name": "fakerphp/faker",
@@ -10025,16 +10010,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "10.0.12",
+            "version": "10.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "87d5cfdb4ecf440fb9f08b636b1152be433fc6f1"
+                "reference": "c37a88d7a905266eab6498817a1bf1170043313f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/87d5cfdb4ecf440fb9f08b636b1152be433fc6f1",
-                "reference": "87d5cfdb4ecf440fb9f08b636b1152be433fc6f1",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c37a88d7a905266eab6498817a1bf1170043313f",
+                "reference": "c37a88d7a905266eab6498817a1bf1170043313f",
                 "shasum": ""
             },
             "require": {
@@ -10105,7 +10090,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.0.12"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.0.13"
             },
             "funding": [
                 {
@@ -10121,7 +10106,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-25T06:05:15+00:00"
+            "time": "2023-02-27T13:07:57+00:00"
         },
         {
             "name": "rector/rector",
