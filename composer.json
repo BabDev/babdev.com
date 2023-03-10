@@ -24,7 +24,7 @@
         "elhebert/laravel-sri": "dev-master",
         "guzzlehttp/guzzle": "7.5.0",
         "http-interop/http-factory-guzzle": "1.2.0",
-        "knplabs/github-api": "3.10.0",
+        "knplabs/github-api": "3.11.0",
         "laravel/framework": "10.3.3",
         "laravel/nova": "4.22.2",
         "lcobucci/jwt": "5.0.0",
