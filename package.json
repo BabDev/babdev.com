@@ -19,7 +19,7 @@
         "build-tinymce-field-prod": "cd nova-components/TinyMCEField && npm run prod"
     },
     "dependencies": {
-        "@fortawesome/fontawesome-free": "6.3.0",
+        "@fortawesome/fontawesome-free": "6.4.0",
         "@popperjs/core": "2.11.7",
         "bootstrap": "5.2.3",
         "highlight.js": "11.7.0",
@@ -36,6 +36,6 @@
         "postcss-import": "15.1.0",
         "resolve-url-loader": "5.0.0",
         "sass": "1.60.0",
-        "sass-loader": "13.2.1"
+        "sass-loader": "13.2.2"
     }
 }
