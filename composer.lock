@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a532a0d90114f4688b93eec59f1db118",
+    "content-hash": "8b4c0ba66176b6320972a8689aa9e7dd",
     "packages": [
         {
             "name": "babdev/laravel-breadcrumbs",
@@ -2250,16 +2250,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v10.6.1",
+            "version": "v10.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "1282e96202085f798528ee43371b2ffbb8dcfbd8"
+                "reference": "13dc93889617427352f72b6aa8b195b252af1197"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/1282e96202085f798528ee43371b2ffbb8dcfbd8",
-                "reference": "1282e96202085f798528ee43371b2ffbb8dcfbd8",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/13dc93889617427352f72b6aa8b195b252af1197",
+                "reference": "13dc93889617427352f72b6aa8b195b252af1197",
                 "shasum": ""
             },
             "require": {
@@ -2358,7 +2358,7 @@
                 "league/flysystem-read-only": "^3.3",
                 "league/flysystem-sftp-v3": "^3.0",
                 "mockery/mockery": "^1.5.1",
-                "orchestra/testbench-core": "^8.3",
+                "orchestra/testbench-core": "^8.4",
                 "pda/pheanstalk": "^4.0",
                 "phpstan/phpdoc-parser": "^1.15",
                 "phpstan/phpstan": "^1.4.7",
@@ -2446,7 +2446,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2023-04-04T20:58:15+00:00"
+            "time": "2023-04-05T15:28:17+00:00"
         },
         {
             "name": "laravel/nova",
@@ -10121,16 +10121,16 @@
         },
         {
             "name": "rector/rector",
-            "version": "0.15.23",
+            "version": "0.15.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectorphp/rector.git",
-                "reference": "f4984ebd62b3613002869b0ddd6868261d62819e"
+                "reference": "716473919bcfdc27bdd2a32afb72adbf4c224e59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectorphp/rector/zipball/f4984ebd62b3613002869b0ddd6868261d62819e",
-                "reference": "f4984ebd62b3613002869b0ddd6868261d62819e",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/716473919bcfdc27bdd2a32afb72adbf4c224e59",
+                "reference": "716473919bcfdc27bdd2a32afb72adbf4c224e59",
                 "shasum": ""
             },
             "require": {
@@ -10170,7 +10170,7 @@
             ],
             "support": {
                 "issues": "https://github.com/rectorphp/rector/issues",
-                "source": "https://github.com/rectorphp/rector/tree/0.15.23"
+                "source": "https://github.com/rectorphp/rector/tree/0.15.24"
             },
             "funding": [
                 {
@@ -10178,7 +10178,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-03-22T15:22:45+00:00"
+            "time": "2023-04-05T08:49:11+00:00"
         },
         {
             "name": "sebastian/cli-parser",
