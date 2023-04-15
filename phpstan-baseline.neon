@@ -116,11 +116,6 @@ parameters:
 			path: app/GitHub/ApiConnector.php
 
 		-
-			message: "#^Parameter \\#1 \\$path of static method Lcobucci\\\\JWT\\\\Signer\\\\Key\\\\InMemory\\:\\:file\\(\\) expects non\\-empty\\-string, string given\\.$#"
-			count: 1
-			path: app/GitHub/JWTConfigurationBuilder.php
-
-		-
 			message: "#^Call to function is_array\\(\\) with string\\|null will always evaluate to false\\.$#"
 			count: 1
 			path: app/GitHub/RequestHandler.php
@@ -146,7 +141,7 @@ parameters:
 			path: app/Http/Controllers/HandleGitHubAppWebhookController.php
 
 		-
-			message: "#^Parameter \\#1 \\$repoConfig of method BabDev\\\\GitHub\\\\RequestHandler\\:\\:handleRequest\\(\\) expects array\\{app_id\\: string, key\\: string, secret\\: string, events\\: array\\<string, array\\<int, class\\-string\\<BabDev\\\\Contracts\\\\GitHub\\\\Actions\\\\Action\\>\\>\\>\\}, mixed given\\.$#"
+			message: "#^Parameter \\#1 \\$repoConfig of method BabDev\\\\GitHub\\\\RequestHandler\\:\\:handleRequest\\(\\) expects array\\{app_id\\: non\\-empty\\-string, key\\: non\\-empty\\-string, secret\\: non\\-empty\\-string, events\\: array\\<string, array\\<int, class\\-string\\<BabDev\\\\Contracts\\\\GitHub\\\\Actions\\\\Action\\>\\>\\>\\}, mixed given\\.$#"
 			count: 1
 			path: app/Http/Controllers/HandleGitHubAppWebhookController.php
 
