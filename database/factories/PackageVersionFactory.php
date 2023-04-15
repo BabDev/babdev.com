@@ -4,7 +4,6 @@ namespace Database\Factories;
 
 use BabDev\Models\Package;
 use BabDev\Models\PackageVersion;
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -31,19 +30,15 @@ class PackageVersionFactory extends Factory
 
     public function released(): static
     {
-        return $this->state(
-            [
-                'released' => Carbon::now()->subYear(),
-            ],
-        );
+        return $this->state([
+            'released' => now()->subYear(),
+        ]);
     }
 
     public function unsupported(): static
     {
-        return $this->state(
-            [
-                'released' => Carbon::now(),
-            ],
-        );
+        return $this->state([
+            'released' => now(),
+        ]);
     }
 }

@@ -23,19 +23,10 @@ class PackageFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->unique()->words(2, true),
-            'display_name' => $this->faker->words(2, true),
+            'name' => fake()->unique()->words(2, true),
+            'display_name' => fake()->words(2, true),
             'has_documentation' => false,
-            'package_type' => $this->faker->randomElement(
-                [
-                    PackageType::JOOMLA_EXTENSION,
-                    PackageType::LARAVEL_PACKAGE,
-                    PackageType::PHP_PACKAGE,
-                    PackageType::PHPSPEC_EXTENSION,
-                    PackageType::SYLIUS_PLUGIN,
-                    PackageType::SYMFONY_BUNDLE,
-                ],
-            ),
+            'package_type' => fake()->randomElement(PackageType::cases()),
             'supported' => true,
             'visible' => true,
             'is_packagist' => false,
@@ -44,29 +35,23 @@ class PackageFactory extends Factory
 
     public function docs(): static
     {
-        return $this->state(
-            [
-                'has_documentation' => true,
-            ],
-        );
+        return $this->state([
+            'has_documentation' => true,
+        ]);
     }
 
     public function notVisible(): static
     {
-        return $this->state(
-            [
-                'visible' => false,
-            ],
-        );
+        return $this->state([
+            'visible' => false,
+        ]);
     }
 
     public function packagist(): static
     {
-        return $this->state(
-            [
-                'is_packagist' => true,
-                'packagist_name' => str_replace(' ', '/', $this->faker->words(2, true)),
-            ],
-        );
+        return $this->state([
+            'is_packagist' => true,
+            'packagist_name' => str_replace(' ', '/', fake()->words(2, true)),
+        ]);
     }
 }

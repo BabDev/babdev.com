@@ -4,7 +4,6 @@ namespace Database\Factories;
 
 use BabDev\Models\Package;
 use BabDev\Models\PackageUpdate;
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -24,21 +23,19 @@ class PackageUpdateFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->sentence,
-            'slug' => $this->faker->slug,
-            'intro' => $this->faker->paragraph,
-            'content' => $this->faker->paragraphs(3, true),
-            'published_at' => Carbon::now(),
+            'title' => fake()->sentence,
+            'slug' => fake()->slug,
+            'intro' => fake()->paragraph,
+            'content' => fake()->paragraphs(3, true),
+            'published_at' => now(),
             'package_id' => Package::factory(),
         ];
     }
 
     public function unpublished(): static
     {
-        return $this->state(
-            [
-                'published_at' => Carbon::now()->addYear(),
-            ],
-        );
+        return $this->state([
+            'published_at' => now()->addYear(),
+        ]);
     }
 }

@@ -45,7 +45,7 @@ $breadcrumbs->for(
         $trail->parent('open-source.packages');
         $trail->push($package->display_name);
 
-        if ($packageVersion === null) {
+        if (!$packageVersion instanceof PackageVersion) {
             $trail->push('Documentation');
         } else {
             $trail->push(sprintf('Documentation (%s)', $packageVersion->version));

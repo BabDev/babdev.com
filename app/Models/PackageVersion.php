@@ -100,7 +100,7 @@ class PackageVersion extends Model
     protected function supportEnded(): Attribute
     {
         return new Attribute(
-            get: fn () => $this->end_of_support !== null && $this->end_of_support->isBefore(now()),
+            get: fn () => $this->end_of_support instanceof Carbon && $this->end_of_support->isBefore(now()),
         );
     }
 }
