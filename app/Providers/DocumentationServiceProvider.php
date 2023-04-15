@@ -23,7 +23,7 @@ final class DocumentationServiceProvider extends ServiceProvider implements Defe
 
     public function register(): void
     {
-        $this->app->bind(
+        $this->app->singleton(
             DocumentationProcessorContract::class,
             static fn (Application $app) => new DocumentationProcessor(
                 $app->make(ApiConnector::class),

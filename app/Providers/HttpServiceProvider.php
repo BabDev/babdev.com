@@ -52,7 +52,7 @@ final class HttpServiceProvider extends ServiceProvider implements DeferrablePro
 
     private function registerRequestFactory(): void
     {
-        $this->app->bind(
+        $this->app->singleton(
             RequestFactoryInterface::class,
             static fn () => new RequestFactory(),
         );
@@ -60,7 +60,7 @@ final class HttpServiceProvider extends ServiceProvider implements DeferrablePro
 
     private function registerResponseFactory(): void
     {
-        $this->app->bind(
+        $this->app->singleton(
             ResponseFactoryInterface::class,
             static fn () => new ResponseFactory(),
         );
@@ -68,7 +68,7 @@ final class HttpServiceProvider extends ServiceProvider implements DeferrablePro
 
     private function registerStreamFactory(): void
     {
-        $this->app->bind(
+        $this->app->singleton(
             StreamFactoryInterface::class,
             static fn () => new StreamFactory(),
         );

@@ -28,7 +28,7 @@ final class MatomoServiceProvider extends ServiceProvider implements DeferrableP
 
     private function registerApiConnector(): void
     {
-        $this->app->bind(
+        $this->app->singleton(
             ApiConnector::class,
             static function (Application $app): ApiConnector {
                 /** @var Repository $config */

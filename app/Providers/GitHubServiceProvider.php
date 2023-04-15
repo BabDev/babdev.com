@@ -58,7 +58,7 @@ final class GitHubServiceProvider extends ServiceProvider implements DeferrableP
 
     private function registerActionFactory(): void
     {
-        $this->app->bind(
+        $this->app->singleton(
             Factory::class,
             static fn (Application $app) => new ContainerAwareFactory($app),
         );
@@ -66,7 +66,7 @@ final class GitHubServiceProvider extends ServiceProvider implements DeferrableP
 
     private function registerApiConnector(): void
     {
-        $this->app->bind(
+        $this->app->singleton(
             ApiConnector::class,
             static fn (Application $app) => new ApiConnector(
                 $app->make(Client::class),
@@ -76,7 +76,7 @@ final class GitHubServiceProvider extends ServiceProvider implements DeferrableP
 
     private function registerClient(): void
     {
-        $this->app->bind(
+        $this->app->singleton(
             Client::class,
             static function (Application $app): Client {
                 try {
@@ -99,7 +99,7 @@ final class GitHubServiceProvider extends ServiceProvider implements DeferrableP
 
     private function registerClientFactory(): void
     {
-        $this->app->bind(
+        $this->app->singleton(
             ClientFactory::class,
             static fn (Application $app) => new ContainerAwareClientFactory($app),
         );
@@ -107,7 +107,7 @@ final class GitHubServiceProvider extends ServiceProvider implements DeferrableP
 
     private function registerHttpClientBuilder(): void
     {
-        $this->app->bind(
+        $this->app->singleton(
             Builder::class,
             static fn (Application $app) => new Builder(
                 $app->make(ClientInterface::class),
@@ -119,7 +119,7 @@ final class GitHubServiceProvider extends ServiceProvider implements DeferrableP
 
     private function registerJwtConfigurationBuilder(): void
     {
-        $this->app->bind(
+        $this->app->singleton(
             JWTConfigurationBuilderContract::class,
             static fn () => new JWTConfigurationBuilder(),
         );
@@ -127,7 +127,7 @@ final class GitHubServiceProvider extends ServiceProvider implements DeferrableP
 
     private function registerJwtTokenGenerator(): void
     {
-        $this->app->bind(
+        $this->app->singleton(
             JWTTokenGeneratorContract::class,
             static fn (Application $app) => new JWTTokenGenerator(
                 $app->make(JWTConfigurationBuilderContract::class),
@@ -137,7 +137,7 @@ final class GitHubServiceProvider extends ServiceProvider implements DeferrableP
 
     private function registerWebhookRequestHandler(): void
     {
-        $this->app->bind(
+        $this->app->singleton(
             RequestHandler::class,
             static fn (Application $app) => new RequestHandler(
                 $app->make(Factory::class),

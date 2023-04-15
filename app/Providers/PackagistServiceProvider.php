@@ -30,7 +30,7 @@ final class PackagistServiceProvider extends ServiceProvider implements Deferrab
 
     private function registerApiConnector(): void
     {
-        $this->app->bind(
+        $this->app->singleton(
             PackagistClient::class,
             static fn (Application $app) => new PackagistClient(
                 $app->make(Guzzle::class),
@@ -41,7 +41,7 @@ final class PackagistServiceProvider extends ServiceProvider implements Deferrab
 
     private function registerUrlGenerator(): void
     {
-        $this->app->bind(
+        $this->app->singleton(
             PackagistUrlGenerator::class,
             static fn () => new PackagistUrlGenerator(),
         );
