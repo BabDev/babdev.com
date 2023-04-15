@@ -7,15 +7,14 @@ use BabDev\Contracts\Services\Exceptions\PageNotFoundException;
 use BabDev\Models\Package;
 use BabDev\Models\PackageVersion;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use PHPUnit\Framework\Attributes\Test;
+use Mockery\MockInterface;
 use Tests\TestCase;
 
-class DocumentationTest extends TestCase
+final class DocumentationTest extends TestCase
 {
     use RefreshDatabase;
 
-    #[Test]
-    public function when_a_package_is_not_visible_a_404_is_returned(): void
+    public function test_when_a_package_is_not_visible_a_404_is_returned(): void
     {
         /** @var Package $package */
         $package = Package::factory()->notVisible()->create();
@@ -24,8 +23,7 @@ class DocumentationTest extends TestCase
             ->assertNotFound();
     }
 
-    #[Test]
-    public function when_a_package_has_no_documentation_the_request_is_redirected_to_the_package_list(): void
+    public function test_when_a_package_has_no_documentation_the_request_is_redirected_to_the_package_list(): void
     {
         /** @var Package $package */
         $package = Package::factory()->create();
@@ -34,8 +32,7 @@ class DocumentationTest extends TestCase
             ->assertRedirect('/open-source/packages');
     }
 
-    #[Test]
-    public function when_a_package_has_no_documentation_for_the_requested_version_a_404_is_returned(): void
+    public function test_when_a_package_has_no_documentation_for_the_requested_version_a_404_is_returned(): void
     {
         /** @var Package $package */
         $package = Package::factory()->docs()->create();
@@ -45,8 +42,7 @@ class DocumentationTest extends TestCase
             ->assertViewIs('open_source.packages.docs_not_found_for_version');
     }
 
-    #[Test]
-    public function when_a_docs_request_is_for_the_sidebar_index_a_404_is_returned(): void
+    public function test_when_a_docs_request_is_for_the_sidebar_index_a_404_is_returned(): void
     {
         /** @var Package $package */
         $package = Package::factory()->docs()->create();
@@ -55,13 +51,12 @@ class DocumentationTest extends TestCase
             ->assertNotFound();
     }
 
-    #[Test]
-    public function when_a_docs_request_is_for_a_nonexisting_page_a_404_is_returned(): void
+    public function test_when_a_docs_request_is_for_a_nonexisting_page_a_404_is_returned(): void
     {
         /** @var Package $package */
         $package = Package::factory()->docs()->create();
 
-        $this->mock(DocumentationProcessor::class, function ($mock): void {
+        $this->mock(DocumentationProcessor::class, function (MockInterface $mock): void {
             $mock->shouldReceive('fetchPageContents')
                 ->andThrow(new PageNotFoundException('Testing'));
         });
@@ -70,8 +65,7 @@ class DocumentationTest extends TestCase
             ->assertNotFound();
     }
 
-    #[Test]
-    public function when_a_docs_request_is_for_an_existing_page_the_docs_can_be_viewed(): void
+    public function test_when_a_docs_request_is_for_an_existing_page_the_docs_can_be_viewed(): void
     {
         /** @var Package $package */
         $package = Package::factory()
@@ -79,7 +73,7 @@ class DocumentationTest extends TestCase
             ->has(PackageVersion::factory()->count(1), 'versions')
             ->create();
 
-        $this->mock(DocumentationProcessor::class, function ($mock): void {
+        $this->mock(DocumentationProcessor::class, function (MockInterface $mock): void {
             $mock->shouldReceive('fetchPageContents', 'fetchPageContents', 'extractTitle')
                 ->andReturn('contents', 'sidebar', 'title');
         });
@@ -89,8 +83,7 @@ class DocumentationTest extends TestCase
             ->assertViewIs('open_source.packages.docs_page');
     }
 
-    #[Test]
-    public function when_a_package_has_no_documentation_the_request_for_the_docs_shortcut_is_redirected_to_the_package_list(): void
+    public function test_when_a_package_has_no_documentation_the_request_for_the_docs_shortcut_is_redirected_to_the_package_list(): void
     {
         /** @var Package $package */
         $package = Package::factory()->create();
@@ -99,8 +92,7 @@ class DocumentationTest extends TestCase
             ->assertRedirect('/open-source/packages');
     }
 
-    #[Test]
-    public function when_a_docs_request_is_for_a_page_without_a_version_the_user_is_redirected_to_the_default_version_page(): void
+    public function test_when_a_docs_request_is_for_a_page_without_a_version_the_user_is_redirected_to_the_default_version_page(): void
     {
         /** @var Package $package */
         $package = Package::factory()

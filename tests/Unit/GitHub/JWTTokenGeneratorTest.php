@@ -7,14 +7,12 @@ use BabDev\GitHub\JWTTokenGenerator;
 use Lcobucci\JWT\Configuration;
 use Lcobucci\JWT\Signer\Blake2b;
 use Lcobucci\JWT\Signer\Key\InMemory;
-use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 final class JWTTokenGeneratorTest extends TestCase
 {
-    #[Test]
-    public function the_generator_generates_a_jwt_token_for_a_repository(): void
+    public function test_the_generator_generates_a_jwt_token_for_a_repository(): void
     {
         $repoConfig = [
             'app_id' => '12345',

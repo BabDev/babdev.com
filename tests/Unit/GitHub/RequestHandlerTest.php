@@ -12,7 +12,6 @@ use Github\Api\Apps;
 use Github\AuthMethod;
 use Github\Client;
 use Illuminate\Http\Request;
-use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
@@ -36,8 +35,7 @@ final class RequestHandlerTest extends TestCase
         $this->handler = new RequestHandler($this->actionFactory, $this->clientFactory, $this->tokenGenerator);
     }
 
-    #[Test]
-    public function the_handler_only_acts_on_supported_events(): void
+    public function test_the_handler_only_acts_on_supported_events(): void
     {
         $repoConfig = [
             'app_id' => '12345',
@@ -60,8 +58,7 @@ final class RequestHandlerTest extends TestCase
         $this->handler->handleRequest($repoConfig, $request);
     }
 
-    #[Test]
-    public function the_handler_acts_on_a_supported_event(): void
+    public function test_the_handler_acts_on_a_supported_event(): void
     {
         $repoConfig = [
             'app_id' => '12345',
@@ -125,8 +122,7 @@ final class RequestHandlerTest extends TestCase
         $this->handler->handleRequest($repoConfig, $request);
     }
 
-    #[Test]
-    public function the_handler_rejects_a_request_with_a_missing_installation_id(): void
+    public function test_the_handler_rejects_a_request_with_a_missing_installation_id(): void
     {
         $this->expectException(BadRequestException::class);
 

@@ -8,15 +8,13 @@ use Github\Api\Issue\Comments;
 use Github\Api\PullRequest;
 use Github\Client;
 use Illuminate\Http\Request;
-use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
 
 final class ClosePagerfantaReadOnlyRepoPullRequestTest extends TestCase
 {
-    #[Test]
-    public function the_action_only_processes_opened_pull_requests(): void
+    public function test_the_action_only_processes_opened_pull_requests(): void
     {
         $request = Request::createFromBase(
             SymfonyRequest::create('/webhooks/github/app', 'POST', ['action' => 'closed']),
@@ -31,8 +29,7 @@ final class ClosePagerfantaReadOnlyRepoPullRequestTest extends TestCase
         $action(['app_id' => '123', 'key' => 'key', 'secret' => 'secret', 'events' => []], $request, $github);
     }
 
-    #[Test]
-    public function the_action_comments_on_an_opened_pull_request_and_closes_it(): void
+    public function test_the_action_comments_on_an_opened_pull_request_and_closes_it(): void
     {
         $request = Request::createFromBase(
             SymfonyRequest::create(

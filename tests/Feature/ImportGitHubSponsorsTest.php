@@ -6,15 +6,13 @@ use BabDev\GitHub\ApiConnector;
 use BabDev\Models\SponsorshipTier;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Mockery\MockInterface;
-use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
-class ImportGitHubSponsorsTest extends TestCase
+final class ImportGitHubSponsorsTest extends TestCase
 {
     use RefreshDatabase;
 
-    #[Test]
-    public function the_sponsors_tiers_are_imported(): void
+    public function test_the_sponsors_tiers_are_imported(): void
     {
         /** @var SponsorshipTier $tier1 */
         $tier1 = SponsorshipTier::query()->create([
@@ -30,58 +28,50 @@ class ImportGitHubSponsorsTest extends TestCase
             'price' => 2500,
         ]);
 
-        $this->instance(
-            ApiConnector::class,
-            \Mockery::mock(
-                ApiConnector::class,
-                function (MockInterface $mock): void {
-                    $mock->shouldReceive('executeGraphqlQuery')->once()->andReturn(
-                        [
-                            'data' => [
-                                'viewer' => [
-                                    'sponsorshipsAsMaintainer' => [
-                                        'edges' => [
-                                            [
-                                                'node' => [
-                                                    'id' => 'node-1',
-                                                    'privacyLevel' => 'PUBLIC',
-                                                    'sponsorEntity' => [
-                                                        'id' => 'node-1',
-                                                        'login' => 'username1',
-                                                        'name' => 'Username 1',
-                                                    ],
-                                                    'tier' => [
-                                                        'id' => 'node-1',
-                                                    ],
-                                                ],
-                                            ],
-                                            [
-                                                'node' => [
-                                                    'id' => 'node-2',
-                                                    'privacyLevel' => 'PRIVATE',
-                                                    'sponsorEntity' => [
-                                                        'id' => 'node-2',
-                                                        'login' => 'username2',
-                                                        'name' => null,
-                                                    ],
-                                                    'tier' => [
-                                                        'id' => 'node-2',
-                                                    ],
-                                                ],
-                                            ],
+        $this->mock(ApiConnector::class, function (MockInterface $mock): void {
+            $mock->shouldReceive('executeGraphqlQuery')->once()->andReturn([
+                'data' => [
+                    'viewer' => [
+                        'sponsorshipsAsMaintainer' => [
+                            'edges' => [
+                                [
+                                    'node' => [
+                                        'id' => 'node-1',
+                                        'privacyLevel' => 'PUBLIC',
+                                        'sponsorEntity' => [
+                                            'id' => 'node-1',
+                                            'login' => 'username1',
+                                            'name' => 'Username 1',
                                         ],
-                                        'pageInfo' => [
-                                            'hasNextPage' => false,
-                                            'endCursor' => 'node-2',
+                                        'tier' => [
+                                            'id' => 'node-1',
+                                        ],
+                                    ],
+                                ],
+                                [
+                                    'node' => [
+                                        'id' => 'node-2',
+                                        'privacyLevel' => 'PRIVATE',
+                                        'sponsorEntity' => [
+                                            'id' => 'node-2',
+                                            'login' => 'username2',
+                                            'name' => null,
+                                        ],
+                                        'tier' => [
+                                            'id' => 'node-2',
                                         ],
                                     ],
                                 ],
                             ],
+                            'pageInfo' => [
+                                'hasNextPage' => false,
+                                'endCursor' => 'node-2',
+                            ],
                         ],
-                    );
-                },
-            ),
-        );
+                    ],
+                ],
+            ]);
+        });
 
         $this->artisan('import:github-sponsors')
             ->assertExitCode(0);

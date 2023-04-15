@@ -7,10 +7,9 @@ use BabDev\GitHub\Actions\ContainerAwareFactory;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
-class ContainerAwareFactoryTest extends TestCase
+final class ContainerAwareFactoryTest extends TestCase
 {
-    #[Test]
-    public function the_factory_resolves_an_action_class(): void
+    public function test_the_factory_resolves_an_action_class(): void
     {
         $factory = $this->app->make(ContainerAwareFactory::class);
 
