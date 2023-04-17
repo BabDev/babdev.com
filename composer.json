@@ -22,7 +22,7 @@
         "babdev/tinymce-field": "*",
         "blade-ui-kit/blade-ui-kit": "0.4.0",
         "elhebert/laravel-sri": "dev-master",
-        "guzzlehttp/guzzle": "7.5.0",
+        "guzzlehttp/guzzle": "7.5.1",
         "http-interop/http-factory-guzzle": "1.2.0",
         "knplabs/github-api": "3.11.0",
         "laravel/framework": "10.7.1",
