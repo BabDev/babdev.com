@@ -16,11 +16,17 @@
     }
   }
 
-  .hero__text {
-    min-height: 12em;
-
-    &::before {
+  .hero {
+    &__text {
       min-height: 12em;
+
+      &::before {
+        min-height: 12em;
+      }
+    }
+
+    &__title {
+      text-transform: uppercase;
     }
   }
 }
