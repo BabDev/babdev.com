@@ -42,13 +42,6 @@ return [
             'visibility' => 'public',
         ],
 
-        'logos' => [
-            'driver' => 'local',
-            'root' => env('APP_LOGOS_PATH', storage_path('app/logos')),
-            'url' => env('APP_URL').'/logos',
-            'visibility' => 'public',
-        ],
-
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
@@ -75,7 +68,6 @@ return [
 
     'links' => [
         public_path('storage') => env('APP_PUBLIC_PATH', storage_path('app/public')),
-        public_path('logos') => env('APP_LOGOS_PATH', storage_path('app/logos')),
     ],
 
 ];

@@ -8,7 +8,6 @@ use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Field;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
@@ -48,10 +47,6 @@ class Package extends Resource
         return [
             ID::make()
                 ->asBigInt(),
-
-            Image::make('Logo')
-                ->rules('image')
-                ->disk('logos'),
 
             Text::make('Name')
                 ->readonly(),

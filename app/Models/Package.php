@@ -21,7 +21,6 @@ use Spatie\Sluggable\SlugOptions;
  * @property string           $display_name
  * @property string|null      $packagist_name
  * @property string           $slug
- * @property string|null      $logo
  * @property string|null      $description
  * @property array|null       $topics
  * @property bool             $has_documentation
@@ -57,7 +56,6 @@ use Spatie\Sluggable\SlugOptions;
  * @method static Builder|Package whereId($value)
  * @method static Builder|Package whereIsPackagist($value)
  * @method static Builder|Package whereLanguage($value)
- * @method static Builder|Package whereLogo($value)
  * @method static Builder|Package whereName($value)
  * @method static Builder|Package wherePackageType($value)
  * @method static Builder|Package wherePackagistName($value)
@@ -80,7 +78,6 @@ class Package extends Model
         'name',
         'display_name',
         'packagist_name',
-        'logo',
         'description',
         'topics',
         'has_documentation',
@@ -107,14 +104,12 @@ class Package extends Model
         'is_packagist' => 'boolean',
     ];
 
-    protected static function boot(): void
-    {
-        parent::boot();
-
-        static::creating(function (self $package): void {
-            $package->package_type ??= PackageType::PHP_PACKAGE;
-        });
-    }
+    /**
+     * @var array<string, mixed>
+     */
+    protected $attributes = [
+        'package_type' => PackageType::PHP_PACKAGE,
+    ];
 
     public function getRouteKeyName(): string
     {

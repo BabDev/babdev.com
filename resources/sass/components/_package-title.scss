@@ -33,31 +33,4 @@
     grid-column: 1;
     grid-row: 1;
   }
-
-  &.package-title--has-logo {
-    .package-title {
-      &__logo {
-        grid-column: 1;
-        grid-row: 1;
-
-        @media (max-width: 446px) {
-          padding-bottom: 1rem;
-        }
-
-        @include media-breakpoint-up(md) {
-          grid-column: 1;
-          grid-row: 1;
-        }
-      }
-
-      &__name {
-        grid-row: 2;
-
-        @include media-breakpoint-up(md) {
-          grid-column: 2;
-          grid-row: 1;
-        }
-      }
-    }
-  }
 }

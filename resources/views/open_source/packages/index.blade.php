@@ -9,12 +9,7 @@
     <section class="pt-4">
         <div class="container">
             @forelse($packages as $package)
-                <div @class(['open-source-package', 'open-source-package--has-logo' => $package->logo, 'open-source-package--has-topics' => !empty($package->topics), 'open-source-package--has-links' => $package->has_documentation, 'open-source-package--abandoned' => !$package->supported, 'mb-3'])>
-                    @if($package->logo)
-                        <div class="open-source-package__logo text-center">
-                            <img src="{{ Storage::disk('logos')->url($package->logo) }}" alt="{{ $package->display_name }} Logo" loading="lazy">
-                        </div>
-                    @endif
+                <div @class(['open-source-package', 'open-source-package--has-topics' => !empty($package->topics), 'open-source-package--has-links' => $package->has_documentation, 'open-source-package--abandoned' => !$package->supported, 'mb-3'])>
                     <div class="open-source-package__name section-heading">
                         <a class="open-source-package__link" href="{{ $package->github_url }}" target="_blank" rel="nofollow noreferrer noopener" aria-label="View {{ $package->display_name }} on GitHub">
                             {{ svg('fab-github') }}
