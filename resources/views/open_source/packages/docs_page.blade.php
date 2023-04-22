@@ -11,7 +11,7 @@
 ])
 
 @section('content')
-    <x-package-title :package="$package" secondary-title="Documentation" class="pt-4" />
+    <x-hero :title="$package->display_name" subtitle="Documentation" />
     <article class="pt-4">
         <div class="container-fluid package-docs">
             <div class="package-docs__sidebar">

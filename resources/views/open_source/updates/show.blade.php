@@ -12,7 +12,7 @@
 @endsection
 
 @section('content')
-    <x-package-title :package="$update->package" secondary-title="Package Update" class="pt-4" />
+    <x-hero :title="$update->package->display_name" subtitle="Package Update" />
     <article class="pt-4">
         <div class="container package-update">
             <header class="section-heading">

@@ -6,7 +6,7 @@
 ])
 
 @section('content')
-    <x-package-title :package="$package" secondary-title="Documentation" class="pt-4" />
+    <x-hero :title="$package->display_name" subtitle="Documentation" />
     <article class="pt-4">
         <div class="container package-docs package-docs--version-not-found">
             <div class="package-docs__content">

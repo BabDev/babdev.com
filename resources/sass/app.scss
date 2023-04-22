@@ -70,7 +70,6 @@ $theme-colors: map-merge($theme-colors, $brand-colors);
 @import "components/hero";
 @import "components/item-published";
 @import "components/package-statistics";
-@import "components/package-title";
 @import "components/package-topics";
 @import "components/section-heading";
 
