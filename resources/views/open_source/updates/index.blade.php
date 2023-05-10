@@ -29,7 +29,7 @@
                         <h2>{{ $update->title }}</h2>
                     </header>
                     <div class="item-published">
-                        <span class="item-published__icon">{{ svg('far-calendar') }}</span>
+                        <span class="item-published__icon">{{ resource_svg('far-calendar') }}</span>
                         <span class="item-published__date">{{ $update->published_at->format('F j, Y') }}</span>
                     </div>
                     <div class="package-update__intro">

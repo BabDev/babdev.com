@@ -12,7 +12,7 @@
                 <div @class(['open-source-package', 'open-source-package--has-topics' => !empty($package->topics), 'open-source-package--has-links' => $package->has_documentation, 'open-source-package--abandoned' => !$package->supported, 'mb-3'])>
                     <div class="open-source-package__name section-heading">
                         <a class="open-source-package__link" href="{{ $package->github_url }}" target="_blank" rel="nofollow noreferrer noopener" aria-label="View {{ $package->display_name }} on GitHub">
-                            {{ svg('fab-github') }}
+                            {{ resource_svg('fab-github') }}
                         </a>
                         <h2>{{ $package->display_name }}</h2>
                     </div>
@@ -30,13 +30,13 @@
                         @if($package->downloads)
                             <span class="package-statistic package-statistic--downloads">
                                 <span class="package-statistic__value">{{ number_format($package->downloads) }}</span>
-                                <span class="package-statistic__icon">{{ svg('fas-download') }}</span>
+                                <span class="package-statistic__icon">{{ resource_svg('fas-download') }}</span>
                             </span>
                         @endif
                         @if($package->stars)
                             <span class="package-statistic package-statistic--stars">
                                 <span class="package-statistic__value">{{ $package->stars }}</span>
-                                <span class="package-statistic__icon">{{ svg('far-star') }}</span>
+                                <span class="package-statistic__icon">{{ resource_svg('far-star') }}</span>
                             </span>
                         @endif
                     </div>

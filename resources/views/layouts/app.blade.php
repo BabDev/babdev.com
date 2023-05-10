@@ -39,7 +39,7 @@
             <nav class="navbar navbar-expand-sm navbar-light bg-white">
                 <div class="container">
                     <a class="navbar-brand pt-2" href="{{ route('homepage') }}">
-                        {{ svg('logo') }}
+                        {{ resource_svg('logo') }}
                         BabDev
                     </a>
 
