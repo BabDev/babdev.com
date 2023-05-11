@@ -48,6 +48,8 @@ mix.sass('resources/sass/app.scss', 'public/css')
                 standard: [
                     // highlight.js
                     /^.hljs/, /^.hljs-/, /^hljs/, /^hljs-/,
+                    // Bootstrap Navbar
+                    /navbar/, /navbar-brand/,
                     // Bootstrap Tables
                     /^.table/, /^.table-/, /^table/, /^tr/, /^td/, /^th/, /^thead/, /^tbody/, /^tfoot/,
                     // App styles
@@ -56,6 +58,8 @@ mix.sass('resources/sass/app.scss', 'public/css')
                 deep: [
                     // highlight.js
                     /^.hljs/, /^.hljs-/, /^hljs/, /^hljs-/,
+                    // Bootstrap Navbar
+                    /navbar/, /navbar-brand/,
                     // Bootstrap Tables
                     /^.table/, /^.table-/, /^table/, /^tr/, /^td/, /^th/, /^thead/, /^tbody/, /^tfoot/,
                     // App styles
