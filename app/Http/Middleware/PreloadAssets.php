@@ -5,7 +5,6 @@ namespace BabDev\Http\Middleware;
 use BabDev\ServerPushManager\Contracts\PushManager;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Laravel\Nova\Util;
 
 final readonly class PreloadAssets
 {
@@ -17,7 +16,7 @@ final readonly class PreloadAssets
     {
         $response = $next($request);
 
-        if (Util::isNovaRequest($request) || $this->isTelescopeRequest($request) || $response->isRedirection() || !$response instanceof Response || $request->isJson()) {
+        if (is_filament_request($request) || $this->isTelescopeRequest($request) || $response->isRedirection() || !$response instanceof Response || $request->isJson()) {
             return $response;
         }
 

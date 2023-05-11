@@ -14,9 +14,7 @@
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
         "prod": "npm run production",
-        "production": "mix --production",
-        "build-tinymce-field": "cd nova-components/TinyMCEField && npm run dev",
-        "build-tinymce-field-prod": "cd nova-components/TinyMCEField && npm run prod"
+        "production": "mix --production"
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "6.4.0",

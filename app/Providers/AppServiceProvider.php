@@ -51,5 +51,8 @@ final class AppServiceProvider extends ServiceProvider
 
         // Add the route resolver
         RoutableLengthAwarePaginator::currentRouteResolver(fn () => $this->app['request']->route());
+
+        // Add the checker
+        RoutableLengthAwarePaginator::paginatorChecker(fn () => !is_filament_request($this->app['request']));
     }
 }

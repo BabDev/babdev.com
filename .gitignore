@@ -6,7 +6,7 @@
 /public/js
 /public/packages
 /public/storage
-/public/vendor/nova
+/public/vendor/filament-forms-tinyeditor
 /public/vendor/telescope
 /public/mix-manifest.json
 /public/mix-sri.json

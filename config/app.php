@@ -178,9 +178,7 @@ return [
         BabDev\Providers\EventServiceProvider::class,
         BabDev\Providers\GitHubServiceProvider::class,
         BabDev\Providers\HttpServiceProvider::class,
-        BabDev\Providers\MatomoServiceProvider::class,
         BabDev\Providers\PackagistServiceProvider::class,
-        BabDev\Providers\NovaServiceProvider::class,
         BabDev\Providers\RouteServiceProvider::class,
 
     ],

@@ -86,6 +86,71 @@ parameters:
 			path: app/Console/Commands/RemoveHacktoberfestExtras.php
 
 		-
+			message: "#^Access to an undefined property Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$display_name\\.$#"
+			count: 1
+			path: app/Filament/Resources/PackageResource.php
+
+		-
+			message: "#^Method BabDev\\\\Filament\\\\Resources\\\\PackageResource\\:\\:getGloballySearchableAttributes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/Filament/Resources/PackageResource.php
+
+		-
+			message: "#^Method BabDev\\\\Filament\\\\Resources\\\\PackageResource\\:\\:getPages\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/Filament/Resources/PackageResource.php
+
+		-
+			message: "#^Method BabDev\\\\Filament\\\\Resources\\\\PackageResource\\:\\:getRelations\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/Filament/Resources/PackageResource.php
+
+		-
+			message: "#^Method BabDev\\\\Filament\\\\Resources\\\\PackageResource\\\\Pages\\\\EditPackage\\:\\:getActions\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/Filament/Resources/PackageResource/Pages/EditPackage.php
+
+		-
+			message: "#^Method BabDev\\\\Filament\\\\Resources\\\\PackageResource\\\\Pages\\\\ListPackages\\:\\:getActions\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/Filament/Resources/PackageResource/Pages/ListPackages.php
+
+		-
+			message: "#^Method BabDev\\\\Filament\\\\Resources\\\\PackageUpdateResource\\:\\:getPages\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/Filament/Resources/PackageUpdateResource.php
+
+		-
+			message: "#^Method BabDev\\\\Filament\\\\Resources\\\\PackageUpdateResource\\\\Pages\\\\EditPackageUpdate\\:\\:getActions\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/Filament/Resources/PackageUpdateResource/Pages/EditPackageUpdate.php
+
+		-
+			message: "#^Method BabDev\\\\Filament\\\\Resources\\\\PackageUpdateResource\\\\Pages\\\\ListPackageUpdates\\:\\:getActions\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/Filament/Resources/PackageUpdateResource/Pages/ListPackageUpdates.php
+
+		-
+			message: "#^Access to an undefined property Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$email\\.$#"
+			count: 1
+			path: app/Filament/Resources/UserResource.php
+
+		-
+			message: "#^Method BabDev\\\\Filament\\\\Resources\\\\UserResource\\:\\:getGloballySearchableAttributes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/Filament/Resources/UserResource.php
+
+		-
+			message: "#^Method BabDev\\\\Filament\\\\Resources\\\\UserResource\\:\\:getPages\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/Filament/Resources/UserResource.php
+
+		-
+			message: "#^Method BabDev\\\\Filament\\\\Resources\\\\UserResource\\\\Pages\\\\ManageUsers\\:\\:getActions\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: app/Filament/Resources/UserResource/Pages/ManageUsers.php
+
+		-
 			message: "#^Parameter \\#1 \\$username of method Github\\\\Api\\\\Issue\\\\Comments\\:\\:create\\(\\) expects string, mixed given\\.$#"
 			count: 1
 			path: app/GitHub/Actions/ClosePagerfantaReadOnlyRepoPullRequest.php
@@ -161,31 +226,6 @@ parameters:
 			path: app/Listeners/AppendPageNumberToBreadcrumbs.php
 
 		-
-			message: "#^Method BabDev\\\\Matomo\\\\ApiConnector\\:\\:actions\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: app/Matomo/ApiConnector.php
-
-		-
-			message: "#^Method BabDev\\\\Matomo\\\\ApiConnector\\:\\:request\\(\\) has parameter \\$query with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: app/Matomo/ApiConnector.php
-
-		-
-			message: "#^Method BabDev\\\\Matomo\\\\ApiConnector\\:\\:request\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: app/Matomo/ApiConnector.php
-
-		-
-			message: "#^Method BabDev\\\\Matomo\\\\ApiConnector\\:\\:request\\(\\) should return array but returns mixed\\.$#"
-			count: 1
-			path: app/Matomo/ApiConnector.php
-
-		-
-			message: "#^Method BabDev\\\\Matomo\\\\ApiConnector\\:\\:visitsSummary\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: app/Matomo/ApiConnector.php
-
-		-
 			message: "#^Parameter \\#1 \\$id of method Spatie\\\\Feed\\\\FeedItem\\:\\:id\\(\\) expects string, int given\\.$#"
 			count: 1
 			path: app/Models/PackageUpdate.php
@@ -201,94 +241,14 @@ parameters:
 			path: app/Models/PackageUpdate.php
 
 		-
-			message: "#^Cannot cast mixed to int\\.$#"
-			count: 2
-			path: app/Nova/Metrics/BounceRate.php
-
-		-
-			message: "#^Method BabDev\\\\Nova\\\\Metrics\\\\BounceRate\\:\\:ranges\\(\\) should return array\\<int, string\\> but returns array\\<int, mixed\\>\\.$#"
-			count: 1
-			path: app/Nova/Metrics/BounceRate.php
-
-		-
-			message: "#^Parameter \\#1 \\$value of method Carbon\\\\Carbon\\:\\:addMinutes\\(\\) expects int, mixed given\\.$#"
-			count: 1
-			path: app/Nova/Metrics/BounceRate.php
-
-		-
-			message: "#^Cannot cast mixed to int\\.$#"
-			count: 2
-			path: app/Nova/Metrics/LengthOfVisit.php
-
-		-
-			message: "#^Method BabDev\\\\Nova\\\\Metrics\\\\LengthOfVisit\\:\\:ranges\\(\\) should return array\\<int, string\\> but returns array\\<int, mixed\\>\\.$#"
-			count: 1
-			path: app/Nova/Metrics/LengthOfVisit.php
-
-		-
-			message: "#^Parameter \\#1 \\$value of method Carbon\\\\Carbon\\:\\:addMinutes\\(\\) expects int, mixed given\\.$#"
-			count: 1
-			path: app/Nova/Metrics/LengthOfVisit.php
-
-		-
-			message: "#^Cannot cast mixed to int\\.$#"
-			count: 1
-			path: app/Nova/Metrics/UniqueVisitorsPerDay.php
-
-		-
-			message: "#^Method BabDev\\\\Nova\\\\Metrics\\\\UniqueVisitorsPerDay\\:\\:ranges\\(\\) should return array\\<int, string\\> but returns array\\<int, mixed\\>\\.$#"
-			count: 1
-			path: app/Nova/Metrics/UniqueVisitorsPerDay.php
-
-		-
-			message: "#^Parameter \\#1 \\$value of method Carbon\\\\Carbon\\:\\:addMinutes\\(\\) expects int, mixed given\\.$#"
-			count: 1
-			path: app/Nova/Metrics/UniqueVisitorsPerDay.php
-
-		-
-			message: "#^Cannot cast mixed to int\\.$#"
-			count: 1
-			path: app/Nova/Metrics/VisitsPerDay.php
-
-		-
-			message: "#^Method BabDev\\\\Nova\\\\Metrics\\\\VisitsPerDay\\:\\:ranges\\(\\) should return array\\<int, string\\> but returns array\\<int, mixed\\>\\.$#"
-			count: 1
-			path: app/Nova/Metrics/VisitsPerDay.php
-
-		-
-			message: "#^Parameter \\#1 \\$value of method Carbon\\\\Carbon\\:\\:addMinutes\\(\\) expects int, mixed given\\.$#"
-			count: 1
-			path: app/Nova/Metrics/VisitsPerDay.php
-
-		-
-			message: "#^Parameter \\#1 \\$options of method Laravel\\\\Nova\\\\Fields\\\\Select\\:\\:options\\(\\) expects array\\<int\\|string, array\\<string, mixed\\>\\|string\\>\\|\\(callable\\(\\)\\: mixed\\)\\|Illuminate\\\\Support\\\\Collection, array\\{joomla\\-extension\\: mixed, laravel\\-package\\: mixed, php\\-package\\: mixed, phpspec\\-extension\\: mixed, sylius\\-plugin\\: mixed, symfony\\-bundle\\: mixed\\} given\\.$#"
-			count: 1
-			path: app/Nova/Package.php
-
-		-
 			message: "#^Cannot access offset 'request' on Illuminate\\\\Contracts\\\\Foundation\\\\Application\\.$#"
-			count: 3
+			count: 4
 			path: app/Providers/AppServiceProvider.php
 
 		-
 			message: "#^Parameter \\#1 \\$tokenOrLogin of method Github\\\\Client\\:\\:authenticate\\(\\) expects string, mixed given\\.$#"
 			count: 1
 			path: app/Providers/GitHubServiceProvider.php
-
-		-
-			message: "#^Parameter \\#2 \\$matomoPageId of class BabDev\\\\Matomo\\\\ApiConnector constructor expects string, mixed given\\.$#"
-			count: 1
-			path: app/Providers/MatomoServiceProvider.php
-
-		-
-			message: "#^Parameter \\#3 \\$matomoToken of class BabDev\\\\Matomo\\\\ApiConnector constructor expects string, mixed given\\.$#"
-			count: 1
-			path: app/Providers/MatomoServiceProvider.php
-
-		-
-			message: "#^Parameter \\#4 \\$matomoUrl of class BabDev\\\\Matomo\\\\ApiConnector constructor expects string, mixed given\\.$#"
-			count: 1
-			path: app/Providers/MatomoServiceProvider.php
 
 		-
 			message: "#^Parameter \\#1 \\$value of method Illuminate\\\\Routing\\\\RouteRegistrar\\:\\:domain\\(\\) expects string, mixed given\\.$#"
@@ -309,6 +269,21 @@ parameters:
 			message: "#^Parameter \\#2 \\.\\.\\.\\$values of function sprintf expects bool\\|float\\|int\\|string\\|null, mixed given\\.$#"
 			count: 1
 			path: app/Services/DocumentationProcessor.php
+
+		-
+			message: "#^Cannot access offset 'host' on array\\{scheme\\?\\: string, host\\?\\: string, port\\?\\: int\\<0, 65535\\>, user\\?\\: string, pass\\?\\: string, path\\?\\: string, query\\?\\: string, fragment\\?\\: string\\}\\|false\\.$#"
+			count: 1
+			path: app/helpers.php
+
+		-
+			message: "#^Cannot cast mixed to string\\.$#"
+			count: 1
+			path: app/helpers.php
+
+		-
+			message: "#^Parameter \\#1 \\$haystack of static method Illuminate\\\\Support\\\\Str\\:\\:startsWith\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: app/helpers.php
 
 		-
 			message: "#^Parameter \\#1 \\$html of class Illuminate\\\\Support\\\\HtmlString constructor expects string, string\\|false given\\.$#"
@@ -344,9 +319,4 @@ parameters:
 			message: "#^Cannot call method assertExitCode\\(\\) on Illuminate\\\\Testing\\\\PendingCommand\\|int\\.$#"
 			count: 1
 			path: tests/Unit/Console/SitemapGeneratorTest.php
-
-		-
-			message: "#^Parameter \\#2 \\$contents of method Illuminate\\\\Contracts\\\\Filesystem\\\\Filesystem\\:\\:put\\(\\) expects resource\\|string, string\\|false given\\.$#"
-			count: 2
-			path: tests/Unit/View/PackageTitleComponentTest.php
 

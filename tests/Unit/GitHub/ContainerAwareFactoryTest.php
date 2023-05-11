@@ -4,7 +4,6 @@ namespace Tests\Unit\GitHub;
 
 use BabDev\GitHub\Actions\ClosePagerfantaReadOnlyRepoPullRequest;
 use BabDev\GitHub\Actions\ContainerAwareFactory;
-use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
 final class ContainerAwareFactoryTest extends TestCase
