@@ -16,7 +16,7 @@
         "guzzlehttp/guzzle": "7.6.1",
         "http-interop/http-factory-guzzle": "1.2.0",
         "knplabs/github-api": "3.11.0",
-        "laravel/framework": "10.10.1",
+        "laravel/framework": "10.11.0",
         "lcobucci/jwt": "5.0.0",
         "league/commonmark": "2.4.0",
         "mohamedsabil83/filament-forms-tinyeditor": "1.7.2",
@@ -28,7 +28,7 @@
     },
     "require-dev": {
         "driftingly/rector-laravel": "0.19.0",
-        "fakerphp/faker": "1.21.0",
+        "fakerphp/faker": "1.22.0",
         "laravel/telescope": "4.14.2",
         "mockery/mockery": "1.5.1",
         "nunomaduro/collision": "7.5.2",
