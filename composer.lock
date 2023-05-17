@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "59d4459cea44faf54d262523f2aeac27",
+    "content-hash": "62a249d2a228f8fd1ccc9a5432943000",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -1369,16 +1369,16 @@
         },
         {
             "name": "filament/filament",
-            "version": "v2.17.40",
+            "version": "v2.17.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/app.git",
-                "reference": "dd33a5dae80c39fa63d4406ba74726c6ef9ca63b"
+                "reference": "d016e8e394f4658bf5e867aa71b70aab01f9a038"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/app/zipball/dd33a5dae80c39fa63d4406ba74726c6ef9ca63b",
-                "reference": "dd33a5dae80c39fa63d4406ba74726c6ef9ca63b",
+                "url": "https://api.github.com/repos/filamentphp/app/zipball/d016e8e394f4658bf5e867aa71b70aab01f9a038",
+                "reference": "d016e8e394f4658bf5e867aa71b70aab01f9a038",
                 "shasum": ""
             },
             "require": {
@@ -1428,20 +1428,20 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-05-13T18:45:05+00:00"
+            "time": "2023-05-17T16:33:26+00:00"
         },
         {
             "name": "filament/forms",
-            "version": "v2.17.40",
+            "version": "v2.17.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/forms.git",
-                "reference": "bac884ddd8017ff5acf1ca7d3841a7cb4150bf81"
+                "reference": "63b484bdcf2c12baaaf6b39c66e6dd4c345fc65d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/forms/zipball/bac884ddd8017ff5acf1ca7d3841a7cb4150bf81",
-                "reference": "bac884ddd8017ff5acf1ca7d3841a7cb4150bf81",
+                "url": "https://api.github.com/repos/filamentphp/forms/zipball/63b484bdcf2c12baaaf6b39c66e6dd4c345fc65d",
+                "reference": "63b484bdcf2c12baaaf6b39c66e6dd4c345fc65d",
                 "shasum": ""
             },
             "require": {
@@ -1486,11 +1486,11 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-05-13T18:44:56+00:00"
+            "time": "2023-05-17T16:33:21+00:00"
         },
         {
             "name": "filament/notifications",
-            "version": "v2.17.40",
+            "version": "v2.17.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/notifications.git",
@@ -1543,16 +1543,16 @@
         },
         {
             "name": "filament/support",
-            "version": "v2.17.40",
+            "version": "v2.17.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/support.git",
-                "reference": "e75e02a76edd959304cdbea7815586b720f8d308"
+                "reference": "79be557c4aa426eddb250421a9270724e32a683c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/support/zipball/e75e02a76edd959304cdbea7815586b720f8d308",
-                "reference": "e75e02a76edd959304cdbea7815586b720f8d308",
+                "url": "https://api.github.com/repos/filamentphp/support/zipball/79be557c4aa426eddb250421a9270724e32a683c",
+                "reference": "79be557c4aa426eddb250421a9270724e32a683c",
                 "shasum": ""
             },
             "require": {
@@ -1589,20 +1589,20 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-05-13T07:21:02+00:00"
+            "time": "2023-05-17T16:33:21+00:00"
         },
         {
             "name": "filament/tables",
-            "version": "v2.17.40",
+            "version": "v2.17.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/tables.git",
-                "reference": "7389f819d057262642295a22fb7d26e92e0b2ab6"
+                "reference": "62653b7e77c7d602ac6ca26075c399088c55be10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/tables/zipball/7389f819d057262642295a22fb7d26e92e0b2ab6",
-                "reference": "7389f819d057262642295a22fb7d26e92e0b2ab6",
+                "url": "https://api.github.com/repos/filamentphp/tables/zipball/62653b7e77c7d602ac6ca26075c399088c55be10",
+                "reference": "62653b7e77c7d602ac6ca26075c399088c55be10",
                 "shasum": ""
             },
             "require": {
@@ -1645,7 +1645,7 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-05-13T07:21:08+00:00"
+            "time": "2023-05-17T16:33:20+00:00"
         },
         {
             "name": "fruitcake/php-cors",
@@ -8760,16 +8760,16 @@
     "packages-dev": [
         {
             "name": "driftingly/rector-laravel",
-            "version": "0.19.0",
+            "version": "0.20.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/driftingly/rector-laravel.git",
-                "reference": "2bbe2cf0e24e2fad43aaaafac64821c633e09d08"
+                "reference": "37fa392b013475a3f9913af2fb9db15a72512cbe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/driftingly/rector-laravel/zipball/2bbe2cf0e24e2fad43aaaafac64821c633e09d08",
-                "reference": "2bbe2cf0e24e2fad43aaaafac64821c633e09d08",
+                "url": "https://api.github.com/repos/driftingly/rector-laravel/zipball/37fa392b013475a3f9913af2fb9db15a72512cbe",
+                "reference": "37fa392b013475a3f9913af2fb9db15a72512cbe",
                 "shasum": ""
             },
             "require": {
@@ -8788,9 +8788,9 @@
             "description": "Rector upgrades rules for Laravel Framework",
             "support": {
                 "issues": "https://github.com/driftingly/rector-laravel/issues",
-                "source": "https://github.com/driftingly/rector-laravel/tree/0.19.0"
+                "source": "https://github.com/driftingly/rector-laravel/tree/0.20.0"
             },
-            "time": "2023-04-27T04:59:22+00:00"
+            "time": "2023-05-17T22:58:18+00:00"
         },
         {
             "name": "fakerphp/faker",
