@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d850b4b18e26eceff55f197ed7a15c95",
+    "content-hash": "708f30508c90b8edd537d9274be9d772",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -3423,16 +3423,16 @@
         },
         {
             "name": "mohamedsabil83/filament-forms-tinyeditor",
-            "version": "v1.7.2",
+            "version": "v1.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mohamedsabil83/filament-forms-tinyeditor.git",
-                "reference": "d48a711d88ef5ffb3e35fd127f47b704730c76d5"
+                "reference": "90cead0d5b6a920fa7de57a091a022f472aaeb94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mohamedsabil83/filament-forms-tinyeditor/zipball/d48a711d88ef5ffb3e35fd127f47b704730c76d5",
-                "reference": "d48a711d88ef5ffb3e35fd127f47b704730c76d5",
+                "url": "https://api.github.com/repos/mohamedsabil83/filament-forms-tinyeditor/zipball/90cead0d5b6a920fa7de57a091a022f472aaeb94",
+                "reference": "90cead0d5b6a920fa7de57a091a022f472aaeb94",
                 "shasum": ""
             },
             "require": {
@@ -3489,7 +3489,7 @@
             ],
             "support": {
                 "issues": "https://github.com/mohamedsabil83/filament-forms-tinyeditor/issues",
-                "source": "https://github.com/mohamedsabil83/filament-forms-tinyeditor/tree/v1.7.2"
+                "source": "https://github.com/mohamedsabil83/filament-forms-tinyeditor/tree/v1.7.3"
             },
             "funding": [
                 {
@@ -3501,7 +3501,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-05-08T15:55:17+00:00"
+            "time": "2023-05-24T14:18:50+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -8984,16 +8984,16 @@
         },
         {
             "name": "laravel/telescope",
-            "version": "v4.14.2",
+            "version": "v4.14.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/telescope.git",
-                "reference": "222bbea975d9f3a10879af153db5c34ffac08034"
+                "reference": "d3de7650d846badfa067e2bc777392228a97df16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/telescope/zipball/222bbea975d9f3a10879af153db5c34ffac08034",
-                "reference": "222bbea975d9f3a10879af153db5c34ffac08034",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/d3de7650d846badfa067e2bc777392228a97df16",
+                "reference": "d3de7650d846badfa067e2bc777392228a97df16",
                 "shasum": ""
             },
             "require": {
@@ -9049,9 +9049,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/telescope/issues",
-                "source": "https://github.com/laravel/telescope/tree/v4.14.2"
+                "source": "https://github.com/laravel/telescope/tree/v4.14.3"
             },
-            "time": "2023-04-19T15:24:14+00:00"
+            "time": "2023-05-19T18:34:30+00:00"
         },
         {
             "name": "mockery/mockery",
