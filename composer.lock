@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0ca832dfc9c429b003591fceabcad164",
+    "content-hash": "f9abb7882a351f25f1cee60f67b82e3b",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -6011,16 +6011,16 @@
         },
         {
             "name": "spatie/laravel-sluggable",
-            "version": "3.4.2",
+            "version": "3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-sluggable.git",
-                "reference": "e62c6b5de2d41d900749a1b6d339d05c5f4974fa"
+                "reference": "041af2533fe2206715e9a4a9cad2cab6cb796655"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-sluggable/zipball/e62c6b5de2d41d900749a1b6d339d05c5f4974fa",
-                "reference": "e62c6b5de2d41d900749a1b6d339d05c5f4974fa",
+                "url": "https://api.github.com/repos/spatie/laravel-sluggable/zipball/041af2533fe2206715e9a4a9cad2cab6cb796655",
+                "reference": "041af2533fe2206715e9a4a9cad2cab6cb796655",
                 "shasum": ""
             },
             "require": {
@@ -6058,7 +6058,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-sluggable/tree/3.4.2"
+                "source": "https://github.com/spatie/laravel-sluggable/tree/3.5.0"
             },
             "funding": [
                 {
@@ -6066,7 +6066,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-01-23T14:29:54+00:00"
+            "time": "2023-05-29T09:42:35+00:00"
         },
         {
             "name": "spatie/packagist-api",
