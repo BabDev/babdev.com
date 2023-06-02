@@ -30,7 +30,7 @@ mix.js('resources/js/app.js', 'public/js')
             ]
         ],
         plugins: [
-            '@babel/plugin-proposal-private-methods',
+            '@babel/plugin-transform-private-methods',
         ],
     });
 
