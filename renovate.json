@@ -16,5 +16,6 @@
     "enabledManagers": ["composer", "github-actions", "npm"],
     "lockFileMaintenance": {"enabled": true, "extends": ["schedule:daily"]},
     "platformAutomerge": true,
-    "rollbackPrs": true
+    "rollbackPrs": true,
+    "ignoreDeps": ["bootstrap"]
 }
