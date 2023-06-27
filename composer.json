@@ -22,7 +22,7 @@
         "mohamedsabil83/filament-forms-tinyeditor": "1.7.4",
         "spatie/laravel-feed": "4.2.1",
         "spatie/laravel-google-fonts": "1.2.3",
-        "spatie/laravel-sitemap": "6.3.0",
+        "spatie/laravel-sitemap": "6.3.1",
         "spatie/laravel-sluggable": "3.5.0",
         "spatie/packagist-api": "2.1.0"
     },
