@@ -16,7 +16,7 @@
         "guzzlehttp/guzzle": "7.7.0",
         "http-interop/http-factory-guzzle": "1.2.0",
         "knplabs/github-api": "3.11.0",
-        "laravel/framework": "10.14.0",
+        "laravel/framework": "10.14.1",
         "lcobucci/jwt": "5.0.0",
         "league/commonmark": "2.4.0",
         "mohamedsabil83/filament-forms-tinyeditor": "1.7.4",
@@ -39,7 +39,7 @@
         "phpstan/phpstan-phpunit": "1.3.13",
         "phpunit/phpunit": "10.2.2",
         "rector/rector": "0.17.1",
-        "spatie/laravel-ignition": "2.1.3"
+        "spatie/laravel-ignition": "2.2.0"
     },
     "replace": {
         "paragonie/random_compat": "*",
