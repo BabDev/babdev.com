@@ -5375,16 +5375,16 @@
         },
         {
             "name": "spatie/browsershot",
-            "version": "3.57.7",
+            "version": "3.58.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/browsershot.git",
-                "reference": "83332d0821bd3d61c03873d76d5dfff6e31985b7"
+                "reference": "aab060f4d7dddc8eda034481691b3b087f438a2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/browsershot/zipball/83332d0821bd3d61c03873d76d5dfff6e31985b7",
-                "reference": "83332d0821bd3d61c03873d76d5dfff6e31985b7",
+                "url": "https://api.github.com/repos/spatie/browsershot/zipball/aab060f4d7dddc8eda034481691b3b087f438a2e",
+                "reference": "aab060f4d7dddc8eda034481691b3b087f438a2e",
                 "shasum": ""
             },
             "require": {
@@ -5429,7 +5429,7 @@
                 "webpage"
             ],
             "support": {
-                "source": "https://github.com/spatie/browsershot/tree/3.57.7"
+                "source": "https://github.com/spatie/browsershot/tree/3.58.0"
             },
             "funding": [
                 {
@@ -5437,7 +5437,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-06-08T18:27:05+00:00"
+            "time": "2023-06-30T08:52:18+00:00"
         },
         {
             "name": "spatie/crawler",
