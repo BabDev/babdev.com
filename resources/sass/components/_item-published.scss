@@ -1,12 +1,13 @@
 .item-published {
+  --item-published-content-color: var(--#{$prefix}gray-600);
   margin-bottom: .5rem;
-  color: $gray-600;
+  color: var(--item-published-content-color);
   font-size: .9rem;
 
   &__icon {
     display: inline-block;
     transform: translateY(-2px);
-    fill: $gray-600;
+    fill: var(--item-published-content-color);
 
     svg {
       display: inline-block;

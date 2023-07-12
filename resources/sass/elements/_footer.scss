@@ -1,6 +1,6 @@
 .site-footer {
   font-size: $small-font-size;
-  border-top: 3px solid $babdev-orange;
+  border-top: 3px solid var(--#{$prefix}brand-orange);
 
   &__container {
     display: grid;

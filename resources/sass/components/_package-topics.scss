@@ -1,7 +1,7 @@
 .package-topics {
   .package-topic {
+    --#{$prefix}badge-color: var(--#{$prefix}brand-black);
     @extend .badge;
-    @extend .bg-brand-green;
-    @extend .text-brand-black;
+    background-color: var(--#{$prefix}brand-green);
   }
 }

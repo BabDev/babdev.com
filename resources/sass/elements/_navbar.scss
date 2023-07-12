@@ -1,5 +1,6 @@
 .navbar {
-  border-top: .25rem solid $babdev-orange;
+  border-top: .25rem solid var(--#{$prefix}brand-orange);
+  box-shadow: 0 .125rem .5rem var(--#{$prefix}gray-500);
 
   .navbar-brand {
     font-family: $font-family-brand;
@@ -10,9 +11,5 @@
       vertical-align: initial;
       display: inline-block;
     }
-  }
-
-  @supports (position: sticky) {
-    box-shadow: 0 .125rem .5rem $gray-500;
   }
 }

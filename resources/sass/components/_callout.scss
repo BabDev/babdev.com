@@ -5,7 +5,7 @@
   }
 
   &__title {
-    background-color: $babdev-orange;
+    background-color: var(--#{$prefix}brand-orange);
     display: flex;
     justify-content: center;
     align-items: center;
