@@ -5375,16 +5375,16 @@
         },
         {
             "name": "spatie/browsershot",
-            "version": "3.58.0",
+            "version": "3.58.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/browsershot.git",
-                "reference": "aab060f4d7dddc8eda034481691b3b087f438a2e"
+                "reference": "1e526e2a28bdf267bcdf8b2c6dbb2c1160d8aec8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/browsershot/zipball/aab060f4d7dddc8eda034481691b3b087f438a2e",
-                "reference": "aab060f4d7dddc8eda034481691b3b087f438a2e",
+                "url": "https://api.github.com/repos/spatie/browsershot/zipball/1e526e2a28bdf267bcdf8b2c6dbb2c1160d8aec8",
+                "reference": "1e526e2a28bdf267bcdf8b2c6dbb2c1160d8aec8",
                 "shasum": ""
             },
             "require": {
@@ -5429,7 +5429,7 @@
                 "webpage"
             ],
             "support": {
-                "source": "https://github.com/spatie/browsershot/tree/3.58.0"
+                "source": "https://github.com/spatie/browsershot/tree/3.58.1"
             },
             "funding": [
                 {
@@ -5437,7 +5437,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-06-30T08:52:18+00:00"
+            "time": "2023-07-19T18:38:41+00:00"
         },
         {
             "name": "spatie/crawler",
@@ -5578,16 +5578,16 @@
         },
         {
             "name": "spatie/image-optimizer",
-            "version": "1.6.4",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/image-optimizer.git",
-                "reference": "d997e01ba980b2769ddca2f00badd3b80c2a2512"
+                "reference": "9551e2df936656bda3567901a033579345d52e88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/image-optimizer/zipball/d997e01ba980b2769ddca2f00badd3b80c2a2512",
-                "reference": "d997e01ba980b2769ddca2f00badd3b80c2a2512",
+                "url": "https://api.github.com/repos/spatie/image-optimizer/zipball/9551e2df936656bda3567901a033579345d52e88",
+                "reference": "9551e2df936656bda3567901a033579345d52e88",
                 "shasum": ""
             },
             "require": {
@@ -5627,9 +5627,9 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/image-optimizer/issues",
-                "source": "https://github.com/spatie/image-optimizer/tree/1.6.4"
+                "source": "https://github.com/spatie/image-optimizer/tree/1.7.0"
             },
-            "time": "2023-03-10T08:43:19+00:00"
+            "time": "2023-07-22T16:28:37+00:00"
         },
         {
             "name": "spatie/invade",
@@ -10884,16 +10884,16 @@
         },
         {
             "name": "sebastian/global-state",
-            "version": "6.0.0",
+            "version": "6.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/global-state.git",
-                "reference": "aab257c712de87b90194febd52e4d184551c2d44"
+                "reference": "7ea9ead78f6d380d2a667864c132c2f7b83055e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/aab257c712de87b90194febd52e4d184551c2d44",
-                "reference": "aab257c712de87b90194febd52e4d184551c2d44",
+                "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/7ea9ead78f6d380d2a667864c132c2f7b83055e4",
+                "reference": "7ea9ead78f6d380d2a667864c132c2f7b83055e4",
                 "shasum": ""
             },
             "require": {
@@ -10933,7 +10933,8 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/global-state/issues",
-                "source": "https://github.com/sebastianbergmann/global-state/tree/6.0.0"
+                "security": "https://github.com/sebastianbergmann/global-state/security/policy",
+                "source": "https://github.com/sebastianbergmann/global-state/tree/6.0.1"
             },
             "funding": [
                 {
@@ -10941,7 +10942,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-02-03T07:07:38+00:00"
+            "time": "2023-07-19T07:19:23+00:00"
         },
         {
             "name": "sebastian/lines-of-code",
