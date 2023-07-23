@@ -12,7 +12,7 @@
         "blade-ui-kit/blade-ui-kit": "0.4.0",
         "camya/filament-title-with-slug": "0.5.6",
         "elhebert/laravel-sri": "dev-master",
-        "filament/filament": "2.17.50",
+        "filament/filament": "2.17.51",
         "guzzlehttp/guzzle": "7.7.0",
         "http-interop/http-factory-guzzle": "1.2.0",
         "knplabs/github-api": "3.11.0",
