@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e08b03078ef5b83a05c187901432b8db",
+    "content-hash": "d879715fd511e690ae0ee29041bf1e04",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -8853,16 +8853,16 @@
     "packages-dev": [
         {
             "name": "driftingly/rector-laravel",
-            "version": "0.22.0",
+            "version": "0.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/driftingly/rector-laravel.git",
-                "reference": "5232f3e00287d28fee6b8b5f64be161b1fc3a45c"
+                "reference": "64ea0117880b6f91998bbca9ae2b302b51c53f41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/driftingly/rector-laravel/zipball/5232f3e00287d28fee6b8b5f64be161b1fc3a45c",
-                "reference": "5232f3e00287d28fee6b8b5f64be161b1fc3a45c",
+                "url": "https://api.github.com/repos/driftingly/rector-laravel/zipball/64ea0117880b6f91998bbca9ae2b302b51c53f41",
+                "reference": "64ea0117880b6f91998bbca9ae2b302b51c53f41",
                 "shasum": ""
             },
             "require": {
@@ -8881,9 +8881,9 @@
             "description": "Rector upgrades rules for Laravel Framework",
             "support": {
                 "issues": "https://github.com/driftingly/rector-laravel/issues",
-                "source": "https://github.com/driftingly/rector-laravel/tree/0.22.0"
+                "source": "https://github.com/driftingly/rector-laravel/tree/0.22.1"
             },
-            "time": "2023-08-04T22:00:49+00:00"
+            "time": "2023-08-10T16:20:01+00:00"
         },
         {
             "name": "fakerphp/faker",
@@ -10364,16 +10364,16 @@
         },
         {
             "name": "rector/rector",
-            "version": "0.17.11",
+            "version": "0.17.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectorphp/rector.git",
-                "reference": "f594570cdaef1b35104945ca8f9edec78e4a745e"
+                "reference": "af3a14a8a9fffa3100b730571c356f6c658d5e09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectorphp/rector/zipball/f594570cdaef1b35104945ca8f9edec78e4a745e",
-                "reference": "f594570cdaef1b35104945ca8f9edec78e4a745e",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/af3a14a8a9fffa3100b730571c356f6c658d5e09",
+                "reference": "af3a14a8a9fffa3100b730571c356f6c658d5e09",
                 "shasum": ""
             },
             "require": {
@@ -10408,7 +10408,7 @@
             ],
             "support": {
                 "issues": "https://github.com/rectorphp/rector/issues",
-                "source": "https://github.com/rectorphp/rector/tree/0.17.11"
+                "source": "https://github.com/rectorphp/rector/tree/0.17.12"
             },
             "funding": [
                 {
@@ -10416,7 +10416,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-08-10T12:01:42+00:00"
+            "time": "2023-08-10T15:22:02+00:00"
         },
         {
             "name": "sebastian/cli-parser",
