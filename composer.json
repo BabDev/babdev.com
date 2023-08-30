@@ -18,7 +18,7 @@
         "knplabs/github-api": "3.11.0",
         "laravel/framework": "10.21.0",
         "lcobucci/jwt": "5.0.0",
-        "league/commonmark": "2.4.0",
+        "league/commonmark": "2.4.1",
         "mohamedsabil83/filament-forms-tinyeditor": "1.7.5",
         "spatie/laravel-feed": "4.3.0",
         "spatie/laravel-google-fonts": "1.2.3",
