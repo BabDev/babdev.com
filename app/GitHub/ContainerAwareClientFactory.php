@@ -9,9 +9,7 @@ use Illuminate\Contracts\Container\Container;
 
 final readonly class ContainerAwareClientFactory implements ClientFactory
 {
-    public function __construct(private Container $container)
-    {
-    }
+    public function __construct(private Container $container) {}
 
     public function make(?Builder $httpClientBuilder = null, ?string $apiVersion = null, ?string $enterpriseUrl = null): Client
     {

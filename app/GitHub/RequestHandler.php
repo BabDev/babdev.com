@@ -20,8 +20,7 @@ class RequestHandler
         private readonly Factory $actionFactory,
         private readonly ClientFactory $clientFactory,
         private readonly JWTTokenGeneratorContract $tokenGenerator,
-    ) {
-    }
+    ) {}
 
     /**
      * @phpstan-param GitHubRepoConfig $repoConfig

@@ -8,9 +8,7 @@ use Illuminate\Contracts\Container\Container;
 
 final readonly class ContainerAwareFactory implements Factory
 {
-    public function __construct(private Container $container)
-    {
-    }
+    public function __construct(private Container $container) {}
 
     /**
      * @param class-string<TAction> $class

@@ -13,9 +13,7 @@ use Illuminate\Support\Str;
 
 final readonly class DocumentationProcessor implements DocumentationProcessorContract
 {
-    public function __construct(private ApiConnector $github, private Repository $cache)
-    {
-    }
+    public function __construct(private ApiConnector $github, private Repository $cache) {}
 
     public function generateDocsFileCacheKey(Package $package, string $version, string $pageSlug): string
     {

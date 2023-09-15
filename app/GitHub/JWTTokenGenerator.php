@@ -12,9 +12,7 @@ use Lcobucci\JWT\Encoding\ChainedFormatter;
  */
 final readonly class JWTTokenGenerator implements JWTTokenGeneratorContract
 {
-    public function __construct(private JWTConfigurationBuilderContract $configurationBuilder)
-    {
-    }
+    public function __construct(private JWTConfigurationBuilderContract $configurationBuilder) {}
 
     /**
      * @phpstan-param GitHubRepoConfig $repoConfig

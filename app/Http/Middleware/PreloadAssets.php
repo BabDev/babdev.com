@@ -8,9 +8,7 @@ use Illuminate\Http\Response;
 
 final readonly class PreloadAssets
 {
-    public function __construct(private PushManager $pushManager)
-    {
-    }
+    public function __construct(private PushManager $pushManager) {}
 
     public function handle(Request $request, \Closure $next): mixed
     {
