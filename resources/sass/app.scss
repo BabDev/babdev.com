@@ -19,6 +19,7 @@
 @import '_variables';
 
 @import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/variables-dark";
 
 // Merge the maps now that the default map is configured
 $theme-colors: map-merge($theme-colors, $brand-colors);
