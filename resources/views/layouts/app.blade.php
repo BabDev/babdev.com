@@ -30,12 +30,6 @@
     </head>
     <body>
         <header class="sticky-top">
-            <a href="https://symfonycasts.com/stop-war" class="text-white text-center text-decoration-none">
-                <div class="bg-dark p-3">
-                    <img class="d-inline" width="75" src="{{ asset('images/ukraine-flag.png') }}">
-                    <p class="lead ms-3 d-inline">We stand united with the people of Ukraine</p>
-                </div>
-            </a>
             <nav class="navbar navbar-expand-sm navbar-light bg-white">
                 <div class="container">
                     <a class="navbar-brand pt-2" href="{{ route('homepage') }}">
