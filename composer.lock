@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5ae6b99d1f2eb7cbefbe8e2bca4ed5f6",
+    "content-hash": "f6034ce049ac18067b0278a054baecf9",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -5503,31 +5503,31 @@
         },
         {
             "name": "spatie/crawler",
-            "version": "7.1.3",
+            "version": "8.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/crawler.git",
-                "reference": "f0f73947fdfaf68efdc68b73c4dbb28dfc785113"
+                "reference": "ec58bd1c5269066a34ce927b470b31cc57be43fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/crawler/zipball/f0f73947fdfaf68efdc68b73c4dbb28dfc785113",
-                "reference": "f0f73947fdfaf68efdc68b73c4dbb28dfc785113",
+                "url": "https://api.github.com/repos/spatie/crawler/zipball/ec58bd1c5269066a34ce927b470b31cc57be43fd",
+                "reference": "ec58bd1c5269066a34ce927b470b31cc57be43fd",
                 "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "^7.3",
                 "guzzlehttp/psr7": "^2.0",
-                "illuminate/collections": "^8.38|^9.0|^10.0",
+                "illuminate/collections": "^10.0",
                 "nicmart/tree": "^0.3.0",
-                "php": "^8.0",
+                "php": "^8.1",
                 "spatie/browsershot": "^3.45",
                 "spatie/robots-txt": "^2.0",
-                "symfony/dom-crawler": "^5.2|^6.0"
+                "symfony/dom-crawler": "^6.0"
             },
             "require-dev": {
-                "pestphp/pest": "^1.21",
-                "phpunit/phpunit": "^9.5"
+                "pestphp/pest": "^2.0",
+                "spatie/ray": "^1.37"
             },
             "type": "library",
             "autoload": {
@@ -5555,7 +5555,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/crawler/issues",
-                "source": "https://github.com/spatie/crawler/tree/7.1.3"
+                "source": "https://github.com/spatie/crawler/tree/8.0.1"
             },
             "funding": [
                 {
@@ -5567,7 +5567,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-01-24T07:47:06+00:00"
+            "time": "2023-07-19T18:37:01+00:00"
         },
         {
             "name": "spatie/image",
@@ -5994,16 +5994,16 @@
         },
         {
             "name": "spatie/laravel-sitemap",
-            "version": "6.4.0",
+            "version": "7.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-sitemap.git",
-                "reference": "d5115b430de517aaa29a6410f4cd6f1561766579"
+                "reference": "1d7989d8a368ecec0401420a57be920d626572c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-sitemap/zipball/d5115b430de517aaa29a6410f4cd6f1561766579",
-                "reference": "d5115b430de517aaa29a6410f4cd6f1561766579",
+                "url": "https://api.github.com/repos/spatie/laravel-sitemap/zipball/1d7989d8a368ecec0401420a57be920d626572c2",
+                "reference": "1d7989d8a368ecec0401420a57be920d626572c2",
                 "shasum": ""
             },
             "require": {
@@ -6011,7 +6011,7 @@
                 "illuminate/support": "^8.0|^9.0|^10.0",
                 "nesbot/carbon": "^2.63",
                 "php": "^8.0",
-                "spatie/crawler": "^7.0",
+                "spatie/crawler": "^8.0",
                 "spatie/laravel-package-tools": "^1.5",
                 "symfony/dom-crawler": "^5.1.14|^6.0"
             },
@@ -6056,7 +6056,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-sitemap/tree/6.4.0"
+                "source": "https://github.com/spatie/laravel-sitemap/tree/7.0.0"
             },
             "funding": [
                 {
@@ -6064,7 +6064,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2023-10-18T14:38:11+00:00"
+            "time": "2023-10-24T07:21:05+00:00"
         },
         {
             "name": "spatie/laravel-sluggable",
