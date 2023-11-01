@@ -41,7 +41,6 @@ final class ImportGitHubRepositories extends Command
                 tap(Package::firstOrNew(['name' => $name]), function (Package $package) use ($name, $repositoryAttributes, $github): void {
                     $package->fill([
                         'name' => $name,
-                        'display_name' => ucwords(str_replace(['-', '_'], ' ', $name)),
                         'description' => Arr::get($repositoryAttributes, 'description'),
                         'topics' => $github->fetchRepositoryTopics('BabDev', $name),
                         'stars' => Arr::get($repositoryAttributes, 'stargazers_count'),
