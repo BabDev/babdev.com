@@ -49,7 +49,7 @@ final class ImportGitHubRepositories extends Command
                     ]);
 
                     // Only set the display name on create so it can be customized in-app
-                    if ($package->wasRecentlyCreated) {
+                    if (!$package->exists) {
                         $package->display_name = Str::headline($name);
                     }
 
