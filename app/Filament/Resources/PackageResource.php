@@ -12,9 +12,9 @@ use Camya\Filament\Forms\Components\TitleWithSlugInput;
 use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
+use Filament\Tables\Table;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
@@ -26,7 +26,7 @@ class PackageResource extends Resource
 {
     protected static ?string $model = Package::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-view-grid';
+    protected static ?string $navigationIcon = 'heroicon-o-squares-2x2';
 
     protected static ?string $recordTitleAttribute = 'display_name';
 
@@ -46,12 +46,12 @@ class PackageResource extends Resource
                 TextInput::make('packagist_name'),
                 Checkbox::make('has_documentation'),
                 Select::make('package_type')->required()->options([
-                    PackageType::JOOMLA_EXTENSION->value => trans('package_type.' . PackageType::JOOMLA_EXTENSION->value),
-                    PackageType::LARAVEL_PACKAGE->value => trans('package_type.' . PackageType::LARAVEL_PACKAGE->value),
-                    PackageType::PHP_PACKAGE->value => trans('package_type.' . PackageType::PHP_PACKAGE->value),
-                    PackageType::PHPSPEC_EXTENSION->value => trans('package_type.' . PackageType::PHPSPEC_EXTENSION->value),
-                    PackageType::SYLIUS_PLUGIN->value => trans('package_type.' . PackageType::SYLIUS_PLUGIN->value),
-                    PackageType::SYMFONY_BUNDLE->value => trans('package_type.' . PackageType::SYMFONY_BUNDLE->value),
+                    PackageType::JOOMLA_EXTENSION->value => PackageType::JOOMLA_EXTENSION->label(),
+                    PackageType::LARAVEL_PACKAGE->value => PackageType::LARAVEL_PACKAGE->label(),
+                    PackageType::PHP_PACKAGE->value => PackageType::PHP_PACKAGE->label(),
+                    PackageType::PHPSPEC_EXTENSION->value => PackageType::PHPSPEC_EXTENSION->label(),
+                    PackageType::SYLIUS_PLUGIN->value => PackageType::SYLIUS_PLUGIN->label(),
+                    PackageType::SYMFONY_BUNDLE->value => PackageType::SYMFONY_BUNDLE->label(),
                 ]),
                 Checkbox::make('supported'),
                 Checkbox::make('visible'),
@@ -65,7 +65,7 @@ class PackageResource extends Resource
             ->columns([
                 TextColumn::make('display_name'),
                 IconColumn::make('has_documentation')->boolean(),
-                TextColumn::make('package_type')->formatStateUsing(fn (string $state): string => trans('package_type.' . $state)),
+                TextColumn::make('package_type')->formatStateUsing(fn (PackageType $state): string => $state->label()),
                 IconColumn::make('supported')->boolean(),
                 IconColumn::make('visible')->boolean(),
                 IconColumn::make('is_packagist')->boolean(),
@@ -96,6 +96,9 @@ class PackageResource extends Resource
         ];
     }
 
+    /**
+     * @phpstan-param Package $record
+     */
     public static function getGlobalSearchResultTitle(Model $record): string
     {
         return $record->display_name;

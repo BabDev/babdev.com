@@ -3,6 +3,12 @@
     "description": "The babdev.com website",
     "license": "MIT",
     "type": "project",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/log1x/filament-title-with-slug"
+        }
+    ],
     "require": {
         "php": "^8.2",
         "ext-hash": "*",
@@ -10,16 +16,16 @@
         "babdev/laravel-breadcrumbs": "2.0.0",
         "babdev/laravel-server-push-manager": "2.2.0",
         "blade-ui-kit/blade-ui-kit": "0.4.0",
-        "camya/filament-title-with-slug": "0.5.6",
+        "camya/filament-title-with-slug": "dev-feat/filament-v3",
         "elhebert/laravel-sri": "dev-master",
-        "filament/filament": "2.17.55",
+        "filament/filament": "3.0.96",
         "guzzlehttp/guzzle": "7.8.0",
         "http-interop/http-factory-guzzle": "1.2.0",
         "knplabs/github-api": "3.12.0",
         "laravel/framework": "10.32.1",
         "lcobucci/jwt": "5.1.0",
         "league/commonmark": "2.4.1",
-        "mohamedsabil83/filament-forms-tinyeditor": "1.7.5",
+        "mohamedsabil83/filament-forms-tinyeditor": "2.1.0",
         "spatie/laravel-feed": "4.3.0",
         "spatie/laravel-google-fonts": "1.2.3",
         "spatie/laravel-sitemap": "7.0.0",
