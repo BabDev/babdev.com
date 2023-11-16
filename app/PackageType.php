@@ -15,4 +15,9 @@ enum PackageType: string
     case SYLIUS_PLUGIN = 'sylius-plugin';
 
     case SYMFONY_BUNDLE = 'symfony-bundle';
+
+    public function label(): string
+    {
+        return trans('package_type.' . $this->value);
+    }
 }

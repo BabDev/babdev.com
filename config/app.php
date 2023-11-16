@@ -61,6 +61,8 @@ return [
 
     'domain' => env('APP_DOMAIN_NAME', null),
 
+    'filament_domain' => env('FILAMENT_DOMAIN'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
@@ -154,6 +156,7 @@ return [
         BabDev\Providers\HttpServiceProvider::class,
         BabDev\Providers\PackagistServiceProvider::class,
         BabDev\Providers\RouteServiceProvider::class,
+        BabDev\Providers\Filament\AppPanelProvider::class,
     ])->toArray(),
 
     /*

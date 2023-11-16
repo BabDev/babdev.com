@@ -20,6 +20,7 @@ class Kernel extends HttpKernel
      * @var array<string, list<class-string|string>>
      */
     protected $middlewareGroups = [
+        // Keep in sync with the Filament AppPanelProvider
         'filament.web' => [
             \Illuminate\Cookie\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
@@ -29,7 +30,6 @@ class Kernel extends HttpKernel
             \Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \Filament\Http\Middleware\DispatchServingFilamentEvent::class,
-            \Filament\Http\Middleware\MirrorConfigToSubpackages::class,
         ],
 
         'web' => [

@@ -86,69 +86,9 @@ parameters:
 			path: app/Console/Commands/RemoveHacktoberfestExtras.php
 
 		-
-			message: "#^Access to an undefined property Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$display_name\\.$#"
-			count: 1
-			path: app/Filament/Resources/PackageResource.php
-
-		-
-			message: "#^Method BabDev\\\\Filament\\\\Resources\\\\PackageResource\\:\\:getGloballySearchableAttributes\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: app/Filament/Resources/PackageResource.php
-
-		-
-			message: "#^Method BabDev\\\\Filament\\\\Resources\\\\PackageResource\\:\\:getPages\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: app/Filament/Resources/PackageResource.php
-
-		-
-			message: "#^Method BabDev\\\\Filament\\\\Resources\\\\PackageResource\\:\\:getRelations\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: app/Filament/Resources/PackageResource.php
-
-		-
-			message: "#^Method BabDev\\\\Filament\\\\Resources\\\\PackageResource\\\\Pages\\\\EditPackage\\:\\:getActions\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: app/Filament/Resources/PackageResource/Pages/EditPackage.php
-
-		-
-			message: "#^Method BabDev\\\\Filament\\\\Resources\\\\PackageResource\\\\Pages\\\\ListPackages\\:\\:getActions\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: app/Filament/Resources/PackageResource/Pages/ListPackages.php
-
-		-
-			message: "#^Method BabDev\\\\Filament\\\\Resources\\\\PackageUpdateResource\\:\\:getPages\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: app/Filament/Resources/PackageUpdateResource.php
-
-		-
-			message: "#^Method BabDev\\\\Filament\\\\Resources\\\\PackageUpdateResource\\\\Pages\\\\EditPackageUpdate\\:\\:getActions\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: app/Filament/Resources/PackageUpdateResource/Pages/EditPackageUpdate.php
-
-		-
-			message: "#^Method BabDev\\\\Filament\\\\Resources\\\\PackageUpdateResource\\\\Pages\\\\ListPackageUpdates\\:\\:getActions\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: app/Filament/Resources/PackageUpdateResource/Pages/ListPackageUpdates.php
-
-		-
 			message: "#^Access to an undefined property Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$email\\.$#"
 			count: 1
 			path: app/Filament/Resources/UserResource.php
-
-		-
-			message: "#^Method BabDev\\\\Filament\\\\Resources\\\\UserResource\\:\\:getGloballySearchableAttributes\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: app/Filament/Resources/UserResource.php
-
-		-
-			message: "#^Method BabDev\\\\Filament\\\\Resources\\\\UserResource\\:\\:getPages\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: app/Filament/Resources/UserResource.php
-
-		-
-			message: "#^Method BabDev\\\\Filament\\\\Resources\\\\UserResource\\\\Pages\\\\ManageUsers\\:\\:getActions\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: app/Filament/Resources/UserResource/Pages/ManageUsers.php
 
 		-
 			message: "#^Parameter \\#1 \\$username of method Github\\\\Api\\\\Issue\\\\Comments\\:\\:create\\(\\) expects string, mixed given\\.$#"
@@ -244,6 +184,11 @@ parameters:
 			message: "#^Cannot access offset 'request' on Illuminate\\\\Contracts\\\\Foundation\\\\Application\\.$#"
 			count: 4
 			path: app/Providers/AppServiceProvider.php
+
+		-
+			message: "#^Parameter \\#1 \\$domain of method Filament\\\\Panel\\:\\:domain\\(\\) expects string\\|null, mixed given\\.$#"
+			count: 1
+			path: app/Providers/Filament/AppPanelProvider.php
 
 		-
 			message: "#^Parameter \\#1 \\$tokenOrLogin of method Github\\\\Client\\:\\:authenticate\\(\\) expects string, mixed given\\.$#"

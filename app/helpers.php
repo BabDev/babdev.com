@@ -6,7 +6,7 @@ use Illuminate\Support\Str;
 
 function is_filament_request(Request $request): bool
 {
-    $domain = config('filament.domain');
+    $domain = config('app.filament_domain');
 
     if ($domain === null) {
         return false;

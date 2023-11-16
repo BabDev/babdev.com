@@ -5,8 +5,10 @@ namespace BabDev\Providers;
 use BabDev\Pagination\RoutableLengthAwarePaginator;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
+use Livewire\Livewire;
 
 final class AppServiceProvider extends ServiceProvider
 {
@@ -16,6 +18,8 @@ final class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
 
         Paginator::useBootstrap();
+
+        Livewire::setUpdateRoute(fn ($handle) => Route::post('/livewire/update', $handle)->middleware('filament.web'));
     }
 
     public function register(): void
