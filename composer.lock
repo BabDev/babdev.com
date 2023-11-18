@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f72f335f730dab19ef2a5ea1fb7afbd6",
+    "content-hash": "b73c4b213c4596ba880ba50441692af4",
     "packages": [
         {
             "name": "babdev/laravel-breadcrumbs",
@@ -1665,7 +1665,7 @@
         },
         {
             "name": "filament/actions",
-            "version": "v3.0.97",
+            "version": "v3.0.98",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/actions.git",
@@ -1715,16 +1715,16 @@
         },
         {
             "name": "filament/filament",
-            "version": "v3.0.97",
+            "version": "v3.0.98",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/panels.git",
-                "reference": "c04dc0f95deeb34e28f62361c3faecca14f87a01"
+                "reference": "7a7c432db38ccb29fb3591609f896da265f54aeb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/panels/zipball/c04dc0f95deeb34e28f62361c3faecca14f87a01",
-                "reference": "c04dc0f95deeb34e28f62361c3faecca14f87a01",
+                "url": "https://api.github.com/repos/filamentphp/panels/zipball/7a7c432db38ccb29fb3591609f896da265f54aeb",
+                "reference": "7a7c432db38ccb29fb3591609f896da265f54aeb",
                 "shasum": ""
             },
             "require": {
@@ -1776,11 +1776,11 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-11-15T11:34:50+00:00"
+            "time": "2023-11-18T17:32:25+00:00"
         },
         {
             "name": "filament/forms",
-            "version": "v3.0.97",
+            "version": "v3.0.98",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/forms.git",
@@ -1836,7 +1836,7 @@
         },
         {
             "name": "filament/infolists",
-            "version": "v3.0.97",
+            "version": "v3.0.98",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/infolists.git",
@@ -1887,7 +1887,7 @@
         },
         {
             "name": "filament/notifications",
-            "version": "v3.0.97",
+            "version": "v3.0.98",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/notifications.git",
@@ -1939,16 +1939,16 @@
         },
         {
             "name": "filament/support",
-            "version": "v3.0.97",
+            "version": "v3.0.98",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/support.git",
-                "reference": "3b62b0c3bbe3fa18a444bf1c5eae09240714fc74"
+                "reference": "25e220044d467a335250a45d1e9a081f6bd9aad2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/support/zipball/3b62b0c3bbe3fa18a444bf1c5eae09240714fc74",
-                "reference": "3b62b0c3bbe3fa18a444bf1c5eae09240714fc74",
+                "url": "https://api.github.com/repos/filamentphp/support/zipball/25e220044d467a335250a45d1e9a081f6bd9aad2",
+                "reference": "25e220044d467a335250a45d1e9a081f6bd9aad2",
                 "shasum": ""
             },
             "require": {
@@ -1992,11 +1992,11 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-11-15T11:34:46+00:00"
+            "time": "2023-11-18T17:32:24+00:00"
         },
         {
             "name": "filament/tables",
-            "version": "v3.0.97",
+            "version": "v3.0.98",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/tables.git",
@@ -2049,7 +2049,7 @@
         },
         {
             "name": "filament/widgets",
-            "version": "v3.0.97",
+            "version": "v3.0.98",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/widgets.git",
