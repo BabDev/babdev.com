@@ -23,7 +23,7 @@
         "http-interop/http-factory-guzzle": "1.2.0",
         "knplabs/github-api": "3.13.0",
         "laravel/framework": "10.32.1",
-        "lcobucci/jwt": "5.1.0",
+        "lcobucci/jwt": "5.2.0",
         "league/commonmark": "2.4.1",
         "mohamedsabil83/filament-forms-tinyeditor": "2.1.0",
         "spatie/laravel-feed": "4.3.0",
