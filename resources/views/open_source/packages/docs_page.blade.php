@@ -53,5 +53,5 @@
 @endsection
 
 @section('bodyScripts')
-    <script src="{{ PushManager::preload(mix('js/docs.js'), ['as' => 'script', 'integrity' => Sri::hash('js/docs.js'), 'crossorigin' => 'anonymous']) }}" {{ Sri::html('js/docs.js') }}></script>
+    @vite(['resources/js/docs.js'])
 @endsection

@@ -36,8 +36,6 @@ class Kernel extends HttpKernel
             \Illuminate\Cookie\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            \BabDev\ServerPushManager\Http\Middleware\ServerPush::class,
-            \BabDev\Http\Middleware\PreloadAssets::class,
         ],
 
         'api' => [

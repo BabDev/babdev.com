@@ -74,7 +74,7 @@ jobs:
         run: npm ci
 
       - name: Compile Assets
-        run: npm run production
+        run: npm run build
 
       - name: Generate App Key
         run: php artisan key:generate

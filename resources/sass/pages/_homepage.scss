@@ -1,21 +1,4 @@
 .hero--homepage {
-  &::before {
-    background: url(../../images/beach-576.jpg) center;
-
-    @include media-breakpoint-between(sm, md) {
-      background-image: url(../../images/beach-768.jpg);
-    }
-    @include media-breakpoint-between(md, lg) {
-      background-image: url(../../images/beach-992.jpg);
-    }
-    @include media-breakpoint-between(lg, xl) {
-      background-image: url(../../images/beach-1200.jpg);
-    }
-    @include media-breakpoint-up(xl) {
-      background-image: url(../../images/beach-1920.jpg);
-    }
-  }
-
   .hero {
     &__text {
       min-height: 12em;

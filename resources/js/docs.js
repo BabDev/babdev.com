@@ -11,25 +11,19 @@ import twig from 'highlight.js/lib/languages/twig';
 import xml from 'highlight.js/lib/languages/xml';
 import yaml from 'highlight.js/lib/languages/yaml';
 
-class BDDocs {
-    static init() {
-        hljs.registerLanguage('bash', bash);
-        hljs.registerLanguage('blade', blade);
-        hljs.registerLanguage('css', css);
-        hljs.registerLanguage('javascript', javascript);
-        hljs.registerLanguage('json', json);
-        hljs.registerLanguage('markdown', markdown);
-        hljs.registerLanguage('php', php);
-        hljs.registerLanguage('twig', twig);
-        hljs.registerLanguage('xml', xml);
-        hljs.registerLanguage('yaml', yaml);
+hljs.registerLanguage('bash', bash);
+hljs.registerLanguage('blade', blade);
+hljs.registerLanguage('css', css);
+hljs.registerLanguage('javascript', javascript);
+hljs.registerLanguage('json', json);
+hljs.registerLanguage('markdown', markdown);
+hljs.registerLanguage('php', php);
+hljs.registerLanguage('twig', twig);
+hljs.registerLanguage('xml', xml);
+hljs.registerLanguage('yaml', yaml);
 
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('pre code').forEach((block) => {
-                hljs.highlightElement(block);
-            });
-        });
-    }
-}
-
-BDDocs.init();
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightElement(block);
+    });
+});

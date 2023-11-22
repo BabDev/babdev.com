@@ -1,17 +1,11 @@
-class BDUpdates {
-    static init() {
-        document.querySelectorAll('.package-update__content h3').forEach(BDUpdates.#wrapWithHeadingContainer);
-        document.querySelectorAll('.package-update__content h4').forEach(BDUpdates.#wrapWithHeadingContainer);
-    }
+function wrapWithHeadingContainer(element) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'section-heading';
 
-    static #wrapWithHeadingContainer(element) {
-        const wrapper = document.createElement('div');
-        wrapper.className = 'section-heading';
+    element.parentNode.insertBefore(wrapper, element);
 
-        element.parentNode.insertBefore(wrapper, element);
-
-        wrapper.appendChild(element);
-    }
+    wrapper.appendChild(element);
 }
 
-BDUpdates.init();
+document.querySelectorAll('.package-update__content h3').forEach(wrapWithHeadingContainer);
+document.querySelectorAll('.package-update__content h4').forEach(wrapWithHeadingContainer);

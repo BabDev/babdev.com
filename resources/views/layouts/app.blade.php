@@ -12,7 +12,7 @@
         @yield('meta')
         <title>{{ $title ?? config('app.name', 'BabDev') }}</title>
         @googlefonts
-        <link href="{{ PushManager::preload(mix('css/app.css'), ['as' => 'style', 'integrity' => Sri::hash('css/app.css'), 'crossorigin' => 'anonymous']) }}" rel="stylesheet" {{ Sri::html('css/app.css') }}>
+        @vite(['resources/sass/app.scss'])
         @production
             <script type="text/javascript">
                 var _paq = window._paq = window._paq || [];
@@ -84,7 +84,7 @@
                 <div class="site-footer__copyright text-md-end">All rights reserved. © 2010 - {{ date('Y') }} <a href="{{ route('homepage') }}" title="BabDev">BabDev</a>.</div>
             </div>
         </footer>
-        <script src="{{ PushManager::preload(mix('js/app.js'), ['as' => 'script', 'integrity' => Sri::hash('js/app.js'), 'crossorigin' => 'anonymous']) }}" {{ Sri::html('js/app.js') }}></script>
+        @vite(['resources/js/app.js'])
         @yield('bodyScripts')
     </body>
 </html>
