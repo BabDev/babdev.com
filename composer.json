@@ -16,7 +16,7 @@
         "babdev/laravel-breadcrumbs": "2.0.0",
         "blade-ui-kit/blade-ui-kit": "0.4.0",
         "camya/filament-title-with-slug": "dev-feat/filament-v3",
-        "filament/filament": "3.0.100",
+        "filament/filament": "3.0.101",
         "guzzlehttp/guzzle": "7.8.0",
         "http-interop/http-factory-guzzle": "1.2.0",
         "knplabs/github-api": "3.13.0",
