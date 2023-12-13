@@ -20,7 +20,7 @@
         "guzzlehttp/guzzle": "7.8.1",
         "http-interop/http-factory-guzzle": "1.2.0",
         "knplabs/github-api": "3.13.0",
-        "laravel/framework": "10.37.2",
+        "laravel/framework": "10.37.3",
         "lcobucci/jwt": "5.2.0",
         "league/commonmark": "2.4.1",
         "mohamedsabil83/filament-forms-tinyeditor": "2.2.0",
