@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta property="og:type" content="{{ $ogType ?? 'website' }}">
         <meta property="og:title" content="{{ $ogTitle ?? $title ?? config('app.name', 'BabDev') }}">
-        <meta property="og:image" content="{{ asset('images/social-media.png') }}">
+        <meta property="og:image" content="{{ asset('images/social-media.webp') }}">
         <meta property="og:url" content="{{ url()->current() }}">
         <meta property="og:locale" content="en_US" />
         @yield('meta')
