@@ -4,11 +4,11 @@ This is the source code for the babdev.com website
 
 ## Requirements
 
-- PHP 8.1 or newer
-- MySQL 5.7 or newer
+- PHP 8.2 or newer
+- MySQL 8.0 or newer
 - [Composer](https://getcomposer.org/download/)
-- [Node.js](https://nodejs.org/en/) 16 or newer
-- [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) 7.10 or newer
+- [Node.js](https://nodejs.org/en/) 20.9 or newer
+- [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) 10.1 or newer
 - Optionally, a [GitHub personal access token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) to interact with the GitHub API
 
 ### Special Notes
