@@ -48,7 +48,7 @@ jobs:
       - name: Setup NodeJS
         uses: actions/setup-node@v4
         with:
-          node-version: '16'
+          node-version: '20'
           cache: npm
 
       - name: Get Composer Cache Directory
