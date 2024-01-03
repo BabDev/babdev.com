@@ -5821,16 +5821,16 @@
         },
         {
             "name": "spatie/browsershot",
-            "version": "4.0.0",
+            "version": "4.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/browsershot.git",
-                "reference": "36b90d9190ebe7919b41699ca25dc1fa19bd56ca"
+                "reference": "04b3527022dc31daae425f22a328fed646dc3cac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/browsershot/zipball/36b90d9190ebe7919b41699ca25dc1fa19bd56ca",
-                "reference": "36b90d9190ebe7919b41699ca25dc1fa19bd56ca",
+                "url": "https://api.github.com/repos/spatie/browsershot/zipball/04b3527022dc31daae425f22a328fed646dc3cac",
+                "reference": "04b3527022dc31daae425f22a328fed646dc3cac",
                 "shasum": ""
             },
             "require": {
@@ -5876,7 +5876,7 @@
                 "webpage"
             ],
             "support": {
-                "source": "https://github.com/spatie/browsershot/tree/4.0.0"
+                "source": "https://github.com/spatie/browsershot/tree/4.0.1"
             },
             "funding": [
                 {
@@ -5884,7 +5884,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-12-29T12:54:18+00:00"
+            "time": "2024-01-02T17:36:56+00:00"
         },
         {
             "name": "spatie/color",
@@ -5947,16 +5947,16 @@
         },
         {
             "name": "spatie/crawler",
-            "version": "8.0.4",
+            "version": "8.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/crawler.git",
-                "reference": "8b918c2ab0e6a157ccc436efc2a6d6815c3b5e2a"
+                "reference": "f4958b4f1e10113be2bc8d373afdd7b1d4fe0d72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/crawler/zipball/8b918c2ab0e6a157ccc436efc2a6d6815c3b5e2a",
-                "reference": "8b918c2ab0e6a157ccc436efc2a6d6815c3b5e2a",
+                "url": "https://api.github.com/repos/spatie/crawler/zipball/f4958b4f1e10113be2bc8d373afdd7b1d4fe0d72",
+                "reference": "f4958b4f1e10113be2bc8d373afdd7b1d4fe0d72",
                 "shasum": ""
             },
             "require": {
@@ -5999,7 +5999,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/crawler/issues",
-                "source": "https://github.com/spatie/crawler/tree/8.0.4"
+                "source": "https://github.com/spatie/crawler/tree/8.1.0"
             },
             "funding": [
                 {
@@ -6011,7 +6011,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-12-29T13:08:02+00:00"
+            "time": "2024-01-02T08:29:35+00:00"
         },
         {
             "name": "spatie/invade",
