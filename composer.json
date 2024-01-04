@@ -31,7 +31,7 @@
         "spatie/packagist-api": "2.1.0"
     },
     "require-dev": {
-        "driftingly/rector-laravel": "0.26.2",
+        "driftingly/rector-laravel": "0.27.0",
         "fakerphp/faker": "1.23.1",
         "laravel/telescope": "4.17.3",
         "mockery/mockery": "1.6.7",
