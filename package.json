@@ -33,7 +33,7 @@
         "resolve-url-loader": "5.0.0",
         "sass": "1.70.0",
         "sass-loader": "14.0.0",
-        "vite": "5.0.11",
+        "vite": "5.0.12",
         "vite-plugin-manifest-sri": "0.2.0"
     }
 }
