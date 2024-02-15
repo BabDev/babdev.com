@@ -29,7 +29,7 @@
         "laravel-vite-plugin": "1.0.1",
         "path": "0.12.7",
         "postcss": "8.4.35",
-        "postcss-import": "16.0.0",
+        "postcss-import": "16.0.1",
         "resolve-url-loader": "5.0.0",
         "sass": "1.70.0",
         "sass-loader": "14.1.0",
