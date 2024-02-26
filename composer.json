@@ -27,7 +27,7 @@
         "spatie/laravel-feed": "4.3.0",
         "spatie/laravel-google-fonts": "1.2.3",
         "spatie/laravel-sitemap": "7.2.0",
-        "spatie/laravel-sluggable": "3.5.0",
+        "spatie/laravel-sluggable": "3.6.0",
         "spatie/packagist-api": "2.1.0"
     },
     "require-dev": {
