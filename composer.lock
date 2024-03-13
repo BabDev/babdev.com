@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3438e0a5fd232c98706d64bb9803b3ec",
+    "content-hash": "a120495061ac85829b16132393bf01e8",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -2798,16 +2798,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v10.47.0",
+            "version": "v10.48.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "fce29b8de62733cdecbe12e3bae801f83fff2ea4"
+                "reference": "32a8bb151d748b579c3794dea53b56bd40dfbbd3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/fce29b8de62733cdecbe12e3bae801f83fff2ea4",
-                "reference": "fce29b8de62733cdecbe12e3bae801f83fff2ea4",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/32a8bb151d748b579c3794dea53b56bd40dfbbd3",
+                "reference": "32a8bb151d748b579c3794dea53b56bd40dfbbd3",
                 "shasum": ""
             },
             "require": {
@@ -2855,6 +2855,7 @@
             "conflict": {
                 "carbonphp/carbon-doctrine-types": ">=3.0",
                 "doctrine/dbal": ">=4.0",
+                "mockery/mockery": "1.6.8",
                 "phpunit/phpunit": ">=11.0.0",
                 "tightenco/collect": "<5.5.33"
             },
@@ -3000,7 +3001,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2024-03-05T15:18:36+00:00"
+            "time": "2024-03-12T16:35:43+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -3993,35 +3994,35 @@
         },
         {
             "name": "mohamedsabil83/filament-forms-tinyeditor",
-            "version": "v2.2.0",
+            "version": "v2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mohamedsabil83/filament-forms-tinyeditor.git",
-                "reference": "b970132ebca028598d5a2ba81a8ebdbce114273f"
+                "reference": "3eec788a5187e7d8c15492af442991297446b81e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mohamedsabil83/filament-forms-tinyeditor/zipball/b970132ebca028598d5a2ba81a8ebdbce114273f",
-                "reference": "b970132ebca028598d5a2ba81a8ebdbce114273f",
+                "url": "https://api.github.com/repos/mohamedsabil83/filament-forms-tinyeditor/zipball/3eec788a5187e7d8c15492af442991297446b81e",
+                "reference": "3eec788a5187e7d8c15492af442991297446b81e",
                 "shasum": ""
             },
             "require": {
                 "filament/forms": "^3.0",
-                "illuminate/contracts": "^9.0|^10.0",
+                "illuminate/contracts": "^9.0|^10.0|^11.0",
                 "php": "^8.1",
                 "spatie/laravel-package-tools": "^1.14.0"
             },
             "require-dev": {
+                "larastan/larastan": "^2.2",
                 "laravel/pint": "^1.0",
-                "nunomaduro/collision": "^6.0|^7.0",
-                "nunomaduro/larastan": "^2.0",
-                "orchestra/testbench": "^7.0|^8.0",
-                "pestphp/pest": "^1.21",
-                "pestphp/pest-plugin-laravel": "^1.1",
+                "nunomaduro/collision": "^7.0|^8.0",
+                "orchestra/testbench": "8.0|^9.0",
+                "pestphp/pest": "^2.0",
+                "pestphp/pest-plugin-laravel": "^2.0",
                 "phpstan/extension-installer": "^1.1",
                 "phpstan/phpstan-deprecation-rules": "^1.0",
                 "phpstan/phpstan-phpunit": "^1.0",
-                "phpunit/phpunit": "^9.5|^10.0",
+                "phpunit/phpunit": "^10.0|^11.0",
                 "spatie/laravel-ray": "^1.26"
             },
             "type": "library",
@@ -4059,7 +4060,7 @@
             ],
             "support": {
                 "issues": "https://github.com/mohamedsabil83/filament-forms-tinyeditor/issues",
-                "source": "https://github.com/mohamedsabil83/filament-forms-tinyeditor/tree/v2.2.0"
+                "source": "https://github.com/mohamedsabil83/filament-forms-tinyeditor/tree/v2.3.0"
             },
             "funding": [
                 {
@@ -4071,7 +4072,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-12-13T11:25:08+00:00"
+            "time": "2024-03-12T21:52:34+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -9753,7 +9754,7 @@
         },
         {
             "name": "mockery/mockery",
-            "version": "1.6.7",
+            "version": "1.6.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mockery/mockery.git",
@@ -10784,16 +10785,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "10.5.12",
+            "version": "10.5.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "41a9886b85ac7bf3929853baf96b95361cd69d2b"
+                "reference": "20a63fc1c6db29b15da3bd02d4b6cf59900088a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/41a9886b85ac7bf3929853baf96b95361cd69d2b",
-                "reference": "41a9886b85ac7bf3929853baf96b95361cd69d2b",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/20a63fc1c6db29b15da3bd02d4b6cf59900088a7",
+                "reference": "20a63fc1c6db29b15da3bd02d4b6cf59900088a7",
                 "shasum": ""
             },
             "require": {
@@ -10865,7 +10866,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.12"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.13"
             },
             "funding": [
                 {
@@ -10881,7 +10882,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-03-09T12:04:07+00:00"
+            "time": "2024-03-12T15:37:41+00:00"
         },
         {
             "name": "rector/rector",
