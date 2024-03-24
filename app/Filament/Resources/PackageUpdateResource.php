@@ -6,16 +6,19 @@ use BabDev\Filament\Resources\PackageUpdateResource\Pages\CreatePackageUpdate;
 use BabDev\Filament\Resources\PackageUpdateResource\Pages\EditPackageUpdate;
 use BabDev\Filament\Resources\PackageUpdateResource\Pages\ListPackageUpdates;
 use BabDev\Models\PackageUpdate;
-use Camya\Filament\Forms\Components\TitleWithSlugInput;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Forms\Get;
+use Filament\Forms\Set;
 use Filament\Resources\Resource;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Illuminate\Support\Str;
 use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 
 class PackageUpdateResource extends Resource
@@ -33,12 +36,24 @@ class PackageUpdateResource extends Resource
         return $form
             ->columns(1)
             ->schema([
-                TitleWithSlugInput::make(
-                    fieldTitle: 'title',
-                    fieldSlug: 'slug',
-                    urlPath: '/open-source/updates/',
-                    titleRules: ['required', 'max:255'],
-                ),
+                TextInput::make('title')
+                    ->required()
+                    ->maxLength(255)
+                    ->live()
+                    ->afterStateUpdated(function (Get $get, Set $set, ?string $operation, ?string $old, ?string $state, ?PackageUpdate $model) {
+                        if ($operation === 'edit' && $model?->is_published) {
+                            return;
+                        }
+
+                        if (($get('slug') ?? '') !== Str::slug($old ?? '')) {
+                            return;
+                        }
+
+                        $set('slug', Str::slug($state ?? ''));
+                    }),
+                TextInput::make('slug')
+                    ->required()
+                    ->unique(PackageUpdate::class, 'slug', fn ($record) => $record),
                 Select::make('package_id')
                     ->relationship('package', 'display_name')
                     ->required(),

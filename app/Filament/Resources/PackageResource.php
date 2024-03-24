@@ -8,11 +8,12 @@ use BabDev\Filament\Resources\PackageResource\Pages\ListPackages;
 use BabDev\Filament\Resources\PackageResource\RelationManagers\VersionsRelationManager;
 use BabDev\Models\Package;
 use BabDev\PackageType;
-use Camya\Filament\Forms\Components\TitleWithSlugInput;
 use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Forms\Get;
+use Filament\Forms\Set;
 use Filament\Resources\Resource;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Actions\DeleteBulkAction;
@@ -21,6 +22,7 @@ use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class PackageResource extends Resource
 {
@@ -37,22 +39,36 @@ class PackageResource extends Resource
         return $form
             ->columns(1)
             ->schema([
-                TitleWithSlugInput::make(
-                    fieldTitle: 'name',
-                    fieldSlug: 'slug',
-                    urlPath: '/open-source/packages/',
-                ),
+                TextInput::make('name')
+                    ->required()
+                    ->live()
+                    ->afterStateUpdated(function (Get $get, Set $set, ?string $operation, ?string $old, ?string $state) {
+                        if ($operation === 'edit') {
+                            return;
+                        }
+
+                        if (($get('slug') ?? '') !== Str::slug($old ?? '')) {
+                            return;
+                        }
+
+                        $set('slug', Str::slug($state ?? ''));
+                    }),
+                TextInput::make('slug')
+                    ->required()
+                    ->unique(Package::class, 'slug', fn ($record) => $record),
                 TextInput::make('display_name'),
                 TextInput::make('packagist_name'),
                 Checkbox::make('has_documentation'),
-                Select::make('package_type')->required()->options([
-                    PackageType::JOOMLA_EXTENSION->value => PackageType::JOOMLA_EXTENSION->label(),
-                    PackageType::LARAVEL_PACKAGE->value => PackageType::LARAVEL_PACKAGE->label(),
-                    PackageType::PHP_PACKAGE->value => PackageType::PHP_PACKAGE->label(),
-                    PackageType::PHPSPEC_EXTENSION->value => PackageType::PHPSPEC_EXTENSION->label(),
-                    PackageType::SYLIUS_PLUGIN->value => PackageType::SYLIUS_PLUGIN->label(),
-                    PackageType::SYMFONY_BUNDLE->value => PackageType::SYMFONY_BUNDLE->label(),
-                ]),
+                Select::make('package_type')
+                    ->required()
+                    ->options([
+                        PackageType::JOOMLA_EXTENSION->value => PackageType::JOOMLA_EXTENSION->label(),
+                        PackageType::LARAVEL_PACKAGE->value => PackageType::LARAVEL_PACKAGE->label(),
+                        PackageType::PHP_PACKAGE->value => PackageType::PHP_PACKAGE->label(),
+                        PackageType::PHPSPEC_EXTENSION->value => PackageType::PHPSPEC_EXTENSION->label(),
+                        PackageType::SYLIUS_PLUGIN->value => PackageType::SYLIUS_PLUGIN->label(),
+                        PackageType::SYMFONY_BUNDLE->value => PackageType::SYMFONY_BUNDLE->label(),
+                    ]),
                 Checkbox::make('supported'),
                 Checkbox::make('visible'),
                 Checkbox::make('is_packagist'),
