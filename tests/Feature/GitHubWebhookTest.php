@@ -12,10 +12,7 @@ final class GitHubWebhookTest extends TestCase
 {
     public function test_an_app_webhook_for_an_unsupported_repository_results_in_a_400_response(): void
     {
-        /** @var Repository $config */
-        $config = $this->app->make('config');
-
-        $config->set('services.github.apps', []);
+        config()->set('services.github.apps', []);
 
         $this->postJson('/webhooks/github/app', ['repository' => ['full_name' => 'BabDev/unsupported']])
             ->assertBadRequest();
@@ -23,10 +20,7 @@ final class GitHubWebhookTest extends TestCase
 
     public function test_an_app_webhook_for_a_supported_repository_with_a_configured_secret_and_no_signature_header_results_in_a_403_response(): void
     {
-        /** @var Repository $config */
-        $config = $this->app->make('config');
-
-        $config->set(
+        config()->set(
             'services.github.apps',
             [
                 'BabDev/test-repo' => [
@@ -46,10 +40,7 @@ final class GitHubWebhookTest extends TestCase
     {
         $secret = 'my-secret-value';
 
-        /** @var Repository $config */
-        $config = $this->app->make('config');
-
-        $config->set(
+        config()->set(
             'services.github.apps',
             [
                 'BabDev/test-repo' => [
@@ -77,10 +68,7 @@ final class GitHubWebhookTest extends TestCase
 
         $secret = 'my-secret-value';
 
-        /** @var Repository $config */
-        $config = $this->app->make('config');
-
-        $config->set(
+        config()->set(
             'services.github.apps',
             [
                 'BabDev/test-repo' => [
@@ -108,10 +96,7 @@ final class GitHubWebhookTest extends TestCase
 
         $secret = 'my-secret-value';
 
-        /** @var Repository $config */
-        $config = $this->app->make('config');
-
-        $config->set(
+        config()->set(
             'services.github.apps',
             [
                 'BabDev/test-repo' => [

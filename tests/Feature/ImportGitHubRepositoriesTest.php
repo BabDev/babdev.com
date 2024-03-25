@@ -43,7 +43,7 @@ final class ImportGitHubRepositoriesTest extends TestCase
         });
 
         $this->artisan('import:github-repositories')
-            ->assertExitCode(0);
+            ->assertSuccessful();
 
         $this->assertDatabaseCount('packages', 2);
     }

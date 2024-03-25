@@ -14,15 +14,13 @@ final class ImportGitHubSponsorsTest extends TestCase
 
     public function test_the_sponsors_tiers_are_imported(): void
     {
-        /** @var SponsorshipTier $tier1 */
-        $tier1 = SponsorshipTier::query()->create([
+        SponsorshipTier::query()->create([
             'node_id' => 'node-1',
             'one_time' => false,
             'price' => 2500,
         ]);
 
-        /** @var SponsorshipTier $tier2 */
-        $tier2 = SponsorshipTier::query()->create([
+        SponsorshipTier::query()->create([
             'node_id' => 'node-2',
             'one_time' => true,
             'price' => 2500,
@@ -74,7 +72,7 @@ final class ImportGitHubSponsorsTest extends TestCase
         });
 
         $this->artisan('import:github-sponsors')
-            ->assertExitCode(0);
+            ->assertSuccessful();
 
         $this->assertDatabaseCount('sponsors', 2);
     }

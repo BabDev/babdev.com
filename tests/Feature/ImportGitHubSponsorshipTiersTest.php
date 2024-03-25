@@ -57,7 +57,7 @@ final class ImportGitHubSponsorshipTiersTest extends TestCase
         });
 
         $this->artisan('import:github-sponsorship-tiers')
-            ->assertExitCode(0);
+            ->assertSuccessful();
 
         $this->assertDatabaseCount('sponsorship_tiers', 3);
     }

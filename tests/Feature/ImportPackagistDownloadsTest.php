@@ -27,6 +27,6 @@ final class ImportPackagistDownloadsTest extends TestCase
         });
 
         $this->artisan('import:packagist-downloads')
-            ->assertExitCode(0);
+            ->assertSuccessful();
     }
 }
