@@ -40,7 +40,7 @@ class PackageUpdateResource extends Resource
                     ->required()
                     ->maxLength(255)
                     ->live()
-                    ->afterStateUpdated(function (Get $get, Set $set, ?string $operation, ?string $old, ?string $state, ?PackageUpdate $model) {
+                    ->afterStateUpdated(function (Get $get, Set $set, ?string $operation, ?string $old, ?string $state, ?PackageUpdate $model): void {
                         if ($operation === 'edit' && $model?->is_published) {
                             return;
                         }

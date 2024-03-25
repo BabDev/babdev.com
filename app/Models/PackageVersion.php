@@ -52,14 +52,6 @@ class PackageVersion extends Model
         'end_of_support',
     ];
 
-    /**
-     * @var array<string, class-string|string>
-     */
-    protected $casts = [
-        'released' => 'date',
-        'end_of_support' => 'date',
-    ];
-
     public function getRouteKeyName(): string
     {
         return 'version';
@@ -102,5 +94,16 @@ class PackageVersion extends Model
         return new Attribute(
             get: fn () => $this->end_of_support instanceof Carbon && $this->end_of_support->isBefore(now()),
         );
+    }
+
+    /**
+     * @return array<string, class-string|string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'released' => 'date',
+            'end_of_support' => 'date',
+        ];
     }
 }

@@ -46,17 +46,20 @@ class Sponsor extends Model
     ];
 
     /**
-     * @var array<string, class-string|string>
-     */
-    protected $casts = [
-        'is_public' => 'boolean',
-    ];
-
-    /**
      * @return BelongsTo<SponsorshipTier, self>
      */
     public function sponsorship_tier(): BelongsTo
     {
         return $this->belongsTo(SponsorshipTier::class);
+    }
+
+    /**
+     * @return array<string, class-string|string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'is_public' => 'boolean',
+        ];
     }
 }

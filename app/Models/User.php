@@ -57,15 +57,18 @@ class User extends Authenticatable implements FilamentUser
         'remember_token',
     ];
 
-    /**
-     * @var array<string, class-string|string>
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
-
     public function canAccessPanel(Panel $panel): bool
     {
         return $this->email === 'michael.babker@gmail.com';
+    }
+
+    /**
+     * @return array<string, class-string|string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'email_verified_at' => 'datetime',
+        ];
     }
 }

@@ -4,7 +4,6 @@ namespace Tests\Feature;
 
 use BabDev\GitHub\Exceptions\BadRequestException;
 use BabDev\GitHub\RequestHandler;
-use Illuminate\Contracts\Config\Repository;
 use Mockery\MockInterface;
 use Tests\TestCase;
 

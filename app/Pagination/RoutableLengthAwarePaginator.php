@@ -43,7 +43,7 @@ class RoutableLengthAwarePaginator extends LengthAwarePaginator
 
     public static function resolveCurrentRoute(): ?Route
     {
-        if (static::$currentRouteResolver === null) {
+        if (!static::$currentRouteResolver instanceof \Closure) {
             return null;
         }
 
@@ -52,7 +52,7 @@ class RoutableLengthAwarePaginator extends LengthAwarePaginator
 
     public static function shouldUsePaginator(): bool
     {
-        if (static::$paginatorChecker === null) {
+        if (!static::$paginatorChecker instanceof \Closure) {
             return false;
         }
 

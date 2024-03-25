@@ -42,7 +42,7 @@ class PackageResource extends Resource
                 TextInput::make('name')
                     ->required()
                     ->live()
-                    ->afterStateUpdated(function (Get $get, Set $set, ?string $operation, ?string $old, ?string $state) {
+                    ->afterStateUpdated(function (Get $get, Set $set, ?string $operation, ?string $old, ?string $state): void {
                         if ($operation === 'edit') {
                             return;
                         }

@@ -91,20 +91,6 @@ class Package extends Model
     ];
 
     /**
-     * @var array<string, class-string|string>
-     */
-    protected $casts = [
-        'topics' => 'array',
-        'has_documentation' => 'boolean',
-        'package_type' => PackageType::class,
-        'stars' => 'integer',
-        'downloads' => 'integer',
-        'supported' => 'boolean',
-        'visible' => 'boolean',
-        'is_packagist' => 'boolean',
-    ];
-
-    /**
      * @var array<string, mixed>
      */
     protected $attributes = [
@@ -187,5 +173,22 @@ class Package extends Model
         }
 
         return $packageVersion;
+    }
+
+    /**
+     * @return array<string, class-string|string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'topics' => 'array',
+            'has_documentation' => 'boolean',
+            'package_type' => PackageType::class,
+            'stars' => 'integer',
+            'downloads' => 'integer',
+            'supported' => 'boolean',
+            'visible' => 'boolean',
+            'is_packagist' => 'boolean',
+        ];
     }
 }

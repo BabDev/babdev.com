@@ -236,22 +236,22 @@ parameters:
 			path: app/helpers.php
 
 		-
-			message: "#^Cannot call method assertExitCode\\(\\) on Illuminate\\\\Testing\\\\PendingCommand\\|int\\.$#"
+			message: "#^Cannot call method assertSuccessful\\(\\) on Illuminate\\\\Testing\\\\PendingCommand\\|int\\.$#"
 			count: 1
 			path: tests/Feature/ImportGitHubRepositoriesTest.php
 
 		-
-			message: "#^Cannot call method assertExitCode\\(\\) on Illuminate\\\\Testing\\\\PendingCommand\\|int\\.$#"
+			message: "#^Cannot call method assertSuccessful\\(\\) on Illuminate\\\\Testing\\\\PendingCommand\\|int\\.$#"
 			count: 1
 			path: tests/Feature/ImportGitHubSponsorsTest.php
 
 		-
-			message: "#^Cannot call method assertExitCode\\(\\) on Illuminate\\\\Testing\\\\PendingCommand\\|int\\.$#"
+			message: "#^Cannot call method assertSuccessful\\(\\) on Illuminate\\\\Testing\\\\PendingCommand\\|int\\.$#"
 			count: 1
 			path: tests/Feature/ImportGitHubSponsorshipTiersTest.php
 
 		-
-			message: "#^Cannot call method assertExitCode\\(\\) on Illuminate\\\\Testing\\\\PendingCommand\\|int\\.$#"
+			message: "#^Cannot call method assertSuccessful\\(\\) on Illuminate\\\\Testing\\\\PendingCommand\\|int\\.$#"
 			count: 1
 			path: tests/Feature/ImportPackagistDownloadsTest.php
 

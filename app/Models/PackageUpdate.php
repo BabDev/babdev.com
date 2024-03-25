@@ -60,14 +60,6 @@ class PackageUpdate extends Model implements Feedable
     ];
 
     /**
-     * @var array<string, class-string|string>
-     */
-    protected $casts = [
-        'data' => 'array',
-        'published_at' => 'datetime',
-    ];
-
-    /**
      * @return Collection<array-key, self>
      */
     public static function getFeedItems(): Collection
@@ -117,5 +109,16 @@ class PackageUpdate extends Model implements Feedable
         return new Attribute(
             get: fn () => $this->published_at->isBefore(now()),
         );
+    }
+
+    /**
+     * @return array<string, class-string|string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'data' => 'array',
+            'published_at' => 'datetime',
+        ];
     }
 }

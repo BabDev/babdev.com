@@ -36,10 +36,13 @@ class SponsorshipTier extends Model
     ];
 
     /**
-     * @var array<string, class-string|string>
+     * @return array<string, class-string|string>
      */
-    protected $casts = [
-        'one_time' => 'boolean',
-        'price' => 'int',
-    ];
+    protected function casts(): array
+    {
+        return [
+            'one_time' => 'boolean',
+            'price' => 'int',
+        ];
+    }
 }
