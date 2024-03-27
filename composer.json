@@ -15,7 +15,7 @@
         "composer-runtime-api": "^2.0",
         "babdev/laravel-breadcrumbs": "^2.0@dev",
         "blade-ui-kit/blade-ui-kit": "dev-l11-compatibility",
-        "filament/filament": "3.2.60",
+        "filament/filament": "3.2.61",
         "guzzlehttp/guzzle": "7.8.1",
         "http-interop/http-factory-guzzle": "1.2.0",
         "knplabs/github-api": "3.14.1",
@@ -30,7 +30,7 @@
         "spatie/packagist-api": "2.1.0"
     },
     "require-dev": {
-        "driftingly/rector-laravel": "1.0.0",
+        "driftingly/rector-laravel": "1.1.0",
         "fakerphp/faker": "1.23.1",
         "larastan/larastan": "2.9.2",
         "laravel/telescope": "5.0.1",
