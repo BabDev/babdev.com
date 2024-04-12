@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f0558e96107225376f0ebf52cae2c4b6",
+    "content-hash": "19329c8d4cc9c46cc40757ee85f8538c",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -1516,7 +1516,7 @@
         },
         {
             "name": "filament/actions",
-            "version": "v3.2.65",
+            "version": "v3.2.66",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/actions.git",
@@ -1569,16 +1569,16 @@
         },
         {
             "name": "filament/filament",
-            "version": "v3.2.65",
+            "version": "v3.2.66",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/panels.git",
-                "reference": "669ce35aef3a577af7f5d27b8acc7e4622c45f33"
+                "reference": "69c4c60fbc9c22708dde1aee017c4cc2ff99e0a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/panels/zipball/669ce35aef3a577af7f5d27b8acc7e4622c45f33",
-                "reference": "669ce35aef3a577af7f5d27b8acc7e4622c45f33",
+                "url": "https://api.github.com/repos/filamentphp/panels/zipball/69c4c60fbc9c22708dde1aee017c4cc2ff99e0a1",
+                "reference": "69c4c60fbc9c22708dde1aee017c4cc2ff99e0a1",
                 "shasum": ""
             },
             "require": {
@@ -1630,11 +1630,11 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2024-04-11T21:38:39+00:00"
+            "time": "2024-04-12T14:57:11+00:00"
         },
         {
             "name": "filament/forms",
-            "version": "v3.2.65",
+            "version": "v3.2.66",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/forms.git",
@@ -1690,7 +1690,7 @@
         },
         {
             "name": "filament/infolists",
-            "version": "v3.2.65",
+            "version": "v3.2.66",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/infolists.git",
@@ -1741,7 +1741,7 @@
         },
         {
             "name": "filament/notifications",
-            "version": "v3.2.65",
+            "version": "v3.2.66",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/notifications.git",
@@ -1793,7 +1793,7 @@
         },
         {
             "name": "filament/support",
-            "version": "v3.2.65",
+            "version": "v3.2.66",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/support.git",
@@ -1851,16 +1851,16 @@
         },
         {
             "name": "filament/tables",
-            "version": "v3.2.65",
+            "version": "v3.2.66",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/tables.git",
-                "reference": "1cdf9ee9ba35cad6e8e41725896e26e397549440"
+                "reference": "0f3d2b3525a7ffd6cf71f26fcc02d33c4d6c7793"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/tables/zipball/1cdf9ee9ba35cad6e8e41725896e26e397549440",
-                "reference": "1cdf9ee9ba35cad6e8e41725896e26e397549440",
+                "url": "https://api.github.com/repos/filamentphp/tables/zipball/0f3d2b3525a7ffd6cf71f26fcc02d33c4d6c7793",
+                "reference": "0f3d2b3525a7ffd6cf71f26fcc02d33c4d6c7793",
                 "shasum": ""
             },
             "require": {
@@ -1900,11 +1900,11 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2024-04-11T07:41:14+00:00"
+            "time": "2024-04-12T14:57:32+00:00"
         },
         {
             "name": "filament/widgets",
-            "version": "v3.2.65",
+            "version": "v3.2.66",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/widgets.git",
@@ -3022,16 +3022,16 @@
         },
         {
             "name": "lcobucci/jwt",
-            "version": "5.2.0",
+            "version": "5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lcobucci/jwt.git",
-                "reference": "0ba88aed12c04bd2ed9924f500673f32b67a6211"
+                "reference": "08071d8d2c7f4b00222cc4b1fb6aa46990a80f83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lcobucci/jwt/zipball/0ba88aed12c04bd2ed9924f500673f32b67a6211",
-                "reference": "0ba88aed12c04bd2ed9924f500673f32b67a6211",
+                "url": "https://api.github.com/repos/lcobucci/jwt/zipball/08071d8d2c7f4b00222cc4b1fb6aa46990a80f83",
+                "reference": "08071d8d2c7f4b00222cc4b1fb6aa46990a80f83",
                 "shasum": ""
             },
             "require": {
@@ -3079,7 +3079,7 @@
             ],
             "support": {
                 "issues": "https://github.com/lcobucci/jwt/issues",
-                "source": "https://github.com/lcobucci/jwt/tree/5.2.0"
+                "source": "https://github.com/lcobucci/jwt/tree/5.3.0"
             },
             "funding": [
                 {
@@ -3091,7 +3091,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2023-11-20T21:17:42+00:00"
+            "time": "2024-04-11T23:07:54+00:00"
         },
         {
             "name": "league/commonmark",
