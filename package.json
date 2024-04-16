@@ -25,15 +25,15 @@
     "devDependencies": {
         "@fullhuman/postcss-purgecss": "6.0.0",
         "autoprefixer": "10.4.19",
-        "core-js": "3.36.1",
+        "core-js": "3.37.0",
         "laravel-vite-plugin": "1.0.2",
         "path": "0.12.7",
         "postcss": "8.4.38",
         "postcss-import": "16.1.0",
         "resolve-url-loader": "5.0.0",
         "sass": "1.75.0",
-        "sass-loader": "14.2.0",
-        "vite": "5.2.8",
+        "sass-loader": "14.2.1",
+        "vite": "5.2.9",
         "vite-plugin-manifest-sri": "0.2.0"
     }
 }
