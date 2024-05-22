@@ -5848,16 +5848,16 @@
         },
         {
             "name": "spatie/browsershot",
-            "version": "4.0.2",
+            "version": "4.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/browsershot.git",
-                "reference": "b764ca1683facdc1833ea9ee7d735001606fce2b"
+                "reference": "73313ccd1878f49bd237a97d87522dcb4a55b6b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/browsershot/zipball/b764ca1683facdc1833ea9ee7d735001606fce2b",
-                "reference": "b764ca1683facdc1833ea9ee7d735001606fce2b",
+                "url": "https://api.github.com/repos/spatie/browsershot/zipball/73313ccd1878f49bd237a97d87522dcb4a55b6b6",
+                "reference": "73313ccd1878f49bd237a97d87522dcb4a55b6b6",
                 "shasum": ""
             },
             "require": {
@@ -5903,7 +5903,7 @@
                 "webpage"
             ],
             "support": {
-                "source": "https://github.com/spatie/browsershot/tree/4.0.2"
+                "source": "https://github.com/spatie/browsershot/tree/4.0.3"
             },
             "funding": [
                 {
@@ -5911,7 +5911,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-04-01T08:19:46+00:00"
+            "time": "2024-05-21T12:27:45+00:00"
         },
         {
             "name": "spatie/color",
