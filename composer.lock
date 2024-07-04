@@ -3738,16 +3738,16 @@
         },
         {
             "name": "livewire/livewire",
-            "version": "v3.5.1",
+            "version": "v3.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/livewire.git",
-                "reference": "da044261bb5c5449397f18fda3409f14acf47c0a"
+                "reference": "636725c1f87bc7844dd80277488268db27eec1aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/da044261bb5c5449397f18fda3409f14acf47c0a",
-                "reference": "da044261bb5c5449397f18fda3409f14acf47c0a",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/636725c1f87bc7844dd80277488268db27eec1aa",
+                "reference": "636725c1f87bc7844dd80277488268db27eec1aa",
                 "shasum": ""
             },
             "require": {
@@ -3802,7 +3802,7 @@
             "description": "A front-end framework for Laravel.",
             "support": {
                 "issues": "https://github.com/livewire/livewire/issues",
-                "source": "https://github.com/livewire/livewire/tree/v3.5.1"
+                "source": "https://github.com/livewire/livewire/tree/v3.5.2"
             },
             "funding": [
                 {
@@ -3810,7 +3810,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-06-18T11:10:42+00:00"
+            "time": "2024-07-03T17:22:45+00:00"
         },
         {
             "name": "masterminds/html5",
@@ -5829,16 +5829,16 @@
         },
         {
             "name": "spatie/browsershot",
-            "version": "4.1.0",
+            "version": "4.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/browsershot.git",
-                "reference": "1fbc5955a24ec9b4dbc2620f78c03d5c043856d2"
+                "reference": "45172071d7fd404edec262cd67172f5d23fafdab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/browsershot/zipball/1fbc5955a24ec9b4dbc2620f78c03d5c043856d2",
-                "reference": "1fbc5955a24ec9b4dbc2620f78c03d5c043856d2",
+                "url": "https://api.github.com/repos/spatie/browsershot/zipball/45172071d7fd404edec262cd67172f5d23fafdab",
+                "reference": "45172071d7fd404edec262cd67172f5d23fafdab",
                 "shasum": ""
             },
             "require": {
@@ -5884,7 +5884,7 @@
                 "webpage"
             ],
             "support": {
-                "source": "https://github.com/spatie/browsershot/tree/4.1.0"
+                "source": "https://github.com/spatie/browsershot/tree/4.1.1"
             },
             "funding": [
                 {
@@ -5892,7 +5892,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-06-12T07:42:17+00:00"
+            "time": "2024-07-03T08:45:08+00:00"
         },
         {
             "name": "spatie/color",
