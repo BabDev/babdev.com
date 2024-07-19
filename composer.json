@@ -10,7 +10,7 @@
         "babdev/laravel-breadcrumbs": "^2.0@dev",
         "blade-ui-kit/blade-ui-kit": "0.6.2",
         "filament/filament": "3.2.95",
-        "guzzlehttp/guzzle": "7.9.0",
+        "guzzlehttp/guzzle": "7.9.1",
         "http-interop/http-factory-guzzle": "1.2.0",
         "knplabs/github-api": "3.14.1",
         "laravel/framework": "11.16.0",
