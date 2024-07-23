@@ -4460,16 +4460,16 @@
         },
         {
             "name": "openspout/openspout",
-            "version": "v4.24.3",
+            "version": "v4.24.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openspout/openspout.git",
-                "reference": "27de0c4d4a5b97927ece3e4dcbb7b48cb12e8a34"
+                "reference": "e5f92c5c9e6cc44119918da66bb097a0ffc202b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openspout/openspout/zipball/27de0c4d4a5b97927ece3e4dcbb7b48cb12e8a34",
-                "reference": "27de0c4d4a5b97927ece3e4dcbb7b48cb12e8a34",
+                "url": "https://api.github.com/repos/openspout/openspout/zipball/e5f92c5c9e6cc44119918da66bb097a0ffc202b2",
+                "reference": "e5f92c5c9e6cc44119918da66bb097a0ffc202b2",
                 "shasum": ""
             },
             "require": {
@@ -4537,7 +4537,7 @@
             ],
             "support": {
                 "issues": "https://github.com/openspout/openspout/issues",
-                "source": "https://github.com/openspout/openspout/tree/v4.24.3"
+                "source": "https://github.com/openspout/openspout/tree/v4.24.4"
             },
             "funding": [
                 {
@@ -4549,7 +4549,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-07-12T12:32:17+00:00"
+            "time": "2024-07-22T09:30:54+00:00"
         },
         {
             "name": "php-http/cache-plugin",
@@ -11769,16 +11769,16 @@
         },
         {
             "name": "spatie/backtrace",
-            "version": "1.6.1",
+            "version": "1.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/backtrace.git",
-                "reference": "8373b9d51638292e3bfd736a9c19a654111b4a23"
+                "reference": "1a9a145b044677ae3424693f7b06479fc8c137a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/backtrace/zipball/8373b9d51638292e3bfd736a9c19a654111b4a23",
-                "reference": "8373b9d51638292e3bfd736a9c19a654111b4a23",
+                "url": "https://api.github.com/repos/spatie/backtrace/zipball/1a9a145b044677ae3424693f7b06479fc8c137a9",
+                "reference": "1a9a145b044677ae3424693f7b06479fc8c137a9",
                 "shasum": ""
             },
             "require": {
@@ -11816,7 +11816,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/backtrace/tree/1.6.1"
+                "source": "https://github.com/spatie/backtrace/tree/1.6.2"
             },
             "funding": [
                 {
@@ -11828,20 +11828,20 @@
                     "type": "other"
                 }
             ],
-            "time": "2024-04-24T13:22:11+00:00"
+            "time": "2024-07-22T08:21:24+00:00"
         },
         {
             "name": "spatie/error-solutions",
-            "version": "1.0.5",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/error-solutions.git",
-                "reference": "4bb6c734dc992b2db3e26df1ef021c75d2218b13"
+                "reference": "a014da18f2675ea15af0ba97f7e9aee59e13964f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/error-solutions/zipball/4bb6c734dc992b2db3e26df1ef021c75d2218b13",
-                "reference": "4bb6c734dc992b2db3e26df1ef021c75d2218b13",
+                "url": "https://api.github.com/repos/spatie/error-solutions/zipball/a014da18f2675ea15af0ba97f7e9aee59e13964f",
+                "reference": "a014da18f2675ea15af0ba97f7e9aee59e13964f",
                 "shasum": ""
             },
             "require": {
@@ -11894,7 +11894,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/error-solutions/issues",
-                "source": "https://github.com/spatie/error-solutions/tree/1.0.5"
+                "source": "https://github.com/spatie/error-solutions/tree/1.1.0"
             },
             "funding": [
                 {
@@ -11902,7 +11902,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-07-09T12:13:32+00:00"
+            "time": "2024-07-22T08:18:22+00:00"
         },
         {
             "name": "spatie/flare-client-php",
