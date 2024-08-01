@@ -5955,16 +5955,16 @@
         },
         {
             "name": "spatie/crawler",
-            "version": "8.2.1",
+            "version": "8.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/crawler.git",
-                "reference": "34e51dc5fa8120c0c46efa1879257cbd1da465be"
+                "reference": "c659f2fe4954249755990e42394a14d6d847a0a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/crawler/zipball/34e51dc5fa8120c0c46efa1879257cbd1da465be",
-                "reference": "34e51dc5fa8120c0c46efa1879257cbd1da465be",
+                "url": "https://api.github.com/repos/spatie/crawler/zipball/c659f2fe4954249755990e42394a14d6d847a0a7",
+                "reference": "c659f2fe4954249755990e42394a14d6d847a0a7",
                 "shasum": ""
             },
             "require": {
@@ -6007,7 +6007,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/crawler/issues",
-                "source": "https://github.com/spatie/crawler/tree/8.2.1"
+                "source": "https://github.com/spatie/crawler/tree/8.2.3"
             },
             "funding": [
                 {
@@ -6019,7 +6019,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-07-16T12:30:43+00:00"
+            "time": "2024-07-31T10:46:19+00:00"
         },
         {
             "name": "spatie/invade",
