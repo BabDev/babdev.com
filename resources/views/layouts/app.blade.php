@@ -50,9 +50,6 @@
                                     <a @class(['dropdown-item', 'active' => request()->routeIs('open-source.updates', 'open-source.updates.paginated', 'open-source.update')]) href="{{ route('open-source.updates') }}">Updates</a>
                                 </div>
                             </li>
-                            <li class="nav-item">
-                                <a @class(['nav-link', 'active' => request()->routeIs('sponsor')]) href="{{ route('sponsor') }}">Sponsor</a>
-                            </li>
                         </ul>
                     </nav>
                 </div>
