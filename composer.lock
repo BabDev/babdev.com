@@ -2364,16 +2364,16 @@
         },
         {
             "name": "kirschbaum-development/eloquent-power-joins",
-            "version": "3.5.7",
+            "version": "3.5.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirschbaum-development/eloquent-power-joins.git",
-                "reference": "3f57b398117d97bae4dfd5c37ea0f8f48f296c97"
+                "reference": "397ef08f15ceff48111fd7f57d9f1fd41bf1a453"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirschbaum-development/eloquent-power-joins/zipball/3f57b398117d97bae4dfd5c37ea0f8f48f296c97",
-                "reference": "3f57b398117d97bae4dfd5c37ea0f8f48f296c97",
+                "url": "https://api.github.com/repos/kirschbaum-development/eloquent-power-joins/zipball/397ef08f15ceff48111fd7f57d9f1fd41bf1a453",
+                "reference": "397ef08f15ceff48111fd7f57d9f1fd41bf1a453",
                 "shasum": ""
             },
             "require": {
@@ -2420,9 +2420,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirschbaum-development/eloquent-power-joins/issues",
-                "source": "https://github.com/kirschbaum-development/eloquent-power-joins/tree/3.5.7"
+                "source": "https://github.com/kirschbaum-development/eloquent-power-joins/tree/3.5.8"
             },
-            "time": "2024-06-26T13:09:29+00:00"
+            "time": "2024-09-10T10:28:05+00:00"
         },
         {
             "name": "knplabs/github-api",
