@@ -9,11 +9,11 @@
         "composer-runtime-api": "^2.0",
         "babdev/laravel-breadcrumbs": "^2.0@dev",
         "blade-ui-kit/blade-ui-kit": "0.6.2",
-        "filament/filament": "3.2.111",
+        "filament/filament": "3.2.112",
         "guzzlehttp/guzzle": "7.9.2",
         "http-interop/http-factory-guzzle": "1.2.0",
         "knplabs/github-api": "3.14.1",
-        "laravel/framework": "11.23.2",
+        "laravel/framework": "11.23.4",
         "lcobucci/jwt": "5.3.0",
         "league/commonmark": "2.5.3",
         "mohamedsabil83/filament-forms-tinyeditor": "2.3.2",
@@ -24,7 +24,7 @@
         "spatie/packagist-api": "2.1.0"
     },
     "require-dev": {
-        "driftingly/rector-laravel": "1.2.3",
+        "driftingly/rector-laravel": "1.2.4",
         "fakerphp/faker": "1.23.1",
         "larastan/larastan": "2.9.8",
         "laravel/telescope": "5.2.2",
