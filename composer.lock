@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "75c4a96b82fe213146768c7d04685751",
+    "content-hash": "e06605c3ad0299cf14199a239253e752",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -3701,16 +3701,16 @@
         },
         {
             "name": "mohamedsabil83/filament-forms-tinyeditor",
-            "version": "v2.3.2",
+            "version": "v2.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mohamedsabil83/filament-forms-tinyeditor.git",
-                "reference": "659fe09fb11e5c0913900a32bd16cef01715f56e"
+                "reference": "e2d85ba1a7360a8d633f9546bf60434b57f082fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mohamedsabil83/filament-forms-tinyeditor/zipball/659fe09fb11e5c0913900a32bd16cef01715f56e",
-                "reference": "659fe09fb11e5c0913900a32bd16cef01715f56e",
+                "url": "https://api.github.com/repos/mohamedsabil83/filament-forms-tinyeditor/zipball/e2d85ba1a7360a8d633f9546bf60434b57f082fe",
+                "reference": "e2d85ba1a7360a8d633f9546bf60434b57f082fe",
                 "shasum": ""
             },
             "require": {
@@ -3767,7 +3767,7 @@
             ],
             "support": {
                 "issues": "https://github.com/mohamedsabil83/filament-forms-tinyeditor/issues",
-                "source": "https://github.com/mohamedsabil83/filament-forms-tinyeditor/tree/v2.3.2"
+                "source": "https://github.com/mohamedsabil83/filament-forms-tinyeditor/tree/v2.3.3"
             },
             "funding": [
                 {
@@ -3779,7 +3779,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-03-28T11:10:35+00:00"
+            "time": "2024-10-13T12:50:56+00:00"
         },
         {
             "name": "monolog/monolog",
