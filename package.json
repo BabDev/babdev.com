@@ -28,7 +28,7 @@
         "core-js": "3.39.0",
         "laravel-vite-plugin": "1.0.5",
         "path": "0.12.7",
-        "postcss": "8.4.47",
+        "postcss": "8.4.48",
         "postcss-import": "16.1.0",
         "resolve-url-loader": "5.0.0",
         "sass": "1.80.6",
