@@ -14,42 +14,43 @@ use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
 
 /**
- * @property int         $id
- * @property int         $package_id
- * @property string      $title
- * @property string      $slug
- * @property string|null $intro
- * @property string|null $content
- * @property Carbon      $published_at
- * @property array|null  $data
- * @property Carbon|null $created_at
- * @property Carbon|null $updated_at
+ * @property int                       $id
+ * @property int                       $package_id
+ * @property string                    $title
+ * @property string                    $slug
+ * @property string|null               $intro
+ * @property string|null               $content
+ * @property Carbon                    $published_at
+ * @property array<string, mixed>|null $data
+ * @property Carbon|null               $created_at
+ * @property Carbon|null               $updated_at
  *
  * @property-read bool    $is_published
  * @property-read Package $package
  *
- * @method static PackageUpdateFactory  factory(...$parameters)
- * @method static Builder|PackageUpdate published()
- * @method static Builder|PackageUpdate newModelQuery()
- * @method static Builder|PackageUpdate newQuery()
- * @method static Builder|PackageUpdate query()
- * @method static Builder|PackageUpdate whereContent($value)
- * @method static Builder|PackageUpdate whereCreatedAt($value)
- * @method static Builder|PackageUpdate whereData($value)
- * @method static Builder|PackageUpdate whereId($value)
- * @method static Builder|PackageUpdate whereIntro($value)
- * @method static Builder|PackageUpdate wherePackageId($value)
- * @method static Builder|PackageUpdate wherePublishedAt($value)
- * @method static Builder|PackageUpdate whereSlug($value)
- * @method static Builder|PackageUpdate whereTitle($value)
- * @method static Builder|PackageUpdate whereUpdatedAt($value)
+ * @method static PackageUpdateFactory<PackageUpdate> factory(...$parameters)
+ * @method static Builder|PackageUpdate               published()
+ * @method static Builder|PackageUpdate               newModelQuery()
+ * @method static Builder|PackageUpdate               newQuery()
+ * @method static Builder|PackageUpdate               query()
+ * @method static Builder|PackageUpdate               whereContent($value)
+ * @method static Builder|PackageUpdate               whereCreatedAt($value)
+ * @method static Builder|PackageUpdate               whereData($value)
+ * @method static Builder|PackageUpdate               whereId($value)
+ * @method static Builder|PackageUpdate               whereIntro($value)
+ * @method static Builder|PackageUpdate               wherePackageId($value)
+ * @method static Builder|PackageUpdate               wherePublishedAt($value)
+ * @method static Builder|PackageUpdate               whereSlug($value)
+ * @method static Builder|PackageUpdate               whereTitle($value)
+ * @method static Builder|PackageUpdate               whereUpdatedAt($value)
  */
 class PackageUpdate extends Model implements Feedable
 {
+    /** @use HasFactory<PackageUpdateFactory<PackageUpdate>> */
     use HasFactory;
 
     /**
-     * @var array<int, string>
+     * @var list<string>
      */
     protected $fillable = [
         'title',
@@ -94,7 +95,7 @@ class PackageUpdate extends Model implements Feedable
     }
 
     /**
-     * @return BelongsTo<Package, self>
+     * @return BelongsTo<Package, $this>
      */
     public function package(): BelongsTo
     {

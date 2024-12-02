@@ -24,6 +24,7 @@ class Markdown extends BaseMarkdown
 {
     protected function converter(): MarkdownConverterInterface
     {
+        /** @var array<string, mixed> $options */
         $options = array_merge($this->options, [
             'html_input' => $this->htmlInput,
             'allow_unsafe_links' => $this->allowUnsafeLinks,

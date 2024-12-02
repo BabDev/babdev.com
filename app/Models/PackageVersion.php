@@ -25,25 +25,26 @@ use Illuminate\Support\Carbon;
  * @property-read Package $package
  * @property-read bool    $support_ended
  *
- * @method static PackageVersionFactory  factory(...$parameters)
- * @method static Builder|PackageVersion newestReleasedVersionForPackage()
- * @method static Builder|PackageVersion newModelQuery()
- * @method static Builder|PackageVersion newQuery()
- * @method static Builder|PackageVersion query()
- * @method static Builder|PackageVersion whereCreatedAt($value)
- * @method static Builder|PackageVersion whereEndOfSupport($value)
- * @method static Builder|PackageVersion whereId($value)
- * @method static Builder|PackageVersion wherePackageId($value)
- * @method static Builder|PackageVersion whereReleased($value)
- * @method static Builder|PackageVersion whereUpdatedAt($value)
- * @method static Builder|PackageVersion whereVersion($value)
+ * @method static PackageVersionFactory<PackageVersion> factory(...$parameters)
+ * @method static Builder|PackageVersion                newestReleasedVersionForPackage()
+ * @method static Builder|PackageVersion                newModelQuery()
+ * @method static Builder|PackageVersion                newQuery()
+ * @method static Builder|PackageVersion                query()
+ * @method static Builder|PackageVersion                whereCreatedAt($value)
+ * @method static Builder|PackageVersion                whereEndOfSupport($value)
+ * @method static Builder|PackageVersion                whereId($value)
+ * @method static Builder|PackageVersion                wherePackageId($value)
+ * @method static Builder|PackageVersion                whereReleased($value)
+ * @method static Builder|PackageVersion                whereUpdatedAt($value)
+ * @method static Builder|PackageVersion                whereVersion($value)
  */
 class PackageVersion extends Model
 {
+    /** @use HasFactory<PackageVersionFactory<PackageVersion>> */
     use HasFactory;
 
     /**
-     * @var array<int, string>
+     * @var list<string>
      */
     protected $fillable = [
         'version',
@@ -69,7 +70,7 @@ class PackageVersion extends Model
     }
 
     /**
-     * @return BelongsTo<Package, self>
+     * @return BelongsTo<Package, $this>
      */
     public function package(): BelongsTo
     {
@@ -92,7 +93,7 @@ class PackageVersion extends Model
     protected function supportEnded(): Attribute
     {
         return new Attribute(
-            get: fn () => $this->end_of_support instanceof Carbon && $this->end_of_support->isBefore(now()),
+            get: fn () => $this->end_of_support?->isBefore(now()) ?? false,
         );
     }
 

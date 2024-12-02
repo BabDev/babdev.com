@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use Rector\Config\RectorConfig;
 use Rector\Php55\Rector\String_\StringClassNameToClassConstantRector;
-use Rector\Php74\Rector\LNumber\AddLiteralSeparatorToNumberRector;
 use Rector\Php80\Rector\Switch_\ChangeSwitchToMatchRector;
 use Rector\PHPUnit\Set\PHPUnitSetList;
 use Rector\PostRector\Rector\NameImportingPostRector;
@@ -26,7 +25,6 @@ return static function (RectorConfig $rectorConfig): void {
         /*
          * Skip selected rules
          */
-        AddLiteralSeparatorToNumberRector::class,
 
         /*
          * Skip rules for select files

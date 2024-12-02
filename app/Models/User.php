@@ -21,8 +21,8 @@ use Illuminate\Notifications\Notifiable;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  *
- * @property-read DatabaseNotificationCollection<DatabaseNotification> $notifications
- * @property-read int|null                                             $notifications_count
+ * @property-read DatabaseNotificationCollection<array-key, DatabaseNotification> $notifications
+ * @property-read int|null                                                        $notifications_count
  *
  * @method static Builder|User newModelQuery()
  * @method static Builder|User newQuery()
@@ -41,7 +41,7 @@ class User extends Authenticatable implements FilamentUser
     use Notifiable;
 
     /**
-     * @var array<int, string>
+     * @var list<string>
      */
     protected $fillable = [
         'name',
@@ -50,7 +50,7 @@ class User extends Authenticatable implements FilamentUser
     ];
 
     /**
-     * @var array<int, string>
+     * @var list<string>
      */
     protected $hidden = [
         'password',

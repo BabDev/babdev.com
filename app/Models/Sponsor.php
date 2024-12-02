@@ -35,7 +35,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Sponsor extends Model
 {
     /**
-     * @var array<int, string>
+     * @var list<string>
      */
     protected $fillable = [
         'sponsorship_node_id',
@@ -46,7 +46,7 @@ class Sponsor extends Model
     ];
 
     /**
-     * @return BelongsTo<SponsorshipTier, self>
+     * @return BelongsTo<SponsorshipTier, $this>
      */
     public function sponsorship_tier(): BelongsTo
     {

@@ -76,13 +76,13 @@ class RoutableLengthAwarePaginator extends LengthAwarePaginator
             return parent::url($page);
         }
 
-        $routeName = $route->action['as'] ?? null;
+        $routeName = $route->getName();
 
-        if (empty($routeName)) {
+        if ($routeName === null || trim($routeName) === '') {
             return parent::url($page);
         }
 
-        $nonPaginatedRouteName = Str::before($routeName, '.paginated');
+        $nonPaginatedRouteName = Str::before(trim($routeName), '.paginated');
         $paginatedRouteName = $nonPaginatedRouteName . '.paginated';
 
         if ($page <= 0) {

@@ -3,7 +3,6 @@
 namespace Tests\Unit\GitHub;
 
 use BabDev\GitHub\ContainerAwareClientFactory;
-use Github\Client;
 use Tests\TestCase;
 
 final class ContainerAwareClientFactoryTest extends TestCase
@@ -14,7 +13,6 @@ final class ContainerAwareClientFactoryTest extends TestCase
 
         $client = $factory->make(null, 'machine-man-preview');
 
-        $this->assertInstanceOf(Client::class, $client);
         $this->assertSame('machine-man-preview', $client->getApiVersion());
     }
 }

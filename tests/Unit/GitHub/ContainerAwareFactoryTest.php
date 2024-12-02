@@ -12,6 +12,7 @@ final class ContainerAwareFactoryTest extends TestCase
     {
         $factory = $this->app->make(ContainerAwareFactory::class);
 
+        /** @phpstan-ignore-next-line method.alreadyNarrowedType */
         $this->assertInstanceOf(
             ClosePagerfantaReadOnlyRepoPullRequest::class,
             $factory->make(ClosePagerfantaReadOnlyRepoPullRequest::class),

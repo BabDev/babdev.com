@@ -48,7 +48,7 @@ $breadcrumbs->for(
         if (!$packageVersion instanceof PackageVersion) {
             $trail->push('Documentation');
         } else {
-            $trail->push(sprintf('Documentation (%s)', $packageVersion->version));
+            $trail->push(\sprintf('Documentation (%s)', $packageVersion->version));
         }
 
         if ($title !== null) {

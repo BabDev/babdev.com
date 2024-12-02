@@ -19,7 +19,7 @@ final class DocumentationTest extends TestCase
         /** @var Package $package */
         $package = Package::factory()->notVisible()->create();
 
-        $this->get(sprintf('/open-source/packages/%s/docs/1.x/intro', $package->slug))
+        $this->get(\sprintf('/open-source/packages/%s/docs/1.x/intro', $package->slug))
             ->assertNotFound();
     }
 
@@ -28,7 +28,7 @@ final class DocumentationTest extends TestCase
         /** @var Package $package */
         $package = Package::factory()->create();
 
-        $this->get(sprintf('/open-source/packages/%s/docs/1.x/intro', $package->slug))
+        $this->get(\sprintf('/open-source/packages/%s/docs/1.x/intro', $package->slug))
             ->assertRedirect('/open-source/packages');
     }
 
@@ -37,7 +37,7 @@ final class DocumentationTest extends TestCase
         /** @var Package $package */
         $package = Package::factory()->docs()->create();
 
-        $this->get(sprintf('/open-source/packages/%s/docs/2.x/intro', $package->slug))
+        $this->get(\sprintf('/open-source/packages/%s/docs/2.x/intro', $package->slug))
             ->assertNotFound()
             ->assertViewIs('open_source.packages.docs_not_found_for_version');
     }
@@ -47,7 +47,7 @@ final class DocumentationTest extends TestCase
         /** @var Package $package */
         $package = Package::factory()->docs()->create();
 
-        $this->get(sprintf('/open-source/packages/%s/docs/1.x/index', $package->slug))
+        $this->get(\sprintf('/open-source/packages/%s/docs/1.x/index', $package->slug))
             ->assertNotFound();
     }
 
@@ -61,7 +61,7 @@ final class DocumentationTest extends TestCase
                 ->andThrow(new PageNotFoundException('Testing'));
         });
 
-        $this->get(sprintf('/open-source/packages/%s/docs/1.x/does-not-exist', $package->slug))
+        $this->get(\sprintf('/open-source/packages/%s/docs/1.x/does-not-exist', $package->slug))
             ->assertNotFound();
     }
 
@@ -78,7 +78,7 @@ final class DocumentationTest extends TestCase
                 ->andReturn('contents', 'sidebar', 'title');
         });
 
-        $this->get(sprintf('/open-source/packages/%s/docs/1.x/intro', $package->slug))
+        $this->get(\sprintf('/open-source/packages/%s/docs/1.x/intro', $package->slug))
             ->assertOk()
             ->assertViewIs('open_source.packages.docs_page');
     }
@@ -88,7 +88,7 @@ final class DocumentationTest extends TestCase
         /** @var Package $package */
         $package = Package::factory()->create();
 
-        $this->get(sprintf('/open-source/packages/%s/docs', $package->slug))
+        $this->get(\sprintf('/open-source/packages/%s/docs', $package->slug))
             ->assertRedirect('/open-source/packages');
     }
 
@@ -100,7 +100,7 @@ final class DocumentationTest extends TestCase
             ->has(PackageVersion::factory()->count(1), 'versions')
             ->create();
 
-        $this->get(sprintf('/open-source/packages/%s/docs/intro', $package->slug))
-            ->assertRedirect(sprintf('/open-source/packages/%s/docs/1.x/intro', $package->slug));
+        $this->get(\sprintf('/open-source/packages/%s/docs/intro', $package->slug))
+            ->assertRedirect(\sprintf('/open-source/packages/%s/docs/1.x/intro', $package->slug));
     }
 }

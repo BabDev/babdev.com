@@ -6,7 +6,6 @@ use BabDev\Http\Controllers\ViewOpenSourcePackagesController;
 use BabDev\Http\Controllers\ViewOpenSourceUpdateController;
 use BabDev\Http\Controllers\ViewOpenSourceUpdatesController;
 use BabDev\Http\Controllers\ViewSitemapController;
-use BabDev\Http\Controllers\ViewSponsorPageController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'homepage')->name('homepage');

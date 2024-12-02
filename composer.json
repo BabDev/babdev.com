@@ -24,18 +24,18 @@
         "spatie/packagist-api": "2.1.0"
     },
     "require-dev": {
-        "driftingly/rector-laravel": "1.2.5",
+        "driftingly/rector-laravel": "^2.0@dev",
         "fakerphp/faker": "1.24.1",
-        "larastan/larastan": "2.9.12",
+        "larastan/larastan": "3.0.2",
         "laravel/telescope": "5.2.6",
         "mockery/mockery": "1.6.12",
         "nunomaduro/collision": "8.5.0",
         "phpstan/extension-installer": "1.4.3",
-        "phpstan/phpstan": "1.12.12",
-        "phpstan/phpstan-mockery": "1.1.3",
-        "phpstan/phpstan-phpunit": "1.4.1",
+        "phpstan/phpstan": "2.0.3",
+        "phpstan/phpstan-mockery": "2.0.0",
+        "phpstan/phpstan-phpunit": "2.0.1",
         "phpunit/phpunit": "11.4.4",
-        "rector/rector": "1.2.10",
+        "rector/rector": "^2.0@rc",
         "spatie/laravel-ignition": "2.8.0"
     },
     "replace": {
@@ -91,7 +91,7 @@
         },
         "optimize-autoloader": true,
         "platform": {
-            "php": "8.2.17"
+            "php": "8.2.26"
         },
         "preferred-install": "dist",
         "sort-packages": true

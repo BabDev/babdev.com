@@ -16,11 +16,11 @@ final class RouteServiceProvider extends ServiceProvider
 
         $this->routes(static function (): void {
             Route::middleware('web')
-                ->domain(config('app.domain'))
+                ->domain(config()->string('app.domain'))
                 ->group(base_path('routes/web.php'));
 
             Route::middleware('github.app')
-                ->domain(config('app.domain'))
+                ->domain(config()->string('app.domain'))
                 ->group(base_path('routes/github.php'));
         });
     }

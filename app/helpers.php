@@ -6,9 +6,9 @@ use Illuminate\Support\Str;
 
 function is_filament_request(Request $request): bool
 {
-    $domain = config('app.filament_domain');
+    $domain = config()->string('app.filament_domain', '');
 
-    if ($domain === null) {
+    if ($domain === '') {
         return false;
     }
 
@@ -16,7 +16,7 @@ function is_filament_request(Request $request): bool
         $domain = $request->getScheme() . '://' . $domain;
     }
 
-    $uri = parse_url((string) $domain);
+    $uri = parse_url($domain);
 
     return rtrim($request->getHttpHost(), '/') === $uri['host'];
 }

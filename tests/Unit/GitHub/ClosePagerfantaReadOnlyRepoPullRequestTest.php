@@ -63,7 +63,7 @@ final class ClosePagerfantaReadOnlyRepoPullRequestTest extends TestCase
         $issue = $this->createMock(Issue::class);
         $issue->expects($this->once())
             ->method('comments')
-            ->willReturnOnConsecutiveCalls($comments);
+            ->willReturn($comments);
 
         /** @var MockObject&PullRequest $pullRequest */
         $pullRequest = $this->createMock(PullRequest::class);

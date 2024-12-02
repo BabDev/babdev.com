@@ -59,7 +59,7 @@ return [
 
     'asset_url' => env('ASSET_URL', '/'),
 
-    'domain' => env('APP_DOMAIN_NAME', null),
+    'domain' => env('APP_DOMAIN_NAME'),
 
     'filament_domain' => env('FILAMENT_DOMAIN'),
 

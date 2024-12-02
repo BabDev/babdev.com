@@ -5,6 +5,7 @@ namespace BabDev\Providers;
 use BabDev\Pagination\RoutableLengthAwarePaginator;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Routing\Route as RouteObject;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
@@ -37,16 +38,18 @@ final class AppServiceProvider extends ServiceProvider
         $this->app->bind(LengthAwarePaginator::class, RoutableLengthAwarePaginator::class);
 
         // Change the current page resolver to be aware of the route parameters
-        Paginator::currentPageResolver(function (string $pageName = 'page'): int {
-            $route = $this->app['request']->route();
+        Paginator::currentPageResolver(static function (string $pageName = 'page'): int {
+            $request = request();
 
-            if ($page = $route->parameter($pageName)) {
+            $route = $request->route();
+
+            if ($page = ($route instanceof RouteObject ? $route->parameter($pageName) : null)) {
                 return (int) $page;
             }
 
-            $page = $this->app['request']->input($pageName);
+            $page = $request->input($pageName);
 
-            if (filter_var($page, \FILTER_VALIDATE_INT) !== false && (int) $page >= 1) {
+            if (is_numeric($page) && filter_var($page, \FILTER_VALIDATE_INT) !== false && (int) $page >= 1) {
                 return (int) $page;
             }
 
@@ -54,9 +57,9 @@ final class AppServiceProvider extends ServiceProvider
         });
 
         // Add the route resolver
-        RoutableLengthAwarePaginator::currentRouteResolver(fn () => $this->app['request']->route());
+        RoutableLengthAwarePaginator::currentRouteResolver(static fn () => request()->route());
 
         // Add the checker
-        RoutableLengthAwarePaginator::paginatorChecker(fn () => !is_filament_request($this->app['request']));
+        RoutableLengthAwarePaginator::paginatorChecker(static fn () => !is_filament_request(request()));
     }
 }

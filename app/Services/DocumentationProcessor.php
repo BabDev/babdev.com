@@ -17,7 +17,7 @@ final readonly class DocumentationProcessor implements DocumentationProcessorCon
 
     public function generateDocsFileCacheKey(Package $package, string $version, string $pageSlug): string
     {
-        return str_replace('/', '.', sprintf('%s/%s/%s', $package->name, $version, $pageSlug));
+        return str_replace('/', '.', \sprintf('%s/%s/%s', $package->name, $version, $pageSlug));
     }
 
     public function extractTitle(string $markdown): string
@@ -42,12 +42,12 @@ final readonly class DocumentationProcessor implements DocumentationProcessorCon
                     $file = $this->github->fetchFileContents(
                         'BabDev',
                         $package->name,
-                        sprintf('docs/%s.md', $pageSlug),
+                        \sprintf('docs/%s.md', $pageSlug),
                         $version,
                     );
                 } catch (RuntimeException $exception) {
                     throw new PageNotFoundException(
-                        sprintf('The "%s" page does not exist for the %s package', $pageSlug, $package->display_name),
+                        \sprintf('The "%s" page does not exist for the %s package', $pageSlug, $package->display_name),
                         previous: $exception,
                     );
                 }
@@ -55,7 +55,7 @@ final readonly class DocumentationProcessor implements DocumentationProcessorCon
                 return match ($file['encoding']) {
                     'base64' => base64_decode((string) $file['content']),
                     default => throw new UnsupportedEncodingException(
-                        sprintf('The "%s" encoding is not supported.', $file['encoding']),
+                        \sprintf('The "%s" encoding is not supported.', $file['encoding']),
                     ),
                 };
             },

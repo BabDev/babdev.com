@@ -27,7 +27,7 @@ use Illuminate\Database\Eloquent\Model;
 class SponsorshipTier extends Model
 {
     /**
-     * @var array<int, string>
+     * @var list<string>
      */
     protected $fillable = [
         'node_id',

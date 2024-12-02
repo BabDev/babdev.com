@@ -91,7 +91,7 @@ final class GitHubServiceProvider extends ServiceProvider implements DeferrableP
 
                     return $client;
                 } catch (InvalidArgumentException $exception) {
-                    throw new BindingResolutionException(sprintf('Could not create the "%s" service.', Client::class), $exception->getCode(), $exception);
+                    throw new BindingResolutionException(\sprintf('Could not create the "%s" service.', Client::class), previous: $exception);
                 }
             },
         );

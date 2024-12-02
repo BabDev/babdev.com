@@ -16,63 +16,64 @@ use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
 /**
- * @property int              $id
- * @property string           $name
- * @property string           $display_name
- * @property string|null      $packagist_name
- * @property string           $slug
- * @property string|null      $description
- * @property array|null       $topics
- * @property bool             $has_documentation
- * @property PackageType|null $package_type
- * @property int              $stars
- * @property int|null         $downloads
- * @property string|null      $language
- * @property bool             $supported
- * @property bool             $visible
- * @property bool             $is_packagist
- * @property Carbon|null      $created_at
- * @property Carbon|null      $updated_at
+ * @property int               $id
+ * @property string            $name
+ * @property string            $display_name
+ * @property string|null       $packagist_name
+ * @property string            $slug
+ * @property string|null       $description
+ * @property list<string>|null $topics
+ * @property bool              $has_documentation
+ * @property PackageType|null  $package_type
+ * @property int               $stars
+ * @property int|null          $downloads
+ * @property string|null       $language
+ * @property bool              $supported
+ * @property bool              $visible
+ * @property bool              $is_packagist
+ * @property Carbon|null       $created_at
+ * @property Carbon|null       $updated_at
  *
- * @property-read string                     $github_url
- * @property-read Collection<PackageUpdate>  $updates
- * @property-read int|null                   $updates_count
- * @property-read Collection<PackageVersion> $versions
- * @property-read int|null                   $versions_count
+ * @property-read string                                $github_url
+ * @property-read Collection<array-key, PackageUpdate>  $updates
+ * @property-read int|null                              $updates_count
+ * @property-read Collection<array-key, PackageVersion> $versions
+ * @property-read int|null                              $versions_count
  *
- * @method static PackageFactory  factory(...$parameters)
- * @method static Builder|Package isPackagist()
- * @method static Builder|Package visible()
- * @method static Builder|Package newModelQuery()
- * @method static Builder|Package newQuery()
- * @method static Builder|Package query()
- * @method static Builder|Package whereCreatedAt($value)
- * @method static Builder|Package whereDefaultDocsVersion($value)
- * @method static Builder|Package whereDescription($value)
- * @method static Builder|Package whereDisplayName($value)
- * @method static Builder|Package whereDocsBranches($value)
- * @method static Builder|Package whereDownloads($value)
- * @method static Builder|Package whereHasDocumentation($value)
- * @method static Builder|Package whereId($value)
- * @method static Builder|Package whereIsPackagist($value)
- * @method static Builder|Package whereLanguage($value)
- * @method static Builder|Package whereName($value)
- * @method static Builder|Package wherePackageType($value)
- * @method static Builder|Package wherePackagistName($value)
- * @method static Builder|Package whereSlug($value)
- * @method static Builder|Package whereStars($value)
- * @method static Builder|Package whereSupported($value)
- * @method static Builder|Package whereTopics($value)
- * @method static Builder|Package whereUpdatedAt($value)
- * @method static Builder|Package whereVisible($value)
+ * @method static PackageFactory<Package> factory(...$parameters)
+ * @method static Builder|Package         isPackagist()
+ * @method static Builder|Package         visible()
+ * @method static Builder|Package         newModelQuery()
+ * @method static Builder|Package         newQuery()
+ * @method static Builder|Package         query()
+ * @method static Builder|Package         whereCreatedAt($value)
+ * @method static Builder|Package         whereDefaultDocsVersion($value)
+ * @method static Builder|Package         whereDescription($value)
+ * @method static Builder|Package         whereDisplayName($value)
+ * @method static Builder|Package         whereDocsBranches($value)
+ * @method static Builder|Package         whereDownloads($value)
+ * @method static Builder|Package         whereHasDocumentation($value)
+ * @method static Builder|Package         whereId($value)
+ * @method static Builder|Package         whereIsPackagist($value)
+ * @method static Builder|Package         whereLanguage($value)
+ * @method static Builder|Package         whereName($value)
+ * @method static Builder|Package         wherePackageType($value)
+ * @method static Builder|Package         wherePackagistName($value)
+ * @method static Builder|Package         whereSlug($value)
+ * @method static Builder|Package         whereStars($value)
+ * @method static Builder|Package         whereSupported($value)
+ * @method static Builder|Package         whereTopics($value)
+ * @method static Builder|Package         whereUpdatedAt($value)
+ * @method static Builder|Package         whereVisible($value)
  */
 class Package extends Model
 {
+    /** @use HasFactory<PackageFactory<Package>> */
     use HasFactory;
     use HasSlug;
 
     /**
-     * @var array<int, string>
+     * @var list<string>
      */
     protected $fillable = [
         'name',
@@ -130,7 +131,7 @@ class Package extends Model
     }
 
     /**
-     * @return HasMany<PackageUpdate>
+     * @return HasMany<PackageUpdate, $this>
      */
     public function updates(): HasMany
     {
@@ -138,7 +139,7 @@ class Package extends Model
     }
 
     /**
-     * @return HasMany<PackageVersion>
+     * @return HasMany<PackageVersion, $this>
      */
     public function versions(): HasMany
     {
@@ -151,7 +152,7 @@ class Package extends Model
     protected function githubUrl(): Attribute
     {
         return new Attribute(
-            get: fn () => sprintf('https://github.com/BabDev/%s', $this->name),
+            get: fn () => \sprintf('https://github.com/BabDev/%s', $this->name),
         );
     }
 
@@ -169,7 +170,7 @@ class Package extends Model
         $packageVersion = $this->versions()->first();
 
         if (!$packageVersion instanceof PackageVersion) {
-            throw new VersionsNotConfigured(sprintf('Versions are not configured for the "%s" package.', $this->display_name));
+            throw new VersionsNotConfigured(\sprintf('Versions are not configured for the "%s" package.', $this->display_name));
         }
 
         return $packageVersion;

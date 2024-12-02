@@ -27,12 +27,12 @@ final class PackageTest extends TestCase
         $this->get('/open-source/updates')
             ->assertOk()
             ->assertViewIs('open_source.updates.index')
-            ->assertSee('<title>Open Source Updates | BabDev</title>', false)
-            ->assertDontSee('<link rel="canonical"', false)
-            ->assertDontSee('<link rel="prev"', false)
-            ->assertDontSee('<link rel="next"', false)
-            ->assertDontSee('<ul class="pagination">', false)
-            ->assertDontSee('<li class="breadcrumb-item active">Page 1</li>', false);
+            ->assertSeeHtml('<title>Open Source Updates | BabDev</title>')
+            ->assertDontSeeHtml('<link rel="canonical"')
+            ->assertDontSeeHtml('<link rel="prev"')
+            ->assertDontSeeHtml('<link rel="next"')
+            ->assertDontSeeHtml('<ul class="pagination">')
+            ->assertDontSeeHtml('<li class="breadcrumb-item active">Page 1</li>');
     }
 
     public function test_users_can_view_a_specific_page_from_the_package_update_list(): void
@@ -42,12 +42,12 @@ final class PackageTest extends TestCase
         $this->get('/open-source/updates/page/2')
             ->assertOk()
             ->assertViewIs('open_source.updates.index')
-            ->assertSee('<title>Page 2 | Open Source Updates | BabDev</title>', false)
-            ->assertSee('<link rel="canonical"', false)
-            ->assertSee('<link rel="prev"', false)
-            ->assertSee('<link rel="next"', false)
-            ->assertSee('<ul class="pagination">', false)
-            ->assertSee('<li class="breadcrumb-item active">Page 2</li>', false);
+            ->assertSeeHtml('<title>Page 2 | Open Source Updates | BabDev</title>')
+            ->assertSeeHtml('<link rel="canonical"')
+            ->assertSeeHtml('<link rel="prev"')
+            ->assertSeeHtml('<link rel="next"')
+            ->assertSeeHtml('<ul class="pagination">')
+            ->assertSeeHtml('<li class="breadcrumb-item active">Page 2</li>');
     }
 
     public function test_users_are_redirected_to_the_canonical_first_page_of_the_package_update_list(): void
@@ -71,7 +71,7 @@ final class PackageTest extends TestCase
         /** @var PackageUpdate $update */
         $update = PackageUpdate::factory()->create();
 
-        $this->get(sprintf('/open-source/updates/%s', $update->slug))
+        $this->get(\sprintf('/open-source/updates/%s', $update->slug))
             ->assertOk()
             ->assertViewIs('open_source.updates.show');
     }
@@ -81,7 +81,7 @@ final class PackageTest extends TestCase
         /** @var PackageUpdate $update */
         $update = PackageUpdate::factory()->unpublished()->create();
 
-        $this->get(sprintf('/open-source/updates/%s', $update->slug))
+        $this->get(\sprintf('/open-source/updates/%s', $update->slug))
             ->assertNotFound();
     }
 }

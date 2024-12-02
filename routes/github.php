@@ -1,10 +1,9 @@
 <?php
 
 use BabDev\Http\Controllers\HandleGitHubAppWebhookController;
-use Illuminate\Routing\Router;
+use Illuminate\Support\Facades\Route;
 
-/** @var Router $router */
-$router->post(
+Route::post(
     '/webhooks/github/app',
     HandleGitHubAppWebhookController::class,
 );
