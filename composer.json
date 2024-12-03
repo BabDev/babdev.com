@@ -8,7 +8,7 @@
         "ext-hash": "*",
         "composer-runtime-api": "^2.0",
         "babdev/laravel-breadcrumbs": "^2.0@dev",
-        "blade-ui-kit/blade-ui-kit": "0.6.3",
+        "blade-ui-kit/blade-ui-kit": "0.6.4",
         "filament/filament": "3.2.127",
         "guzzlehttp/guzzle": "7.9.2",
         "http-interop/http-factory-guzzle": "1.2.0",
@@ -19,7 +19,7 @@
         "mohamedsabil83/filament-forms-tinyeditor": "2.3.3",
         "spatie/laravel-feed": "4.4.0",
         "spatie/laravel-google-fonts": "1.4.1",
-        "spatie/laravel-sitemap": "7.2.1",
+        "spatie/laravel-sitemap": "7.3.0",
         "spatie/laravel-sluggable": "3.6.0",
         "spatie/packagist-api": "2.1.0"
     },
@@ -36,7 +36,7 @@
         "phpstan/phpstan-phpunit": "2.0.1",
         "phpunit/phpunit": "11.4.4",
         "rector/rector": "^2.0@rc",
-        "spatie/laravel-ignition": "2.8.0"
+        "spatie/laravel-ignition": "2.9.0"
     },
     "replace": {
         "paragonie/random_compat": "*",
