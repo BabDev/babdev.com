@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fd76dbadf756a6f12b38e555449c2ee7",
+    "content-hash": "6340e87cd260d914a15da14af611da9f",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -292,16 +292,16 @@
         },
         {
             "name": "blade-ui-kit/blade-ui-kit",
-            "version": "0.6.3",
+            "version": "0.6.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blade-ui-kit/blade-ui-kit.git",
-                "reference": "e6e8429956537a78b7ded3fff3d00eb382c6507c"
+                "reference": "ea7efd8b2ad613fa4441a51f1312d71153c27b22"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blade-ui-kit/blade-ui-kit/zipball/e6e8429956537a78b7ded3fff3d00eb382c6507c",
-                "reference": "e6e8429956537a78b7ded3fff3d00eb382c6507c",
+                "url": "https://api.github.com/repos/blade-ui-kit/blade-ui-kit/zipball/ea7efd8b2ad613fa4441a51f1312d71153c27b22",
+                "reference": "ea7efd8b2ad613fa4441a51f1312d71153c27b22",
                 "shasum": ""
             },
             "require": {
@@ -366,7 +366,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-11-22T13:41:40+00:00"
+            "time": "2024-12-02T13:32:27+00:00"
         },
         {
             "name": "brick/math",
@@ -6142,23 +6142,23 @@
         },
         {
             "name": "spatie/laravel-sitemap",
-            "version": "7.2.1",
+            "version": "7.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-sitemap.git",
-                "reference": "6d3d7637690a9710456a01bacabf5088f93ffe11"
+                "reference": "f1387105f1e08215b46bab40164283caa2a9c5c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-sitemap/zipball/6d3d7637690a9710456a01bacabf5088f93ffe11",
-                "reference": "6d3d7637690a9710456a01bacabf5088f93ffe11",
+                "url": "https://api.github.com/repos/spatie/laravel-sitemap/zipball/f1387105f1e08215b46bab40164283caa2a9c5c9",
+                "reference": "f1387105f1e08215b46bab40164283caa2a9c5c9",
                 "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "^7.8",
                 "illuminate/support": "^10.0|^11.0",
                 "nesbot/carbon": "^2.71|^3.0",
-                "php": "^8.2",
+                "php": "^8.2||^8.3||^8.4",
                 "spatie/crawler": "^8.0.1",
                 "spatie/laravel-package-tools": "^1.16.1",
                 "symfony/dom-crawler": "^6.3.4|^7.0"
@@ -6203,7 +6203,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-sitemap/tree/7.2.1"
+                "source": "https://github.com/spatie/laravel-sitemap/tree/7.3.0"
             },
             "funding": [
                 {
@@ -6211,7 +6211,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2024-05-21T12:31:34+00:00"
+            "time": "2024-12-02T08:30:17+00:00"
         },
         {
             "name": "spatie/laravel-sluggable",
@@ -11889,16 +11889,16 @@
         },
         {
             "name": "spatie/laravel-ignition",
-            "version": "2.8.0",
+            "version": "2.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-ignition.git",
-                "reference": "3c067b75bfb50574db8f7e2c3978c65eed71126c"
+                "reference": "62042df15314b829d0f26e02108f559018e2aad0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/3c067b75bfb50574db8f7e2c3978c65eed71126c",
-                "reference": "3c067b75bfb50574db8f7e2c3978c65eed71126c",
+                "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/62042df15314b829d0f26e02108f559018e2aad0",
+                "reference": "62042df15314b829d0f26e02108f559018e2aad0",
                 "shasum": ""
             },
             "require": {
@@ -11976,7 +11976,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-06-12T15:01:18+00:00"
+            "time": "2024-12-02T08:43:31+00:00"
         },
         {
             "name": "theseer/tokenizer",
