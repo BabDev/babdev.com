@@ -4285,16 +4285,16 @@
         },
         {
             "name": "openspout/openspout",
-            "version": "v4.28.1",
+            "version": "v4.28.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openspout/openspout.git",
-                "reference": "229a9c837bd768e8767660671f9fdf429f343a74"
+                "reference": "d6dd654b5db502f28c5773edfa785b516745a142"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openspout/openspout/zipball/229a9c837bd768e8767660671f9fdf429f343a74",
-                "reference": "229a9c837bd768e8767660671f9fdf429f343a74",
+                "url": "https://api.github.com/repos/openspout/openspout/zipball/d6dd654b5db502f28c5773edfa785b516745a142",
+                "reference": "d6dd654b5db502f28c5773edfa785b516745a142",
                 "shasum": ""
             },
             "require": {
@@ -4362,7 +4362,7 @@
             ],
             "support": {
                 "issues": "https://github.com/openspout/openspout/issues",
-                "source": "https://github.com/openspout/openspout/tree/v4.28.1"
+                "source": "https://github.com/openspout/openspout/tree/v4.28.2"
             },
             "funding": [
                 {
@@ -4374,7 +4374,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-12-05T13:34:00+00:00"
+            "time": "2024-12-06T06:17:37+00:00"
         },
         {
             "name": "php-http/cache-plugin",
