@@ -20,7 +20,7 @@
         "spatie/laravel-feed": "4.4.0",
         "spatie/laravel-google-fonts": "1.4.1",
         "spatie/laravel-sitemap": "7.3.0",
-        "spatie/laravel-sluggable": "3.6.0",
+        "spatie/laravel-sluggable": "3.7.0",
         "spatie/packagist-api": "2.1.0"
     },
     "require-dev": {
