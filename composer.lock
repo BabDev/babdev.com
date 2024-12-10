@@ -5653,16 +5653,16 @@
         },
         {
             "name": "spatie/browsershot",
-            "version": "4.4.0",
+            "version": "5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/browsershot.git",
-                "reference": "3ff350cd0a36943759e2932a27d8cd18c11e5fdc"
+                "reference": "1e212b596c104138550ed4ef1b9977d8df570c67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/browsershot/zipball/3ff350cd0a36943759e2932a27d8cd18c11e5fdc",
-                "reference": "3ff350cd0a36943759e2932a27d8cd18c11e5fdc",
+                "url": "https://api.github.com/repos/spatie/browsershot/zipball/1e212b596c104138550ed4ef1b9977d8df570c67",
+                "reference": "1e212b596c104138550ed4ef1b9977d8df570c67",
                 "shasum": ""
             },
             "require": {
@@ -5709,7 +5709,7 @@
                 "webpage"
             ],
             "support": {
-                "source": "https://github.com/spatie/browsershot/tree/4.4.0"
+                "source": "https://github.com/spatie/browsershot/tree/5.0.0"
             },
             "funding": [
                 {
@@ -5717,20 +5717,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-11-25T16:02:22+00:00"
+            "time": "2024-11-25T16:03:48+00:00"
         },
         {
             "name": "spatie/color",
-            "version": "1.6.1",
+            "version": "1.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/color.git",
-                "reference": "4c540ffbef68a3df3d209718ae06deaab081e708"
+                "reference": "b4fac074a9e5999dcca12cbfab0f7c73e2684d6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/color/zipball/4c540ffbef68a3df3d209718ae06deaab081e708",
-                "reference": "4c540ffbef68a3df3d209718ae06deaab081e708",
+                "url": "https://api.github.com/repos/spatie/color/zipball/b4fac074a9e5999dcca12cbfab0f7c73e2684d6d",
+                "reference": "b4fac074a9e5999dcca12cbfab0f7c73e2684d6d",
                 "shasum": ""
             },
             "require": {
@@ -5768,7 +5768,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/color/issues",
-                "source": "https://github.com/spatie/color/tree/1.6.1"
+                "source": "https://github.com/spatie/color/tree/1.6.2"
             },
             "funding": [
                 {
@@ -5776,20 +5776,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-11-18T15:00:47+00:00"
+            "time": "2024-12-09T16:20:38+00:00"
         },
         {
             "name": "spatie/crawler",
-            "version": "8.3.0",
+            "version": "8.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/crawler.git",
-                "reference": "94d5fea11a225338287f6ae83b8f501ca9ba6783"
+                "reference": "7639f9759f2e50b2962c3c713d131e977d50ed4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/crawler/zipball/94d5fea11a225338287f6ae83b8f501ca9ba6783",
-                "reference": "94d5fea11a225338287f6ae83b8f501ca9ba6783",
+                "url": "https://api.github.com/repos/spatie/crawler/zipball/7639f9759f2e50b2962c3c713d131e977d50ed4b",
+                "reference": "7639f9759f2e50b2962c3c713d131e977d50ed4b",
                 "shasum": ""
             },
             "require": {
@@ -5798,7 +5798,7 @@
                 "illuminate/collections": "^10.0|^11.0",
                 "nicmart/tree": "^0.9",
                 "php": "^8.1",
-                "spatie/browsershot": "^3.45|^4.0",
+                "spatie/browsershot": "^3.45|^4.0|^5.0",
                 "spatie/robots-txt": "^2.0",
                 "symfony/dom-crawler": "^6.0|^7.0"
             },
@@ -5832,7 +5832,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/crawler/issues",
-                "source": "https://github.com/spatie/crawler/tree/8.3.0"
+                "source": "https://github.com/spatie/crawler/tree/8.3.1"
             },
             "funding": [
                 {
@@ -5844,7 +5844,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-12-02T08:29:46+00:00"
+            "time": "2024-12-09T13:53:48+00:00"
         },
         {
             "name": "spatie/invade",
@@ -6081,16 +6081,16 @@
         },
         {
             "name": "spatie/laravel-package-tools",
-            "version": "1.16.6",
+            "version": "1.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-package-tools.git",
-                "reference": "1f26942dc1e5c49eacfced34fdbc29ed234bd7b3"
+                "reference": "9ab30fd24f677e5aa370ea4cf6b41c517d16cf85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/1f26942dc1e5c49eacfced34fdbc29ed234bd7b3",
-                "reference": "1f26942dc1e5c49eacfced34fdbc29ed234bd7b3",
+                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/9ab30fd24f677e5aa370ea4cf6b41c517d16cf85",
+                "reference": "9ab30fd24f677e5aa370ea4cf6b41c517d16cf85",
                 "shasum": ""
             },
             "require": {
@@ -6099,10 +6099,10 @@
             },
             "require-dev": {
                 "mockery/mockery": "^1.5",
-                "orchestra/testbench": "^7.7|^8.0",
-                "pestphp/pest": "^1.22",
-                "phpunit/phpunit": "^9.5.24",
-                "spatie/pest-plugin-test-time": "^1.1"
+                "orchestra/testbench": "^7.7|^8.0|^9.0",
+                "pestphp/pest": "^1.22|^2",
+                "phpunit/phpunit": "^9.5.24|^10.5",
+                "spatie/pest-plugin-test-time": "^1.1|^2.2"
             },
             "type": "library",
             "autoload": {
@@ -6129,7 +6129,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-package-tools/issues",
-                "source": "https://github.com/spatie/laravel-package-tools/tree/1.16.6"
+                "source": "https://github.com/spatie/laravel-package-tools/tree/1.17.0"
             },
             "funding": [
                 {
@@ -6137,7 +6137,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-11-18T15:02:02+00:00"
+            "time": "2024-12-09T16:29:14+00:00"
         },
         {
             "name": "spatie/laravel-sitemap",
@@ -7646,8 +7646,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
@@ -7722,8 +7722,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
@@ -7883,8 +7883,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
@@ -8041,8 +8041,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
@@ -8123,8 +8123,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
@@ -9095,12 +9095,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/driftingly/rector-laravel.git",
-                "reference": "0e6805bf022e0556b02bb385ac7dea17bf53f1d8"
+                "reference": "a3ba02253902bba3dc0a88a079be1d7ef2743466"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/driftingly/rector-laravel/zipball/0e6805bf022e0556b02bb385ac7dea17bf53f1d8",
-                "reference": "0e6805bf022e0556b02bb385ac7dea17bf53f1d8",
+                "url": "https://api.github.com/repos/driftingly/rector-laravel/zipball/a3ba02253902bba3dc0a88a079be1d7ef2743466",
+                "reference": "a3ba02253902bba3dc0a88a079be1d7ef2743466",
                 "shasum": ""
             },
             "require": {
@@ -9116,8 +9116,8 @@
                 "phpstan/phpstan-strict-rules": "^2.0",
                 "phpstan/phpstan-webmozart-assert": "^2.0",
                 "phpunit/phpunit": "^10.5",
-                "symplify/rule-doc-generator": "12.2.5",
-                "tightenco/duster": "^2.7"
+                "symplify/rule-doc-generator": "^12.2",
+                "tightenco/duster": "^3.1"
             },
             "type": "rector-extension",
             "autoload": {
@@ -9134,7 +9134,7 @@
                 "issues": "https://github.com/driftingly/rector-laravel/issues",
                 "source": "https://github.com/driftingly/rector-laravel/tree/2.x"
             },
-            "time": "2024-12-08T06:15:29+00:00"
+            "time": "2024-12-09T13:37:23+00:00"
         },
         {
             "name": "fakerphp/faker",
