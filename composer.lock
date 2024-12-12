@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d77afc37d2c1357d19b9bcb27d358978",
+    "content-hash": "d21e84c4de0ae6900096879574ff1f54",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -2517,16 +2517,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v11.35.0",
+            "version": "v11.35.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "f1a7aaa3c1235b7a95ccaa58db90e0cd9d8c3fcc"
+                "reference": "dcfa130ede1a6fa4343dc113410963e791ad34fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/f1a7aaa3c1235b7a95ccaa58db90e0cd9d8c3fcc",
-                "reference": "f1a7aaa3c1235b7a95ccaa58db90e0cd9d8c3fcc",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/dcfa130ede1a6fa4343dc113410963e791ad34fb",
+                "reference": "dcfa130ede1a6fa4343dc113410963e791ad34fb",
                 "shasum": ""
             },
             "require": {
@@ -2728,7 +2728,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2024-12-10T16:09:29+00:00"
+            "time": "2024-12-12T18:25:58+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -10621,16 +10621,16 @@
         },
         {
             "name": "rector/rector",
-            "version": "2.0.0-rc3",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectorphp/rector.git",
-                "reference": "8dd69a634532ced3dc0fd6690126e55aa3c907e3"
+                "reference": "3f27091368bd935dbbaa8387099792fb20f65f68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectorphp/rector/zipball/8dd69a634532ced3dc0fd6690126e55aa3c907e3",
-                "reference": "8dd69a634532ced3dc0fd6690126e55aa3c907e3",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/3f27091368bd935dbbaa8387099792fb20f65f68",
+                "reference": "3f27091368bd935dbbaa8387099792fb20f65f68",
                 "shasum": ""
             },
             "require": {
@@ -10668,7 +10668,7 @@
             ],
             "support": {
                 "issues": "https://github.com/rectorphp/rector/issues",
-                "source": "https://github.com/rectorphp/rector/tree/2.0.0-rc3"
+                "source": "https://github.com/rectorphp/rector/tree/2.0.3"
             },
             "funding": [
                 {
@@ -10676,7 +10676,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-12-09T15:17:33+00:00"
+            "time": "2024-12-12T15:22:19+00:00"
         },
         {
             "name": "sebastian/cli-parser",
