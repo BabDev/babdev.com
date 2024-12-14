@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d21e84c4de0ae6900096879574ff1f54",
+    "content-hash": "3a28e59d9dff4e40e0f1ac4786772f39",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -3114,16 +3114,16 @@
         },
         {
             "name": "league/csv",
-            "version": "9.19.0",
+            "version": "9.20.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/csv.git",
-                "reference": "f81df48a012a9e86d077e74eaff666fd15bfab88"
+                "reference": "553579df208641ada6ffb450b3a151e2fcfa4f31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/csv/zipball/f81df48a012a9e86d077e74eaff666fd15bfab88",
-                "reference": "f81df48a012a9e86d077e74eaff666fd15bfab88",
+                "url": "https://api.github.com/repos/thephpleague/csv/zipball/553579df208641ada6ffb450b3a151e2fcfa4f31",
+                "reference": "553579df208641ada6ffb450b3a151e2fcfa4f31",
                 "shasum": ""
             },
             "require": {
@@ -3197,7 +3197,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-12-08T08:09:35+00:00"
+            "time": "2024-12-13T15:49:27+00:00"
         },
         {
             "name": "league/flysystem",
@@ -5655,16 +5655,16 @@
         },
         {
             "name": "spatie/browsershot",
-            "version": "5.0.1",
+            "version": "5.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/browsershot.git",
-                "reference": "fae8396641b961f62bd756920b14f01a4391296e"
+                "reference": "8a1e3476a9c07b72ace4d4747bac7c58dbc1c066"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/browsershot/zipball/fae8396641b961f62bd756920b14f01a4391296e",
-                "reference": "fae8396641b961f62bd756920b14f01a4391296e",
+                "url": "https://api.github.com/repos/spatie/browsershot/zipball/8a1e3476a9c07b72ace4d4747bac7c58dbc1c066",
+                "reference": "8a1e3476a9c07b72ace4d4747bac7c58dbc1c066",
                 "shasum": ""
             },
             "require": {
@@ -5711,7 +5711,7 @@
                 "webpage"
             ],
             "support": {
-                "source": "https://github.com/spatie/browsershot/tree/5.0.1"
+                "source": "https://github.com/spatie/browsershot/tree/5.0.2"
             },
             "funding": [
                 {
@@ -5719,7 +5719,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-12-11T09:02:57+00:00"
+            "time": "2024-12-13T16:10:26+00:00"
         },
         {
             "name": "spatie/color",
@@ -12074,9 +12074,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "babdev/laravel-breadcrumbs": 20,
-        "driftingly/rector-laravel": 20,
-        "rector/rector": 5
+        "babdev/laravel-breadcrumbs": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
