@@ -6031,12 +6031,12 @@
             "type": "library",
             "extra": {
                 "laravel": {
-                    "providers": [
-                        "Spatie\\GoogleFonts\\GoogleFontsServiceProvider"
-                    ],
                     "aliases": {
                         "GoogleFonts": "Spatie\\GoogleFonts\\GoogleFontsFacade"
-                    }
+                    },
+                    "providers": [
+                        "Spatie\\GoogleFonts\\GoogleFontsServiceProvider"
+                    ]
                 }
             },
             "autoload": {
