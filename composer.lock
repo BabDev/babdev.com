@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bc9ac40c6741361b4b9585262a7bec23",
+    "content-hash": "fa92b90c36bf0b85b6bdc58c93a3fb76",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -6216,16 +6216,16 @@
         },
         {
             "name": "spatie/laravel-sluggable",
-            "version": "3.7.1",
+            "version": "3.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-sluggable.git",
-                "reference": "23dcb4cb9306f235a1eb20f170978afde82d0221"
+                "reference": "cfe8440ebce367b66bdfec6e1a7c8e33879092fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-sluggable/zipball/23dcb4cb9306f235a1eb20f170978afde82d0221",
-                "reference": "23dcb4cb9306f235a1eb20f170978afde82d0221",
+                "url": "https://api.github.com/repos/spatie/laravel-sluggable/zipball/cfe8440ebce367b66bdfec6e1a7c8e33879092fc",
+                "reference": "cfe8440ebce367b66bdfec6e1a7c8e33879092fc",
                 "shasum": ""
             },
             "require": {
@@ -6263,7 +6263,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-sluggable/tree/3.7.1"
+                "source": "https://github.com/spatie/laravel-sluggable/tree/3.7.2"
             },
             "funding": [
                 {
@@ -6271,7 +6271,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-12-23T09:54:10+00:00"
+            "time": "2024-12-30T09:06:04+00:00"
         },
         {
             "name": "spatie/packagist-api",
