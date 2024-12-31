@@ -9,7 +9,7 @@
         "composer-runtime-api": "^2.0",
         "babdev/laravel-breadcrumbs": "^2.0@dev",
         "blade-ui-kit/blade-ui-kit": "0.6.4",
-        "filament/filament": "3.2.131",
+        "filament/filament": "3.2.132",
         "guzzlehttp/guzzle": "7.9.2",
         "http-interop/http-factory-guzzle": "1.2.0",
         "knplabs/github-api": "3.16.0",
@@ -35,7 +35,7 @@
         "phpstan/phpstan-mockery": "2.0.0",
         "phpstan/phpstan-phpunit": "2.0.3",
         "phpunit/phpunit": "11.5.2",
-        "rector/rector": "2.0.4",
+        "rector/rector": "2.0.5",
         "spatie/laravel-ignition": "2.9.0"
     },
     "replace": {
