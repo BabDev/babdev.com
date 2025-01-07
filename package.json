@@ -25,7 +25,7 @@
     "devDependencies": {
         "@fullhuman/postcss-purgecss": "7.0.2",
         "autoprefixer": "10.4.20",
-        "core-js": "3.39.0",
+        "core-js": "3.40.0",
         "laravel-vite-plugin": "1.1.1",
         "path": "0.12.7",
         "postcss": "8.4.49",
