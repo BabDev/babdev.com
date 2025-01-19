@@ -24,7 +24,7 @@
         "spatie/packagist-api": "2.1.0"
     },
     "require-dev": {
-        "driftingly/rector-laravel": "2.0.1",
+        "driftingly/rector-laravel": "2.0.2",
         "fakerphp/faker": "1.24.1",
         "larastan/larastan": "3.0.2",
         "laravel/telescope": "5.3.0",
@@ -35,7 +35,7 @@
         "phpstan/phpstan-mockery": "2.0.0",
         "phpstan/phpstan-phpunit": "2.0.3",
         "phpunit/phpunit": "11.5.3",
-        "rector/rector": "2.0.6",
+        "rector/rector": "2.0.7",
         "spatie/laravel-ignition": "2.9.0"
     },
     "replace": {
