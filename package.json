@@ -26,7 +26,7 @@
         "@fullhuman/postcss-purgecss": "7.0.2",
         "autoprefixer": "10.4.20",
         "core-js": "3.40.0",
-        "laravel-vite-plugin": "1.1.1",
+        "laravel-vite-plugin": "1.2.0",
         "path": "0.12.7",
         "postcss": "8.5.1",
         "postcss-import": "16.1.0",
