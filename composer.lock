@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cd5295615f31166970016b58ee5e8bfa",
+    "content-hash": "cc4b573aba595c415bbff1bed010ffe7",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -6141,16 +6141,16 @@
         },
         {
             "name": "spatie/laravel-sitemap",
-            "version": "7.3.2",
+            "version": "7.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-sitemap.git",
-                "reference": "f32822abf94f29c886154f7dbfc6b5763f0de970"
+                "reference": "9423e3bb82d9e83fa8969a2a30dcea309d802e7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-sitemap/zipball/f32822abf94f29c886154f7dbfc6b5763f0de970",
-                "reference": "f32822abf94f29c886154f7dbfc6b5763f0de970",
+                "url": "https://api.github.com/repos/spatie/laravel-sitemap/zipball/9423e3bb82d9e83fa8969a2a30dcea309d802e7e",
+                "reference": "9423e3bb82d9e83fa8969a2a30dcea309d802e7e",
                 "shasum": ""
             },
             "require": {
@@ -6202,7 +6202,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-sitemap/tree/7.3.2"
+                "source": "https://github.com/spatie/laravel-sitemap/tree/7.3.3"
             },
             "funding": [
                 {
@@ -6210,7 +6210,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2025-01-13T11:33:06+00:00"
+            "time": "2025-01-27T09:44:53+00:00"
         },
         {
             "name": "spatie/laravel-sluggable",
@@ -6348,23 +6348,23 @@
         },
         {
             "name": "spatie/robots-txt",
-            "version": "2.2.3",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/robots-txt.git",
-                "reference": "31763e5ca23fb0efa6dc6b700beb5ebfeab89432"
+                "reference": "acc7f4438813989d0427624f7901232084916170"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/robots-txt/zipball/31763e5ca23fb0efa6dc6b700beb5ebfeab89432",
-                "reference": "31763e5ca23fb0efa6dc6b700beb5ebfeab89432",
+                "url": "https://api.github.com/repos/spatie/robots-txt/zipball/acc7f4438813989d0427624f7901232084916170",
+                "reference": "acc7f4438813989d0427624f7901232084916170",
                 "shasum": ""
             },
             "require": {
                 "php": "^8.1"
             },
             "require-dev": {
-                "phpunit/phpunit": "^9.0|^10.0"
+                "phpunit/phpunit": "^11.5.2"
             },
             "type": "library",
             "autoload": {
@@ -6392,7 +6392,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/robots-txt/issues",
-                "source": "https://github.com/spatie/robots-txt/tree/2.2.3"
+                "source": "https://github.com/spatie/robots-txt/tree/2.3.0"
             },
             "funding": [
                 {
@@ -6404,7 +6404,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-10-22T08:17:03+00:00"
+            "time": "2025-01-27T10:15:34+00:00"
         },
         {
             "name": "spatie/temporary-directory",
