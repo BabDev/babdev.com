@@ -6,6 +6,9 @@ use Github\Client;
 use Github\ResultPager;
 use Illuminate\Support\Collection;
 
+/**
+ * @note Don't make readonly until Mockery supports readonly classes
+ */
 class ApiConnector
 {
     public function __construct(private readonly Client $client) {}
@@ -42,7 +45,7 @@ class ApiConnector
     public function fetchPublicRepositories(string $username): Collection
     {
         return collect(new ResultPager($this->client)->fetchAll($this->client->api('organization'), 'repositories', [$username]))
-            ->filter(static fn (array $repo): bool => !$repo['private']);
+            ->filter(static fn(array $repo): bool => !$repo['private']);
     }
 
     /**

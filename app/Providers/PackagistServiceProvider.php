@@ -34,7 +34,7 @@ final class PackagistServiceProvider extends ServiceProvider implements Deferrab
     {
         $this->app->singleton(
             PackagistClient::class,
-            static fn (Application $app) => new PackagistClient(
+            static fn(Application $app) => new PackagistClient(
                 $app->make(Guzzle::class),
                 $app->make(PackagistUrlGenerator::class),
             ),
@@ -45,7 +45,7 @@ final class PackagistServiceProvider extends ServiceProvider implements Deferrab
     {
         $this->app->singleton(
             PackagistUrlGenerator::class,
-            static fn () => new PackagistUrlGenerator(),
+            static fn() => new PackagistUrlGenerator(),
         );
     }
 }

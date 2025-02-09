@@ -56,7 +56,7 @@ class PackageResource extends Resource
                     }),
                 TextInput::make('slug')
                     ->required()
-                    ->unique(Package::class, 'slug', fn ($record) => $record),
+                    ->unique(Package::class, 'slug', fn($record) => $record),
                 TextInput::make('display_name'),
                 TextInput::make('packagist_name'),
                 Checkbox::make('has_documentation'),
@@ -83,7 +83,7 @@ class PackageResource extends Resource
             ->columns([
                 TextColumn::make('display_name'),
                 IconColumn::make('has_documentation')->boolean(),
-                TextColumn::make('package_type')->formatStateUsing(fn (PackageType $state): string => $state->label()),
+                TextColumn::make('package_type')->formatStateUsing(fn(PackageType $state): string => $state->label()),
                 IconColumn::make('supported')->boolean(),
                 IconColumn::make('visible')->boolean(),
                 IconColumn::make('is_packagist')->boolean(),

@@ -20,7 +20,7 @@ final class AppServiceProvider extends ServiceProvider
 
         Paginator::useBootstrap();
 
-        Livewire::setUpdateRoute(fn ($handle) => Route::post('/livewire/update', $handle)->middleware('filament.web'));
+        Livewire::setUpdateRoute(fn($handle) => Route::post('/livewire/update', $handle)->middleware('filament.web'));
     }
 
     #[\Override]
@@ -58,9 +58,9 @@ final class AppServiceProvider extends ServiceProvider
         });
 
         // Add the route resolver
-        RoutableLengthAwarePaginator::currentRouteResolver(static fn () => request()->route());
+        RoutableLengthAwarePaginator::currentRouteResolver(static fn() => request()->route());
 
         // Add the checker
-        RoutableLengthAwarePaginator::paginatorChecker(static fn () => !is_filament_request(request()));
+        RoutableLengthAwarePaginator::paginatorChecker(static fn() => !is_filament_request(request()));
     }
 }

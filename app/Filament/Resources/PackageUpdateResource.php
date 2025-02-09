@@ -54,7 +54,7 @@ class PackageUpdateResource extends Resource
                     }),
                 TextInput::make('slug')
                     ->required()
-                    ->unique(PackageUpdate::class, 'slug', fn ($record) => $record),
+                    ->unique(PackageUpdate::class, 'slug', fn($record) => $record),
                 Select::make('package_id')
                     ->relationship('package', 'display_name')
                     ->required(),

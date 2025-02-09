@@ -22,7 +22,7 @@ final class ViewOpenSourcePackageDocsPageController
 
         $package->load('versions');
 
-        $packageVersion = $package->versions->where('version', '=', $version)->first();
+        $packageVersion = $package->versions->firstWhere('version', '=', $version);
 
         if (!$packageVersion instanceof PackageVersion) {
             return response()->view('open_source.packages.docs_not_found_for_version', [
@@ -35,13 +35,12 @@ final class ViewOpenSourcePackageDocsPageController
         abort_if($slug === 'index', 404);
 
         $contents = $documentationProcessor->fetchPageContents($package, $packageVersion->git_branch, $slug);
-        $sidebar = $documentationProcessor->fetchPageContents($package, $packageVersion->git_branch, 'index');
 
         return view('open_source.packages.docs_page', [
             'package' => $package,
             'package_version' => $packageVersion,
             'contents' => $contents,
-            'sidebar' => $sidebar,
+            'sidebar' => $documentationProcessor->fetchPageContents($package, $packageVersion->git_branch, 'index'),
             'title' => $documentationProcessor->extractTitle($contents),
             'version' => $version,
             'slug' => $slug,

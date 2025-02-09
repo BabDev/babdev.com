@@ -4,15 +4,16 @@ namespace BabDev\Providers;
 
 use GuzzleHttp\Client as Guzzle;
 use GuzzleHttp\ClientInterface as GuzzleInterface;
-use Http\Factory\Guzzle\RequestFactory;
-use Http\Factory\Guzzle\ResponseFactory;
-use Http\Factory\Guzzle\StreamFactory;
+use GuzzleHttp\Psr7\HttpFactory;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
+use Psr\Http\Message\ServerRequestFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
+use Psr\Http\Message\UploadedFileFactoryInterface;
+use Psr\Http\Message\UriFactoryInterface;
 
 final class HttpServiceProvider extends ServiceProvider implements DeferrableProvider
 {
@@ -26,9 +27,13 @@ final class HttpServiceProvider extends ServiceProvider implements DeferrablePro
             Guzzle::class,
             GuzzleInterface::class,
             ClientInterface::class,
+            HttpFactory::class,
             RequestFactoryInterface::class,
             ResponseFactoryInterface::class,
+            ServerRequestFactoryInterface::class,
             StreamFactoryInterface::class,
+            UploadedFileFactoryInterface::class,
+            UriFactoryInterface::class,
         ];
     }
 
@@ -36,43 +41,29 @@ final class HttpServiceProvider extends ServiceProvider implements DeferrablePro
     public function register(): void
     {
         $this->registerGuzzle();
-        $this->registerRequestFactory();
-        $this->registerResponseFactory();
-        $this->registerStreamFactory();
+        $this->registerPsr17Services();
     }
 
     private function registerGuzzle(): void
     {
         $this->app->bind(
             GuzzleInterface::class,
-            static fn () => new Guzzle(['headers' => ['User-Agent' => 'BabDev/1.0']]),
+            static fn() => new Guzzle(['headers' => ['User-Agent' => 'BabDev/1.0']]),
         );
 
         $this->app->alias(GuzzleInterface::class, Guzzle::class);
         $this->app->alias(GuzzleInterface::class, ClientInterface::class);
     }
 
-    private function registerRequestFactory(): void
+    private function registerPsr17Services(): void
     {
         $this->app->singleton(
-            RequestFactoryInterface::class,
-            static fn () => new RequestFactory(),
+            HttpFactory::class,
+            static fn() => new HttpFactory(),
         );
-    }
 
-    private function registerResponseFactory(): void
-    {
-        $this->app->singleton(
-            ResponseFactoryInterface::class,
-            static fn () => new ResponseFactory(),
-        );
-    }
-
-    private function registerStreamFactory(): void
-    {
-        $this->app->singleton(
-            StreamFactoryInterface::class,
-            static fn () => new StreamFactory(),
-        );
+        foreach ([RequestFactoryInterface::class, ResponseFactoryInterface::class, ServerRequestFactoryInterface::class, StreamFactoryInterface::class, UploadedFileFactoryInterface::class, UriFactoryInterface::class] as $psr17Interface) {
+            $this->app->alias(HttpFactory::class, $psr17Interface);
+        }
     }
 }

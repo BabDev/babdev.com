@@ -27,7 +27,7 @@ final class DocumentationServiceProvider extends ServiceProvider implements Defe
     {
         $this->app->singleton(
             DocumentationProcessorContract::class,
-            static fn (Application $app) => new DocumentationProcessor(
+            static fn(Application $app) => new DocumentationProcessor(
                 $app->make(ApiConnector::class),
                 $app->make('cache.store'),
             ),

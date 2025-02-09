@@ -153,7 +153,7 @@ class Package extends Model
     protected function githubUrl(): Attribute
     {
         return new Attribute(
-            get: fn () => \sprintf('https://github.com/BabDev/%s', $this->name),
+            get: fn() => \sprintf('https://github.com/BabDev/%s', $this->name),
         );
     }
 

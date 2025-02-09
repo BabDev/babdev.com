@@ -36,7 +36,7 @@ class RemoveHacktoberfestExtras extends Command
                     $github->replaceRepositoryTopics(
                         'BabDev',
                         $repositoryAttributes['name'],
-                        $topics->filter(static fn (string $label): bool => $label !== 'hacktoberfest')->toArray(),
+                        $topics->filter(static fn(string $label): bool => $label !== 'hacktoberfest')->toArray(),
                     );
                 } else {
                     $this->components->info("'hacktoberfest' topic does not exist on `{$repositoryAttributes['name']}`... ");

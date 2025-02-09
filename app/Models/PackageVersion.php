@@ -84,7 +84,7 @@ class PackageVersion extends Model
     protected function gitBranch(): Attribute
     {
         return new Attribute(
-            get: fn () => $this->docs_git_branch ?? $this->version,
+            get: fn() => $this->docs_git_branch ?? $this->version,
         );
     }
 
@@ -94,7 +94,7 @@ class PackageVersion extends Model
     protected function supportEnded(): Attribute
     {
         return new Attribute(
-            get: fn () => $this->end_of_support?->isBefore(now()) ?? false,
+            get: fn() => $this->end_of_support?->isBefore(now()) ?? false,
         );
     }
 

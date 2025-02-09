@@ -12,6 +12,7 @@ use Github\Client;
 use Illuminate\Http\Request;
 
 /**
+ * @note Don't make readonly until Mockery supports readonly classes
  * @phpstan-import-type GitHubRepoConfig from Action
  */
 class RequestHandler
@@ -31,9 +32,7 @@ class RequestHandler
     {
         $event = $request->header('X-Github-Event');
 
-        if (\is_array($event)) {
-            throw new BadRequestException('Invalid "X-Github-Event" header.');
-        }
+        throw_if(\is_array($event), BadRequestException::class, 'Invalid "X-Github-Event" header.');
 
         if ($event === null) {
             return;
@@ -59,9 +58,7 @@ class RequestHandler
      */
     private function buildClient(#[\SensitiveParameter] array $repoConfig, Request $request): Client
     {
-        if ($request->missing('installation.id')) {
-            throw new BadRequestException('Missing required installation ID.');
-        }
+        throw_if($request->missing('installation.id'), BadRequestException::class, 'Missing required installation ID.');
 
         $github = $this->clientFactory->make(apiVersion: 'machine-man-preview');
 

@@ -62,7 +62,7 @@ final class GitHubServiceProvider extends ServiceProvider implements DeferrableP
     {
         $this->app->singleton(
             Factory::class,
-            static fn (Application $app) => new ContainerAwareFactory($app),
+            static fn(Application $app) => new ContainerAwareFactory($app),
         );
     }
 
@@ -70,7 +70,7 @@ final class GitHubServiceProvider extends ServiceProvider implements DeferrableP
     {
         $this->app->singleton(
             ApiConnector::class,
-            static fn (Application $app) => new ApiConnector(
+            static fn(Application $app) => new ApiConnector(
                 $app->make(Client::class),
             ),
         );
@@ -89,7 +89,7 @@ final class GitHubServiceProvider extends ServiceProvider implements DeferrableP
                     $factory = $app->make(ClientFactory::class);
 
                     $client = $factory->make($app->make(Builder::class));
-                    $client->authenticate($config->get('services.github.token'), null, AuthMethod::ACCESS_TOKEN);
+                    $client->authenticate($config->get('services.github.token'), authMethod: AuthMethod::ACCESS_TOKEN);
 
                     return $client;
                 } catch (InvalidArgumentException $exception) {
@@ -103,7 +103,7 @@ final class GitHubServiceProvider extends ServiceProvider implements DeferrableP
     {
         $this->app->singleton(
             ClientFactory::class,
-            static fn (Application $app) => new ContainerAwareClientFactory($app),
+            static fn(Application $app) => new ContainerAwareClientFactory($app),
         );
     }
 
@@ -111,7 +111,7 @@ final class GitHubServiceProvider extends ServiceProvider implements DeferrableP
     {
         $this->app->singleton(
             Builder::class,
-            static fn (Application $app) => new Builder(
+            static fn(Application $app) => new Builder(
                 $app->make(ClientInterface::class),
                 $app->make(RequestFactoryInterface::class),
                 $app->make(StreamFactoryInterface::class),
@@ -123,7 +123,7 @@ final class GitHubServiceProvider extends ServiceProvider implements DeferrableP
     {
         $this->app->singleton(
             JWTConfigurationBuilderContract::class,
-            static fn () => new JWTConfigurationBuilder(),
+            static fn() => new JWTConfigurationBuilder(),
         );
     }
 
@@ -131,7 +131,7 @@ final class GitHubServiceProvider extends ServiceProvider implements DeferrableP
     {
         $this->app->singleton(
             JWTTokenGeneratorContract::class,
-            static fn (Application $app) => new JWTTokenGenerator(
+            static fn(Application $app) => new JWTTokenGenerator(
                 $app->make(JWTConfigurationBuilderContract::class),
             ),
         );
@@ -141,7 +141,7 @@ final class GitHubServiceProvider extends ServiceProvider implements DeferrableP
     {
         $this->app->singleton(
             RequestHandler::class,
-            static fn (Application $app) => new RequestHandler(
+            static fn(Application $app) => new RequestHandler(
                 $app->make(Factory::class),
                 $app->make(ClientFactory::class),
                 $app->make(JWTTokenGeneratorContract::class),

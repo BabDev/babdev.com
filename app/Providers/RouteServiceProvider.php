@@ -28,8 +28,8 @@ final class RouteServiceProvider extends ServiceProvider
 
     protected function configureRateLimiting(): void
     {
-        RateLimiter::for('api', static fn (Request $request) => Limit::perMinute(60));
+        RateLimiter::for('api', static fn(Request $request) => Limit::perMinute(60));
 
-        RateLimiter::for('github.app', static fn (Request $request) => Limit::perMinute(60));
+        RateLimiter::for('github.app', static fn(Request $request) => Limit::perMinute(60));
     }
 }

@@ -11,7 +11,7 @@
         "blade-ui-kit/blade-ui-kit": "0.6.4",
         "filament/filament": "3.2.137",
         "guzzlehttp/guzzle": "7.9.2",
-        "http-interop/http-factory-guzzle": "1.2.0",
+        "guzzlehttp/psr7": "2.7.0",
         "knplabs/github-api": "3.16.0",
         "laravel/framework": "11.41.3",
         "lcobucci/jwt": "5.5.0",

@@ -92,7 +92,7 @@ class PackageUpdate extends Model implements Feedable
      */
     public function scopePublished(Builder $query): Builder
     {
-        return $query->where('published_at', '<=', now()->format('Y-m-d H:i:s'));
+        return $query->whereDate('published_at', '<=', now()->startOfMinute()->format('Y-m-d H:i:s'));
     }
 
     /**
@@ -109,7 +109,7 @@ class PackageUpdate extends Model implements Feedable
     protected function isPublished(): Attribute
     {
         return new Attribute(
-            get: fn () => $this->published_at->isBefore(now()),
+            get: fn() => $this->published_at->isBefore(now()),
         );
     }
 

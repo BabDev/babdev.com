@@ -16,7 +16,7 @@ final class Handler extends ExceptionHandler
     {
         $this->map(
             PageNotFoundException::class,
-            static fn (PageNotFoundException $e): NotFoundHttpException => new NotFoundHttpException($e->getMessage(), $e),
+            static fn(PageNotFoundException $e): NotFoundHttpException => new NotFoundHttpException($e->getMessage(), $e),
         );
     }
 }
