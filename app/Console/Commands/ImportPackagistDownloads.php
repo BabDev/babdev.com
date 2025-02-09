@@ -17,10 +17,10 @@ class ImportPackagistDownloads extends Command
 
     public function handle(PackagistClient $packagist): void
     {
-        $this->info('Fetching download counts...');
+        $this->components->info('Fetching download counts...');
 
         Package::isPackagist()->each(function (Package $package) use ($packagist): void {
-            $this->comment("Importing `{$package->name}` downloads... ");
+            $this->components->info("Importing `{$package->name}` downloads... ");
 
             [$vendor, $packageName] = explode('/', $package->packagist_name);
 
@@ -31,6 +31,6 @@ class ImportPackagistDownloads extends Command
             ]);
         });
 
-        $this->info('All done!');
+        $this->components->success('All done!');
     }
 }

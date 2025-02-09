@@ -19,6 +19,7 @@ final class HttpServiceProvider extends ServiceProvider implements DeferrablePro
     /**
      * @return array<int, class-string|string>
      */
+    #[\Override]
     public function provides(): array
     {
         return [
@@ -31,6 +32,7 @@ final class HttpServiceProvider extends ServiceProvider implements DeferrablePro
         ];
     }
 
+    #[\Override]
     public function register(): void
     {
         $this->registerGuzzle();

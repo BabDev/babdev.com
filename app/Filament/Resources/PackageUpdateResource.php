@@ -31,6 +31,7 @@ class PackageUpdateResource extends Resource
 
     protected static ?string $navigationGroup = 'Packages';
 
+    #[\Override]
     public static function form(Form $form): Form
     {
         return $form
@@ -63,6 +64,7 @@ class PackageUpdateResource extends Resource
             ]);
     }
 
+    #[\Override]
     public static function table(Table $table): Table
     {
         return $table
@@ -81,6 +83,7 @@ class PackageUpdateResource extends Resource
             ->defaultSort('published_at', 'desc');
     }
 
+    #[\Override]
     public static function getPages(): array
     {
         return [

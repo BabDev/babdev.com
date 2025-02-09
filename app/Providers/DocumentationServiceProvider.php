@@ -14,6 +14,7 @@ final class DocumentationServiceProvider extends ServiceProvider implements Defe
     /**
      * @return array<int, class-string|string>
      */
+    #[\Override]
     public function provides(): array
     {
         return [
@@ -21,6 +22,7 @@ final class DocumentationServiceProvider extends ServiceProvider implements Defe
         ];
     }
 
+    #[\Override]
     public function register(): void
     {
         $this->app->singleton(

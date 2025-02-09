@@ -18,7 +18,7 @@ final class ImportGitHubRepositories extends Command
 
     public function handle(ApiConnector $github): void
     {
-        $this->info('Syncing all repositories...');
+        $this->components->info('Syncing all repositories...');
 
         $github->fetchPublicRepositories('BabDev')
             ->filter(static function (array $repositoryAttributes): bool {
@@ -36,7 +36,7 @@ final class ImportGitHubRepositories extends Command
                 /** @var string $name */
                 $name = Arr::get($repositoryAttributes, 'name');
 
-                $this->comment("Importing `$name`... ");
+                $this->components->info("Importing `$name`... ");
 
                 tap(Package::firstOrNew(['name' => $name]), function (Package $package) use ($name, $repositoryAttributes, $github): void {
                     $package->fill([
@@ -57,6 +57,6 @@ final class ImportGitHubRepositories extends Command
                 });
             });
 
-        $this->info('All done!');
+        $this->components->success('All done!');
     }
 }

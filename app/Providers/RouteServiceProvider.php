@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 final class RouteServiceProvider extends ServiceProvider
 {
+    #[\Override]
     public function boot(): void
     {
         $this->configureRateLimiting();

@@ -28,6 +28,7 @@ return RectorConfig::configure()
         ],
     ])
     ->withPreparedSets(codeQuality: true, phpunitCodeQuality: true)
+    ->withPhpSets()
     ->withImportNames(importShortClasses: false)
     ->withBootstrapFiles([
         __DIR__ . '/vendor/larastan/larastan/bootstrap.php',

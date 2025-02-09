@@ -22,6 +22,7 @@ use League\CommonMark\Renderer\HtmlDecorator;
 
 class Markdown extends BaseMarkdown
 {
+    #[\Override]
     protected function converter(): MarkdownConverterInterface
     {
         /** @var array<string, mixed> $options */

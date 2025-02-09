@@ -68,6 +68,7 @@ class PackageUpdate extends Model implements Feedable
         return self::all();
     }
 
+    #[\Override]
     public function getRouteKeyName(): string
     {
         return 'slug';

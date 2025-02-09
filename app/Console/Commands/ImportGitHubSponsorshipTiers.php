@@ -17,7 +17,7 @@ final class ImportGitHubSponsorshipTiers extends Command
 
     public function handle(ApiConnector $github): void
     {
-        $this->info('Syncing sponsorship tiers...');
+        $this->components->info('Syncing sponsorship tiers...');
 
         // TODO - Pagination support
         $query = <<<GRAPHQL
@@ -54,6 +54,6 @@ final class ImportGitHubSponsorshipTiers extends Command
             ]);
         }
 
-        $this->info('All done!');
+        $this->components->success('All done!');
     }
 }

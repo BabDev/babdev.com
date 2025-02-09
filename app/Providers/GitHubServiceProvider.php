@@ -30,6 +30,7 @@ final class GitHubServiceProvider extends ServiceProvider implements DeferrableP
     /**
      * @return array<int, class-string|string>
      */
+    #[\Override]
     public function provides(): array
     {
         return [
@@ -44,6 +45,7 @@ final class GitHubServiceProvider extends ServiceProvider implements DeferrableP
         ];
     }
 
+    #[\Override]
     public function register(): void
     {
         $this->registerActionFactory();

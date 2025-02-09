@@ -15,7 +15,7 @@ class RemoveHacktoberfestExtras extends Command
 
     public function handle(ApiConnector $github): void
     {
-        $this->info('Updating all repositories...');
+        $this->components->info('Updating all repositories...');
 
         $github->fetchPublicRepositories('BabDev')
             ->filter(static function (array $repositoryAttributes): bool {
@@ -31,7 +31,7 @@ class RemoveHacktoberfestExtras extends Command
                 $topics = $github->fetchRepositoryTopics('BabDev', $repositoryAttributes['name']);
 
                 if ($topics->contains('hacktoberfest')) {
-                    $this->comment("Removing 'hacktoberfest' topic from `{$repositoryAttributes['name']}`... ");
+                    $this->components->info("Removing 'hacktoberfest' topic from `{$repositoryAttributes['name']}`... ");
 
                     $github->replaceRepositoryTopics(
                         'BabDev',
@@ -39,10 +39,10 @@ class RemoveHacktoberfestExtras extends Command
                         $topics->filter(static fn (string $label): bool => $label !== 'hacktoberfest')->toArray(),
                     );
                 } else {
-                    $this->comment("'hacktoberfest' topic does not exist on `{$repositoryAttributes['name']}`... ");
+                    $this->components->info("'hacktoberfest' topic does not exist on `{$repositoryAttributes['name']}`... ");
                 }
             });
 
-        $this->info('All done!');
+        $this->components->success('All done!');
     }
 }

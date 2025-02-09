@@ -24,6 +24,7 @@ class UserResource extends Resource
 
     protected static ?string $navigationGroup = 'Accounts';
 
+    #[\Override]
     public static function form(Form $form): Form
     {
         return $form
@@ -33,6 +34,7 @@ class UserResource extends Resource
             ]);
     }
 
+    #[\Override]
     public static function table(Table $table): Table
     {
         return $table
@@ -50,6 +52,7 @@ class UserResource extends Resource
             ->defaultSort('name', 'asc');
     }
 
+    #[\Override]
     public static function getPages(): array
     {
         return [
@@ -57,11 +60,13 @@ class UserResource extends Resource
         ];
     }
 
+    #[\Override]
     public static function getGlobalSearchResultTitle(Model $record): string
     {
         return $record->email;
     }
 
+    #[\Override]
     public static function getGloballySearchableAttributes(): array
     {
         return ['email', 'name'];

@@ -23,6 +23,7 @@ final class AppServiceProvider extends ServiceProvider
         Livewire::setUpdateRoute(fn ($handle) => Route::post('/livewire/update', $handle)->middleware('filament.web'));
     }
 
+    #[\Override]
     public function register(): void
     {
         $this->registerPagination();

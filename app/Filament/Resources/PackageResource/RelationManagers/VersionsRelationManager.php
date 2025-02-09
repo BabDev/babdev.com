@@ -19,6 +19,7 @@ class VersionsRelationManager extends RelationManager
 
     protected static ?string $recordTitleAttribute = 'version';
 
+    #[\Override]
     public function form(Form $form): Form
     {
         return $form

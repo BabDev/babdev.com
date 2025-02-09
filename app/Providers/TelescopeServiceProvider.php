@@ -8,6 +8,7 @@ use Laravel\Telescope\TelescopeApplicationServiceProvider;
 
 final class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
 {
+    #[\Override]
     public function register(): void
     {
         $this->hideSensitiveRequestDetails();

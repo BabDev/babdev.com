@@ -14,6 +14,7 @@ final class PackagistServiceProvider extends ServiceProvider implements Deferrab
     /**
      * @return array<int, class-string|string>
      */
+    #[\Override]
     public function provides(): array
     {
         return [
@@ -22,6 +23,7 @@ final class PackagistServiceProvider extends ServiceProvider implements Deferrab
         ];
     }
 
+    #[\Override]
     public function register(): void
     {
         $this->registerApiConnector();

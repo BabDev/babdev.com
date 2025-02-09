@@ -34,6 +34,7 @@ class PackageResource extends Resource
 
     protected static ?string $navigationGroup = 'Packages';
 
+    #[\Override]
     public static function form(Form $form): Form
     {
         return $form
@@ -75,6 +76,7 @@ class PackageResource extends Resource
             ]);
     }
 
+    #[\Override]
     public static function table(Table $table): Table
     {
         return $table
@@ -96,6 +98,7 @@ class PackageResource extends Resource
             ->defaultSort('display_name', 'asc');
     }
 
+    #[\Override]
     public static function getRelations(): array
     {
         return [
@@ -103,6 +106,7 @@ class PackageResource extends Resource
         ];
     }
 
+    #[\Override]
     public static function getPages(): array
     {
         return [
@@ -115,11 +119,13 @@ class PackageResource extends Resource
     /**
      * @phpstan-param Package $record
      */
+    #[\Override]
     public static function getGlobalSearchResultTitle(Model $record): string
     {
         return $record->display_name;
     }
 
+    #[\Override]
     public static function getGloballySearchableAttributes(): array
     {
         return ['display_name', 'name'];

@@ -13,11 +13,13 @@ use Spatie\GoogleFonts\Commands\FetchGoogleFontsCommand;
 
 final class Kernel extends ConsoleKernel
 {
+    #[\Override]
     protected function commands(): void
     {
         $this->load(__DIR__ . '/Commands');
     }
 
+    #[\Override]
     protected function schedule(Schedule $schedule): void
     {
         $schedule->command(FetchGoogleFontsCommand::class)->weekly();

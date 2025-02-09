@@ -64,6 +64,7 @@ class RoutableLengthAwarePaginator extends LengthAwarePaginator
      *
      * @param int $page
      */
+    #[\Override]
     public function url($page): string
     {
         if (!static::shouldUsePaginator()) {

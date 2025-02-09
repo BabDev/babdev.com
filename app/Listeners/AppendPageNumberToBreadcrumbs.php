@@ -6,7 +6,7 @@ use BabDev\Breadcrumbs\Events\AfterBreadcrumbGenerated;
 
 final class AppendPageNumberToBreadcrumbs
 {
-    private const SUPPORTED_BREADCRUMBS = [
+    private const array SUPPORTED_BREADCRUMBS = [
         'open-source.updates',
     ];
 

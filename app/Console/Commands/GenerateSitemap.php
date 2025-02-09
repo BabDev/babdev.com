@@ -17,7 +17,7 @@ final class GenerateSitemap extends Command
 
     public function handle(): void
     {
-        $this->info('Generating sitemap...');
+        $this->components->info('Generating sitemap...');
 
         SitemapGenerator::create(config('app.url'))
             ->shouldCrawl(static function (Uri $uri): bool {
@@ -47,6 +47,6 @@ final class GenerateSitemap extends Command
             ->getSitemap()
             ->writeToDisk('local', 'sitemap.xml');
 
-        $this->info('Sitemap generated!');
+        $this->components->info('Sitemap generated!');
     }
 }

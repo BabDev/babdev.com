@@ -98,6 +98,7 @@ class Package extends Model
         'package_type' => PackageType::PHP_PACKAGE,
     ];
 
+    #[\Override]
     public function getRouteKeyName(): string
     {
         return 'slug';

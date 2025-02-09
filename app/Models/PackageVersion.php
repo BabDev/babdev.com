@@ -53,6 +53,7 @@ class PackageVersion extends Model
         'end_of_support',
     ];
 
+    #[\Override]
     public function getRouteKeyName(): string
     {
         return 'version';

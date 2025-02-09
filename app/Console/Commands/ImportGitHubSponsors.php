@@ -18,7 +18,7 @@ final class ImportGitHubSponsors extends Command
 
     public function handle(ApiConnector $github): void
     {
-        $this->info('Syncing sponsors...');
+        $this->components->info('Syncing sponsors...');
 
         // TODO - Pagination support
         $query = <<<GRAPHQL
@@ -78,6 +78,6 @@ final class ImportGitHubSponsors extends Command
         Sponsor::whereNotIn('sponsorship_node_id', $activeSponsorIds)
             ->delete();
 
-        $this->info('All done!');
+        $this->components->success('All done!');
     }
 }

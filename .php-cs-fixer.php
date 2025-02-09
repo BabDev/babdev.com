@@ -1,6 +1,6 @@
 <?php
 
-$finder = (new PhpCsFixer\Finder())
+$finder = new PhpCsFixer\Finder()
     ->notPath('bootstrap/cache')
     ->notPath('config')
     ->notPath('node_modules')
@@ -13,11 +13,11 @@ $finder = (new PhpCsFixer\Finder())
     ->ignoreDotFiles(true)
     ->ignoreVCS(true);
 
-return (new PhpCsFixer\Config())
+return new PhpCsFixer\Config()
     ->setRules(
         [
-            '@PHP82Migration' => true,
-            '@PHP80Migration:risky' => true,
+            '@PHP84Migration' => true,
+            '@PHP82Migration:risky' => true,
             '@PHPUnit100Migration:risky' => true,
             '@PSR12' => true,
             'align_multiline_comment' => true,
