@@ -5722,16 +5722,16 @@
         },
         {
             "name": "spatie/crawler",
-            "version": "8.4.1",
+            "version": "8.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/crawler.git",
-                "reference": "906892d266a77f6dfb834559bac24542a49139fa"
+                "reference": "4dc593040018885229dfc8df7cc4bf12cd470cf3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/crawler/zipball/906892d266a77f6dfb834559bac24542a49139fa",
-                "reference": "906892d266a77f6dfb834559bac24542a49139fa",
+                "url": "https://api.github.com/repos/spatie/crawler/zipball/4dc593040018885229dfc8df7cc4bf12cd470cf3",
+                "reference": "4dc593040018885229dfc8df7cc4bf12cd470cf3",
                 "shasum": ""
             },
             "require": {
@@ -5739,8 +5739,8 @@
                 "guzzlehttp/psr7": "^2.0",
                 "illuminate/collections": "^10.0|^11.0|^12.0",
                 "nicmart/tree": "^0.9",
-                "php": "^8.1",
-                "spatie/browsershot": "^3.45|^4.0|^5.0",
+                "php": "^8.2",
+                "spatie/browsershot": "^5.0.5",
                 "spatie/robots-txt": "^2.0",
                 "symfony/dom-crawler": "^6.0|^7.0"
             },
@@ -5774,7 +5774,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/crawler/issues",
-                "source": "https://github.com/spatie/crawler/tree/8.4.1"
+                "source": "https://github.com/spatie/crawler/tree/8.4.2"
             },
             "funding": [
                 {
@@ -5786,7 +5786,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-02-17T09:24:49+00:00"
+            "time": "2025-02-24T09:20:47+00:00"
         },
         {
             "name": "spatie/invade",
