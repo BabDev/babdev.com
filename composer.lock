@@ -78,12 +78,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/BabDev/laravel-breadcrumbs.git",
-                "reference": "67bc682a5cb9ae5c8af1b572fad526965a71b900"
+                "reference": "3f85b48958e05cf996ccc464b91789efe46d7de7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BabDev/laravel-breadcrumbs/zipball/67bc682a5cb9ae5c8af1b572fad526965a71b900",
-                "reference": "67bc682a5cb9ae5c8af1b572fad526965a71b900",
+                "url": "https://api.github.com/repos/BabDev/laravel-breadcrumbs/zipball/3f85b48958e05cf996ccc464b91789efe46d7de7",
+                "reference": "3f85b48958e05cf996ccc464b91789efe46d7de7",
                 "shasum": ""
             },
             "require": {
@@ -99,7 +99,7 @@
                 "laravel/framework": "^10.0 || ^11.0 || ^12.0",
                 "orchestra/testbench": "^8.0 || ^9.0 || ^10.0",
                 "phpunit/phpunit": "^10.5 || ^11.5",
-                "spatie/phpunit-snapshot-assertions": "^5.0"
+                "spatie/phpunit-snapshot-assertions": "^5.1"
             },
             "default-branch": true,
             "type": "library",
@@ -137,7 +137,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-02-26T01:28:13+00:00"
+            "time": "2025-02-26T03:03:41+00:00"
         },
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -6656,16 +6656,16 @@
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "v7.2.3",
+            "version": "v7.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",
-                "reference": "700a880e5089280c7cf3ca1ccf9d9de6630f5d25"
+                "reference": "19cc7b08efe9ad1ab1b56e0948e8d02e15ed3ef7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/700a880e5089280c7cf3ca1ccf9d9de6630f5d25",
-                "reference": "700a880e5089280c7cf3ca1ccf9d9de6630f5d25",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/19cc7b08efe9ad1ab1b56e0948e8d02e15ed3ef7",
+                "reference": "19cc7b08efe9ad1ab1b56e0948e8d02e15ed3ef7",
                 "shasum": ""
             },
             "require": {
@@ -6703,7 +6703,7 @@
             "description": "Eases DOM navigation for HTML and XML documents",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/dom-crawler/tree/v7.2.3"
+                "source": "https://github.com/symfony/dom-crawler/tree/v7.2.4"
             },
             "funding": [
                 {
@@ -6719,7 +6719,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-01-27T11:08:17+00:00"
+            "time": "2025-02-17T15:53:07+00:00"
         },
         {
             "name": "symfony/error-handler",
