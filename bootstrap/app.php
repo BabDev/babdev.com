@@ -7,19 +7,19 @@ use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-return Application::configure(basePath: dirname(__DIR__))
+return Application::configure(basePath: \dirname(__DIR__))
     ->withRouting(
-        web: __DIR__.'/../routes/web.php',
-        then: function (Application $app) {
+        using: function (): void {
             Route::middleware('web')
-                ->domain(config()->string('app.domain'));
+                ->domain(config()->string('app.domain'))
+                ->group(base_path('routes/web.php'));
 
             Route::middleware('github.app')
                 ->domain(config()->string('app.domain'))
-                ->group($app->basePath('routes/github.php'));
-        }
+                ->group(base_path('routes/github.php'));
+        },
     )
-    ->withSchedule(function (Schedule $schedule) {
+    ->withSchedule(function (Schedule $schedule): void {
         $schedule->command(\Spatie\GoogleFonts\Commands\FetchGoogleFontsCommand::class)->weekly();
         $schedule->command(\BabDev\Console\Commands\ImportPackagistDownloads::class)->hourly();
         $schedule->command(\BabDev\Console\Commands\ImportGitHubRepositories::class)->dailyAt('12:00');
@@ -27,7 +27,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $schedule->command(\BabDev\Console\Commands\ImportGitHubSponsors::class)->dailyAt('13:30');
         $schedule->command(\BabDev\Console\Commands\GenerateSitemap::class)->dailyAt('00:00');
     })
-    ->withMiddleware(function (Middleware $middleware) {
+    ->withMiddleware(function (Middleware $middleware): void {
         $middleware->use([
             \Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance::class,
             \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
@@ -61,7 +61,7 @@ return Application::configure(basePath: dirname(__DIR__))
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ]);
     })
-    ->withExceptions(function (Exceptions $exceptions) {
+    ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->map(
             PageNotFoundException::class,
             static fn(PageNotFoundException $e): NotFoundHttpException => new NotFoundHttpException($e->getMessage(), $e),
