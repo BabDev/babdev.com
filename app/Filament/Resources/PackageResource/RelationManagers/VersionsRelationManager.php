@@ -50,6 +50,6 @@ class VersionsRelationManager extends RelationManager
             ->bulkActions([
                 DeleteBulkAction::make(),
             ])
-            ->defaultSort('version', 'asc');
+            ->defaultSort('version');
     }
 }

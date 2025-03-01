@@ -49,7 +49,7 @@ class UserResource extends Resource
             ->bulkActions([
                 DeleteBulkAction::make(),
             ])
-            ->defaultSort('name', 'asc');
+            ->defaultSort('name');
     }
 
     #[\Override]

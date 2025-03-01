@@ -59,20 +59,13 @@ class PackageResource extends Resource
                     ->unique(Package::class, 'slug', fn($record) => $record),
                 TextInput::make('display_name'),
                 TextInput::make('packagist_name'),
-                Checkbox::make('has_documentation'),
+                Checkbox::make('has_documentation')->label('Has Documentation?'),
                 Select::make('package_type')
                     ->required()
-                    ->options([
-                        PackageType::JOOMLA_EXTENSION->value => PackageType::JOOMLA_EXTENSION->label(),
-                        PackageType::LARAVEL_PACKAGE->value => PackageType::LARAVEL_PACKAGE->label(),
-                        PackageType::PHP_PACKAGE->value => PackageType::PHP_PACKAGE->label(),
-                        PackageType::PHPSPEC_EXTENSION->value => PackageType::PHPSPEC_EXTENSION->label(),
-                        PackageType::SYLIUS_PLUGIN->value => PackageType::SYLIUS_PLUGIN->label(),
-                        PackageType::SYMFONY_BUNDLE->value => PackageType::SYMFONY_BUNDLE->label(),
-                    ]),
-                Checkbox::make('supported'),
+                    ->options(static fn () => collect(PackageType::cases())->mapWithKeys(static fn (PackageType $type) => [$type->value => $type->label()])),
+                Checkbox::make('supported')->label('Supported?'),
                 Checkbox::make('visible'),
-                Checkbox::make('is_packagist'),
+                Checkbox::make('is_packagist')->label('Is Packagist?'),
             ]);
     }
 
@@ -82,11 +75,11 @@ class PackageResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('display_name'),
-                IconColumn::make('has_documentation')->boolean(),
+                IconColumn::make('has_documentation')->label('Has Documentation?')->boolean(),
                 TextColumn::make('package_type')->formatStateUsing(fn(PackageType $state): string => $state->label()),
-                IconColumn::make('supported')->boolean(),
+                IconColumn::make('supported')->label('Supported?')->boolean(),
                 IconColumn::make('visible')->boolean(),
-                IconColumn::make('is_packagist')->boolean(),
+                IconColumn::make('is_packagist')->label('Is Packagist?')->boolean(),
             ])
             ->actions([
                 EditAction::make(),
