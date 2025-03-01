@@ -61,8 +61,6 @@ class RoutableLengthAwarePaginator extends LengthAwarePaginator
 
     /**
      * Get the URL for a given page number.
-     *
-     * @param int $page
      */
     #[\Override]
     public function url(int $page): string
