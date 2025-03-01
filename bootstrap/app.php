@@ -1,55 +1,69 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Create The Application
-|--------------------------------------------------------------------------
-|
-| The first thing we will do is create a new Laravel application instance
-| which serves as the "glue" for all the components of Laravel, and is
-| the IoC container for the system binding all of the various parts.
-|
-*/
+use BabDev\Contracts\Services\Exceptions\PageNotFoundException;
+use Illuminate\Console\Scheduling\Schedule;
+use Illuminate\Foundation\Application;
+use Illuminate\Foundation\Configuration\Exceptions;
+use Illuminate\Foundation\Configuration\Middleware;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-$app = new Illuminate\Foundation\Application(
-    realpath(__DIR__ . '/../'),
-);
+return Application::configure(basePath: \dirname(__DIR__))
+    ->withRouting(
+        using: function (): void {
+            Route::middleware('web')
+                ->domain(config()->string('app.domain'))
+                ->group(base_path('routes/web.php'));
 
-/*
-|--------------------------------------------------------------------------
-| Bind Important Interfaces
-|--------------------------------------------------------------------------
-|
-| Next, we need to bind some important interfaces into the container so
-| we will be able to resolve them when needed. The kernels serve the
-| incoming requests to this application from both the web and CLI.
-|
-*/
+            Route::middleware('github.app')
+                ->domain(config()->string('app.domain'))
+                ->group(base_path('routes/github.php'));
+        },
+    )
+    ->withSchedule(function (Schedule $schedule): void {
+        $schedule->command(\Spatie\GoogleFonts\Commands\FetchGoogleFontsCommand::class)->weekly();
+        $schedule->command(\BabDev\Console\Commands\ImportPackagistDownloads::class)->hourly();
+        $schedule->command(\BabDev\Console\Commands\ImportGitHubRepositories::class)->dailyAt('12:00');
+        $schedule->command(\BabDev\Console\Commands\ImportGitHubSponsorshipTiers::class)->dailyAt('13:00');
+        $schedule->command(\BabDev\Console\Commands\ImportGitHubSponsors::class)->dailyAt('13:30');
+        $schedule->command(\BabDev\Console\Commands\GenerateSitemap::class)->dailyAt('00:00');
+    })
+    ->withMiddleware(function (Middleware $middleware): void {
+        $middleware->use([
+            \Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance::class,
+            \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
+            \Illuminate\Foundation\Http\Middleware\TrimStrings::class,
+            \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+        ]);
 
-$app->singleton(
-    Illuminate\Contracts\Http\Kernel::class,
-    BabDev\Http\Kernel::class,
-);
+        $middleware->group('filament.web', [
+            \Illuminate\Cookie\Middleware\EncryptCookies::class,
+            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+            \Illuminate\Session\Middleware\StartSession::class,
+            \Illuminate\Session\Middleware\AuthenticateSession::class,
+            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            \Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::class,
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \Filament\Http\Middleware\DispatchServingFilamentEvent::class,
+        ]);
 
-$app->singleton(
-    Illuminate\Contracts\Console\Kernel::class,
-    BabDev\Console\Kernel::class,
-);
+        $middleware->group('web', [
+            \Illuminate\Cookie\Middleware\EncryptCookies::class,
+            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        ]);
 
-$app->singleton(
-    Illuminate\Contracts\Debug\ExceptionHandler::class,
-    BabDev\Exceptions\Handler::class,
-);
-
-/*
-|--------------------------------------------------------------------------
-| Return The Application
-|--------------------------------------------------------------------------
-|
-| This script returns the application instance. The instance is given to
-| the calling script so we can separate the building of the instances
-| from the actual running of the application and sending responses.
-|
-*/
-
-return $app;
+        $middleware->group('api', [
+            \Illuminate\Routing\Middleware\ThrottleRequests::class . ':api',
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        ]);
+        $middleware->group('github.app', [
+            \Illuminate\Routing\Middleware\ThrottleRequests::class . ':github.app',
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        ]);
+    })
+    ->withExceptions(function (Exceptions $exceptions): void {
+        $exceptions->map(
+            PageNotFoundException::class,
+            static fn(PageNotFoundException $e): NotFoundHttpException => new NotFoundHttpException($e->getMessage(), $e),
+        );
+    })->create();

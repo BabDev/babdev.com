@@ -21,8 +21,9 @@
 
     <php>
         <env name="APP_ENV" value="testing"/>
+        <env name="AUTH_MODEL" value="BabDev\\Models\\User"/>
         <env name="BCRYPT_ROUNDS" value="4"/>
-        <env name="CACHE_DRIVER" value="array"/>
+        <env name="CACHE_STORE" value="array"/>
         <env name="DB_CONNECTION" value="mysql"/>
         <env name="DB_DATABASE" value="babdev_test"/>
         <env name="MAIL_MAILER" value="array"/>
