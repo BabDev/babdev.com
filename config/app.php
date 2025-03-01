@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Facade;
-use Illuminate\Support\ServiceProvider;
 
 return [
 
@@ -10,7 +9,6 @@ return [
     'filament_domain' => env('FILAMENT_DOMAIN'),
 
     'timezone' => 'UTC',
-
 
     'aliases' => Facade::defaultAliases()->merge([
         // ...

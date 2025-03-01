@@ -1,26 +1,39 @@
 <?php
 
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use BabDev\Contracts\Services\Exceptions\PageNotFoundException;
-use BabDev\Providers\AppServiceProvider;
+use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 return Application::configure(basePath: dirname(__DIR__))
-    ->withProviders()
     ->withRouting(
         web: __DIR__.'/../routes/web.php',
-        // api: __DIR__.'/../routes/api.php',
-        commands: __DIR__.'/../routes/console.php',
-        // channels: __DIR__.'/../routes/channels.php',
-        health: '/up',
-    )
-    ->withMiddleware(function (Middleware $middleware) {
-        $middleware->redirectGuestsTo(fn () => route('login'));
-        $middleware->redirectUsersTo(AppServiceProvider::HOME);
+        then: function (Application $app) {
+            Route::middleware('web')
+                ->domain(config()->string('app.domain'));
 
-        $middleware->throttleApi();
+            Route::middleware('github.app')
+                ->domain(config()->string('app.domain'))
+                ->group($app->basePath('routes/github.php'));
+        }
+    )
+    ->withSchedule(function (Schedule $schedule) {
+        $schedule->command(\Spatie\GoogleFonts\Commands\FetchGoogleFontsCommand::class)->weekly();
+        $schedule->command(\BabDev\Console\Commands\ImportPackagistDownloads::class)->hourly();
+        $schedule->command(\BabDev\Console\Commands\ImportGitHubRepositories::class)->dailyAt('12:00');
+        $schedule->command(\BabDev\Console\Commands\ImportGitHubSponsorshipTiers::class)->dailyAt('13:00');
+        $schedule->command(\BabDev\Console\Commands\ImportGitHubSponsors::class)->dailyAt('13:30');
+        $schedule->command(\BabDev\Console\Commands\GenerateSitemap::class)->dailyAt('00:00');
+    })
+    ->withMiddleware(function (Middleware $middleware) {
+        $middleware->use([
+            \Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance::class,
+            \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
+            \Illuminate\Foundation\Http\Middleware\TrimStrings::class,
+            \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+        ]);
 
         $middleware->group('filament.web', [
             \Illuminate\Cookie\Middleware\EncryptCookies::class,
@@ -33,6 +46,16 @@ return Application::configure(basePath: dirname(__DIR__))
             \Filament\Http\Middleware\DispatchServingFilamentEvent::class,
         ]);
 
+        $middleware->group('web', [
+            \Illuminate\Cookie\Middleware\EncryptCookies::class,
+            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        ]);
+
+        $middleware->group('api', [
+            \Illuminate\Routing\Middleware\ThrottleRequests::class . ':api',
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        ]);
         $middleware->group('github.app', [
             \Illuminate\Routing\Middleware\ThrottleRequests::class . ':github.app',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,

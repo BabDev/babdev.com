@@ -3,9 +3,12 @@
 namespace BabDev\Providers;
 
 use BabDev\Pagination\RoutableLengthAwarePaginator;
+use Illuminate\Cache\RateLimiting\Limit;
+use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Routing\Route as RouteObject;
+use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
@@ -20,7 +23,10 @@ final class AppServiceProvider extends ServiceProvider
 
         Paginator::useBootstrap();
 
-        Livewire::setUpdateRoute(fn($handle) => Route::post('/livewire/update', $handle)->middleware('filament.web'));
+        RateLimiter::for('api', static fn(Request $request) => Limit::perMinute(60));
+        RateLimiter::for('github.app', static fn(Request $request) => Limit::perMinute(60));
+
+        Livewire::setUpdateRoute(static fn($handle) => Route::post('/livewire/update', $handle)->middleware('filament.web'));
     }
 
     #[\Override]
