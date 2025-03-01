@@ -2,9 +2,6 @@
 
 namespace BabDev\Providers;
 
-use Illuminate\Support\Facades\RateLimiter;
-use Illuminate\Http\Request;
-use Illuminate\Cache\RateLimiting\Limit;
 use BabDev\Pagination\RoutableLengthAwarePaginator;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
@@ -16,15 +13,6 @@ use Livewire\Livewire;
 
 final class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * The path to your application's "home" route.
-     *
-     * Typically, users are redirected here after authentication.
-     *
-     * @var string
-     */
-    public const HOME = '/home';
-
     public function boot(): void
     {
         // Limit database key length
@@ -33,17 +21,6 @@ final class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrap();
 
         Livewire::setUpdateRoute(fn($handle) => Route::post('/livewire/update', $handle)->middleware('filament.web'));
-
-    #[\Override]
-    public function bootRoute(): void
-    {
-        RateLimiter::for('api', static fn(Request $request) => Limit::perMinute(60));
-
-        RateLimiter::for('github.app', static fn(Request $request) => Limit::perMinute(60));
-
-        
-    }
-
     }
 
     #[\Override]
@@ -85,15 +62,5 @@ final class AppServiceProvider extends ServiceProvider
 
         // Add the checker
         RoutableLengthAwarePaginator::paginatorChecker(static fn() => !is_filament_request(request()));
-    }
-
-    #[\Override]
-    public function bootRoute(): void
-    {
-        RateLimiter::for('api', static fn(Request $request) => Limit::perMinute(60));
-
-        RateLimiter::for('github.app', static fn(Request $request) => Limit::perMinute(60));
-
-        
     }
 }
