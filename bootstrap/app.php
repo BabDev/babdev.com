@@ -1,5 +1,7 @@
 <?php
 
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use BabDev\Contracts\Services\Exceptions\PageNotFoundException;
 use App\Providers\AppServiceProvider;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -37,5 +39,8 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        //
+        $exceptions->map(
+            PageNotFoundException::class,
+            static fn(PageNotFoundException $e): NotFoundHttpException => new NotFoundHttpException($e->getMessage(), $e),
+        );
     })->create();
