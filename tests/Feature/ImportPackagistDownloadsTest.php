@@ -4,8 +4,7 @@ namespace Tests\Feature;
 
 use BabDev\Models\Package;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Mockery\MockInterface;
-use Spatie\Packagist\PackagistClient;
+use Illuminate\Support\Facades\Http;
 use Tests\TestCase;
 
 final class ImportPackagistDownloadsTest extends TestCase
@@ -14,19 +13,30 @@ final class ImportPackagistDownloadsTest extends TestCase
 
     public function test_downloads_for_packagist_listings_are_imported(): void
     {
-        Package::factory()->packagist()->create();
+        $package = Package::factory()->packagist()->create();
 
-        $this->mock(PackagistClient::class, function (MockInterface $mock): void {
-            $mock->shouldReceive('getPackage')->andReturn([
-                'package' => [
-                    'downloads' => [
-                        'total' => random_int(0, 999999),
-                    ],
+        $totalDownloads = random_int(10000, 999999);
+        $monthlyDownloads = random_int(100, $totalDownloads);
+        $dailyDownloads = random_int(0, $monthlyDownloads);
+
+        Http::fake([
+            "packagist.org/packages/{$package->packagist_name}/stats.json" => Http::response([
+                'downloads' => [
+                    'total' => $totalDownloads,
+                    'monthly' => $monthlyDownloads,
+                    'daily' => $dailyDownloads,
                 ],
-            ]);
-        });
+                'versions' => [
+                    'dev-main',
+                ],
+                'average' => 'monthly',
+                'date' => '2025-03-05',
+            ]),
+        ]);
 
         $this->artisan('import:packagist-downloads')
             ->assertSuccessful();
+
+        $this->assertDatabaseHas('packages', ['id' => $package->id, 'downloads' => $totalDownloads]);
     }
 }

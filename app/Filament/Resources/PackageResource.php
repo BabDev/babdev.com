@@ -62,7 +62,7 @@ class PackageResource extends Resource
                 Checkbox::make('has_documentation')->label('Has Documentation?'),
                 Select::make('package_type')
                     ->required()
-                    ->options(static fn () => collect(PackageType::cases())->mapWithKeys(static fn (PackageType $type) => [$type->value => $type->label()])),
+                    ->options(static fn() => collect(PackageType::cases())->mapWithKeys(static fn(PackageType $type) => [$type->value => $type->label()])),
                 Checkbox::make('supported')->label('Supported?'),
                 Checkbox::make('visible'),
                 Checkbox::make('is_packagist')->label('Is Packagist?'),

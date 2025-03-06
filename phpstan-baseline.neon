@@ -67,18 +67,6 @@ parameters:
 			path: app/Console/Commands/ImportGitHubSponsorshipTiers.php
 
 		-
-			message: '#^Parameter \#1 \$array of static method Illuminate\\Support\\Arr\:\:get\(\) expects array\|ArrayAccess, array\|null given\.$#'
-			identifier: argument.type
-			count: 1
-			path: app/Console/Commands/ImportPackagistDownloads.php
-
-		-
-			message: '#^Parameter \#2 \$string of function explode expects string, string\|null given\.$#'
-			identifier: argument.type
-			count: 1
-			path: app/Console/Commands/ImportPackagistDownloads.php
-
-		-
 			message: '#^Parameter \#2 \$repository of method BabDev\\GitHub\\ApiConnector\:\:fetchRepositoryTopics\(\) expects string, mixed given\.$#'
 			identifier: argument.type
 			count: 1

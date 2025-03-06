@@ -4,30 +4,36 @@ namespace BabDev\Console\Commands;
 
 use BabDev\Models\Package;
 use Illuminate\Console\Command;
-use Illuminate\Support\Arr;
-use Spatie\Packagist\PackagistClient;
+use Illuminate\Support\Facades\Http;
 use Symfony\Component\Console\Attribute\AsCommand;
 
 #[AsCommand(name: 'import:packagist-downloads', description: 'Import download counts from Packagist.')]
-class ImportPackagistDownloads extends Command
+final class ImportPackagistDownloads extends Command
 {
     protected $name = 'import:packagist-downloads';
 
     protected $description = 'Import download counts from Packagist.';
 
-    public function handle(PackagistClient $packagist): void
+    public function handle(): void
     {
         $this->components->info('Fetching download counts...');
 
-        Package::isPackagist()->each(function (Package $package) use ($packagist): void {
+        Package::isPackagist()->each(function (Package $package): void {
+            \assert($package->packagist_name !== null);
+
             $this->components->info("Importing `{$package->name}` downloads... ");
 
-            [$vendor, $packageName] = explode('/', $package->packagist_name);
+            $stats = Http::withUserAgent('BabDev/1.0')
+                ->get("https://packagist.org/packages/{$package->packagist_name}/stats.json");
 
-            $packagistInfo = $packagist->getPackage($vendor, $packageName);
+            if ($stats->failed()) {
+                $this->components->error("Could not fetch the `{$package->name}` download stats... ");
+
+                return;
+            }
 
             $package->update([
-                'downloads' => Arr::get($packagistInfo, 'package.downloads.total'),
+                'downloads' => $stats->json('downloads.total'),
             ]);
         });
 
