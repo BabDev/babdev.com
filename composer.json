@@ -33,7 +33,7 @@
         "phpstan/phpstan": "2.1.7",
         "phpstan/phpstan-mockery": "2.0.0",
         "phpstan/phpstan-phpunit": "2.0.4",
-        "phpunit/phpunit": "11.5.11",
+        "phpunit/phpunit": "11.5.12",
         "rector/rector": "2.0.10",
         "spatie/laravel-ignition": "2.9.1"
     },
