@@ -36,7 +36,6 @@ return new PhpCsFixer\Config()
         'declare_strict_types' => false,
         'dir_constant' => true,
         'function_to_constant' => true,
-        'function_typehint_space' => true,
         'increment_style' => [
             'style' => 'post',
         ],
@@ -56,9 +55,8 @@ return new PhpCsFixer\Config()
         'no_multiline_whitespace_around_double_arrow' => true,
         'no_null_property_initialization' => true,
         'no_short_bool_cast' => true,
-        'no_spaces_inside_parenthesis' => true,
         'no_superfluous_elseif' => true,
-        'no_trailing_comma_in_singleline_array' => true,
+        'no_trailing_comma_in_singleline' => true,
         'no_trailing_whitespace' => true,
         'no_trailing_whitespace_in_comment' => true,
         'no_unused_imports' => true,
@@ -75,6 +73,7 @@ return new PhpCsFixer\Config()
         'set_type_to_cast' => true,
         'simplified_null_return' => true,
         'single_line_empty_body' => true,
+        'spaces_inside_parentheses' => false,
         'trailing_comma_in_multiline' => [
             'after_heredoc' => true,
             'elements' => [
@@ -83,6 +82,7 @@ return new PhpCsFixer\Config()
                 'parameters',
             ],
         ],
+        'type_declaration_spaces' => true,
         'yoda_style' => false,
     ])
     ->setRiskyAllowed(true)
