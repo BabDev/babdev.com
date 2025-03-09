@@ -295,12 +295,6 @@ parameters:
 			path: app/Providers/Filament/AppPanelProvider.php
 
 		-
-			message: '#^Parameter \#1 \$tokenOrLogin of method Github\\Client\:\:authenticate\(\) expects string, mixed given\.$#'
-			identifier: argument.type
-			count: 1
-			path: app/Providers/GitHubServiceProvider.php
-
-		-
 			message: '#^Cannot cast mixed to string\.$#'
 			identifier: cast.string
 			count: 1
