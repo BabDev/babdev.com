@@ -78,12 +78,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/BabDev/laravel-breadcrumbs.git",
-                "reference": "0d1ecf86a0b99240c0cec9866d56db4aa33b2645"
+                "reference": "dc6fb68586413d9365af8c5e0005aa293a190c7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BabDev/laravel-breadcrumbs/zipball/0d1ecf86a0b99240c0cec9866d56db4aa33b2645",
-                "reference": "0d1ecf86a0b99240c0cec9866d56db4aa33b2645",
+                "url": "https://api.github.com/repos/BabDev/laravel-breadcrumbs/zipball/dc6fb68586413d9365af8c5e0005aa293a190c7f",
+                "reference": "dc6fb68586413d9365af8c5e0005aa293a190c7f",
                 "shasum": ""
             },
             "require": {
@@ -137,7 +137,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-02-28T01:56:36+00:00"
+            "time": "2025-03-13T14:08:01+00:00"
         },
         {
             "name": "blade-ui-kit/blade-heroicons",
