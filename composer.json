@@ -30,10 +30,10 @@
         "mockery/mockery": "1.6.12",
         "nunomaduro/collision": "8.7.0",
         "phpstan/extension-installer": "1.4.3",
-        "phpstan/phpstan": "2.1.8",
+        "phpstan/phpstan": "2.1.10",
         "phpstan/phpstan-mockery": "2.0.0",
         "phpstan/phpstan-phpunit": "2.0.4",
-        "phpunit/phpunit": "11.5.14",
+        "phpunit/phpunit": "11.5.15",
         "rector/rector": "2.0.10",
         "spatie/laravel-ignition": "2.9.1"
     },
