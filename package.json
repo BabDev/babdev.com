@@ -31,7 +31,7 @@
         "postcss": "8.5.3",
         "postcss-import": "16.1.0",
         "resolve-url-loader": "5.0.0",
-        "sass": "1.86.0",
+        "sass": "1.86.1",
         "sass-loader": "16.0.5",
         "vite": "6.2.4",
         "vite-plugin-manifest-sri": "0.2.0"
