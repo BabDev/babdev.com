@@ -56,7 +56,7 @@ final class ClosePagerfantaReadOnlyRepoPullRequestTest extends TestCase
                 'Pagerfanta',
                 'core',
                 '1',
-                $this->isType('array'),
+                $this->isArray(),
             );
 
         /** @var MockObject&Issue $issue */

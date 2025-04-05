@@ -80,6 +80,6 @@ jobs:
         run: php artisan key:generate
 
       - name: Execute Tests
-        run: php artisan test
+        run: php artisan test --display-deprecations --display-phpunit-deprecations
         env:
           DB_PORT: ${{ job.services.mysql.ports['3306'] }}
