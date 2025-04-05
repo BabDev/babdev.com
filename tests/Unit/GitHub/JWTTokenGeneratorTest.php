@@ -34,7 +34,7 @@ final class JWTTokenGeneratorTest extends TestCase
             ->willReturn($config);
 
         $this->assertNotEmpty(
-            (new JWTTokenGenerator($builder))->generate($repoConfig),
+            new JWTTokenGenerator($builder)->generate($repoConfig),
         );
     }
 }

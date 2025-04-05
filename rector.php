@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use Rector\Config\RectorConfig;
+use Rector\Php81\Rector\Array_\FirstClassCallableRector;
 use Rector\PostRector\Rector\NameImportingPostRector;
 
 return RectorConfig::configure()
@@ -22,7 +23,10 @@ return RectorConfig::configure()
         /*
          * Skip rules for select files
          */
-        NameImportingPostRector::class              => [
+        FirstClassCallableRector::class => [
+            __DIR__ . '/config/*.php',
+        ],
+        NameImportingPostRector::class  => [
             __DIR__ . '/app/Http/Kernel.php',
             __DIR__ . '/config/*.php',
         ],

@@ -10,8 +10,10 @@ use Illuminate\Support\Str;
  * @phpstan-type RouteResolver \Closure(): ?Route
  * @phpstan-type PaginatorChecker \Closure(): bool
  *
+ * @template TKey of array-key
  * @template TValue
- * @extends LengthAwarePaginator<TValue>
+ *
+ * @extends LengthAwarePaginator<TKey, TValue>
  */
 class RoutableLengthAwarePaginator extends LengthAwarePaginator
 {

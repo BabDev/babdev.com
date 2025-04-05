@@ -21,7 +21,7 @@ final class ViewOpenSourceUpdatesController
             return redirect()->route('open-source.updates');
         }
 
-        /** @var RoutableLengthAwarePaginator<PackageUpdate> $updates */
+        /** @var RoutableLengthAwarePaginator<array-key, PackageUpdate> $updates */
         $updates = PackageUpdate::published()
             ->orderByDesc('published_at')
             ->orderBy('title')

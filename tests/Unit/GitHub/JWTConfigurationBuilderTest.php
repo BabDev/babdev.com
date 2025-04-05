@@ -18,6 +18,6 @@ final class JWTConfigurationBuilderTest extends TestCase
             'events' => [],
         ];
 
-        (new JWTConfigurationBuilder())->build($repoConfig);
+        new JWTConfigurationBuilder()->build($repoConfig);
     }
 }
