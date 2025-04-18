@@ -9,7 +9,7 @@
         "composer-runtime-api": "^2.0",
         "babdev/laravel-breadcrumbs": "^2.0@dev",
         "blade-ui-kit/blade-ui-kit": "0.7.0",
-        "filament/filament": "3.3.10",
+        "filament/filament": "3.3.11",
         "guzzlehttp/guzzle": "7.9.3",
         "guzzlehttp/psr7": "2.7.1",
         "knplabs/github-api": "3.16.0",
