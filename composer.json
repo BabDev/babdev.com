@@ -13,7 +13,7 @@
         "guzzlehttp/guzzle": "7.9.3",
         "guzzlehttp/psr7": "2.7.1",
         "knplabs/github-api": "3.16.0",
-        "laravel/framework": "12.9.2",
+        "laravel/framework": "12.10.0",
         "lcobucci/jwt": "5.5.0",
         "league/commonmark": "2.6.2",
         "mohamedsabil83/filament-forms-tinyeditor": "2.4.0",
@@ -25,7 +25,7 @@
     "require-dev": {
         "driftingly/rector-laravel": "2.0.4",
         "fakerphp/faker": "1.24.1",
-        "larastan/larastan": "3.3.1",
+        "larastan/larastan": "3.4.0",
         "laravel/telescope": "5.7.0",
         "mockery/mockery": "1.6.12",
         "nunomaduro/collision": "8.8.0",
@@ -33,8 +33,8 @@
         "phpstan/phpstan": "2.1.12",
         "phpstan/phpstan-mockery": "2.0.0",
         "phpstan/phpstan-phpunit": "2.0.6",
-        "phpunit/phpunit": "12.1.2",
-        "rector/rector": "2.0.11",
+        "phpunit/phpunit": "12.1.3",
+        "rector/rector": "2.0.12",
         "spatie/laravel-ignition": "2.9.1"
     },
     "replace": {
