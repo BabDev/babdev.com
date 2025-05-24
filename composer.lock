@@ -365,6 +365,7 @@
                     "type": "github"
                 }
             ],
+            "abandoned": true,
             "time": "2025-02-19T08:32:44+00:00"
         },
         {
@@ -6075,16 +6076,16 @@
         },
         {
             "name": "spatie/robots-txt",
-            "version": "2.4.0",
+            "version": "2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/robots-txt.git",
-                "reference": "ef926548f12654eaf332fe977cbb7f787590404d"
+                "reference": "b1e225dc44b950bf6d02ed4e8d48dee2c2150dec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/robots-txt/zipball/ef926548f12654eaf332fe977cbb7f787590404d",
-                "reference": "ef926548f12654eaf332fe977cbb7f787590404d",
+                "url": "https://api.github.com/repos/spatie/robots-txt/zipball/b1e225dc44b950bf6d02ed4e8d48dee2c2150dec",
+                "reference": "b1e225dc44b950bf6d02ed4e8d48dee2c2150dec",
                 "shasum": ""
             },
             "require": {
@@ -6119,7 +6120,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/robots-txt/issues",
-                "source": "https://github.com/spatie/robots-txt/tree/2.4.0"
+                "source": "https://github.com/spatie/robots-txt/tree/2.5.0"
             },
             "funding": [
                 {
@@ -6131,7 +6132,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-05-22T08:22:10+00:00"
+            "time": "2025-05-23T08:35:36+00:00"
         },
         {
             "name": "spatie/temporary-directory",
@@ -9790,16 +9791,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "12.2.1",
+            "version": "12.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "448f2c504d86dbff3949dcd02c95aa85db2c7617"
+                "reference": "9075a8efc66e11bc55c319062e147bdb06777267"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/448f2c504d86dbff3949dcd02c95aa85db2c7617",
-                "reference": "448f2c504d86dbff3949dcd02c95aa85db2c7617",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/9075a8efc66e11bc55c319062e147bdb06777267",
+                "reference": "9075a8efc66e11bc55c319062e147bdb06777267",
                 "shasum": ""
             },
             "require": {
@@ -9826,7 +9827,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "12.2.x-dev"
+                    "dev-main": "12.3.x-dev"
                 }
             },
             "autoload": {
@@ -9855,7 +9856,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
                 "security": "https://github.com/sebastianbergmann/php-code-coverage/security/policy",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/12.2.1"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/12.3.0"
             },
             "funding": [
                 {
@@ -9875,7 +9876,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-05-04T05:25:05+00:00"
+            "time": "2025-05-23T15:49:03+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
