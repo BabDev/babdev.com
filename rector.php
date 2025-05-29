@@ -32,6 +32,7 @@ return RectorConfig::configure()
         ],
     ])
     ->withPreparedSets(codeQuality: true, phpunitCodeQuality: true)
+    ->withComposerBased(phpunit: true)
     ->withPhpSets()
     ->withImportNames(importShortClasses: false)
     ->withBootstrapFiles([
