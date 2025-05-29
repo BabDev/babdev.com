@@ -3,6 +3,7 @@
 namespace BabDev\Listeners;
 
 use BabDev\Breadcrumbs\Events\AfterBreadcrumbGenerated;
+use Illuminate\Pagination\Paginator;
 
 final class AppendPageNumberToBreadcrumbs
 {
@@ -16,9 +17,9 @@ final class AppendPageNumberToBreadcrumbs
             return;
         }
 
-        $page = request('page', '1');
+        $page = Paginator::resolveCurrentPage();
 
-        if (is_numeric($page) && ((int) $page > 1)) {
+        if ($page > 1) {
             $event->breadcrumbs->push("Page $page", null, ['current' => false]);
         }
     }
