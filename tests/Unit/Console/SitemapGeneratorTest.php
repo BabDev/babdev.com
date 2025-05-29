@@ -22,7 +22,7 @@ final class SitemapGeneratorTest extends TestCase
         });
 
         $this->artisan('sitemap:generate')
-            ->assertExitCode(0);
+            ->assertSuccessful();
 
         $disk->assertExists('sitemap.xml');
     }

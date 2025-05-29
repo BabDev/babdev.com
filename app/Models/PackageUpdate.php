@@ -77,13 +77,21 @@ class PackageUpdate extends Model implements Feedable
 
     public function toFeedItem(): FeedItem
     {
-        return FeedItem::create()
+        $item = FeedItem::create()
             ->id($this->id)
             ->title($this->title)
-            ->summary($this->intro)
-            ->updated($this->updated_at)
             ->link(route('open-source.update', ['update' => $this]))
             ->authorName('Michael Babker');
+
+        if ($this->intro !== null) {
+            $item->summary($this->intro);
+        }
+
+        if ($this->updated_at !== null) {
+            $item->updated($this->updated_at);
+        }
+
+        return $item;
     }
 
     /**
@@ -106,11 +114,11 @@ class PackageUpdate extends Model implements Feedable
     }
 
     /**
-     * @return Attribute<bool, null>
+     * @return Attribute<bool, never>
      */
     protected function isPublished(): Attribute
     {
-        return new Attribute(
+        return Attribute::get(
             get: fn() => $this->published_at->isBefore(now()),
         );
     }

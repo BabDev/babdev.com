@@ -10,6 +10,7 @@ use BabDev\GitHub\Exceptions\BadRequestException;
 use Github\AuthMethod;
 use Github\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 
 /**
  * @note Don't make readonly until Mockery supports readonly classes
@@ -32,20 +33,18 @@ class RequestHandler
     {
         $event = $request->header('X-Github-Event');
 
-        throw_if(\is_array($event), BadRequestException::class, 'Invalid "X-Github-Event" header.');
-
         if ($event === null) {
             return;
         }
 
-        if (!\array_key_exists($event, $repoConfig['events'])) {
+        if (!Arr::has($repoConfig, "events.$event")) {
             return;
         }
 
         $github = $this->buildClient($repoConfig, $request);
 
         /** @var class-string<Action> $actionClass */
-        foreach ($repoConfig['events'][$event] as $actionClass) {
+        foreach (Arr::array($repoConfig, "events.$event") as $actionClass) {
             $action = $this->actionFactory->make($actionClass);
             $action($repoConfig, $request, $github);
         }
@@ -64,9 +63,9 @@ class RequestHandler
 
         $github->authenticate(tokenOrLogin: $this->tokenGenerator->generate($repoConfig), authMethod: AuthMethod::JWT);
 
-        $token = $github->apps()->createInstallationToken($request->input('installation.id'));
+        $token = $github->apps()->createInstallationToken($request->integer('installation.id'));
 
-        $github->authenticate(tokenOrLogin: $token['token'], authMethod: AuthMethod::ACCESS_TOKEN);
+        $github->authenticate(tokenOrLogin: Arr::string($token, 'token'), authMethod: AuthMethod::ACCESS_TOKEN);
 
         return $github;
     }

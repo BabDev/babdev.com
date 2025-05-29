@@ -86,7 +86,11 @@ final class Markdown extends Component
 
             public function setConfiguration(ConfigurationInterface $configuration): void
             {
-                $this->defaultMaxLength = $configuration->get('slug_normalizer/max_length');
+                $defaultMaxLength = $configuration->get('slug_normalizer/max_length');
+
+                \assert(\is_int($defaultMaxLength));
+
+                $this->defaultMaxLength = $defaultMaxLength;
             }
 
             /**

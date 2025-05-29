@@ -16,9 +16,9 @@ final class AppendPageNumberToBreadcrumbs
             return;
         }
 
-        $page = (int) request('page', 1);
+        $page = request('page', '1');
 
-        if ($page > 1) {
+        if (is_numeric($page) && ((int) $page > 1)) {
             $event->breadcrumbs->push("Page $page", null, ['current' => false]);
         }
     }

@@ -20,8 +20,9 @@ final class HandleGitHubAppWebhookController
     {
         try {
             /** @var string $repo */
-            $repo = collect(array_keys(config('services.github.apps')))
-                ->firstOrFail(static fn(string $configRepo): bool => Str::is($configRepo, $request->input('repository.full_name')));
+            $repo = collect(config()->array('services.github.apps', []))
+                ->keys()
+                ->firstOrFail(static fn(string $configRepo): bool => Str::is($configRepo, $request->string('repository.full_name')->value()));
         } catch (ItemNotFoundException $exception) {
             throw new BadRequestHttpException('Unsupported repository.', $exception);
         }
@@ -30,7 +31,12 @@ final class HandleGitHubAppWebhookController
         $repoConfig = config()->array("services.github.apps.$repo");
 
         abort_unless($request->hasHeader('X-Hub-Signature-256'), 403, 'The request is not secured.');
-        abort_unless($this->hasValidSignature($request->header('X-Hub-Signature-256'), $repoConfig['secret'], $request->getContent()), 403, 'Invalid signature.');
+
+        $signature = $request->header('X-Hub-Signature-256');
+
+        abort_if($signature === null, 403, 'Invalid signature.');
+
+        abort_unless($this->hasValidSignature($signature, $repoConfig['secret'], $request->getContent()), 403, 'Invalid signature.');
 
         try {
             $requestHandler->handleRequest($repoConfig, $request);

@@ -4,6 +4,7 @@ namespace BabDev\Console\Commands;
 
 use BabDev\GitHub\ApiConnector;
 use Illuminate\Console\Command;
+use Illuminate\Support\Arr;
 use Symfony\Component\Console\Attribute\AsCommand;
 
 #[AsCommand(name: 'hacktoberfest:remove', description: 'Removes extras for Hacktoberfest from active repositories.')]
@@ -20,26 +21,28 @@ class RemoveHacktoberfestExtras extends Command
         $github->fetchPublicRepositories('BabDev')
             ->filter(static function (array $repositoryAttributes): bool {
                 // Ignore this website
-                if ($repositoryAttributes['name'] === 'babdev.com') {
+                if (Arr::string($repositoryAttributes, 'name') === 'babdev.com') {
                     return false;
                 }
 
                 // Ignore archived repositories
-                return !$repositoryAttributes['archived'];
+                return !Arr::boolean($repositoryAttributes, 'archived');
             })
             ->each(function (array $repositoryAttributes) use ($github): void {
-                $topics = $github->fetchRepositoryTopics('BabDev', $repositoryAttributes['name']);
+                $name = Arr::string($repositoryAttributes, 'name');
+
+                $topics = $github->fetchRepositoryTopics('BabDev', $name);
 
                 if ($topics->contains('hacktoberfest')) {
-                    $this->components->info("Removing 'hacktoberfest' topic from `{$repositoryAttributes['name']}`... ");
+                    $this->components->info("Removing 'hacktoberfest' topic from `{$name}`... ");
 
                     $github->replaceRepositoryTopics(
                         'BabDev',
-                        $repositoryAttributes['name'],
+                        $name,
                         $topics->filter(static fn(string $label): bool => $label !== 'hacktoberfest')->toArray(),
                     );
                 } else {
-                    $this->components->info("'hacktoberfest' topic does not exist on `{$repositoryAttributes['name']}`... ");
+                    $this->components->info("'hacktoberfest' topic does not exist on `{$name}`... ");
                 }
             });
 

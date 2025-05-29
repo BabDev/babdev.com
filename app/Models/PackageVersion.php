@@ -81,21 +81,21 @@ class PackageVersion extends Model
     }
 
     /**
-     * @return Attribute<string, null>
+     * @return Attribute<string, never>
      */
     protected function gitBranch(): Attribute
     {
-        return new Attribute(
+        return Attribute::get(
             get: fn() => $this->docs_git_branch ?? $this->version,
         );
     }
 
     /**
-     * @return Attribute<bool, null>
+     * @return Attribute<bool, never>
      */
     protected function supportEnded(): Attribute
     {
-        return new Attribute(
+        return Attribute::get(
             get: fn() => $this->end_of_support?->isBefore(now()) ?? false,
         );
     }

@@ -7,7 +7,6 @@ use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
-use Illuminate\Routing\Route as RouteObject;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
@@ -26,7 +25,7 @@ final class AppServiceProvider extends ServiceProvider
 
         RateLimiter::for('github.app', static fn(Request $request) => Limit::perMinute(60));
 
-        Livewire::setUpdateRoute(static fn($handle) => Route::post('/livewire/update', $handle)->middleware('filament.web'));
+        Livewire::setUpdateRoute(static fn(array|callable|null|string $handle) => Route::post('/livewire/update', $handle)->middleware('filament.web'));
     }
 
     #[\Override]
@@ -45,20 +44,21 @@ final class AppServiceProvider extends ServiceProvider
         // Bind pagination to our local class
         $this->app->bind(LengthAwarePaginator::class, RoutableLengthAwarePaginator::class);
 
-        // Change the current page resolver to be aware of the route parameters
-        Paginator::currentPageResolver(static function (string $pageName = 'page'): int {
-            $request = request();
+        // Decorate the current page resolver to be aware of the route parameters
+        /** @var (\Closure(string): int)|null $defaultPageResolver */
+        $defaultPageResolver = new \ReflectionClass(Paginator::class)
+            ->getProperty('currentPageResolver')
+            ->getValue();
 
-            $route = $request->route();
-
-            if ($page = ($route instanceof RouteObject ? $route->parameter($pageName) : null)) {
-                return (int) $page;
-            }
-
-            $page = $request->input($pageName);
+        Paginator::currentPageResolver(static function (string $pageName = 'page') use ($defaultPageResolver): int {
+            $page = request()->route($pageName);
 
             if (is_numeric($page) && filter_var($page, \FILTER_VALIDATE_INT) !== false && (int) $page >= 1) {
                 return (int) $page;
+            }
+
+            if ($defaultPageResolver !== null) {
+                return $defaultPageResolver($pageName);
             }
 
             return 1;

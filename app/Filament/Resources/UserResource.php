@@ -63,6 +63,8 @@ class UserResource extends Resource
     #[\Override]
     public static function getGlobalSearchResultTitle(Model $record): string
     {
+        \assert($record instanceof User);
+
         return $record->email;
     }
 

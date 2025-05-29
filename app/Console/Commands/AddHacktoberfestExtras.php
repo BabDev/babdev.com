@@ -4,6 +4,7 @@ namespace BabDev\Console\Commands;
 
 use BabDev\GitHub\ApiConnector;
 use Illuminate\Console\Command;
+use Illuminate\Support\Arr;
 use Symfony\Component\Console\Attribute\AsCommand;
 
 #[AsCommand(name: 'hacktoberfest:add', description: 'Adds extras for Hacktoberfest to active repositories.')]
@@ -20,28 +21,30 @@ final class AddHacktoberfestExtras extends Command
         $github->fetchPublicRepositories('BabDev')
             ->filter(static function (array $repositoryAttributes): bool {
                 // Ignore this website
-                if ($repositoryAttributes['name'] === 'babdev.com') {
+                if (Arr::string($repositoryAttributes, 'name') === 'babdev.com') {
                     return false;
                 }
 
                 // Ignore archived repositories
-                return !$repositoryAttributes['archived'];
+                return !Arr::boolean($repositoryAttributes, 'archived');
             })
             ->each(function (array $repositoryAttributes) use ($github): void {
-                $labels = $github->fetchRepositoryLabels('BabDev', $repositoryAttributes['name']);
-                $topics = $github->fetchRepositoryTopics('BabDev', $repositoryAttributes['name']);
+                $name = Arr::string($repositoryAttributes, 'name');
+
+                $labels = $github->fetchRepositoryLabels('BabDev', $name);
+                $topics = $github->fetchRepositoryTopics('BabDev', $name);
 
                 if (!$topics->contains('hacktoberfest')) {
-                    $this->components->info("Adding 'hacktoberfest' topic to `{$repositoryAttributes['name']}`... ");
+                    $this->components->info("Adding 'hacktoberfest' topic to `{$name}`... ");
                     $topics->add('hacktoberfest');
 
                     $github->replaceRepositoryTopics(
                         'BabDev',
-                        $repositoryAttributes['name'],
+                        $name,
                         $topics->toArray(),
                     );
                 } else {
-                    $this->components->warn("'hacktoberfest' topic already exists on `{$repositoryAttributes['name']}`... ");
+                    $this->components->warn("'hacktoberfest' topic already exists on `{$name}`... ");
                 }
 
                 $hacktoberfestLabels = [
@@ -54,11 +57,11 @@ final class AddHacktoberfestExtras extends Command
                     $matchingLabel = $labels->firstWhere('name', '=', $labelName);
 
                     if ($matchingLabel === null) {
-                        $this->components->info("Adding '$labelName' label to `{$repositoryAttributes['name']}`... ");
+                        $this->components->info("Adding '$labelName' label to `{$name}`... ");
 
-                        $github->addRepositoryLabel('BabDev', $repositoryAttributes['name'], $labelName, $labelColor);
+                        $github->addRepositoryLabel('BabDev', $name, $labelName, $labelColor);
                     } else {
-                        $this->components->warn("'$labelName' label already exists on `{$repositoryAttributes['name']}`... ");
+                        $this->components->warn("'$labelName' label already exists on `{$name}`... ");
                     }
                 }
             });

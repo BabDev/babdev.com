@@ -45,12 +45,12 @@ final class ImportGitHubSponsorshipTiers extends Command
 
         $response = $github->executeGraphqlQuery($query);
 
-        /** @var array $tierEdge */
-        foreach (Arr::get($response, 'data.viewer.sponsorsListing.tiers.edges', []) as $tierEdge) {
-            SponsorshipTier::updateOrCreate(['node_id' => Arr::get($tierEdge, 'node.id')], [
-                'node_id' => Arr::get($tierEdge, 'node.id'),
-                'one_time' => Arr::get($tierEdge, 'node.isOneTime'),
-                'price' => Arr::get($tierEdge, 'node.monthlyPriceInCents'),
+        /** @var array<string, mixed> $tierEdge */
+        foreach (Arr::array($response, 'data.viewer.sponsorsListing.tiers.edges', []) as $tierEdge) {
+            SponsorshipTier::updateOrCreate(['node_id' => Arr::string($tierEdge, 'node.id')], [
+                'node_id' => Arr::string($tierEdge, 'node.id'),
+                'one_time' => Arr::boolean($tierEdge, 'node.isOneTime'),
+                'price' => Arr::integer($tierEdge, 'node.monthlyPriceInCents'),
             ]);
         }
 

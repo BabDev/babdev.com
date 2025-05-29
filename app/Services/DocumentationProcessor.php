@@ -9,6 +9,7 @@ use BabDev\GitHub\ApiConnector;
 use BabDev\Models\Package;
 use Github\Exception\RuntimeException;
 use Illuminate\Contracts\Cache\Repository;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 
 final readonly class DocumentationProcessor implements DocumentationProcessorContract
@@ -23,7 +24,7 @@ final readonly class DocumentationProcessor implements DocumentationProcessorCon
     public function extractTitle(string $markdown): string
     {
         return Str::after(
-            collect(explode(\PHP_EOL, $markdown))->first(),
+            Str::of($markdown)->explode(\PHP_EOL)->first(default: $markdown),
             '# ',
         );
     }
@@ -52,10 +53,10 @@ final readonly class DocumentationProcessor implements DocumentationProcessorCon
                     );
                 }
 
-                return match ($file['encoding']) {
-                    'base64' => base64_decode((string) $file['content']),
+                return match (Arr::string($file, 'encoding', 'unknown')) {
+                    'base64' => base64_decode(Arr::string($file, 'content')),
                     default => throw new UnsupportedEncodingException(
-                        \sprintf('The "%s" encoding is not supported.', $file['encoding']),
+                        \sprintf('The "%s" encoding is not supported.', Arr::string($file, 'encoding', 'unknown')),
                     ),
                 };
             },

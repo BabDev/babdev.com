@@ -54,21 +54,20 @@ final class ImportGitHubSponsors extends Command
 
         $activeSponsorIds = [];
 
-        /** @var array $sponsorEdge */
-        foreach (Arr::get($response, 'data.viewer.sponsorshipsAsMaintainer.edges', []) as $sponsorEdge) {
-            $activeSponsorIds[] = Arr::get($sponsorEdge, 'node.id');
+        /** @var array<string, mixed> $sponsorEdge */
+        foreach (Arr::array($response, 'data.viewer.sponsorshipsAsMaintainer.edges', []) as $sponsorEdge) {
+            $activeSponsorIds[] = Arr::string($sponsorEdge, 'node.id');
 
             /** @var Sponsor $sponsor */
-            $sponsor = Sponsor::firstOrNew(['sponsorship_node_id' => Arr::get($sponsorEdge, 'node.id')], [
-                'sponsorship_node_id' => Arr::get($sponsorEdge, 'node.id'),
-                'is_public' => Arr::get($sponsorEdge, 'node.privacyLevel') === 'PUBLIC',
-                'sponsor_node_id' => Arr::get($sponsorEdge, 'node.sponsorEntity.id'),
-                'sponsor_username' => Arr::get($sponsorEdge, 'node.sponsorEntity.login'),
+            $sponsor = Sponsor::firstOrNew(['sponsorship_node_id' => Arr::string($sponsorEdge, 'node.id')], [
+                'sponsorship_node_id' => Arr::string($sponsorEdge, 'node.id'),
+                'is_public' => Arr::string($sponsorEdge, 'node.privacyLevel') === 'PUBLIC',
+                'sponsor_node_id' => Arr::string($sponsorEdge, 'node.sponsorEntity.id'),
+                'sponsor_username' => Arr::string($sponsorEdge, 'node.sponsorEntity.login'),
                 'sponsor_display_name' => Arr::get($sponsorEdge, 'node.sponsorEntity.name'),
             ]);
 
-            /** @var SponsorshipTier $sponsorshipTier */
-            $sponsorshipTier = SponsorshipTier::whereNodeId(Arr::get($sponsorEdge, 'node.tier.id'))
+            $sponsorshipTier = SponsorshipTier::whereNodeId(Arr::string($sponsorEdge, 'node.tier.id'))
                 ->firstOrFail();
 
             $sponsor->sponsorship_tier()->associate($sponsorshipTier);

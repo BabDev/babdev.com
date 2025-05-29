@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
@@ -151,12 +152,12 @@ class Package extends Model
     }
 
     /**
-     * @return Attribute<string, null>
+     * @return Attribute<non-falsy-string, never>
      */
     protected function githubUrl(): Attribute
     {
-        return new Attribute(
-            get: fn() => \sprintf('https://github.com/BabDev/%s', $this->name),
+        return Attribute::get(
+            fn() => \sprintf('https://github.com/BabDev/%s', $this->name),
         );
     }
 
