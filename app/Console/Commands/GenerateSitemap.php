@@ -4,6 +4,7 @@ namespace BabDev\Console\Commands;
 
 use GuzzleHttp\Psr7\Uri;
 use Illuminate\Console\Command;
+use Illuminate\Container\Attributes\Config;
 use Spatie\Sitemap\SitemapGenerator;
 use Spatie\Sitemap\Tags\Url;
 use Symfony\Component\Console\Attribute\AsCommand;
@@ -15,11 +16,11 @@ final class GenerateSitemap extends Command
 
     protected $description = 'Generate the sitemap.';
 
-    public function handle(): void
+    public function handle(#[Config('app.url')] string $appUrl): void
     {
         $this->components->info('Generating sitemap...');
 
-        SitemapGenerator::create(config('app.url'))
+        SitemapGenerator::create($appUrl)
             ->shouldCrawl(static function (Uri $uri): bool {
                 // Don't include the homepage without a trailing slash
                 if ($uri->getPath() === '') {

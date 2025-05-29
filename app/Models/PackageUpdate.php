@@ -4,6 +4,7 @@ namespace BabDev\Models;
 
 use Carbon\Carbon;
 use Database\Factories\PackageUpdateFactory;
+use Illuminate\Database\Eloquent\Attributes\Scope;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
@@ -90,7 +91,8 @@ class PackageUpdate extends Model implements Feedable
      *
      * @return Builder<self>
      */
-    public function scopePublished(Builder $query): Builder
+    #[Scope]
+    protected function published(Builder $query): Builder
     {
         return $query->whereDate('published_at', '<=', now()->startOfMinute()->format('Y-m-d H:i:s'));
     }

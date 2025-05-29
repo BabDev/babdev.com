@@ -2,45 +2,16 @@
 
 namespace BabDev\Providers;
 
-use Laravel\Telescope\IncomingEntry;
-use Laravel\Telescope\Telescope;
 use Laravel\Telescope\TelescopeApplicationServiceProvider;
 
 final class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
 {
+    /**
+     * Override the Telescope authorization service to only apply the default env check.
+     */
     #[\Override]
-    public function register(): void
+    protected function authorization(): void
     {
-        $this->hideSensitiveRequestDetails();
-
-        Telescope::filter(
-            function (IncomingEntry $entry): bool {
-                if ($this->app->isLocal()) {
-                    return true;
-                }
-
-                return $entry->isReportableException() ||
-                    $entry->isFailedJob() ||
-                    $entry->isScheduledTask() ||
-                    $entry->hasMonitoredTag();
-            },
-        );
-    }
-
-    protected function hideSensitiveRequestDetails(): void
-    {
-        if ($this->app->isLocal()) {
-            return;
-        }
-
-        Telescope::hideRequestParameters(['_token']);
-
-        Telescope::hideRequestHeaders(
-            [
-                'cookie',
-                'x-csrf-token',
-                'x-xsrf-token',
-            ],
-        );
+        // no-op to disable the gate and the overridden auth check
     }
 }

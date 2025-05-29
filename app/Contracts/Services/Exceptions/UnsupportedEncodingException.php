@@ -2,4 +2,4 @@
 
 namespace BabDev\Contracts\Services\Exceptions;
 
-class UnsupportedEncodingException extends \RuntimeException {}
+final class UnsupportedEncodingException extends \RuntimeException {}

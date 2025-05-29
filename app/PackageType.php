@@ -4,20 +4,27 @@ namespace BabDev;
 
 enum PackageType: string
 {
-    case JOOMLA_EXTENSION = 'joomla-extension';
+    case JoomlaExtension = 'joomla-extension';
 
-    case LARAVEL_PACKAGE = 'laravel-package';
+    case LaravelPackage = 'laravel-package';
 
-    case PHP_PACKAGE = 'php-package';
+    case PHPPackage = 'php-package';
 
-    case PHPSPEC_EXTENSION = 'phpspec-extension';
+    case PHPSpecExtension = 'phpspec-extension';
 
-    case SYLIUS_PLUGIN = 'sylius-plugin';
+    case SyliusPlugin = 'sylius-plugin';
 
-    case SYMFONY_BUNDLE = 'symfony-bundle';
+    case SymfonyBundle = 'symfony-bundle';
 
     public function label(): string
     {
-        return trans('package_type.' . $this->value);
+        return match ($this) {
+            PackageType::JoomlaExtension => 'Joomla! Extension',
+            PackageType::LaravelPackage => 'Laravel Package',
+            PackageType::PHPPackage => 'PHP Package',
+            PackageType::PHPSpecExtension => 'phpspec Extension',
+            PackageType::SyliusPlugin => 'Sylius Plugin',
+            PackageType::SymfonyBundle => 'Symfony Bundle',
+        };
     }
 }

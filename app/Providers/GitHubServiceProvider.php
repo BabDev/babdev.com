@@ -16,7 +16,6 @@ use Github\AuthMethod;
 use Github\Client;
 use Github\Exception\InvalidArgumentException;
 use Github\HttpClient\Builder;
-use Illuminate\Config\Repository;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Support\DeferrableProvider;
@@ -82,14 +81,11 @@ final class GitHubServiceProvider extends ServiceProvider implements DeferrableP
             Client::class,
             static function (Application $app): Client {
                 try {
-                    /** @var Repository $config */
-                    $config = $app->make('config');
-
                     /** @var ClientFactory $factory */
                     $factory = $app->make(ClientFactory::class);
 
                     $client = $factory->make($app->make(Builder::class));
-                    $client->authenticate($config->string('services.github.token'), authMethod: AuthMethod::ACCESS_TOKEN);
+                    $client->authenticate(config()->string('services.github.token'), authMethod: AuthMethod::ACCESS_TOKEN);
 
                     return $client;
                 } catch (InvalidArgumentException|\InvalidArgumentException $exception) {

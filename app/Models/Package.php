@@ -6,6 +6,7 @@ use BabDev\Models\Exceptions\VersionsNotConfigured;
 use BabDev\PackageType;
 use Carbon\Carbon;
 use Database\Factories\PackageFactory;
+use Illuminate\Database\Eloquent\Attributes\Scope;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -95,7 +96,7 @@ class Package extends Model
      * @var array<string, mixed>
      */
     protected $attributes = [
-        'package_type' => PackageType::PHP_PACKAGE,
+        'package_type' => PackageType::PHPPackage,
     ];
 
     #[\Override]
@@ -116,7 +117,8 @@ class Package extends Model
      *
      * @return Builder<self>
      */
-    public function scopeIsPackagist(Builder $query): Builder
+    #[Scope]
+    protected function isPackagist(Builder $query): Builder
     {
         return $query->where('is_packagist', '=', true);
     }
@@ -126,7 +128,8 @@ class Package extends Model
      *
      * @return Builder<self>
      */
-    public function scopeVisible(Builder $query): Builder
+    #[Scope]
+    protected function visible(Builder $query): Builder
     {
         return $query->where('visible', '=', true);
     }

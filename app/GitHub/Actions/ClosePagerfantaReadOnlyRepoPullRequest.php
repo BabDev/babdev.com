@@ -21,9 +21,9 @@ final class ClosePagerfantaReadOnlyRepoPullRequest implements Action
         }
 
         $github->issue()->comments()->create(
-            $request->input('repository.owner.login'),
-            $request->input('repository.name'),
-            $request->input('number'),
+            $request->string('repository.owner.login')->toString(),
+            $request->string('repository.name')->toString(),
+            $request->integer('number'),
             [
                 'body' => <<<MD
                     Thank you for your pull request to Pagerfanta, unfortunately your pull request cannot be accepted on this repository.
@@ -36,9 +36,9 @@ final class ClosePagerfantaReadOnlyRepoPullRequest implements Action
         );
 
         $github->pullRequest()->update(
-            $request->input('repository.owner.login'),
-            $request->input('repository.name'),
-            $request->input('number'),
+            $request->string('repository.owner.login')->toString(),
+            $request->string('repository.name')->toString(),
+            $request->integer('number'),
             [
                 'state' => 'closed',
             ],

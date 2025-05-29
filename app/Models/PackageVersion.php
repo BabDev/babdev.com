@@ -3,6 +3,7 @@
 namespace BabDev\Models;
 
 use Database\Factories\PackageVersionFactory;
+use Illuminate\Database\Eloquent\Attributes\Scope;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -64,7 +65,8 @@ class PackageVersion extends Model
      *
      * @return Builder<self>
      */
-    public function scopeNewestReleasedVersionForPackage(Builder $query): Builder
+    #[Scope]
+    protected function newestReleasedVersionForPackage(Builder $query): Builder
     {
         return $query->whereNotNull('released')
             ->orderByDesc('released');

@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\Str;
+use Illuminate\Support\Uri;
 
 function is_filament_request(Request $request): bool
 {
@@ -16,12 +18,10 @@ function is_filament_request(Request $request): bool
         $domain = $request->getScheme() . '://' . $domain;
     }
 
-    $uri = parse_url($domain);
-
-    return rtrim($request->getHttpHost(), '/') === $uri['host'];
+    return rtrim($request->getHttpHost(), '/') === Uri::of($domain)->host();
 }
 
 function resource_svg(string $filename): HtmlString
 {
-    return new HtmlString(file_get_contents(resource_path("svg/$filename.svg")));
+    return new HtmlString(File::get(resource_path("svg/$filename.svg")));
 }

@@ -2,4 +2,4 @@
 
 namespace BabDev\Models\Exceptions;
 
-class VersionsNotConfigured extends \UnexpectedValueException {}
+final class VersionsNotConfigured extends \UnexpectedValueException {}

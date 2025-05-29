@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Telescope\TelescopeServiceProvider as TelescopePackageServiceProvider;
 use Livewire\Livewire;
 
 final class AppServiceProvider extends ServiceProvider
@@ -23,7 +24,6 @@ final class AppServiceProvider extends ServiceProvider
 
         Paginator::useBootstrap();
 
-        RateLimiter::for('api', static fn(Request $request) => Limit::perMinute(60));
         RateLimiter::for('github.app', static fn(Request $request) => Limit::perMinute(60));
 
         Livewire::setUpdateRoute(static fn($handle) => Route::post('/livewire/update', $handle)->middleware('filament.web'));
@@ -35,6 +35,7 @@ final class AppServiceProvider extends ServiceProvider
         $this->registerPagination();
 
         if ($this->app->isLocal()) {
+            $this->app->register(TelescopePackageServiceProvider::class);
             $this->app->register(TelescopeServiceProvider::class);
         }
     }

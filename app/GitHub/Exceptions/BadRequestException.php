@@ -2,4 +2,4 @@
 
 namespace BabDev\GitHub\Exceptions;
 
-class BadRequestException extends \RuntimeException {}
+final class BadRequestException extends \RuntimeException {}

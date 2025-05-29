@@ -2,18 +2,15 @@
 
 namespace BabDev\Http\Controllers;
 
-use Illuminate\Filesystem\FilesystemAdapter;
-use Illuminate\Filesystem\FilesystemManager;
+use Illuminate\Container\Attributes\Storage;
+use Illuminate\Contracts\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 final class ViewSitemapController
 {
-    public function __invoke(FilesystemManager $filesystem): BinaryFileResponse
+    public function __invoke(#[Storage('local')] Filesystem $disk): BinaryFileResponse
     {
-        /** @var FilesystemAdapter $disk */
-        $disk = $filesystem->disk('local');
-
-        abort_unless($disk->has('sitemap.xml'), 404);
+        abort_unless($disk->exists('sitemap.xml'), 404);
 
         return response()->file($disk->path('sitemap.xml'), [
             'Content-Type' => 'text/xml',

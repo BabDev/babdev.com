@@ -18,7 +18,7 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
-class AppPanelProvider extends PanelProvider
+final class AppPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
@@ -26,7 +26,7 @@ class AppPanelProvider extends PanelProvider
             ->default()
             ->id('app')
             ->login()
-            ->domain(config('app.filament_domain'))
+            ->domain(config()->string('app.filament_domain'))
             ->colors([
                 'primary' => Color::Amber,
             ])

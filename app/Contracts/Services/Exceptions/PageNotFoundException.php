@@ -2,4 +2,4 @@
 
 namespace BabDev\Contracts\Services\Exceptions;
 
-class PageNotFoundException extends \InvalidArgumentException {}
+final class PageNotFoundException extends \InvalidArgumentException {}

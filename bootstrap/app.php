@@ -52,10 +52,6 @@ return Application::configure(basePath: \dirname(__DIR__))
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ]);
 
-        $middleware->group('api', [
-            \Illuminate\Routing\Middleware\ThrottleRequests::class . ':api',
-            \Illuminate\Routing\Middleware\SubstituteBindings::class,
-        ]);
         $middleware->group('github.app', [
             \Illuminate\Routing\Middleware\ThrottleRequests::class . ':github.app',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,

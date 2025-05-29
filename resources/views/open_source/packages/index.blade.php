@@ -25,7 +25,7 @@
                         @endif
                         <span class="package-statistic package-statistic--language">{{ $package->language }}</span>
                         @if($package->package_type)
-                            <span class="package-statistic package-statistic--package-type package-statistic--package-type--{{ $package->package_type->value }}">{{ trans('package_type.'.$package->package_type->value) }}</span>
+                            <span class="package-statistic package-statistic--package-type package-statistic--package-type--{{ $package->package_type->value }}">{{ $package->package_type->label() }}</span>
                         @endif
                         @if($package->downloads)
                             <span class="package-statistic package-statistic--downloads">
