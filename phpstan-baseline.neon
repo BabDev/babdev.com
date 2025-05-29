@@ -37,12 +37,6 @@ parameters:
 			path: app/Console/Commands/AddHacktoberfestExtras.php
 
 		-
-			message: '#^Parameter \#1 \$urlToBeCrawled of static method Spatie\\Sitemap\\SitemapGenerator\:\:create\(\) expects string, mixed given\.$#'
-			identifier: argument.type
-			count: 1
-			path: app/Console/Commands/GenerateSitemap.php
-
-		-
 			message: '#^Argument of an invalid type mixed supplied for foreach, only iterables are supported\.$#'
 			identifier: foreach.nonIterable
 			count: 1
@@ -101,24 +95,6 @@ parameters:
 			identifier: return.type
 			count: 1
 			path: app/Filament/Resources/UserResource.php
-
-		-
-			message: '#^Parameter \#1 \$username of method Github\\Api\\Issue\\Comments\:\:create\(\) expects string, mixed given\.$#'
-			identifier: argument.type
-			count: 1
-			path: app/GitHub/Actions/ClosePagerfantaReadOnlyRepoPullRequest.php
-
-		-
-			message: '#^Parameter \#2 \$repository of method Github\\Api\\Issue\\Comments\:\:create\(\) expects string, mixed given\.$#'
-			identifier: argument.type
-			count: 1
-			path: app/GitHub/Actions/ClosePagerfantaReadOnlyRepoPullRequest.php
-
-		-
-			message: '#^Parameter \#3 \$issue of method Github\\Api\\Issue\\Comments\:\:create\(\) expects int, mixed given\.$#'
-			identifier: argument.type
-			count: 1
-			path: app/GitHub/Actions/ClosePagerfantaReadOnlyRepoPullRequest.php
 
 		-
 			message: '#^Method BabDev\\GitHub\\Actions\\ContainerAwareFactory\:\:make\(\) should return TAction of BabDev\\Contracts\\GitHub\\Actions\\Action but returns mixed\.$#'
@@ -241,12 +217,6 @@ parameters:
 			path: app/Models/PackageUpdate.php
 
 		-
-			message: '#^Parameter \#1 \$id of method Spatie\\Feed\\FeedItem\:\:id\(\) expects string, int given\.$#'
-			identifier: argument.type
-			count: 1
-			path: app/Models/PackageUpdate.php
-
-		-
 			message: '#^Parameter \#1 \$summary of method Spatie\\Feed\\FeedItem\:\:summary\(\) expects string, string\|null given\.$#'
 			identifier: argument.type
 			count: 1
@@ -289,12 +259,6 @@ parameters:
 			path: app/Providers/AppServiceProvider.php
 
 		-
-			message: '#^Parameter \#1 \$domain of method Filament\\Panel\:\:domain\(\) expects string\|null, mixed given\.$#'
-			identifier: argument.type
-			count: 1
-			path: app/Providers/Filament/AppPanelProvider.php
-
-		-
 			message: '#^Cannot cast mixed to string\.$#'
 			identifier: cast.string
 			count: 1
@@ -313,16 +277,10 @@ parameters:
 			path: app/Services/DocumentationProcessor.php
 
 		-
-			message: '#^Cannot access offset ''host'' on array\{scheme\?\: string, host\?\: string, port\?\: int\<0, 65535\>, user\?\: string, pass\?\: string, path\?\: string, query\?\: string, fragment\?\: string\}\|false\.$#'
-			identifier: offsetAccess.nonOffsetAccessible
+			message: '#^Property League\\CommonMark\\Normalizer\\TextNormalizerInterface@anonymous/app/View/Components/Markdown\.php\:84\:\:\$defaultMaxLength \(int\) does not accept mixed\.$#'
+			identifier: assign.propertyType
 			count: 1
-			path: app/helpers.php
-
-		-
-			message: '#^Parameter \#1 \$html of class Illuminate\\Support\\HtmlString constructor expects string, string\|false given\.$#'
-			identifier: argument.type
-			count: 1
-			path: app/helpers.php
+			path: app/View/Components/Markdown.php
 
 		-
 			message: '#^Cannot call method assertSuccessful\(\) on Illuminate\\Testing\\PendingCommand\|int\.$#'
