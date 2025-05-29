@@ -5,7 +5,7 @@ namespace BabDev\View\Components;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Hero extends Component
+final class Hero extends Component
 {
     public function __construct(
         public readonly string $title,

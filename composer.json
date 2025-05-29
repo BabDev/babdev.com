@@ -8,7 +8,6 @@
         "ext-hash": "*",
         "composer-runtime-api": "^2.0",
         "babdev/laravel-breadcrumbs": "^2.0@dev",
-        "blade-ui-kit/blade-ui-kit": "0.7.0",
         "filament/filament": "3.3.17",
         "guzzlehttp/guzzle": "7.9.3",
         "guzzlehttp/psr7": "2.7.1",
@@ -94,7 +93,7 @@
         },
         "optimize-autoloader": true,
         "platform": {
-            "php": "8.4.3"
+            "php": "8.4.7"
         },
         "preferred-install": "dist",
         "sort-packages": true
