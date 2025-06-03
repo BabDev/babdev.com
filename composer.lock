@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3977f1ec094641595772bc8b66ffddde",
+    "content-hash": "e952cf5a12c1096c0c4ae62347243532",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -1120,7 +1120,7 @@
         },
         {
             "name": "filament/actions",
-            "version": "v3.3.19",
+            "version": "v3.3.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/actions.git",
@@ -1173,7 +1173,7 @@
         },
         {
             "name": "filament/filament",
-            "version": "v3.3.19",
+            "version": "v3.3.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/panels.git",
@@ -1238,16 +1238,16 @@
         },
         {
             "name": "filament/forms",
-            "version": "v3.3.19",
+            "version": "v3.3.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/forms.git",
-                "reference": "d6e08c2618c052958b83636c42e15a8c8e5422ac"
+                "reference": "d73cdda057a4f5bd409eab9573101e73edb404cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/forms/zipball/d6e08c2618c052958b83636c42e15a8c8e5422ac",
-                "reference": "d6e08c2618c052958b83636c42e15a8c8e5422ac",
+                "url": "https://api.github.com/repos/filamentphp/forms/zipball/d73cdda057a4f5bd409eab9573101e73edb404cc",
+                "reference": "d73cdda057a4f5bd409eab9573101e73edb404cc",
                 "shasum": ""
             },
             "require": {
@@ -1290,11 +1290,11 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2025-06-03T06:14:39+00:00"
+            "time": "2025-06-03T13:40:37+00:00"
         },
         {
             "name": "filament/infolists",
-            "version": "v3.3.19",
+            "version": "v3.3.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/infolists.git",
@@ -1345,7 +1345,7 @@
         },
         {
             "name": "filament/notifications",
-            "version": "v3.3.19",
+            "version": "v3.3.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/notifications.git",
@@ -1397,7 +1397,7 @@
         },
         {
             "name": "filament/support",
-            "version": "v3.3.19",
+            "version": "v3.3.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/support.git",
@@ -1456,7 +1456,7 @@
         },
         {
             "name": "filament/tables",
-            "version": "v3.3.19",
+            "version": "v3.3.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/tables.git",
@@ -1508,7 +1508,7 @@
         },
         {
             "name": "filament/widgets",
-            "version": "v3.3.19",
+            "version": "v3.3.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/widgets.git",
@@ -2247,20 +2247,20 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v12.16.0",
+            "version": "v12.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "293bb1c70224faebfd3d4328e201c37115da055f"
+                "reference": "8729d084510480fdeec9b6ad198180147d4a7f06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/293bb1c70224faebfd3d4328e201c37115da055f",
-                "reference": "293bb1c70224faebfd3d4328e201c37115da055f",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/8729d084510480fdeec9b6ad198180147d4a7f06",
+                "reference": "8729d084510480fdeec9b6ad198180147d4a7f06",
                 "shasum": ""
             },
             "require": {
-                "brick/math": "^0.11|^0.12",
+                "brick/math": "^0.11|^0.12|^0.13",
                 "composer-runtime-api": "^2.2",
                 "doctrine/inflector": "^2.0.5",
                 "dragonmantank/cron-expression": "^3.4",
@@ -2458,7 +2458,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2025-05-27T15:49:44+00:00"
+            "time": "2025-06-03T14:04:18+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -9010,16 +9010,16 @@
         },
         {
             "name": "laravel/telescope",
-            "version": "v5.8.0",
+            "version": "v5.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/telescope.git",
-                "reference": "9be1b8851b8ffe67689e7960135f8b32a966f23d"
+                "reference": "f729607079c20fc0f82b9e3e7d533248d18dc554"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/telescope/zipball/9be1b8851b8ffe67689e7960135f8b32a966f23d",
-                "reference": "9be1b8851b8ffe67689e7960135f8b32a966f23d",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/f729607079c20fc0f82b9e3e7d533248d18dc554",
+                "reference": "f729607079c20fc0f82b9e3e7d533248d18dc554",
                 "shasum": ""
             },
             "require": {
@@ -9073,9 +9073,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/telescope/issues",
-                "source": "https://github.com/laravel/telescope/tree/v5.8.0"
+                "source": "https://github.com/laravel/telescope/tree/v5.9.0"
             },
-            "time": "2025-05-26T17:22:18+00:00"
+            "time": "2025-06-03T13:58:03+00:00"
         },
         {
             "name": "mockery/mockery",
