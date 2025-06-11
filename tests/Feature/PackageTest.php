@@ -2,8 +2,8 @@
 
 namespace Tests\Feature;
 
-use BabDev\Models\Package;
-use BabDev\Models\PackageUpdate;
+use App\Models\Package;
+use App\Models\PackageUpdate;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 

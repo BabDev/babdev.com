@@ -1,12 +1,12 @@
 <?php
 
-namespace BabDev\GitHub;
+namespace App\GitHub;
 
-use BabDev\Contracts\GitHub\Actions\Action;
-use BabDev\Contracts\GitHub\Actions\Factory;
-use BabDev\Contracts\GitHub\ClientFactory;
-use BabDev\Contracts\GitHub\JWTTokenGenerator as JWTTokenGeneratorContract;
-use BabDev\GitHub\Exceptions\BadRequestException;
+use App\Contracts\GitHub\Actions\Action;
+use App\Contracts\GitHub\Actions\Factory;
+use App\Contracts\GitHub\ClientFactory;
+use App\Contracts\GitHub\JWTTokenGenerator as JWTTokenGeneratorContract;
+use App\GitHub\Exceptions\BadRequestException;
 use Github\AuthMethod;
 use Github\Client;
 use Illuminate\Http\Request;
@@ -59,14 +59,19 @@ class RequestHandler
     {
         throw_if($request->missing('installation.id'), BadRequestException::class, 'Missing required installation ID.');
 
-        $github = $this->clientFactory->make(apiVersion: 'machine-man-preview');
+        return tap(
+            $this->clientFactory->make(apiVersion: 'machine-man-preview'),
+            function (Client $client) use ($repoConfig, $request): void {
+                $client->authenticate(
+                    tokenOrLogin: $this->tokenGenerator->generate($repoConfig),
+                    authMethod: AuthMethod::JWT,
+                );
 
-        $github->authenticate(tokenOrLogin: $this->tokenGenerator->generate($repoConfig), authMethod: AuthMethod::JWT);
-
-        $token = $github->apps()->createInstallationToken($request->integer('installation.id'));
-
-        $github->authenticate(tokenOrLogin: Arr::string($token, 'token'), authMethod: AuthMethod::ACCESS_TOKEN);
-
-        return $github;
+                $client->authenticate(
+                    tokenOrLogin: Arr::string($client->apps()->createInstallationToken($request->integer('installation.id')), 'token'),
+                    authMethod: AuthMethod::ACCESS_TOKEN,
+                );
+            },
+        );
     }
 }

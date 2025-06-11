@@ -1,6 +1,6 @@
 <?php
 
-namespace BabDev\Providers;
+namespace App\Providers;
 
 use Laravel\Telescope\TelescopeApplicationServiceProvider;
 

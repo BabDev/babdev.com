@@ -1,8 +1,8 @@
 <?php
 
-namespace BabDev\Filament\Resources\PackageUpdateResource\Pages;
+namespace App\Filament\Resources\PackageUpdateResource\Pages;
 
-use BabDev\Filament\Resources\PackageUpdateResource;
+use App\Filament\Resources\PackageUpdateResource;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 

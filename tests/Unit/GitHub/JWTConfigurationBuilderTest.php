@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\GitHub;
 
-use BabDev\GitHub\JWTConfigurationBuilder;
+use App\GitHub\JWTConfigurationBuilder;
 use PHPUnit\Framework\Attributes\DoesNotPerformAssertions;
 use PHPUnit\Framework\TestCase;
 

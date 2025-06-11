@@ -1,6 +1,6 @@
 <?php
 
-namespace BabDev\Console\Commands;
+namespace App\Console\Commands;
 
 use GuzzleHttp\Psr7\Uri;
 use Illuminate\Console\Command;
@@ -12,10 +12,6 @@ use Symfony\Component\Console\Attribute\AsCommand;
 #[AsCommand(name: 'sitemap:generate', description: 'Generate the sitemap.')]
 final class GenerateSitemap extends Command
 {
-    protected $name = 'sitemap:generate';
-
-    protected $description = 'Generate the sitemap.';
-
     public function handle(#[Config('app.url')] string $appUrl): void
     {
         $this->components->info('Generating sitemap...');

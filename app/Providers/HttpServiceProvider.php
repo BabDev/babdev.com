@@ -1,6 +1,6 @@
 <?php
 
-namespace BabDev\Providers;
+namespace App\Providers;
 
 use GuzzleHttp\Client as Guzzle;
 use GuzzleHttp\ClientInterface as GuzzleInterface;
@@ -22,7 +22,7 @@ final class HttpServiceProvider extends ServiceProvider implements DeferrablePro
     private const string USER_AGENT = 'BabDev/1.0';
 
     /**
-     * @return array<int, class-string|string>
+     * @return list<class-string|string>
      */
     #[\Override]
     public function provides(): array

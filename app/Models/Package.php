@@ -1,19 +1,19 @@
 <?php
 
-namespace BabDev\Models;
+namespace App\Models;
 
-use BabDev\Models\Exceptions\VersionsNotConfigured;
-use BabDev\PackageType;
+use App\Models\Exceptions\VersionsNotConfigured;
+use App\PackageType;
 use Carbon\Carbon;
 use Database\Factories\PackageFactory;
 use Illuminate\Database\Eloquent\Attributes\Scope;
+use Illuminate\Database\Eloquent\Attributes\UseFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Collection;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
@@ -68,6 +68,7 @@ use Spatie\Sluggable\SlugOptions;
  * @method static Builder|Package         whereUpdatedAt($value)
  * @method static Builder|Package         whereVisible($value)
  */
+#[UseFactory(PackageFactory::class)]
 class Package extends Model
 {
     /** @use HasFactory<PackageFactory<Package>> */

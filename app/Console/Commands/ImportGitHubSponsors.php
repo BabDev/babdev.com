@@ -1,10 +1,10 @@
 <?php
 
-namespace BabDev\Console\Commands;
+namespace App\Console\Commands;
 
-use BabDev\GitHub\ApiConnector;
-use BabDev\Models\Sponsor;
-use BabDev\Models\SponsorshipTier;
+use App\GitHub\ApiConnector;
+use App\Models\Sponsor;
+use App\Models\SponsorshipTier;
 use Illuminate\Console\Command;
 use Illuminate\Support\Arr;
 use Symfony\Component\Console\Attribute\AsCommand;
@@ -12,10 +12,6 @@ use Symfony\Component\Console\Attribute\AsCommand;
 #[AsCommand(name: 'import:github-sponsors', description: 'Import GitHub sponsors to the application.')]
 final class ImportGitHubSponsors extends Command
 {
-    protected $name = 'import:github-sponsors';
-
-    protected $description = 'Import GitHub sponsors to the application.';
-
     public function handle(ApiConnector $github): void
     {
         $this->components->info('Syncing sponsors...');
@@ -58,20 +54,20 @@ final class ImportGitHubSponsors extends Command
         foreach (Arr::array($response, 'data.viewer.sponsorshipsAsMaintainer.edges', []) as $sponsorEdge) {
             $activeSponsorIds[] = Arr::string($sponsorEdge, 'node.id');
 
-            /** @var Sponsor $sponsor */
-            $sponsor = Sponsor::firstOrNew(['sponsorship_node_id' => Arr::string($sponsorEdge, 'node.id')], [
-                'sponsorship_node_id' => Arr::string($sponsorEdge, 'node.id'),
-                'is_public' => Arr::string($sponsorEdge, 'node.privacyLevel') === 'PUBLIC',
-                'sponsor_node_id' => Arr::string($sponsorEdge, 'node.sponsorEntity.id'),
-                'sponsor_username' => Arr::string($sponsorEdge, 'node.sponsorEntity.login'),
-                'sponsor_display_name' => Arr::get($sponsorEdge, 'node.sponsorEntity.name'),
-            ]);
-
+            /** @var SponsorshipTier $sponsorshipTier */
             $sponsorshipTier = SponsorshipTier::whereNodeId(Arr::string($sponsorEdge, 'node.tier.id'))
                 ->firstOrFail();
 
-            $sponsor->sponsorship_tier()->associate($sponsorshipTier);
-            $sponsor->save();
+            $sponsorshipTier->sponsors()->firstOrCreate(
+                ['sponsorship_node_id' => Arr::string($sponsorEdge, 'node.id')],
+                [
+                    'sponsorship_node_id' => Arr::string($sponsorEdge, 'node.id'),
+                    'is_public' => Arr::string($sponsorEdge, 'node.privacyLevel') === 'PUBLIC',
+                    'sponsor_node_id' => Arr::string($sponsorEdge, 'node.sponsorEntity.id'),
+                    'sponsor_username' => Arr::string($sponsorEdge, 'node.sponsorEntity.login'),
+                    'sponsor_display_name' => Arr::get($sponsorEdge, 'node.sponsorEntity.name'),
+                ],
+            );
         }
 
         Sponsor::whereNotIn('sponsorship_node_id', $activeSponsorIds)

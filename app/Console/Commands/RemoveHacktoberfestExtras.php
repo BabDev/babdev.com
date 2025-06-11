@@ -1,19 +1,15 @@
 <?php
 
-namespace BabDev\Console\Commands;
+namespace App\Console\Commands;
 
-use BabDev\GitHub\ApiConnector;
+use App\GitHub\ApiConnector;
 use Illuminate\Console\Command;
 use Illuminate\Support\Arr;
 use Symfony\Component\Console\Attribute\AsCommand;
 
 #[AsCommand(name: 'hacktoberfest:remove', description: 'Removes extras for Hacktoberfest from active repositories.')]
-class RemoveHacktoberfestExtras extends Command
+final class RemoveHacktoberfestExtras extends Command
 {
-    protected $name = 'hacktoberfest:remove';
-
-    protected $description = 'Removes extras for Hacktoberfest from active repositories.';
-
     public function handle(ApiConnector $github): void
     {
         $this->components->info('Updating all repositories...');
@@ -34,7 +30,7 @@ class RemoveHacktoberfestExtras extends Command
                 $topics = $github->fetchRepositoryTopics('BabDev', $name);
 
                 if ($topics->contains('hacktoberfest')) {
-                    $this->components->info("Removing 'hacktoberfest' topic from `{$name}`... ");
+                    $this->components->info("Removing 'hacktoberfest' topic from `$name`... ");
 
                     $github->replaceRepositoryTopics(
                         'BabDev',
@@ -42,7 +38,7 @@ class RemoveHacktoberfestExtras extends Command
                         $topics->filter(static fn(string $label): bool => $label !== 'hacktoberfest')->toArray(),
                     );
                 } else {
-                    $this->components->info("'hacktoberfest' topic does not exist on `{$name}`... ");
+                    $this->components->info("'hacktoberfest' topic does not exist on `$name`... ");
                 }
             });
 

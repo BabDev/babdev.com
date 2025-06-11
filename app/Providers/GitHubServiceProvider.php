@@ -1,17 +1,17 @@
 <?php
 
-namespace BabDev\Providers;
+namespace App\Providers;
 
-use BabDev\Contracts\GitHub\Actions\Factory;
-use BabDev\Contracts\GitHub\ClientFactory;
-use BabDev\Contracts\GitHub\JWTConfigurationBuilder as JWTConfigurationBuilderContract;
-use BabDev\Contracts\GitHub\JWTTokenGenerator as JWTTokenGeneratorContract;
-use BabDev\GitHub\Actions\ContainerAwareFactory;
-use BabDev\GitHub\ApiConnector;
-use BabDev\GitHub\ContainerAwareClientFactory;
-use BabDev\GitHub\JWTConfigurationBuilder;
-use BabDev\GitHub\JWTTokenGenerator;
-use BabDev\GitHub\RequestHandler;
+use App\Contracts\GitHub\Actions\Factory;
+use App\Contracts\GitHub\ClientFactory;
+use App\Contracts\GitHub\JWTConfigurationBuilder as JWTConfigurationBuilderContract;
+use App\Contracts\GitHub\JWTTokenGenerator as JWTTokenGeneratorContract;
+use App\GitHub\Actions\ContainerAwareFactory;
+use App\GitHub\ApiConnector;
+use App\GitHub\ContainerAwareClientFactory;
+use App\GitHub\JWTConfigurationBuilder;
+use App\GitHub\JWTTokenGenerator;
+use App\GitHub\RequestHandler;
 use Github\AuthMethod;
 use Github\Client;
 use Github\Exception\InvalidArgumentException;
@@ -27,7 +27,7 @@ use Psr\Http\Message\StreamFactoryInterface;
 final class GitHubServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     /**
-     * @return array<int, class-string|string>
+     * @return list<class-string|string>
      */
     #[\Override]
     public function provides(): array
@@ -69,9 +69,7 @@ final class GitHubServiceProvider extends ServiceProvider implements DeferrableP
     {
         $this->app->singleton(
             ApiConnector::class,
-            static fn(Application $app) => new ApiConnector(
-                $app->make(Client::class),
-            ),
+            static fn(Application $app) => new ApiConnector($app->make(Client::class)),
         );
     }
 
@@ -81,13 +79,12 @@ final class GitHubServiceProvider extends ServiceProvider implements DeferrableP
             Client::class,
             static function (Application $app): Client {
                 try {
-                    /** @var ClientFactory $factory */
-                    $factory = $app->make(ClientFactory::class);
-
-                    $client = $factory->make($app->make(Builder::class));
-                    $client->authenticate(config()->string('services.github.token'), authMethod: AuthMethod::ACCESS_TOKEN);
-
-                    return $client;
+                    return tap(
+                        $app->make(ClientFactory::class)->make($app->make(Builder::class)),
+                        static function (Client $client): void {
+                            $client->authenticate(config()->string('services.github.token'), authMethod: AuthMethod::ACCESS_TOKEN);
+                        },
+                    );
                 } catch (InvalidArgumentException|\InvalidArgumentException $exception) {
                     throw new BindingResolutionException(\sprintf('Could not create the "%s" service.', Client::class), previous: $exception);
                 }

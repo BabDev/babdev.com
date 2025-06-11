@@ -1,13 +1,13 @@
 <?php
 
-namespace BabDev\Filament\Resources;
+namespace App\Filament\Resources;
 
-use BabDev\Filament\Resources\PackageResource\Pages\CreatePackage;
-use BabDev\Filament\Resources\PackageResource\Pages\EditPackage;
-use BabDev\Filament\Resources\PackageResource\Pages\ListPackages;
-use BabDev\Filament\Resources\PackageResource\RelationManagers\VersionsRelationManager;
-use BabDev\Models\Package;
-use BabDev\PackageType;
+use App\Filament\Resources\PackageResource\Pages\CreatePackage;
+use App\Filament\Resources\PackageResource\Pages\EditPackage;
+use App\Filament\Resources\PackageResource\Pages\ListPackages;
+use App\Filament\Resources\PackageResource\RelationManagers\VersionsRelationManager;
+use App\Models\Package;
+use App\PackageType;
 use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -57,14 +57,15 @@ class PackageResource extends Resource
                 TextInput::make('slug')
                     ->required()
                     ->unique(Package::class, 'slug', fn($record) => $record),
-                TextInput::make('display_name'),
-                TextInput::make('packagist_name'),
+                TextInput::make('display_name')->label('Display Name'),
+                TextInput::make('packagist_name')->label('Packagist Name'),
                 Checkbox::make('has_documentation')->label('Has Documentation?'),
                 Select::make('package_type')
+                    ->label('Package Type')
                     ->required()
                     ->options(static fn() => collect(PackageType::cases())->mapWithKeys(static fn(PackageType $type) => [$type->value => $type->label()])),
                 Checkbox::make('supported')->label('Supported?'),
-                Checkbox::make('visible'),
+                Checkbox::make('visible')->label('Visible?'),
                 Checkbox::make('is_packagist')->label('Is Packagist?'),
             ]);
     }

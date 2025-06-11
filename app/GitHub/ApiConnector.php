@@ -1,6 +1,6 @@
 <?php
 
-namespace BabDev\GitHub;
+namespace App\GitHub;
 
 use Github\Client;
 use Github\ResultPager;

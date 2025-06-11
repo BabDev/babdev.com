@@ -27,7 +27,6 @@ return RectorConfig::configure()
             __DIR__ . '/config/*.php',
         ],
         NameImportingPostRector::class  => [
-            __DIR__ . '/app/Http/Kernel.php',
             __DIR__ . '/config/*.php',
         ],
     ])

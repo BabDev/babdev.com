@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
-use BabDev\Models\Package;
-use BabDev\Models\PackageVersion;
+use App\Models\Package;
+use App\Models\PackageVersion;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

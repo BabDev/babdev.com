@@ -1,9 +1,9 @@
 <?php
 
-namespace BabDev\Http\Controllers;
+namespace App\Http\Controllers;
 
-use BabDev\Models\Exceptions\VersionsNotConfigured;
-use BabDev\Models\Package;
+use App\Models\Exceptions\VersionsNotConfigured;
+use App\Models\Package;
 use Illuminate\Http\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 

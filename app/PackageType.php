@@ -1,6 +1,6 @@
 <?php
 
-namespace BabDev;
+namespace App;
 
 enum PackageType: string
 {

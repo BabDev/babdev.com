@@ -1,12 +1,12 @@
 <?php
 
-namespace BabDev\Services;
+namespace App\Services;
 
-use BabDev\Contracts\Services\DocumentationProcessor as DocumentationProcessorContract;
-use BabDev\Contracts\Services\Exceptions\PageNotFoundException;
-use BabDev\Contracts\Services\Exceptions\UnsupportedEncodingException;
-use BabDev\GitHub\ApiConnector;
-use BabDev\Models\Package;
+use App\Contracts\Services\DocumentationProcessor as DocumentationProcessorContract;
+use App\Contracts\Services\Exceptions\PageNotFoundException;
+use App\Contracts\Services\Exceptions\UnsupportedEncodingException;
+use App\GitHub\ApiConnector;
+use App\Models\Package;
 use Github\Exception\RuntimeException;
 use Illuminate\Contracts\Cache\Repository;
 use Illuminate\Support\Arr;

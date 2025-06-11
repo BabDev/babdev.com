@@ -1,6 +1,6 @@
 <?php
 
-namespace BabDev\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Container\Attributes\Storage;
 use Illuminate\Contracts\Filesystem\Filesystem;

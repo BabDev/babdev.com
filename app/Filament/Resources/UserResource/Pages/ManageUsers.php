@@ -1,8 +1,8 @@
 <?php
 
-namespace BabDev\Filament\Resources\UserResource\Pages;
+namespace App\Filament\Resources\UserResource\Pages;
 
-use BabDev\Filament\Resources\UserResource;
+use App\Filament\Resources\UserResource;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ManageRecords;
 

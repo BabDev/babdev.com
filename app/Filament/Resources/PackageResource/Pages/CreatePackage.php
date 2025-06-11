@@ -1,8 +1,8 @@
 <?php
 
-namespace BabDev\Filament\Resources\PackageResource\Pages;
+namespace App\Filament\Resources\PackageResource\Pages;
 
-use BabDev\Filament\Resources\PackageResource;
+use App\Filament\Resources\PackageResource;
 use Filament\Resources\Pages\CreateRecord;
 
 class CreatePackage extends CreateRecord

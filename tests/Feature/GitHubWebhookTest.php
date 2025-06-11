@@ -2,8 +2,8 @@
 
 namespace Tests\Feature;
 
-use BabDev\GitHub\Exceptions\BadRequestException;
-use BabDev\GitHub\RequestHandler;
+use App\GitHub\Exceptions\BadRequestException;
+use App\GitHub\RequestHandler;
 use Mockery\MockInterface;
 use Tests\TestCase;
 

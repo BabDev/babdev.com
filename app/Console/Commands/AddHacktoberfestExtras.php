@@ -1,8 +1,8 @@
 <?php
 
-namespace BabDev\Console\Commands;
+namespace App\Console\Commands;
 
-use BabDev\GitHub\ApiConnector;
+use App\GitHub\ApiConnector;
 use Illuminate\Console\Command;
 use Illuminate\Support\Arr;
 use Symfony\Component\Console\Attribute\AsCommand;
@@ -10,10 +10,6 @@ use Symfony\Component\Console\Attribute\AsCommand;
 #[AsCommand(name: 'hacktoberfest:add', description: 'Adds extras for Hacktoberfest to active repositories.')]
 final class AddHacktoberfestExtras extends Command
 {
-    protected $name = 'hacktoberfest:add';
-
-    protected $description = 'Adds extras for Hacktoberfest to active repositories.';
-
     public function handle(ApiConnector $github): void
     {
         $this->components->info('Updating all repositories...');
@@ -35,7 +31,7 @@ final class AddHacktoberfestExtras extends Command
                 $topics = $github->fetchRepositoryTopics('BabDev', $name);
 
                 if (!$topics->contains('hacktoberfest')) {
-                    $this->components->info("Adding 'hacktoberfest' topic to `{$name}`... ");
+                    $this->components->info("Adding 'hacktoberfest' topic to `$name`... ");
                     $topics->add('hacktoberfest');
 
                     $github->replaceRepositoryTopics(

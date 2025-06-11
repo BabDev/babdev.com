@@ -1,4 +1,4 @@
-@php /** @var \BabDev\Models\Package $package */ @endphp
+@php /** @var \App\Models\Package $package */ @endphp
 @php /** @var string $version */ @endphp
 
 @extends('layouts.app', [

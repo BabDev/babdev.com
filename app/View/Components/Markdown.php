@@ -1,6 +1,6 @@
 <?php
 
-namespace BabDev\View\Components;
+namespace App\View\Components;
 
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Str;
@@ -81,7 +81,7 @@ final class Markdown extends Component
 
     private function slugNormalizer(): TextNormalizerInterface
     {
-        return new class() implements TextNormalizerInterface, ConfigurationAwareInterface {
+        return new class implements TextNormalizerInterface, ConfigurationAwareInterface {
             private int $defaultMaxLength = 255;
 
             public function setConfiguration(ConfigurationInterface $configuration): void
@@ -94,8 +94,8 @@ final class Markdown extends Component
             }
 
             /**
-             * @param string $text
-             * @param array{prefix?: string, length?: int, node?: Node}  $context
+             * @param string                                            $text
+             * @param array{prefix?: string, length?: int, node?: Node} $context
              *
              * @return string
              */

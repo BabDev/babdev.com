@@ -1,6 +1,6 @@
 <?php
 
-namespace BabDev\Contracts\GitHub\Actions;
+namespace App\Contracts\GitHub\Actions;
 
 use Github\Client;
 use Illuminate\Http\Request;

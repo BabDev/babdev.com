@@ -1,10 +1,10 @@
 <?php
 
-namespace BabDev\Providers;
+namespace App\Providers;
 
-use BabDev\Contracts\Services\DocumentationProcessor as DocumentationProcessorContract;
-use BabDev\GitHub\ApiConnector;
-use BabDev\Services\DocumentationProcessor;
+use App\Contracts\Services\DocumentationProcessor as DocumentationProcessorContract;
+use App\GitHub\ApiConnector;
+use App\Services\DocumentationProcessor;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
@@ -12,7 +12,7 @@ use Illuminate\Support\ServiceProvider;
 final class DocumentationServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     /**
-     * @return array<int, class-string|string>
+     * @return list<class-string|string>
      */
     #[\Override]
     public function provides(): array

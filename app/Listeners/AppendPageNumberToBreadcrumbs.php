@@ -1,6 +1,6 @@
 <?php
 
-namespace BabDev\Listeners;
+namespace App\Listeners;
 
 use BabDev\Breadcrumbs\Events\AfterBreadcrumbGenerated;
 use Illuminate\Pagination\Paginator;

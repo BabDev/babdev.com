@@ -1,49 +1,49 @@
 parameters:
 	ignoreErrors:
 		-
-			message: '#^Parameter \#3 \$topics of method BabDev\\GitHub\\ApiConnector\:\:replaceRepositoryTopics\(\) expects list\<string\>, array\<mixed\> given\.$#'
+			message: '#^Parameter \#3 \$topics of method App\\GitHub\\ApiConnector\:\:replaceRepositoryTopics\(\) expects list\<string\>, array\<mixed\> given\.$#'
 			identifier: argument.type
 			count: 1
 			path: app/Console/Commands/AddHacktoberfestExtras.php
 
 		-
-			message: '#^Parameter \#3 \$topics of method BabDev\\GitHub\\ApiConnector\:\:replaceRepositoryTopics\(\) expects list\<string\>, array\<mixed\> given\.$#'
+			message: '#^Parameter \#3 \$topics of method App\\GitHub\\ApiConnector\:\:replaceRepositoryTopics\(\) expects list\<string\>, array\<mixed\> given\.$#'
 			identifier: argument.type
 			count: 1
 			path: app/Console/Commands/RemoveHacktoberfestExtras.php
 
 		-
-			message: '#^Method BabDev\\GitHub\\Actions\\ContainerAwareFactory\:\:make\(\) should return TAction of BabDev\\Contracts\\GitHub\\Actions\\Action but returns mixed\.$#'
+			message: '#^Method App\\GitHub\\Actions\\ContainerAwareFactory\:\:make\(\) should return TAction of App\\Contracts\\GitHub\\Actions\\Action but returns mixed\.$#'
 			identifier: return.type
 			count: 1
 			path: app/GitHub/Actions/ContainerAwareFactory.php
 
 		-
-			message: '#^Method BabDev\\GitHub\\ApiConnector\:\:executeGraphqlQuery\(\) should return array\<string, mixed\> but returns array\.$#'
+			message: '#^Method App\\GitHub\\ApiConnector\:\:executeGraphqlQuery\(\) should return array\<string, mixed\> but returns array\.$#'
 			identifier: return.type
 			count: 1
 			path: app/GitHub/ApiConnector.php
 
 		-
-			message: '#^Method BabDev\\GitHub\\ApiConnector\:\:fetchFileContents\(\) should return array\<string, mixed\> but returns array\|string\.$#'
+			message: '#^Method App\\GitHub\\ApiConnector\:\:fetchFileContents\(\) should return array\<string, mixed\> but returns array\|string\.$#'
 			identifier: return.type
 			count: 1
 			path: app/GitHub/ApiConnector.php
 
 		-
-			message: '#^Method BabDev\\GitHub\\ApiConnector\:\:fetchPublicRepositories\(\) should return Illuminate\\Support\\Collection\<\(int\|string\), array\<string, mixed\>\> but returns Illuminate\\Support\\Collection\<\(int\|string\), mixed\>\.$#'
+			message: '#^Method App\\GitHub\\ApiConnector\:\:fetchPublicRepositories\(\) should return Illuminate\\Support\\Collection\<\(int\|string\), array\<string, mixed\>\> but returns Illuminate\\Support\\Collection\<\(int\|string\), mixed\>\.$#'
 			identifier: return.type
 			count: 1
 			path: app/GitHub/ApiConnector.php
 
 		-
-			message: '#^Method BabDev\\GitHub\\ApiConnector\:\:fetchRepositoryLabels\(\) should return Illuminate\\Support\\Collection\<\(int\|string\), string\> but returns Illuminate\\Support\\Collection\<\(int\|string\), mixed\>\.$#'
+			message: '#^Method App\\GitHub\\ApiConnector\:\:fetchRepositoryLabels\(\) should return Illuminate\\Support\\Collection\<\(int\|string\), string\> but returns Illuminate\\Support\\Collection\<\(int\|string\), mixed\>\.$#'
 			identifier: return.type
 			count: 1
 			path: app/GitHub/ApiConnector.php
 
 		-
-			message: '#^Method BabDev\\GitHub\\ApiConnector\:\:fetchRepositoryTopics\(\) should return Illuminate\\Support\\Collection\<\(int\|string\), string\> but returns Illuminate\\Support\\Collection\<\(int\|string\), mixed\>\.$#'
+			message: '#^Method App\\GitHub\\ApiConnector\:\:fetchRepositoryTopics\(\) should return Illuminate\\Support\\Collection\<\(int\|string\), string\> but returns Illuminate\\Support\\Collection\<\(int\|string\), mixed\>\.$#'
 			identifier: return.type
 			count: 1
 			path: app/GitHub/ApiConnector.php

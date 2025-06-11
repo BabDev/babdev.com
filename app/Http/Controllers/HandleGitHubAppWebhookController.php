@@ -1,10 +1,10 @@
 <?php
 
-namespace BabDev\Http\Controllers;
+namespace App\Http\Controllers;
 
-use BabDev\Contracts\GitHub\Actions\Action;
-use BabDev\GitHub\Exceptions\BadRequestException;
-use BabDev\GitHub\RequestHandler;
+use App\Contracts\GitHub\Actions\Action;
+use App\GitHub\Exceptions\BadRequestException;
+use App\GitHub\RequestHandler;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\ItemNotFoundException;

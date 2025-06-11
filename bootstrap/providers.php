@@ -1,9 +1,9 @@
 <?php
 
 return [
-    BabDev\Providers\AppServiceProvider::class,
-    BabDev\Providers\DocumentationServiceProvider::class,
-    BabDev\Providers\GitHubServiceProvider::class,
-    BabDev\Providers\HttpServiceProvider::class,
-    BabDev\Providers\Filament\AppPanelProvider::class,
+    App\Providers\AppServiceProvider::class,
+    App\Providers\DocumentationServiceProvider::class,
+    App\Providers\GitHubServiceProvider::class,
+    App\Providers\HttpServiceProvider::class,
+    App\Providers\Filament\AppPanelProvider::class,
 ];

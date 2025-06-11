@@ -1,9 +1,9 @@
 <?php
 
-namespace BabDev\Filament\Resources;
+namespace App\Filament\Resources;
 
-use BabDev\Filament\Resources\UserResource\Pages\ManageUsers;
-use BabDev\Models\User;
+use App\Filament\Resources\UserResource\Pages\ManageUsers;
+use App\Models\User;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;

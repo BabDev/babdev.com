@@ -1,10 +1,10 @@
 <?php
 
-namespace BabDev\Contracts\Services;
+namespace App\Contracts\Services;
 
-use BabDev\Contracts\Services\Exceptions\PageNotFoundException;
-use BabDev\Contracts\Services\Exceptions\UnsupportedEncodingException;
-use BabDev\Models\Package;
+use App\Contracts\Services\Exceptions\PageNotFoundException;
+use App\Contracts\Services\Exceptions\UnsupportedEncodingException;
+use App\Models\Package;
 
 interface DocumentationProcessor
 {

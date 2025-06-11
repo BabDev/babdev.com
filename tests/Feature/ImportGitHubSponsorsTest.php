@@ -2,8 +2,8 @@
 
 namespace Tests\Feature;
 
-use BabDev\GitHub\ApiConnector;
-use BabDev\Models\SponsorshipTier;
+use App\GitHub\ApiConnector;
+use App\Models\SponsorshipTier;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Mockery\MockInterface;
 use Tests\TestCase;

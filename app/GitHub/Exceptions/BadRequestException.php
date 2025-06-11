@@ -1,5 +1,5 @@
 <?php
 
-namespace BabDev\GitHub\Exceptions;
+namespace App\GitHub\Exceptions;
 
 final class BadRequestException extends \RuntimeException {}

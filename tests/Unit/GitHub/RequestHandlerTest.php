@@ -2,12 +2,12 @@
 
 namespace Tests\Unit\GitHub;
 
-use BabDev\Contracts\GitHub\Actions\Action;
-use BabDev\Contracts\GitHub\Actions\Factory;
-use BabDev\Contracts\GitHub\ClientFactory;
-use BabDev\Contracts\GitHub\JWTTokenGenerator;
-use BabDev\GitHub\Exceptions\BadRequestException;
-use BabDev\GitHub\RequestHandler;
+use App\Contracts\GitHub\Actions\Action;
+use App\Contracts\GitHub\Actions\Factory;
+use App\Contracts\GitHub\ClientFactory;
+use App\Contracts\GitHub\JWTTokenGenerator;
+use App\GitHub\Exceptions\BadRequestException;
+use App\GitHub\RequestHandler;
 use Github\Api\Apps;
 use Github\AuthMethod;
 use Github\Client;

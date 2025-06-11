@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\GitHub;
 
-use BabDev\GitHub\ContainerAwareClientFactory;
+use App\GitHub\ContainerAwareClientFactory;
 use Tests\TestCase;
 
 final class ContainerAwareClientFactoryTest extends TestCase

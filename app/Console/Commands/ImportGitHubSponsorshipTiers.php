@@ -1,9 +1,9 @@
 <?php
 
-namespace BabDev\Console\Commands;
+namespace App\Console\Commands;
 
-use BabDev\GitHub\ApiConnector;
-use BabDev\Models\SponsorshipTier;
+use App\GitHub\ApiConnector;
+use App\Models\SponsorshipTier;
 use Illuminate\Console\Command;
 use Illuminate\Support\Arr;
 use Symfony\Component\Console\Attribute\AsCommand;
@@ -11,10 +11,6 @@ use Symfony\Component\Console\Attribute\AsCommand;
 #[AsCommand(name: 'import:github-sponsorship-tiers', description: 'Import GitHub sponsorship tiers to the application.')]
 final class ImportGitHubSponsorshipTiers extends Command
 {
-    protected $name = 'import:github-sponsorship-tiers';
-
-    protected $description = 'Import GitHub sponsorship tiers to the application.';
-
     public function handle(ApiConnector $github): void
     {
         $this->components->info('Syncing sponsorship tiers...');

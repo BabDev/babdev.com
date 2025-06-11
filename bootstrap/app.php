@@ -1,6 +1,6 @@
 <?php
 
-use BabDev\Contracts\Services\Exceptions\PageNotFoundException;
+use App\Contracts\Services\Exceptions\PageNotFoundException;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -9,23 +9,20 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 return Application::configure(basePath: \dirname(__DIR__))
     ->withRouting(
-        using: function (): void {
-            Route::middleware('web')
-                ->domain(config()->string('app.domain'))
-                ->group(base_path('routes/web.php'));
-
+        web: \dirname(__DIR__) . '/routes/web.php',
+        then: function (): void {
             Route::middleware('github.app')
                 ->domain(config()->string('app.domain'))
-                ->group(base_path('routes/github.php'));
+                ->group(\dirname(__DIR__) . '/routes/github.php');
         },
     )
     ->withSchedule(function (Schedule $schedule): void {
         $schedule->command(\Spatie\GoogleFonts\Commands\FetchGoogleFontsCommand::class)->weekly();
-        $schedule->command(\BabDev\Console\Commands\ImportPackagistDownloads::class)->everyFourHours(24);
-        $schedule->command(\BabDev\Console\Commands\ImportGitHubRepositories::class)->dailyAt('12:00');
-        $schedule->command(\BabDev\Console\Commands\ImportGitHubSponsorshipTiers::class)->dailyAt('13:00');
-        $schedule->command(\BabDev\Console\Commands\ImportGitHubSponsors::class)->dailyAt('13:30');
-        $schedule->command(\BabDev\Console\Commands\GenerateSitemap::class)->dailyAt('00:00');
+        $schedule->command(\App\Console\Commands\ImportPackagistDownloads::class)->everyFourHours(24);
+        $schedule->command(\App\Console\Commands\ImportGitHubRepositories::class)->dailyAt('12:00');
+        $schedule->command(\App\Console\Commands\ImportGitHubSponsorshipTiers::class)->dailyAt('13:00');
+        $schedule->command(\App\Console\Commands\ImportGitHubSponsors::class)->dailyAt('13:30');
+        $schedule->command(\App\Console\Commands\GenerateSitemap::class)->dailyAt('00:00');
     })
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->use([
@@ -53,7 +50,7 @@ return Application::configure(basePath: \dirname(__DIR__))
         ]);
 
         $middleware->group('github.app', [
-            \Illuminate\Routing\Middleware\ThrottleRequests::class . ':github.app',
+            'throttle:github.app',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ]);
     })
@@ -62,4 +59,5 @@ return Application::configure(basePath: \dirname(__DIR__))
             PageNotFoundException::class,
             static fn(PageNotFoundException $e): NotFoundHttpException => new NotFoundHttpException($e->getMessage(), $e),
         );
-    })->create();
+    })
+    ->create();

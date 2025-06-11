@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use BabDev\Models\Package;
+use App\Models\Package;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Http;
 use Tests\TestCase;

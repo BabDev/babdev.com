@@ -1,9 +1,10 @@
 <?php
 
-namespace BabDev\GitHub;
+namespace App\GitHub;
 
-use BabDev\Contracts\GitHub\Actions\Action;
-use BabDev\Contracts\GitHub\JWTConfigurationBuilder as JWTConfigurationBuilderContract;
+use App\Contracts\GitHub\Actions\Action;
+use App\Contracts\GitHub\JWTConfigurationBuilder as JWTConfigurationBuilderContract;
+use Illuminate\Support\Arr;
 use Lcobucci\JWT\Configuration;
 use Lcobucci\JWT\Signer\Key\InMemory;
 use Lcobucci\JWT\Signer\Rsa\Sha256;
@@ -20,7 +21,7 @@ final class JWTConfigurationBuilder implements JWTConfigurationBuilderContract
     {
         return Configuration::forSymmetricSigner(
             new Sha256(),
-            InMemory::file($repoConfig['key']),
+            InMemory::file(Arr::string($repoConfig, 'key')),
         );
     }
 }

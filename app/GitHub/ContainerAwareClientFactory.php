@@ -1,8 +1,8 @@
 <?php
 
-namespace BabDev\GitHub;
+namespace App\GitHub;
 
-use BabDev\Contracts\GitHub\ClientFactory;
+use App\Contracts\GitHub\ClientFactory;
 use Github\Client;
 use Github\HttpClient\Builder;
 use Illuminate\Contracts\Container\Container;

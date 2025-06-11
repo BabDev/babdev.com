@@ -53,7 +53,7 @@
             "app/helpers.php"
         ],
         "psr-4": {
-            "BabDev\\": "app/",
+            "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         }

@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use BabDev\GitHub\ApiConnector;
+use App\GitHub\ApiConnector;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Mockery\MockInterface;
 use Tests\TestCase;

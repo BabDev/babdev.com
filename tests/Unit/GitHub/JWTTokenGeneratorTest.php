@@ -2,8 +2,8 @@
 
 namespace Tests\Unit\GitHub;
 
-use BabDev\Contracts\GitHub\JWTConfigurationBuilder;
-use BabDev\GitHub\JWTTokenGenerator;
+use App\Contracts\GitHub\JWTConfigurationBuilder;
+use App\GitHub\JWTTokenGenerator;
 use Lcobucci\JWT\Configuration;
 use Lcobucci\JWT\Signer\Blake2b;
 use Lcobucci\JWT\Signer\Key\InMemory;

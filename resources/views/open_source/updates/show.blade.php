@@ -1,4 +1,4 @@
-@php /** @var \BabDev\Models\PackageUpdate $update */ @endphp
+@php /** @var \App\Models\PackageUpdate $update */ @endphp
 
 @extends('layouts.app', [
     'title' => sprintf('%s | Open Source Updates | %s', $update->title, config('app.name', 'BabDev')),

@@ -2,15 +2,15 @@
 
 namespace Database\Factories;
 
-use BabDev\Models\Package;
-use BabDev\PackageType;
+use App\Models\Package;
+use App\PackageType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @template TModel of Package
  * @extends Factory<TModel>
  */
-class PackageFactory extends Factory
+final class PackageFactory extends Factory
 {
     /**
      * @var class-string<TModel>

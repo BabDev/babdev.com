@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\View;
 
-use BabDev\View\Components\Hero;
+use App\View\Components\Hero;
 use Tests\TestCase;
 
 final class HeroComponentTest extends TestCase

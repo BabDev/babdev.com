@@ -1,10 +1,10 @@
 <?php
 
-namespace BabDev\Http\Controllers;
+namespace App\Http\Controllers;
 
-use BabDev\Contracts\Services\DocumentationProcessor;
-use BabDev\Models\Package;
-use BabDev\Models\PackageVersion;
+use App\Contracts\Services\DocumentationProcessor;
+use App\Models\Package;
+use App\Models\PackageVersion;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;

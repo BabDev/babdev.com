@@ -1,6 +1,6 @@
 <?php
 
-namespace BabDev\Models;
+namespace App\Models;
 
 use Carbon\Carbon;
 use Filament\Models\Contracts\FilamentUser;

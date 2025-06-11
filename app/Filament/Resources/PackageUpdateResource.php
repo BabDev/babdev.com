@@ -1,11 +1,11 @@
 <?php
 
-namespace BabDev\Filament\Resources;
+namespace App\Filament\Resources;
 
-use BabDev\Filament\Resources\PackageUpdateResource\Pages\CreatePackageUpdate;
-use BabDev\Filament\Resources\PackageUpdateResource\Pages\EditPackageUpdate;
-use BabDev\Filament\Resources\PackageUpdateResource\Pages\ListPackageUpdates;
-use BabDev\Models\PackageUpdate;
+use App\Filament\Resources\PackageUpdateResource\Pages\CreatePackageUpdate;
+use App\Filament\Resources\PackageUpdateResource\Pages\EditPackageUpdate;
+use App\Filament\Resources\PackageUpdateResource\Pages\ListPackageUpdates;
+use App\Models\PackageUpdate;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -71,7 +71,7 @@ class PackageUpdateResource extends Resource
             ->columns([
                 TextColumn::make('title'),
                 TextColumn::make('package.display_name'),
-                TextColumn::make('published_at')->dateTime(),
+                TextColumn::make('published_at')->label('Published At')->dateTime(),
             ])
             ->actions([
                 EditAction::make(),

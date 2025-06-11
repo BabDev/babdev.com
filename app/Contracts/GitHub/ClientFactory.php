@@ -1,6 +1,6 @@
 <?php
 
-namespace BabDev\Contracts\GitHub;
+namespace App\Contracts\GitHub;
 
 use Github\Client;
 use Github\HttpClient\Builder;

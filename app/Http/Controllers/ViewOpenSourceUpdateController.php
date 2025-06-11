@@ -1,8 +1,8 @@
 <?php
 
-namespace BabDev\Http\Controllers;
+namespace App\Http\Controllers;
 
-use BabDev\Models\PackageUpdate;
+use App\Models\PackageUpdate;
 use Illuminate\Contracts\View\View;
 
 final class ViewOpenSourceUpdateController
@@ -11,10 +11,8 @@ final class ViewOpenSourceUpdateController
     {
         abort_unless($update->is_published, 404, 'Update Not Found');
 
-        $update->load('package');
-
         return view('open_source.updates.show', [
-            'update' => $update,
+            'update' => $update->load('package'),
         ]);
     }
 }

@@ -1,5 +1,5 @@
-@php /** @var \BabDev\Models\Package $package */ @endphp
-@php /** @var \BabDev\Models\PackageVersion $package_version */ @endphp
+@php /** @var \App\Models\Package $package */ @endphp
+@php /** @var \App\Models\PackageVersion $package_version */ @endphp
 @php /** @var string $contents */ @endphp
 @php /** @var string $sidebar */ @endphp
 @php /** @var string|null $title */ @endphp

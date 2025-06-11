@@ -1,8 +1,8 @@
 <?php
 
-namespace BabDev\Providers;
+namespace App\Providers;
 
-use BabDev\Pagination\RoutableLengthAwarePaginator;
+use App\Pagination\RoutableLengthAwarePaginator;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;

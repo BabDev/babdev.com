@@ -11,7 +11,7 @@ return [
                 'secret' => env('GITHUB_APP_PAGERFANTA_PACKAGES_SECRET'),
                 'events' => [
                     'pull_request' => [
-                        \BabDev\GitHub\Actions\ClosePagerfantaReadOnlyRepoPullRequest::class,
+                        \App\GitHub\Actions\ClosePagerfantaReadOnlyRepoPullRequest::class,
                     ],
                 ],
             ],

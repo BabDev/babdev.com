@@ -2,10 +2,10 @@
 
 namespace Tests\Feature;
 
-use BabDev\Contracts\Services\DocumentationProcessor;
-use BabDev\Contracts\Services\Exceptions\PageNotFoundException;
-use BabDev\Models\Package;
-use BabDev\Models\PackageVersion;
+use App\Contracts\Services\DocumentationProcessor;
+use App\Contracts\Services\Exceptions\PageNotFoundException;
+use App\Models\Package;
+use App\Models\PackageVersion;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Mockery\MockInterface;
 use Tests\TestCase;

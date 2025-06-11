@@ -1,4 +1,4 @@
-@php /** @var \BabDev\Pagination\RoutableLengthAwarePaginator<\BabDev\Models\PackageUpdate> $updates */ @endphp
+@php /** @var \App\Pagination\RoutableLengthAwarePaginator<\App\Models\PackageUpdate> $updates */ @endphp
 
 @extends('layouts.app', [
     'title' => sprintf('%sOpen Source Updates | %s', (!$updates->onFirstPage() ? sprintf('Page %d | ', $updates->currentPage()) : ''), config('app.name', 'BabDev')),

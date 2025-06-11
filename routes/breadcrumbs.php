@@ -1,10 +1,10 @@
 <?php
 
+use App\Models\Package;
+use App\Models\PackageUpdate;
+use App\Models\PackageVersion;
 use BabDev\Breadcrumbs\Contracts\BreadcrumbsGenerator;
 use BabDev\Breadcrumbs\Contracts\BreadcrumbsManager;
-use BabDev\Models\Package;
-use BabDev\Models\PackageUpdate;
-use BabDev\Models\PackageVersion;
 
 /** @var BreadcrumbsManager $breadcrumbs */
 $breadcrumbs->for(

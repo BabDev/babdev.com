@@ -1,9 +1,9 @@
 <?php
 
-namespace BabDev\Http\Controllers;
+namespace App\Http\Controllers;
 
-use BabDev\Models\PackageUpdate;
-use BabDev\Pagination\RoutableLengthAwarePaginator;
+use App\Models\PackageUpdate;
+use App\Pagination\RoutableLengthAwarePaginator;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;

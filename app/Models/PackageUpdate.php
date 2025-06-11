@@ -1,10 +1,11 @@
 <?php
 
-namespace BabDev\Models;
+namespace App\Models;
 
 use Carbon\Carbon;
 use Database\Factories\PackageUpdateFactory;
 use Illuminate\Database\Eloquent\Attributes\Scope;
+use Illuminate\Database\Eloquent\Attributes\UseFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
@@ -45,6 +46,7 @@ use Spatie\Feed\FeedItem;
  * @method static Builder|PackageUpdate               whereTitle($value)
  * @method static Builder|PackageUpdate               whereUpdatedAt($value)
  */
+#[UseFactory(PackageUpdateFactory::class)]
 class PackageUpdate extends Model implements Feedable
 {
     /** @use HasFactory<PackageUpdateFactory<PackageUpdate>> */

@@ -1,10 +1,10 @@
 <?php
 
-namespace BabDev\GitHub;
+namespace App\GitHub;
 
-use BabDev\Contracts\GitHub\Actions\Action;
-use BabDev\Contracts\GitHub\JWTConfigurationBuilder as JWTConfigurationBuilderContract;
-use BabDev\Contracts\GitHub\JWTTokenGenerator as JWTTokenGeneratorContract;
+use App\Contracts\GitHub\Actions\Action;
+use App\Contracts\GitHub\JWTConfigurationBuilder as JWTConfigurationBuilderContract;
+use App\Contracts\GitHub\JWTTokenGenerator as JWTTokenGeneratorContract;
 use Lcobucci\JWT\Encoding\ChainedFormatter;
 
 /**

@@ -1,8 +1,8 @@
 <?php
 
-namespace BabDev\Contracts\GitHub;
+namespace App\Contracts\GitHub;
 
-use BabDev\Contracts\GitHub\Actions\Action;
+use App\Contracts\GitHub\Actions\Action;
 use Lcobucci\JWT\Configuration;
 
 /**

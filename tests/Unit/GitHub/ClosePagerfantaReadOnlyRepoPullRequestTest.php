@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\GitHub;
 
-use BabDev\GitHub\Actions\ClosePagerfantaReadOnlyRepoPullRequest;
+use App\GitHub\Actions\ClosePagerfantaReadOnlyRepoPullRequest;
 use Github\Api\Issue;
 use Github\Api\Issue\Comments;
 use Github\Api\PullRequest;

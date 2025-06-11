@@ -6,12 +6,12 @@ return [
             /*
              * Here you can specify which class and method will return
              * the items that should appear in the feed. For example:
-             * [BabDev\Model::class, 'getAllFeedItems']
+             * [App\Model::class, 'getAllFeedItems']
              *
              * You can also pass an argument to that method. Note that their key must be the name of the parameter:
-             * [BabDev\Model::class, 'getAllFeedItems', 'parameterName' => 'argument']
+             * [App\Model::class, 'getAllFeedItems', 'parameterName' => 'argument']
              */
-            'items' => [\BabDev\Models\PackageUpdate::class, 'getFeedItems'],
+            'items' => [\App\Models\PackageUpdate::class, 'getFeedItems'],
 
             /*
              * The feed will be available on this url.

@@ -1,6 +1,6 @@
 <?php
 
-namespace BabDev\Pagination;
+namespace App\Pagination;
 
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Routing\Route;

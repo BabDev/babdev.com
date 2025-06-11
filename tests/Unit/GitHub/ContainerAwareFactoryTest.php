@@ -2,8 +2,8 @@
 
 namespace Tests\Unit\GitHub;
 
-use BabDev\GitHub\Actions\ClosePagerfantaReadOnlyRepoPullRequest;
-use BabDev\GitHub\Actions\ContainerAwareFactory;
+use App\GitHub\Actions\ClosePagerfantaReadOnlyRepoPullRequest;
+use App\GitHub\Actions\ContainerAwareFactory;
 use Tests\TestCase;
 
 final class ContainerAwareFactoryTest extends TestCase

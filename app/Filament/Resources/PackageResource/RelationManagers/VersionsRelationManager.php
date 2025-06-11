@@ -1,6 +1,6 @@
 <?php
 
-namespace BabDev\Filament\Resources\PackageResource\RelationManagers;
+namespace App\Filament\Resources\PackageResource\RelationManagers;
 
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\TextInput;
@@ -25,9 +25,9 @@ class VersionsRelationManager extends RelationManager
         return $form
             ->schema([
                 TextInput::make('version')->required(),
-                TextInput::make('docs_git_branch'),
+                TextInput::make('docs_git_branch')->label('Docs Git Branch'),
                 DatePicker::make('released'),
-                DatePicker::make('end_of_support'),
+                DatePicker::make('end_of_support')->label('End of Support'),
             ]);
     }
 
@@ -36,9 +36,9 @@ class VersionsRelationManager extends RelationManager
         return $table
             ->columns([
                 TextColumn::make('version'),
-                TextColumn::make('docs_git_branch'),
+                TextColumn::make('docs_git_branch')->label('Docs Git Branch'),
                 TextColumn::make('released')->date(),
-                TextColumn::make('end_of_support')->date(),
+                TextColumn::make('end_of_support')->label('End of Support')->date(),
             ])
             ->headerActions([
                 CreateAction::make(),

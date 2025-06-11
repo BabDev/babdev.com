@@ -1,5 +1,5 @@
 <?php
 
-namespace BabDev\Models\Exceptions;
+namespace App\Models\Exceptions;
 
 final class VersionsNotConfigured extends \UnexpectedValueException {}

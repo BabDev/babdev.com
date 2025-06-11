@@ -1,9 +1,10 @@
 <?php
 
-namespace BabDev\Models;
+namespace App\Models;
 
 use Database\Factories\PackageVersionFactory;
 use Illuminate\Database\Eloquent\Attributes\Scope;
+use Illuminate\Database\Eloquent\Attributes\UseFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -39,6 +40,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder|PackageVersion                whereUpdatedAt($value)
  * @method static Builder|PackageVersion                whereVersion($value)
  */
+#[UseFactory(PackageVersionFactory::class)]
 class PackageVersion extends Model
 {
     /** @use HasFactory<PackageVersionFactory<PackageVersion>> */
