@@ -8,7 +8,7 @@
         "ext-hash": "*",
         "composer-runtime-api": "^2.0",
         "babdev/laravel-breadcrumbs": "^2.0@dev",
-        "filament/filament": "3.3.21",
+        "filament/filament": "3.3.23",
         "guzzlehttp/guzzle": "7.9.3",
         "guzzlehttp/psr7": "2.7.1",
         "knplabs/github-api": "3.16.0",
