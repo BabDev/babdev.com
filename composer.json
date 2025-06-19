@@ -13,6 +13,7 @@
         "guzzlehttp/psr7": "2.7.1",
         "knplabs/github-api": "3.16.0",
         "laravel/framework": "12.19.3",
+        "laravel/nightwatch": "^1.7",
         "lcobucci/jwt": "5.5.0",
         "league/commonmark": "2.7.0",
         "mohamedsabil83/filament-forms-tinyeditor": "2.4.0",
