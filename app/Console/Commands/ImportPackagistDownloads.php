@@ -27,7 +27,7 @@ final class ImportPackagistDownloads extends Command
                 return;
             }
 
-            $package->update([
+            $package->updateQuietly([
                 'downloads' => $stats->json('downloads.total'),
             ]);
         });
