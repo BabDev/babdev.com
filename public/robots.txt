@@ -1,0 +1,5 @@
+# Default to allowing web crawlers access
+User-agent: *
+
+Sitemap: https://www.babdev.com/sitemap.xml
+
