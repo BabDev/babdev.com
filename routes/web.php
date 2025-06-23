@@ -12,10 +12,6 @@ Route::domain(config()->string('app.domain'))->group(function () {
     Route::view('/', 'homepage')->name('homepage');
     Route::view('/privacy', 'privacy')->name('privacy');
 
-    Route::permanentRedirect('/extensions', '/open-source/packages');
-    Route::permanentRedirect('/extensions/latest', '/open-source/packages');
-    Route::permanentRedirect('/extensions/releases', '/open-source/packages');
-    Route::permanentRedirect('/extensions/updates', '/open-source/updates');
     Route::redirect('/sponsor', '/');
 
     Route::get(
