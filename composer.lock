@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f7454ea8c0e44290930159a55c53aaf8",
+    "content-hash": "61d108e6baf20c460e6bb726413cb3d9",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -2462,16 +2462,16 @@
         },
         {
             "name": "laravel/nightwatch",
-            "version": "v1.7.4",
+            "version": "v1.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/nightwatch.git",
-                "reference": "87dae579f05c7910c7861acbb1f02dc7ed8589b3"
+                "reference": "350fe883e85270d9f2f241f0bf69131a59e6c10e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/nightwatch/zipball/87dae579f05c7910c7861acbb1f02dc7ed8589b3",
-                "reference": "87dae579f05c7910c7861acbb1f02dc7ed8589b3",
+                "url": "https://api.github.com/repos/laravel/nightwatch/zipball/350fe883e85270d9f2f241f0bf69131a59e6c10e",
+                "reference": "350fe883e85270d9f2f241f0bf69131a59e6c10e",
                 "shasum": ""
             },
             "require": {
@@ -2539,7 +2539,7 @@
                 "issues": "https://github.com/laravel/nightwatch/issues",
                 "source": "https://github.com/laravel/nightwatch"
             },
-            "time": "2025-06-19T03:39:39+00:00"
+            "time": "2025-06-25T06:45:39+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -9360,16 +9360,16 @@
         },
         {
             "name": "nunomaduro/collision",
-            "version": "v8.8.1",
+            "version": "v8.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/collision.git",
-                "reference": "44ccb82e3e21efb5446748d2a3c81a030ac22bd5"
+                "reference": "60207965f9b7b7a4ce15a0f75d57f9dadb105bdb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/collision/zipball/44ccb82e3e21efb5446748d2a3c81a030ac22bd5",
-                "reference": "44ccb82e3e21efb5446748d2a3c81a030ac22bd5",
+                "url": "https://api.github.com/repos/nunomaduro/collision/zipball/60207965f9b7b7a4ce15a0f75d57f9dadb105bdb",
+                "reference": "60207965f9b7b7a4ce15a0f75d57f9dadb105bdb",
                 "shasum": ""
             },
             "require": {
@@ -9455,7 +9455,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2025-06-11T01:04:21+00:00"
+            "time": "2025-06-25T02:12:12+00:00"
         },
         {
             "name": "phar-io/manifest",
