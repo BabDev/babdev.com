@@ -21,8 +21,6 @@ final class AppServiceProvider extends ServiceProvider
         // Limit database key length
         Schema::defaultStringLength(191);
 
-        Paginator::useBootstrap();
-
         RateLimiter::for('github.app', static fn(Request $request) => Limit::perMinute(60));
 
         Livewire::setUpdateRoute(static fn(array|callable|null|string $handle) => Route::post('/livewire/update', $handle)->middleware('filament.web'));

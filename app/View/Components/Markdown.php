@@ -8,13 +8,15 @@ use Illuminate\View\Component;
 use League\CommonMark\ConverterInterface;
 use League\CommonMark\Environment\Environment;
 use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
-use League\CommonMark\Extension\CommonMark\Node\Block\Heading;
-use League\CommonMark\Extension\CommonMark\Renderer\Block\HeadingRenderer;
+use League\CommonMark\Extension\CommonMark\Node\Block\FencedCode;
+use League\CommonMark\Extension\CommonMark\Node\Block\IndentedCode;
+use League\CommonMark\Extension\CommonMark\Node\Inline\Code;
+use League\CommonMark\Extension\CommonMark\Renderer\Block\FencedCodeRenderer;
+use League\CommonMark\Extension\CommonMark\Renderer\Block\IndentedCodeRenderer;
+use League\CommonMark\Extension\CommonMark\Renderer\Inline\CodeRenderer;
 use League\CommonMark\Extension\DefaultAttributes\DefaultAttributesExtension;
 use League\CommonMark\Extension\GithubFlavoredMarkdownExtension;
 use League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkExtension;
-use League\CommonMark\Extension\Table\Table;
-use League\CommonMark\Extension\Table\TableRenderer;
 use League\CommonMark\MarkdownConverter;
 use League\CommonMark\Node\Node;
 use League\CommonMark\Normalizer\TextNormalizerInterface;
@@ -44,11 +46,6 @@ final class Markdown extends Component
         $options = [
             'html_input' => 'allow',
             'allow_unsafe_links' => true,
-            'default_attributes' => [
-                Table::class => [
-                    'class' => 'table',
-                ],
-            ],
             'heading_permalink' => [
                 'html_class' => 'anchor',
                 'fragment_prefix' => '',
@@ -69,8 +66,9 @@ final class Markdown extends Component
         $environment->addExtension(new CommonMarkCoreExtension());
         $environment->addExtension(new DefaultAttributesExtension());
         $environment->addExtension(new GithubFlavoredMarkdownExtension());
-        $environment->addRenderer(Heading::class, new HtmlDecorator(new HeadingRenderer(), 'div', ['class' => 'section-heading']));
-        $environment->addRenderer(Table::class, new HtmlDecorator(new TableRenderer(), 'div', ['class' => 'table-responsive']));
+        $environment->addRenderer(Code::class, new HtmlDecorator(new CodeRenderer(), 'span', ['class' => 'not-prose']));
+        $environment->addRenderer(FencedCode::class, new HtmlDecorator(new FencedCodeRenderer(), 'div', ['class' => 'not-prose']));
+        $environment->addRenderer(IndentedCode::class, new HtmlDecorator(new IndentedCodeRenderer(), 'div', ['class' => 'not-prose']));
 
         if ($this->anchors) {
             $environment->addExtension(new HeadingPermalinkExtension());

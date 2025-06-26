@@ -18,7 +18,7 @@ return [
     |
     */
 
-    'view' => 'breadcrumbs::bootstrap5',
+    'view' => '_partials/breadcrumbs',
 
     /*
     |--------------------------------------------------------------------------

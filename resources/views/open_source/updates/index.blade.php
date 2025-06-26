@@ -21,32 +21,61 @@
 
 @section('content')
     <x-hero title="Open Source Package Updates" />
-    <section class="pt-4">
-        <div class="container package-update">
-            @forelse($updates as $update)
-                <article class="mb-3">
-                    <header class="section-heading">
-                        <h2>{{ $update->title }}</h2>
-                    </header>
-                    <div class="item-published">
-                        <span class="item-published__icon">{{ resource_svg('far-calendar') }}</span>
-                        <span class="item-published__date">{{ $update->published_at->format('F j, Y') }}</span>
+
+    <section class="py-16">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="space-y-8">
+                @forelse($updates as $update)
+                    <article class="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200">
+                        <div class="p-6">
+                            <header class="mb-4">
+                                <div class="flex items-center space-x-3 mb-3">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-brand-orange text-white">
+                                        {{ $update->package->display_name }}
+                                    </span>
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <x-far-calendar class="mr-1 h-4 w-4 fill-current" /> <time datetime="{{ $update->published_at->format('c') }}">{{ $update->published_at->format('F j, Y') }}</time>
+                                    </div>
+                                </div>
+
+                                <h2 class="text-xl font-semibold text-gray-900 hover:text-brand-orange transition-colors duration-200">
+                                    <a href="{{ route('open-source.update', ['update' => $update]) }}">{{ $update->title }}</a>
+                                </h2>
+                            </header>
+
+                            <div class="package-update-intro">
+                                {!! $update->intro !!}
+                            </div>
+
+                            <div>
+                                <a class="inline-flex items-center text-brand-orange hover:text-orange-700 font-medium transition-colors duration-200" href="{{ route('open-source.update', ['update' => $update]) }}">Read Update <x-fas-chevron-right class="ml-1 h-4 w-4 fill-current" /></a>
+                            </div>
+                        </div>
+                    </article>
+                @empty
+                    <div class="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <x-fas-info-circle class="h-5 w-5 text-blue-400 fill-current" />
+                            </div>
+                            <div class="ml-3">
+                                <div class="text-xl font-semibold text-blue-800">No Updates</div>
+                                <p class="mt-1 text-md text-blue-700">Sorry, there are no updates available at this time.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="package-update__intro">
-                        {!! $update->intro !!}
-                    </div>
-                    <div>
-                        <a class="btn btn-brand" href="{{ route('open-source.update', ['update' => $update]) }}">Read Update</a>
-                    </div>
-                </article>
-            @empty
-                <div class="alert alert-info">
-                    <div class="alert-heading">No Updates</div>
-                    <div>Sorry, there are no updates available at this time.</div>
+                @endforelse
+            </div>
+
+            @if($updates->hasPages())
+                <div class="mt-12">
+                    {{ $updates->render() }}
                 </div>
-            @endforelse
-            {{ $updates->render() }}
-            {{ Breadcrumbs::render('open-source.updates') }}
+            @endif
+
+            <div class="mt-6">
+                {{ Breadcrumbs::render('open-source.updates') }}
+            </div>
         </div>
     </section>
 @endsection

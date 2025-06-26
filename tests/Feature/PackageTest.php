@@ -31,8 +31,8 @@ final class PackageTest extends TestCase
             ->assertDontSeeHtml('<link rel="canonical"')
             ->assertDontSeeHtml('<link rel="prev"')
             ->assertDontSeeHtml('<link rel="next"')
-            ->assertDontSeeHtml('<ul class="pagination">')
-            ->assertDontSeeHtml('<li class="breadcrumb-item active">Page 1</li>');
+            ->assertDontSeeHtml('<nav role="navigation"')
+            ->assertDontSeeHtml('<span class="ml-4 text-sm font-medium text-gray-900">Page 1</span>');
     }
 
     public function test_users_can_view_a_specific_page_from_the_package_update_list(): void
@@ -46,8 +46,8 @@ final class PackageTest extends TestCase
             ->assertSeeHtml('<link rel="canonical"')
             ->assertSeeHtml('<link rel="prev"')
             ->assertSeeHtml('<link rel="next"')
-            ->assertSeeHtml('<ul class="pagination">')
-            ->assertSeeHtml('<li class="breadcrumb-item active">Page 2</li>');
+            ->assertSeeHtml('<nav role="navigation"')
+            ->assertSeeHtml('<span class="ml-4 text-sm font-medium text-gray-900">Page 2</span>');
     }
 
     public function test_users_are_redirected_to_the_canonical_first_page_of_the_package_update_list(): void

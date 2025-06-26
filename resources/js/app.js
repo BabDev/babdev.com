@@ -1,8 +1,5 @@
-// Import static resources
-import.meta.glob([
-    '../fonts/**',
-]);
+import Alpine from 'alpinejs';
 
-// Import JavaScript libraries
-import 'bootstrap/js/src/collapse';
-import 'bootstrap/js/src/dropdown';
+window.Alpine = Alpine;
+
+Alpine.start();

@@ -25,7 +25,7 @@ hljs.registerLanguage('xml', xml);
 hljs.registerLanguage('yaml', yaml);
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('pre code').forEach((block) => {
-        hljs.highlightElement(block);
+    document.querySelectorAll('pre code').forEach((element) => {
+        hljs.highlightElement(element);
     });
 });
