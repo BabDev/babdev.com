@@ -1,6 +1,7 @@
 <?php
 
 return new PhpCsFixer\Config()
+    ->setUnsupportedPhpVersionAllowed(true)
     ->setParallelConfig(PhpCsFixer\Runner\Parallel\ParallelConfigFactory::detect())
     ->setRules([
         '@PER-CS' => true,

@@ -8,7 +8,7 @@ use App\Http\Controllers\ViewOpenSourceUpdatesController;
 use App\Http\Controllers\ViewSitemapController;
 use Illuminate\Support\Facades\Route;
 
-Route::domain(config()->string('app.domain'))->group(function () {
+Route::domain(config()->string('app.domain'))->group(function (): void {
     Route::view('/', 'homepage')->name('homepage');
     Route::view('/privacy', 'privacy')->name('privacy');
 
