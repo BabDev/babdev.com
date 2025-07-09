@@ -1,10 +1,12 @@
 <?php
 
+use GuzzleHttp\HandlerStack;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\Str;
 use Illuminate\Support\Uri;
+use Laravel\Nightwatch\Facades\Nightwatch;
 
 function is_filament_request(Request $request): bool
 {
@@ -19,6 +21,13 @@ function is_filament_request(Request $request): bool
     }
 
     return rtrim($request->getHttpHost(), '/') === Uri::of($domain)->host();
+}
+
+function make_guzzle_handler(): HandlerStack
+{
+    return tap(HandlerStack::create(), static function (HandlerStack $stack): void {
+        $stack->push(Nightwatch::guzzleMiddleware());
+    });
 }
 
 function resource_svg(string $filename): HtmlString

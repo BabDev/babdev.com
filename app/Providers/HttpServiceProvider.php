@@ -4,12 +4,10 @@ namespace App\Providers;
 
 use GuzzleHttp\Client as Guzzle;
 use GuzzleHttp\ClientInterface as GuzzleInterface;
-use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\HttpFactory;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\ServiceProvider;
-use Laravel\Nightwatch\Facades\Nightwatch;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\RequestInterface;
@@ -61,12 +59,10 @@ final class HttpServiceProvider extends ServiceProvider implements DeferrablePro
     {
         $this->app->bind(
             GuzzleInterface::class,
-            static function (): GuzzleInterface {
-                $stack = HandlerStack::create();
-                $stack->push(Nightwatch::guzzleMiddleware());
-
-                return new Guzzle(['handler' => $stack, 'headers' => ['User-Agent' => self::USER_AGENT]]);
-            },
+            static fn(): GuzzleInterface => new Guzzle([
+                'handler' => make_guzzle_handler(),
+                'headers' => ['User-Agent' => self::USER_AGENT],
+            ]),
         );
 
         $this->app->alias(GuzzleInterface::class, Guzzle::class);

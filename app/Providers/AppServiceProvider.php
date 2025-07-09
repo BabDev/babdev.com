@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Telescope\TelescopeServiceProvider as TelescopePackageServiceProvider;
 use Livewire\Livewire;
+use Spatie\Crawler\Crawler;
+use Spatie\Sitemap\SitemapGenerator;
 
 final class AppServiceProvider extends ServiceProvider
 {
@@ -30,6 +32,7 @@ final class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->registerPagination();
+        $this->registerSitemapGenerator();
 
         if ($this->app->isLocal()) {
             $this->app->register(TelescopePackageServiceProvider::class);
@@ -67,5 +70,15 @@ final class AppServiceProvider extends ServiceProvider
 
         // Add the checker
         RoutableLengthAwarePaginator::paginatorChecker(static fn() => !is_filament_request(request()));
+    }
+
+    private function registerSitemapGenerator(): void
+    {
+        $this->app->when(SitemapGenerator::class)
+            ->needs(Crawler::class)
+            ->give(static fn(): Crawler => Crawler::create([
+                ...config()->array('sitemap.guzzle_options'),
+                'handler' => make_guzzle_handler(),
+            ]));
     }
 }
