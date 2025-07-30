@@ -64,7 +64,7 @@
 
                         <nav class="bg-white rounded-lg border border-gray-200 overflow-hidden">
                             <div class="p-4">
-                                <x-markdown class="docs-sidebar-nav">{!! $sidebar !!}</x-markdown>
+                                <x-markdown class="docs-sidebar-nav" :active-slug="$slug">{!! $sidebar !!}</x-markdown>
                             </div>
                         </nav>
                     </div>

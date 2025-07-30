@@ -108,6 +108,10 @@
     @apply text-gray-500 py-1.5 px-3;
   }
 
+  .docs-sidebar-nav .active-docs-link {
+    @apply bg-brand-orange text-white font-medium hover:bg-orange-600 hover:text-white;
+  }
+
   .docs-content {
     @apply
     prose

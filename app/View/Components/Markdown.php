@@ -11,6 +11,7 @@ use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
 use League\CommonMark\Extension\CommonMark\Node\Block\FencedCode;
 use League\CommonMark\Extension\CommonMark\Node\Block\IndentedCode;
 use League\CommonMark\Extension\CommonMark\Node\Inline\Code;
+use League\CommonMark\Extension\CommonMark\Node\Inline\Link;
 use League\CommonMark\Extension\CommonMark\Renderer\Block\FencedCodeRenderer;
 use League\CommonMark\Extension\CommonMark\Renderer\Block\IndentedCodeRenderer;
 use League\CommonMark\Extension\CommonMark\Renderer\Inline\CodeRenderer;
@@ -20,14 +21,21 @@ use League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkExtension;
 use League\CommonMark\MarkdownConverter;
 use League\CommonMark\Node\Node;
 use League\CommonMark\Normalizer\TextNormalizerInterface;
+use League\CommonMark\Renderer\ChildNodeRendererInterface;
 use League\CommonMark\Renderer\HtmlDecorator;
+use League\CommonMark\Renderer\NodeRendererInterface;
+use League\CommonMark\Util\HtmlElement;
 use League\Config\ConfigurationAwareInterface;
 use League\Config\ConfigurationInterface;
 
 final class Markdown extends Component
 {
+    /**
+     * @param non-empty-string|null $activeSlug
+     */
     public function __construct(
         public readonly bool $anchors = false,
+        public readonly ?string $activeSlug = null,
     ) {}
 
     public function render(): View
@@ -70,6 +78,10 @@ final class Markdown extends Component
         $environment->addRenderer(FencedCode::class, new HtmlDecorator(new FencedCodeRenderer(), 'div', ['class' => 'not-prose']));
         $environment->addRenderer(IndentedCode::class, new HtmlDecorator(new IndentedCodeRenderer(), 'div', ['class' => 'not-prose']));
 
+        if ($this->activeSlug !== null) {
+            $environment->addRenderer(Link::class, $this->activeLinkRenderer());
+        }
+
         if ($this->anchors) {
             $environment->addExtension(new HeadingPermalinkExtension());
         }
@@ -103,6 +115,52 @@ final class Markdown extends Component
                     ->slug()
                     ->limit($context['length'] ?? $this->defaultMaxLength, '')
                     ->toString();
+            }
+        };
+    }
+
+    private function activeLinkRenderer(): NodeRendererInterface
+    {
+        \assert($this->activeSlug !== null);
+
+        return new readonly class ($this->activeSlug) implements NodeRendererInterface {
+            /**
+             * @param non-empty-string $activeSlug
+             */
+            public function __construct(private string $activeSlug) {}
+
+            public function render(Node $node, ChildNodeRendererInterface $childRenderer): HtmlElement
+            {
+                \assert($node instanceof Link);
+
+                $url = $node->getUrl();
+
+                /** @var array<string, string|string[]|bool> $attributes */
+                $attributes = $node->data->get('attributes', []);
+
+                /** @var list<string> $classes */
+                $classes = [];
+
+                // Check for docs page URLs to add active link styling
+                if (preg_match('/^\/open-source\/packages\/[a-zA-Z0-9-]+\/docs\/[^\/]+\/([a-zA-Z0-9-\/]+)$/', $url, $matches) && $matches[1] === $this->activeSlug) {
+                    $classes[] = 'active-docs-link';
+                }
+
+                if ($classes !== []) {
+                    $class = $attributes['class'] ?? null;
+
+                    if (!\is_string($class)) {
+                        $class = '';
+                    }
+
+                    $attributes['class'] = ltrim($class . ' ' . implode(' ', $classes));
+                }
+
+                return new HtmlElement(
+                    'a',
+                    array_merge(['href' => $url], $attributes),
+                    $childRenderer->renderNodes($node->children()),
+                );
             }
         };
     }
