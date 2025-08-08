@@ -13,7 +13,7 @@
         "guzzlehttp/guzzle": "7.9.3",
         "guzzlehttp/psr7": "2.7.1",
         "knplabs/github-api": "3.16.0",
-        "laravel/framework": "12.22.0",
+        "laravel/framework": "12.22.1",
         "laravel/nightwatch": "^1.7",
         "lcobucci/jwt": "5.5.0",
         "league/commonmark": "2.7.1",
