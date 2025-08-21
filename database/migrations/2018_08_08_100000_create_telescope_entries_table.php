@@ -8,9 +8,17 @@ return new class extends Migration {
     /**
      * Get the migration connection name.
      */
-    public function getConnection(): string|null
+    public function getConnection(): string
     {
-        return config('telescope.storage.database.connection');
+        return config()->string('telescope.storage.database.connection');
+    }
+
+    /**
+     * Determine if this migration should run.
+     */
+    public function shouldRun(): bool
+    {
+        return config()->boolean('telescope.enabled');
     }
 
     /**
@@ -18,10 +26,6 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        if (!config('telescope.enabled')) {
-            return;
-        }
-
         $schema = Schema::connection($this->getConnection());
 
         $schema->create('telescope_entries', function (Blueprint $table): void {
@@ -64,10 +68,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        if (!config('telescope.enabled')) {
-            return;
-        }
-
         $schema = Schema::connection($this->getConnection());
 
         $schema->dropIfExists('telescope_entries_tags');

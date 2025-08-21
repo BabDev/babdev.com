@@ -6,37 +6,37 @@ use App\Filament\Resources\PackageUpdateResource\Pages\CreatePackageUpdate;
 use App\Filament\Resources\PackageUpdateResource\Pages\EditPackageUpdate;
 use App\Filament\Resources\PackageUpdateResource\Pages\ListPackageUpdates;
 use App\Models\PackageUpdate;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\EditAction;
 use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Form;
-use Filament\Forms\Get;
-use Filament\Forms\Set;
 use Filament\Resources\Resource;
-use Filament\Tables\Actions\DeleteAction;
-use Filament\Tables\Actions\DeleteBulkAction;
-use Filament\Tables\Actions\EditAction;
+use Filament\Schemas\Components\Utilities\Get;
+use Filament\Schemas\Components\Utilities\Set;
+use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
-use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 
 class PackageUpdateResource extends Resource
 {
     protected static ?string $model = PackageUpdate::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-document-text';
+    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-document-text';
 
     protected static ?string $recordTitleAttribute = 'title';
 
-    protected static ?string $navigationGroup = 'Packages';
+    protected static string|\UnitEnum|null $navigationGroup = 'Packages';
 
     #[\Override]
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
+        return $schema
             ->columns(1)
-            ->schema([
+            ->components([
                 TextInput::make('title')
                     ->required()
                     ->maxLength(255)
@@ -59,8 +59,8 @@ class PackageUpdateResource extends Resource
                     ->relationship('package', 'display_name')
                     ->required(),
                 DateTimePicker::make('published_at'),
-                TinyEditor::make('intro')->profile('babdev'),
-                TinyEditor::make('content')->profile('babdev'),
+                RichEditor::make('intro'),
+                RichEditor::make('content'),
             ]);
     }
 
@@ -73,11 +73,11 @@ class PackageUpdateResource extends Resource
                 TextColumn::make('package.display_name'),
                 TextColumn::make('published_at')->label('Published At')->dateTime(),
             ])
-            ->actions([
+            ->recordActions([
                 EditAction::make(),
                 DeleteAction::make(),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make(),
             ])
             ->defaultSort('published_at', 'desc');

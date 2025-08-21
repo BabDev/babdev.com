@@ -1,9 +1,9 @@
 /node_modules
 /public/build
 /public/css
+/public/fonts
 /public/images/*
-!/public/images/social-media.png
-!/public/images/social-media.png.webp
+!/public/images/social-media.webp
 /public/js
 /public/storage
 /public/vendor/telescope
