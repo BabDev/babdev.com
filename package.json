@@ -25,7 +25,7 @@
     "devDependencies": {
         "@tailwindcss/vite": "4.1.13",
         "laravel-vite-plugin": "2.0.1",
-        "vite": "7.1.6",
+        "vite": "7.1.7",
         "vite-plugin-manifest-sri": "0.2.0"
     }
 }
