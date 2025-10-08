@@ -13,5 +13,5 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger Envoyer
-        run: curl ${{ secrets.ENVOYER_HOOK }}?sha=${{ github.sha }}
+      - name: Trigger Forge
+        run: curl ${{ secrets.FORGE_HOOK }}
