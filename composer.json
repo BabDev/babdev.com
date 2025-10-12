@@ -35,7 +35,7 @@
         "phpstan/phpstan-mockery": "2.0.0",
         "phpstan/phpstan-phpunit": "2.0.7",
         "phpunit/phpunit": "12.4.1",
-        "rector/rector": "2.2.2",
+        "rector/rector": "2.2.3",
         "spatie/laravel-ignition": "2.9.1"
     },
     "replace": {
