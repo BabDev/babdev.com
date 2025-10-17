@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8dcc242f99315717cc9f9a30600ebd61",
+    "content-hash": "aa7d07a0639ae06771b6244147e91cf8",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -2478,16 +2478,16 @@
         },
         {
             "name": "laravel/nightwatch",
-            "version": "v1.15.1",
+            "version": "v1.15.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/nightwatch.git",
-                "reference": "d068a90dee09134e395e7b0087fc1efbc33845bb"
+                "reference": "3276ef5b4a8ec0ab6b5a8e062d427539afb81329"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/nightwatch/zipball/d068a90dee09134e395e7b0087fc1efbc33845bb",
-                "reference": "d068a90dee09134e395e7b0087fc1efbc33845bb",
+                "url": "https://api.github.com/repos/laravel/nightwatch/zipball/3276ef5b4a8ec0ab6b5a8e062d427539afb81329",
+                "reference": "3276ef5b4a8ec0ab6b5a8e062d427539afb81329",
                 "shasum": ""
             },
             "require": {
@@ -2565,7 +2565,7 @@
                 "issues": "https://github.com/laravel/nightwatch/issues",
                 "source": "https://github.com/laravel/nightwatch"
             },
-            "time": "2025-10-16T04:27:25+00:00"
+            "time": "2025-10-17T04:26:35+00:00"
         },
         {
             "name": "laravel/prompts",

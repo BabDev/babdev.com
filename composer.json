@@ -14,7 +14,7 @@
         "guzzlehttp/psr7": "2.8.0",
         "knplabs/github-api": "3.16.0",
         "laravel/framework": "12.34.0",
-        "laravel/nightwatch": "1.15.1",
+        "laravel/nightwatch": "1.15.2",
         "lcobucci/jwt": "5.5.0",
         "league/commonmark": "2.7.1",
         "owenvoke/blade-fontawesome": "2.9.1",
