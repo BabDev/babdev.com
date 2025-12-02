@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9cd6b65f644c2b3407960988b18afdb9",
+    "content-hash": "6b10125f1f4cbcb9db492c38c08e2164",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -9410,16 +9410,16 @@
     "packages-dev": [
         {
             "name": "driftingly/rector-laravel",
-            "version": "2.1.4",
+            "version": "2.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/driftingly/rector-laravel.git",
-                "reference": "b84b1877ac4f6686f718bc259c9a68d914b514fa"
+                "reference": "45507a8006e5c24356eec71c14f8296ecf6abcbc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/driftingly/rector-laravel/zipball/b84b1877ac4f6686f718bc259c9a68d914b514fa",
-                "reference": "b84b1877ac4f6686f718bc259c9a68d914b514fa",
+                "url": "https://api.github.com/repos/driftingly/rector-laravel/zipball/45507a8006e5c24356eec71c14f8296ecf6abcbc",
+                "reference": "45507a8006e5c24356eec71c14f8296ecf6abcbc",
                 "shasum": ""
             },
             "require": {
@@ -9440,9 +9440,9 @@
             "description": "Rector upgrades rules for Laravel Framework",
             "support": {
                 "issues": "https://github.com/driftingly/rector-laravel/issues",
-                "source": "https://github.com/driftingly/rector-laravel/tree/2.1.4"
+                "source": "https://github.com/driftingly/rector-laravel/tree/2.1.5"
             },
-            "time": "2025-11-30T21:38:38+00:00"
+            "time": "2025-12-02T00:54:29+00:00"
         },
         {
             "name": "fakerphp/faker",
