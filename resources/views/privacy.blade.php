@@ -19,15 +19,6 @@
                             <ul>
                                 <li>IP Address - Your IP address is collected and stored in the web server's logs and security tools as a means of ensuring the security of this website and preventing abuse.</li>
                             </ul>
-
-                            <h2>External Services</h2>
-                            <p>There are some integrations with third party services to improve the capabilities of this site.</p>
-
-                            <h3>InnoCraft</h3>
-                            <p>This site uses the below services provided by InnoCraft Ltd:</p>
-                            <ul>
-                                <li>Matomo Cloud - To collect analytics regarding website traffic</li>
-                            </ul>
                         </div>
                     </div>
                 </div>

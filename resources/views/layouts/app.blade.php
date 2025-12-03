@@ -14,20 +14,6 @@
         @googlefonts
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @yield('assets')
-        @production
-            <script type="text/javascript">
-                var _paq = window._paq = window._paq || [];
-                _paq.push(['trackPageView']);
-                _paq.push(['enableLinkTracking']);
-                (function() {
-                    var u="https://babdev.matomo.cloud/";
-                    _paq.push(['setTrackerUrl', u+'matomo.php']);
-                    _paq.push(['setSiteId', '1']);
-                    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-                    g.type='text/javascript'; g.async=true; g.src='//cdn.matomo.cloud/babdev.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
-                })();
-            </script>
-        @endproduction
     </head>
     <body class="min-h-full flex flex-col bg-gray-50">
         <header class="sticky top-0 z-50 bg-white shadow-sm">
