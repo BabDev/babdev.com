@@ -26,7 +26,7 @@
     "require-dev": {
         "driftingly/rector-laravel": "2.1.7",
         "fakerphp/faker": "1.24.1",
-        "larastan/larastan": "3.8.0",
+        "larastan/larastan": "3.8.1",
         "laravel/telescope": "5.16.0",
         "mockery/mockery": "1.6.12",
         "nunomaduro/collision": "8.8.3",
@@ -34,7 +34,7 @@
         "phpstan/phpstan": "2.1.33",
         "phpstan/phpstan-mockery": "2.0.0",
         "phpstan/phpstan-phpunit": "2.0.10",
-        "phpunit/phpunit": "12.5.3",
+        "phpunit/phpunit": "12.5.4",
         "rector/rector": "2.2.14",
         "spatie/laravel-ignition": "2.9.1"
     },
