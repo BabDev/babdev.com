@@ -33,7 +33,7 @@
         "phpstan/extension-installer": "1.4.3",
         "phpstan/phpstan": "2.1.33",
         "phpstan/phpstan-mockery": "2.0.0",
-        "phpstan/phpstan-phpunit": "2.0.10",
+        "phpstan/phpstan-phpunit": "2.0.11",
         "phpunit/phpunit": "12.5.4",
         "rector/rector": "2.2.14",
         "spatie/laravel-ignition": "2.9.1"
