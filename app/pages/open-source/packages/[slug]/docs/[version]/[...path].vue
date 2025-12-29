@@ -159,7 +159,7 @@ onUnmounted(() => {
                 <main class="lg:col-span-9 xl:col-span-10">
                     <div v-if="!pkgVersion!.released" class="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
                         <div class="flex">
-                            <div class="flex-shrink-0">
+                            <div class="shrink-0">
                                 <Icon name="fa7-solid:info-circle" class="h-5 w-5 text-blue-400 fill-current" />
                             </div>
                             <div class="ml-3">
@@ -171,7 +171,7 @@ onUnmounted(() => {
 
                     <div v-if="pkgVersion!.endOfSupport && new Date(pkgVersion!.endOfSupport) < new Date()" class="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
                         <div class="flex">
-                            <div class="flex-shrink-0">
+                            <div class="shrink-0">
                                 <Icon name="fa7-solid:exclamation-triangle" class="h-5 w-5 text-yellow-400 fill-current" />
                             </div>
                             <div class="ml-3">

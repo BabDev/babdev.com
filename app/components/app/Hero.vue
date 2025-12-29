@@ -6,7 +6,7 @@ defineSlots<{
 </script>
 
 <template>
-    <section class="relative bg-gradient-to-br from-brand-orange to-orange-600 overflow-hidden">
+    <section class="relative bg-linear-to-br from-brand-orange to-orange-600 overflow-hidden">
         <div class="absolute inset-0 bg-black/20" />
 
         <div class="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-18">
