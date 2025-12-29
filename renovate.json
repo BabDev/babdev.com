@@ -1,20 +1,33 @@
 {
-    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "extends": [
-        ":dependencyDashboard",
-        ":automergeMinor",
-        ":automergeBranch",
-        ":prNotPending",
-        ":rebaseStalePrs",
-        ":separateMajorReleases",
-        ":combinePatchMinorReleases",
-        ":enableVulnerabilityAlerts",
-        ":label(dependencies)",
-        "group:allNonMajor"
-    ],
-    "commitBodyTable": true,
-    "enabledManagers": ["composer", "github-actions", "npm"],
-    "lockFileMaintenance": {"enabled": true, "extends": ["schedule:daily"]},
-    "platformAutomerge": true,
-    "rollbackPrs": true
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>nuxt/renovate-config-nuxt",
+    ":dependencyDashboard",
+    ":automergeMinor",
+    ":automergeBranch",
+    ":prNotPending",
+    ":rebaseStalePrs",
+    ":separateMajorReleases",
+    ":combinePatchMinorReleases",
+    ":enableVulnerabilityAlerts",
+    ":label(dependencies)",
+    "group:allNonMajor"
+  ],
+  "commitBodyTable": true,
+  "enabledManagers": ["github-actions", "npm"],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "extends": ["schedule:daily"]
+  },
+  "packageRules": [
+    {
+      "description": "Don't bump engines",
+      "matchPackageNames": ["node", "npm"],
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["engines"],
+      "rangeStrategy": "auto"
+    }
+  ],
+  "platformAutomerge": true,
+  "rollbackPrs": true
 }

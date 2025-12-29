@@ -1,31 +1,36 @@
 {
-    "private": true,
-    "type": "module",
-    "engines": {
-        "node": ">=24.11.0",
-        "npm": ">=11.6.1"
-    },
-    "browserslist": [
-        ">= 0.5%",
-        "last 2 major versions",
-        "not dead",
-        "not Explorer <= 11"
-    ],
-    "scripts": {
-        "dev": "vite",
-        "build": "vite build"
-    },
-    "dependencies": {
-        "@tailwindcss/typography": "0.5.19",
-        "alpinejs": "3.15.3",
-        "highlight.js": "11.11.1",
-        "highlightjs-blade": "0.1.0",
-        "tailwindcss": "4.1.18"
-    },
-    "devDependencies": {
-        "@tailwindcss/vite": "4.1.18",
-        "laravel-vite-plugin": "2.0.1",
-        "vite": "7.3.0",
-        "vite-plugin-manifest-sri": "0.2.0"
-    }
+  "name": "nuxt",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@nuxt/eslint": "^1.12.1",
+    "@nuxt/icon": "^2.1.1",
+    "@nuxt/image": "^2.0.0",
+    "@nuxtjs/google-fonts": "^3.2.0",
+    "@nuxtjs/mdc": "^0.19.2",
+    "@octokit/rest": "^22.0.1",
+    "@tailwindcss/typography": "^0.5.19",
+    "eslint": "^9.39.2",
+    "nuxt": "^4.2.2",
+    "tailwindcss": "^4.1.18",
+    "vue": "^3.5.26",
+    "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "@iconify-json/fa7-regular": "^1.2.2",
+    "@iconify-json/fa7-solid": "^1.2.3",
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/node": "^24.10.4",
+    "tsx": "^4.19.2",
+    "typescript": "^5.9.3"
+  }
 }

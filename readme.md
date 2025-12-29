@@ -1,31 +1,41 @@
-# BabDev Website
+# BabDev
 
-This is the source code for the babdev.com website
+This Nuxt application powers [the BabDev website](https://www.babdev.com).
 
-## Requirements
+Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-- PHP 8.4 or newer
-- MySQL 8.0 or newer
-- [Composer](https://getcomposer.org/download/)
-- [Node.js](https://nodejs.org/en/) 20.9 or newer
-- [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) 10.1 or newer
-- Optionally, a [GitHub personal access token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) to interact with the GitHub API
+## Setup
 
-### Special Notes
+Make sure to install dependencies:
 
-This application is designed to run with two separate subdomains, one for the live website (i.e. `www.babdev.com`) and one for the Filament application (i.e. `filament.babdev.com`); this is done to allow the public facing portion of the website to have no sessions (as the functionality is not necessary).
+```bash
+# npm
+npm install
+```
 
-## Installation
+## Development Server
 
-1. Clone this repository (`git clone git@github.com:BabDev/babdev.com.git babdev.com`)
-2. Setup a new database on your MySQL server for the website
-3. Copy the `.env.example` file to `.env` and fill in the required configuration:
-    - Set the database connection info to the `DB_*` env vars
-    - Set the `APP_DOMAIN_NAME` env var to the domain the main website exists at
-    - Set the `FILAMENT_DOMAIN_NAME` env var to the domain the Filament application exists at
-    - If you have one, set the `GITHUB_TOKEN` env var to your GitHub personal access token you created for the application
-4. Install the PHP dependencies with `composer install`
-5. Generate a new app key with `php artisan key:generate`
-6. Prepare the database by running `php artisan migrate --seed`
-7. Install and compile the front-end dependencies with `npm install && npm run dev`
-8. Ensure your local webserver is set up to run the application (you can use `php artisan serve` to run the in-built PHP web server for working with the frontend of the website)
+Start the development server on `http://localhost:3000`:
+
+```bash
+# npm
+npm run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+# npm
+npm run build
+```
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
