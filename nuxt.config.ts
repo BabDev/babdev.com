@@ -89,6 +89,7 @@ export default defineNuxtConfig({
         components: {
             prose: true,
             map: {
+                code: 'ProseCode',
                 h2: 'ProseH2',
                 h3: 'ProseH3',
                 h4: 'ProseH4',
