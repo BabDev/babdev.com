@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "antfu.iconify",
+        "bradlc.vscode-tailwindcss",
         "dbaeumer.vscode-eslint",
         "Nuxtr.nuxtr-vscode",
         "Vue.volar"
