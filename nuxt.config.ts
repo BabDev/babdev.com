@@ -5,9 +5,9 @@ import discoverDocumentationRoutes from './scripts/discover-routes'
 export default defineNuxtConfig({
     modules: [
         '@nuxt/eslint',
+        '@nuxt/fonts',
         '@nuxt/icon',
         '@nuxt/image',
-        '@nuxtjs/google-fonts',
         '@nuxtjs/mdc',
         '@nuxtjs/sitemap',
     ],
@@ -77,12 +77,12 @@ export default defineNuxtConfig({
         },
     },
 
-    googleFonts: {
-        download: true,
-        families: {
-            'Bree+Serif': true,
-            'Droid+Sans': true,
-        },
+    fonts: {
+        families: [
+            {name: 'BPScript', provider: 'local'},
+            {name: 'Bree Serif', provider: 'google'},
+            {name: 'Open Sans', provider: 'google'},
+        ],
     },
 
     mdc: {
