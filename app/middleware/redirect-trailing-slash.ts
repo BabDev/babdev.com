@@ -2,7 +2,7 @@ export default defineNuxtRouteMiddleware((to) => {
   if (to.path === '/') {
     return
   }
-console.log('redirect middleware', to);
+
   if (to.path.endsWith('/')) {
     // Remove the trailing slash
     const pathWithoutSlash = to.path.slice(0, -1)
