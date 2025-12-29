@@ -30,7 +30,7 @@ useHead({
                 <div class="flex shrink-0 items-center">
                     <NuxtLink to="/" class="flex">
                         <span class="h-auto w-14">
-                            <img src="/logo.svg" alt="BabDev Logo" class="h-full w-full">
+                            <img src="/images/logo.svg" alt="BabDev Logo" class="h-full w-full">
                         </span>
                     </NuxtLink>
                 </div>
