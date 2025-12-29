@@ -9,7 +9,13 @@ export default defineNuxtConfig({
         '@nuxt/image',
         '@nuxtjs/google-fonts',
         '@nuxtjs/mdc',
+        '@nuxtjs/sitemap',
     ],
+
+    site: {
+        url: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+        name: 'BabDev',
+    },
 
     compatibilityDate: '2025-07-15',
 
@@ -111,5 +117,9 @@ export default defineNuxtConfig({
                 'yml',
             ],
         },
+    },
+
+    sitemap: {
+        zeroRuntime: true,
     },
 })
