@@ -6,13 +6,17 @@ defineSlots<{
 </script>
 
 <template>
-    <section class="relative bg-linear-to-br from-brand-orange to-orange-600 overflow-hidden">
+    <section class="from-brand-orange relative overflow-hidden bg-linear-to-br to-orange-600">
         <div class="absolute inset-0 bg-black/20" />
 
         <div class="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-18">
             <div class="text-center">
-                <h1 class="text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl"><slot name="title" /></h1>
-                <h2 v-if="$slots.subtitle" class="mt-6 text-lg leading-8 text-orange-100 sm:text-xl lg:text-2xl"><slot name="subtitle" /></h2>
+                <h1 class="text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
+                    <slot name="title" />
+                </h1>
+                <h2 v-if="$slots.subtitle" class="mt-6 text-lg leading-8 text-orange-100 sm:text-xl lg:text-2xl">
+                    <slot name="subtitle" />
+                </h2>
             </div>
         </div>
     </section>

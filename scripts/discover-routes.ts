@@ -11,7 +11,7 @@ export default async function discoverDocumentationRoutes(): Promise<string[]> {
         return []
     }
 
-    const octokit = new Octokit({auth: githubToken})
+    const octokit = new Octokit({ auth: githubToken })
     const routes: string[] = []
 
     console.log('🔍 Discovering documentation routes from GitHub...')
@@ -25,7 +25,7 @@ export default async function discoverDocumentationRoutes(): Promise<string[]> {
             const gitBranch = version.gitBranch || version.version
 
             try {
-                const {data} = await octokit.git.getTree({
+                const { data } = await octokit.git.getTree({
                     owner: 'BabDev',
                     repo: pkg.name,
                     tree_sha: `${gitBranch}:docs`,

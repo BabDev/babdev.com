@@ -2,7 +2,7 @@
 const config = useRuntimeConfig()
 
 useSeoMeta({
-    titleTemplate: (titleChunk) => titleChunk ? `${titleChunk} | BabDev` : 'BabDev',
+    titleTemplate: titleChunk => (titleChunk ? `${titleChunk} | BabDev` : 'BabDev'),
     ogType: 'website',
     ogTitle: 'BabDev',
     ogImage: `${config.public.siteUrl}/images/social-media.webp`,
@@ -12,6 +12,6 @@ useSeoMeta({
 
 <template>
     <NuxtLayout>
-        <NuxtPage/>
+        <NuxtPage />
     </NuxtLayout>
 </template>

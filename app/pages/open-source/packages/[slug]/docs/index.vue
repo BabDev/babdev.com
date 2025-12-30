@@ -8,18 +8,18 @@ const packageSlug = route.params.slug as string
 const pkg = packages.find(p => p.slug === packageSlug)
 
 if (!pkg) {
-    throw createError({statusCode: 404, message: 'Package not found'})
+    throw createError({ statusCode: 404, message: 'Package not found' })
 }
 
 if (!pkg.hasDocumentation) {
-    throw createError({statusCode: 404, message: 'This package does not have documentation'})
+    throw createError({ statusCode: 404, message: 'This package does not have documentation' })
 }
 
 // Get latest version
 const latestVersion = getLatestStablePackageVersion(pkg)
 
 if (!latestVersion) {
-    throw createError({statusCode: 404, message: 'No versions available'})
+    throw createError({ statusCode: 404, message: 'No versions available' })
 }
 
 // Redirect to latest version docs

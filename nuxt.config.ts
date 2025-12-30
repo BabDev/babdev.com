@@ -3,19 +3,7 @@ import discoverDocumentationRoutes from './scripts/discover-routes'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    modules: [
-        '@nuxt/eslint',
-        '@nuxt/fonts',
-        '@nuxt/icon',
-        '@nuxt/image',
-        '@nuxtjs/mdc',
-        '@nuxtjs/sitemap',
-    ],
-
-    site: {
-        url: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
-        name: 'BabDev',
-    },
+    modules: ['@nuxt/eslint', '@nuxt/fonts', '@nuxt/icon', '@nuxt/image', '@nuxtjs/mdc', '@nuxtjs/sitemap'],
 
     compatibilityDate: '2025-07-15',
 
@@ -24,19 +12,10 @@ export default defineNuxtConfig({
     },
 
     vite: {
-        plugins: [
-            tailwindcss(),
-        ],
+        plugins: [tailwindcss()],
     },
 
-    css: [
-        './app/assets/css/main.css'
-    ],
-
-    icon: {
-        mode: 'css',
-        cssLayer: 'base',
-    },
+    css: ['./app/assets/css/main.css'],
 
     ssr: true,
 
@@ -44,11 +23,7 @@ export default defineNuxtConfig({
         static: true,
         prerender: {
             crawlLinks: true,
-            routes: [
-                '/',
-                '/open-source/packages',
-                '/privacy',
-            ],
+            routes: ['/', '/open-source/packages', '/privacy'],
         },
     },
 
@@ -61,28 +36,36 @@ export default defineNuxtConfig({
         },
     },
 
+    site: {
+        url: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+        name: 'BabDev',
+    },
+
     runtimeConfig: {
         githubToken: process.env.GITHUB_TOKEN || '',
         public: {
             siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
-        }
+        },
     },
 
     app: {
         head: {
             title: 'BabDev',
-            link: [
-                {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
-            ],
+            link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
         },
     },
 
     fonts: {
         families: [
-            {name: 'BPScript', provider: 'local'},
-            {name: 'Bree Serif', provider: 'google'},
-            {name: 'Open Sans', provider: 'google'},
+            { name: 'BPScript', provider: 'local' },
+            { name: 'Bree Serif', provider: 'google' },
+            { name: 'Open Sans', provider: 'google' },
         ],
+    },
+
+    icon: {
+        mode: 'css',
+        cssLayer: 'base',
     },
 
     mdc: {

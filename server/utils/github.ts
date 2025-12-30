@@ -16,7 +16,7 @@ export function getGitHubClient() {
 
 export async function fetchRepositoryData(owner: string, repo: string) {
     try {
-        const {data} = await getGitHubClient().repos.get({
+        const { data } = await getGitHubClient().repos.get({
             owner,
             repo,
         })
@@ -34,14 +34,9 @@ export async function fetchRepositoryData(owner: string, repo: string) {
     }
 }
 
-export async function fetchRepositoryFile(
-    owner: string,
-    repo: string,
-    path: string,
-    ref: string
-) {
+export async function fetchRepositoryFile(owner: string, repo: string, path: string, ref: string) {
     try {
-        const {data} = await getGitHubClient().repos.getContent({
+        const { data } = await getGitHubClient().repos.getContent({
             owner,
             repo,
             path,

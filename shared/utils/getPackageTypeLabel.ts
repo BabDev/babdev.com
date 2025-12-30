@@ -1,4 +1,4 @@
-import type {PackageType} from '#shared/types/packages'
+import type { PackageType } from '#shared/types/packages'
 
 export default function (type: PackageType) {
     switch (type) {

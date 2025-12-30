@@ -7,7 +7,9 @@ export async function fetchPackagistDownloads(packageName: string) {
         })
 
         if (!response.ok) {
-            console.error(`Failed to fetch Packagist data for ${packageName}: API responded with status code ${response.status}`)
+            console.error(
+                `Failed to fetch Packagist data for ${packageName}: API responded with status code ${response.status}`,
+            )
 
             return null
         }

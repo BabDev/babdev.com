@@ -1,0 +1,16 @@
+# Dependencies
+node_modules
+
+# Build outputs
+.nuxt
+.output
+dist
+
+# Lock files
+package-lock.json
+
+# Cache
+.cache
+
+# Logs
+*.log

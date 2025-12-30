@@ -13,8 +13,8 @@ export const packages: Package[] = [
         visible: true,
         isPackagist: true,
         versions: [
-            {version: '2.x', gitBranch: null, released: '2023-02-14', endOfSupport: null},
-            {version: '1.x', gitBranch: null, released: '2020-04-27', endOfSupport: null},
+            { version: '2.x', gitBranch: null, released: '2023-02-14', endOfSupport: null },
+            { version: '1.x', gitBranch: null, released: '2020-04-27', endOfSupport: null },
         ],
     },
     {
@@ -29,8 +29,8 @@ export const packages: Package[] = [
         visible: true,
         isPackagist: true,
         versions: [
-            {version: '2.x', gitBranch: null, released: '2021-03-14', endOfSupport: null},
-            {version: '1.x', gitBranch: null, released: '2019-06-01', endOfSupport: '2021-03-14T23:59:59.999Z'},
+            { version: '2.x', gitBranch: null, released: '2021-03-14', endOfSupport: null },
+            { version: '1.x', gitBranch: null, released: '2019-06-01', endOfSupport: '2021-03-14T23:59:59.999Z' },
         ],
     },
     {
@@ -45,9 +45,9 @@ export const packages: Package[] = [
         visible: true,
         isPackagist: true,
         versions: [
-            {version: '3.x', gitBranch: null, released: '2025-04-09', endOfSupport: null},
-            {version: '2.x', gitBranch: null, released: '2023-02-14', endOfSupport: null},
-            {version: '1.x', gitBranch: null, released: '2020-03-04', endOfSupport: null},
+            { version: '3.x', gitBranch: null, released: '2025-04-09', endOfSupport: null },
+            { version: '2.x', gitBranch: null, released: '2023-02-14', endOfSupport: null },
+            { version: '1.x', gitBranch: null, released: '2020-03-04', endOfSupport: null },
         ],
     },
     {
@@ -62,9 +62,9 @@ export const packages: Package[] = [
         visible: true,
         isPackagist: true,
         versions: [
-            {version: '3.x', gitBranch: null, released: null, endOfSupport: null},
-            {version: '2.x', gitBranch: null, released: '2025-05-11', endOfSupport: null},
-            {version: '1.x', gitBranch: null, released: '2021-02-28', endOfSupport: '2025-11-30T23:59:59.999Z'},
+            { version: '3.x', gitBranch: null, released: null, endOfSupport: null },
+            { version: '2.x', gitBranch: null, released: '2025-05-11', endOfSupport: null },
+            { version: '1.x', gitBranch: null, released: '2021-02-28', endOfSupport: '2025-11-30T23:59:59.999Z' },
         ],
     },
     {
@@ -79,10 +79,10 @@ export const packages: Package[] = [
         visible: true,
         isPackagist: true,
         versions: [
-            {version: '5.x', gitBranch: null, released: null, endOfSupport: null},
-            {version: '4.x', gitBranch: null, released: '2023-03-15', endOfSupport: null},
-            {version: '3.x', gitBranch: null, released: '2021-03-07', endOfSupport: null},
-            {version: '2.x', gitBranch: null, released: '2020-06-06', endOfSupport: '2022-03-31T23:59:59.999Z'},
+            { version: '5.x', gitBranch: null, released: null, endOfSupport: null },
+            { version: '4.x', gitBranch: null, released: '2023-03-15', endOfSupport: null },
+            { version: '3.x', gitBranch: null, released: '2021-03-07', endOfSupport: null },
+            { version: '2.x', gitBranch: null, released: '2020-06-06', endOfSupport: '2022-03-31T23:59:59.999Z' },
         ],
     },
     {
@@ -97,10 +97,10 @@ export const packages: Package[] = [
         visible: true,
         isPackagist: true,
         versions: [
-            {version: '5.x', gitBranch: null, released: null, endOfSupport: null},
-            {version: '4.x', gitBranch: null, released: '2023-03-15', endOfSupport: null},
-            {version: '3.x', gitBranch: null, released: '2021-03-07', endOfSupport: '2025-11-30T23:59:59.999Z'},
-            {version: '2.x', gitBranch: null, released: '2019-12-27', endOfSupport: '2021-12-31T23:59:59.999Z'},
+            { version: '5.x', gitBranch: null, released: null, endOfSupport: null },
+            { version: '4.x', gitBranch: null, released: '2023-03-15', endOfSupport: null },
+            { version: '3.x', gitBranch: null, released: '2021-03-07', endOfSupport: '2025-11-30T23:59:59.999Z' },
+            { version: '2.x', gitBranch: null, released: '2019-12-27', endOfSupport: '2021-12-31T23:59:59.999Z' },
         ],
     },
     {
@@ -114,24 +114,20 @@ export const packages: Package[] = [
         supported: true,
         visible: true,
         isPackagist: true,
-        versions: [
-            {version: '1.x', gitBranch: '0.1', released: null, endOfSupport: null},
-        ],
+        versions: [{ version: '1.x', gitBranch: '0.1', released: null, endOfSupport: null }],
     },
     {
         name: 'SyliusShippingEstimatePlugin',
         displayName: 'Sylius Shipping Estimate Plugin',
         packagistName: 'babdev/sylius-shipping-estimate-plugin',
         slug: 'syliusshippingestimateplugin',
-        description: 'Adds a shipping estimator widget to a Sylius website\'s cart',
+        description: "Adds a shipping estimator widget to a Sylius website's cart",
         packageType: 'sylius-plugin',
         hasDocumentation: true,
         supported: true,
         visible: true,
         isPackagist: true,
-        versions: [
-            {version: '1.x', gitBranch: '0.2', released: null, endOfSupport: null},
-        ],
+        versions: [{ version: '1.x', gitBranch: '0.2', released: null, endOfSupport: null }],
     },
     {
         name: 'supplier-plugin',
@@ -144,9 +140,7 @@ export const packages: Package[] = [
         supported: true,
         visible: true,
         isPackagist: true,
-        versions: [
-            {version: '1.x', gitBranch: '0.2', released: null, endOfSupport: null},
-        ],
+        versions: [{ version: '1.x', gitBranch: '0.2', released: null, endOfSupport: null }],
     },
     {
         name: 'WebSocket-Server',
@@ -159,9 +153,7 @@ export const packages: Package[] = [
         supported: true,
         visible: true,
         isPackagist: true,
-        versions: [
-            {version: '1.x', gitBranch: '0.1', released: null, endOfSupport: null},
-        ],
+        versions: [{ version: '1.x', gitBranch: '0.1', released: null, endOfSupport: null }],
     },
     {
         name: 'WebSocketBundle',
@@ -174,8 +166,6 @@ export const packages: Package[] = [
         supported: true,
         visible: true,
         isPackagist: true,
-        versions: [
-            {version: '1.x', gitBranch: '0.1', released: null, endOfSupport: null},
-        ],
+        versions: [{ version: '1.x', gitBranch: '0.1', released: null, endOfSupport: null }],
     },
 ]

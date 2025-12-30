@@ -8,13 +8,7 @@ defineSlots<{
 
 <template>
     <h6>
-        <a
-            v-if="id"
-            :id="id"
-            :href="`#${id}`"
-            class="anchor"
-            aria-hidden="true"
-        />
+        <a v-if="id" :id="id" :href="`#${id}`" class="anchor" aria-hidden="true" />
         <slot />
     </h6>
 </template>
