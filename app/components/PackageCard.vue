@@ -74,34 +74,3 @@ defineProps<{
         </div>
     </article>
 </template>
-
-<style lang="css">
-@reference '~/assets/css/main.css';
-
-@layer components {
-    .package-statistic {
-        @apply mr-2 inline-flex items-center rounded-full bg-gray-100 px-2 py-1 text-xs font-medium text-gray-800;
-    }
-
-    .package-statistic.package-statistic--unsupported {
-        @apply bg-red-100 text-red-800;
-    }
-
-    .package-statistic.package-statistic--language {
-        @apply bg-blue-100 text-blue-800;
-    }
-
-    .package-statistic.package-statistic--package-type--symfony-bundle {
-        @apply bg-green-100 text-green-800;
-    }
-
-    .package-statistic.package-statistic--package-type--laravel-package {
-        @apply bg-red-100 text-red-800;
-    }
-
-    .package-statistic.package-statistic--downloads,
-    .package-statistic.package-statistic--stars {
-        @apply bg-yellow-100 text-yellow-800;
-    }
-}
-</style>
