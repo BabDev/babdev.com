@@ -3,6 +3,7 @@
         "antfu.iconify",
         "bradlc.vscode-tailwindcss",
         "dbaeumer.vscode-eslint",
+        "github.vscode-github-actions",
         "Nuxtr.nuxtr-vscode",
         "Vue.volar"
     ]
