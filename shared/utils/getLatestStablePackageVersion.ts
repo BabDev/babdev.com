@@ -5,5 +5,5 @@ export default function (pkg: Package): PackageVersion | undefined {
         return undefined
     }
 
-    return pkg.versions.find(version => version.released !== null) || pkg.versions[0]
+    return pkg.versions.find(version => version.released) || pkg.versions[0]
 }

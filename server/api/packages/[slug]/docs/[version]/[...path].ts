@@ -5,7 +5,7 @@ export default defineCachedEventHandler(
         const slug = getRouterParam(event, 'slug')
         const version = getRouterParam(event, 'version')
         const pathParts = getRouterParam(event, 'path')
-        const path = pathParts || 'intro'
+        const path = (pathParts || 'intro').replace(/\/+$/, '')
 
         if (!slug || !version) {
             throw createError({ statusCode: 400, message: 'Missing parameters' })

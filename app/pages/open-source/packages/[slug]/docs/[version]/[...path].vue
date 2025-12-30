@@ -3,7 +3,9 @@ import { packages } from '~/data/packages'
 
 const route = useRoute()
 const version = route.params.version as string
-const docPath = (Array.isArray(route.params.path) ? route.params.path.join('/') : route.params.path || '').trim()
+const docPath = (Array.isArray(route.params.path) ? route.params.path.join('/') : route.params.path || '')
+    .trim()
+    .replace(/\/+$/, '')
 const versionSelectorOpen = ref(false)
 const versionSelectorRef = useTemplateRef<HTMLDivElement | null>('version-selector')
 
