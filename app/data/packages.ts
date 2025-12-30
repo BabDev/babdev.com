@@ -70,7 +70,7 @@ export const packages: Package[] = [
         supported: true,
         visible: true,
         versions: [
-            { version: '3.x', released: false },
+            { version: '3.x', released: true },
             { version: '2.x', released: true },
             { version: '1.x', released: true, endOfSupport: '2025-11-30T23:59:59.999Z' },
         ],
