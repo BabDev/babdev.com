@@ -30,7 +30,7 @@ export default defineCachedEventHandler(
         // Determine the git branch to fetch from
         const gitBranch = pkgVersion.gitBranch || pkgVersion.version
 
-        const markdown = await fetchRepositoryFile('BabDev', pkg.name, `docs/${path}.md`, gitBranch)
+        const markdown = await fetchRepositoryFile(pkg.github.owner, pkg.github.repo, `docs/${path}.md`, gitBranch)
 
         if (!markdown) {
             throw createError({ statusCode: 404, message: 'Documentation not found' })

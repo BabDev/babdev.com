@@ -2,13 +2,12 @@
 import { packages } from '~/data/packages'
 
 const route = useRoute()
-const packageSlug = route.params.slug as string
 const version = route.params.version as string
 const docPath = (Array.isArray(route.params.path) ? route.params.path.join('/') : route.params.path || '').trim()
 const versionSelectorOpen = ref(false)
 const versionSelectorRef = useTemplateRef<HTMLDivElement | null>('version-selector')
 
-const pkg = packages.find(p => p.slug === packageSlug)
+const pkg = packages.find(p => p.slug === (route.params.slug as string))
 
 if (!pkg) {
     throw createError({ statusCode: 404, message: 'Package not found' })
@@ -29,7 +28,7 @@ if (!pkgVersion) {
     }
 
     await navigateTo(
-        `/open-source/packages/${packageSlug}/docs/${latestVersion.version}/${[route.params.version, route.params.path].join('/')}`,
+        `/open-source/packages/${pkg.slug}/docs/${latestVersion.version}/${[route.params.version, route.params.path].join('/')}`,
         {
             redirectCode: 302,
         },
@@ -37,13 +36,13 @@ if (!pkgVersion) {
 }
 
 if (docPath === '') {
-    await navigateTo(`/open-source/packages/${packageSlug}/docs/${pkgVersion!.version}/intro`, {
+    await navigateTo(`/open-source/packages/${pkg.slug}/docs/${pkgVersion!.version}/intro`, {
         redirectCode: 302,
     })
 }
 
 // Fetch documentation
-const { data: docData, error } = await useFetch(`/api/packages/${packageSlug}/docs/${version}/${docPath}`)
+const { data: docData, error } = await useFetch(`/api/packages/${pkg.slug}/docs/${pkgVersion!.version}/${docPath}`)
 
 if (error.value) {
     throw createError({
@@ -53,21 +52,21 @@ if (error.value) {
 }
 
 // Fetch sidebar
-const { data: sidebarData } = await useFetch(`/api/packages/${packageSlug}/docs/${version}/index`)
+const { data: sidebarData } = await useFetch(`/api/packages/${pkg.slug}/docs/${pkgVersion!.version}/index`)
 
 // Extract page title from markdown content
 const title = computed(() => {
     if (!docData.value?.content) {
-        return pkg.displayName
+        return pkg.name
     }
 
     const match = docData.value.content.match(/^#\s+(.+)$/m)
 
-    return match ? match[1] : pkg.displayName
+    return match ? match[1] : pkg.name
 })
 
 useSeoMeta({
-    title: `${title.value} | ${pkg.displayName} ${pkgVersion!.version} Documentation`,
+    title: `${title.value} | ${pkg.name} ${pkgVersion!.version} Documentation`,
 })
 
 // Close version selector on route change
@@ -96,7 +95,7 @@ onUnmounted(() => {
 
 <template>
     <AppHero>
-        <template #title>{{ pkg.displayName }}</template>
+        <template #title>{{ pkg.name }}</template>
         <template #subtitle>Documentation</template>
     </AppHero>
 
@@ -169,8 +168,8 @@ onUnmounted(() => {
                                 <div class="text-xl font-semibold text-blue-800">Version Not Yet Released</div>
                                 <p class="text-md mt-1 text-blue-700">
                                     You are viewing the documentation for the {{ pkgVersion!.version }} branch of the
-                                    {{ pkg.displayName }} package which has not yet been released. Be aware that the API
-                                    for this version may change before release.
+                                    {{ pkg.name }} package which has not yet been released. Be aware that the API for
+                                    this version may change before release.
                                 </p>
                             </div>
                         </div>
@@ -191,7 +190,7 @@ onUnmounted(() => {
                                 <div class="text-xl font-semibold text-yellow-800">Version No Longer Supported</div>
                                 <p class="text-md mt-1 text-yellow-700">
                                     You are viewing the documentation for the {{ pkgVersion!.version }} branch of the
-                                    {{ pkg.displayName }} package which is no longer supported as of
+                                    {{ pkg.name }} package which is no longer supported as of
                                     <NuxtTime
                                         :datetime="pkgVersion!.endOfSupport"
                                         year="numeric"

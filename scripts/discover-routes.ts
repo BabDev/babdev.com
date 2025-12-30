@@ -26,8 +26,8 @@ export default async function discoverDocumentationRoutes(): Promise<string[]> {
 
             try {
                 const { data } = await octokit.git.getTree({
-                    owner: 'BabDev',
-                    repo: pkg.name,
+                    owner: pkg.github.owner,
+                    repo: pkg.github.repo,
                     tree_sha: `${gitBranch}:docs`,
                     recursive: 'true',
                 })

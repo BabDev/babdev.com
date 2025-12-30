@@ -15,19 +15,19 @@ defineProps<{
             <div class="flex items-start justify-between">
                 <div class="flex-1">
                     <div class="flex items-center space-x-3">
-                        <h2 class="text-xl font-semibold text-gray-900">{{ pkg.displayName }}</h2>
+                        <h2 class="text-xl font-semibold text-gray-900">{{ pkg.name }}</h2>
                         <a
                             class="text-gray-400 transition-colors duration-200 hover:text-gray-600"
-                            :href="pkg.githubUrl"
+                            :href="`https://github.com/${pkg.github.owner}/${pkg.github.repo}`"
                             target="_blank"
                             rel="nofollow noreferrer noopener"
-                            :aria-label="`View ${pkg.displayName} on GitHub`"
+                            :aria-label="`View ${pkg.name} on GitHub`"
                         >
                             <Icon name="fa7-brands:github" class="block h-5 w-5 fill-current" />
                         </a>
                     </div>
 
-                    <p class="mt-2 leading-relaxed text-gray-600">{{ pkg.description }}</p>
+                    <p v-if="pkg.description" class="mt-2 leading-relaxed text-gray-600">{{ pkg.description }}</p>
                 </div>
             </div>
 
@@ -37,7 +37,6 @@ defineProps<{
                 </span>
                 <span class="package-statistic package-statistic--language">{{ pkg.language }}</span>
                 <span
-                    v-if="pkg.packageType"
                     :class="`package-statistic package-statistic--package-type package-statistic--package-type--${pkg.packageType}`"
                 >
                     {{ getPackageTypeLabel(pkg.packageType) }}

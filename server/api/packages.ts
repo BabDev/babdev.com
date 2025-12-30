@@ -8,23 +8,22 @@ export default defineCachedEventHandler<Promise<EnrichedPackage[]>>(
                 .filter(pkg => pkg.visible)
                 .map(async pkg => {
                     const [githubData, packagistData] = await Promise.all([
-                        fetchRepositoryData('BabDev', pkg.name),
+                        fetchRepositoryData(pkg.github.owner, pkg.github.repo),
                         pkg.packagistName ? fetchPackagistDownloads(pkg.packagistName) : null,
                     ])
 
                     return {
                         ...pkg,
                         stars: githubData?.stars || 0,
-                        language: githubData?.language || null,
+                        language: githubData?.language || undefined,
                         topics: githubData?.topics || [],
-                        downloads: packagistData?.downloads || null,
-                        githubUrl: `https://github.com/BabDev/${pkg.name}`,
+                        downloads: packagistData?.downloads || undefined,
                     } satisfies EnrichedPackage
                 }),
         )
 
         // Sort by display name
-        return enrichedPackages.sort((a, b) => a.displayName.localeCompare(b.displayName))
+        return enrichedPackages.sort((a, b) => a.name.localeCompare(b.name, 'en-US'))
     },
     {
         maxAge: 60 * 60 * 12, // Cache for 12 hours
