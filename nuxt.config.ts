@@ -22,6 +22,7 @@ export default defineNuxtConfig({
     nitro: {
         static: true,
         prerender: {
+            autoSubfolderIndex: false,
             crawlLinks: true,
             routes: ['/', '/open-source/packages', '/privacy'],
         },

@@ -40,7 +40,7 @@ export default async function discoverDocumentationRoutes(): Promise<string[]> {
                 console.debug(`${pkg.name} ${version.version}: Adding ${docFiles.length} pages`)
 
                 // Add index route
-                routes.push(`/open-source/packages/${pkg.slug}/docs/${version.version}/`)
+                routes.push(`/open-source/packages/${pkg.slug}/docs/${version.version}`)
 
                 // Add routes for each doc file
                 for (const docFile of docFiles) {
