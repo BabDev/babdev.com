@@ -11,6 +11,9 @@ jobs:
   build:
     name: Build Website
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NUXT_PUBLIC_SITE_URL: https://www.babdev.com
     steps:
       - name: Checkout Code
         uses: actions/checkout@v6
@@ -28,9 +31,6 @@ jobs:
         run: npm ci
 
       - name: Run Nuxt Build
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NUXT_PUBLIC_SITE_URL: https://www.babdev.com
         run: npx nuxt build --preset github_pages
 
       - name: Upload Artifact
