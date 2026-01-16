@@ -30,6 +30,9 @@ export default defineNuxtConfig({
 
     hooks: {
         async 'prerender:routes'(ctx) {
+            // Build llms.txt resource
+            ctx.routes.add('/llms.txt')
+
             // Discover documentation routes from GitHub at build time
             for (const route of await discoverDocumentationRoutes()) {
                 ctx.routes.add(route)
