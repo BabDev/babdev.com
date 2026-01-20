@@ -3,9 +3,10 @@ updates:
   - package-ecosystem: npm
     directory: /
     schedule:
-      interval: daily
+      interval: weekly
     labels:
-      - dependencies
+      - "dependencies"
+      - "javascript"
     groups:
       minor-and-patch:
         applies-to: version-updates
@@ -23,7 +24,8 @@ updates:
     schedule:
       interval: weekly
     labels:
-      - dependencies
+      - "dependencies"
+      - "CI"
     groups:
       actions:
         applies-to: version-updates
