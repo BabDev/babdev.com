@@ -31,7 +31,7 @@
     "@iconify-json/fa7-solid": "^1.2.3",
     "@nuxt/eslint": "^1.13.0",
     "@tailwindcss/vite": "^4.1.18",
-    "@types/node": "^24.10.9",
+    "@types/node": "^24.10.10",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
