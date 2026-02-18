@@ -67,6 +67,11 @@ const title = computed(() => {
     return match ? match[1] : pkg.name
 })
 
+const gitHubFileUrl = computed(() => {
+    const branch = pkgVersion!.gitBranch || pkgVersion!.version
+    return `https://github.com/${pkg.github.owner}/${pkg.github.repo}/edit/${branch}/docs/${docPath}.md`
+})
+
 useSeoMeta({
     title: `${title.value} | ${pkg.name} ${pkgVersion!.version} Documentation`,
 })
@@ -209,6 +214,18 @@ onUnmounted(() => {
                         <div class="p-8">
                             <MDC class="docs-content" :value="docData?.content ?? ''" tag="div" />
                         </div>
+                    </div>
+
+                    <div class="mt-4 text-right text-sm">
+                        <a
+                            :href="gitHubFileUrl"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="hover:text-brand-orange inline-flex items-center gap-1 text-gray-500 transition-colors duration-200"
+                        >
+                            <Icon name="fa7-brands:github" class="h-4 w-4 fill-current" />
+                            Help improve this page
+                        </a>
                     </div>
                 </main>
             </div>
