@@ -24,15 +24,15 @@
     "nuxt": "^4.3.1",
     "tailwindcss": "^4.1.18",
     "vue": "^3.5.28",
-    "vue-router": "^4.6.4"
+    "vue-router": "^5.0.2"
   },
   "devDependencies": {
     "@iconify-json/fa7-regular": "^1.2.3",
     "@iconify-json/fa7-solid": "^1.2.4",
     "@nuxt/eslint": "^1.15.1",
     "@tailwindcss/vite": "^4.1.18",
-    "@types/node": "^24.10.13",
-    "eslint": "^9.39.2",
+    "@types/node": "^25.2.3",
+    "eslint": "^10.0.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
     "prettier": "^3.8.1",
