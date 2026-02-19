@@ -69,6 +69,7 @@ const title = computed(() => {
 
 const gitHubFileUrl = computed(() => {
     const branch = pkgVersion!.gitBranch || pkgVersion!.version
+
     return `https://github.com/${pkg.github.owner}/${pkg.github.repo}/edit/${branch}/docs/${docPath}.md`
 })
 
