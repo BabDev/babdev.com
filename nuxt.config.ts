@@ -65,6 +65,14 @@ export default defineNuxtConfig({
             { name: 'Bree Serif', provider: 'google' },
             { name: 'Open Sans', provider: 'google' },
         ],
+        providers: {
+            adobe: false,
+            bunny: false,
+            fontshare: false,
+            fontsource: false,
+            googleicons: false,
+            npm: false,
+        },
     },
 
     icon: {
