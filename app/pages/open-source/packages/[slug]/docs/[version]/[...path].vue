@@ -167,6 +167,21 @@ onUnmounted(() => {
                 </aside>
 
                 <main class="lg:col-span-9 xl:col-span-10">
+                    <div v-if="!pkg.supported" class="mb-6 rounded-lg border border-red-200 bg-red-50 p-4">
+                        <div class="flex">
+                            <div class="shrink-0">
+                                <Icon name="fa7-solid:circle-xmark" class="h-5 w-5 fill-current text-red-400" />
+                            </div>
+                            <div class="ml-3">
+                                <div class="text-xl font-semibold text-red-800">Package No Longer Supported</div>
+                                <p class="text-md mt-1 text-red-700">
+                                    The {{ pkg.name }} package is no longer supported and will not receive further
+                                    updates or bug fixes. You are advised to migrate to an alternative solution.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
                     <div v-if="!pkgVersion!.released" class="mb-6 rounded-lg border border-blue-200 bg-blue-50 p-4">
                         <div class="flex">
                             <div class="shrink-0">

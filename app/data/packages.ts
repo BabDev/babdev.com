@@ -12,7 +12,7 @@ export const packages: Package[] = [
         packagistName: 'babdev/laravel-breadcrumbs',
         packageType: 'laravel-package',
         hasDocumentation: true,
-        supported: true,
+        supported: false,
         visible: true,
         versions: [
             { version: '2.x', released: true },
@@ -30,7 +30,7 @@ export const packages: Package[] = [
         packagistName: 'babdev/laravel-server-push-manager',
         packageType: 'laravel-package',
         hasDocumentation: true,
-        supported: true,
+        supported: false,
         visible: true,
         versions: [
             { version: '2.x', released: true },

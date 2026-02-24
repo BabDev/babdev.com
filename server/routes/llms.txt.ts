@@ -5,6 +5,8 @@ export default defineEventHandler(event => {
     setHeader(event, 'Content-Type', 'text/plain; charset=utf-8')
 
     const visiblePackages = packages.filter(pkg => pkg.visible)
+    const supportedPackages = visiblePackages.filter(pkg => pkg.supported)
+    const unsupportedPackages = visiblePackages.filter(pkg => !pkg.supported)
     const packagesWithDocs = visiblePackages.filter(pkg => pkg.hasDocumentation)
 
     const lines = [
@@ -23,10 +25,10 @@ export default defineEventHandler(event => {
         '',
     ]
 
-    // Group packages by type
+    // Group supported packages by type
     const packagesByType = new Map<string, Package[]>()
 
-    for (const pkg of visiblePackages) {
+    for (const pkg of supportedPackages) {
         const typeLabel = getPackageTypeLabel(pkg.packageType)
 
         if (!packagesByType.has(typeLabel)) {
@@ -49,6 +51,18 @@ export default defineEventHandler(event => {
         lines.push('')
     }
 
+    // List unsupported packages
+    if (unsupportedPackages.length > 0) {
+        lines.push('### No Longer Supported')
+        lines.push('')
+
+        for (const pkg of unsupportedPackages.sort((a, b) => a.name.localeCompare(b.name, 'en-US'))) {
+            lines.push(`- ${pkg.name} (no longer supported)${pkg.description ? `: ${pkg.description}` : ''}`)
+        }
+
+        lines.push('')
+    }
+
     // Add documentation section when available
     if (packagesWithDocs.length > 0) {
         lines.push('## Documentation')
@@ -60,8 +74,10 @@ export default defineEventHandler(event => {
             const latestVersion = getLatestStablePackageVersion(pkg)
 
             if (latestVersion) {
+                const unsupportedNote = pkg.supported ? '' : ' (no longer supported)'
+
                 lines.push(
-                    `- [${pkg.name} Documentation](/open-source/packages/${pkg.slug}/docs/${latestVersion.version}/intro)`,
+                    `- [${pkg.name} Documentation](/open-source/packages/${pkg.slug}/docs/${latestVersion.version}/intro)${unsupportedNote}`,
                 )
             }
         }
