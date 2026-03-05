@@ -2,6 +2,10 @@
   "name": "nuxt",
   "type": "module",
   "private": true,
+  "engines": {
+    "node": ">=24.11.0",
+    "npm": ">=11.6.1"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -17,7 +21,7 @@
     "@nuxt/fonts": "^0.14.0",
     "@nuxt/icon": "^2.2.1",
     "@nuxt/image": "^2.0.0",
-    "@nuxtjs/mdc": "^0.20.1",
+    "@nuxtjs/mdc": "^0.20.2",
     "@nuxtjs/sitemap": "^7.6.0",
     "@octokit/rest": "^22.0.1",
     "@tailwindcss/typography": "^0.5.19",
@@ -31,7 +35,7 @@
     "@iconify-json/fa7-solid": "^1.2.4",
     "@nuxt/eslint": "^1.15.2",
     "@tailwindcss/vite": "^4.2.1",
-    "@types/node": "^24.10.13",
+    "@types/node": "^24.11.0",
     "eslint": "^10.0.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
