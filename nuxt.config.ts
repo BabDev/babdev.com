@@ -1,5 +1,4 @@
 import tailwindcss from '@tailwindcss/vite'
-import discoverDocumentationRoutes from './scripts/discover-routes'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -25,18 +24,6 @@ export default defineNuxtConfig({
             autoSubfolderIndex: false,
             crawlLinks: true,
             routes: ['/', '/open-source/packages', '/privacy'],
-        },
-    },
-
-    hooks: {
-        async 'prerender:routes'(ctx) {
-            // Build llms.txt resource
-            ctx.routes.add('/llms.txt')
-
-            // Discover documentation routes from GitHub at build time
-            for (const route of await discoverDocumentationRoutes()) {
-                ctx.routes.add(route)
-            }
         },
     },
 
@@ -116,6 +103,8 @@ export default defineNuxtConfig({
     },
 
     sitemap: {
+        sources: ['/api/__sitemap__/docs'],
+        urls: ['/llms.txt'],
         zeroRuntime: true,
     },
 })

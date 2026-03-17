@@ -1,8 +1,9 @@
-import { Octokit } from '@octokit/rest'
+import type { SitemapUrlInput } from '@nuxtjs/sitemap'
 import { RequestError } from '@octokit/request-error'
-import { packages } from '../app/data/packages'
+import { Octokit } from '@octokit/rest'
+import { packages } from '~/data/packages'
 
-export default async function discoverDocumentationRoutes(): Promise<string[]> {
+export default defineSitemapEventHandler(async () => {
     const githubToken = process.env.GITHUB_TOKEN
 
     if (!githubToken) {
@@ -12,9 +13,7 @@ export default async function discoverDocumentationRoutes(): Promise<string[]> {
     }
 
     const octokit = new Octokit({ auth: githubToken })
-    const routes: string[] = []
-
-    console.log('🔍 Discovering documentation routes from GitHub...')
+    const routes: SitemapUrlInput[] = []
 
     for (const pkg of packages) {
         if (!pkg.hasDocumentation || !pkg.visible) {
@@ -62,7 +61,5 @@ export default async function discoverDocumentationRoutes(): Promise<string[]> {
         }
     }
 
-    console.debug(`Discovered ${routes.length} documentation routes`)
-
     return routes
-}
+})
