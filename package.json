@@ -25,18 +25,18 @@
     "@nuxtjs/sitemap": "^7.6.0",
     "@octokit/rest": "^22.0.1",
     "@tailwindcss/typography": "^0.5.19",
-    "nuxt": "^4.3.1",
+    "nuxt": "^4.4.2",
     "tailwindcss": "^4.2.1",
-    "vue": "^3.5.29",
-    "vue-router": "^4.6.4"
+    "vue": "^3.5.30",
+    "vue-router": "^5.0.3"
   },
   "devDependencies": {
     "@iconify-json/fa7-regular": "^1.2.3",
     "@iconify-json/fa7-solid": "^1.2.4",
     "@nuxt/eslint": "^1.15.2",
     "@tailwindcss/vite": "^4.2.1",
-    "@types/node": "^24.11.0",
-    "eslint": "^10.0.2",
+    "@types/node": "^24.12.0",
+    "eslint": "^10.0.3",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
     "prettier": "^3.8.1",
