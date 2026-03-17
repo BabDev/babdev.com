@@ -23,8 +23,12 @@ export default defineNuxtConfig({
         prerender: {
             autoSubfolderIndex: false,
             crawlLinks: true,
-            routes: ['/', '/open-source/packages', '/privacy'],
         },
+    },
+
+    routeRules: {
+        '/llms.txt': { prerender: true },
+        '/open-source/packages/**': { prerender: true },
     },
 
     site: {

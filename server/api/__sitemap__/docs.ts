@@ -4,7 +4,7 @@ import { Octokit } from '@octokit/rest'
 import { packages } from '~/data/packages'
 
 export default defineSitemapEventHandler(async () => {
-    const githubToken = process.env.GITHUB_TOKEN
+    const githubToken = useRuntimeConfig().githubToken
 
     if (!githubToken) {
         console.warn('No GITHUB_TOKEN found, skipping route discovery')
