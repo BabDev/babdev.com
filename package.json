@@ -2,9 +2,10 @@
     "name": "nuxt",
     "type": "module",
     "private": true,
+    "packageManager": "pnpm@10.33.0",
     "engines": {
         "node": ">=24.11.0",
-        "npm": ">=11.6.1"
+        "pnpm": ">=10.33.0"
     },
     "scripts": {
         "build": "nuxt build",
@@ -29,6 +30,15 @@
         "tailwindcss": "4.2.2",
         "vue": "3.5.31",
         "vue-router": "5.0.4"
+    },
+    "pnpm": {
+        "onlyBuiltDependencies": [
+            "@parcel/watcher",
+            "esbuild",
+            "sharp",
+            "unrs-resolver",
+            "vue-demi"
+        ]
     },
     "devDependencies": {
         "@iconify-json/fa7-regular": "1.2.3",

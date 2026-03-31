@@ -25,13 +25,13 @@ jobs:
         uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
         with:
           node-version: '24'
-          cache: 'npm'
+          cache: 'pnpm'
 
-      - name: Install NPM Dependencies
-        run: npm ci
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
 
       - name: Run Nuxt Build
-        run: npx nuxt build --preset github_pages
+        run: pnpm exec nuxt build --preset github_pages
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4.0.0

@@ -10,19 +10,19 @@ This is a Nuxt 4 application that powers the BabDev website (https://www.babdev.
 
 ### Development
 ```bash
-npm install              # Install dependencies
-npm run dev              # Start dev server on http://localhost:3000
-npm run build            # Build for production
-npm run preview          # Preview production build locally
-npm run generate         # Generate static site
+pnpm install             # Install dependencies
+pnpm dev                 # Start dev server on http://localhost:3000
+pnpm build               # Build for production
+pnpm preview             # Preview production build locally
+pnpm generate            # Generate static site
 ```
 
 ### Code Quality
 ```bash
-npm run lint             # Run ESLint
-npm run lint:fix         # Fix ESLint issues automatically
-npm run format           # Format code with Prettier
-npm run format:check     # Check Prettier formatting
+pnpm lint                # Run ESLint
+pnpm lint:fix            # Fix ESLint issues automatically
+pnpm format              # Format code with Prettier
+pnpm format:check        # Check Prettier formatting
 ```
 
 ## Architecture
