@@ -1,33 +1,33 @@
 version: 2
 updates:
-  - package-ecosystem: npm
-    directory: /
-    schedule:
-      interval: weekly
-    labels:
-      - "dependencies"
-      - "javascript"
-    groups:
-      minor-and-patch:
-        applies-to: version-updates
-        update-types:
-          - minor
-          - patch
-      major:
-        applies-to: version-updates
-        update-types:
-          - major
-    open-pull-requests-limit: 10
+    - package-ecosystem: npm
+      directory: /
+      schedule:
+          interval: weekly
+      labels:
+          - 'dependencies'
+          - 'javascript'
+      groups:
+          minor-and-patch:
+              applies-to: version-updates
+              update-types:
+                  - minor
+                  - patch
+          major:
+              applies-to: version-updates
+              update-types:
+                  - major
+      open-pull-requests-limit: 10
 
-  - package-ecosystem: github-actions
-    directory: /
-    schedule:
-      interval: weekly
-    labels:
-      - "dependencies"
-      - "CI"
-    groups:
-      actions:
-        applies-to: version-updates
-        patterns:
-          - "*"
+    - package-ecosystem: github-actions
+      directory: /
+      schedule:
+          interval: weekly
+      labels:
+          - 'dependencies'
+          - 'CI'
+      groups:
+          actions:
+              applies-to: version-updates
+              patterns:
+                  - '*'

@@ -23,13 +23,13 @@
         "@nuxt/icon": "2.2.1",
         "@nuxt/image": "2.0.0",
         "@nuxtjs/mdc": "0.21.1",
-        "@nuxtjs/sitemap": "8.0.11",
+        "@nuxtjs/sitemap": "8.0.14",
         "@octokit/rest": "22.0.1",
         "@tailwindcss/typography": "0.5.19",
         "nuxt": "4.4.2",
-        "tailwindcss": "4.2.2",
-        "vue": "3.5.32",
-        "vue-router": "5.0.4"
+        "tailwindcss": "4.2.4",
+        "vue": "3.5.33",
+        "vue-router": "5.0.6"
     },
     "pnpm": {
         "onlyBuiltDependencies": [
@@ -44,13 +44,13 @@
         "@iconify-json/fa7-regular": "1.2.3",
         "@iconify-json/fa7-solid": "1.2.4",
         "@nuxt/eslint": "1.15.2",
-        "@tailwindcss/vite": "4.2.2",
+        "@tailwindcss/vite": "4.2.4",
         "@types/node": "24.12.2",
-        "eslint": "10.2.0",
+        "eslint": "10.2.1",
         "eslint-config-prettier": "10.1.8",
         "eslint-plugin-prettier": "5.5.5",
-        "prettier": "3.8.1",
-        "prettier-plugin-tailwindcss": "0.7.2",
+        "prettier": "3.8.3",
+        "prettier-plugin-tailwindcss": "0.8.0",
         "tsx": "4.21.0",
         "typescript": "5.9.3"
     }

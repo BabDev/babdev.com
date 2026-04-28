@@ -1,14 +1,12 @@
 {
-  "mcpServers": {
-    "eslint": {
-      "command": "npx",
-      "args": [
-        "@eslint/mcp@latest"
-      ]
-    },
-    "nuxt-remote": {
-      "type": "http",
-      "url": "https://nuxt.com/mcp"
+    "mcpServers": {
+        "eslint": {
+            "command": "npx",
+            "args": ["@eslint/mcp@latest"]
+        },
+        "nuxt-remote": {
+            "type": "http",
+            "url": "https://nuxt.com/mcp"
+        }
     }
-  }
 }

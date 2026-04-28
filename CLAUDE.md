@@ -9,6 +9,7 @@ This is a Nuxt 4 application that powers the BabDev website (https://www.babdev.
 ## Commands
 
 ### Development
+
 ```bash
 pnpm install             # Install dependencies
 pnpm dev                 # Start dev server on http://localhost:3000
@@ -18,6 +19,7 @@ pnpm generate            # Generate static site
 ```
 
 ### Code Quality
+
 ```bash
 pnpm lint                # Run ESLint
 pnpm lint:fix            # Fix ESLint issues automatically
@@ -78,11 +80,13 @@ public/               # Static assets
 ## Working with Packages
 
 To add a new package:
+
 1. Add entry to `app/data/packages.ts` with all required metadata
 2. Ensure the GitHub repo has a `docs/` directory in the specified branch
 3. The documentation will be automatically discovered and prerendered on next build
 
 To modify documentation rendering:
+
 - Edit Prose components in `app/components/prose/` (these override MDC defaults)
 - Modify MDC config in `nuxt.config.ts` for syntax highlighting languages/themes
 
