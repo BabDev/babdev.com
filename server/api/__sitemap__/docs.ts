@@ -1,18 +1,9 @@
 import type { SitemapUrlInput } from '@nuxtjs/sitemap'
 import { RequestError } from '@octokit/request-error'
-import { Octokit } from '@octokit/rest'
 import { packages } from '~/data/packages'
 
 export default defineSitemapEventHandler(async () => {
-    const githubToken = useRuntimeConfig().githubToken
-
-    if (!githubToken) {
-        console.warn('No GITHUB_TOKEN found, skipping route discovery')
-
-        return []
-    }
-
-    const octokit = new Octokit({ auth: githubToken })
+    const octokit = getGitHubClient()
     const routes: SitemapUrlInput[] = []
 
     for (const pkg of packages) {
