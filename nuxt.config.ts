@@ -29,6 +29,13 @@ export default defineNuxtConfig({
     routeRules: {
         '/llms.txt': { prerender: true },
         '/open-source/packages/**': { prerender: true },
+
+        // Legacy URL redirect
+        '/index.php': { redirect: { to: '/', statusCode: 301 } },
+        '/open-source/updates': { redirect: { to: '/', statusCode: 301 } },
+        '/open-source/updates/**': { redirect: { to: '/', statusCode: 301 } },
+        '/extensions': { redirect: { to: '/open-source/packages', statusCode: 301 } },
+        '/extensions/**': { redirect: { to: '/open-source/packages', statusCode: 301 } },
     },
 
     site: {

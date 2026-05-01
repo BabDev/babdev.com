@@ -4,6 +4,11 @@ import { packages } from '~/data/packages'
 const route = useRoute()
 const packageSlug = route.params.slug as string
 
+// Legacy slug rename: babdevpagerfantabundle → pagerfantabundle
+if (packageSlug === 'babdevpagerfantabundle') {
+    await navigateTo('/open-source/packages/pagerfantabundle/docs', { redirectCode: 301 })
+}
+
 // Find package
 const pkg = packages.find(p => p.slug === packageSlug)
 

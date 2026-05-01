@@ -9,6 +9,13 @@ const docPath = (Array.isArray(route.params.path) ? route.params.path.join('/') 
 const versionSelectorOpen = ref(false)
 const versionSelectorRef = useTemplateRef<HTMLDivElement | null>('version-selector')
 
+// Legacy slug rename: babdevpagerfantabundle → pagerfantabundle (preserve version + path)
+if ((route.params.slug as string) === 'babdevpagerfantabundle') {
+    const trailing = docPath ? `/${docPath}` : ''
+
+    await navigateTo(`/open-source/packages/pagerfantabundle/docs/${version}${trailing}`, { redirectCode: 301 })
+}
+
 const pkg = packages.find(p => p.slug === (route.params.slug as string))
 
 if (!pkg) {
