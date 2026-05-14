@@ -7,16 +7,27 @@ on:
     push:
         branches: [production]
 
+permissions: {}
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+    cancel-in-progress: true
+
 jobs:
     build:
         name: Build Website
         runs-on: ubuntu-latest
+        permissions:
+            artifact-metadata: write # Needed to store the built website artifact
+            contents: read
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             NUXT_PUBLIC_SITE_URL: https://www.babdev.com
         steps:
             - name: Checkout Code
               uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+              with:
+                  persist-credentials: false
 
             - name: Enable Corepack
               run: corepack enable
@@ -43,8 +54,8 @@ jobs:
         needs: build
         runs-on: ubuntu-latest
         permissions:
-            pages: write
-            id-token: write
+            pages: write # Needed to publish the website
+            id-token: write # Needed to publish the website
         environment:
             name: github-pages
             url: ${{ steps.deployment.outputs.page_url }}
