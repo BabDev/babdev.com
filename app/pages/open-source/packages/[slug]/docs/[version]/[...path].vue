@@ -1,5 +1,26 @@
 <script setup lang="ts">
+import bash from '@shikijs/langs/bash'
+import blade from '@shikijs/langs/blade'
+import css from '@shikijs/langs/css'
+import html from '@shikijs/langs/html'
+import javascript from '@shikijs/langs/javascript'
+import json from '@shikijs/langs/json'
+import markdown from '@shikijs/langs/markdown'
+import php from '@shikijs/langs/php'
+import properties from '@shikijs/langs/properties'
+import twig from '@shikijs/langs/twig'
+import xml from '@shikijs/langs/xml'
+import yaml from '@shikijs/langs/yaml'
+import githubLight from '@shikijs/themes/github-light'
+import highlight from 'comark/plugins/highlight'
 import { packages } from '~/data/packages'
+
+const comarkPlugins = [
+    highlight({
+        themes: { light: githubLight, dark: githubLight },
+        languages: [bash, blade, css, html, javascript, json, markdown, php, properties, twig, xml, yaml],
+    }),
+]
 
 const route = useRoute()
 const version = route.params.version as string
@@ -167,7 +188,11 @@ onUnmounted(() => {
 
                         <nav class="overflow-hidden rounded-lg border border-gray-200 bg-white">
                             <div class="p-4">
-                                <MDC class="docs-sidebar-nav" :value="sidebarData?.content ?? ''" tag="div" />
+                                <Comark
+                                    class="docs-sidebar-nav"
+                                    :markdown="sidebarData?.content ?? ''"
+                                    :plugins="comarkPlugins"
+                                />
                             </div>
                         </nav>
                     </div>
@@ -205,7 +230,7 @@ onUnmounted(() => {
 
                     <div class="rounded-lg border border-gray-200 bg-white shadow-sm">
                         <div class="p-8">
-                            <MDC class="docs-content" :value="docData?.content ?? ''" tag="div" />
+                            <Comark class="docs-content" :markdown="docData?.content ?? ''" :plugins="comarkPlugins" />
                         </div>
                     </div>
 

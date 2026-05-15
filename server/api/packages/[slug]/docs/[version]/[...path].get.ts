@@ -36,8 +36,16 @@ export default defineCachedEventHandler(
             throw createError({ statusCode: 404, message: 'Documentation not found' })
         }
 
+        // Workaround for a Comark bug: single-line `<div class="...">...</div>` gets parsed as an
+        // unclosed block-level HTML token, swallowing every block that follows it. Rewriting these
+        // callouts as Comark block components renders them correctly. Remove once Comark fixes upstream.
+        const content = markdown.replace(
+            /^<div\s+class="([^"]+)">(.*?)<\/div>\s*$/gm,
+            (_match, className: string, inner: string) => `::div{class="${className}"}\n${inner}\n::`,
+        )
+
         return {
-            content: markdown,
+            content,
             package: pkg,
             version: pkgVersion,
         }

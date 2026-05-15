@@ -2,7 +2,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    modules: ['@nuxt/eslint', '@nuxt/fonts', '@nuxt/icon', '@nuxt/image', '@nuxtjs/mdc', '@nuxtjs/sitemap'],
+    modules: ['@nuxt/eslint', '@nuxt/fonts', '@nuxt/icon', '@nuxt/image', '@comark/nuxt', '@nuxtjs/sitemap'],
 
     compatibilityDate: '2025-07-15',
 
@@ -76,41 +76,6 @@ export default defineNuxtConfig({
     icon: {
         mode: 'css',
         cssLayer: 'base',
-    },
-
-    mdc: {
-        components: {
-            prose: true,
-            map: {
-                code: 'ProseCode',
-                h2: 'ProseH2',
-                h3: 'ProseH3',
-                h4: 'ProseH4',
-                h5: 'ProseH5',
-                h6: 'ProseH6',
-                pre: 'ProsePre',
-            },
-        },
-        highlight: {
-            theme: 'github-light',
-            langs: [
-                'bash',
-                'blade',
-                'css',
-                'javascript',
-                'js',
-                'json',
-                'markdown',
-                'md',
-                'php',
-                'properties',
-                'twig',
-                'xml',
-                'html',
-                'yaml',
-                'yml',
-            ],
-        },
     },
 
     sitemap: {
