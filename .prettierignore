@@ -1,17 +1,6 @@
-# Dependencies
-node_modules
+# Ignore everything by default
+*
 
-# Build outputs
-.nuxt
-.output
-dist
-
-# Lock files
-package-lock.json
-pnpm-lock.yaml
-
-# Cache
-.cache
-
-# Logs
-*.log
+# Only format the Nuxt application
+!app/
+!app/**

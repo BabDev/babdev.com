@@ -2,9 +2,9 @@ name: GitHub Actions Security Analysis
 
 on:
   push:
-    branches: ['production']
+    branches: ["production"]
   pull_request:
-    branches: ['**']
+    branches: ["**"]
 
 permissions:
   contents: read
