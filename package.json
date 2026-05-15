@@ -22,27 +22,27 @@
         "@nuxt/fonts": "0.14.0",
         "@nuxt/icon": "2.2.2",
         "@nuxt/image": "2.0.0",
-        "@nuxtjs/mdc": "0.21.1",
+        "@nuxtjs/mdc": "0.22.0",
         "@nuxtjs/sitemap": "8.0.15",
         "@octokit/rest": "22.0.1",
         "@tailwindcss/typography": "0.5.19",
         "nuxt": "4.4.5",
         "tailwindcss": "4.3.0",
         "vue": "3.5.34",
-        "vue-router": "5.0.6"
+        "vue-router": "5.0.7"
     },
     "devDependencies": {
         "@iconify-json/fa7-regular": "1.2.3",
         "@iconify-json/fa7-solid": "1.2.4",
         "@nuxt/eslint": "1.15.2",
         "@tailwindcss/vite": "4.3.0",
-        "@types/node": "24.12.2",
+        "@types/node": "24.12.4",
         "eslint": "10.3.0",
         "eslint-config-prettier": "10.1.8",
         "eslint-plugin-prettier": "5.5.5",
         "prettier": "3.8.3",
         "prettier-plugin-tailwindcss": "0.8.0",
-        "tsx": "4.21.0",
+        "tsx": "4.22.0",
         "typescript": "6.0.3"
     }
 }
