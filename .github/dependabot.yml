@@ -34,7 +34,6 @@ updates:
     labels:
       - "dependencies"
       - "CI"
-    versioning-strategy: increase
     groups:
       actions:
         applies-to: version-updates
