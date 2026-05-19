@@ -9,6 +9,7 @@ updates:
     labels:
       - "dependencies"
       - "javascript"
+    versioning-strategy: increase
     groups:
       minor-and-patch:
         applies-to: version-updates
@@ -33,6 +34,7 @@ updates:
     labels:
       - "dependencies"
       - "CI"
+    versioning-strategy: increase
     groups:
       actions:
         applies-to: version-updates
