@@ -54,6 +54,9 @@ importers:
         specifier: 5.0.7
         version: 5.0.7(@vue/compiler-sfc@3.5.34)(vue@3.5.34(typescript@6.0.3))
     devDependencies:
+      '@iconify-json/fa7-brands':
+        specifier: 1.2.2
+        version: 1.2.2
       '@iconify-json/fa7-regular':
         specifier: 1.2.3
         version: 1.2.3
@@ -709,6 +712,9 @@ packages:
   '@humanwhocodes/retry@0.4.3':
     resolution: {integrity: sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==}
     engines: {node: '>=18.18'}
+
+  '@iconify-json/fa7-brands@1.2.2':
+    resolution: {integrity: sha512-y6ZBdlLS4v1suB6fuMI5kqSO0B91Y19nlqTz7VfBYu9lI948tbRh+6lU2kNMOlo8I4qgSWX0SEdN7jkhOzI5gA==}
 
   '@iconify-json/fa7-regular@1.2.3':
     resolution: {integrity: sha512-j+3awnyNH2fpMaxqShVWT1JzaG7HR1N3SkKrMXYeonB3XRdW0SJuMaXqwzl1yPAdcqSO5bmCRIznPJ1j/PDi8w==}
@@ -5723,6 +5729,10 @@ snapshots:
   '@humanwhocodes/module-importer@1.0.1': {}
 
   '@humanwhocodes/retry@0.4.3': {}
+
+  '@iconify-json/fa7-brands@1.2.2':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify-json/fa7-regular@1.2.3':
     dependencies:
