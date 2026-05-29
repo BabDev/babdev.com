@@ -19,6 +19,7 @@ logs
 .idea
 .claude/settings.local.json
 .claude/skills/comark
+.claude/skills/vue-best-practices
 
 # Local env files
 .env

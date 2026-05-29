@@ -5,6 +5,12 @@
       "source": "comark.dev",
       "sourceType": "well-known",
       "computedHash": "c6b35ca32e1dd0f50b3bf1c1f780e23d984ba541ded9534176d3fbb337b9aec7"
+    },
+    "vue-best-practices": {
+      "source": "vuejs-ai/skills",
+      "sourceType": "github",
+      "skillPath": "skills/vue-best-practices/SKILL.md",
+      "computedHash": "3df585ad31aec78fe55c56c1411262737e6b231677a3153dec512a882fde80cd"
     }
   }
 }
