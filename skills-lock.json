@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "comark": {
+      "source": "comark.dev",
+      "sourceType": "well-known",
+      "computedHash": "c6b35ca32e1dd0f50b3bf1c1f780e23d984ba541ded9534176d3fbb337b9aec7"
+    }
+  }
+}

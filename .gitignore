@@ -18,6 +18,7 @@ logs
 .fleet
 .idea
 .claude/settings.local.json
+.claude/skills/comark
 
 # Local env files
 .env
