@@ -27,8 +27,6 @@ const version = route.params.version as string
 const docPath = (Array.isArray(route.params.path) ? route.params.path.join('/') : route.params.path || '')
     .trim()
     .replace(/\/+$/, '')
-const versionSelectorOpen = ref(false)
-const versionSelectorRef = useTemplateRef<HTMLDivElement | null>('version-selector')
 
 // Legacy slug rename: babdevpagerfantabundle → pagerfantabundle (preserve version + path)
 if ((route.params.slug as string) === 'babdevpagerfantabundle') {
@@ -104,29 +102,6 @@ const gitHubFileUrl = computed(() => {
 useSeoMeta({
     title: `${title.value} | ${pkg.name} ${pkgVersion!.version} Documentation`,
 })
-
-// Close version selector on route change
-watch(
-    () => route.path,
-    () => {
-        versionSelectorOpen.value = false
-    },
-)
-
-// Click outside to close version selector
-function handleClickOutside(event: MouseEvent) {
-    if (versionSelectorRef.value && !versionSelectorRef.value.contains(event.target as Node)) {
-        versionSelectorOpen.value = false
-    }
-}
-
-onMounted(() => {
-    document.addEventListener('click', handleClickOutside)
-})
-
-onUnmounted(() => {
-    document.removeEventListener('click', handleClickOutside)
-})
 </script>
 
 <template>
@@ -140,51 +115,13 @@ onUnmounted(() => {
             <div class="lg:grid lg:grid-cols-12 lg:gap-8">
                 <aside class="mb-6 lg:col-span-3 lg:mb-0 xl:col-span-2">
                     <div class="sticky top-24 space-y-6">
-                        <div v-if="pkg.versions.length > 1" ref="version-selector" class="relative">
-                            <button
-                                class="focus:ring-brand-orange flex w-full items-center justify-between rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:ring-2 focus:ring-offset-2 focus:outline-none"
-                                @click="versionSelectorOpen = !versionSelectorOpen"
-                            >
-                                <span>Version {{ pkgVersion!.version }}</span>
-                                <Icon
-                                    name="fa7-solid:chevron-down"
-                                    :class="[
-                                        'h-4 w-4 transform fill-current transition-transform duration-200',
-                                        versionSelectorOpen ? 'rotate-180' : '',
-                                    ]"
-                                />
-                            </button>
-
-                            <Transition
-                                enter-active-class="transition ease-out duration-100"
-                                enter-from-class="transform opacity-0 scale-95"
-                                enter-to-class="transform opacity-100 scale-100"
-                                leave-active-class="transition ease-in duration-75"
-                                leave-from-class="transform opacity-100 scale-100"
-                                leave-to-class="transform opacity-0 scale-95"
-                            >
-                                <div
-                                    v-show="versionSelectorOpen"
-                                    class="ring-opacity-5 absolute z-10 mt-1 w-full rounded-md bg-white shadow-lg ring-1 ring-black focus:outline-none"
-                                >
-                                    <div class="max-h-60 overflow-auto py-1">
-                                        <NuxtLink
-                                            v-for="availableVersion in pkg.versions"
-                                            :key="availableVersion.version"
-                                            :to="`/open-source/packages/${pkg.slug}/docs/${availableVersion.version}/${docPath}`"
-                                            :class="[
-                                                'block px-4 py-2 text-sm transition-colors duration-200',
-                                                availableVersion.version === pkgVersion!.version
-                                                    ? 'bg-brand-orange text-white'
-                                                    : 'text-gray-700 hover:bg-gray-100',
-                                            ]"
-                                        >
-                                            {{ availableVersion.version }}
-                                        </NuxtLink>
-                                    </div>
-                                </div>
-                            </Transition>
-                        </div>
+                        <PackageVersionSelector
+                            v-if="pkg.versions.length > 1"
+                            :versions="pkg.versions"
+                            :current-version="pkgVersion!.version"
+                            :slug="pkg.slug"
+                            :doc-path="docPath"
+                        />
 
                         <nav class="overflow-hidden rounded-lg border border-gray-200 bg-white">
                             <div class="p-4">

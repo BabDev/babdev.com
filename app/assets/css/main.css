@@ -20,6 +20,46 @@
     --color-brand-blue: #34c1d9;
 }
 
+@keyframes reka-menu-in {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes reka-menu-out {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+}
+
+@keyframes reka-collapsible-down {
+    from {
+        height: 0;
+    }
+    to {
+        height: var(--reka-collapsible-content-height);
+    }
+}
+
+@keyframes reka-collapsible-up {
+    from {
+        height: var(--reka-collapsible-content-height);
+    }
+    to {
+        height: 0;
+    }
+}
+
 @layer components {
     .package-statistic {
         @apply mr-2 inline-flex items-center rounded-full bg-gray-100 px-2 py-1 text-xs font-medium text-gray-800;
