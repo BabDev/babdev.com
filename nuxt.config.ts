@@ -1,4 +1,6 @@
+import { Octokit } from '@octokit/rest'
 import tailwindcss from '@tailwindcss/vite'
+import { discoverDocsRoutes } from './server/utils/docs'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -23,6 +25,15 @@ export default defineNuxtConfig({
         prerender: {
             autoSubfolderIndex: false,
             crawlLinks: true,
+        },
+        hooks: {
+            async 'prerender:routes'(routes) {
+                const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN })
+
+                for (const route of await discoverDocsRoutes(octokit)) {
+                    routes.add(route)
+                }
+            },
         },
     },
 

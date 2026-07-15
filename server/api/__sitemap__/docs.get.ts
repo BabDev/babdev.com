@@ -1,56 +1,7 @@
 import type { SitemapUrlInput } from '@nuxtjs/sitemap'
-import { RequestError } from '@octokit/request-error'
-import { packages } from '~/data/packages'
 
 export default defineSitemapEventHandler(async () => {
-    const octokit = getGitHubClient()
-    const routes: SitemapUrlInput[] = []
+    const routes = await discoverDocsRoutes(getGitHubClient())
 
-    for (const pkg of packages) {
-        if (!pkg.hasDocumentation || !pkg.visible) {
-            continue
-        }
-
-        for (const version of pkg.versions) {
-            const gitBranch = version.gitBranch || version.version
-
-            try {
-                const { data } = await octokit.git.getTree({
-                    owner: pkg.github.owner,
-                    repo: pkg.github.repo,
-                    tree_sha: `${gitBranch}:docs`,
-                    recursive: 'true',
-                })
-
-                const docFiles = data.tree
-                    .filter(item => item.type === 'blob' && item.path?.endsWith('.md'))
-                    .map(item => item.path!)
-                    .filter(path => path !== 'index.md')
-
-                console.debug(`${pkg.name} ${version.version}: Adding ${docFiles.length} pages`)
-
-                // Add index route
-                routes.push(`/open-source/packages/${pkg.slug}/docs/${version.version}`)
-
-                // Add routes for each doc file
-                for (const docFile of docFiles) {
-                    const docPath = docFile.replace(/\.md$/, '')
-
-                    routes.push(`/open-source/packages/${pkg.slug}/docs/${version.version}/${docPath}`)
-                }
-            } catch (error) {
-                if (error instanceof RequestError) {
-                    if (error.status === 404) {
-                        console.warn(`${pkg.name} ${version.version}: No docs directory found`)
-                    } else {
-                        console.error(`${pkg.name} ${version.version}: Error fetching docs - ${error.message}`)
-                    }
-                } else {
-                    console.error(`${pkg.name} ${version.version}: Error fetching docs`, error)
-                }
-            }
-        }
-    }
-
-    return routes
+    return routes as SitemapUrlInput[]
 })
