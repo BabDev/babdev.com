@@ -87,6 +87,17 @@ export default defineNuxtConfig({
     icon: {
         mode: 'css',
         cssLayer: 'base',
+        // Workaround for nuxt/icon#518: from 2.4.0 the runtime plugin calls
+        // `_api.setFetch($fetch.native)` with `useRequestFetch()`, which during SSR is
+        // Nitro's `event.$fetch` and carries no `.native`. That leaves Iconify with no
+        // fetch at all, so every icon fails to resolve while prerendering. Scanning the
+        // source for icon names at build time avoids the fetch path entirely. Every
+        // `<Icon>` name in the app is a literal (including the variant icons behind
+        // Alert.vue's `:name` binding), so the scan finds them all — keep it that way,
+        // or a computed icon name will silently stop resolving.
+        clientBundle: {
+            scan: true,
+        },
     },
 
     sitemap: {
