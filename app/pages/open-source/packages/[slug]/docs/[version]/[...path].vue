@@ -12,11 +12,11 @@ import twig from '@shikijs/langs/twig'
 import xml from '@shikijs/langs/xml'
 import yaml from '@shikijs/langs/yaml'
 import githubLight from '@shikijs/themes/github-light'
-import highlight from 'comark/plugins/highlight'
+import shiki from 'comark/plugins/shiki'
 import { packages } from '~/data/packages'
 
 const comarkPlugins = [
-    highlight({
+    shiki({
         themes: { light: githubLight, dark: githubLight },
         languages: [bash, blade, css, html, javascript, json, markdown, php, properties, twig, xml, yaml],
     }),
@@ -125,9 +125,9 @@ useSeoMeta({
 
                         <nav class="overflow-hidden rounded-lg border border-gray-200 bg-white">
                             <div class="p-4">
-                                <Comark
+                                <Markdown
                                     class="docs-sidebar-nav"
-                                    :markdown="sidebarData?.content ?? ''"
+                                    :value="sidebarData?.content ?? ''"
                                     :plugins="comarkPlugins"
                                 />
                             </div>
@@ -167,7 +167,7 @@ useSeoMeta({
 
                     <div class="rounded-lg border border-gray-200 bg-white shadow-sm">
                         <div class="p-8">
-                            <Comark class="docs-content" :markdown="docData?.content ?? ''" :plugins="comarkPlugins" />
+                            <Markdown class="docs-content" :value="docData?.content ?? ''" :plugins="comarkPlugins" />
                         </div>
                     </div>
 

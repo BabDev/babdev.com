@@ -47,7 +47,7 @@ The site fetches and displays documentation from GitHub repositories at build ti
 
 - **Static site generation (SSG)**: The site is fully prerendered with `nitro.static: true` and `autoSubfolderIndex: false` (no trailing slashes in URLs).
 - **Trailing slash middleware**: `app/middleware/redirect-trailing-slash.global.ts` enforces no trailing slashes with 301 redirects.
-- **Comark content rendering**: Uses `@comark/nuxt` (the `<Comark>` component) for Markdown rendering with custom Prose components in `app/components/prose/`. Syntax highlighting is configured per-page via Comark's `highlight` plugin (Shiki), passed through the `:plugins` prop.
+- **Comark content rendering**: Uses `@comark/nuxt` (the `<Markdown>` component, taking raw Markdown via `:value`) for Markdown rendering with custom Prose components in `app/components/prose/`. Syntax highlighting is configured per-page via Comark's `shiki` plugin, passed through the `:plugins` prop.
 - **Cached API handlers**: Documentation endpoints use `defineCachedEventHandler` with 24-hour cache TTL.
 - **Type safety**: Shared TypeScript types in `shared/types/` define the package data structure used across client and server.
 
@@ -88,7 +88,7 @@ To add a new package:
 To modify documentation rendering:
 
 - Edit Prose components in `app/components/prose/` (these override Comark's default element rendering)
-- Adjust the Comark `highlight` plugin config in the docs page (`app/pages/open-source/packages/[slug]/docs/[version]/[...path].vue`) for syntax highlighting languages/themes
+- Adjust the Comark `shiki` plugin config in the docs page (`app/pages/open-source/packages/[slug]/docs/[version]/[...path].vue`) for syntax highlighting languages/themes
 
 ## Main Branch
 

@@ -19,7 +19,7 @@
         "format:check": "prettier --check ."
     },
     "dependencies": {
-        "@comark/nuxt": "0.5.1",
+        "@comark/nuxt": "0.6.2",
         "@nuxt/fonts": "0.14.0",
         "@nuxt/icon": "2.5.0",
         "@nuxt/image": "2.1.0",
@@ -29,7 +29,7 @@
         "@shikijs/langs": "4.4.3",
         "@shikijs/themes": "4.4.3",
         "@tailwindcss/typography": "0.5.20",
-        "comark": "0.5.1",
+        "comark": "0.6.2",
         "nuxt": "4.5.2",
         "reka-ui": "2.10.3",
         "shiki": "4.4.3",
