@@ -21,21 +21,21 @@
     "dependencies": {
         "@comark/nuxt": "0.6.2",
         "@nuxt/fonts": "0.14.0",
-        "@nuxt/icon": "2.5.0",
+        "@nuxt/icon": "2.5.1",
         "@nuxt/image": "2.1.0",
-        "@nuxtjs/sitemap": "8.3.4",
-        "@octokit/request-error": "7.1.1",
+        "@nuxtjs/sitemap": "8.5.0",
+        "@octokit/request-error": "7.1.2",
         "@octokit/rest": "22.0.1",
         "@shikijs/langs": "4.4.3",
         "@shikijs/themes": "4.4.3",
         "@tailwindcss/typography": "0.5.20",
         "comark": "0.6.2",
         "nuxt": "4.5.2",
-        "reka-ui": "2.10.3",
+        "reka-ui": "2.10.4",
         "shiki": "4.4.3",
         "tailwindcss": "4.3.3",
-        "vue": "3.5.41",
-        "vue-router": "5.2.0"
+        "vue": "3.5.42",
+        "vue-router": "5.3.1"
     },
     "devDependencies": {
         "@iconify-json/fa7-brands": "1.2.4",
@@ -44,12 +44,12 @@
         "@nuxt/eslint": "1.17.0",
         "@tailwindcss/vite": "4.3.3",
         "@types/node": "24.13.3",
-        "eslint": "10.8.1",
+        "eslint": "10.10.0",
         "eslint-config-prettier": "10.1.8",
         "eslint-plugin-prettier": "5.5.6",
         "prettier": "3.9.6",
         "prettier-plugin-tailwindcss": "0.8.1",
-        "tsx": "4.23.12",
+        "tsx": "4.23.13",
         "typescript": "6.0.3"
     }
 }

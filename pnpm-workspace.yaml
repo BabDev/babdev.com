@@ -4,9 +4,8 @@ allowBuilds:
   sharp: true
   unrs-resolver: true
   vue-demi: true
-minimumReleaseAgeExclude:
-  - '@nuxt/kit@4.5.1'
-  - '@nuxt/nitro-server@4.5.1'
-  - '@nuxt/schema@4.5.1'
-  - '@nuxt/vite-builder@4.5.1'
-  - nuxt@4.5.1
+overrides:
+  # fontless@0.2.1 (pinned by @nuxt/fonts 0.14.0) requires esbuild ^0.27.0, which is
+  # affected by GHSA-g7r4-m6w7-qqqr. Newer fontless dropped esbuild entirely, but
+  # @nuxt/fonts has not picked it up yet, so force the patched line and dedupe on it.
+  esbuild@^0.27.0: ^0.28.2
