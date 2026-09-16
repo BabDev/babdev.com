@@ -61,3 +61,16 @@ export async function discoverDocsRoutes(octokit: Octokit): Promise<string[]> {
 
     return routes
 }
+
+const DOCS_PAGE_ROUTE = /^\/open-source\/packages\/[^/]+\/docs\/[^/]+\/.+$/
+
+/**
+ * Maps a documentation page route to its raw Markdown twin under `/raw`.
+ *
+ * Returns `null` for a version index route (`.../docs/{version}`), which only redirects to `intro` in the
+ * app and is backed by `docs/index.md` — the sidebar navigation, not page content — so it has no raw
+ * representation worth publishing.
+ */
+export function toRawDocsRoute(route: string): string | null {
+    return DOCS_PAGE_ROUTE.test(route) ? `/raw${route}.md` : null
+}

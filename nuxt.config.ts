@@ -1,6 +1,6 @@
 import { Octokit } from '@octokit/rest'
 import tailwindcss from '@tailwindcss/vite'
-import { discoverDocsRoutes } from './server/utils/docs'
+import { discoverDocsRoutes, toRawDocsRoute } from './server/utils/docs'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -32,6 +32,16 @@ export default defineNuxtConfig({
 
                 for (const route of await discoverDocsRoutes(octokit)) {
                     routes.add(route)
+
+                    // Every documentation page is published twice: the HTML page and its raw Markdown twin
+                    // under `/raw`. The twins are enumerated here rather than discovered by `crawlLinks`
+                    // because they are only ever referenced from a `<link rel="alternate">`, which the
+                    // prerenderer's crawler does not follow.
+                    const rawRoute = toRawDocsRoute(route)
+
+                    if (rawRoute) {
+                        routes.add(rawRoute)
+                    }
                 }
             },
         },
@@ -40,6 +50,7 @@ export default defineNuxtConfig({
     routeRules: {
         '/llms.txt': { prerender: true },
         '/open-source/packages/**': { prerender: true },
+        '/raw/**': { prerender: true },
 
         // Legacy URL redirect
         '/index.php': { redirect: { to: '/', statusCode: 301 } },

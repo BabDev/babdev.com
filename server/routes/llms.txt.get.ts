@@ -83,6 +83,16 @@ export default defineEventHandler(event => {
         }
 
         lines.push('')
+        lines.push(
+            'Every documentation page is also published as raw Markdown, exactly as it is stored in the package repository.',
+        )
+        lines.push('Prefix the page path with `/raw` and append `.md` to fetch it, for example:')
+        lines.push('')
+        lines.push('- Page: /open-source/packages/{package}/docs/{version}/{path}')
+        lines.push('- Markdown: /raw/open-source/packages/{package}/docs/{version}/{path}.md')
+        lines.push('')
+        lines.push('Each HTML page links its Markdown twin with `<link rel="alternate" type="text/markdown">`.')
+        lines.push('')
     }
 
     return lines.join('\n')

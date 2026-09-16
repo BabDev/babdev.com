@@ -99,6 +99,12 @@ const gitHubFileUrl = computed(() => {
     return `https://github.com/${pkg.github.owner}/${pkg.github.repo}/edit/${branch}/docs/${docPath}.md`
 })
 
+// Raw Markdown twin of this page, served under `/raw` for AI agents and other non-browser clients.
+// Null on the version index, which redirects to `intro` above and has no Markdown file of its own.
+const rawDocPath = docPath ? `/raw/open-source/packages/${pkg.slug}/docs/${pkgVersion!.version}/${docPath}.md` : null
+
+useCanonical(rawDocPath)
+
 useSeoMeta({
     title: `${title.value} | ${pkg.name} ${pkgVersion!.version} Documentation`,
 })
