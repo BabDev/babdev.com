@@ -125,7 +125,7 @@ export const packages: Package[] = [
         },
         packagistName: 'babdev/sylius-product-samples-plugin',
         packageType: 'sylius-plugin',
-        hasDocumentation: false,
+        hasDocumentation: true,
         supported: true,
         visible: true,
         versions: [{ version: '1.x', gitBranch: '0.1', released: false }],
@@ -143,7 +143,7 @@ export const packages: Package[] = [
         hasDocumentation: true,
         supported: true,
         visible: true,
-        versions: [{ version: '1.x', gitBranch: '0.2', released: false }],
+        versions: [{ version: '1.x', gitBranch: '0.3', released: false }],
     },
     {
         name: 'Sylius Supplier Plugin',
