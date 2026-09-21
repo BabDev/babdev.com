@@ -1,6 +1,6 @@
 import { Octokit } from '@octokit/rest'
 import tailwindcss from '@tailwindcss/vite'
-import { discoverDocsRoutes, toRawDocsRoute } from './server/utils/docs'
+import { discoverDocsRoutes, docsIndexRoutes, slugRenameRoutes, toRawDocsRoute } from './server/utils/docs'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -29,8 +29,9 @@ export default defineNuxtConfig({
         hooks: {
             async 'prerender:routes'(routes) {
                 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN })
+                const docsRoutes = await discoverDocsRoutes(octokit)
 
-                for (const route of await discoverDocsRoutes(octokit)) {
+                for (const route of docsRoutes) {
                     routes.add(route)
 
                     // Every documentation page is published twice: the HTML page and its raw Markdown twin
@@ -42,6 +43,16 @@ export default defineNuxtConfig({
                     if (rawRoute) {
                         routes.add(rawRoute)
                     }
+                }
+
+                // Redirects only exist on GitHub Pages where a file was written for them, so the routes a
+                // package redirects *from* have to be enumerated too — the `/docs` index of every package,
+                // and every documentation URL a renamed package used to serve. The `/raw` twins are
+                // deliberately left out of the rename set: GitHub Pages types a `.md` file as
+                // `text/markdown`, so a redirect file there would hand an agent an HTML document under a
+                // Markdown content type, which is worse than the 404 it gets instead.
+                for (const route of [...docsIndexRoutes(), ...slugRenameRoutes(docsRoutes)]) {
+                    routes.add(route)
                 }
             },
         },

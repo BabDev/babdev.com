@@ -98,6 +98,7 @@ export const packages: Package[] = [
     {
         name: 'PagerfantaBundle',
         slug: 'pagerfantabundle',
+        previousSlugs: ['babdevpagerfantabundle'],
         description: 'Integrates Pagerfanta into Symfony applications',
         github: {
             owner: 'BabDev',
@@ -117,7 +118,7 @@ export const packages: Package[] = [
     },
     {
         name: 'Sylius Product Samples Plugin',
-        slug: 'syliusproductsamplesplugin',
+        slug: 'product-samples-plugin',
         description: 'Adds support for product samples to Sylius applications.',
         github: {
             owner: 'BabDev',
@@ -132,7 +133,8 @@ export const packages: Package[] = [
     },
     {
         name: 'Sylius Shipping Estimate Plugin',
-        slug: 'syliusshippingestimateplugin',
+        slug: 'shipping-estimate-plugin',
+        previousSlugs: ['syliusshippingestimateplugin'],
         description: "Adds a shipping estimator widget to a Sylius website's cart",
         github: {
             owner: 'BabDev',

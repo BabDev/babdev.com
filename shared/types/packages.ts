@@ -10,6 +10,8 @@ export type PackageType = 'laravel-package' | 'symfony-bundle' | 'sylius-plugin'
 export interface Package {
     name: string
     slug: string
+    // Slugs this package used to be published under, if it has ever been renamed. This is an append-only list.
+    previousSlugs?: string[]
     description?: string
     github: {
         owner: string

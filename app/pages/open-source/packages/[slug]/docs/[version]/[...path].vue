@@ -23,22 +23,25 @@ const comarkPlugins = [
 ]
 
 const route = useRoute()
+const packageSlug = route.params.slug as string
 const version = route.params.version as string
 const docPath = (Array.isArray(route.params.path) ? route.params.path.join('/') : route.params.path || '')
     .trim()
     .replace(/\/+$/, '')
 
-// Legacy slug rename: babdevpagerfantabundle → pagerfantabundle (preserve version + path)
-if ((route.params.slug as string) === 'babdevpagerfantabundle') {
-    const trailing = docPath ? `/${docPath}` : ''
-
-    await navigateTo(`/open-source/packages/pagerfantabundle/docs/${version}${trailing}`, { redirectCode: 301 })
-}
-
-const pkg = packages.find(p => p.slug === (route.params.slug as string))
+const pkg = packages.find(p => p.slug === packageSlug || p.previousSlugs?.includes(packageSlug))
 
 if (!pkg) {
     throw createError({ statusCode: 404, message: 'Package not found' })
+}
+
+// Reached through a slug the package has since been renamed away from: forward to the current one,
+// carrying the version and path over so the reader lands on the page they asked for. Whether that page
+// still exists is the canonical URL's business, which keeps this to a single hop for the ones that do.
+if (pkg.slug !== packageSlug) {
+    const trailing = docPath ? `/${docPath}` : ''
+
+    await navigateTo(`/open-source/packages/${pkg.slug}/docs/${version}${trailing}`, { redirectCode: 301 })
 }
 
 const pkgVersion = pkg.versions.find(v => v.version === version)
