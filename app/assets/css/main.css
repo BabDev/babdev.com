@@ -141,7 +141,7 @@
     }
 
     .docs-content pre {
-        @apply overflow-x-auto rounded-lg border border-gray-200 bg-gray-50 p-4;
+        @apply my-4 overflow-x-auto rounded-lg border border-gray-200 bg-gray-50 p-4;
     }
 
     .docs-content pre code {
