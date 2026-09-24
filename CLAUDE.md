@@ -35,9 +35,9 @@ The site fetches and displays documentation from GitHub repositories at build ti
 
 1. **Package definitions** are centralized in `app/data/packages.ts` - this is the single source of truth for all packages, their versions, GitHub repos, and metadata.
 
-2. **Build-time route discovery**: Documentation pages are prerendered via `nitro.prerender.crawlLinks` (starting from `/` and following in-content links). The sitemap's list of doc pages is generated separately by `server/api/__sitemap__/docs.get.ts`, which walks each repo's `docs/` tree on GitHub. Both require the `GITHUB_TOKEN` environment variable.
+2. **Build-time route discovery**: `discoverDocsRoutes()` in `server/utils/docs.ts` walks each repo's `docs/` tree on GitHub, and one list feeds both the prerenderer and the sitemap. The Nitro `prerender:routes` hook in `nuxt.config.ts` adds those routes plus each page's `/raw` Markdown twin and the redirect-source routes (package `/docs` indexes, renamed-slug URLs); `server/api/__sitemap__/docs.get.ts` serves the same list to the sitemap. `crawlLinks` picks up everything else. Both need the `GITHUB_TOKEN` environment variable.
 
-3. **Documentation API** (`server/api/packages/[slug]/docs/[version]/[...path].get.ts`) fetches Markdown files from GitHub using the Octokit client, with 24-hour caching. Files are fetched from `docs/{path}.md` in the repository's branch corresponding to the version.
+3. **Documentation API** (`server/api/packages/[slug]/docs/[version]/[...path].get.ts`) resolves a route to `docs/{path}.md` on the version's branch through `resolveDoc()` in `server/utils/docSource.ts`, which caches the GitHub fetch for 24 hours, then applies rendering-only workarounds to the Markdown. The raw twin (`server/routes/raw/open-source/packages/[slug]/docs/[version]/[...path].get.ts`, advertised by `server/routes/llms.txt.get.ts`) serves the same file verbatim through `resolveDoc()` for AI agents, so rendering workarounds stay out of that path.
 
 4. **GitHub utilities** (`server/utils/github.ts`) provide a singleton Octokit client and helpers for fetching repository metadata and file contents.
 
@@ -57,13 +57,14 @@ The site fetches and displays documentation from GitHub repositories at build ti
 app/
   components/          # Vue components
     prose/            # Custom Comark prose components (*.global.vue)
+  composables/        # Composables (canonical + Markdown alternate links)
   data/               # Package definitions (packages.ts)
   middleware/         # Global middleware (trailing slash redirect)
   pages/              # File-based routing
   assets/css/         # Global CSS (Tailwind)
 server/
   api/                # Nitro API routes (incl. __sitemap__ source)
-  routes/             # Non-API routes (e.g. llms.txt)
+  routes/             # Non-API routes (llms.txt, /raw Markdown twins)
   utils/              # Server utilities (GitHub, Packagist)
 shared/types/         # Shared TypeScript interfaces
 shared/utils/         # Shared helpers (auto-imported on client + server)
@@ -72,10 +73,10 @@ public/               # Static assets
 
 ### Configuration
 
-- **Nuxt config** (`nuxt.config.ts`): Configures modules (@nuxt/eslint, @nuxt/fonts, @nuxt/icon, @nuxt/image, @comark/nuxt, @nuxtjs/sitemap), Tailwind via Vite plugin, static prerendering (`nitro.static`, `crawlLinks`, `autoSubfolderIndex: false`), route rules (redirects + prerender), fonts, and sitemap.
-- **ESLint** (`eslint.config.mjs`): Extends Nuxt's config with Prettier integration, disables multi-word component names rule.
+- **Nuxt config** (`nuxt.config.ts`): Configures modules (@nuxt/eslint, @nuxt/fonts, @nuxt/icon, @nuxt/image, @comark/nuxt, @nuxtjs/sitemap, reka-ui/nuxt), Tailwind via Vite plugin, static prerendering (`nitro.static`, `crawlLinks`, `autoSubfolderIndex: false`), route rules (redirects + prerender), fonts, and sitemap.
+- **ESLint** (`eslint.config.mjs`): Extends Nuxt's config with Prettier integration, disables the multi-word component names and single-root template rules.
 - **Prettier**: 4-space tabs, single quotes, 120 print width, Tailwind plugin for class sorting.
-- **Environment variables**: `GITHUB_TOKEN` (required for build), `NUXT_PUBLIC_SITE_URL` (defaults to localhost:3000).
+- **Environment variables**: `GITHUB_TOKEN` (needed for build; the build does not fail without it: GitHub errors, including unauthenticated rate limits, are logged and the affected docs pages are skipped, so check the prerender output — locally, `GITHUB_TOKEN="$(gh auth token)" pnpm build`), `NUXT_PUBLIC_SITE_URL` (defaults to localhost:3000).
 
 ## Working with Packages
 
