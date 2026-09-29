@@ -129,7 +129,7 @@ export const packages: Package[] = [
         hasDocumentation: true,
         supported: true,
         visible: true,
-        versions: [{ version: '1.x', gitBranch: '0.1', released: false }],
+        versions: [{ version: '1.x', gitBranch: '0.2', released: false }],
     },
     {
         name: 'Sylius Shipping Estimate Plugin',
@@ -145,7 +145,7 @@ export const packages: Package[] = [
         hasDocumentation: true,
         supported: true,
         visible: true,
-        versions: [{ version: '1.x', gitBranch: '0.3', released: false }],
+        versions: [{ version: '1.x', gitBranch: '0.4', released: false }],
     },
     {
         name: 'Sylius Supplier Plugin',
