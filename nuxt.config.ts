@@ -20,6 +20,12 @@ export default defineNuxtConfig({
 
     ssr: true,
 
+    experimental: {
+        // GitHub Pages serves `404.html` for every missing URL. Without this it is an empty SPA shell
+        // that only shows `error.vue` once JavaScript runs, so crawlers and agents got a blank page.
+        prerenderErrorPages: true,
+    },
+
     nitro: {
         static: true,
         prerender: {
