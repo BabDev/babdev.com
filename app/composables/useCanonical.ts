@@ -9,8 +9,14 @@ import type { MaybeRefOrGetter } from 'vue'
  * prerendered onto GitHub Pages. Keeping the same shape means the module can be adopted later without
  * touching the call sites. The absolute URL comes from the configured site URL rather than `useRequestURL()`
  * so that prerendering emits the public origin instead of the build-time one.
+ *
+ * `canonicalPath` overrides the current route for pages that are near-duplicates of another, such as an older
+ * version of a documentation page; it falls back to the current route when empty.
  */
-export function useCanonical(markdownAlternate?: MaybeRefOrGetter<string | null | undefined>): void {
+export function useCanonical(
+    markdownAlternate?: MaybeRefOrGetter<string | null | undefined>,
+    canonicalPath?: MaybeRefOrGetter<string | null | undefined>,
+): void {
     const route = useRoute()
     const siteUrl = useRuntimeConfig().public.siteUrl.replace(/\/+$/, '')
 
@@ -19,7 +25,7 @@ export function useCanonical(markdownAlternate?: MaybeRefOrGetter<string | null 
             const markdown = toValue(markdownAlternate)
 
             return [
-                { rel: 'canonical', href: `${siteUrl}${route.path}` },
+                { rel: 'canonical', href: `${siteUrl}${toValue(canonicalPath) || route.path}` },
                 ...(markdown ? [{ rel: 'alternate', type: 'text/markdown', href: `${siteUrl}${markdown}` }] : []),
             ]
         }),

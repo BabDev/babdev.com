@@ -19,6 +19,7 @@ export default defineCachedEventHandler(
 
         return {
             content,
+            canonicalPath: await resolveCanonicalDocRoute(doc),
             package: doc.pkg,
             version: doc.pkgVersion,
         }

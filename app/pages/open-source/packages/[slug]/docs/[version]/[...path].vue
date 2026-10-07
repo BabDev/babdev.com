@@ -106,10 +106,35 @@ const gitHubFileUrl = computed(() => {
 // Null on the version index, which redirects to `intro` above and has no Markdown file of its own.
 const rawDocPath = docPath ? `/raw/open-source/packages/${pkg.slug}/docs/${pkgVersion!.version}/${docPath}.md` : null
 
-useCanonical(rawDocPath)
+// Older and unreleased versions point their canonical at the latest stable version's copy of the page.
+useCanonical(rawDocPath, () => docData.value?.canonicalPath)
+
+// The first paragraph under the page heading, flattened to plain text, for search result snippets.
+const description = computed(() => {
+    const body = docData.value?.content.split(/^#\s+.+$/m)[1] ?? ''
+    const paragraph = body
+        .split(/\n\s*\n/)
+        .map(block => block.trim())
+        .find(block => block && !/^(#|<|```|\||[-*+] |\d+\. |::|>)/.test(block))
+
+    const text = (paragraph ?? '')
+        .replace(/!?\[([^\]]*)\]\([^)]*\)/g, '$1')
+        .replace(/[`*_]/g, '')
+        .replace(/\s+/g, ' ')
+        .trim()
+
+    if (!text) {
+        return `${title.value} documentation for ${pkg.name} ${pkgVersion!.version}.`
+    }
+
+    return text.length > 160 ? `${text.slice(0, 157).replace(/\s+\S*$/, '')}...` : text
+})
 
 useSeoMeta({
     title: `${title.value} | ${pkg.name} ${pkgVersion!.version} Documentation`,
+    description,
+    ogTitle: `${title.value} | ${pkg.name} ${pkgVersion!.version} Documentation`,
+    ogDescription: description,
 })
 </script>
 

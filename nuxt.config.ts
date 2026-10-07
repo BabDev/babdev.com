@@ -128,8 +128,13 @@ export default defineNuxtConfig({
     },
 
     sitemap: {
+        // Documentation URLs come only from the docs source, which lists canonical pages. The prerender
+        // source would add every prerendered page back, including the older-version copies that
+        // canonicalize to the latest stable version, and it only honors `noindex`, not `rel="canonical"`.
+        excludeAppSources: ['nuxt:prerender'],
         sources: ['/api/__sitemap__/docs'],
-        urls: ['/llms.txt'],
+        // Listed by hand because excluding the prerender source above drops the static pages too.
+        urls: ['/', '/open-source/packages', '/privacy'],
         zeroRuntime: true,
     },
 })

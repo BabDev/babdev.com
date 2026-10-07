@@ -27,6 +27,40 @@ const fetchDocMarkdown = defineCachedFunction(
 )
 
 /**
+ * Lists a package version's documentation paths, cached so that canonicalizing every page of a version
+ * costs one GitHub tree read rather than one per page.
+ */
+const fetchCachedDocsPaths = defineCachedFunction(
+    (pkg: Package, version: PackageVersion) => fetchDocsPaths(getGitHubClient(), pkg, version),
+    {
+        maxAge: 60 * 60 * 24, // Cache for 24 hours
+        name: 'docs-paths',
+        getKey: (pkg: Package, version: PackageVersion) => `${pkg.slug}-${version.version}`,
+    },
+)
+
+/**
+ * The canonical route for a resolved documentation page; see {@link canonicalDocsRoute} for the rule.
+ *
+ * When the latest stable version's tree cannot be read the page falls back to canonicalizing itself, which
+ * is what every page did before cross-version canonicals, rather than failing the page over SEO metadata.
+ */
+export async function resolveCanonicalDocRoute(doc: ResolvedDoc): Promise<string> {
+    const latestStable = getLatestStablePackageVersion(doc.pkg)
+    let latestStablePaths: string[] = []
+
+    if (latestStable && latestStable !== doc.pkgVersion) {
+        try {
+            latestStablePaths = await fetchCachedDocsPaths(doc.pkg, latestStable)
+        } catch (error) {
+            console.error(`${doc.pkg.name} ${latestStable.version}: Error listing docs for canonical URL`, error)
+        }
+    }
+
+    return canonicalDocsRoute(doc.pkg, doc.pkgVersion.version, doc.path, new Set(latestStablePaths))
+}
+
+/**
  * Resolves a documentation route to the Markdown file backing it on GitHub, throwing the appropriate
  * HTTP error when any part of the route does not exist.
  *

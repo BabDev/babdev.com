@@ -57,6 +57,7 @@ export default defineEventHandler(async event => {
 
     const siteUrl = useRuntimeConfig(event).public.siteUrl.replace(/\/+$/, '')
     const canonicalUrl = `${siteUrl}/open-source/packages/${doc.pkg.slug}/docs/${doc.pkgVersion.version}/${doc.path}`
+    const searchCanonicalUrl = `${siteUrl}${await resolveCanonicalDocRoute(doc)}`
     const title = doc.markdown.match(/^#\s+(.+)$/m)?.[1] ?? doc.pkg.name
     const notices = supportNotices(doc.pkg, doc.pkgVersion)
 
@@ -64,7 +65,13 @@ export default defineEventHandler(async event => {
 
     // Prerendered files are served by GitHub Pages, which sends no custom headers, so this only reaches a
     // client in dev and `pnpm preview`. The frontmatter below is what carries the link back in production.
-    setHeader(event, 'Link', `<${canonicalUrl}>; rel="canonical", <${canonicalUrl}>; rel="alternate"; type="text/html"`)
+    // `rel="canonical"` follows the HTML page's cross-version canonical, while the alternate and the
+    // frontmatter's `canonical_url` stay on this version: an agent reading 2.x should cite the 2.x page.
+    setHeader(
+        event,
+        'Link',
+        `<${searchCanonicalUrl}>; rel="canonical", <${canonicalUrl}>; rel="alternate"; type="text/html"`,
+    )
 
     // Everything below the frontmatter is the repository file, unchanged. `JSON.stringify` is used for the
     // scalars because YAML is a superset of JSON for quoted strings, so it escapes them correctly.
