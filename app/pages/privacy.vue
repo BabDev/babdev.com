@@ -35,6 +35,20 @@ useSeoMeta({
                                     abuse.
                                 </li>
                             </ul>
+
+                            <h2>Analytics</h2>
+                            <p>
+                                This website uses <a href="https://umami.is" rel="noopener">Umami</a>, a privacy-focused
+                                analytics service, to understand how the site is used. Umami does not use cookies, does
+                                not track you across other websites, and does not store your IP address. The information
+                                it records is aggregated and includes the page visited, the referring website, your
+                                browser, operating system, device type, and country.
+                            </p>
+                            <p>
+                                If your browser sends a Do Not Track signal, no analytics data is collected. For more
+                                information, see
+                                <a href="https://umami.is/privacy" rel="noopener">Umami's privacy policy</a>.
+                            </p>
                         </div>
                     </div>
                 </div>

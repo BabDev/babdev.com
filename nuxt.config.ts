@@ -93,6 +93,15 @@ export default defineNuxtConfig({
         head: {
             title: 'BabDev',
             link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+            script: [
+                {
+                    src: 'https://cloud.umami.is/script.js',
+                    defer: true,
+                    'data-website-id': '6bdc0196-17b0-4378-a085-5146307bba28',
+                    'data-domains': 'www.babdev.com',
+                    'data-do-not-track': 'true',
+                },
+            ],
         },
     },
 
