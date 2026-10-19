@@ -20,7 +20,7 @@
     },
     "dependencies": {
         "@comark/nuxt": "0.7.0",
-        "@nuxt/fonts": "0.14.0",
+        "@nuxt/fonts": "1.0.1",
         "@nuxt/icon": "2.5.1",
         "@nuxt/image": "2.1.0",
         "@nuxtjs/sitemap": "8.6.1",
@@ -50,6 +50,6 @@
         "prettier": "3.9.9",
         "prettier-plugin-tailwindcss": "0.8.1",
         "tsx": "4.23.15",
-        "typescript": "6.0.3"
+        "typescript": "7.0.2"
     }
 }
