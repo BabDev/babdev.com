@@ -1,0 +1,36 @@
+name: Verify Dependencies
+
+on:
+  pull_request:
+    branches: [production]
+
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  install:
+    name: Install Dependencies
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Setup Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "24"
+
+      # Same install as the deploy workflow, so a lockfile that pnpm's supply-chain policies reject
+      # (e.g. a Dependabot security update that bypassed minimumReleaseAge) fails here instead of after merge.
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
