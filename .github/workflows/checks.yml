@@ -1,4 +1,4 @@
-name: Verify Dependencies
+name: Checks
 
 on:
   pull_request:
@@ -11,8 +11,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  install:
-    name: Install Dependencies
+  checks:
+    name: Lint and Format
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -34,3 +34,9 @@ jobs:
       # (e.g. a Dependabot security update that bypassed minimumReleaseAge) fails here instead of after merge.
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Run ESLint
+        run: pnpm lint
+
+      - name: Check Formatting
+        run: pnpm format:check
