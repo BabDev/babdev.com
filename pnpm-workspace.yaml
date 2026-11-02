@@ -4,6 +4,9 @@ allowBuilds:
   sharp: true
   unrs-resolver: true
   vue-demi: true
+# pnpm 11 already defaults to a one-day release age, but Dependabot only reads an explicit
+# value here when deciding how far to gate the transitive dependencies it re-resolves.
+minimumReleaseAge: 1440
 overrides:
   # fontless@0.2.1 (pinned by @nuxt/fonts 0.14.0) requires esbuild ^0.27.0, which is
   # affected by GHSA-g7r4-m6w7-qqqr. The app itself is on @nuxt/fonts 1.x, but the old

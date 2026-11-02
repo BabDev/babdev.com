@@ -1,5 +1,5 @@
 {
-    "name": "nuxt",
+    "name": "babdev.com",
     "type": "module",
     "private": true,
     "packageManager": "pnpm@11.17.0",
@@ -30,7 +30,7 @@
         "@shikijs/themes": "4.5.0",
         "@tailwindcss/typography": "0.5.20",
         "comark": "0.7.0",
-        "nuxt": "4.6.2",
+        "nuxt": "4.6.3",
         "reka-ui": "2.11.0",
         "shiki": "4.5.0",
         "tailwindcss": "4.3.3",
