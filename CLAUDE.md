@@ -47,7 +47,7 @@ The site fetches and displays documentation from GitHub repositories at build ti
 
 - **Static site generation (SSG)**: The site is fully prerendered with `nitro.static: true` and `autoSubfolderIndex: false` (no trailing slashes in URLs).
 - **Trailing slash middleware**: `app/middleware/redirect-trailing-slash.global.ts` enforces no trailing slashes with 301 redirects.
-- **Comark content rendering**: Uses `@comark/nuxt` (the `<Markdown>` component, taking raw Markdown via `:value`) for Markdown rendering with custom Prose components in `app/components/prose/`. Syntax highlighting is configured per-page via Comark's `shiki` plugin, passed through the `:plugins` prop.
+- **Comark content rendering**: Uses `@comark/vue` (its Nuxt module; the `<Markdown>` component, taking raw Markdown via `:value`) for Markdown rendering with custom Prose components in `app/components/prose/`. Syntax highlighting is configured per-page via Comark's `shiki` plugin, passed through the `:plugins` prop.
 - **Cached API handlers**: Documentation endpoints use `defineCachedEventHandler` with 24-hour cache TTL.
 - **Type safety**: Shared TypeScript types in `shared/types/` define the package data structure used across client and server.
 
@@ -73,7 +73,7 @@ public/               # Static assets
 
 ### Configuration
 
-- **Nuxt config** (`nuxt.config.ts`): Configures modules (@nuxt/eslint, @nuxt/fonts, @nuxt/icon, @nuxt/image, @comark/nuxt, @nuxtjs/sitemap, reka-ui/nuxt), Tailwind via Vite plugin, static prerendering (`nitro.static`, `crawlLinks`, `autoSubfolderIndex: false`), route rules (redirects + prerender), fonts, and sitemap.
+- **Nuxt config** (`nuxt.config.ts`): Configures modules (@nuxt/eslint, @nuxt/fonts, @nuxt/icon, @nuxt/image, @comark/vue, @nuxtjs/sitemap, reka-ui/nuxt), Tailwind via Vite plugin, static prerendering (`nitro.static`, `crawlLinks`, `autoSubfolderIndex: false`), route rules (redirects + prerender), fonts, and sitemap.
 - **ESLint** (`eslint.config.mjs`): Extends Nuxt's config with Prettier integration, disables the multi-word component names and single-root template rules.
 - **Prettier**: 4-space tabs, single quotes, 120 print width, Tailwind plugin for class sorting.
 - **Environment variables**: `GITHUB_TOKEN` (needed for build; the build does not fail without it: GitHub errors, including unauthenticated rate limits, are logged and the affected docs pages are skipped, so check the prerender output — locally, `GITHUB_TOKEN="$(gh auth token)" pnpm build`), `NUXT_PUBLIC_SITE_URL` (defaults to localhost:3000).
