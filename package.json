@@ -19,7 +19,7 @@
         "format:check": "prettier --check ."
     },
     "dependencies": {
-        "@comark/nuxt": "0.9.2",
+        "@comark/vue": "0.9.2",
         "@nuxt/fonts": "1.2.0",
         "@nuxt/icon": "2.6.2",
         "@nuxt/image": "2.2.1",
