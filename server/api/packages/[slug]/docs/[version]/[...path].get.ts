@@ -6,19 +6,8 @@ export default defineCachedEventHandler(
             getRouterParam(event, 'path'),
         )
 
-        // Workaround for a Comark bug: single-line `<div class="...">...</div>` gets parsed as an
-        // unclosed block-level HTML token, swallowing every block that follows it. Rewriting these
-        // callouts as Comark block components renders them correctly. Remove once Comark fixes upstream.
-        //
-        // This rewrite is deliberately confined to the rendered representation. The `/raw` twin publishes
-        // the repository file untouched, which is the whole point of offering it.
-        const content = doc.markdown.replace(
-            /^<div\s+class="([^"]+)">(.*?)<\/div>\s*$/gm,
-            (_match, className: string, inner: string) => `::div{class="${className}"}\n${inner}\n::`,
-        )
-
         return {
-            content,
+            content: doc.markdown,
             canonicalPath: await resolveCanonicalDocRoute(doc),
             package: doc.pkg,
             version: doc.pkgVersion,
